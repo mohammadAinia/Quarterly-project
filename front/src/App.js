@@ -2,7 +2,7 @@
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
-import { Header, Container, Login, Register } from './Componets/index'
+import { Header, Container, Login, Register ,Home} from './Componets/index'
 
 const App = () => {
   return (
@@ -10,9 +10,9 @@ const App = () => {
       <Router>
         <Header />
         <Container>
-          <Login />
           <Routes>
-
+              <Route path='/' element={<Home/>}/>
+              <Route path='/login' element={<Login/>}/>
           </Routes>
         </Container>
       </Router>
