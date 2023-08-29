@@ -50,6 +50,7 @@ form .user-details .input-box{
 form .input-box span.details{
   display: block;
   font-weight: 500;
+  font-size: 15px;
   margin-bottom: 5px;
 }
 .user-details .input-box input{
