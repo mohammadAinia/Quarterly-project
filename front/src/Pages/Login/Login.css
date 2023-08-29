@@ -1,0 +1,51 @@
+.login-form{
+    position: absolute;
+    top: 115%;
+    right: -105%;
+    background: var(--white);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    width: 35rem;
+    padding: 2rem;
+  }
+  
+.login-form.active{
+    right: 2rem;
+    transition: .4s linear;
+  }
+  
+.login-form h3{
+    font-size: 2.2rem;
+    color: var(--black);
+    text-transform: uppercase;
+    margin-bottom: .7rem;
+    text-align: center;
+  }
+  
+.login-form .box{
+    font-size: 1.5rem;
+    padding: 1rem 1.2rem;
+    border: .1rem solid rgba(0, 0, 0, 0.1);
+    margin: .7rem 0;
+    color: var(--black);
+    width: 100%;
+    text-transform: none;
+  }
+  
+.login-form .remember{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin: .7rem 0;
+  }
+  
+.login-form .remember label{
+    font-size: 1.5rem;
+    color: var(--black);
+    cursor: pointer;
+  }
+  
+.login-form .btn{
+    width: 100%;
+    text-align: center;
+  }
