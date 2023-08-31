@@ -8,10 +8,13 @@ const Type = () => {
                 <div class="content">
                     <form action="#">
                     <div class="button">
-                            <a href="/Register">Animal Owner</a>
+                            <a href="/Register_owner">Animal Owner</a>
                         </div>
                         <div class="button">
-                            <a href="/Register">Veterinarian</a>
+                            <a href="/Register_veterinarian">Veterinarian</a>
+                        </div>
+                        <div class="buttonn">
+                            <a href="/Back">Back</a>
                         </div>
                     </form>
                 </div>

@@ -2,7 +2,7 @@
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
-import { Header, Container, Login, Register ,Home , Type} from './Componets/index'
+import { Header, Container, Login, Register_owner ,Register_veterinarian ,Home , Type} from './Componets/index'
 
 const App = () => {
   return (
@@ -14,9 +14,11 @@ const App = () => {
           <Routes>
               <Route path='/' element={<Home/>}/>
               <Route path='/login' element={<Login/>}/>
-              <Route path='/Register' element={<Register/>}/>
+              <Route path='/Register_owner' element={<Register_owner/>}/>
+              <Route path='/Register_veterinarian' element={<Register_veterinarian/>}/>
               <Route path='/TypeRegister' element={<Type/>}/>
-
+              <Route path='/Back' element={<Login/>}/>
+              <Route path='/Back_to_type' element={<Type/>}/>
           </Routes>
         </Container>
       </Router>
