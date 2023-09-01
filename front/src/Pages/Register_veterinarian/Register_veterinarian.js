@@ -11,43 +11,43 @@ const Register_veterinarian = () => {
               <div class="user-details">
                 <div class="input-box">
                   <span class="details">First Name</span>
-                  <input type="text" placeholder="Enter your name" required />
+                  <input type="text" placeholder="required" required />
                 </div>
                 <div class="input-box">
                   <span class="details">Last Name</span>
-                  <input type="text" placeholder="Enter your Last Name" required />
+                  <input type="text" placeholder="required" required />
                 </div>
-                <div class="input-box">
+                <div class="input-box"> 
                   <span class="details">Email</span>
-                  <input type="text" placeholder="Enter your email" required />
+                  <input type="text" placeholder="required" required />
                 </div>
                 <div class="input-box">
                   <span class="details">Phone Number</span>
-                  <input type="text" placeholder="Enter your number" required />
+                  <input type="text" placeholder="required" required />
                 </div>
                 <div class="input-box">
                   <span class="details">Password</span>
-                  <input type="text" placeholder="Enter your password" required />
+                  <input type="text" placeholder="required" required />
                 </div>
                 <div class="input-box">
                   <span class="details">Confirm Password</span>
-                  <input type="text" placeholder="Confirm your password" required />
+                  <input type="text" placeholder="required" required />
                 </div>
                 <div class="input-box">
                   <span class="details">Age</span>
-                  <input type="number" placeholder="Enter Your Age" required />
+                  <input type="date" placeholder="required" required />
                 </div>
                 <div class="input-box">
                   <span class="details">Nationality</span>
-                  <input type="text" placeholder="Enter Nationality" required />
+                  <input type="text" placeholder="required" required />
                 </div>
                 <div class="input-box">
                   <span class="details">Addres</span>
-                  <input type="text" placeholder="Enter Addres" required />
+                  <input type="text" placeholder="required" required />
                 </div>
                 <div class="input-box">
                   <span class="details">Enter the name of the graduation university</span>
-                  <input type="text" placeholder="Enter the name of the graduation university" required />
+                  <input type="text" placeholder="required" required />
                 </div>
                 <div class="input-box">
                   <span class="details">A copy of the bachelor's degree</span>

@@ -2,14 +2,14 @@
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
-import { Header, Container, Login, Register_owner ,Register_veterinarian ,Home , Type} from './Componets/index'
+import { Header, Container, Login, Register_owner ,Register_veterinarian ,Home , Type ,Verification} from './Componets/index'
 
 const App = () => {
   return (
     <>
       <Router>
         <Header />
-        {/* <Type /> */}
+        {/* <Verification /> */}
         <Container>
           <Routes>
               <Route path='/' element={<Home/>}/>
@@ -25,5 +25,4 @@ const App = () => {
     </>
   )
 }
-
 export default App

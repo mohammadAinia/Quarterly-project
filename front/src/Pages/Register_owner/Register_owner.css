@@ -83,6 +83,9 @@ form .input-box span.details{
    align-items: center;
    cursor: pointer;
  }
+ form .category label span{
+  font-size: 15px;
+}
  form .category label .dot{
   height: 18px;
   width: 18px;
