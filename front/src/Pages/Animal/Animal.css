@@ -45,8 +45,11 @@
     text-align: center;
     font-size: 3rem;
     color: var(--white);
+    opacity: 0.5;
   }
   
   .animal .box-container .box:is(:hover, :focus-within) .content{
     transform: translateY(-20px);
+    opacity: 1;
+
   }
