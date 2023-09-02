@@ -18,6 +18,7 @@ const Header = () => {
         <div className="icons">
           <div id="login-btn" className="fas fa-user"></div>
           <div id="menu-btn" className="fas fa-bars"></div>
+          <img src=''/>
         </div>
       </header>
     </>

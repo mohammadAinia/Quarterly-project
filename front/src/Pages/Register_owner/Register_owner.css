@@ -81,6 +81,7 @@ form .input-box span.details{
  form .category label{
    display: flex;
    align-items: center;
+   padding: 20px;
    cursor: pointer;
  }
  form .category label span{
@@ -122,7 +123,7 @@ form .input-box span.details{
    background: linear-gradient(135deg, #f18221, #ea9f5d);
  }
  form .button input:hover{
-  /* transform: scale(0.99); */
+  transform: scale(0.99);
   background: linear-gradient(-135deg, #f18221, #ea9f5d);
   }
   form .buttonn a {

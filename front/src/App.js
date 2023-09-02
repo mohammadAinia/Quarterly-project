@@ -2,14 +2,15 @@
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
-import { Header, Container, Login, Register_owner ,Register_veterinarian ,Home , Type ,Verification} from './Componets/index'
+import { Header, Container, Login, Register_owner , Animal,
+  Register_veterinarian ,Home , Type ,Verification , Add_animal} from './Componets/index'
 
 const App = () => {
   return (
     <>
       <Router>
         <Header />
-        {/* <Verification /> */}
+        <Animal />
         <Container>
           <Routes>
               <Route path='/' element={<Home/>}/>
