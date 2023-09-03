@@ -7,6 +7,8 @@ router.post('/sign-up', userController.singup)
 //login
 router.post('/login', userController.login)
 
-// router.get('/home',requireAuth,(req,res)=>{console.log("jsjs")})
+router.get('/home',userController.show_users)
+router.get('/logout', userController.logout)
 
+//requireAuth.requireAuth,
 module.exports=router

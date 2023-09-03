@@ -5,17 +5,19 @@ const requireAuth=(req,res,next) => {
 
     // check json web token exists & is verified
     if (token) {
-        jwt.verify(token,'net ninja secret',(err,decodedToken) => {
+        jwt.verify(token,'JWT',(err,decodedToken) => {
             if (err) {
+                console.log("hshshs")
                 console.log(err.message);
-                res.redirect('/login');
+                // res.redirect('/login');
             } else {
                 console.log(decodedToken);
                 next();
             }
         });
     } else {
-        res.redirect('/login');
+        // res.redirect('/login');
+        console.log("omg ")
     }
 };
 module.exports={requireAuth}

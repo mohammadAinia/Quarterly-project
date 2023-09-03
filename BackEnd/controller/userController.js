@@ -5,7 +5,7 @@ const jwt=require("jsonwebtoken")
 
 const maxAge = 3 * 24 * 60 * 60;
 const createToken = (id) => {
-  return jwt.sign({ id }, 'net ninja secret', {
+  return jwt.sign({ id }, 'JWT', {
     expiresIn: maxAge
   });
 };
@@ -15,9 +15,7 @@ const singup=(req,res)=> {
             if (result) {
                 res.status(409).json({
                     message: "email alrady exist ",
-
                 })
-
             }
             else {
                 bcryptjs.genSalt(10, (err,salt)=> {
@@ -65,8 +63,7 @@ function login(req,res) {
         user => {
             if (user==null) {
                 res.status(401).json({
-                    message: "invalid information",
-
+                    message: "this email is not exist",
                 })
             }
             else if
@@ -84,12 +81,12 @@ function login(req,res) {
                         //     })
                         // })
                         const token = createToken(user.id);
-                        res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
+                        res.cookie('JWT', token, { httpOnly: true, maxAge: maxAge * 1000 });
                         res.status(200).json({ user: user.id,name:user.fullname })
                     }
                     else {
                         res.status(401).json({
-                            message: "invalid information",
+                            message: "incorrect password",
 
                         })
                     }
@@ -109,12 +106,12 @@ function login(req,res) {
                         //     })
                         // })
                         const token = createToken(user.id);
-                        res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
+                        res.cookie('JWT', token, { httpOnly: true, maxAge: maxAge * 1000 });
                         res.status(200).json({ user: user.id,name:user.fullname })
                     }
                     else {
                         res.status(401).json({
-                            message: "invalid information",
+                            message: "incorrect password",
 
                         })
                     }
@@ -124,7 +121,7 @@ function login(req,res) {
     ).catch(
         error => {
             res.status(500).json({
-                message: "somthing wrong",
+                message: "somthing wrong"+error,
 
             })
         }
@@ -132,11 +129,27 @@ function login(req,res) {
 }
 
 function logout(req,res) {
-
+    res.cookie('JWT', '', { maxAge: 1 });
+    res.status(200).json({message:"ok is done"})
+    //redirect to the home page here
 }
 
+function show_users(req,res){
+    models.user_info.findAll().then(
+        data=>{
+            res.status(200).json({data})
+        }
+    )
+    .catch(
+        err=>
+        res.status(404).json({err})
+        
+    )
+}
 module.exports=
 {
     singup: singup,
-    login: login
+    login: login,
+    show_users:show_users,
+    logout:logout
 }
