@@ -1,8 +1,10 @@
 'use strict';
+const { isEmail }=require('validator');
+
 /** @type {import('sequelize-cli').Migration} */
-module.exports = {
-  async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('user_info', {
+module.exports={
+  async up(queryInterface,Sequelize) {
+    await queryInterface.createTable('user_info',{
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -13,10 +15,16 @@ module.exports = {
         type: Sequelize.STRING
       },
       email: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        required: [true,'Please enter an email'],
+        unique: true,
+        lowercase: true,
+        validate: [isEmail,'Please enter a valid email']
       },
       password: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        required: [true,'Please enter a password'],
+        minlength: [6,'Minimum password length is 6 characters'],
       },
       phone: {
         type: Sequelize.INTEGER
@@ -34,7 +42,7 @@ module.exports = {
       }
     });
   },
-  async down(queryInterface, Sequelize) {
+  async down(queryInterface,Sequelize) {
     await queryInterface.dropTable('user_infos');
   }
 };
