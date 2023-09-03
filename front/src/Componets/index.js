@@ -8,6 +8,8 @@ export {default as Register_veterinarian} from '../Pages/Register_veterinarian/R
 export {default as Verification} from '../Pages/Verification/Verification'
 export {default as Add_animal} from '../Pages/Add_animal/Add_animal'
 export {default as Animal} from '../Pages/Animal/Animal'
+export {default as Search} from '../Pages/Search/Search'
+
 
 
 
