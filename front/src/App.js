@@ -3,7 +3,7 @@
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
-import { Header, Container, Login, Register_owner , Animal,Search, Parrot_info,Fish_info,
+import { Header, Container, Login, Register_owner , Animal,Search, Parrot_info,Fish_info,Card,
   Register_veterinarian ,Home , Type ,Verification , Add_animal} from './Componets/index'
 
 const App = () => {
@@ -11,7 +11,7 @@ const App = () => {
     <>
       <Router>
         <Header />
-        {/* <Fish_info/> */}
+        <Animal/>
         <Container>
           <Routes>
               <Route path='/' element={<Home/>}/>
