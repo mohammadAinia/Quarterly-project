@@ -38,7 +38,7 @@ const Animal = () => {
                         <img src={animal_3} alt="" />
                         <div className="content">
                             <h3>Parrot</h3>
-                            <a href="#" className="btn">see datails</a>
+                            <a href="/Parrot_info" className="btn">see datails</a>
                         </div>
                     </div>
 
