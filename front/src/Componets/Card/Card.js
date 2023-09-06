@@ -3,7 +3,6 @@ import './Card.css'
 const Card = (props) => {
     return (
         <>
-            <section className="animal" id="animal" >
 
                 <div className="box-container">
                     <div className="box">
@@ -15,8 +14,6 @@ const Card = (props) => {
                     </div>
 
                 </div>
-
-            </section>
         </>
     )
 }

@@ -12,6 +12,8 @@ export {default as Search} from '../Pages/Search/Search'
 export {default as Parrot_info} from '../Pages/Bief_animal/parrot_info/Parrot_info'
 export {default as Fish_info} from '../Pages/Bief_animal/Fish_info/Fish_info'
 export {default as Card} from './Card/Card'
+export {default as SectionHeader} from './SectionHeader/SectionHeader'
+
 
 
 

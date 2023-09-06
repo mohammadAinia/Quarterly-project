@@ -14,11 +14,9 @@ const Parrot_info = () => {
                             sounds and words.
                             This is what made it popular with everyone, as it can imitate about 800 words.</p>
                     </div>
-
                     <div className="image">
                         <img src={bunner} alt="" />
                     </div>
-
                 </div>
 
             </section>
