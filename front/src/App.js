@@ -1,8 +1,9 @@
 // Shift+Alt+F
+// sahm + option + f
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
-import { Header, Container, Login, Register_owner , Animal,Search,
+import { Header, Container, Login, Register_owner , Animal,Search, Parrot_info,Fish_info,Card,
   Register_veterinarian ,Home , Type ,Verification , Add_animal} from './Componets/index'
 
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
     <>
       <Router>
         <Header />
+        {/* <Animal/> */}
         <Container>
           <Routes>
               <Route path='/' element={<Home/>}/>
@@ -21,6 +23,8 @@ const App = () => {
               <Route path='/Back_to_type' element={<Type/>}/>
               <Route path='/Animal' element={<Animal/>}/>
               <Route path='/Search' element={<Search/>}/>
+              <Route path='/Parrot_info' element={<Parrot_info/>}/>
+
           </Routes>
         </Container>
       </Router>

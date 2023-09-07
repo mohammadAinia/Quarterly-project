@@ -1,23 +1,23 @@
 import './Search.css'
+const Search = (props) => {
 
-const Search = () => {
     return (
         <>
             <div class="container">
-                <div class="title">Search Animals</div>
+                <div class="title">{props.title}</div>
                 <div class="content">
                     <form action="#">
                         <div class="user-details">
                             <div class="input-box">
                                 {/* <span class="details">Email</span> */}
-                                <input style={{"width":"300px"}} type="text" placeholder="Enter name animal" required />
+                                <input style={{"width":"300px"}} type="text" placeholder={props.placeholder} required />
                             </div>
                         </div>
                         <div class="button">
-                            <input type="submit" value="Search" />
+                            <input type="submit" value={props.value} />
                         </div>
                         <div class="button">
-                            <a style={{"width":"150px"}} href="/Animal">Back</a>
+                            <a style={{"width":"150px"}} href={props.href}>{props.a}</a>
                         </div>
                     </form>
                 </div>
@@ -25,5 +25,4 @@ const Search = () => {
         </>
     )
 }
-
 export default Search
