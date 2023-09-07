@@ -1,4 +1,6 @@
+// import './Register_veterinarian.css'
 import './Register_veterinarian.css'
+
 
 const Register_veterinarian = () => {
   return (
@@ -55,7 +57,7 @@ const Register_veterinarian = () => {
                 </div>
                 <div class="input-box">
                   <span class="details">Details of previous work</span>
-                  <input type="text" placeholder="Optinal" required />
+                  <input type="text" placeholder="Optinal"  />
                 </div>
                 <div class="input-box">
                   <span class="details">Photograph</span>

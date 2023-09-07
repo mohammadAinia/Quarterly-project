@@ -9,7 +9,7 @@ const Login = () => {
                     <form action="#">
                         <div class="user-details">
                             <div class="input-box">
-                                <span class="details">Email</span>
+                                <span class="details">Email *</span>
                                 <input type="text" placeholder="Enter your email" required />
                             </div>
                             <div class="input-box">

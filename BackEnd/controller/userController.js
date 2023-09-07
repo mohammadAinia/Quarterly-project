@@ -81,7 +81,8 @@ function login(req,res) {
                         // })
                         const token = createToken(user.id);
                         res.cookie('JWT', token, { httpOnly: true, maxAge: maxAge * 1000 });
-                        res.status(200).json({ user: user.id,name:user.fullname })
+                        res.status(200).json(result)
+                        // { user: user.id,name:user.fullname }
                     }
                     else {
                         res.status(401).json({
@@ -106,7 +107,8 @@ function login(req,res) {
                         // })
                         const token = createToken(user.id);
                         res.cookie('JWT', token, { httpOnly: true, maxAge: maxAge * 1000 });
-                        res.status(200).json({ user: user.id,name:user.fullname })
+                        res.status(200).json(result)
+                        //{ user: user.id,name:user.fullname }
                     }
                     else {
                         res.status(401).json({
