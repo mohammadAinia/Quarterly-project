@@ -67,7 +67,7 @@ function destroy(req,res) {
     const id=req.params.id
 
     // const userId=1
-    models.animal.destroy({ where: { id: id } }).then(result => {
+    models.animal.destroy({ where: { id:id } }).then(result => {
         res.status(200).json({
             message: "animal deleted",
         })
