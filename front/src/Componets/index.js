@@ -8,11 +8,13 @@ export {default as Register_veterinarian} from '../Pages/Register_veterinarian/R
 export {default as Verification} from '../Pages/Verification/Verification'
 export {default as Add_animal} from '../Pages/Add_animal/Add_animal'
 export {default as Animal} from '../Pages/Animal/Animal'
-export {default as Search} from '../Pages/Search/Search'
+export {default as Search} from './Search/Search'
 export {default as Parrot_info} from '../Pages/Bief_animal/parrot_info/Parrot_info'
 export {default as Fish_info} from '../Pages/Bief_animal/Fish_info/Fish_info'
 export {default as Card} from './Card/Card'
 export {default as SectionHeader} from './SectionHeader/SectionHeader'
+export {default as Search_animal} from '../Pages/Search_animal/Search_animal'
+
 
 
 
