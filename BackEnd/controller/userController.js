@@ -57,7 +57,6 @@ const singup=(req,res)=> {
 
 }
 function login(req,res) {
-
     models.user_info.findOne({ where: { email: req.body.email } }).then(
         user => {
             if (user==null) {
