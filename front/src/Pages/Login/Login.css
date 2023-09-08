@@ -64,6 +64,7 @@ form .input-box span.details{
   border-bottom-width: 2px;
   transition: all 0.3s ease;
 }
+
 .user-details .input-box input:focus,
 .user-details .input-box input:valid{
   border-color: #f18221;
@@ -118,10 +119,27 @@ form .input-box span.details{
    transition: all 0.3s ease;
    background: linear-gradient(135deg, #f18221, #ea9f5d);
  }
+ form .button button{
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #f18221, #ea9f5d);
+}
  form .button input:hover{
   /* transform: scale(0.99); */
   background: linear-gradient(-135deg, #f18221, #ea9f5d);
   }
+  form .button button:hover{
+    /* transform: scale(0.99); */
+    background: linear-gradient(-135deg, #f18221, #ea9f5d);
+    }
   form .button a {
     height: 100%;
     width: 100%;
