@@ -20,11 +20,11 @@ const singup=(req,res)=> {
                 bcryptjs.genSalt(10, (err,salt)=> {
                     bcryptjs.hash(req.body.password,salt,function (err,hash) {
                         const user={
-                            fullname: req.body.fullname,
+                            first_name: req.body.first_name,
+                            last_name: req.body.last_name,
                             email: req.body.email,
                             phone: req.body.phone,
                             password: hash,
-                            rolee: req.body.rolee
 
                         }
                         models.user_info.create(user).then(
@@ -107,7 +107,6 @@ function login(req,res) {
                         const token = createToken(user.id);
                         res.cookie('JWT', token, { httpOnly: true, maxAge: maxAge * 1000 });
                         res.status(200).json(result)
-                        //{ user: user.id,name:user.fullname }
                     }
                     else {
                         res.status(401).json({
