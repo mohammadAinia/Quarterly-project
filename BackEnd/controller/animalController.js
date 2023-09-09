@@ -1,7 +1,7 @@
 const models=require("../models")
 const validateor=require('fastest-validator')
 
-function show_all(req,res) {
+function show_all_animal(req,res) {//tested
 
     models.animal.findAll().then(
         result => {
@@ -17,7 +17,33 @@ function show_all(req,res) {
         )
 
 }
-function add_animal(req,res) {
+function search_animal(req,res) {//tested 1 issue server is off when i find
+    const name=req.body.name
+    models.animal.findAll(name).then(
+        result => {
+            if(result){
+                res.status(200).json(result)
+
+            }
+            else {
+                res.status(404).json({
+                    message:" error in search function404 "
+                })
+            }
+            res.status(200).json(result)
+
+        }
+
+    ).catch(
+        error => {
+            res.status(500).json({
+                message: "error in search function500"
+            })
+        }
+    )
+}
+
+function add_animal(req,res) { //tested suc
     const animal={
         name: req.body.name,
         type: req.body.type,
@@ -63,7 +89,7 @@ function add_animal(req,res) {
         })
     });
 }
-function destroy(req,res) {
+function destroy_animal(req,res) { //tested
     const id=req.params.id
 
     // const userId=1
@@ -109,8 +135,9 @@ function update(req,res) {
 }
 module.exports={
     add_animal: add_animal,
-    destroy: destroy,
-    show_all: show_all,
-    update:update
+    destroy_animal: destroy_animal,
+    show_all_animal: show_all_animal,
+    update:update,
+    search_animal:search_animal
 
 }
