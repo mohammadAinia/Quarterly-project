@@ -4,7 +4,7 @@ const Header = () => {
     <>
       <header className="header">
 
-        <a href="#" className="logo"> <i className="fas fa-paw"></i> PetCare</a>
+        <a href="/" className="logo"> <i className="fas fa-paw"></i> PetCare</a>
 
         <nav className="navbar">
           <a href="/">Home</a>

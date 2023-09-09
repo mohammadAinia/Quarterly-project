@@ -9,7 +9,7 @@ const Card = (props) => {
                         <img src={props.image} alt="" />
                         <div className="content">
                             <h3>{props.name}</h3>
-                            <a href="#" className="btn">see datails</a>
+                            <a href={props.href} className="btn">see datails</a>
                         </div>
                     </div>
 

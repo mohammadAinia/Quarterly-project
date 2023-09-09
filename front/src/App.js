@@ -3,7 +3,7 @@
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
-import { Header, Container, Login, Register_owner , Animal,Search, Parrot_info,Fish_info,Card,
+import { Header, Container, Login, Register_owner , Animal,Search,Search_animal, Parrot_info,Fish_info,Card,
   Register_veterinarian ,Home , Type ,Verification , Add_animal} from './Componets/index'
 
 const App = () => {
@@ -22,8 +22,10 @@ const App = () => {
               <Route path='/Back' element={<Login/>}/>
               <Route path='/Back_to_type' element={<Type/>}/>
               <Route path='/Animal' element={<Animal/>}/>
-              <Route path='/Search' element={<Search/>}/>
-              <Route path='/Parrot_info' element={<Parrot_info/>}/>
+              <Route path='/Search' element={<Search_animal/>}/>
+              <Route path='/parrot' element={<Parrot_info/>}/>
+              <Route path='/fish' element={<Fish_info/>}/>
+
 
           </Routes>
         </Container>
