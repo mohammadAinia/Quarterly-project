@@ -1,8 +1,9 @@
+import { useNavigate } from 'react-router-dom'
 import './Login.css'
 // import { Search_animal } from '../../Componets/index'
 import React,{ useState } from 'react'
 const Login=() => {
-
+    const navigate = useNavigate()
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('')
 
@@ -20,8 +21,10 @@ const Login=() => {
         })
         const json=await response.json()
         if (response.ok) {
-            console.log("hello")
-            // <Search_animal/>
+            console.log("hello");
+            navigate("/")
+            //response.json({})
+            
         }
         else if (!response.ok)
             console.log(Error)
