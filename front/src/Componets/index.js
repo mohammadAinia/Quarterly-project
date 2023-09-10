@@ -1,4 +1,4 @@
-export {default as Header} from '../section/Header/Header'
+export {default as Header} from './Header/Header'
 export {default as Container} from './Container/Container'
 export {default as Login} from '../Pages/Login/Login'
 export {default as Register_owner} from '../Pages/Register_owner/Register_owner'
@@ -14,6 +14,8 @@ export {default as Fish_info} from '../Pages/Bief_animal/Fish_info/Fish_info'
 export {default as Card} from './Card/Card'
 export {default as SectionHeader} from './SectionHeader/SectionHeader'
 export {default as Search_animal} from '../Pages/Search_animal/Search_animal'
+export {default as Animal_info} from './Animal_info/Animal_info'
+
 
 
 

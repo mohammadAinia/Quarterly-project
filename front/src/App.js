@@ -10,8 +10,6 @@ const App = () => {
   return (
     <>
       <Router>
-        <Header />
-        {/* <Animal/> */}
         <Container>
           <Routes>
               <Route path='/' element={<Home/>}/>
