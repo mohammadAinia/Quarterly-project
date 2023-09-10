@@ -1,31 +1,33 @@
 import './Login.css'
-import { Search_animal } from '../../Componets/index'
-import React, { useState } from 'react'
-const Login = () => {
+// import { Search_animal } from '../../Componets/index'
+import React,{ useState } from 'react'
+const Login=() => {
 
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const [email,setEmail]=useState('')
+    const [password,setPassword]=useState('')
 
-    const handleSubmit = async (e) => {
+    const handleSubmit=async (e) => {
         e.preventDefault()
-    
-        const workout = {email, password, }
-    
-        const response = await fetch('/user/login', {
-          method: 'POST',
-          body: JSON.stringify(workout),
-          headers: {
-            'Content-Type': 'application/json'
-          }
+
+        const workout={ email,password}
+
+        const response=await fetch('/user/login',{
+            method: 'POST',
+            body: JSON.stringify(workout),
+            headers: {
+                'Content-Type': 'application/json'
+            }
         })
-        const json = await response.json()
-        if (response.ok){
-            <Search_animal/>
+        const json=await response.json()
+        if (response.ok) {
+            console.log("hello")
+            // <Search_animal/>
         }
-        else if(!response.ok)
-        console.log(json.error)
+        else if (!response.ok)
+            console.log(Error)
+            
     }
-    
+
     return (
         <>
             <div className="container">
