@@ -24,10 +24,16 @@ const Login = () => {
         })
         const json = await response.json()
         if (response.ok) {
+            localStorage.setItem("token" , response.data.token)
             console.log("hello");
             navigate("/")
 
         }
+        // if (response.Login) {
+        //     console.log("hello");
+        //     navigate("/")
+
+        // }
         else if (!response.ok)
             console.log(Error)
 

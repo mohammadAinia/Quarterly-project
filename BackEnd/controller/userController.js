@@ -157,7 +157,12 @@ function login(req,res) {
                         // })
                         const token=createToken(user.id);
                         res.cookie('JWT',token,{ httpOnly: true,maxAge: maxAge*1000 });
-                        res.status(200).json(result)
+                        res.status(200).json(result);
+
+                        // return res.status(200).json(result , token);
+
+                        // return res.json({Login: true , token,result})
+
                         // { user: user.id,name:user.fullname }
                     }
                     else {
