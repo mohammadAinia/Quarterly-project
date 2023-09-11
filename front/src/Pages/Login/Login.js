@@ -1,38 +1,42 @@
 import { useNavigate } from 'react-router-dom'
 import './Login.css'
 // import { Search_animal } from '../../Componets/index'
-import React,{ useState } from 'react'
-const Login=() => {
-    const navigate = useNavigate()
-    const [email,setEmail]=useState('')
-    const [password,setPassword]=useState('')
+import React, { useState } from 'react'
+import { Header } from '../../Componets'
 
-    const handleSubmit=async (e) => {
+const Login = () => {
+
+    const navigate = useNavigate()
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    const handleSubmit = async (e) => {
         e.preventDefault()
 
-        const workout={ email,password}
+        const workout = { email, password }
 
-        const response=await fetch('/user/login',{
+        const response = await fetch('/user/login', {
             method: 'POST',
             body: JSON.stringify(workout),
             headers: {
                 'Content-Type': 'application/json'
             }
         })
-        const json=await response.json()
+        const json = await response.json()
         if (response.ok) {
             console.log("hello");
             navigate("/")
-            //response.json({})
-            
+
         }
         else if (!response.ok)
             console.log(Error)
-            
+
     }
 
     return (
         <>
+            <Header href1={"/Animal"} a1={"Animal"} href3={"#"} a3={"Common Problems"} href2={"#"} a2={"Adopt Animal"} href4={"/login"} a4={"Login"} />
+
             <div className="container">
                 <div className="title">Login</div>
                 <div className="content">
