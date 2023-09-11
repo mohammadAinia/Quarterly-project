@@ -1,5 +1,6 @@
 const models=require("../models")
 const validateor=require('fastest-validator')
+const sequelize =require('sequelize')
 
 function show_all_animal(req,res) {//tested
 
@@ -19,8 +20,10 @@ function show_all_animal(req,res) {//tested
 }
 function search_animal(req,res) {//tested 1 issue server is off when i find
     const name=req.body.name
-    models.animal.findAll(name).then(
+    
+    models.animal.findOne({name,attributes:['name']}).then(
         result => {
+            
             if(result){
                 res.status(200).json(result)
 
@@ -30,7 +33,7 @@ function search_animal(req,res) {//tested 1 issue server is off when i find
                     message:" error in search function404 "
                 })
             }
-            res.status(200).json(result)
+            
 
         }
 

@@ -2,38 +2,23 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('veterinarians', {
+    await queryInterface.createTable('veterinarianns', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      first_name: {
-        type: Sequelize.STRING
-      },
-      last_name: {
-        type: Sequelize.STRING
-      },
-      password: {
-        type: Sequelize.STRING
-      },
-      age: {
-        type: Sequelize.DATE
-      },
-      gender: {
-        type: Sequelize.STRING
+      user_id: {
+        type: Sequelize.INTEGER
       },
       address: {
-        type: Sequelize.STRING
-      },
-      email: {
         type: Sequelize.STRING
       },
       bsc: {
         type: Sequelize.STRING
       },
-      universtiy: {
+      university: {
         type: Sequelize.STRING
       },
       bscImage: {
@@ -45,10 +30,10 @@ module.exports = {
       num_year_exp: {
         type: Sequelize.INTEGER
       },
-      details: {
+      deatalis: {
         type: Sequelize.STRING
       },
-      personalImage: {
+      personImage: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -62,6 +47,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('veterinarians');
+    await queryInterface.dropTable('veterinarianns');
   }
 };
