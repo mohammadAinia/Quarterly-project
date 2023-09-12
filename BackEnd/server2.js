@@ -43,6 +43,7 @@ app.post('/login', (req, res) => {
         if (err) return res.json({ Message: 'Error inside server' })
 
         if (result.length > 0) {
+            
             req.session.username = result[0].name
             console.log(req.session.username)
             return res.json({ Login: true, username: req.session.username })

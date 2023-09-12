@@ -42,7 +42,7 @@ const Login = () => {
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
         e.preventDefault()
-        axios.post('http://localhost:3001/login', { email, password })
+        axios.post('http://localhost:3001/user/login', { email, password })
             .then(res => {
                 if (res.data.Login) {
                     navigate('/')

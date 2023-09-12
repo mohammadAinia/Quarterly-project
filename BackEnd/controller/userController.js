@@ -1,13 +1,5 @@
 const models=require("../models")
 const bcryptjs=require("bcryptjs")
-const jwt=require("jsonwebtoken")
-const maxAge=3*24*60*60;
-const createToken=(id) => {
-    return jwt.sign({ id },'JWT',{
-        expiresIn: maxAge
-    });
-};
-
 const singup_vet=(req,res) => {
     models.user_info.findOne({ where: { email: req.body.email } }).then(
         result => {
@@ -87,7 +79,7 @@ const singup_user=(req,res) => {
         result => {
             if (result) {
                 res.status(409).json({
-                    message: "email alrady exist ",
+                    message: "email user alrady exist ",
                 })
             }
             else {
@@ -99,15 +91,18 @@ const singup_user=(req,res) => {
                             email: req.body.email,
                             phone: req.body.phone,
                             password: hash,
-
+                            rolee: "user",
+                            age: req.body.age,
+                            gender: req.body.gender,
                         }
                         models.user_info.create(user).then(
                             result => {
-                                const token=createToken(user.user_id);
-                                res.cookie('JWT',token,{ httpOnly: true,maxAge: maxAge*1000 });
-                                //هون بدي حط انو يوجهو للصفحة الرئيسية 
+                                req.session.username=user.id
+                                console.log(req.session.username)
                                 res.status(201).json({
-                                    message: "user created suc",
+                                    message: "user created suc"+
+                                   req.session.username ,
+                                    
                                 })
                             }
                         ).catch(error => {
@@ -142,28 +137,13 @@ function login(req,res) {
                 })
             }
             else if
-                (user.rolbsc=="DOC") {
+                (user.rolee=="DOC") {
                 bcryptjs.compare(req.body.password,user.password,function (err,result) {
                     if (result) {
-                        // const token=jwt.sign({
-                        //     email: user.email,
-                        //     userId: user.id
-                        // },"JWT_KEY",function (err,token) {
-                        //     res.status(200).json({
-                        //         message: "doc authont succsesful",
-                        //         token:token
+                        req.session.username=user.id
+                        // console.log(req.session.username)
+                        res.json({ Login: true, username: req.session.username });
 
-                        //     })
-                        // })
-                        const token=createToken(user.id);
-                        res.cookie('JWT',token,{ httpOnly: true,maxAge: maxAge*1000 });
-                        res.status(200).json(result);
-
-                        // return res.status(200).json(result , token);
-
-                        // return res.json({Login: true , token,result})
-
-                        // { user: user.id,name:user.fullname }
                     }
                     else {
                         res.status(401).json({
@@ -176,19 +156,9 @@ function login(req,res) {
             else {
                 bcryptjs.compare(req.body.password,user.password,function (err,result) {
                     if (result) {
-                        // const token=jwt.sign({
-                        //     email: user.email,
-                        //     userId: user.id
-                        // },process.env.JWT_KEY,function (err,token) {
-                        //     res.status(200).json({
-                        //         message: "user authont succsesful",
-                        //         token: token
-
-                        //     })
-                        // })
-                        const token=createToken(user.id);
-                        res.cookie('JWT',token,{ httpOnly: true,maxAge: maxAge*1000 });
-                        res.status(200).json(result)
+                        req.session.username=user.id
+                        console.log(req.session.username)
+                        res.json({ Login: true, username: req.session.username });
                     }
                     else {
                         res.status(401).json({
@@ -208,48 +178,11 @@ function login(req,res) {
         }
     )
 }
-async function qlogin(req,res) {
 
-    const isvet=models.veterinarians.findOne({ where: { email: req.body.email } })
-    const isuser=models.user_info.findOne({ where: { email: req.body.email } })
-    if (isvet!=null) {
-
-        bcryptjs.compare(req.body.password,user.password,function (err,result) {
-            if (result) {
-
-                const token=createToken(isvet.id);
-                res.cookie('JWT',token,{ httpOnly: true,maxAge: maxAge*1000 });
-                res.status(200).json(result+"hello vet")
-                // { user: user.id,name:user.fullname }
-            }
-            else {
-                res.status(401).json({
-                    message: "incorrect password",
-
-                })
-            }
-        })
-    }
-    else if (isuser!=null) {
-
-        bcryptjs.compare(req.body.password,user.password,function (err,result) {
-            if (result) {
-                const token=createToken(isuser.id);
-                res.cookie('JWT',token,{ httpOnly: true,maxAge: maxAge*1000 });
-                res.status(200).json(result)
-            }
-            else {
-                res.status(401).json({
-                    message: "incorrect password",
-                })
-            }
-        })
-    }
-}
 
 
 function logout(req,res) {
-    res.cookie('JWT','',{ maxAge: 1 });
+    
     res.status(200).json({ message: "ok is done" })
     //redirect to the home page here
 }
