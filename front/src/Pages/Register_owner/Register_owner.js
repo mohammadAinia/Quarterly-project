@@ -1,6 +1,8 @@
 import './Register_owner.css'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import { Header } from '../../Componets'
 
 
 const Register_owner = () => {
@@ -12,47 +14,42 @@ const Register_owner = () => {
     const [Email, setEmail] = useState('')
     const [Phone, setPhone] = useState('')
     const [Password, setPassword] = useState('')
+    const [Confirm, setConfirm] = useState('')
 
-
-
+    axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
-        e.preventDefault()
+        if (Password === Confirm) {
+            e.preventDefault()
 
-        // const workout = { First_name, Last_name , Email, Phone , Password }
-        const workout = { First_name, Email, Password }
-
-        const response = await fetch('http://localhost:3001/signup', {
-            method: 'POST',
-            body: JSON.stringify(workout),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        if(response.ok){
-            console.log(response)
-            navigate('/login')
+            axios.post('http://localhost:3001/user/signup', { First_name, Last_name, Phone, Email, Password })
+                .then(res => { navigate('/login') })
+                .catch(err => alert("Error"))
         }
-        else{
-            alert("error")
-        }
+        else{alert("password not match")}
     }
-    //     const response = await fetch('http://localhost:3001/signup', {
-    //         method: 'POST',
-    //         body: JSON.stringify(workout),
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         }
-    //     })
+    // const workout = { First_name, Last_name , Email, Phone , Password }
+    // const workout = { First_name, Email, Password }
 
-    //     const json = await response.json()
-    //     if (response.ok) {
-    //         console.log("hello")
+    // const response = await fetch('http://localhost:3001/signup', {
+    //     method: 'POST',
+    //     body: JSON.stringify(workout),
+    //     headers: {
+    //         'Content-Type': 'application/json'
     //     }
-    //     else if (!response.ok)
-    //         console.log(json.error)
+    // })
+    // if (response.ok) {
+    //     console.log(response)
+    //     navigate('/login')
     // }
+    // else {
+    //     alert("error")
+    // }
+    // }
+
     return (
         <div>
+            <Header href1={"/Animal"} a1={"Animal"} href3={"#"} a3={"Common Problems"} href2={"#"} a2={"Adopt Animal"} href4={"/login"} a4={"Login"} />
+
             <div className="container">
                 <div className="title">Registration Owner</div>
                 <div className="content">
@@ -80,7 +77,7 @@ const Register_owner = () => {
                             </div>
                             <div className="input-box">
                                 <span className="details">Confirm Password *</span>
-                                <input type="password" required />
+                                <input type="password" required onChange={e => setConfirm(e.target.value)} />
                             </div>
                         </div>
                         <div className="button">
