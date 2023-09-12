@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 import './Login.css'
 // import { Search_animal } from '../../Componets/index'
 import React, { useState } from 'react'
@@ -10,34 +11,49 @@ const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault()
+
+    //     const workout = { email, password }
+
+    //     const response = await fetch('/user/login', {
+    //         method: 'POST',
+    //         body: JSON.stringify(workout),
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         }
+    //     })
+    //     const json = await response.json()
+    //     if (response.ok) {
+    //         //localStorage.setItem("token" , response.data.token)
+    //         console.log("hello");
+    //         navigate("/")
+
+    //     }
+    //     // if (response.Login) {
+    //     //     console.log("hello");
+    //     //     navigate("/")
+
+    //     // }
+    //     else if (!response.ok)
+    //         console.log(Error)
+
+    // }
+    axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
         e.preventDefault()
-
-        const workout = { email, password }
-
-        const response = await fetch('/user/login', {
-            method: 'POST',
-            body: JSON.stringify(workout),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        const json = await response.json()
-        if (response.ok) {
-            localStorage.setItem("token" , response.data.token)
-            console.log("hello");
-            navigate("/")
-
-        }
-        // if (response.Login) {
-        //     console.log("hello");
-        //     navigate("/")
-
-        // }
-        else if (!response.ok)
-            console.log(Error)
-
+        axios.post('http://localhost:3001/login', { email, password })
+            .then(res => {
+                if (res.data.Login) {
+                    navigate('/')
+                }
+                else {
+                    alert('no record')
+                }
+            })
+            .catch(err => { console.log(err) })
     }
+
 
     return (
         <>
