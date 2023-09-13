@@ -1,7 +1,7 @@
 //gffdgfdfcvbcvb
 //vcvvcvcbvcvbvbbvcb
 //vcbvbvcbvbvbv
-var express = require('express')//jkghjjgfjhghhghfgf
+var express = require('express')
 var app = express()
 var cors = require('cors')
 var db = require('./model/db')
