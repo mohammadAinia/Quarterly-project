@@ -23,17 +23,16 @@ const Register_owner = () => {
         if (Password === Confirm) {
             e.preventDefault()
 
-                axios.post('http://localhost:3001/user/signup_user', {First_name, Last_name, Phone, Email, Password,Age,Gender})
-                .then(res => 
-                    {
-                        if (res.data.Login){
-                            navigate('/')
-                        }
+            axios.post('http://localhost:3001/user/signup_user', { First_name, Last_name, Phone, Email, Password, Age, Gender })
+                .then(res => {
+                    if (res.data.Login) {
+                        navigate('/Add_animal')
                     }
-                    )
-                .catch(err =>alert( err.data.message))
+                }
+                )
+                .catch(err => alert(err.data.message))
         }
-        else{alert("password not match")}
+        else { alert("password not match") }
     }
     // const workout = { First_name, Last_name , Email, Phone , Password }
     // const workout = { First_name, Email, Password }
@@ -90,6 +89,21 @@ const Register_owner = () => {
                             <div className="input-box">
                                 <span className="details">Confirm Password *</span>
                                 <input type="password" required onChange={e => setConfirm(e.target.value)} />
+                            </div>
+                            <div class="gender-details">
+                                <input type="radio" name="gender" id="dot-1" onChange={e => setGender(e.target.value)} />
+                                <input type="radio" name="gender" id="dot-2" onChange={e => setGender(e.target.value)} />
+                                <span class="gender-title">Gender *</span>
+                                <div class="category">
+                                    <label for="dot-1">
+                                        <span class="dot one"></span>
+                                        <span class="gender">Male</span>
+                                    </label>
+                                    <label for="dot-2">
+                                        <span class="dot two"></span>
+                                        <span class="gender">Female</span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
                         <div className="button">

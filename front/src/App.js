@@ -4,7 +4,7 @@ import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 import { Header, Container, Login, Register_owner , Animal,Search,Search_animal, Parrot_info,Fish_info,Card,
-  Register_veterinarian ,Home , Type ,Verification , Add_animal,Animal_infoo} from './Componets/index'
+  Register_veterinarian ,Home_owner , Type ,Verification , Add_animal,Animal_infoo} from './Componets/index'
 
 const App = () => {
   return (
@@ -13,7 +13,7 @@ const App = () => {
         <Container>
           <Routes>
             
-              <Route path='/' element={<Home/>}/>
+              <Route path='/' element={<Home_owner/>}/>
               <Route path='/login' element={<Login/>}/>
               <Route path='/Register_owner' element={<Register_owner/>}/>
               <Route path='/Register_veterinarian' element={<Register_veterinarian/>}/>
@@ -25,8 +25,7 @@ const App = () => {
               <Route path='/parrot' element={<Parrot_info/>}/>
               <Route path='/fish' element={<Fish_info/>}/>
               <Route path='/Animal_infoo' element={<Animal_infoo/>}/>
-
-
+              <Route path='/Add_animal' element={<Add_animal/>}/>
 
           </Routes>
         </Container>
