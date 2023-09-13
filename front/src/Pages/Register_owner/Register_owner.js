@@ -15,13 +15,15 @@ const Register_owner = () => {
     const [Phone, setPhone] = useState('')
     const [Password, setPassword] = useState('')
     const [Confirm, setConfirm] = useState('')
+    const [Age, setAge] = useState('')
+    const [Gender, setGender] = useState('')
 
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
         if (Password === Confirm) {
             e.preventDefault()
 
-                axios.post('http://localhost:3001/user/signup_user', {First_name, Last_name, Phone, Email, Password})
+                axios.post('http://localhost:3001/user/signup_user', {First_name, Last_name, Phone, Email, Password,Age,Gender})
                 .then(res => 
                     {
                         if (res.data.Login){
@@ -72,6 +74,10 @@ const Register_owner = () => {
                             <div className="input-box">
                                 <span className="details">Email *</span>
                                 <input type="email" required onChange={e => setEmail(e.target.value)} />
+                            </div>
+                            <div className="input-box">
+                                <span className="details">Age *</span>
+                                <input type="date" required onChange={e => setAge(e.target.value)} />
                             </div>
                             <div className="input-box">
                                 <span className="details">Phone Number *</span>
