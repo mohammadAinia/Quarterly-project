@@ -29,9 +29,15 @@ const Register_veterinarian = () => {
     if (Password === Confirm) {
       e.preventDefault()
 
-      axios.post('http://localhost:3001/user/signup', { First_name, Last_name, Phone, Email, Password, Age, Nationality, Addres, University, Bachelor, Previous_work, Photograph, Gender })
-        .then(res => { navigate('/login') })
-        .catch(err => alert("Error"))
+      axios.post('http://localhost:3001/user/signup_vet', { First_name, Last_name, Phone, Email, Password, Age, Nationality, Addres, University, Bachelor, Previous_work, Photograph, Gender })
+        .then(res => 
+          { 
+            if(res.data.Login){
+              navigate('/')
+            }
+          }
+          )
+        .catch(err => alert(err))
     }
     else{alert("password not match")}
 
@@ -115,8 +121,8 @@ const Register_veterinarian = () => {
                 </div>
               </div>
               <div className="gender-details">
-                <input type="radio" name="gender" id="dot-1" onChange={e => setGender(e.target.value)} />
-                <input type="radio" name="gender" id="dot-2" onChange={e => setGender(e.target.value)} />
+                <input type="radio" name="gender" id="dot-1" value="male" onChange={e => setGender(e.target.value)} />
+                <input type="radio" name="gender" id="dot-2" value="male" onChange={e => setGender(e.target.value)} />
                 <span className="gender-title">Gender *</span>
                 <div className="category">
                   <label for="dot-1">

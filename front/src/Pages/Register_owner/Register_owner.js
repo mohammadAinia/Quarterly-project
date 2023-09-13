@@ -21,9 +21,15 @@ const Register_owner = () => {
         if (Password === Confirm) {
             e.preventDefault()
 
-            axios.post('http://localhost:3001/user/signup', { First_name, Last_name, Phone, Email, Password })
-                .then(res => { navigate('/login') })
-                .catch(err => alert("Error"))
+                axios.post('http://localhost:3001/user/signup_user', {First_name, Last_name, Phone, Email, Password})
+                .then(res => 
+                    {
+                        if (res.data.Login){
+                            navigate('/')
+                        }
+                    }
+                    )
+                .catch(err =>alert( err.data.message))
         }
         else{alert("password not match")}
     }
