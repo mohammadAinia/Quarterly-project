@@ -1,3 +1,5 @@
+//fghdghdghsjsfdgjjtjytryjyys
+//kuhkhghdg
 var express = require('express')
 var app = express()
 var cors = require('cors')
@@ -5,7 +7,7 @@ var db = require('./model/db')
 var session = require('express-session')
 var cookie = require('cookie-parser')
 var bodyparser =require('body-parser')
-
+var bodyparser =require('body-parser')
 app.use(cookie())
 app.use(bodyparser.json())
 app.use(session({
