@@ -37,7 +37,7 @@ const singup_vet=(req,res) => {
                                 }
                                 models.veterinariann.create(veterinarians).then(
                                     result => {
-                                        req.session.username=user.first_name
+                                        req.session.username=user.email
                                         return res.json(
                                             { Login: true,username: req.session.username }
                                         )
@@ -45,7 +45,7 @@ const singup_vet=(req,res) => {
                                 )
                                     .catch(error => {
                                         return res.json({
-                                            value: false
+                                            valid: false
                                         })
                                     })
 
@@ -96,7 +96,7 @@ const singup_user=(req,res) => {
                         }
                         models.user_info.create(user).then(
                             result => {
-                                req.session.username=user.first_name
+                                req.session.username=user.email
                                 // console.log(req.session.username)
                                 return res.json(
 
@@ -105,12 +105,9 @@ const singup_user=(req,res) => {
                             }
                         ).catch(error => {
                             return res.json({
-                                value: false
-
-
+                                valid: false
                             })
                         })
-
                     })
                 })
             }
@@ -138,7 +135,7 @@ function login(req,res) {
                 (user.rolee=="DOC") {
                 bcryptjs.compare(req.body.password,user.password,function (err,result) {
                     if (result) {
-                        req.session.username=user.first_name
+                        req.session.username=user.email
                         console.log(user.first_name)
                         // console.log(req.session.username)
                         return res.json({ Login: true,username: req.session.username });
@@ -155,7 +152,7 @@ function login(req,res) {
             else if (user.rolee="user") {
                 bcryptjs.compare(req.body.password,user.password,function (err,result) {
                     if (result) {
-                        req.session.username=user.first_name
+                        req.session.username=user.email
                         console.log(user.first_name)
                         return res.json({ Login: true,username: req.session.username });
                     }
@@ -180,8 +177,6 @@ function login(req,res) {
     )
 }
 
-
-
 function logout(req,res) {
 
     res.status(200).json({ message: "ok is done" })
@@ -203,7 +198,16 @@ function show_users(req,res) {
 
 const home=(req,res) => {
     if (req.session.username) {
-        return res.json({ valid: true,username: req.session.username })
+        
+        models.user_info.findOne({where:{email:req.session.username}}).then(
+            res=>{
+                return res.json({ valid: true,username:res.first_name })
+            }
+        ).catch(
+            err=>{
+                return  res.json({valid :false})
+            }
+        )
     }
     else {
         return res.json({ valid: false })

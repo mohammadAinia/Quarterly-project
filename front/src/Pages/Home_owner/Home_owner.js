@@ -26,7 +26,7 @@ const Home_owner = () => {
       })
       .catch(err => { console.log(err) })
 
-    axios.get('http://localhost:3001/user/get_animal_owner')
+    axios.get('http://localhost:3001/animal/')
       .then(res => {
         if (res.data.valid) {
           setName_animal(res.data.name)

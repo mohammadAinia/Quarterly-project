@@ -10,35 +10,7 @@ const Login = () => {
     const navigate = useNavigate()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault()
-
-    //     const workout = { email, password }
-
-    //     const response = await fetch('/user/login', {
-    //         method: 'POST',
-    //         body: JSON.stringify(workout),
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         }
-    //     })
-    //     const json = await response.json()
-    //     if (response.ok) {
-    //         //localStorage.setItem("token" , response.data.token)
-    //         console.log("hello");
-    //         navigate("/")
-
-    //     }
-    //     // if (response.Login) {
-    //     //     console.log("hello");
-    //     //     navigate("/")
-
-    //     // }
-    //     else if (!response.ok)
-    //         console.log(Error)
-
-    // }
+    //////////////////////////////////////////////////////////
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
         e.preventDefault()

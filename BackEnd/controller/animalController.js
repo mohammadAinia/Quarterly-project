@@ -48,42 +48,46 @@ function search_animal(req,res) {//tested 1 issue server is off when i find
 
 function add_animal(req,res) { //tested suc
     const animal={
-        name: req.body.name,
-        type: req.body.type,
-        color: req.body.color,
-        age: req.body.age,
-        gender: req.body.gender,
-        food_type: req.body.food_type,
-        place: req.body.place,
-        owner: req.body.owner,
-        ownered: req.body.ownered,
-
-    }//object for save in my db
-    const schema={
-        name: { type: "string",optional: false },
-        type: { type: "string",optional: false },
-        color: { type: "string",optional: false },
-        age: { type: "number",optional: false },
-        gender: { type: "string",optional: false },
-        food_type: { type: "string",optional: false },
-        place: { type: "string",optional: false },
-        owner: { type: "string",optional: true },
-
+        name: req.body.Name,
+        color: req.body.Animal_coler,
+        age: req.body.Age,
+        gender: req.body.Gender,
+        place: req.body.Animal_place,
+        type:req.body.Type,
+        owner: req.session.username,
+         // picture:req.body.Picture,
+        // additional:req.body.Additional_details,
     }
-    const v=new validateor()
-    const validationRespo=v.validate(animal,schema)
-    if (validationRespo!==true) {
-        return res.status(400).json({
-            message: "validation faild",
-            errors: validationRespo
-        })
-    }
+    //object for save in my db
+    // const schema={
+    //     name: { type: "string",optional: false },
+    //     type: { type: "string",optional: false },
+    //     color: { type: "string",optional: false },
+    //     age: { type: "number",optional: false },
+    //     gender: { type: "string",optional: false },
+    //     food_type: { type: "string",optional: false },
+    //     place: { type: "string",optional: false },
+    //     owner: { type: "string",optional: true },
+
+    // }
+    // const v=new validateor()
+    // const validationRespo=v.validate(animal,schema)
+    // if (validationRespo!==true) {
+    //     return res.status(400).json({
+    //         message: "validation faild",
+    //         errors: validationRespo
+    //     })
+    // }
 
     models.animal.create(animal).then(result => {
-        res.status(201).json({
-            message: "animal add suc",
-            // post: result
-        })
+        if(req.session.username){
+            res.json({
+                Login:true,valid:true
+            })
+        }
+        else {
+        valid:false
+        }
 
     }).catch(error => {
         res.status(500).json({

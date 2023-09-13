@@ -15,12 +15,14 @@ const Add_animal = () => {
   const [Animal_place, setAnimal_place] = useState('')
   const [Additional_details, setAdditional_details] = useState('')
   const [Gender, setGender] = useState('')
+  const [Type, setType] = useState('')
+
 
 
   axios.defaults.withCredentials = true
   const handleSubmit = async (e) => {
     e.preventDefault()
-    axios.post('http://localhost:3001/add_animal', { Name, Age, Animal_coler, Picture, Animal_place, Additional_details, Gender })
+    axios.post('http://localhost:3001/animal/add-animal', { Name, Age, Animal_coler, Picture, Animal_place, Additional_details, Gender ,Type })
       .then(res => {
         if (res.data.valid) {
           navigate('/')
@@ -64,6 +66,10 @@ const Add_animal = () => {
                 <div class="input-box">
                   <span class="details">Additional details </span>
                   <input type="text" onChange={e => setAdditional_details(e.target.value)} />
+                </div>
+                <div class="input-box">
+                  <span class="details">type </span>
+                  <input type="text" onChange={e => setType(e.target.value)} />
                 </div>
                 <div class="gender-details">
 
