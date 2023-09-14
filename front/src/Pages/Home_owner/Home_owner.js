@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Card, Header, SectionHeader } from '../../Componets/index'
+import { Card, Common_proplem, Header, SectionHeader } from '../../Componets/index'
 import './Home_owner.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
@@ -51,9 +51,10 @@ const Home_owner = () => {
 
   return (
     <>
-      <Header href1={"/Animal"} a1={"Animal"} href2={"#"} a2={"Adopt Animal"} href3={"#"} a3={"Common Problems"}  href4={"/Add_Animal"} a4={"Add Animal"} href5={"/login"} a5={"Login"} />
+      <Header href1={"/Animal"} a1={"Animal"} href2={"#"} a2={"Adopt Animal"} href3={"#"} a3={"Common Problems"} href4={"/Add_Animal"} a4={"Add Animal"} href5={"/login"} a5={"Login"} />
+      <SectionHeader>Welcome {name}</SectionHeader>
 
-      <h1>Welcome {name}</h1>
+      {/* <h1>Welcome {name}</h1> */}
 
       <section className="animal" id="animal" >
 
@@ -72,6 +73,16 @@ const Home_owner = () => {
           })}
         </div>
       </section>
+      {/* <section class="pricing" id="pricing">
+
+
+        <div class="box-container">
+          
+          <Common_proplem/>
+        </div>
+
+      </section> */}
+      
     </>
   )
 }
