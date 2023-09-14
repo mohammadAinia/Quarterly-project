@@ -200,8 +200,17 @@ const home=(req,res) => {
     if (req.session.username) {
         
         models.user_info.findOne({where:{email:req.session.username}}).then(
-            res=>{
-                return res.json({ valid: true,username:res.first_name })
+            resp=>{
+                models.animal.findAll({where:{owner:req.session.username}}).then(
+                    ress=>{
+                        return res.json({ valid: true,username:resp.first_name ,name:ress.name,image:"", })
+                    }
+                )
+                .catch(
+                    err=>{
+                        return  res.json({valid :false})
+                    }
+                )
             }
         ).catch(
             err=>{

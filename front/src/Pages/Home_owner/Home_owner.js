@@ -19,6 +19,9 @@ const Home_owner = () => {
       .then(res => {
         if (res.data.valid) {
           setName(res.data.username)
+          setName_animal(res.data.name)
+          setImage(res.data.image)
+          setHref(res.data.href)
         }
         else {
           navigate('/login')
@@ -26,19 +29,20 @@ const Home_owner = () => {
       })
       .catch(err => { console.log(err) })
 
-    axios.get('http://localhost:3001/animal/')
-      .then(res => {
-        if (res.data.valid) {
-          setName_animal(res.data.name)
-          setImage(res.data.image)
-          setHref(res.data.href)
-        }
-        else {
-          alert("err")
-        }
-      })
-      .catch(err => { console.log(err) })
-  }, [])
+    // axios.get('http://localhost:3001/animal/')
+    //   .then(res => {
+    //     if (res.data.valid) {
+    //       setName_animal(res.data.name)
+    //       setImage(res.data.image)
+    //       setHref(res.data.href)
+    //     }
+    //     else {
+    //       alert("err")
+    //     }
+    //   })
+    //   .catch(err => { console.log(err) })
+  }, 
+  [])
 
 
   return (
