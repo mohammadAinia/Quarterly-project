@@ -6,7 +6,7 @@ const Card = (props) => {
 
             <div className="box-container">
                 <div className="box">
-                    <img src={props.image} alt="" />
+                    <img  src={props.image} alt="You don't have any animals" />
                     <div className="content">
                         <h3>{props.name}</h3>
                         <a href={props.href} className="btn">see datails</a>

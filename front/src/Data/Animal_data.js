@@ -8,6 +8,7 @@ const Animal_data = [
     {id:"two",image:animal_2 , name:"Dog" ,href:"#"},
     {id:"three",image:animal_3 , name:"Parrot" ,href:"/parrot"},
     {id:"four",image:animal_4 , name:"Fish" ,href:"/fish"},
+    
 ]
 
 export default Animal_data

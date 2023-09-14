@@ -22,7 +22,7 @@ const Add_animal = () => {
   axios.defaults.withCredentials = true
   const handleSubmit = async (e) => {
     e.preventDefault()
-    axios.post('http://localhost:3001/animal/add-animal', { Name, Age, Animal_coler, Picture, Animal_place, Additional_details, Gender ,Type })
+    axios.post('http://localhost:3001/animal/add-animal', { Name, Age, Animal_coler, Picture, Animal_place, Additional_details, Gender, Type })
       .then(res => {
         if (res.data.valid) {
           navigate('/')
@@ -35,7 +35,7 @@ const Add_animal = () => {
   }
   return (
     <>
-      <Header href1={"/Animal"} a1={"Animal"} href5={"/Add_Animal"} a5={"Add Animal"}  href3={"#"} a3={"Common Problems"} href2={"#"} a2={"Adopt Animal"} href6={"/login"} a6={"Login"} />
+      <Header href1={"/Animal"} a1={"Animal"} href5={"/Add_Animal"} a5={"Add Animal"} href3={"#"} a3={"Common Problems"} href2={"#"} a2={"Adopt Animal"} href6={"/login"} a6={"Login"} />
 
       <div >
         <div class="container">
@@ -45,15 +45,15 @@ const Add_animal = () => {
               <div class="user-details">
                 <div class="input-box">
                   <span class="details">name of the animal *</span>
-                  <input type="text"  required onChange={e => setName(e.target.value)} />
+                  <input type="text" required onChange={e => setName(e.target.value)} />
                 </div>
                 <div class="input-box">
                   <span class="details">Age *</span>
-                  <input type="number"  required onChange={e => setAge(e.target.value)} />
+                  <input type="number" required onChange={e => setAge(e.target.value)} />
                 </div>
                 <div class="input-box">
                   <span class="details">Animal color *</span>
-                  <input type="text"  required onChange={e => setAnimal_coler(e.target.value)} />
+                  <input type="text" required onChange={e => setAnimal_coler(e.target.value)} />
                 </div>
                 <div class="input-box">
                   <span class="details">Picture of an animal</span>
@@ -61,7 +61,7 @@ const Add_animal = () => {
                 </div>
                 <div class="input-box">
                   <span class="details">Animal Place *</span>
-                  <input type="text"  required onChange={e => setAnimal_place(e.target.value)} />
+                  <input type="text" required onChange={e => setAnimal_place(e.target.value)} />
                 </div>
                 <div class="input-box">
                   <span class="details">Additional details </span>
@@ -72,25 +72,6 @@ const Add_animal = () => {
                   <input type="text" onChange={e => setType(e.target.value)} />
                 </div>
                 <div class="gender-details">
-
-                  {/* <input type="radio" name="diet" id="dot-1" />
-                  <input type="radio" name="diet" id="dot-2" />
-                  <input type="radio" name="diet" id="dot-3" />
-                  <span class="gender-title">Animal diet</span>
-                  <div class="category">
-                    <label for="dot-1">
-                      <span class="dot one"></span>
-                      <span class="gender">Vegetarian</span>
-                    </label>
-                    <label for="dot-2">
-                      <span class="dot two"></span>
-                      <span class="gender">Carnivorous</span>
-                    </label>
-                    <label for="dot-3">
-                      <span class="dot three"></span>
-                      <span class="gender">Both</span>
-                    </label>
-                  </div> */}
                   <div class="gender-details">
                     <input type="radio" name="gender" id="dot-1" onChange={e => setGender(e.target.value)} />
                     <input type="radio" name="gender" id="dot-2" onChange={e => setGender(e.target.value)} />

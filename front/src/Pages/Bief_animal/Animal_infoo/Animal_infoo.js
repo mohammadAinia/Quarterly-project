@@ -1,24 +1,21 @@
 import './Animal_infoo.css'
-import { Animal_info, Header } from '../../../Componets'
+import { Animal_info, Header } from '../../../Componets/index'
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import a from '../../../Assert/Images/main.png'
 
 const Animal_infoo = () => {
 
   const navigate = useNavigate()
-  const [header, setHeader] = useState('')
-  const [image, setImage] = useState('')
-  const [p, setP] = useState('')
+  const [Info, setInfo] = useState([])
 
   useEffect(() => {
 
     axios.get('http://localhost:3001/search')
       .then(res => {
         if (res.data.valid) {
-          setHeader(res.data.Header)
-          setImage(res.data.Image)
-          setP(res.data.P)
+          setInfo(res.data)
         }
         else {
           navigate('/login')
@@ -29,10 +26,15 @@ const Animal_infoo = () => {
 
   return (
     <>
-    
-      <Header href1={"/Animal"} a1={"Animal"} href3={"#"} a3={"Common Problems"} href2={"#"} a2={"Adopt Animal"} href4={"/login"} a4={"Login"} />
 
-      <Animal_info header={header} image={image} p={p} />
+      <Header href1={"/Animal"} a1={"Animal"} href3={"#"} a3={"Common Problems"} href2={"#"} a2={"Adopt Animal"} href4={"/login"} a4={"Login"} />
+      {Info.map(i => {
+        <div key={i.animal_id}>
+
+          <Animal_info header={i.name} image={a} age={i.age} color={i.color} place={i.place} type={i.type} gender={i.gender} p={i.detals} />
+
+        </div>
+      })}
 
     </>
   )
