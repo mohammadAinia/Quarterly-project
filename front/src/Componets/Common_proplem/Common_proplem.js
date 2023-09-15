@@ -3,9 +3,9 @@ import './Common_proplem.css'
 const Common_proplem = () => {
     return (
         <>
-            <section className="pricing" id="pricing" style={{ "margin-top": "600px"}}>
+            <section className="pricing" id="pricing" >
 
-                <h2 className="heading">pricing</h2>
+                <h2 className="heading">Common Proplem</h2>
 
                 <div className="box-container">
 

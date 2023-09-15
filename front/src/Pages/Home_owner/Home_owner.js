@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Card, Common_proplem, Header, SectionHeader } from '../../Componets/index'
+import { Card, Common_proplem, Header, SectionHeader ,Animal_info} from '../../Componets/index'
 import './Home_owner.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
@@ -8,9 +8,7 @@ import animal_image from '../../Assert/Images/cute.avif'
 
 const Home_owner = () => {
   const [name, setName] = useState('')
-  const [Animal_info, setAnimal_info] = useState([])
-
-
+  const [Animall_info, setAnimal_info] = useState([])
 
   const navigate = useNavigate()
 
@@ -33,31 +31,20 @@ const Home_owner = () => {
       })
       .catch(err => { console.log(err) })
 
-    // axios.get('http://localhost:3001/animal/')
-    //   .then(res => {
-    //     if (res.data.valid) {
-    //       setName_animal(res.data.name)
-    //       setImage(res.data.image)
-    //       setHref(res.data.href)
-    //     }
-    //     else {
-    //       alert("err")
-    //     }
-    //   })
-    //   .catch(err => { console.log(err) })
+
   },
     [])
-
-
   return (
     <>
       <Header href1={"/Animal"} a1={"Animal"} href2={"#"} a2={"Adopt Animal"} href3={"#"} a3={"Common Problems"} href4={"/Add_Animal"} a4={"Add Animal"} href5={"/login"} a5={"Login"} />
-      <SectionHeader>Welcome {name}</SectionHeader>
+      <section class="banner" style={{ "margin-top": "1030px"}}>
+    <Animal_info header={"Welcome"+ name } image={""} p={"Fish are animals that live and swim in water (although there are fish that crawl on land, such as the mudskipper and the clary catfish), are cold-blooded (except for tuna, marlin, and mako sharks, which are warmer than water), and breathe through gills"}/>
+    </section> 
+
 
       {/* <h1>Welcome {name}</h1> */}
 
       <section className="animal" id="animal" >
-
         <SectionHeader>Your Animals</SectionHeader>
         <div className="">
           <div className="heading">
@@ -65,24 +52,23 @@ const Home_owner = () => {
           </div>
         </div>
         <div className="box-container">
-          {Animal_info.map(i => {
-            <div key={i.animal_id}>
 
+          {Animall_info.map(i => {
+            <div key={i.animal_id}>
               <Card image={i.image} name={i.name} href={"/Animal_infoo"} />
             </div>
           })}
         </div>
       </section>
-      {/* <section class="pricing" id="pricing">
 
+      <section class="pricing" id="pricing">
 
         <div class="box-container">
-          
-          <Common_proplem/>
+
+          <Common_proplem />
         </div>
 
-      </section> */}
-      
+      </section>
     </>
   )
 }
