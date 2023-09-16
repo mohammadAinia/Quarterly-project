@@ -1,6 +1,6 @@
 import './Animal.css'
 
-import { Card, Header, SectionHeader } from '../../Componets/index'
+import { Button, Card, Header, SectionHeader } from '../../Componets/index'
 import Animal_data from '../../Data/Animal_data'
 
 const Animal = () => {
@@ -11,14 +11,16 @@ const Animal = () => {
     return (
 
         <>
+        
             <Header href1={"/Animal"} a1={"Animal"} href3={"#"} a3={"Common Problems"} href2={"#"} a2={"Adopt Animal"} href4={"/login"} a4={"Login"} />
 
             <section className="animal" id="animal" >
                 <SectionHeader>Most Populer</SectionHeader>
                 <div className="">
-                    <div className="heading">
+                    {/* <div className="heading">
                         <a href="/Search" className="btn">Search</a>
-                    </div>
+                    </div> */}
+                    <Button href="/Search" value="Search"/>
                 </div>
                 <div className="box-container">
                     {cards}

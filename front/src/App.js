@@ -3,8 +3,8 @@
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
-import { Header, Container, Login, Register_owner , Animal,Cat_info,Search_animal, Parrot_info,Fish_info,Card,
-  Register_veterinarian ,Home_owner , Type ,Dog_info , Add_animal,Animal_infoo} from './Componets/index'
+import { Proplems_owner, Container, Login, Register_owner , Animal,Cat_info,Search_animal, Parrot_info,Fish_info,Proplem_veterianarian,
+  Register_veterinarian ,Home_owner , Type ,Dog_info , Add_animal,Animal_infoo,Add_proplem} from './Componets/index'
 
 const App = () => {
   return (
@@ -28,6 +28,11 @@ const App = () => {
               <Route path='/cat' element={<Cat_info/>}/>
               <Route path='/Animal_infoo' element={<Animal_infoo/>}/>
               <Route path='/Add_animal' element={<Add_animal/>}/>
+              <Route path='/Proplems_owner' element={<Proplems_owner/>}/>
+              <Route path='/Proplem_veterianarian' element={<Proplems_owner/>}/>
+              <Route path='/Add_proplem' element={<Add_proplem/>}/>
+
+
 
           </Routes>
         </Container>
