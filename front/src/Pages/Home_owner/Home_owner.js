@@ -20,6 +20,7 @@ const Home_owner = () => {
           setName(res.data.username)
           if (res.data.image == null) {
             res.data.image = animal_image
+            setAnimal_info(res.data)
           }
           else {
             setAnimal_info(res.data)

@@ -23,7 +23,9 @@ module.exports = (sequelize, DataTypes) => {
     place: DataTypes.STRING,
     owner: DataTypes.STRING,
     ownered: DataTypes.BOOLEAN,
-    urlImage: DataTypes.VARCHAR
+    urlImage: DataTypes.STRING,
+    Additional_details:DataTypes.STRING
+
   }, {
     sequelize,
     modelName: 'animal',

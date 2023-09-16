@@ -35,6 +35,9 @@ const singup_vet=(req,res) => {
                                     exp: req.body.exp,
                                     num_year_exp: req.body.num_year_exp,
                                     deatalis: req.body.Previous_work,
+                                    url_bsc:req.body.Bachelor,
+                                    url_prev_imag:req.body.Photograph
+                                    
                                 }
                                 models.veterinariann.create(veterinarians).then(
                                     result => {
@@ -197,14 +200,14 @@ function show_users(req,res) {
         )
 }
 
-const home=(req,res) => {
+const home_owner=(req,res) => {
     if (req.session.username) {
         
         models.user_info.findOne({where:{email:req.session.username}}).then(
             resp=>{
                 models.animal.findAll({where:{owner:req.session.username}}).then(
                     ress=>{
-                        return res.json({ valid: true,username:resp.first_name ,name:ress.name,image:"", })
+                        return res.json({ valid: true,username:resp.first_name ,name:ress.name,image:ress.urlImage, })
                     }
                 )
                 .catch(
@@ -225,56 +228,6 @@ const home=(req,res) => {
 }
 
 
-const singup_veto=(req,res) => {
-    models.veterinariann.findOne({ where: { bsc: req.body.bsc } }).then(
-        result => {
-            if (result) {
-                res.status(409).json({
-                    message: "email alrady exist ",
-                })
-            }
-            else {
-                bcryptjs.genSalt(10,(err,salt) => {
-                    bcryptjs.hash(req.body.password,salt,function (err,hash) {
-                        const user={
-
-                            address: req.body.address,
-                            bsc: req.body.bsc,
-                            university: req.body.university,
-                            exp: req.body.exp,
-                            num_year_exp: req.body.num_year_exp,
-                            deatalis: req.body.deatalis,
-                        }
-                        models.veterinariann.create(user).then(
-                            result => {
-                                res.status(201).json({
-                                    message: "user created suc",
-                                })
-                            }
-                        ).catch(error => {
-                            res.status(500).json({
-                                message: "somthing wrong"+err
-                                ,
-
-                            })
-                        })
-
-                    })
-                })
-            }
-        }
-    ).catch(
-        error => {
-            res.status(500).json({
-                message: "somthing wrong",
-
-            })
-        }
-    )
-
-}
-
-
 
 
 module.exports=
@@ -284,6 +237,5 @@ module.exports=
     show_users: show_users,
     logout: logout,
     singup_vet: singup_vet,
-    singup_veto: singup_veto,
-    home: home
+    home_owner: home_owner
 }

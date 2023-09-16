@@ -9,7 +9,7 @@ router.post('/signup_vet', userController.singup_vet)
 //login
 router.post('/login', userController.login)
 
-router.get('/',userController.home)
+router.get('/',userController.home_owner)
 router.get('/logout', userController.logout)
 
 //requireAuth.requireAuth,

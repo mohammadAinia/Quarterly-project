@@ -57,7 +57,7 @@ const Add_animal = () => {
                 </div>
                 <div class="input-box">
                   <span class="details">Picture of an animal</span>
-                  <input type="file" onChange={e => setPicture(e.target.value)} />
+                  <input type="file" name="image" onChange={e => setPicture(e.target.value)} />
                 </div>
                 <div class="input-box">
                   <span class="details">Animal Place *</span>

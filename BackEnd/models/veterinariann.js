@@ -18,13 +18,12 @@ module.exports = (sequelize, DataTypes) => {
     address: DataTypes.STRING,
     bsc: DataTypes.STRING,
     university: DataTypes.STRING,
-    bscImage: DataTypes.STRING,
     exp: DataTypes.BOOLEAN,
     num_year_exp: DataTypes.INTEGER,
     deatalis: DataTypes.STRING,
     personImage: DataTypes.STRING,
-    url_bsc:DataTypes.VARCHAR,
-    url_prev_imag:DataTypes.VARCHAR
+    url_bsc:DataTypes.STRING,
+    url_prev_imag:DataTypes.STRING,
 
   }, {
     sequelize,

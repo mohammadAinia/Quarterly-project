@@ -55,8 +55,11 @@ function add_animal(req,res) { //tested suc
         place: req.body.Animal_place,
         type:req.body.Type,
         owner: req.session.username,
-         // picture:req.body.Picture,
-        // additional:req.body.Additional_details,
+        urlImage:req.file.filename,
+        Additional_details:req.body.Additional_details,
+        type:req.body.Type
+
+
     }
     //object for save in my db
     // const schema={
