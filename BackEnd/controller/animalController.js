@@ -1,6 +1,6 @@
 const models=require("../models")
 const validateor=require('fastest-validator')
-const sequelize =require('sequelize')
+
 
 function show_all_animal(req,res) {//tested
 
@@ -46,7 +46,8 @@ function search_animal(req,res) {//tested 1 issue server is off when i find
     )
 }
 
-function add_animal(req,res) { //tested suc
+function add_animal(req,res) { 
+    
     const animal={
         name: req.body.Name,
         color: req.body.Animal_coler,
@@ -58,30 +59,7 @@ function add_animal(req,res) { //tested suc
         urlImage:req.file.filename,
         Additional_details:req.body.Additional_details,
         type:req.body.Type
-
-
     }
-    //object for save in my db
-    // const schema={
-    //     name: { type: "string",optional: false },
-    //     type: { type: "string",optional: false },
-    //     color: { type: "string",optional: false },
-    //     age: { type: "number",optional: false },
-    //     gender: { type: "string",optional: false },
-    //     food_type: { type: "string",optional: false },
-    //     place: { type: "string",optional: false },
-    //     owner: { type: "string",optional: true },
-
-    // }
-    // const v=new validateor()
-    // const validationRespo=v.validate(animal,schema)
-    // if (validationRespo!==true) {
-    //     return res.status(400).json({
-    //         message: "validation faild",
-    //         errors: validationRespo
-    //     })
-    // }
-
     models.animal.create(animal).then(result => {
         if(req.session.username){
             res.json({

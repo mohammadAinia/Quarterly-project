@@ -35,8 +35,8 @@ const singup_vet=(req,res) => {
                                     exp: req.body.exp,
                                     num_year_exp: req.body.num_year_exp,
                                     deatalis: req.body.Previous_work,
-                                    url_bsc:req.body.Bachelor,
-                                    url_prev_imag:req.body.Photograph
+                                    url_bsc:req.file.bsc,
+                                    url_prev_imag:req.file.prev
                                     
                                 }
                                 models.veterinariann.create(veterinarians).then(

@@ -1,12 +1,12 @@
-const multer=require('multer')
+const multer=require("multer")
 const path=require("path")
 
 const storage=multer.diskStorage({
     destination: (req,file,cb) => {
-        cb(null,'./uploads');
+        cb(null,path.join(__dirname+'../public/uploads'));
     },
     filename: function (req,file,callback) {
-        cd(null,new Date().getTime()+path.extname(file.originalname))
+        cd(null, file.fieldname + "-" + Date.now() + path.extname(file.originalname))
     }
 });
 const fileFilter=(req,file,cb)=>{

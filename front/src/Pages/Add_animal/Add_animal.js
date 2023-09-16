@@ -41,7 +41,7 @@ const Add_animal = () => {
         <div class="container">
           <div class="title">Add Animal</div>
           <div class="content">
-            <form action="#" onSubmit={handleSubmit}>
+            <form action="#" onSubmit={handleSubmit}  enctype="multipart/form-data">
               <div class="user-details">
                 <div class="input-box">
                   <span class="details">name of the animal *</span>
@@ -57,7 +57,7 @@ const Add_animal = () => {
                 </div>
                 <div class="input-box">
                   <span class="details">Picture of an animal</span>
-                  <input type="file" name="image" onChange={e => setPicture(e.target.value)} />
+                  <input type="file" name="imgg" onChange={e => setPicture(e.target.value)} />
                 </div>
                 <div class="input-box">
                   <span class="details">Animal Place *</span>

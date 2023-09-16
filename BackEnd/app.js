@@ -6,12 +6,10 @@ var cors = require('cors')
 var session = require('express-session')
 const cookie = require('cookie-parser');
 const bodyparser=require('body-parser')
-
-
+const path =require("path")
 app.use(cookie())
 app.use(bodyparser.json())
 app.use(session({
-    // secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
     secret: "secret",
     saveUninitialized: false,
     cookie: {
@@ -26,8 +24,13 @@ app.use(cors({
     methods:["Post" , "Get"],
     credentials: true
 }))
+app.use(express.urlencoded({
+    extended: true,
+    })
+   );
+   app.use(express.static(path.join(__dirname,'public')))
 app.use(express.json())
-app.use('/uploads',express.static('uploads'))
+
 app.use("/user",userRoute)
 app.use("/animal",animalRouts)
 
