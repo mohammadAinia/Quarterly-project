@@ -6,6 +6,8 @@ var cors = require('cors')
 var session = require('express-session')
 const cookie = require('cookie-parser');
 const bodyparser=require('body-parser')
+
+
 app.use(cookie())
 app.use(bodyparser.json())
 app.use(session({
@@ -19,14 +21,13 @@ app.use(session({
     resave: false,
 }))
 
-
 app.use(cors({
     origin: ['http://localhost:3000'],
     methods:["Post" , "Get"],
     credentials: true
 }))
 app.use(express.json())
-
+app.use('/uploads',express.static('uploads'))
 app.use("/user",userRoute)
 app.use("/animal",animalRouts)
 

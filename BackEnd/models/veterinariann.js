@@ -22,7 +22,10 @@ module.exports = (sequelize, DataTypes) => {
     exp: DataTypes.BOOLEAN,
     num_year_exp: DataTypes.INTEGER,
     deatalis: DataTypes.STRING,
-    personImage: DataTypes.STRING
+    personImage: DataTypes.STRING,
+    url_bsc:DataTypes.VARCHAR,
+    url_prev_imag:DataTypes.VARCHAR
+
   }, {
     sequelize,
     modelName: 'veterinariann',

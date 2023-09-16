@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     rolee:DataTypes.STRING,
     gender: DataTypes.STRING,
     age: DataTypes.DATE,
-
+    urlImage: DataTypes.VARCHAR,
   }, {
     sequelize,
     modelName: 'user_info',

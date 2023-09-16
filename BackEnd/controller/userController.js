@@ -12,6 +12,7 @@ const singup_vet=(req,res) => {
                 bcryptjs.genSalt(10,(err,salt) => {
                     bcryptjs.hash(req.body.Password,salt,function (err,hash) {
                         const user={
+                            
                             first_name: req.body.First_name,
                             last_name: req.body.Last_name,
                             email: req.body.Email,

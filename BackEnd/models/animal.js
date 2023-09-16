@@ -22,7 +22,8 @@ module.exports = (sequelize, DataTypes) => {
     food_type: DataTypes.STRING,
     place: DataTypes.STRING,
     owner: DataTypes.STRING,
-    ownered: DataTypes.BOOLEAN
+    ownered: DataTypes.BOOLEAN,
+    urlImage: DataTypes.VARCHAR
   }, {
     sequelize,
     modelName: 'animal',

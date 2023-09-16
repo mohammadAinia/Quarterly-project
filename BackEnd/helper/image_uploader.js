@@ -6,8 +6,7 @@ const storage=multer.diskStorage({
         cb(null,'./uploads');
     },
     filename: function (req,file,callback) {
-        cd(null,new Date().getTime()+path.extname(file
-            .originalname))
+        cd(null,new Date().getTime()+path.extname(file.originalname))
     }
 });
 const fileFilter=(req,file,cb)=>{
