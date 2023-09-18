@@ -19,10 +19,8 @@ const singup_vet=(req,res) => {
                             age: req.body.Age,
                             gender: req.body.Gender,
                         };
-
                         models.user_info.create(user).then((result) => {
                                 // res.status(200).json(result)
-
                                 const veterinarians={
                                     user_id: result.id,
                                     address: req.body.Addres,
