@@ -1,6 +1,4 @@
-//gffdgfdfcvbcvb
-//vcvvcvcbvcvbvbbvcb
-//vcbvbvcbvbvb
+
 var express = require('express')
 var app = express()
 var cors = require('cors')
@@ -8,7 +6,22 @@ var db = require('./model/db')
 var session = require('express-session')
 var cookie = require('cookie-parser')
 var bodyparser =require('body-parser')
-var bodyparser =require('body-parser')
+var multer =require('multer')
+var path = require('path')
+
+app.use(express.static(path.join(__dirname,'puplic')))
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, 'puplic/images')
+    },
+    filename: function (req, file, cb) {
+      cb(null , file.fieldname + "_" + Date.now() + path.extname(file.originalname))
+    }
+})
+const upload = multer({storage: storage})
+
+
 app.use(cookie())
 app.use(bodyparser.json())
 app.use(session({
@@ -30,12 +43,18 @@ app.use(cors({
 }))
 app.use(express.json())
 
+// app.get('/', (req, res) => {
+//     if(req.session.username){
+//         return res.json({valid: true , username: req.session.username})
+//     }
+//     else
+//     return res.json({valid:false})
+// })
 app.get('/', (req, res) => {
-    if(req.session.username){
-        return res.json({valid: true , username: req.session.username})
-    }
-    else
-    return res.json({valid:false})
+    db.query('select * from users',(err,result)=>{
+        if(err) return res.json(err)
+        return  res.json(result)
+    })
 })
 
 app.post('/login', (req, res) => {
@@ -56,13 +75,25 @@ app.post('/login', (req, res) => {
     })
 })
 
-app.post('/signup', (req, res) => {
-    var name = req.body.First_name
-    var email = req.body.Email
-    var password = req.body.Password
-    const sql = "insert into users (name , email , password) values('" + name + "','" + email + "','" + password + "')"
+// app.post('/signup', upload.single('image') , (req, res) => {
+//     var image = req.file.filename
+//     var name = req.body.first_name
+//     var email = req.body.email
+//     var password = req.body.password
+//     const sql = "insert into users (name , email , password , image) values('" + name + "','" + email + "','" + password + "','" + image + "')"
+//     db.query(sql, (err, result) => {
+//         if (err) return res.json({ Message: "error node" })
+//         return res.json(result)
+//     })
+// })
+app.post('/signup', upload.single('image') , (req, res) => {
+    var image = req.file.filename
+    var name = req.body.first_name
+    var email = req.body.email
+    var password = req.body.password
+    const sql = "insert into users (name , email , password , image) values('" + name + "','" + email + "','" + password + "','" + image + "')"
     db.query(sql, (err, result) => {
-        if (err) return res.json({ Message: "error node" })
+        if (err) return res.json(err)
         return res.json(result)
     })
 })

@@ -17,41 +17,44 @@ const Register_owner = () => {
     const [Confirm, setConfirm] = useState('')
     const [Age, setAge] = useState('')
     const [Gender, setGender] = useState('')
+    const [Images, setImages] = useState()
 
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
+
+
+        const formData = new FormData()
+        formData.append('image', Images)
+        formData.append('first_name', First_name)
+        // formData.append('lirst_name', Last_name)
+        // formData.append('phone', Phone)
+        formData.append('email', Email)
+        formData.append('password', Password)
+        // formData.append('age', Age)
+        // formData.append('gender', Gender)
+
+
         if (Password === Confirm) {
             e.preventDefault()
 
-            axios.post('http://localhost:3001/user/signup_user', { First_name, Last_name, Phone, Email, Password, Age, Gender })
-                .then(res => {
-                    if (res.data.Login) {
-                        navigate('/Add_animal')
-                    }
-                }
-                )
-                .catch(err => alert(err.data.message))
+            // axios.post('http://localhost:3001/signup', formData)
+            //     .then(res => {
+            //         if (res.data.Login) {
+            //             navigate('/Add_animal')
+            //         }
+            //     }
+            //     )
+            //     .catch(err => alert(err.data.message))
+            axios.post('http://localhost:3001/signup', formData)
+            .then(res => {
+                alert("good")
+            }
+            )
+            .catch(err => alert(err))
         }
         else { alert("password not match") }
     }
-    // const workout = { First_name, Last_name , Email, Phone , Password }
-    // const workout = { First_name, Email, Password }
 
-    // const response = await fetch('http://localhost:3001/signup', {
-    //     method: 'POST',
-    //     body: JSON.stringify(workout),
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     }
-    // })
-    // if (response.ok) {
-    //     console.log(response)
-    //     navigate('/login')
-    // }
-    // else {
-    //     alert("error")
-    // }
-    // }
 
     return (
         <div>
@@ -64,7 +67,7 @@ const Register_owner = () => {
                         <div className="user-details">
                             <div className="input-box">
                                 <span className="details">First Name *</span>
-                                <input type="text" required onChange={e => setFirst_name(e.target.value)} />
+                                <input type="text" name='first_name' required onChange={e => setFirst_name(e.target.value)} />
                             </div>
                             <div className="input-box">
                                 <span className="details">Last Name *</span>
@@ -72,7 +75,7 @@ const Register_owner = () => {
                             </div>
                             <div className="input-box">
                                 <span className="details">Email *</span>
-                                <input type="email" required onChange={e => setEmail(e.target.value)} />
+                                <input type="email" name='email' required onChange={e => setEmail(e.target.value)} />
                             </div>
                             <div className="input-box">
                                 <span className="details">Age *</span>
@@ -83,8 +86,12 @@ const Register_owner = () => {
                                 <input type="number" required onChange={e => setPhone(e.target.value)} />
                             </div>
                             <div className="input-box">
+                                <span className="details">image *</span>
+                                <input type="file" required onChange={e => setImages(e.target.files[0])} />
+                            </div>
+                            <div className="input-box">
                                 <span className="details">Password *</span>
-                                <input type="password" required onChange={e => setPassword(e.target.value)} />
+                                <input type="password" name='password' required onChange={e => setPassword(e.target.value)} />
                             </div>
                             <div className="input-box">
                                 <span className="details">Confirm Password *</span>

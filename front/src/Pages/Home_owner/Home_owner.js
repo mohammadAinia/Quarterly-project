@@ -14,42 +14,56 @@ const Home_owner=() => {
 
   useEffect(() => {
 
-    axios.get('http://localhost:3001/user/')
-      .then(res => {
-        if (res.data.valid) {
-          setName(res.data.username)
-          if (res.data.image==null) {
-            res.data.image=animal_image
-            setAnimal_info(res.data)
-          }
-          else {
-            setAnimal_info(res.data)
-          }
-        }
-        else {
-          navigate('/login')
-        }
-      })
-      .catch(err => { console.log(err) })
+    axios('http://localhost:3001/')
+    .then(res => setAnimal_info(res.data))
+    .catch(err=> alert(err))
+    // axios.get('http://localhost:3001/user/')
+    //   .then(res => {
+    //     if (res.data.valid) {
+    //       setName(res.data.username)
+    //       if (res.data.image==null) {
+    //         res.data.image=animal_image
+    //         setAnimal_info(res.data)
+    //       }
+    //       else {
+    //         setAnimal_info(res.data)
+    //       }
+    //     }
+    //     else {
+    //       navigate('/login')
+    //     }
+    //   })
+    //   .catch(err => { console.log(err) })
 
 
   },
     [])
   return (
     <>
-      <Header href1={"/Animal"} a1={"Animal"} href2={"#"} a2={"Adopt Animal"} href3={"/Proplems"} a3={"Common Problems"} href4={"/Add_Animal"} a4={"Add Animal"} href5={"/login_out"} a5={"Login Out"} />
+      {Animall_info.map((user , i)=>{
+        return(
+          <div key={i}>
+            <ul>name : {user.name}</ul>
+            <ul>email : {user.email}</ul>
+          </div>
+        )
+        })}
+
+
+
+      {/* <Header href1={"/Animal"} a1={"Animal"} href2={"#"} a2={"Adopt Animal"} href3={"/Proplems"} a3={"Common Problems"} href4={"/Add_Animal"} a4={"Add Animal"} href5={"/login_out"} a5={"Login Out"} />
       <section class="banner" style={{ "margin-top": "1030px" }}>
         <Animal_info header={"Welcome"+name} image={""} p={"Fish are animals that live and swim in water (although there are fish that crawl on land, such as the mudskipper and the clary catfish), are cold-blooded (except for tuna, marlin, and mako sharks, which are warmer than water), and breathe through gills"} />
-      </section>
+      </section> */}
 
 
       {/* <h1>Welcome {name}</h1> */}
 
-      <section className="animal" id="animal" >
+      {/* <section className="animal" id="animal" >
         <SectionHeader>Your Animals</SectionHeader>
         <div className="">
           <div className="heading">
-            {/* <a href="/Search" className="btn"></a> */}
+            <a href="/Search" className="btn"></a>
           </div>
         </div>
         <div className="box-container">
@@ -69,7 +83,7 @@ const Home_owner=() => {
           <Button href="/Proplems_owner" value="See More" />
         </div>
 
-      </section>
+      </section> */}
     </>
   )
 }
