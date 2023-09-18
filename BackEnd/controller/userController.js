@@ -207,8 +207,17 @@ const home_owner=(req,res) => {
             resp=>{
                 models.animal.findAll({where:{owner:req.session.username}}).then(
                     ress=>{
-                        return res.json({ valid: true,username:resp.first_name ,name:ress.name,image:ress.urlImage, })
+                        models.common_problim.findAll().then(
+                            result=>{
+                        return res.json({ valid: true,username:resp.first_name ,name:ress.name,image:ress.urlImage,pro:result.title})
+                            }
+                        ).catch(
+                            err=>{
+                                return res.json({valid :false})
+                            }
+                        )
                     }
+                
                 )
                 .catch(
                     err=>{
