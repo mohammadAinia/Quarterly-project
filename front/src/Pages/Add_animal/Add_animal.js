@@ -11,7 +11,7 @@ const Add_animal = () => {
   const [Name, setName] = useState('')
   const [Age, setAge] = useState('')
   const [Animal_coler, setAnimal_coler] = useState('')
-  const [Picture, setPicture] = useState('')
+  const [Picture, setPicture] = useState()
   const [Animal_place, setAnimal_place] = useState('')
   const [Additional_details, setAdditional_details] = useState('')
   const [Gender, setGender] = useState('')
@@ -21,8 +21,21 @@ const Add_animal = () => {
 
   axios.defaults.withCredentials = true
   const handleSubmit = async (e) => {
+
+    const formData = new FormData()
+
+    formData.append('image', Picture)
+    formData.append('name', Name)
+    formData.append('age', Age)
+    formData.append('animal_color', Animal_coler)
+    formData.append('animal_place', Animal_place)
+    formData.append('details', Additional_details)
+    formData.append('type', Type)
+    formData.append('gender', Gender)
+
     e.preventDefault()
-    axios.post('http://localhost:3001/animal/add-animal', { Name, Age, Animal_coler, Picture, Animal_place, Additional_details, Gender, Type })
+
+    axios.post('http://localhost:3001/animal/add-animal',formData)
       .then(res => {
         if (res.data.valid) {
           navigate('/')
@@ -31,7 +44,7 @@ const Add_animal = () => {
           alert('EROR')
         }
       })
-      .catch(err => { console.log(err) })
+      .catch(err => alert(err))
   }
   return (
     <>
@@ -45,31 +58,31 @@ const Add_animal = () => {
               <div class="user-details">
                 <div class="input-box">
                   <span class="details">name of the animal *</span>
-                  <input type="text" required onChange={e => setName(e.target.value)} />
+                  <input type="text" name='name' required onChange={e => setName(e.target.value)} />
                 </div>
                 <div class="input-box">
                   <span class="details">Age *</span>
-                  <input type="number" required onChange={e => setAge(e.target.value)} />
+                  <input type="number" name='age' required onChange={e => setAge(e.target.value)} />
                 </div>
                 <div class="input-box">
                   <span class="details">Animal color *</span>
-                  <input type="text" required onChange={e => setAnimal_coler(e.target.value)} />
+                  <input type="text" name='animal_color' equired onChange={e => setAnimal_coler(e.target.value)} />
                 </div>
                 <div class="input-box">
                   <span class="details">Picture of an animal</span>
-                  <input type="file" name="imgg" onChange={e => setPicture(e.target.value)} />
+                  <input type="file"  onChange={e => setPicture(e.target.files[0])} />
                 </div>
                 <div class="input-box">
                   <span class="details">Animal Place *</span>
-                  <input type="text" required onChange={e => setAnimal_place(e.target.value)} />
+                  <input type="text" name='animal_place' required onChange={e => setAnimal_place(e.target.value)} />
                 </div>
                 <div class="input-box">
                   <span class="details">Additional details </span>
-                  <input type="text" onChange={e => setAdditional_details(e.target.value)} />
+                  <input type="text" name='details' onChange={e => setAdditional_details(e.target.value)} />
                 </div>
                 <div class="input-box">
                   <span class="details">type </span>
-                  <input type="text" onChange={e => setType(e.target.value)} />
+                  <input type="text" name='type' onChange={e => setType(e.target.value)} />
                 </div>
                 <div class="gender-details">
                   <div class="gender-details">

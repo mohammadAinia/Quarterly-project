@@ -17,40 +17,34 @@ const Register_owner = () => {
     const [Confirm, setConfirm] = useState('')
     const [Age, setAge] = useState('')
     const [Gender, setGender] = useState('')
-    const [Images, setImages] = useState()
 
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
 
 
         const formData = new FormData()
-        formData.append('image', Images)
+
         formData.append('first_name', First_name)
-        // formData.append('lirst_name', Last_name)
-        // formData.append('phone', Phone)
+        formData.append('last_name', Last_name)
+        formData.append('phone', Phone)
         formData.append('email', Email)
         formData.append('password', Password)
-        // formData.append('age', Age)
-        // formData.append('gender', Gender)
+        formData.append('age', Age)
+        formData.append('gender', Gender)
 
 
         if (Password === Confirm) {
             e.preventDefault()
 
-            // axios.post('http://localhost:3001/signup', formData)
-            //     .then(res => {
-            //         if (res.data.Login) {
-            //             navigate('/Add_animal')
-            //         }
-            //     }
-            //     )
-            //     .catch(err => alert(err.data.message))
-            axios.post('http://localhost:3001/signup', formData)
-            .then(res => {
-                alert("good")
-            }
-            )
-            .catch(err => alert(err))
+            axios.post('http://localhost:3001/user/singup_user', formData)
+                .then(res => {
+                    if (res.data.Login) {
+                        navigate('/Add_animal')
+                    }
+                    alert("good")
+                }
+                )
+                .catch(err => alert(err.data.message))
         }
         else { alert("password not match") }
     }
@@ -84,10 +78,6 @@ const Register_owner = () => {
                             <div className="input-box">
                                 <span className="details">Phone Number *</span>
                                 <input type="number" required onChange={e => setPhone(e.target.value)} />
-                            </div>
-                            <div className="input-box">
-                                <span className="details">image *</span>
-                                <input type="file" required onChange={e => setImages(e.target.files[0])} />
                             </div>
                             <div className="input-box">
                                 <span className="details">Password *</span>
