@@ -50,14 +50,14 @@ function add_animal(req,res) {
     
     const animal={
         name: req.body.name,
-        color: req.body.animal_coler,
+        color: req.body.animal_color,
         age: req.body.age,
         gender: req.body.gender,
         place: req.body.animal_place,
         type:req.body.type,
         owner: req.session.username,
         urlImage:req.file.filename,
-        Additional_details:req.body.deatails,
+        Additional_details:req.body.details,
         
     }
     models.animal.create(animal).then(result => {

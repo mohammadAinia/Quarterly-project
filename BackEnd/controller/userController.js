@@ -61,37 +61,33 @@ const singup_vet=(req,res) => {
         });
 };
 const singup_user=(req,res) => {
-    models.user_info
-        .findOne({ where: { email: req.body.Email } })
-        .then((result) => {
+    models.user_info.findOne({ where: {email:req.body.Email} }).then((result) => {
             if (result) {
                 return res.json({
                     message: "email user alrady exist ",
                 });
             } else {
                 bcryptjs.genSalt(10,(err,salt) => {
-                    bcryptjs.hash(req.body.password,salt,function (err,hash) {
+                    bcryptjs.hash(req.body.Password,salt,function (err,hash) {
                         const user={
-                            first_name: req.body.first_name,
-                            last_name: req.body.last_name,
-                            email: req.body.email,
-                            phone: req.body.phone,
+                            first_name: req.body.First_name,
+                            last_name: req.body.Last_name,
+                            email: req.body.Email,
+                            phone: req.body.Phone,
                             password: hash,
                             rolee: "user",
-                            age: req.body.age,
-                            gender: req.body.gender,
+                            age: req.body.Age,
+                            gender: req.body.Gender,
                         };
-                        models.user_info
-                            .create(user)
-                            .then((result) => {
+                        models.user_info.create(user).then((result) => {
                                 req.session.username=user.email;
-                                // console.log(req.session.username)
                                 return res.json({
                                     Login: true,
                                     username: req.session.username,
                                 });
                             })
                             .catch((error) => {
+                                console.log(err+"after add")
                                 return res.json({
                                     valid: false,
                                 });
@@ -101,6 +97,7 @@ const singup_user=(req,res) => {
             }
         })
         .catch((error) => {
+            console.log(error)
             res.status(500).json({
                 message: "somthing wrong",
             });

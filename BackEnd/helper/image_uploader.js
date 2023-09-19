@@ -5,12 +5,12 @@ const storage=multer.diskStorage({
     destination: (req,file,cb) => {
         cb(null,'public/uploads');
     },
-    filename: function (req,file,cb) {
+    filename: function (req,file,cd) {
         cd(null, file.fieldname + "_" + Date.now() + path.extname(file.originalname))
     }
 });
-const fileFilter=(req,file,cb)=>{
-    if(file.mimeType==='image/jpeg'|| file.mimeType==='image/png'){
+const fileFilter=(req,file,cd)=>{
+    if(file.mimeType==='image/jpeg'|| file.mimeType==='image/png'||file.mimeType==='image/jpg'){
      cd(null,true);   
     }
     else
@@ -21,7 +21,7 @@ const fileFilter=(req,file,cb)=>{
 const upload =multer({
     storage : storage ,
     limits:{fieldSize:1024*1024*10},
-    fileFilter:fileFilter
+    // fileFilter:fileFilter
 })
 
 module.exports={

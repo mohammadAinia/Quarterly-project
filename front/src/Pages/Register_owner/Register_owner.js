@@ -23,7 +23,6 @@ const Register_owner = () => {
 
 
         const formData = new FormData()
-
         formData.append('first_name', First_name)
         formData.append('last_name', Last_name)
         formData.append('phone', Phone)
@@ -36,7 +35,7 @@ const Register_owner = () => {
         if (Password === Confirm) {
             e.preventDefault()
 
-            axios.post('http://localhost:3001/user/singup_user', formData)
+            axios.post('http://localhost:3001/user/signup_user', {First_name,Last_name,Email,Phone,Password,Age,Gender})
                 .then(res => {
                     if (res.data.Login) {
                         navigate('/Add_animal')
@@ -44,7 +43,7 @@ const Register_owner = () => {
                     alert("good")
                 }
                 )
-                .catch(err => alert(err.data.message))
+                .catch(err => alert(err))
         }
         else { alert("password not match") }
     }
