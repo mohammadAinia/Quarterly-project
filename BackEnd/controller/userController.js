@@ -70,16 +70,16 @@ const singup_user=(req,res) => {
                 });
             } else {
                 bcryptjs.genSalt(10,(err,salt) => {
-                    bcryptjs.hash(req.body.Password,salt,function (err,hash) {
+                    bcryptjs.hash(req.body.password,salt,function (err,hash) {
                         const user={
-                            first_name: req.body.First_name,
-                            last_name: req.body.Last_name,
-                            email: req.body.Email,
-                            phone: req.body.Phone,
+                            first_name: req.body.first_name,
+                            last_name: req.body.last_name,
+                            email: req.body.email,
+                            phone: req.body.phone,
                             password: hash,
                             rolee: "user",
-                            age: req.body.Age,
-                            gender: req.body.Gender,
+                            age: req.body.age,
+                            gender: req.body.gender,
                         };
                         models.user_info
                             .create(user)
@@ -173,16 +173,8 @@ function show_users(req,res) {
 const home_owner=(req,res) => {
     if (req.session.username) {
         models.user_info.findOne({ where: { email: req.session.username } }).then((resp) => {
-                models.animal.findAll({ where: { owner: req.session.username } }).then((ress) => {
-                        models.common_problim.find()
-                            .then((result) => {
-                                return res.json({
-                                    valid: true,username: resp.first_name,name: ress.name,image: ress.urlImage,pro: result.title,
-                                });
-                            })
-                            .catch((err) => {
-                                return res.json({ valid: false });
-                            });
+                models.animal.findAll({ where: { owner: req.session.username } }).then((result) => {
+                    return res.json({valid:true,username:resp.first_name,result})
                     })
                     .catch((err) => {
                         return res.json({ valid: false });

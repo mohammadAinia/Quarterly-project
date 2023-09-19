@@ -3,10 +3,10 @@ const path=require("path")
 
 const storage=multer.diskStorage({
     destination: (req,file,cb) => {
-        cb(null,path.join(__dirname+'../public/uploads'));
+        cb(null,'public/uploads');
     },
-    filename: function (req,file,callback) {
-        cd(null, file.fieldname + "-" + Date.now() + path.extname(file.originalname))
+    filename: function (req,file,cb) {
+        cd(null, file.fieldname + "_" + Date.now() + path.extname(file.originalname))
     }
 });
 const fileFilter=(req,file,cb)=>{

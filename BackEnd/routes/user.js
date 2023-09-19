@@ -5,7 +5,7 @@ const imageUploader = require('../helper/image_uploader')
 
 //sing-up
 router.post('/signup_user', userController.singup_user)
-router.post('/signup_vet', userController.singup_vet)
+router.post('/signup_vet',imageUploader.upload.single("image"), userController.singup_vet)
 
 
 //login

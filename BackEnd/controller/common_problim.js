@@ -16,15 +16,15 @@ const show_all_problim=(req,res) => {
 }
 const add_problim=(ress,res) => {
     const problim={
-        title: req.body.title,
-        disc: req.body.desc,
+        title: req.body.Title,
+        disc: req.body.Description,
         publisher: req.session.username,
-        animal_type: req.body.animal_type,
-        category: req.body.cat
+        animal_type: req.body.Animal_type,
+        category: req.body.Category
     }
-    models.common_problim.create(problim).then(
+    models.problim.create(problim).then(
         res => {
-            return res.json({ valid: true,ses: req.session.username })
+            return res.json({ valid: true,ses: req.session.username ,res })
         }
     )
         .catch(err => {

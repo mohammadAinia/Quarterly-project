@@ -49,21 +49,21 @@ function search_animal(req,res) {//tested 1 issue server is off when i find
 function add_animal(req,res) { 
     
     const animal={
-        name: req.body.Name,
-        color: req.body.Animal_coler,
-        age: req.body.Age,
-        gender: req.body.Gender,
-        place: req.body.Animal_place,
-        type:req.body.Type,
+        name: req.body.name,
+        color: req.body.animal_coler,
+        age: req.body.age,
+        gender: req.body.gender,
+        place: req.body.animal_place,
+        type:req.body.type,
         owner: req.session.username,
         urlImage:req.file.filename,
-        Additional_details:req.body.Additional_details,
-        type:req.body.Type
+        Additional_details:req.body.deatails,
+        
     }
     models.animal.create(animal).then(result => {
         if(req.session.username){
             res.json({
-                Login:true,valid:true
+                Login:true,valid:true,result
             })
         }
         else {
