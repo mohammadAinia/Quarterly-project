@@ -1,10 +1,10 @@
-import './Proplem_veterianarian.css'
+import './Common_vete.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import { Button, Common_proplem, Header } from '../../Componets'
+import { Button, Common_proplem, Header } from '../../../Componets'
 
-const Proplem_veterianarian = () => {
+const Common_vete = () => {
     const [Proplems, setProplems] = useState([])
 
     const navigate = useNavigate()
@@ -25,10 +25,10 @@ const Proplem_veterianarian = () => {
             <Button href="/Add_proplem" value="Add Proplem" />
             <div class="box-container">
 
-                {Proplems.map(i => {
-                    <div key={i.Proplem.id}>
+                {Proplems.map((i,d) => {
+                    <div key={d}>
 
-                        <Common_proplem name={i.name} detals={i.detals} a="Answer" />
+                        <Common_proplem name={i.name} detals={i.detals} />
 
                     </div>
                 })}
@@ -38,4 +38,4 @@ const Proplem_veterianarian = () => {
     )
 }
 
-export default Proplem_veterianarian
+export default Common_vete

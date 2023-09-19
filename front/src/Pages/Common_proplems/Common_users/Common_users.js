@@ -1,11 +1,11 @@
-import { Button, Common_proplem, Header } from '../../Componets'
-import './Proplems_owner.css'
+import './Common_users.css'
+import React from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import { Button, Common_proplem, Header } from '../../../Componets/index'
 
-const Proplems_owner = () => {
-
+const Common_users = () => {
     const [Proplems, setProplems] = useState([])
 
     const navigate = useNavigate()
@@ -22,12 +22,11 @@ const Proplems_owner = () => {
         [])
     return (
         <>
-            <Header href1={"/Animal"} a1={"Animal"} href2={"#"} a2={"Adopt Animal"} href3={"/Proplems_owner"} a3={"Common Problems"} href4={"/Add_Animal"} a4={"Add Animal"} href5={"/login_out"} a5={"Login Out"}  />
-            <Button href="/Add_proplem" value="Add Proplem" />
+            <Header href1={"/Animal"} a1={"Animal"} href2={"#"} a2={"Adopt Animal"} href3={"/Proplems_owner"} a3={"Common Problems"} href4={"/Add_Animal"} a4={"Add Animal"} href5={"/login_out"} a5={"Login Out"} />
             <div class="box-container">
 
-                {Proplems.map(i => {
-                    <div key={i.Proplem.id}>
+                {Proplems.map((i,d) => {
+                    <div key={d}>
 
                         <Common_proplem name={i.name} detals={i.detals} />
 
@@ -39,4 +38,4 @@ const Proplems_owner = () => {
     )
 }
 
-export default Proplems_owner
+export default Common_users
