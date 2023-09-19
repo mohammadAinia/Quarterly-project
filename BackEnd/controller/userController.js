@@ -1,3 +1,4 @@
+const { json }=require("body-parser");
 const models=require("../models");
 const bcryptjs=require("bcryptjs");
 const singup_vet=(req,res) => {
@@ -170,8 +171,10 @@ function show_users(req,res) {
 const home_owner=(req,res) => {
     if (req.session.username) {
         models.user_info.findOne({ where: { email: req.session.username } }).then((resp) => {
-                models.animal.findAll({ where: { owner: req.session.username } }).then((result) => {
-                    return res.json({valid:true,username:resp.first_name,result})
+                models.animal.findOne({ where: { owner: req.session.username } }).then((result) => {
+                    const aa=result.name
+                    console.log(aa)
+                    return res.json({valid:true,username:resp.first_name,result:result})
                     })
                     .catch((err) => {
                         return res.json({ valid: false });
