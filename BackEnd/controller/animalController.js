@@ -1,5 +1,33 @@
+const { DATE }=require("sequelize")
 const models=require("../models")
 const validateor=require('fastest-validator')
+const date = require('date-and-time')
+const vaccien=require("../models/vaccien")
+function update_info_auto(req,res){
+    models.vaccien.findAll()
+    .then(
+        reult=>{
+            models.vaccien_information.findOne({where:{id:reult.vacc_info_id}}).then(
+                result=>{
+                    var date1=new Date(reult.date_take_vac)
+                    var nowDate = new Date(); 
+                    var date = nowDate.getFullYear()+'/'+(nowDate.getMonth()+1)+'/'+nowDate.getDate(); 
+                    var dada=new Date(date)
+                    var diff=dada.getTime()-date1.getTime()
+                    var numofday=diff/(1000 * 3600 * 24)
+                    var numofdayvac=result.duration_ef*30
+                    if(numofday<numofdayvac){
+
+                    }
+                    
+
+                }
+            ).catch()
+        }
+    )
+    .catch()
+}
+function add_cac
 
 
 function show_all_animal(req,res) {//tested
@@ -122,10 +150,25 @@ function update(req,res) {
     })
 }
 function show_det(req,res){
-const name=req.bode.name
+const name="slkjd"
 models.animal.findOne({where:{name:name}}).then(
     data=>{ 
-        models.health_record.fin
+        models.health_record.findOne({where:{animal_id:data.id}}).then(
+            heal =>{
+                models.vaccien.findOne({where:{id:heal.vaccien_record}}).then(
+                    vacc=>{
+                        models.vaccien_information.findOne({where:{id:vacc.vacc_info_id}}).then(
+                        vaccinfo=>{
+                            return res.json({})
+                        }
+                        )
+                        .catch()
+                    }
+                ).catch()
+            }
+        ).catch(
+
+        )
 
     }
 ).catch(
@@ -133,11 +176,13 @@ models.animal.findOne({where:{name:name}}).then(
 )
 
 }
+
 module.exports={
     add_animal: add_animal,
     destroy_animal: destroy_animal,
     show_all_animal: show_all_animal,
     update:update,
-    search_animal:search_animal
+    search_animal:search_animal,
+    show_det:show_det
 
 }

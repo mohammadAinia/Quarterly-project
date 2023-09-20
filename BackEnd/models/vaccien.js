@@ -14,10 +14,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   vaccien.init({
-    name: DataTypes.STRING,
+    health_record_id: DataTypes.INTEGER,
     // duration_eff: DataTypes.DATE,
     // animal_id: DataTypes.INTEGER,
-    next_appointment: DataTypes.DATE
+    next_appointment: DataTypes.DATE,
+    vacc_info_id:DataTypes.INTEGER,
+    date_take_vac:DataTypes.DATE
   }, {
     sequelize,
     modelName: 'vaccien',

@@ -67,7 +67,7 @@ const Home_owner = () => {
           </div>
         </div>
         <div className="box-container">
-          {Animall_info.map((user, i) => {
+          {Animall_info.map((user,i) => {
             return ( 
               <div key={i}>
                 <Card image={'http://localhost:3001/uploads/' + user.urlImage} name={user.name} href={'/Animal_infoo'} />

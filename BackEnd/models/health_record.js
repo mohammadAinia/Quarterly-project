@@ -17,7 +17,8 @@ module.exports = (sequelize, DataTypes) => {
     animal_id: DataTypes.INTEGER,
     weight: DataTypes.INTEGER,
     high: DataTypes.INTEGER,
-    health_stats: DataTypes.STRING
+    health_stats: DataTypes.STRING,
+    vaccien_record:DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'health_record',
