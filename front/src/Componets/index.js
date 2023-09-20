@@ -20,9 +20,10 @@ export {default as SectionHeader} from './SectionHeader/SectionHeader'
 export {default as Search_animal} from '../Pages/Search_animal/Search_animal'
 export {default as Animal_info} from './Animal_info/Animal_info'
 export {default as Button} from './Button/Button'
-export {default as Proplems_owner} from '../Pages/Proplems_owner/Proplems_owner'
-export {default as Proplem_veterianarian} from '../Pages/Proplem_veterianarian/Proplem_veterianarian'
 export {default as Add_proplem} from '../Pages/Add_proplem/Add_proplem'
+export {default as Common_users} from '../Pages/Common_proplems/Common_users/Common_users'
+export {default as Common_vete} from '../Pages/Common_proplems/Common_vete/Common_vete'
+
 
 
 
