@@ -172,9 +172,9 @@ const home_owner=(req,res) => {
     if (req.session.username) {
         models.user_info.findOne({ where: { email: req.session.username } }).then((resp) => {
                 models.animal.findOne({ where: { owner: req.session.username } }).then((result) => {
-                    const aa=result.name
-                    console.log(aa)
-                    return res.json({valid:true,username:resp.first_name,result:result})
+                
+                    var ress=[result]
+                    return res.json({valid:true,username:resp.first_name,result:ress})
                     })
                     .catch((err) => {
                         return res.json({ valid: false });

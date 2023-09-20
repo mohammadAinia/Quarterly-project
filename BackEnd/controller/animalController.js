@@ -21,7 +21,7 @@ function show_all_animal(req,res) {//tested
 function search_animal(req,res) {//tested 1 issue server is off when i find
     const name=req.body.name
     
-    models.animal.findOne({name,attributes:['name']}).then(
+    models.animal.findOne({name:name}).then(
         result => {
             
             if(result){
@@ -120,6 +120,18 @@ function update(req,res) {
             error: error
         })
     })
+}
+function show_det(req,res){
+const name=req.bode.name
+models.animal.findOne({where:{name:name}}).then(
+    data=>{ 
+        models.health_record.fin
+
+    }
+).catch(
+
+)
+
 }
 module.exports={
     add_animal: add_animal,

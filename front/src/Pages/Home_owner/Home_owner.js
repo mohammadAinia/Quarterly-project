@@ -10,9 +10,6 @@ const Home_owner = () => {
   const [name, setName] = useState('')
   const [Animall_info, setAnimal_info] = useState([])
 
-  const [Animall_imag, setAnimal_imag] = useState([])
-  const [Animall_name, setAnimal_name] = useState([])
-
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -26,10 +23,6 @@ const Home_owner = () => {
         if (res.data.valid) {
           setName(res.data.username)
           setAnimal_info(res.data.result)
-
-          setAnimal_name(res.data.result)
-          setAnimal_imag(res.data.result)
-
           // if (res.data.image==null) {
           // res.data.image=animal_image
           // }
@@ -74,10 +67,10 @@ const Home_owner = () => {
           </div>
         </div>
         <div className="box-container">
-          {Object.keys(Animall_info).map((key, i) =>  {
-            return (
+          {Animall_info.map((user, i) => {
+            return ( 
               <div key={i}>
-                <Card image={'http://localhost:3001/uploads/'} name={key.name} href={'/Animal_infoo'} />
+                <Card image={'http://localhost:3001/uploads/' + user.urlImage} name={user.name} href={'/Animal_infoo'} />
               </div>
             )
           })}
