@@ -4,7 +4,6 @@ import './Home_owner.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import animal_image from '../../Assert/Images/cute.avif'
-//ghghghghghghgh
 
 const Home_owner = () => {
   const [name, setName] = useState('')
@@ -76,7 +75,7 @@ const Home_owner = () => {
           })}
         </div>
       </section>
-      {/* <section class="pricing" id="pricing">
+      <section class="pricing" id="pricing">
         <div class="box-container">
           <Common_proplem />
         </div>
@@ -84,7 +83,7 @@ const Home_owner = () => {
           <Button href="/Proplems_owner" value="See More" />
         </div>
 
-      </section> */}
+      </section>
     </>
   )
 }

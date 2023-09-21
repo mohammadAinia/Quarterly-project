@@ -5,21 +5,21 @@ var cors = require('cors')
 var db = require('./model/db')
 var session = require('express-session')
 var cookie = require('cookie-parser')
-var bodyparser =require('body-parser')
-var multer =require('multer')
+var bodyparser = require('body-parser')
+var multer = require('multer')
 var path = require('path')
 
-app.use(express.static(path.join(__dirname,'puplic')))
+app.use(express.static(path.join(__dirname, 'puplic')))
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, 'puplic/images')
+        cb(null, 'puplic/images')
     },
     filename: function (req, file, cb) {
-      cb(null , file.fieldname + "_" + Date.now() + path.extname(file.originalname))
+        cb(null, file.fieldname + "_" + Date.now() + path.extname(file.originalname))
     }
 })
-const upload = multer({storage: storage})
+const upload = multer({ storage: storage })
 
 
 app.use(cookie())
@@ -38,7 +38,7 @@ app.use(session({
 
 app.use(cors({
     origin: ['http://localhost:3000'],
-    methods:["Post" , "Get"],
+    methods: ["Post", "Get"],
     credentials: true
 }))
 app.use(express.json())
@@ -51,9 +51,9 @@ app.use(express.json())
 //     return res.json({valid:false})
 // })
 app.get('/', (req, res) => {
-    db.query('select * from users',(err,result)=>{
-        if(err) return res.json(err)
-        return  res.json(result)
+    db.query('select * from users', (err, result) => {
+        if (err) return res.json(err)
+        return res.json(result)
     })
 })
 
@@ -65,7 +65,7 @@ app.post('/login', (req, res) => {
         if (err) return res.json({ Message: 'Error inside server' })
 
         if (result.length > 0) {
-            
+
             req.session.username = result[0].name
             console.log(req.session.username)
             return res.json({ Login: true, username: req.session.username })
@@ -86,7 +86,7 @@ app.post('/login', (req, res) => {
 //         return res.json(result)
 //     })
 // })
-app.post('/signup', upload.single('image') , (req, res) => {
+app.post('/signup', upload.single('image'), (req, res) => {
     var image = req.file.filename
     var name = req.body.first_name
     var email = req.body.email
@@ -96,6 +96,37 @@ app.post('/signup', upload.single('image') , (req, res) => {
         if (err) return res.json(err)
         return res.json(result)
     })
+})
+
+app.get('/edit/:id', (req, res) => {
+    const sql = 'select * from animla where id = ?'
+    const id = req.params.id
+    db.query(sql, [id], (err, result) => {
+        if (err) return res.json(err)
+        return res.json(result)
+
+    })
+})
+
+
+app.delete('/delete/:id', (req, res) => {
+    const sql = "delete from animal where id =?"
+    const id = req.params.id
+    db.query(sql, [id], (err, result) => {
+        if (err) return res.json(err)
+        return res.json(result)
+    })
+})
+
+app.put('/update', (req, res) => {
+    var image = req.file.filename
+    var name = req.body.name
+    const sql = ("update animal set `name` =? `image`=? where animal_id=? ")
+    const id = req.params.id
+    db.query((sql, [name, image, id], (err, result) => {
+        if (err) return res.json(err)
+        return res.json(result)
+    }))
 })
 
 app.listen(3001, () => {

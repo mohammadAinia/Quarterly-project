@@ -21,17 +21,6 @@ const Register_owner = () => {
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
 
-
-        const formData = new FormData()
-        formData.append('first_name', First_name)
-        formData.append('last_name', Last_name)
-        formData.append('phone', Phone)
-        formData.append('email', Email)
-        formData.append('password', Password)
-        formData.append('age', Age)
-        formData.append('gender', Gender)
-
-
         if (Password === Confirm) {
             e.preventDefault()
 

@@ -23,6 +23,15 @@ export {default as Button} from './Button/Button'
 export {default as Add_proplem} from '../Pages/Add_proplem/Add_proplem'
 export {default as Common_users} from '../Pages/Common_proplems/Common_users/Common_users'
 export {default as Common_vete} from '../Pages/Common_proplems/Common_vete/Common_vete'
+export {default as Vaccines} from '../Pages/Vaccines/Vaccines'
+export {default as About_your_animal} from './About_your_animal/About_your_animal'
+export {default as Your_animal_vaccines} from './Your_animal_vaccines/Your_animal_vaccines'
+export {default as Update_animals} from '../Pages/Update_animals/Update_animals'
+
+
+
+
+
 
 
 
