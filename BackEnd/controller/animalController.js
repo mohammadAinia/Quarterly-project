@@ -33,7 +33,7 @@ function add_vac(req,res){
 
     models.health_record.findOne({where:{animal_id:id}}).then(
         result => {
-            models.vaccien_information.findOne({where:{name:req.bode.namevac}}).then(
+            models.vaccien_information.findOne({where:{id:req.body.namevac}}).then(
                 ress=>{
                     var date1=ress.duration_ef*30
                     const d = new Date();
@@ -49,12 +49,26 @@ function add_vac(req,res){
                         next_appointment:dada
                     }
                     models.vaccien.create(information_vac).then(
-
-                    ).catch()
+                    result=>{
+                        res.status(200).json({messag:"jnjn"})
+                    }
+                    ).catch(error => {
+                        res.status(500).json({
+                            message: "error in add vac "+error
+                        })
+                    })
                 }
-            ).catch()
+            ).catch(error => {
+                res.status(500).json({
+                    message: "error in add vac "+error
+                })
+            })
         }
-    ).catch()
+    ).catch(error => {
+        res.status(500).json({
+            message: "error in add vac "+error
+        })
+    })
 }
 function show_all_animal(req,res) {//tested
 
@@ -109,7 +123,7 @@ function add_animal(req,res) {
         place: req.body.animal_place,
         type:req.body.type,
         owner: req.session.username,
-        urlImage:req.file.filename,
+        // urlImage:req.file.filename,
         Additional_details:req.body.details,
         
     }
@@ -125,7 +139,7 @@ function add_animal(req,res) {
         // valid:false
         // }
 
-        models.animal.findOne({where:{ouner:req.session.username}}).then(
+        models.animal.findOne({where:{id:result.id}}).then(
             result=>{
                 const record ={
                     animal_id:result.id,
@@ -145,7 +159,7 @@ function add_animal(req,res) {
     });
 }
 function add_health_record(req,res){
-    models.animal.findOne({where:{ouner:req.session.username}}).then(
+    models.animal.findOne({where:{owner:req.session.username}}).then(
         result=>{
             const record ={
                 animal_id:result.id,
@@ -178,13 +192,12 @@ function update(req,res) {
     {
         name: req.body.name,
         type: req.body.type,
-        color: req.body.color,
+        // color: req.body.color,
         age: req.body.age,
         gender: req.body.gender,
         food_type: req.body.food_type,
         place: req.body.place,
-        owner: req.body.owner,
-        ownered: req.body.ownered,
+        // owner: req.body.owner,
     }
 
     models.animal.update(updateAnimal,{ where: { id: id } }).then(result => {
@@ -235,6 +248,6 @@ module.exports={
     show_all_animal: show_all_animal,
     update:update,
     search_animal:search_animal,
-    show_det:show_det
-
+    show_det:show_det,
+    add_vac:add_vac
 }
