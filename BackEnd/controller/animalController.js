@@ -3,7 +3,7 @@ const models=require("../models")
 const validateor=require('fastest-validator')
 const date = require('date-and-time')
 const vaccien=require("../models/vaccien")
-function update_info_auto(req,res){
+function update_info_auto(req,res){//
     models.vaccien.findAll()
     .then(
         reult=>{
@@ -13,6 +13,7 @@ function update_info_auto(req,res){
                     var nowDate = new Date(); 
                     var date = nowDate.getFullYear()+'/'+(nowDate.getMonth()+1)+'/'+nowDate.getDate(); 
                     var dada=new Date(date)
+
                     var diff=dada.getTime()-date1.getTime()
                     var numofday=diff/(1000 * 3600 * 24)
                     var numofdayvac=result.duration_ef*30
@@ -27,9 +28,34 @@ function update_info_auto(req,res){
     )
     .catch()
 }
-function add_cac
+function add_vac(req,res){
+    const id =req.body.id
 
+    models.health_record.findOne({where:{animal_id:id}}).then(
+        result => {
+            models.vaccien_information.findOne({where:{name:req.bode.namevac}}).then(
+                ress=>{
+                    var date1=ress.duration_ef*30
+                    const d = new Date();
+                    var resultt = d.setDate(d.getDate() + date1);
+                    var dad=new Date(resultt)
+                    var date = dad.getFullYear()+'/'+(dad.getMonth()+1)+'/'+dad.getDate(); 
+                    var dada=new Date(date)
+                    information_vac={
+                        date_take_vac:req.body.date_take_vac,
+                        vacc_info_id:ress.id,
+                        animal_id:result.animal_id,
+                        health_record_id:result.id,
+                        next_appointment:dada
+                    }
+                    models.vaccien.create(information_vac).then(
 
+                    ).catch()
+                }
+            ).catch()
+        }
+    ).catch()
+}
 function show_all_animal(req,res) {//tested
 
     models.animal.findAll().then(
@@ -73,7 +99,6 @@ function search_animal(req,res) {//tested 1 issue server is off when i find
         }
     )
 }
-
 function add_animal(req,res) { 
     
     const animal={
@@ -89,21 +114,48 @@ function add_animal(req,res) {
         
     }
     models.animal.create(animal).then(result => {
-        if(req.session.username){
-            res.json({
-                Login:true,valid:true,result
-            })
-        }
-        else {
-        valid:false
-        }
+        // if(req.session.username){
 
+            
+        //     // res.json({
+        //     //     Login:true,valid:true,result
+        //     // })
+        // }
+        // else {
+        // valid:false
+        // }
+
+        models.animal.findOne({where:{ouner:req.session.username}}).then(
+            result=>{
+                const record ={
+                    animal_id:result.id,
+                    weight:req.body.weight,
+                    high:req.body.high,
+                    health_stats:req.body.health_stats,
+                    vaccien_record:result.id
+                }
+                models.health_record.create(record).then().catch()
+            }
+        ).catch()
     }).catch(error => {
         res.status(500).json({
             message: "errrr",
             error: error
         })
     });
+}
+function add_health_record(req,res){
+    models.animal.findOne({where:{ouner:req.session.username}}).then(
+        result=>{
+            const record ={
+                animal_id:result.id,
+                weight:req.body.weight,
+                high:req.body.high,
+                health_stats:req.body.health_stats,
+                vaccien_record:result.id
+            }
+        }
+    ).catch()
 }
 function destroy_animal(req,res) { //tested
     const id=req.params.id
@@ -150,8 +202,8 @@ function update(req,res) {
     })
 }
 function show_det(req,res){
-const name="slkjd"
-models.animal.findOne({where:{name:name}}).then(
+const id=req.body.id
+models.animal.findOne({where:{id:id}}).then(
     data=>{ 
         models.health_record.findOne({where:{animal_id:data.id}}).then(
             heal =>{
