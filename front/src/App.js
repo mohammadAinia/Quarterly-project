@@ -31,7 +31,7 @@ const App = () => {
               <Route path='/Add_animal' element={<Add_animal/>}/>
               <Route path='/Add_proplem' element={<Add_proplem/>}/>
               <Route path='/common_users' element={<Common_users/>}/>
-              <Route path='/vaccines' element={<Vaccines/>}/>
+              <Route path='/vaccines/:id' element={<Vaccines/>}/>
               <Route path='/about' element={<About_your_animal/>}/>
               <Route path='/vv' element={<Your_animal_vaccines/>}/>
               <Route path='/update/:id' element={<Update_animals/>}/>

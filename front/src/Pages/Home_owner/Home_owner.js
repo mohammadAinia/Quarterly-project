@@ -66,12 +66,19 @@ const Home_owner = () => {
           </div>
         </div>
         <div className="box-container">
-          {Animall_info.map((user,i) => {
-            return ( 
+         
+          {Animall_info.map((user,ii) =>{
+            return(
+            user.map((ss,i)=>{
+              return ( 
               <div key={i}>
-                <Card image={'http://localhost:3001/uploads/' + user.urlImage} name={user.name} href={'/Animal_infoo'} />
+                <Card image={'http://localhost:3001/uploads/' + user[i].urlImage} name={user[i].name} href={'/Animal_infoo'} />
               </div>
             )
+            }) )
+
+            
+            
           })}
         </div>
       </section>

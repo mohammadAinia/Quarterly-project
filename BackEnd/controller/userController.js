@@ -171,9 +171,10 @@ function show_users(req,res) {
 const home_owner=(req,res) => {
     if (req.session.username) {
         models.user_info.findOne({ where: { email: req.session.username } }).then((resp) => {
-                models.animal.findOne({ where: { owner: req.session.username } }).then((result) => {
+                models.animal.findAll({ where: { owner: req.session.username }, attributes:['name','urlImage']}).then((result) => {
                 
                     var ress=[result]
+                    console.log(ress)
                     return res.json({valid:true,username:resp.first_name,result:ress})
                     })
                     .catch((err) => {

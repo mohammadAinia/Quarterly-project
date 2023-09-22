@@ -2,7 +2,7 @@ import './Add_animal.css'
 import axios from 'axios'
 import { useState } from 'react'
 import { Header } from '../../Componets'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 const Add_animal = () => {
@@ -48,7 +48,7 @@ const Add_animal = () => {
       .then(res => {
         if (res.data.valid) {
           if (Vaccines === "yes") {
-            navigate('/vaccines')
+            navigate(`/vaccines/${res.data.id}`)
           }
           else {
             navigate('/')

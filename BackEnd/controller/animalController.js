@@ -29,11 +29,12 @@ function update_info_auto(req,res){//
     .catch()
 }
 function add_vac(req,res){
-    const id =req.body.id
+    const iddd =req.params.id
 
-    models.health_record.findOne({where:{animal_id:id}}).then(
+    models.health_record.findOne({where:{animal_id:iddd}}).then(
         result => {
-            models.vaccien_information.findOne({where:{id:req.body.namevac}}).then(
+            
+            models.vaccien_information.findOne({where:{id:1}}).then(////.mdnflkadlfkjakmddlkamskdmaksmdkamdkmaksmmask.dm.asmdc
                 ress=>{
                     var date1=ress.duration_ef*30
                     const d = new Date();
@@ -42,29 +43,35 @@ function add_vac(req,res){
                     var date = dad.getFullYear()+'/'+(dad.getMonth()+1)+'/'+dad.getDate(); 
                     var dada=new Date(date)
                     information_vac={
-                        date_take_vac:req.body.date_take_vac,
+                        date_take_vac:req.body.Vaccine_history,
                         vacc_info_id:ress.id,
                         animal_id:result.animal_id,
                         health_record_id:result.id,
                         next_appointment:dada
                     }
+                    console.log(iddd+"thsslkjjflksmd")
                     models.vaccien.create(information_vac).then(
                     result=>{
-                        res.status(200).json({messag:"jnjn"})
+                        res.json({valid:true})
                     }
                     ).catch(error => {
+                        console.log(error)
+
                         res.status(500).json({
                             message: "error in add vac "+error
                         })
                     })
                 }
             ).catch(error => {
+                console.log(error)
                 res.status(500).json({
                     message: "error in add vac "+error
                 })
             })
         }
     ).catch(error => {
+        console.log(error)
+
         res.status(500).json({
             message: "error in add vac "+error
         })
@@ -113,7 +120,7 @@ function search_animal(req,res) {//tested 1 issue server is off when i find
         }
     )
 }
-function add_animal(req,res) { 
+function add_animal(req,res) { //tested
     
     const animal={
         name: req.body.name,
@@ -123,7 +130,7 @@ function add_animal(req,res) {
         place: req.body.animal_place,
         type:req.body.type,
         owner: req.session.username,
-        // urlImage:req.file.filename,
+        urlImage:req.file.filename,
         Additional_details:req.body.details,
         
     }
@@ -144,11 +151,15 @@ function add_animal(req,res) {
                 const record ={
                     animal_id:result.id,
                     weight:req.body.weight,
-                    high:req.body.high,
-                    health_stats:req.body.health_stats,
+                    high:req.body.height,
+                    health_stats:req.body.health_Status,
                     vaccien_record:result.id
                 }
-                models.health_record.create(record).then().catch()
+                models.health_record.create(record).then(
+                    result=>{
+                        return res.json({valid:true,session:req.session.username,id:result.animal_id})
+                    }
+                ).catch()
             }
         ).catch()
     }).catch(error => {

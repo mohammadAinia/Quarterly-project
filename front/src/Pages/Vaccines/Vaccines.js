@@ -1,5 +1,5 @@
 import './Vaccines.css'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,useParams } from 'react-router-dom'
 import axios from 'axios'
 import React, { useState } from 'react'
 import { Header } from '../../Componets'
@@ -11,10 +11,12 @@ const Vaccines = () => {
     const [Name_vaccines, setName_vaccines] = useState('')
     const [Vaccine_history, setVaccine_history] = useState('')
 
+    const { id } = useParams()
+
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
         e.preventDefault()
-        axios.post('http://localhost:3001/user/#', { Name_vaccines, Vaccine_history })
+        axios.post(`http://localhost:3001/animal/add_vac/${id}`, { Name_vaccines, Vaccine_history })
             .then(res => {
                 if (res.data.valid) {
                     navigate('/')
@@ -37,14 +39,14 @@ const Vaccines = () => {
 
                             <div className="input-box">
                                 <span className="details">Name Vaccines *</span>
-                                <select name="Vaccines" id="cars" required>
+                                <select name="Vaccines" id="cars" required onChange={e => setName_vaccines({value: e.target.value})}>
                                     <optgroup label="Cat">
-                                        <option value="quadruple vaccination">quadruple vaccination</option>
-                                        <option value="Rabies vaccination">Rabies vaccination</option>
+                                        <option value="1">quadruple vaccination</option>
+                                        <option value="2">Rabies vaccination</option>
                                     </optgroup>
                                     <optgroup label="Dog">
-                                        <option value="Quadruple vaccination">Quadruple vaccination</option>
-                                        <option value="Coronavirus vaccination">Coronavirus vaccination</option>
+                                        <option value="3">Quadruple vaccination</option>
+                                        <option value="4">Coronavirus vaccination</option>
                                     </optgroup>
                                 </select>
                             </div>
