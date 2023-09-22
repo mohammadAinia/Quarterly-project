@@ -83,7 +83,9 @@ function show_all_animal(req,res) {//tested
     db.query(sql,["Msxsxo@Hotmai.Com"], (err, result) => {
         if (err) return res.json(err)
         return res.json(result) + console.log()
-    })
+    }
+    )
+
     // models.animal.findAll({where:{owner:req.session.username}}).then(
     //     result => {
     //         const ress=[result]
@@ -166,19 +168,7 @@ function add_animal(req,res) { //tested
         })
     });
 }
-function add_health_record(req,res){
-    models.animal.findOne({where:{owner:req.session.username}}).then(
-        result=>{
-            const record ={
-                animal_id:result.id,
-                weight:req.body.weight,
-                high:req.body.high,
-                health_stats:req.body.health_stats,
-                vaccien_record:result.id
-            }
-        }
-    ).catch()
-}
+
 function destroy_animal(req,res) { //tested
     const id=req.params.id
 
@@ -222,6 +212,14 @@ function update(req,res) {
         })
     })
 }
+function show_animal_id(req,res){
+    const id = req.params.id;
+    const sql='SELECT * FROM animals JOIN health_records ON animals.id=health_records.animal_id WHERE animals.id=? '
+    db.query(sql,[id],(err, result) => {
+        if (err) return res.json(err)
+        return res.json(result)+ console.log()
+    })
+}
 function show_det(req,res){
 const id=req.body.id
 models.animal.findOne({where:{id:id}}).then(
@@ -257,5 +255,6 @@ module.exports={
     update:update,
     search_animal:search_animal,
     show_det:show_det,
-    add_vac:add_vac
+    add_vac:add_vac,
+    show_animal_id:show_animal_id
 }

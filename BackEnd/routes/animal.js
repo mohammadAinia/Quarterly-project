@@ -6,6 +6,7 @@ const imageUploader = require('../helper/image_uploader')
 router.post('/add-animal',imageUploader.upload.single('image'),animal_controller.add_animal)
 router.get('/show_all_animal',animal_controller.show_all_animal)
 router.get('/show_det',animal_controller.show_det)
+router.get('/show_animal_id/:id',animal_controller.show_animal_id)
 
 router.post('/add_vac/:id',animal_controller.add_vac)
 
