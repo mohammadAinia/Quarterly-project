@@ -14,7 +14,7 @@ const Animal_infoo = () => {
 
     axios.get('http://localhost:3001/animal/show_all_animal')
       .then(res => {
-        if (1==1) {
+        if (1 == 1) {
           setInfo(res.data)
         }
         else {
@@ -30,15 +30,13 @@ const Animal_infoo = () => {
       {Info.map((d, i) => {
         return (
           <div key={i}>
-            <About_your_animal name={d.name} age={d.age} place={d.place} color={d.color} details={d.Additional_details} 
-            type={d.type} gender={d.gender} weight={d.weight} height={d.high} health={d.health_stats}
-             vaccines={d.vaccines} vaccine_date={d.vaccine_date} id2={d.animal_id}/>
+            <About_your_animal name={d.name} age={d.age} place={d.place} color={d.color} details={d.Additional_details}
+              type={d.type} gender={d.gender} weight={d.weight} height={d.high} health={d.health_stats} id={d.id} id2={d.id} />
 
-             <Your_animal_vaccines vaccines={d.vaccines} vaccine_date={d.vaccine_date}/>
+            <Your_animal_vaccines vaccines={d.vacc_info_id} vaccine_date={d.date_take_vac} />
           </div>
         )
       })}
-
     </>
   )
 }
