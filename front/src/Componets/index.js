@@ -27,6 +27,8 @@ export {default as Vaccines} from '../Pages/Vaccines/Vaccines'
 export {default as About_your_animal} from './About_your_animal/About_your_animal'
 export {default as Your_animal_vaccines} from './Your_animal_vaccines/Your_animal_vaccines'
 export {default as Update_animals} from '../Pages/Update_animals/Update_animals'
+export {default as Animal_info_id} from '../Pages/Bief_animal/Animal_info_id/Animal_info_id'
+
 
 
 

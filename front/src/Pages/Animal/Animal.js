@@ -5,7 +5,7 @@ import Animal_data from '../../Data/Animal_data'
 
 const Animal = () => {
     const cards = Animal_data.map(card => {
-        return <Card image={card.image} name={card.name} href={card.href} />
+        return <Card image={card.image} name={card.name} href={card.href} a={"See details"} />
     })
 
     return (

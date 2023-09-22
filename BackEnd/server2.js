@@ -38,7 +38,7 @@ app.use(session({
 
 app.use(cors({
     origin: ['http://localhost:3000'],
-    methods: ["Post", "Get"],
+    // methods: ["Post", "Get"],
     credentials: true
 }))
 app.use(express.json())
@@ -52,6 +52,12 @@ app.use(express.json())
 // })
 app.get('/', (req, res) => {
     db.query('select * from users', (err, result) => {
+        if (err) return res.json(err)
+        return res.json(result)
+    })
+})
+app.get('/animals', (req, res) => {
+    db.query('select * from animal', (err, result) => {
         if (err) return res.json(err)
         return res.json(result)
     })
@@ -86,12 +92,21 @@ app.post('/login', (req, res) => {
 //         return res.json(result)
 //     })
 // })
-app.post('/signup', upload.single('image'), (req, res) => {
+app.post('/signup', (req, res) => {
+    var name = req.body.First_name
+    var email = req.body.Email
+    var password = req.body.Password
+    var vaccines = req.body.Veccines
+    const sql = "insert into users (name , email , password ,Veccines ) values('" + name + "','" + email + "','" + password + "','"+vaccines+"')"
+    db.query(sql, (err, result) => {
+        if (err) return res.json(err)
+        return res.json(result)
+    })
+})
+app.post('/add_animal', upload.single('image'), (req, res) => {
     var image = req.file.filename
-    var name = req.body.first_name
-    var email = req.body.email
-    var password = req.body.password
-    const sql = "insert into users (name , email , password , image) values('" + name + "','" + email + "','" + password + "','" + image + "')"
+    var name = req.body.name
+    const sql = "insert into animal (name , image) values('" + name + "','" + image + "')"
     db.query(sql, (err, result) => {
         if (err) return res.json(err)
         return res.json(result)
@@ -118,15 +133,15 @@ app.delete('/delete/:id', (req, res) => {
     })
 })
 
-app.put('/update', (req, res) => {
+app.put('/update/:id', upload.single('image'),(req, res) => {
     var image = req.file.filename
     var name = req.body.name
-    const sql = ("update animal set `name` =? `image`=? where animal_id=? ")
     const id = req.params.id
-    db.query((sql, [name, image, id], (err, result) => {
-        if (err) return res.json(err)
+    const sql = 'update animal set name=? where animal_id=? '
+    db.query(sql,[name ,id], (err, result) => {
+        if (err) return  console.log(err) + res.json(err)
         return res.json(result)
-    }))
+    })
 })
 
 app.listen(3001, () => {
