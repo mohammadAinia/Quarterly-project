@@ -79,7 +79,7 @@ function add_vac(req,res){
     })
 }
 function show_all_animal(req,res) {//tested
-    const sql='select * from animals where owner =?'
+    const sql='SELECT * FROM animals JOIN health_records ON animals.id=health_records.animal_id WHERE owner=?'
     db.query(sql,["Msxsxo@Hotmai.Com"], (err, result) => {
         if (err) return res.json(err)
         return res.json(result) + console.log()

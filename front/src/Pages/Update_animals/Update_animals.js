@@ -21,7 +21,7 @@ const Update_animals = () => {
 
     useEffect(() => {
 
-        axios.get('http://localhost:3001/edit/' + id)
+        axios.get(`http://localhost:3001/animal/show_animal_id/${id}`)
             .then(res => {
                 setName(res.data[0].name)
                 setPicture(res.data[0].urlimage)

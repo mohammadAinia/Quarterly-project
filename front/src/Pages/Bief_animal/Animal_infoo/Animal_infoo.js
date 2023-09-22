@@ -30,9 +30,9 @@ const Animal_infoo = () => {
       {Info.map((d, i) => {
         return (
           <div key={i}>
-            <About_your_animal name={d.name} age={d.age} place={d.place} color={d.color} details={d.details} 
-            type={d.type} gender={d.gender} weight={d.weight} height={d.height} health={d.health}
-             vaccines={d.vaccines} vaccine_date={d.vaccine_date} id2={d.id}/>
+            <About_your_animal name={d.name} age={d.age} place={d.place} color={d.color} details={d.Additional_details} 
+            type={d.type} gender={d.gender} weight={d.weight} height={d.high} health={d.health_stats}
+             vaccines={d.vaccines} vaccine_date={d.vaccine_date} id2={d.animal_id}/>
 
              <Your_animal_vaccines vaccines={d.vaccines} vaccine_date={d.vaccine_date}/>
           </div>
