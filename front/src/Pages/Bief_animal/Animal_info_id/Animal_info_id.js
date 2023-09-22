@@ -26,7 +26,7 @@ const Animal_info_id = () => {
             {Info.map((d, i) => {
                 return (
                     <div key={i}>
-                        <About_your_animal name={d.name} id2={d.animal_id} />
+                        <About_your_animal name={d.name} id={d.id} id2={d.id} />
                     </div>
                 )
             })}

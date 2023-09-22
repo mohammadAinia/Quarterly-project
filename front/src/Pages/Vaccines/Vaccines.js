@@ -10,6 +10,7 @@ const Vaccines = () => {
 
     const [Name_vaccines, setName_vaccines] = useState('')
     const [Vaccine_history, setVaccine_history] = useState('')
+    
 
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
@@ -37,7 +38,7 @@ const Vaccines = () => {
 
                             <div className="input-box">
                                 <span className="details">Name Vaccines *</span>
-                                <select name="Vaccines" id="cars" required>
+                                <select name="Vaccines" id="cars" required onChange={e => setName_vaccines(e.target.value)}>
                                     <optgroup label="Cat">
                                         <option value="quadruple vaccination">quadruple vaccination</option>
                                         <option value="Rabies vaccination">Rabies vaccination</option>
