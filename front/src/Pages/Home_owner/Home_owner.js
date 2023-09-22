@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Card, Common_proplem, Header, SectionHeader, Animal_info, Button } from '../../Componets/index'
+import { Card, Notification, Common_proplem, Header, SectionHeader, Animal_info, Button, Add_proplem } from '../../Componets/index'
 import './Home_owner.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
@@ -54,6 +54,9 @@ const Home_owner = () => {
       <section class="banner" style={{ "margin-top": "1030px" }}>
         <Animal_info header={"Welcome" + name} image={""} p={"Fish are animals that live and swim in water (although there are fish that crawl on land, such as the mudskipper and the clary catfish), are cold-blooded (except for tuna, marlin, and mako sharks, which are warmer than water), and breathe through gills"} />
       </section>
+      <Notification />
+
+
 
 
       {/* <h1>Welcome {name}</h1> */}
@@ -62,35 +65,24 @@ const Home_owner = () => {
         <SectionHeader>Your Animals</SectionHeader>
         <div className="">
           <div className="heading">
-            <a href="/Search" className="btn"></a>
           </div>
         </div>
         <div className="box-container">
-         
-          {Animall_info.map((user,ii) =>{
-            return(
-            user.map((ss,i)=>{
-              return ( 
-              <div key={i}>
-                <Card image={'http://localhost:3001/uploads/' + user[i].urlImage} name={user[i].name} link={"see details"} id={user[i].id}/>
-              </div>
-            )
-            }) )
 
-            
-            
+          {Animall_info.map((user, ii) => {
+            return (
+              user.map((ss, i) => {
+                return (
+                  <div key={i}>
+                    <Card image={'http://localhost:3001/uploads/' + user[i].urlImage} name={user[i].name} link={"see details"} id={user[i].id} />
+                  </div>
+                )
+              }))
           })}
         </div>
       </section>
-      <section class="pricing" id="pricing">
-        <div class="box-container">
-          <Common_proplem />
-        </div>
-        <div className="">
-          <Button href="/Proplems_owner" value="See More" />
-        </div>
+      <Add_proplem/>
 
-      </section>
     </>
   )
 }

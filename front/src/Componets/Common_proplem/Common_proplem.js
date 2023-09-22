@@ -15,7 +15,6 @@ const Common_proplem = (props) => {
                             <p>{props.detals}</p>
                             <h4 className="price"><a href="/#">{props.a}</a></h4>
                     </div>
-
                 </div>
 
             </section>
