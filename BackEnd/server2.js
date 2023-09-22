@@ -118,7 +118,7 @@ app.delete('/delete/:id', (req, res) => {
     })
 })
 
-app.put('/update', (req, res) => {
+app.put('/update/:id', (req, res) => {
     var image = req.file.filename
     var name = req.body.name
     const sql = ("update animal set `name` =? `image`=? where animal_id=? ")

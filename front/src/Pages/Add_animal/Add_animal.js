@@ -48,7 +48,7 @@ const Add_animal = () => {
       .then(res => {
         if (res.data.valid) {
           if (Vaccines === "yes") {
-            navigate('/vaccines')
+            navigate(`/vaccines/`)
           }
           else {
             navigate('/')

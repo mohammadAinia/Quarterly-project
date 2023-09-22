@@ -69,7 +69,7 @@ const Home_owner = () => {
           {Animall_info.map((user,i) => {
             return ( 
               <div key={i}>
-                <Card image={'http://localhost:3001/uploads/' + user.urlImage} name={user.name} href={'/Animal_infoo'} />
+                <Card image={'http://localhost:3001/uploads/' + user.urlImage} name={user.name} id={user.id} link={"See details"}/>
               </div>
             )
           })}
