@@ -7,7 +7,7 @@ import { Header } from '../../Componets'
 const Vaccines = () => {
 
     const navigate = useNavigate()
-
+    const x1= 1 ,x2=2 , x3=3 , x4=4
     const [Name_vaccines, setName_vaccines] = useState('')
     const [Vaccine_history, setVaccine_history] = useState('')
 
@@ -39,14 +39,14 @@ const Vaccines = () => {
 
                             <div className="input-box">
                                 <span className="details">Name Vaccines *</span>
-                                <select name="Vaccines" id="cars" required>
+                                <select name="Vaccines" id="cars" required onChange={e => setName_vaccines(e.target.value)}>
                                     <optgroup label="Cat">
-                                        <option value="1">quadruple vaccination</option>
-                                        <option value="2">Rabies vaccination</option>
+                                        <option value={x1} >quadruple vaccination</option>
+                                        <option value={x2}>Rabies vaccination</option>
                                     </optgroup>
                                     <optgroup label="Dog">
-                                        <option value="3">Quadruple vaccination</option>
-                                        <option value="4">Coronavirus vaccination</option>
+                                        <option value={x3}>Quadruple vaccination</option>
+                                        <option value={x4}>Coronavirus vaccination</option>
                                     </optgroup>
                                 </select>
                             </div>

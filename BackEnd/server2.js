@@ -123,6 +123,13 @@ app.get('/edit/:id', (req, res) => {
 
     })
 })
+app.get('/animals_id/:id', (req, res) => {
+    
+    db.query('select * from animal', (err, result) => {
+        if (err) return res.json(err)
+        return res.json(result)
+    })
+})
 
 
 app.delete('/delete/:id', (req, res) => {
