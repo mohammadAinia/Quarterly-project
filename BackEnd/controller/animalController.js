@@ -256,5 +256,5 @@ module.exports={
     search_animal:search_animal,
     show_det:show_det,
     add_vac:add_vac,
-    show_animal_id:show_animal_id
+    // show_animal_id:show_animal_id
 }

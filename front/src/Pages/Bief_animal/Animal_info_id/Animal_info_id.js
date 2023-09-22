@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { Header ,About_your_animal} from '../../../Componets'
 import { useNavigate, useParams } from 'react-router-dom'
+
 const Animal_info_id = () => {
     const navigate = useNavigate()
 
