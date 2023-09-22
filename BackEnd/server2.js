@@ -57,6 +57,7 @@ app.get('/', (req, res) => {
     })
 })
 app.get('/animals', (req, res) => {
+    
     db.query('select * from animal', (err, result) => {
         if (err) return res.json(err)
         return res.json(result)

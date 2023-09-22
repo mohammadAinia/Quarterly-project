@@ -105,8 +105,7 @@ const singup_user=(req,res) => {
         });
 };
 function login(req,res) {
-    models.user_info
-        .findOne({ where: { email: req.body.email } })
+    models.user_info.findOne({ where: { email: req.body.email } })
         .then((user) => {
             if (user==null) {
                 return res.json({
@@ -118,7 +117,7 @@ function login(req,res) {
                     user.password,
                     function (err,result) {
                         if (result) {
-                            req.session.username=user.email;
+                            req.session.username=req.body.email;
                             console.log(user.first_name);
                             // console.log(req.session.username)
                             return res.json({ Login: true,username: req.session.username });
@@ -175,7 +174,7 @@ const home_owner=(req,res) => {
                 
                     var ress=[result]
                     console.log(ress)
-                    return res.json({valid:true,username:resp.first_name,result:ress})
+                    return console.log(req.session.username+" sess") +res.json({valid:true,username:resp.first_name,result:ress})
                     })
                     .catch((err) => {
                         return res.json({ valid: false });

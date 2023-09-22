@@ -14,7 +14,7 @@ const Animal_info_id = () => {
 
     useEffect(() => {
 
-        axios.get('http://localhost:3001/edit/' + id)
+        axios.get('http://localhost:3001/animal/' + id)
             .then(res => {
                 setInfo(res.data)
             })

@@ -1,8 +1,9 @@
-const { DATE }=require("sequelize")
+const { DATE, where }=require("sequelize")
 const models=require("../models")
 const validateor=require('fastest-validator')
 const date = require('date-and-time')
 const vaccien=require("../models/vaccien")
+const db=require("../dbb/db")
 function update_info_auto(req,res){//
     models.vaccien.findAll()
     .then(
@@ -78,19 +79,25 @@ function add_vac(req,res){
     })
 }
 function show_all_animal(req,res) {//tested
-
-    models.animal.findAll().then(
-        result => {
-            res.status(200).json(result)
-        }
-    )
-        .catch(
-            error => {
-                res.status(500).json({
-                    message: "error in show all "+error
-                })
-            }
-        )
+    const sql='select * from animals where owner =?'
+    db.query(sql,["Msxsxo@Hotmai.Com"], (err, result) => {
+        if (err) return res.json(err)
+        return res.json(result) + console.log()
+    })
+    // models.animal.findAll({where:{owner:req.session.username}}).then(
+    //     result => {
+    //         const ress=[result]
+    //         res.json(ress)
+    //     }
+    // )
+    //     .catch(
+    //         error => {
+    //             console.log(error+"the error in show all animal function")
+    //             res.json({
+    //                 message: "error in show all "+error
+    //             })
+    //         }
+    //     )
 
 }
 function search_animal(req,res) {//tested 1 issue server is off when i find
@@ -135,16 +142,6 @@ function add_animal(req,res) { //tested
         
     }
     models.animal.create(animal).then(result => {
-        // if(req.session.username){
-
-            
-        //     // res.json({
-        //     //     Login:true,valid:true,result
-        //     // })
-        // }
-        // else {
-        // valid:false
-        // }
 
         models.animal.findOne({where:{id:result.id}}).then(
             result=>{

@@ -12,9 +12,9 @@ const Animal_infoo = () => {
 
   useEffect(() => {
 
-    axios.get('http://localhost:3001/search')
+    axios.get('http://localhost:3001/animal/show_all_animal')
       .then(res => {
-        if (res.data.valid) {
+        if (1==1) {
           setInfo(res.data)
         }
         else {
