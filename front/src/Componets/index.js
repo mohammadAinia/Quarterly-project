@@ -29,6 +29,8 @@ export {default as Update_animals} from '../Pages/Update_animals/Update_animals'
 export {default as Animal_info_id} from '../Pages/Bief_animal/Animal_info_id/Animal_info_id'
 export {default as Notification} from './Notification/Notification'
 export {default as Add_proplem} from './Add_proplem/Add_proplem'
+export {default as Problems} from './Problems/Problems'
+
 
 
 
