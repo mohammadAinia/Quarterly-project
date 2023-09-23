@@ -17,7 +17,7 @@ const Home_owner = () => {
     // .then(res => setAnimal_info(res.data))
     // .catch(err=> alert(err))
 
-    axios.get('http://localhost:3001/user/')
+    axios.get('http://localhost:3001/user/',{withCredentials:true})
       .then(res => {
         if (res.data.valid) {
           setName(res.data.username)
@@ -67,19 +67,15 @@ const Home_owner = () => {
         </div>
         <div className="box-container">
          
-          {Animall_info.map((user,ii) =>{
+          {Animall_info.map((user,i) =>{
             return(
-            user.map((ss,i)=>{
-              return ( 
               <div key={i}>
-                <Card image={'http://localhost:3001/uploads/' + user[i].urlImage} name={user[i].name} link={"see details"} id={user[i].id}/>
+                <Card image={'http://localhost:3001/uploads/' + user.urlImage} name={user.name} link={"see details"} id={user.id}/>
               </div>
             )
-            }) )
-
-            
-            
-          })}
+          }
+          )
+          }
         </div>
       </section>
       <section class="pricing" id="pricing">

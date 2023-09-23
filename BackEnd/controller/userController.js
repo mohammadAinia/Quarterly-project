@@ -1,6 +1,8 @@
 const { json }=require("body-parser");
 const models=require("../models");
 const bcryptjs=require("bcryptjs");
+const db=require("../dbb/db")
+
 const singup_vet=(req,res) => {
     models.user_info.findOne({ where: { email: req.body.Email } }).then((result) => {
             if (result) {
@@ -170,16 +172,25 @@ function show_users(req,res) {
 const home_owner=(req,res) => {
     if (req.session.username) {
         models.user_info.findOne({ where: { email: req.session.username } }).then((resp) => {
-                models.animal.findAll({ where: { owner: req.session.username }, attributes:['name','urlImage']}).then((result) => {
-                
-                    var ress=[result]
-                    console.log(ress)
-                    return console.log(req.session.username+" sess") +res.json({valid:true,username:resp.first_name,result:ress})
-                    })
-                    .catch((err) => {
-                        return res.json({ valid: false });
-                    });
+
+            sql='select * from animals where owner=?'
+            db.query(sql,[req.session.username],(err, result) => {
+                if (err) return res.json(err)
+                return res.json({valid:true,username:resp.first_name,result}) + console.log()
             })
+                // models.animal.findAll({ where: { owner: req.session.username }, attributes:['name','urlImage']}).then((result) => {
+                
+                //     var ress=[result]
+                //     console.log(ress)
+                //     return console.log(req.session.username+" sess") +res.json({valid:true,username:resp.first_name,result:ress})
+                //     })
+                //     .catch((err) => {
+                //         return res.json({ valid: false });
+                //     });
+
+
+            }
+            )
             .catch((err) => {
                 return res.json({ valid: false });
             });

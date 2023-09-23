@@ -30,19 +30,25 @@ function update_info_auto(req,res){//
     .catch()
 }
 function add_vac(req,res){
+    
     const iddd =req.params.id
 
     models.health_record.findOne({where:{animal_id:iddd}}).then(
         result => {
             
-            models.vaccien_information.findOne({where:{id:1}}).then(////.mdnflkadlfkjakmddlkamskdmaksmdkamdkmaksmmask.dm.asmdc
+            models.vaccien_information.findOne({where:{id:req.body.Name_vaccines}}).then(////.mdnflkadlfkjakmddlkamskdmaksmdkamdkmaksmmask.dm.asmdc
                 ress=>{
                     var date1=ress.duration_ef*30
-                    const d = new Date();
+                    const d = new Date(result.date_take_vac);
+                    console.log(d+"1")
                     var resultt = d.setDate(d.getDate() + date1);
+                    console.log(resultt+"2")
                     var dad=new Date(resultt)
-                    var date = dad.getFullYear()+'/'+(dad.getMonth()+1)+'/'+dad.getDate(); 
+                    console.log(dad+"3")
+                    var date = dad.getFullYear()+'/'+(dad.getMonth()+1)+'/'+dad.getDate();
+                    console.log(date+"4") 
                     var dada=new Date(date)
+
                     information_vac={
                         date_take_vac:req.body.Vaccine_history,
                         vacc_info_id:ress.id,
@@ -80,7 +86,7 @@ function add_vac(req,res){
 }
 function show_all_animal(req,res) {//tested
     const sql='SELECT * FROM animals JOIN health_records ON animals.id=health_records.animal_id WHERE owner=?'
-    db.query(sql,["Msxsxo@Hotmai.Com"], (err, result) => {
+    db.query(sql,[req.session.username], (err, result) => {
         if (err) return res.json(err)
         return res.json(result) + console.log()
     }
@@ -170,55 +176,72 @@ function add_animal(req,res) { //tested
 }
 
 function destroy_animal(req,res) { //tested
-    const id=req.params.id
-
-    // const userId=1
-    models.animal.destroy({ where: { id:id } }).then(result => {
-        res.status(200).json({
-            message: "animal deleted",
+   
+        const sql = "delete from animals where id =?"
+        const id = req.params.id
+        db.query(sql, [id], (err, result) => {
+            if (err) return res.json(err)
+            return res.json(result)
         })
-    }).catch(error => {
-        res.status(500).json({
-            message: "error in destroy function",
-            error: error
-        })
-    });
+    
 }
 function update(req,res) {
     const id=req.params.id
-    const updateAnimal=
-    {
-        name: req.body.name,
-        type: req.body.type,
-        // color: req.body.color,
-        age: req.body.age,
-        gender: req.body.gender,
-        food_type: req.body.food_type,
-        place: req.body.place,
-        // owner: req.body.owner,
-    }
-
-    models.animal.update(updateAnimal,{ where: { id: id } }).then(result => {
-        res.status(200).json(result
-            // {
-            //     message: "post suc",
-            //     // post:result
-            // }
-        )
-    }).catch(error => {
-        res.status(500).json({
-            message: "update fun err",
-            error: error
-        })
+    var name = req.body.name
+    var animal_place=req.body.animal_place
+    var Additional_details = req.body.Additional_details
+    var owner=req.session.username
+    var weight=req.body.weight
+    var high=req.body.height
+    var health_stats=req.body.health_Status
+    var sql='update animals set name=?,place=?,Additional_details=?,owner=? where id=? '
+    db.query(sql,[name,animal_place,Additional_details,owner,id],(err, result) => {
+        if (err) return res.json(err)
+        else{
+    var sqll='update health_records set weight=?,high=?,health_stats=?,owner=? where animal_id=? '
+    db.query(sqll,[weight,high,health_stats],(err, result) => {
+        if (err) return res.json(err)+console.log(err)
+        return res.json({valid:true}) + console.log()
     })
+        }
+    })
+    // var image=req.file.filename
+    // const updateAnimal=
+    // {   urlImage:req.file.filename,
+    //     name: req.body.name,
+    //     place: req.body.animal_place,
+    //     Additional_details:req.body.details,
+    //     owner: req.body.owner,
+    // }
+
+    // models.animal.update(updateAnimal,{ where: { id: id } }).then(result => {
+    //     health_record={
+    //         weight:req.body.weight,
+    //         high:req.body.height,
+    //         health_stats:req.body.health_Status
+    //     }
+    //     models.health_record.update(health_record,{where:{animal_id:id}}).then(
+    //         resultt=>{
+    //             return res.json({valid:true})
+    //         }
+    //     ).catch()
+    // }).catch(error => {
+    //     res.status(500).json({
+    //         message: "update fun err",
+    //         error: error
+    //     })
+    // })
 }
 function show_animal_id(req,res){
+    if(req.session.username){
     const id = req.params.id;
     const sql='SELECT * FROM animals JOIN health_records ON animals.id=health_records.animal_id WHERE animals.id=? '
     db.query(sql,[id],(err, result) => {
         if (err) return res.json(err)
         return res.json(result)+ console.log()
     })
+}
+else return res.json({valid:false})
 }
 function show_det(req,res){
 const id=req.body.id
@@ -256,5 +279,5 @@ module.exports={
     search_animal:search_animal,
     show_det:show_det,
     add_vac:add_vac,
-    // show_animal_id:show_animal_id
+    show_animal_id:show_animal_id
 }

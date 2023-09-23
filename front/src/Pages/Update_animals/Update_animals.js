@@ -24,7 +24,7 @@ const Update_animals = () => {
         axios.get(`http://localhost:3001/animal/show_animal_id/${id}`)
             .then(res => {
                 setName(res.data[0].name)
-                setPicture(res.data[0].urlimage)
+                setPicture(res.data[0].urlIimage)
                 setAnimal_place(res.data[0].place)
                 setAdditional_details(res.data[0].Additional_details)
                 setWeight(res.data[0].weight)
@@ -43,14 +43,14 @@ const Update_animals = () => {
         formData.append('image', Picture)
         formData.append('name', Name)
         formData.append('animal_place', Animal_place)
-        formData.append('details', Additional_details)
+        formData.append('Additional_details', Additional_details)
         formData.append('weight', Weight)
         formData.append('height', Height)
         formData.append('health_Status', Healthـstatus)
 
         e.preventDefault()
 
-        axios.put('http://localhost:3001/animal/update/' + id, formData)
+        axios.put(`http://localhost:3001/animal/update/${id}`, formData)
             .then(res => {
                 if (res.data.valid) {
                     navigate('/Animal_infoo')
@@ -80,7 +80,7 @@ const Update_animals = () => {
                                 </div>
                                 <div class="input-box">
                                     <span class="details">Picture of an animal</span>
-                                    <input type="file" value={Picture} onChange={e => setPicture(e.target.files[0])} />
+                                    <input type="file"  onChange={e => setPicture(e.target.files[0])} />
                                 </div>
                                 <div class="input-box">
                                     <span class="details">Additional details </span>

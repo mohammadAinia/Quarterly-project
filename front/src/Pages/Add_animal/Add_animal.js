@@ -44,7 +44,7 @@ const Add_animal = () => {
 
     e.preventDefault()
 
-    axios.post('http://localhost:3001/animal/add-animal', formData)
+    axios.post('http://localhost:3001/animal/add-animal',formData)
       .then(res => {
         if (res.data.valid) {
           if (Vaccines === "yes") {

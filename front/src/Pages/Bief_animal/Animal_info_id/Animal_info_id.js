@@ -15,9 +15,14 @@ const Animal_info_id = () => {
 
     useEffect(() => {
 
-        axios.get('http://localhost:3001/animal/' + id)
+        axios.get(`http://localhost:3001/animal/show_animal_id/${id}`,{withCredentials:true})
             .then(res => {
+                if(res.data){
                 setInfo(res.data)
+                }
+                else{
+                    navigate('/login')               
+                 }
             })
             .catch(err => { console.log(err) })
     }, [])
@@ -27,7 +32,7 @@ const Animal_info_id = () => {
             {Info.map((d, i) => {
                 return (
                     <div key={i}>
-                        <About_your_animal name={d.name} id={d.id} id2={d.id} />
+                        <About_your_animal name={d.name} age={d.age} place={d.place} color={d.color} detalis={d.Additional_details} type={d.type} genger={d.gender} weight={d.weight} height={d.high} health={d.health_stats} id={d.id} id2={d.id} />
                     </div>
                 )
             })}

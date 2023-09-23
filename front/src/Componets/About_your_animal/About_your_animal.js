@@ -9,7 +9,7 @@ const About_your_animal = (props) => {
 
     const handleDelete = async (id)=>{
         try{
-            await axios.delete('http://localhost:3001/animal/delete'+id)
+            await axios.delete('http://localhost:3001/animal/delete/'+id)
             window.location.reload()
         }
         catch(err){console.log(err)}
@@ -41,7 +41,7 @@ const About_your_animal = (props) => {
                                 </div>
                                 <div class="input-box">
                                     <span class="details">Additional details </span>
-                                    <p>{props.detalis}</p>
+                                    <p>{props.details}</p>
                                 </div>
                                 <div class="input-box">
                                     <span class="details">type </span>
@@ -49,7 +49,7 @@ const About_your_animal = (props) => {
                                 </div>
                                 <div className="input-box">
                                     <span className="details">Gender</span>
-                                    <p>{props.genger}</p>
+                                    <p>{props.gender}</p>
                                 </div>
                                 <div className="input-box">
                                     <span className="details">Weight kg</span>
@@ -65,7 +65,7 @@ const About_your_animal = (props) => {
                                 </div>
                             </div>
                             <div class="button">
-                                <button onClick={e =>handleDelete(props.id)}>Delete</button>
+                                <button onClick={e =>handleDelete(props.id2)}>Delete</button>
                             </div>
                             <div class="buttonn">
                                 {/* <a href="/#">Update info</a> */}

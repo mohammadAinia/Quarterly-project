@@ -7,21 +7,25 @@ var session = require('express-session')
 const cookie = require('cookie-parser');
 const bodyparser=require('body-parser')
 const path =require("path")
+const cookieParser=require("cookie-parser")
 app.use(cookie())
 app.use(bodyparser.json())
+app.use(express.json())
 app.use(session({
     secret: "secret",
-    saveUninitialized: false,
+    saveUninitialized: true,
     cookie: {
+        expires:Date.now()+1000*60*60*24*7,
         maxAge: 1000 * 60 * 60 * 24*1000,
-        secure: false
+        httpOnly:true
+        // secure: false
     },
     resave: false,
 }))
 
 app.use(cors({
     origin: ['http://localhost:3000'],
-    methods:["Post" , "Get"],
+    // methods:["Post" , "Get"],
     credentials: true
 }))
 app.use(express.urlencoded({
