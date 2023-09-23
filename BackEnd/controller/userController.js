@@ -177,7 +177,7 @@ const home_owner=(req,res) => {
             db.query(sql,[req.session.username],(err, result) => {
                 if (err) return res.json(err)
                 else {
-                var sqll='select title,disc,animal_type from problims LIMIT 1'
+                var sqll='select title,disc,animal_type from problims LIMIT 3'
                 db.query(sqll,(err, resultt) =>{
                     if (err)return res.json(err)
                     else
