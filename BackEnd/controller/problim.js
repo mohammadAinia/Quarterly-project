@@ -9,16 +9,17 @@ const show_all_problim=(req,res) => {
     }
     )
 }
-const add_problim=(ress,res) => {
+const add_problim=(req,res) => {
     var publisher=req.session.username
     var title=req.body.Name
     var desc=req.body.Text
     var animal_type=req.body.Type
     const d = new Date();
-    var date = d.getFullYear()+'/'+(d.getMonth()+1)+'/'+d.getDate();   
-    var sql= "insert into problims (title,disc,publisher,animal_type,date_prob) values('" + title + "','" + desc + "','" + publisher + "','" + animal_type + "''" + date + "')"
+    var date = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();   
+    var sql= "insert into problims (title,disc,publisher,animal_type,date_prob) values ('" + title + "','" + desc + "','" + publisher + "','" + animal_type + "','" + date + "')"
     db.query(sql,(err, result) => {
-        if (err) return res.json(err)
+        if (err) return res.json(err)+console.log(err)
+        
         return res.json({result,valid:true}) + console.log()
     }
     )

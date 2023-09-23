@@ -177,9 +177,15 @@ const home_owner=(req,res) => {
             db.query(sql,[req.session.username],(err, result) => {
                 if (err) return res.json(err)
                 else {
-            var sql='select title,desc,type from problims'
+                var sqll='select title,disc,animal_type from problims LIMIT 1'
+                db.query(sqll,(err, resultt) =>{
+                    if (err)return res.json(err)
+                    else
+                    return res.json({valid:true,username:resp.first_name,result,resultt}) + console.log()
+
+                })
                 }
-                return res.json({valid:true,username:resp.first_name,result}) + console.log()
+                // return res.json({valid:true,username:resp.first_name,result}) + console.log()
             })
                 // models.animal.findAll({ where: { owner: req.session.username }, attributes:['name','urlImage']}).then((result) => {
                 

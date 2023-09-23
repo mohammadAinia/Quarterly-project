@@ -8,7 +8,7 @@ import animal_image from '../../Assert/Images/cute.avif'
 const Home_owner = () => {
   const [name, setName] = useState('')
   const [Animall_info, setAnimal_info] = useState([])
-
+  const [Problim_info, setProblim_info] = useState([])
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -17,11 +17,12 @@ const Home_owner = () => {
     // .then(res => setAnimal_info(res.data))
     // .catch(err=> alert(err))
 
-    axios.get('http://localhost:3001/user/', { withCredentials: true })
+    axios.get('http://localhost:3001/user/',{withCredentials:true})
       .then(res => {
         if (res.data.valid) {
           setName(res.data.username)
           setAnimal_info(res.data.result)
+          setProblim_info(res.data.resultt)
           // if (res.data.image==null) {
           // res.data.image=animal_image
           // }
@@ -68,13 +69,11 @@ const Home_owner = () => {
           </div>
         </div>
         <div className="box-container">
-
-          {Animall_info.map((user, i) => {
-            return (
+         
+          {Animall_info.map((user,i) =>{
+            return(
               <div key={i}>
-                <Card image={'http://localhost:3001/uploads/' + user.urlImage} name={user.name} link={"see details"} id={user.id} />
-                <Add_proplem />
-                <Problems name={user.name} type={user.type} text={user.text} />
+                <Card image={'http://localhost:3001/uploads/' + user.urlImage} name={user.name} link={"see details"} id={user.id}/>
               </div>
             )
           }
@@ -82,6 +81,15 @@ const Home_owner = () => {
           }
         </div>
       </section>
+      <Add_proplem />
+
+      {Problim_info.map((user, i) => {
+        return (
+          <div key={i}>
+                <Problems name={user.title} type={user.disc} text={user.animal_type}/>
+              </div>
+          )
+      })}
 
     </>
   )
