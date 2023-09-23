@@ -80,17 +80,14 @@ const Home_owner = () => {
           }
         </div>
       </section>
-      <Add_proplem />
-      {Animall_info.map((user, ii) => {
+      {/* <Add_proplem />
+      {Animall_info.map((user, i) => {
         return (
-          user.map((ss, i) => {
-            return (
-              <div key={i}>
-                <Problems name={user[i].name} type={user[i].type} text={user[i].text}/>
+          <div key={i}>
+                <Problems name={user.name} type={user.type} text={user.text}/>
               </div>
-            )
-          }))
-      })}
+          )
+      })} */}
 
     </>
   )
