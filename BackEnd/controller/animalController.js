@@ -39,7 +39,7 @@ function add_vac(req,res){
             models.vaccien_information.findOne({where:{id:req.body.Name_vaccines}}).then(////.mdnflkadlfkjakmddlkamskdmaksmdkamdkmaksmmask.dm.asmdc
                 ress=>{
                     var date1=ress.duration_ef*30
-                    const d = new Date(result.date_take_vac);
+                    const d = new Date();
                     console.log(d+"1")
                     var resultt = d.setDate(d.getDate() + date1);
                     console.log(resultt+"2")

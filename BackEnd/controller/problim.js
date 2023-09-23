@@ -1,63 +1,39 @@
 const models=require("../models")
+const db=require("../dbb/db")
+
 const show_all_problim=(req,res) => {
-    models.common_problim.findAll()
-        .then(
-            result => {
-                return res.json({ valid: true,ses: req.session.username,result: result })
-            }
-        )
-        .catch(
-            err => {
-                console.log(err)
-                return res.json({ valid: false })
-            }
-        )
+    sql='select* from problims'
+    db.query(sql, (err, result) => {
+        if (err) return res.json(err)
+        return res.json(result) + console.log()
+    }
+    )
 }
 const add_problim=(ress,res) => {
-    const problim={
-        title: req.body.Title,
-        disc: req.body.Description,
-        publisher: req.session.username,
-        animal_type: req.body.Animal_type,
-        // category: req.body.Category
+    var publisher=req.session.username
+    var title=req.body.Title
+    var desc=req.body.Description
+    var animal_type=req.body.animal_type
+    const d = new Date();
+    var date = d.getFullYear()+'/'+(d.getMonth()+1)+'/'+d.getDate();   
+    var sql= "insert into problims (title,disc,publisher,animal_type,date_prob) values('" + title + "','" + desc + "','" + publisher + "','" + animal_type + "''" + date + "')"
+    db.query(sql,(err, result) => {
+        if (err) return res.json(err)
+        return res.json(result) + console.log()
     }
-    models.problim.create(problim).then(
-        res => {
-            return res.json({ valid: true,ses: req.session.username ,res })
-        }
     )
-        .catch(err => {
-            console.log(err)
-            return res.json({ valid: false })
-        })
 }
+
 const add_answer=(req,res) => {
-    const id_problim=req.body.id_problim
-    models.problim.findOne({ where: { id: id_problim } }).then(
-        result => {
-            const ansewr={
-                ansewr: req.body.ansewr,
-                id_problim: result.id
-            }
-            models.answer_table.create(ansewr).then(
-                result=>{
-                    return res.json({valid:true,result:result})
-                }
-            )
-                .catch(
-                    err => {
-                        console.log(err)
-                        return res.json({ valid: false })
-
-                    }
-                )
-        }
+    const id = req.params.id;
+    var answer=req.body.answer
+    var publisher=req.session.username
+    const d = new Date();
+    var date = d.getFullYear()+'/'+(d.getMonth()+1)+'/'+d.getDate();
+    var sql= "insert into answer_tables (id_problim,answer,publisher,date) values('" + id + "','" + answer + "','" + publisher + "''" + date + "')"
+    db.query(sql, (err, result) => {
+        if (err) return res.json(err)
+        return res.json(result) + console.log()
+    }
     )
-        .catch(
-            err => {
-                console.log(err)
-
-                return res.json({ valid: false })
-            }
-        )
 }
