@@ -104,6 +104,14 @@ app.post('/signup', (req, res) => {
         return res.json(result)
     })
 })
+app.post('/add_proplem' , (req,res)=>{
+    var text = req.body.Text
+    console.log(text)
+    db.query("insert into problems (problem_text ) values('" + text + "')" ,(err,result)=>{
+        if (err) return res.json(err)
+        return res.json( result)
+    })
+})
 app.post('/add_animal', upload.single('image'), (req, res) => {
     var image = req.file.filename
     var name = req.body.name
@@ -151,6 +159,7 @@ app.put('/update/:id', upload.single('image'),(req, res) => {
         return res.json(result)
     })
 })
+
 
 app.listen(3001, () => {
     console.log('server is run')
