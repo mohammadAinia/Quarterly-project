@@ -1,7 +1,7 @@
 import './Animal_info_id.css'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { Header ,About_your_animal} from '../../../Componets'
+import { Header, About_your_animal, Your_animal_vaccines } from '../../../Componets'
 import { useNavigate, useParams } from 'react-router-dom'
 
 const Animal_info_id = () => {
@@ -32,7 +32,7 @@ const Animal_info_id = () => {
             {Info.map((d, i) => {
                 return (
                     <div key={i}>
-                        <About_your_animal name={d.name} age={d.age} place={d.place} color={d.color} detalis={d.Additional_details} type={d.type} genger={d.gender} weight={d.weight} height={d.high} health={d.health_stats} id={d.id} id2={d.id} />
+                        <About_your_animal name={d.name} id={d.id} id2={d.id} />
                     </div>
                 )
             })}
