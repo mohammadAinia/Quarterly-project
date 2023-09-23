@@ -21,7 +21,7 @@ const Add_proplem = () => {
         //         alert('Published successfully')
         //     })
         //     .catch(err => { console.log(err) })
-        axios.post('http://localhost:3001/user/#', { Text })
+        axios.post('http://localhost:3001/user/#', { Name , Text , Type})
             .then(res => {
                 if (res.data.valid) {
                     alert("Published successfully")
