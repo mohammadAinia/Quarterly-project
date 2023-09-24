@@ -5,8 +5,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 import { Container, Login, Register_owner , Animal,Cat_info,Search_animal, Parrot_info,Fish_info,
   Register_veterinarian ,Home_owner , Type ,Dog_info , Add_animal,Animal_infoo,
-  Common_users,Vaccines,About_your_animal,Your_animal_vaccines,Update_animals,
-  Animal_info_id} from './Componets/index'
+  Common_users,Vaccines,Update_animals,Problem_id,
+  Animal_info_id,
+  Problems} from './Componets/index'
 
 const App = () => {
   return (
@@ -35,8 +36,9 @@ const App = () => {
               <Route path='Animal_infoo/update/:id' element={<Update_animals/>}/>
               <Route path='Animal_info_id/:id/update/:id' element={<Update_animals/>}/>
               <Route path='Animal_info_id/:id' element={<Animal_info_id/>}/>
+              <Route path='Problem_id/:id' element={<Problem_id/>}/>
 
-
+              
           </Routes>
         </Container>
       </Router>

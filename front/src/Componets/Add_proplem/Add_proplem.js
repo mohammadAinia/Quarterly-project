@@ -16,11 +16,6 @@ const Add_proplem = () => {
     const handleSubmit = async (e) => {
 
         e.preventDefault()
-        // axios.post('http://localhost:3001/add_proplem', { Text })
-        //     .then(res => {
-        //         alert('Published successfully')
-        //     })
-        //     .catch(err => { console.log(err) })
         axios.post('http://localhost:3001/problim/add_problim', { Name , Text , Type})
             .then(res => {
                 if (res.data.valid) {
