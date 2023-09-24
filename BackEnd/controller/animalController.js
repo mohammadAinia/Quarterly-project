@@ -235,10 +235,19 @@ function update(req,res) {
 function show_animal_id(req,res){
     if(req.session.username){
     const id = req.params.id;
-    const sql='SELECT * FROM animals JOIN health_records ON animals.id=health_records.animal_id WHERE animals.id=? '
+    const sql='SELECT * from animals JOIN health_records on animals.id=health_records.animal_id JOIN vacciens on animals.id=vacciens.animal_id JOIN vaccien_informations on vacciens.vacc_info_id=vaccien_informations.id WHERE animals.id=? '
     db.query(sql,[id],(err, result) => {
         if (err) return res.json(err)
-        return res.json(result)+ console.log()
+        const agee=result[0].age
+        var today = new Date();
+        var birthDate = agee
+        var age = today.getFullYear() - birthDate.getFullYear();
+        var m = today.getMonth() - birthDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+        
+        return res.json({result ,age:age+"year"+m+"months"})+ console.log()
     })
 }
 else return res.json({valid:false})
