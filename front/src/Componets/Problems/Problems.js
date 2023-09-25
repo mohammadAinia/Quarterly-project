@@ -1,7 +1,7 @@
 import './Problems.css'
 import React, { useState } from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Problems = (props) => {
     const navigate = useNavigate()
@@ -9,7 +9,7 @@ const Problems = (props) => {
     const [Text, setComment] = useState('')
 
     axios.defaults.withCredentials = true
-    const handleSubmit = (id) => {
+    const handleSubmit = (id1) => {
 
         id.preventDefault()
         axios.post("http://localhost:3001/problim/add_answer/"+id, { Text })
@@ -37,7 +37,7 @@ const Problems = (props) => {
                     <div class="inputBox">
                         <textarea placeholder="add comment" required onChange={e => setComment(e.target.value)} />
                     </div>
-                    <button style={{ "font-size": "1.4rem", "padding": "0.7rem 2rem" }} className="btn" >share</button><br />
+                    <button style={{ "font-size": "1.4rem", "padding": "0.7rem 2rem" }} className="btn">share</button><br />
                     <a href='/All_problems' className="btn" style={{ "font-size": "1.4rem", "padding": "0.7rem 2rem" }}>Comments</a>
                 </div>
             </form>

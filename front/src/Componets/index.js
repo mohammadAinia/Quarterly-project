@@ -30,6 +30,10 @@ export {default as Animal_info_id} from '../Pages/Bief_animal/Animal_info_id/Ani
 export {default as Notification} from './Notification/Notification'
 export {default as Add_proplem} from './Add_proplem/Add_proplem'
 export {default as Problems} from './Problems/Problems'
+export {default as Problem_id} from '../Pages/Problem_id/Problem_id'
+export {default as Problem_id_comp} from './Problem_id_comp/Problem_id_comp'
+
+
 
 
 
