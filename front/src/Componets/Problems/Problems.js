@@ -6,13 +6,12 @@ import { Link, useNavigate } from 'react-router-dom'
 const Problems = (props) => {
     const navigate = useNavigate()
 
-    const [Text, setComment] = useState('')
+    const [Comment, setComment] = useState('')
 
     axios.defaults.withCredentials = true
     const handleSubmit = (id) => {
 
-        id.preventDefault()
-        axios.post("http://localhost:3001/problim/add_answer/"+id, { Text })
+        axios.post("http://localhost:3001/problim/add_answer/"+id, { Comment })
             .then(res => {
                 if(res.data.valid){alert('Published successfully')
             }
@@ -37,8 +36,9 @@ const Problems = (props) => {
                     <div class="inputBox">
                         <textarea placeholder="add comment" required onChange={e => setComment(e.target.value)} />
                     </div>
-                    <button style={{ "font-size": "1.4rem", "padding": "0.7rem 2rem" }} className="btn">share</button><br />
-                    <a href='/All_problems' className="btn" style={{ "font-size": "1.4rem", "padding": "0.7rem 2rem" }}>Comments</a>
+                    <button onClick={e =>handleSubmit(props.id1)} style={{ "font-size": "1.4rem", "padding": "0.7rem 2rem" }} className="btn">share</button><br />
+                    {/* <a href='/All_problems' className="btn" style={{ "font-size": "1.4rem", "padding": "0.7rem 2rem" }}>Comments</a> */}
+                    <Link className="btn" to={`Problem_id/${props.id2}`}>Comments</Link>
                 </div>
             </form>
 
