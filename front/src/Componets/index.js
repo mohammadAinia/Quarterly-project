@@ -33,6 +33,8 @@ export {default as Problems} from './Problems/Problems'
 export {default as Problem_id} from '../Pages/Problem_id/Problem_id'
 export {default as Problem_id_comp} from './Problem_id_comp/Problem_id_comp'
 export {default as Comments} from './Comments/Comments'
+export {default as Bunner} from './Bunner/Bunner'
+
 
 
 

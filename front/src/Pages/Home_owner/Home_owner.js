@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
-import { Card, Notification, Problems, Header, SectionHeader, Animal_info, Button, Add_proplem } from '../../Componets/index'
+import { Card, Notification,Bunner, Problems, Header, SectionHeader, Animal_info, Button, Add_proplem } from '../../Componets/index'
 import './Home_owner.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import animal_image from '../../Assert/Images/cute.avif'
+import animal_image from '../../Assert/Images/—Pngtree—parrot_1001948.png'
 
 const Home_owner = () => {
   const [name, setName] = useState('')
@@ -53,8 +53,9 @@ const Home_owner = () => {
 
       <Header href1={"/Animal"} a1={"Animal"} href2={"#"} a2={"Adopt Animal"} href3={"/common_users"} a3={"Common Problems"} href4={"/Add_Animal"} a4={"Add Animal"} href5={"/Animal_infoo"} a5={"show All Animal"} href6={"/login_out"} a6={"Login Out"} />
       <section class="banner" style={{ "margin-top": "1600px" }}>
-        <Animal_info header={"Welcome" + name} image={""} p={"Fish are animals that live  and swim in water (although there are fish that crawl on land, such as the mudskipper and the clary catfish), are cold-blooded (except for tuna, m"} />
-      </section>
+        <Bunner header={"Welcome" + name} p1={"!! You must provide a suitable environment for every animal you own"}
+          p2={"!! Your dog is 39 days old. During this period, we advise you to feed him proteins and nutrients"}
+          p3={"!! We would like to remind you that the vaccination date for your cat is approaching on 9/20/2022"} image={animal_image} />      </section>
       <Notification />
 
 
@@ -90,7 +91,7 @@ const Home_owner = () => {
           {Problim_info.map((user, i) => {
             return (
               <div key={i}>
-                <Problems name={user.title} type={user.disc} text={user.animal_type} id1={user.id} id2={user.id}/>
+                <Problems name={user.title} type={user.disc} text={user.animal_type} id1={user.id} id2={user.id} />
               </div>
             )
           })}
