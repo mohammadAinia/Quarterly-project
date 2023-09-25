@@ -1,37 +1,52 @@
 
 .banner{
-    background: url(../../Assert/Images/banner.png) no-repeat;
-  }
+  background: url(../../Assert/Images/banner.png) no-repeat;
+  padding: 40px;
+}
+
+.banner .row{
+  display:flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6rem;
+}
+
+.banner .row .content{
+  flex:  1 1 39rem;
+}
+.banner .row .content .nav{
+  border: dotted 2.5px #ff6e01;
+  width: 700px;
+}
+
+.banner .row .content h3{
+  font-size: 2rem;
+  color: var(--main);
   
-  .banner .row{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 6rem;
-  }
-  
-  .banner .row .content{
-    flex:  1 1 39rem;
-  }
-  
-  .banner .row .content h3{
-    font-size: 2rem;
-    color: var(--main);
-    text-transform: uppercase;
-  }
-  
-  .banner .row .content p{
-    font-size: 1.6rem;
-    color: var(--black);
-    padding: 1rem 0;
-    line-height: 1.8;
-  }
-  
-  .banner .row .image{
-    flex: 1 1 41rem;
-    margin-bottom: -14rem;
-  }
-  
-  .banner .row .image img{
-    width: 100%;
-  }
+  text-transform: uppercase;
+}
+
+.banner .row .content p{
+  font-size: 1.6rem;
+  color: var(--black);
+  padding: 6px;
+  line-height: 1.8;
+}
+.banner .row .content ul li{
+  font-size: 1.6rem;
+  color: var(--black);
+  padding: 1rem 0;
+  line-height: 1.8;
+}
+.banner .row .content p:hover{
+  color: chocolate;
+}
+
+.banner .row .image{
+  flex: 1 1 41rem;
+  margin-bottom: -14rem;
+}
+
+.banner .row .image img{
+  width: 100%;
+}
