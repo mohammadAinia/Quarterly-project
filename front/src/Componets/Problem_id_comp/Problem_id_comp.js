@@ -35,9 +35,9 @@ const Problem_id_comp = (props) => {
                     <h2>{props.type}</h2>
                     <p style={{ "font-size": "10px" }}>{props.text}</p> <br />
                     <div class="inputBox">
-                        <textarea placeholder="add comment" required onClick={e => setComment(e.target.value)} />
+                        <textarea placeholder="add comment" required onChange={e => setComment(e.target.value)} />
                     </div>
-                    <button style={{ "font-size": "1.4rem", "padding": "0.7rem 2rem" }} className="btn" onSubmit={handleSubmit(props.id1)}>share</button><br />
+                    <button style={{ "font-size": "1.4rem", "padding": "0.7rem 2rem" }} className="btn" onClick={handleSubmit(props.id1)}>share</button><br />
 
                 </div>
             </form>
