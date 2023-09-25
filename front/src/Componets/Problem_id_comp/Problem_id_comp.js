@@ -10,18 +10,18 @@ const Problem_id_comp = (props) => {
 
     const handleSubmit = (id) => {
 
-        axios.post("http://localhost:3001/problim/add_answer/" + id, { Comment })
-            .then(res => {
-                if (res.data.valid) {
-                    window.location.reload()
-                }
-                else {
-                    alert("Please fill all the fields")
-                }
+        // axios.post("http://localhost:3001/problim/add_answer/" + id, { Comment })
+        //     .then(res => {
+        //         if (res.data.valid) {
+        //             window.location.reload()
+        //         }
+        //         else {
+        //             alert("Please fill all the fields")
+        //         }
 
-            }
-            )
-            .catch(err => { console.log(err) })
+        //     }
+        //     )
+        //     .catch(err => { console.log(err) })
     }
 
 

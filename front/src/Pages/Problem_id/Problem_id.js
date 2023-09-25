@@ -1,7 +1,7 @@
 import './Problem_id.css'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { Header, Problem_id_comp ,Comments} from '../../Componets'
+import { Header, Problems, Comments } from '../../Componets'
 import { useNavigate, useParams } from 'react-router-dom'
 
 
@@ -34,7 +34,7 @@ const Problem_id = (props) => {
                     {Problim_info.map((user, i) => {
                         return (
                             <div key={i}>
-                                <Problem_id_comp name={user.title} type={user.disc} text={user.animal_type} id1={user.id_problim} />
+                                <Problems name={user.title} type={user.disc} text={user.animal_type} id1={user.id} id2={user.id} />
                             </div>
                         )
                     })}
@@ -50,7 +50,7 @@ const Problem_id = (props) => {
                                 {Comment.map((user, i) => {
                                     return (
                                         <div key={i}>
-                                            <Comments name={user.publisher_ans} text={user.answer}/>
+                                            <Comments name={user.publisher_ans} text={user.answer} />
                                         </div>
                                     )
                                 })}
