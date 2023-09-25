@@ -1,14 +1,14 @@
 import './Problem_id.css'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { Header, Problem_id_comp } from '../../Componets'
+import { Header, Problem_id_comp ,Comments} from '../../Componets'
 import { useNavigate, useParams } from 'react-router-dom'
 
 
 const Problem_id = (props) => {
 
     const [Problim_info, setProblim_info] = useState('')
- 
+    const [Comment, setComments] = useState('')
 
     const { id } = useParams()
 
@@ -17,6 +17,8 @@ const Problem_id = (props) => {
         axios.get(`http://localhost:3001/#/${id}`)
             .then(res => {
                 setProblim_info(res.result)
+                setComments(res.resultt)
+
             })
             .catch(err => { console.log(err) })
     }, [])
@@ -24,7 +26,7 @@ const Problem_id = (props) => {
 
     return (
         <>
-        
+
             <section className="pricing" id="pricing">
                 <h2 className="heading">Proplem</h2>
 
@@ -38,7 +40,26 @@ const Problem_id = (props) => {
                     })}
                 </div>
             </section>
-            
+
+            <div>
+                <div className="container" style={{ "margin-top": "50px", "margin-bottom": "70px" }}>
+                    <div className="title">Comments</div>
+                    <div className="content">
+                        <form action="#" >
+                            <div className="user-details">
+                                {Comment.map((user, i) => {
+                                    return (
+                                        <div key={i}>
+                                            <Comments name={user.publisher} text={user.answer}/>
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
         </>
     )
 }

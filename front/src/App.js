@@ -37,7 +37,6 @@ const App = () => {
               <Route path='Animal_info_id/:id/update/:id' element={<Update_animals/>}/>
               <Route path='Animal_info_id/:id' element={<Animal_info_id/>}/>
               <Route path='Problem_id/:id' element={<Problem_id/>}/>
-
               
           </Routes>
         </Container>

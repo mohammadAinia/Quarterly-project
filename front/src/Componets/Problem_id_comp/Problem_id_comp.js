@@ -6,24 +6,25 @@ const Problem_id_comp = (props) => {
 
     const [Comment, setComment] = useState('')
 
-
-
-
-
-
     axios.defaults.withCredentials = true
-    const handleSubmit = (id1) => {
+    const handleSubmit = (id) => {
 
-        id1.preventDefault()
-        axios.post('http://localhost:3001/send_comments/' + id1, { Comment })
+        axios.post("http://localhost:3001/problim/add_answer/" + id, { Comment })
             .then(res => {
-                alert('Published successfully')
-            })
+                if (res.data.valid) {
+                    window.location.reload()
+                }
+                else {
+                    alert("Please fill all the fields")
+                }
+
+            }
+            )
             .catch(err => { console.log(err) })
     }
 
 
-    
+
     return (
         <>
             <form >
@@ -33,7 +34,7 @@ const Problem_id_comp = (props) => {
                     <h2>{props.type}</h2>
                     <p style={{ "font-size": "10px" }}>{props.text}</p> <br />
                     <div class="inputBox">
-                        <textarea placeholder="add comment" required />
+                        <textarea placeholder="add comment" required onChange={e => setComment(e.target.value)} />
                     </div>
                     <button style={{ "font-size": "1.4rem", "padding": "0.7rem 2rem" }} className="btn" onSubmit={handleSubmit(props.id1)}>share</button><br />
 
