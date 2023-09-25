@@ -7,17 +7,17 @@ import { useNavigate, useParams } from 'react-router-dom'
 
 const Problem_id = (props) => {
 
-    const [Problim_info, setProblim_info] = useState('')
-    const [Comment, setComments] = useState('')
+    const [Problim_info, setProblim_info] = useState([])
+    const [Comment, setComments] = useState([])
 
     const { id } = useParams()
 
     useEffect(() => {
 
-        axios.get(`http://localhost:3001/#/${id}`)
+        axios.get(`http://localhost:3001/problim/show_problem/${id}`)
             .then(res => {
-                setProblim_info(res.result)
-                setComments(res.resultt)
+                setProblim_info(res.data.result)
+                setComments(res.data.resultt)
 
             })
             .catch(err => { console.log(err) })
@@ -50,7 +50,7 @@ const Problem_id = (props) => {
                                 {Comment.map((user, i) => {
                                     return (
                                         <div key={i}>
-                                            <Comments name={user.publisher} text={user.answer}/>
+                                            <Comments name={user.publisher_ans} text={user.answer}/>
                                         </div>
                                     )
                                 })}
