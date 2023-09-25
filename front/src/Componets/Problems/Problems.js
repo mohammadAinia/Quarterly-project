@@ -9,7 +9,7 @@ const Problems = (props) => {
     const [Text, setComment] = useState('')
 
     axios.defaults.withCredentials = true
-    const handleSubmit = (id1) => {
+    const handleSubmit = (id) => {
 
         id.preventDefault()
         axios.post("http://localhost:3001/problim/add_answer/"+id, { Text })
