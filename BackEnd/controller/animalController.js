@@ -85,7 +85,7 @@ function add_vac(req,res){
     })
 }
 function show_all_animal(req,res) {//tested
-    const sql='SELECT * FROM animals JOIN health_records ON animals.id=health_records.animal_id WHERE owner=?'
+    const sql='SELECT * from animals JOIN health_records on animals.id=health_records.animal_id JOIN vacciens on animals.id=vacciens.animal_id JOIN vaccien_informations on vacciens.vacc_info_id=vaccien_informations.id WHERE animals.owner=? '
     db.query(sql,[req.session.username], (err, result) => {
         if (err) return res.json(err)
         return res.json(result) + console.log()
@@ -189,17 +189,18 @@ function update(req,res) {
     const id=req.params.id
     var name = req.body.name
     var animal_place=req.body.animal_place
+    var image=req.file.filename
     var Additional_details = req.body.Additional_details
     var owner=req.session.username
     var weight=req.body.weight
     var high=req.body.height
     var health_stats=req.body.health_Status
-    var sql='update animals set name=?,place=?,Additional_details=?,owner=? where id=? '
-    db.query(sql,[name,animal_place,Additional_details,owner,id],(err, result) => {
+    var sql='update animals set name=?,place=?,Additional_details=?,urlImage=?,owner=? where id=? '
+    db.query(sql,[name,animal_place,Additional_details,image,owner,id],(err, result) => {
         if (err) return res.json(err)
         else{
-    var sqll='update health_records set weight=?,high=?,health_stats=?,owner=? where animal_id=? '
-    db.query(sqll,[weight,high,health_stats],(err, result) => {
+    var sqll='update health_records set weight=?,high=?,health_stats=? where animal_id=? '
+    db.query(sqll,[weight,high,health_stats,id],(err, result) => {
         if (err) return res.json(err)+console.log(err)
         return res.json({valid:true}) + console.log()
     })

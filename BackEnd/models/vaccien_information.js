@@ -14,13 +14,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   vaccien_information.init({
-    name: DataTypes.STRING,
+    name_vacc: DataTypes.STRING,
     duration_ef: DataTypes.INTEGER,
     recommended_age: DataTypes.INTEGER,
     number_of_repetition: DataTypes.INTEGER,
     category: DataTypes.STRING,
     description:DataTypes.STRING,
     animmal_type:DataTypes.STRING,
+
 
   }, {
     sequelize,

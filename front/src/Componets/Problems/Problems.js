@@ -6,16 +6,22 @@ import { useNavigate } from 'react-router-dom'
 const Problems = (props) => {
     const navigate = useNavigate()
 
-    const [Comment, setComment] = useState('')
+    const [Text, setComment] = useState('')
 
     axios.defaults.withCredentials = true
     const handleSubmit = (id) => {
 
         id.preventDefault()
-        axios.post('http://localhost:3001/send_comments/' + id, { Text })
+        axios.post("http://localhost:3001/problim/add_answer/"+id, { Text })
             .then(res => {
-                alert('Published successfully')
-            })
+                if(res.data.valid){alert('Published successfully')
+            }
+            else {
+                alert("Please fill all the fields")
+            }
+            
+            }
+            )
             .catch(err => { console.log(err) })
     }
 
@@ -31,7 +37,7 @@ const Problems = (props) => {
                     <div class="inputBox">
                         <textarea placeholder="add comment" required onChange={e => setComment(e.target.value)} />
                     </div>
-                    <button style={{ "font-size": "1.4rem", "padding": "0.7rem 2rem" }} className="btn">share</button><br />
+                    <button style={{ "font-size": "1.4rem", "padding": "0.7rem 2rem" }} className="btn" >share</button><br />
                     <a href='/All_problems' className="btn" style={{ "font-size": "1.4rem", "padding": "0.7rem 2rem" }}>Comments</a>
                 </div>
             </form>

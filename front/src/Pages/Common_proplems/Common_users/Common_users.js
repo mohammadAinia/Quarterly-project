@@ -12,7 +12,7 @@ const Common_users = () => {
 
     useEffect(() => {
 
-        axios.get('http://localhost:3001/user/proplem')
+        axios.get('http://localhost:3001/co_problim/show_all_com',{ withCredentials: true })
             .then(res => {
                 setProplems(res.data)
 
@@ -26,11 +26,13 @@ const Common_users = () => {
             <div class="box-container">
 
                 {Proplems.map((i,d) => {
+                    return(
                     <div key={d}>
 
-                        <Common_proplem name={i.name} detals={i.detals} />
+                        <Common_proplem name={i.title} detals={i.disc} />
 
                     </div>
+                    )
                 })}
 
             </div>

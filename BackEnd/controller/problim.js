@@ -26,18 +26,25 @@ const add_problim=(req,res) => {
 }
 
 const add_answer=(req,res) => {
+    console.log("add is invoked")
+    if(req.session.usernam){
     const id = req.params.id;
-    var answer=req.body.answer
+    var answer=req.body.TEXT
     var publisher=req.session.username
     const d = new Date();
-    var date = d.getFullYear()+'/'+(d.getMonth()+1)+'/'+d.getDate();
+    var date = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
     var sql= "insert into answer_tables (id_problim,answer,publisher,date) values('" + id + "','" + answer + "','" + publisher + "''" + date + "')"
     db.query(sql, (err, result) => {
         if (err) return res.json(err)
-        return res.json(result) + console.log()
+        return res.json({result,valid:true}) + console.log()
     }
     )
 }
+else{
+    return res.json({valid:false})
+}
+}
 module.exports={show_all_problim ,add_problim ,
-    add_problim:add_problim
+    add_problim:add_problim,
+    add_answer:add_answer
 };

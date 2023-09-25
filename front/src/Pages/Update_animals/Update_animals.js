@@ -21,15 +21,15 @@ const Update_animals = () => {
 
     useEffect(() => {
 
-        axios.get(`http://localhost:3001/animal/show_animal_id/${id}`)
+        axios.get(`http://localhost:3001/animal/show_animal_id/${id}`,{ withCredentials: true })
             .then(res => {
-                setName(res.data[0].name)
-                setPicture(res.data[0].urlIimage)
-                setAnimal_place(res.data[0].place)
-                setAdditional_details(res.data[0].Additional_details)
-                setWeight(res.data[0].weight)
-                setHeight(res.data[0].high)
-                setHealthـstatus(res.data[0].health_stats)
+                setName(res.data.result[0].name)
+                setPicture(res.data.result[0].urlIimage)
+                setAnimal_place(res.data.result[0].place)
+                setAdditional_details(res.data.result[0].Additional_details)
+                setWeight(res.data.result[0].weight)
+                setHeight(res.data.result[0].high)
+                setHealthـstatus(res.data.result[0].health_stats)
 
             })
             .catch(err => { console.log(err) })
@@ -50,7 +50,7 @@ const Update_animals = () => {
 
         e.preventDefault()
 
-        axios.put(`http://localhost:3001/animal/update/${id}`, formData)
+        axios.put(`http://localhost:3001/animal/update/${id}`, formData,{ withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     navigate('/Animal_infoo')
