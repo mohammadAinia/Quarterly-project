@@ -177,12 +177,12 @@ const home_owner=(req,res) => {
             db.query(sql,[req.session.username],(err, result) => {
                 if (err) return res.json(err)
                 else {
-                var sqll='select title,disc,animal_type from problims LIMIT 3'
+                var sqll='select * from problims LIMIT 3'
                 db.query(sqll,(err, resultt) =>{
+
                     if (err)return res.json(err)
                     else
-                    return res.json({valid:true,username:resp.first_name,result,resultt}) + console.log()
-
+                    return res.json({valid:true,username:resp.first_name,result,resultt}) + console.log()+notifcation(req.session.username)
                 })
                 }
                 // return res.json({valid:true,username:resp.first_name,result}) + console.log()
@@ -196,8 +196,6 @@ const home_owner=(req,res) => {
                 //     .catch((err) => {
                 //         return res.json({ valid: false });
                 //     });
-
-
             }
             )
             .catch((err) => {
@@ -207,7 +205,27 @@ const home_owner=(req,res) => {
         return res.json({ valid: false });
     }
 };
+const notifcation =(owner)=>{
+var sql='select * from animals join health_records on animals.id=health_records.animal_id join vacciens on vacciens.animal_id=animals.id join vaccien_informations on vaccien_informations.id=vacciens.vacc_info_id where animals.owner=?'
+var sqll='select vacciens.next_appointment,animals.name from animals join health_records on animals.id=health_records.animal_id join vacciens on vacciens.animal_id=animals.id join vaccien_informations on vaccien_informations.id=vacciens.vacc_info_id where animals.owner=?'
+db.query(sqll,[owner],(err, result) => {
 
+    if (err) console.log(err+"in notification")
+    
+    result.map((u,i)=>{
+            var dad=new Date(u.next_appointment)
+            var d=new Date()
+            var datee = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
+            var ddss= new Date(datee)
+            var Difference_In_Time = dad.getTime() - ddss.getTime();
+            var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+            console.log("the days rimining for next vacc    "+ Difference_In_Days+"  day/s  "+"for the animal name is  "+u.name)
+    })
+    console.log(result)
+    
+}
+)
+}
 module.exports={
     singup_user: singup_user,
     login: login,
@@ -216,3 +234,8 @@ module.exports={
     singup_vet: singup_vet,
     home_owner: home_owner,
 };
+
+
+
+//            var date = dad.getFullYear()+'-'+(dad.getMonth()+1)+'-'+dad.getDate();
+// var ddd= new Date(date)

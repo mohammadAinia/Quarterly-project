@@ -48,7 +48,6 @@ function add_vac(req,res){
                     var date = dad.getFullYear()+'/'+(dad.getMonth()+1)+'/'+dad.getDate();
                     console.log(date+"4") 
                     var dada=new Date(date)
-
                     information_vac={
                         date_take_vac:req.body.Vaccine_history,
                         vacc_info_id:ress.id,

@@ -13,10 +13,11 @@ const Problems = (props) => {
 
         axios.post("http://localhost:3001/problim/add_answer/"+id, { Comment })
             .then(res => {
-                if(res.data.valid){alert('Published successfully')
+                if(res.data.valid)
+                {alert('Published successfully')
             }
             else {
-                alert("Please fill all the fields")
+                navigate('/login')
             }
             
             }
