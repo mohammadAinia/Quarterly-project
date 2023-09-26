@@ -18,7 +18,7 @@ const About_your_animal = (props) => {
     return (
         <>
             <div>
-                <div class="container" style={{ "margin-top": "50px", "margin-bottom": "20px" }}>
+                <div class="container" style={{ "margin-top": "250px", "margin-bottom": "20px" }}>
                     <div class="title">Animal Info</div>
                     <div class="content">
                         <form action="#" >

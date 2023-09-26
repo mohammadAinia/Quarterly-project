@@ -23,17 +23,24 @@ const Common_vete = () => {
         <>
             <Header href1={"/Animal"} a1={"Animal"} href2={"#"} a2={"Adopt Animal"} href3={"/Proplem_veterianarian"} a3={"Common Problems"} href4={"/Add_Animal"} a4={"Add Animal"} href5={"/login_out"} a5={"Login Out"} />
             <Button href="/Add_proplem" value="Add Proplem" />
-            <div class="box-container">
+            <section className="pricing" id="pricing" >
 
-                {Proplems.map((i,d) => {
-                    <div key={d}>
+                <h2 className="heading">Common Proplem</h2>
 
-                        <Common_proplem name={i.name} detals={i.detals} />
+                <div className="box-container">
 
-                    </div>
-                })}
+                    {Proplems.map((i, d) => {
+                        return (
+                            <div key={d}>
 
-            </div>
+                                <Common_proplem name={i.title} detals={i.disc} />
+
+                            </div>
+                        )
+                    })}
+                </div>
+
+            </section>
         </>
     )
 }

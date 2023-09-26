@@ -12,7 +12,7 @@ const Common_users = () => {
 
     useEffect(() => {
 
-        axios.get('http://localhost:3001/co_problim/show_all_com',{ withCredentials: true })
+        axios.get('http://localhost:3001/co_problim/show_all_com', { withCredentials: true })
             .then(res => {
                 setProplems(res.data)
 
@@ -23,19 +23,25 @@ const Common_users = () => {
     return (
         <>
             <Header href1={"/Animal"} a1={"Animal"} href2={"#"} a2={"Adopt Animal"} href3={"/Proplems_owner"} a3={"Common Problems"} href4={"/Add_Animal"} a4={"Add Animal"} href5={"/login_out"} a5={"Login Out"} />
-            <div class="box-container">
+            <section className="pricing" id="pricing" >
 
-                {Proplems.map((i,d) => {
-                    return(
-                    <div key={d}>
+                <h2 className="heading">Common Proplem</h2>
 
-                        <Common_proplem name={i.title} detals={i.disc} />
+                <div className="box-container">
 
-                    </div>
-                    )
-                })}
+                    {Proplems.map((i, d) => {
+                        return (
+                            <div key={d}>
 
-            </div>
+                                <Common_proplem name={i.title} detals={i.disc} />
+
+                            </div>
+                        )
+                    })}
+                </div>
+
+            </section>
+
         </>
     )
 }
