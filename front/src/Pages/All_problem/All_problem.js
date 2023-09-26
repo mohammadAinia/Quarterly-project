@@ -1,8 +1,13 @@
 import './All_problem'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { Problems } from '../../Componets'
 
 const All_problem = () => {
     const [Problim_info, setProblim_info] = useState([])
     const navigate = useNavigate()
+    
 
     useEffect(() => {
 
@@ -34,6 +39,7 @@ const All_problem = () => {
                     })}
                 </div>
             </section>
+            
         </>
     )
 }

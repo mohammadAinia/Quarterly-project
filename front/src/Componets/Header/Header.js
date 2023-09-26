@@ -14,6 +14,8 @@ const Header = (props) => {
           <a href={props.href4}>{props.a4}</a>
           <a href={props.href5}>{props.a5}</a>
           <a href={props.href6}>{props.a6}</a>
+          <a href={props.href7}>{props.a7}</a>
+
         </nav>
 
         <div className="icons">
