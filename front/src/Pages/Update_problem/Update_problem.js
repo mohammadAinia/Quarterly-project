@@ -81,7 +81,7 @@ const Update_problem = () => {
                                 <button>update</button>
                             </div>
                             <div class="buttonn">
-                                <a href="/Animal_infoo">Back</a>
+                                <a href="/my_problem">Back</a>
                             </div>
                         </form>
                     </div>
