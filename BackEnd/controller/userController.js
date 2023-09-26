@@ -207,22 +207,73 @@ const home_owner=(req,res) => {
 };
 const notifcation =(owner)=>{
 var sql='select * from animals join health_records on animals.id=health_records.animal_id join vacciens on vacciens.animal_id=animals.id join vaccien_informations on vaccien_informations.id=vacciens.vacc_info_id where animals.owner=?'
-var sqll='select vacciens.next_appointment,animals.name from animals join health_records on animals.id=health_records.animal_id join vacciens on vacciens.animal_id=animals.id join vaccien_informations on vaccien_informations.id=vacciens.vacc_info_id where animals.owner=?'
+var sqll='select animals.type,vacciens.next_appointment,animals.name,animals.age,vaccien_informations.name_vacc from animals join health_records on animals.id=health_records.animal_id join vacciens on vacciens.animal_id=animals.id join vaccien_informations on vaccien_informations.id=vacciens.vacc_info_id where animals.owner=?'
+var sqlll='select *from tip'
 db.query(sqll,[owner],(err, result) => {
+    if(err)console.log(err)
+    db.query(sqlll,(err, result2) => {
+        if (err) console.log(err+"in notification")
 
-    if (err) console.log(err+"in notification")
-    
     result.map((u,i)=>{//here we sshow th num of day for evre vacc rim
+        
             var dad=new Date(u.next_appointment)
             var d=new Date()
             var datee = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
             var ddss= new Date(datee)
             var Difference_In_Time = dad.getTime() - ddss.getTime();
             var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
-            console.log("the days rimining for next vacc    "+ Difference_In_Days+"  day/s  "+"for the animal name is  "+u.name)
+            return console.log("the days rimining for next vacc    "+ Difference_In_Days+"  day/s  "+"for the animal name is  "+u.name)
     })
-    
-    
+     result.map((u,i)=>{//here we sshow th num of day for evre vacc rim
+        var dad=new Date(u.age)
+        var d=new Date()
+        var datee = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
+        var ddss= new Date(datee)
+        var Difference_In_Time = ddss.getTime() - dad.getTime();
+        var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+        var mon=Difference_In_Days/30
+        var mm=parseInt(mon)
+                result2.map((uu,ii)=>{
+                    if (mm>uu.min_age&&mm<uu.max_age)
+                    {
+                    console.log("the tip for you is "+"   "+uu.tip +"   for   "+u.name)
+                    }
+                })
+})
+result.map((u,i)=>{//here we sshow th num of day for evre vacc rim
+    var dad=new Date(u.age)
+    var d=new Date()
+    var datee = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
+    var ddss= new Date(datee)
+    var Difference_In_Time = ddss.getTime() - dad.getTime();
+    var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+    var mon=Difference_In_Days/30
+    var mm=parseInt(mon)
+            result2.map((uu,ii)=>{
+                if (mm>uu.min_age&&mm<uu.max_age&&u.type==uu.animal_type)
+                {
+                console.log("the tip for you is "+"   "+uu.tip +"   for   "+u.name)
+                }
+            })
+})
+result.map((u,i)=>{//here we sshow th num of day for evre vacc rim
+    var dad=new Date(u.age)
+    var d=new Date()
+    var datee = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
+    var ddss= new Date(datee)
+    var Difference_In_Time = ddss.getTime() - dad.getTime();
+    var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+    var mon=Difference_In_Days/30
+    var mm=parseInt(mon)
+            result2.map((uu,ii)=>{
+                if (mm>uu.min_age&&mm<uu.max_age&&uu.category=="food")
+                {
+                console.log("the tip in food for you is "+"   "+uu.tip +"   for   "+u.name)
+                }
+            })
+})
+}
+    )
 }
 )
 }
