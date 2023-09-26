@@ -212,7 +212,7 @@ db.query(sqll,[owner],(err, result) => {
 
     if (err) console.log(err+"in notification")
     
-    result.map((u,i)=>{
+    result.map((u,i)=>{//here we sshow th num of day for evre vacc rim
             var dad=new Date(u.next_appointment)
             var d=new Date()
             var datee = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
@@ -221,7 +221,7 @@ db.query(sqll,[owner],(err, result) => {
             var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
             console.log("the days rimining for next vacc    "+ Difference_In_Days+"  day/s  "+"for the animal name is  "+u.name)
     })
-    console.log(result)
+    
     
 }
 )
