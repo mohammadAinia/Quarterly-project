@@ -36,6 +36,8 @@ export {default as Comments} from './Comments/Comments'
 export {default as Bunner} from './Bunner/Bunner'
 export {default as Your_ploblem} from '../Pages/Your_ploblem/Your_ploblem'
 export {default as All_problem} from '../Pages/All_problem/All_problem'
+export {default as Update_problem} from '../Pages/Update_problem/Update_problem'
+
 
 
 
