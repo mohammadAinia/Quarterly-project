@@ -7,7 +7,7 @@ import { Container, Login, Register_owner , Animal,Cat_info,Search_animal, Parro
   Register_veterinarian ,Home_owner , Type ,Dog_info , Add_animal,Animal_infoo,
   Common_users,Vaccines,Update_animals,Problem_id,
   Animal_info_id,
-  Problems} from './Componets/index'
+  Your_ploblem , Your_prob, Problems} from './Componets/index'
 
 const App = () => {
   return (
@@ -37,6 +37,9 @@ const App = () => {
               <Route path='Animal_info_id/:id/update/:id' element={<Update_animals/>}/>
               <Route path='Animal_info_id/:id' element={<Animal_info_id/>}/>
               <Route path='Problem_id/:id' element={<Problem_id/>}/>
+              <Route path='update_problem/:id' element={<Your_ploblem/>}/>
+              <Route path='/vv' element={<Problems/>}/>
+
               
           </Routes>
         </Container>

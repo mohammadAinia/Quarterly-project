@@ -31,9 +31,13 @@ export {default as Notification} from './Notification/Notification'
 export {default as Add_proplem} from './Add_proplem/Add_proplem'
 export {default as Problems} from './Problems/Problems'
 export {default as Problem_id} from '../Pages/Problem_id/Problem_id'
-export {default as Problem_id_comp} from './Problem_id_comp/Problem_id_comp'
+export {default as Your_prob} from './Your_prob/Your_prob'
 export {default as Comments} from './Comments/Comments'
 export {default as Bunner} from './Bunner/Bunner'
+export {default as Your_ploblem} from '../Pages/Your_ploblem/Your_ploblem'
+export {default as All_problem} from '../Pages/All_problem/All_problem'
+
+
 
 
 

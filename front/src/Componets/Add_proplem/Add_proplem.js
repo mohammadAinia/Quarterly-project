@@ -1,7 +1,7 @@
 import './Add_proplem'
 import React, { useState } from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Add_proplem = () => {
     const navigate = useNavigate()
@@ -64,7 +64,9 @@ const Add_proplem = () => {
                         }} placeholder=" proplem" required /></div>
 
                     <div>
-                        <button className="btn">share</button>
+                        <button  className="btn">share</button><br/>
+                        <a href='/my_problem' className="btn">my problem</a>
+
                     </div>
 
                 </form>

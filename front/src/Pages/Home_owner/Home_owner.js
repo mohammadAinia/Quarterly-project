@@ -51,7 +51,7 @@ const Home_owner = () => {
 
 
 
-      <Header href1={"/Animal"} a1={"Animal"} href2={"#"} a2={"Adopt Animal"} href3={"/common_users"} a3={"Common Problems"} href4={"/Add_Animal"} a4={"Add Animal"} href5={"/Animal_infoo"} a5={"show All Animal"} href6={"/login_out"} a6={"Login Out"} />
+      <Header href1={"/Animal"} a1={"Animal"} href2={"#"} a2={"Adopt Animal"} href3={"/common_users"} a3={"Common Problems"} href4={"/Add_Animal"} a4={"Add Animal"} href5={"/Animal_infoo"} a5={"All Animal"} href6={"/login_out"} a6={"Login Out"} />
       <section class="banner" style={{ "margin-top": "1600px" }}>
         <Bunner header={"Welcome" + name} p1={"!! You must provide a suitable environment for every animal you own"}
           p2={"!! Your dog is 39 days old. During this period, we advise you to feed him proteins and nutrients"}
