@@ -56,6 +56,21 @@ sql='SELECT * from answer_tables join problims on answer_tables.id_problim=probl
 }
 )    
 }
+const update_problem=()=>{
+sql='select * from problims where id=?'
+db.query(sql,(err,result)=>{
+    if (err) console.log(err+"the err in update function")
+    var title=req.body.Name
+    var desc=req.body.Text
+    var animal_type=req.body.Type
+    sqll='update problims set title=?,desc=?,animal_type=?'
+    db.query(sqll,[title,desc,animal_type],(err,result2)=>{
+        if(err) console.log(err+"the err in update 2")
+        
+    })
+
+})
+}
 
 module.exports={show_problem_id ,show_problem_id ,
     add_problim:add_problim,
