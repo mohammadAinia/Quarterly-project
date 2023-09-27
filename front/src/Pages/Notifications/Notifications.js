@@ -22,16 +22,19 @@ const Notifications = () => {
             })
             .catch(err => { console.log(err) })
     }, [])
-    
+
     return (
         <>
-            <section class="cards contact" id="contact">
+            <a href='/' style={{ "margin-left": "1300px" , "margin-top":"30px" }} className="btn" >Back</a>
+
+            <section style={{ "backgroundColor": "#f5f5f5" }} class="cards contact" id="contact">
                 <h2 class="title">Notifications</h2>
+
                 <div class="content">
                     {Info.map((d, i) => {
                         return (
                             <div key={i}>
-                                <Notification title={d.title} text={d.text} id={d.id}/>
+                                <Notification title={d.title} text={d.text} id={d.id} />
                             </div>
                         )
                     })}

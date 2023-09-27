@@ -22,6 +22,8 @@ const Bunner = (props) => {
                             <p>{props.p2}</p>
                             <br />
                             <p>{props.p3}</p>
+                            <br />
+                            <p>{props.p4}</p>
                         </div>
                     </div>
                     <div className="image">

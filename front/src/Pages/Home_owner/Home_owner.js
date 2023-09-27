@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Card, Notification,Bunner, Problems, Header, SectionHeader, Animal_info, Button, Add_proplem } from '../../Componets/index'
+import { Card, Bunner, Problems, Header, SectionHeader, Animal_info, Button, Add_proplem } from '../../Componets/index'
 import './Home_owner.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
@@ -11,6 +11,10 @@ const Home_owner = () => {
   const [name, setName] = useState('')
   const [Animall_info, setAnimal_info] = useState([])
   const [Problim_info, setProblim_info] = useState([])
+  const [Advice, setAdvice] = useState([])
+  const [Isnotefi, setIsnotefi] = useState('')
+
+
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -21,6 +25,10 @@ const Home_owner = () => {
           setName(res.data.username)
           setAnimal_info(res.data.result)
           setProblim_info(res.data.resultt)
+          setAdvice(res.data.resulttt)
+          setIsnotefi(res.data.resultttt)
+
+
         }
         else {
           navigate('/login')
@@ -33,17 +41,21 @@ const Home_owner = () => {
   return (
     <>
 
-      <Header href1={"/Animal"} a1={"Animal"} href2={"#"} a2={"Adopt Animal"} href3={"/common_users"} a3={"Common Problems"} href4={"/Add_Animal"} a4={"Add Animal"} href5={"/Animal_infoo"} a5={"All Animal"} href6={"/All_problem"} a6={"Ploblems"} href7={"/Notifications"} a7={<FontAwesomeIcon icon={faBell} />} href8={"/#"} a8={<div id="login-btn" className="fas fa-user"></div>}/>
+      <Header href1={"/Animal"} a1={"Animal"} href2={"#"} a2={"Adopt Animal"} href3={"/common_users"} a3={"Common Problems"} href4={"/Add_Animal"} a4={"Add Animal"} href5={"/Animal_infoo"} a5={"All Animal"} href6={"/All_problem"} a6={"Ploblems"} href7={"/Notifications"} a7={<FontAwesomeIcon icon={faBell} />} href8={"/#"} a8={<div id="login-btn" className="fas fa-user"></div>} />
+
       <section class="banner" style={{ "margin-top": "1600px" }}>
-        <Bunner header={"Welcome" + name} p1={"!! You must provide a suitable environment for every animal you own"}
-          p2={"!! Your dog is 39 days old. During this period, we advise you to feed him proteins and nutrients"}
-          p3={"!! We would like to remind you that the vaccination date for your cat is approaching on 9/20/2022"} image={animal_image} />      </section>
-      <Notification />
+        
+        {Advice.map((user, i) => {
+          return (
+            <div key={i}>
+              <Bunner header={"Welcome" + name} p1={user.one}
+                p2={user.two}
+                p3={user.three} p4={Isnotefi} image={animal_image} />
+            </div>
+          )
+        })}
 
-
-
-
-      {/* <h1>Welcome {name}</h1> */}
+      </section>
 
       <section className="animal" id="animal" >
         <SectionHeader>Your Animals</SectionHeader>
@@ -59,11 +71,10 @@ const Home_owner = () => {
                 <Card image={'http://localhost:3001/uploads/' + user.urlImage} name={user.name} link={"see details"} id={user.id} />
               </div>
             )
-          }
-          )
-          }
+          })}
         </div>
       </section>
+
       <Add_proplem />
 
       <section className="pricing" id="pricing">
