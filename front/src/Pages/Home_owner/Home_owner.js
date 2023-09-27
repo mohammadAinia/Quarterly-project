@@ -27,8 +27,6 @@ const Home_owner = () => {
           setProblim_info(res.data.resultt)
           setAdvice(res.data.resulttt)
           setIsnotefi(res.data.resultttt)
-
-
         }
         else {
           navigate('/login')
