@@ -1,70 +1,50 @@
-.alert {
-    position: relative;
-    top: 10;
-    left: 0;
-    width: auto;
-    height: auto;
-    padding: 10px;
-    margin: 10px;
-    line-height: 1.8;
-    border-radius: 5px;
-    cursor: hand;
-    cursor: pointer;
-    font-family: sans-serif;
-    font-weight: 400;
-  }
-  
-  .alertCheckbox {
-    display: none;
-  }
-  
-  :checked + .alert {
-    display: none;
-  }
-  
-  .alertText {
-    display: table;
-    margin: 0 auto;
-    text-align: center;
-    font-size: 16px;
-  }
-  
-  .alertClose {
-    float: right;
-    padding-top: 5px;
-    font-size: 10px;
-  }
-  
-  .clear {
-    clear: both;
-  }
-  
-  .info {
-    background-color: #EEE;
-    border: 1px solid #DDD;
-    color: #999;
-  }
-  
-  .success {
-    background-color: #EFE;
-    border: 1px solid #DED;
-    color: #9A9;
-  }
-  
-  .notice {
-    background-color: #EFF;
-    border: 1px solid #DEE;
-    color: #9AA;
-  }
-  
-  .warning {
-    background-color: #FDF7DF;
-    border: 1px solid #FEEC6F;
-    color: #C9971C;
-  }
-  
-  .error {
-    background-color: #FEE;
-    border: 1px solid #EDD;
-    color: #A66;
-  }
+.title {
+  display: flex;
+  justify-content: center;
+  font-weight: 800;
+  color: #ff6e01;
+  font-size: 45px;
+  margin-bottom: 30px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #fff;
+  width: 500px;
+  box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
+  border-radius: 10px;
+  padding: 25px;
+  margin: 15px;
+  transition: 0.5s ease;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.icons {
+  color: #ff6e01;
+  font-size: 35px;
+  text-align: center;
+}
+
+.info {
+  text-align: center;
+}
+
+.info h3 {
+  color: #ff6e01;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 10px;
+}
+.info p {
+  font-size: 18px;
+  margin: 10px;
+}

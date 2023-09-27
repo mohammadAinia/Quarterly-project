@@ -7,7 +7,7 @@ import { Container, Login, Register_owner , Animal,Cat_info,Search_animal, Parro
   Register_veterinarian ,Home_owner , Type ,Dog_info , Add_animal,Animal_infoo,
   Common_users,Vaccines,Update_animals,Problem_id,
   Animal_info_id,All_problem,
-  Your_ploblem , Update_problem, Problems} from './Componets/index'
+  Your_ploblem , Update_problem, Notifications} from './Componets/index'
 
 const App = () => {
   return (
@@ -40,7 +40,7 @@ const App = () => {
               <Route path='/my_problem' element={<Your_ploblem/>}/>
               <Route path='my_problem/update_problem/:id' element={<Update_problem/>}/>
               <Route path='/All_problem' element={<All_problem/>}/>
-              <Route path='/vv' element={<Update_problem/>}/>
+              <Route path='/Notifications' element={<Notifications/>}/>
 
           </Routes>
         </Container>

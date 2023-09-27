@@ -4,6 +4,8 @@ import './Home_owner.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import animal_image from '../../Assert/Images/—Pngtree—parrot_1001948.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faRightFromBracket, faBell } from '@fortawesome/free-solid-svg-icons'
 
 const Home_owner = () => {
   const [name, setName] = useState('')
@@ -13,22 +15,12 @@ const Home_owner = () => {
 
   useEffect(() => {
 
-    // axios('http://localhost:3001/')
-    // .then(res => setAnimal_info(res.data))
-    // .catch(err=> alert(err))
-
     axios.get('http://localhost:3001/user/', { withCredentials: true })
       .then(res => {
         if (res.data.valid) {
           setName(res.data.username)
           setAnimal_info(res.data.result)
           setProblim_info(res.data.resultt)
-          // if (res.data.image==null) {
-          // res.data.image=animal_image
-          // }
-          // else {
-          // setAnimal_info(res.data)
-          // }
         }
         else {
           navigate('/login')
@@ -40,18 +32,8 @@ const Home_owner = () => {
     [])
   return (
     <>
-      {/* {Animall_info.map((user, i) => {
-        return (
-          <div key={i}>
-            <ul>name : {user.name}</ul>
-            <ul>email : {user.email}</ul>
-          </div>
-        )
-      })} */}
 
-
-
-      <Header href1={"/Animal"} a1={"Animal"} href2={"#"} a2={"Adopt Animal"} href3={"/common_users"} a3={"Common Problems"} href4={"/Add_Animal"} a4={"Add Animal"} href5={"/Animal_infoo"} a5={"All Animal"} href6={"/All_problem"} a6={"Ploblems"} href7={"/login_out"} a7={"Login Out"} />
+      <Header href1={"/Animal"} a1={"Animal"} href2={"#"} a2={"Adopt Animal"} href3={"/common_users"} a3={"Common Problems"} href4={"/Add_Animal"} a4={"Add Animal"} href5={"/Animal_infoo"} a5={"All Animal"} href6={"/All_problem"} a6={"Ploblems"} href7={"/Notifications"} a7={<FontAwesomeIcon icon={faBell} />} href8={"/#"} a8={<div id="login-btn" className="fas fa-user"></div>}/>
       <section class="banner" style={{ "margin-top": "1600px" }}>
         <Bunner header={"Welcome" + name} p1={"!! You must provide a suitable environment for every animal you own"}
           p2={"!! Your dog is 39 days old. During this period, we advise you to feed him proteins and nutrients"}
