@@ -182,7 +182,7 @@ const home_owner=(req,res) => {
 
                     if (err)return res.json(err)
                     else
-                    return res.json({valid:true,username:resp.first_name,result,resultt}) + console.log()+notifcation(req.session.username)
+                    return res.json({valid:true,username:resp.first_name,result,resultt}) + console.log()+notifcation(req.session.username)+tips(result)
                 })
                 }
                 // return res.json({valid:true,username:resp.first_name,result}) + console.log()
@@ -276,6 +276,28 @@ result.map((u,i)=>{//here we sshow th num of day for evre vacc rim
     )
 }
 )
+}
+const tips =(animal)=>{
+    animal.map((u,i)=>{//here we sshow th num of day for evre vacc rim
+        var sql='select * from tip where animal_type=?'
+        db.query(sql,[u.type],(err,result)=>{
+            if (err) console.log(err)
+            result.map((uu,i)=>{
+                var dad=new Date(u.age)
+                var d=new Date()
+                var datee = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
+                var ddss= new Date(datee)
+                var Difference_In_Time = ddss.getTime() - dad.getTime();
+                var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+                var mon=Difference_In_Days/30
+                var mm=parseInt(mon)
+                if (uu.animal_type=u.type&&mm>=uu.min_age&&mm<=uu.max_age){
+                return console.log("the tip for day is  " + uu.tip +" for the animal " + u.name )
+            }
+        })
+        })
+        return console.log("moaahgfhjgkh  "+"  day/s  "+"for the animal name is  "+u.name)
+})
 }
 module.exports={
     singup_user: singup_user,

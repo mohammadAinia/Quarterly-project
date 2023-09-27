@@ -11,7 +11,7 @@ const Your_ploblem = () => {
 
     useEffect(() => {
 
-        axios.get('http://localhost:3001/#/#', { withCredentials: true })
+        axios.get('http://localhost:3001/problim/show_my_pob', { withCredentials: true })
             .then(res => {
                 if (1 == 1) {
                     setInfo(res.data)

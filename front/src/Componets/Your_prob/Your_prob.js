@@ -11,7 +11,7 @@ const Your_prob = (props) => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete('http://localhost:3001/#/#/' + id)
+            await axios.delete('http://localhost:3001/problim/delete/'+id)
             window.location.reload()
         }
         catch (err) { console.log(err) }

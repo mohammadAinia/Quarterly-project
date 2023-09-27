@@ -15,6 +15,15 @@ const show_problem_id=(req,res) => {
     }
     )
 }
+const show_my_problems=(req,res)=>{//6
+    var sql='select * from problims where publisher=?'
+    var publisher=req.session.username
+    db.query(sql,[publisher],(err,result)=>{
+        if(err) console.log(err)
+        else 
+    return res.json(result)
+    })
+}
 const add_problim=(req,res) => {
     var publisher=req.session.username
     var title=req.body.Name
@@ -56,23 +65,38 @@ sql='SELECT * from answer_tables join problims on answer_tables.id_problim=probl
 }
 )    
 }
-const update_problem=()=>{
-sql='select * from problims where id=?'
-db.query(sql,(err,result)=>{
+const update_problem=(req,res)=>{
+var id=req.params.id
+var title=req.body.Name
+var desc=req.body.Details
+var animal_type=req.body.Type
+sqll='update problims set title=?,disc=?,animal_type=? where id=?'
+db.query(sqll,[title,desc,animal_type,id],(err,result)=>{
     if (err) console.log(err+"the err in update function")
-    var title=req.body.Name
-    var desc=req.body.Text
-    var animal_type=req.body.Type
-    sqll='update problims set title=?,desc=?,animal_type=?'
-    db.query(sqll,[title,desc,animal_type],(err,result2)=>{
-        if(err) console.log(err+"the err in update 2")
-        
-    })
+    return res.json({result,valid:true})
 
 })
+}
+const delete_problem =(req,res)=>{
+    const sql = "delete from problims where id =?"
+    const sqll='delete from answer_table where id_problim=?'
+    const id = req.params.id
+    db.query(sql, [id], (err, result) => {
+        if (err) return res.json(err)
+        db.query(sqll, [id], (err, result) => {
+            if (err) return res.json(err)
+            return res.json({valid:true})
+        }
+    )
+    }
+)
 }
 
 module.exports={show_problem_id ,show_problem_id ,
     add_problim:add_problim,
-    add_answer:add_answer
+    add_answer:add_answer,
+    update_problem:update_problem,
+    delete_problem:delete_problem,
+    show_my_problems:show_my_problems
+
 };

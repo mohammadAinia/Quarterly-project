@@ -15,7 +15,7 @@ const Update_problem = () => {
 
     useEffect(() => {
 
-        axios.get(`http://localhost:3001/#/#/${id}`, { withCredentials: true })
+        axios.get(`http://localhost:3001/problim/show_problem/${id}`, { withCredentials: true })
             .then(res => {
                 setName(res.data.result[0].title)
                 setDetails(res.data.result[0].disc)
@@ -29,7 +29,7 @@ const Update_problem = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        axios.put(`http://localhost:3001/#/#/${id}`,{Name,Details,Type} ,{ withCredentials: true })
+        axios.put(`http://localhost:3001/problim/update_problem/${id}`,{Name,Details,Type} ,{ withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     navigate('/my_problem')
