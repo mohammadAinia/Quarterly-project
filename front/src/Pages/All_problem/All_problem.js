@@ -11,10 +11,10 @@ const All_problem = () => {
 
     useEffect(() => {
 
-        axios.get('http://localhost:3001/#/', { withCredentials: true })
+        axios.get('http://localhost:3001/problim/show_all_problem', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
-                    setProblim_info(res.data.resultt)
+                    setProblim_info(res.data.result)
                 }
                 else {
                     navigate('/login')

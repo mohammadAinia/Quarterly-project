@@ -1,6 +1,13 @@
 const models=require("../models")
 const db=require("../dbb/db")
-
+const show_all_problems=(req,res)=>{
+    var sql='select * from problims '
+    db.query(sql,(err,result)=>{
+        if(err) console.log(err)
+        else 
+    return res.json({result,valid:true})
+    })
+}
 const show_problem_id=(req,res) => {
     var id=req.params.id
     var sql='select * from problims join user_infos on problims.publisher=user_infos.email where problims.id=?'
@@ -97,6 +104,6 @@ module.exports={show_problem_id ,show_problem_id ,
     add_answer:add_answer,
     update_problem:update_problem,
     delete_problem:delete_problem,
-    show_my_problems:show_my_problems
-
+    show_my_problems:show_my_problems,
+    show_all_problems:show_all_problems
 };
