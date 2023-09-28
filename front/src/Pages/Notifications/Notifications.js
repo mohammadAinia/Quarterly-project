@@ -3,6 +3,8 @@ import { Header, Notification } from '../../Componets'
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus, faRightFromBracket, faBell, faHouse } from '@fortawesome/free-solid-svg-icons'
 
 const Notifications = () => {
 
@@ -14,7 +16,7 @@ const Notifications = () => {
         axios.get('http://localhost:3001/#/#')
             .then(res => {
                 if (1 == 1) {
-                    setInfo(res.data.result)
+                    setInfo(res.data)
                 }
                 else {
                     navigate('/login')
@@ -25,7 +27,9 @@ const Notifications = () => {
 
     return (
         <>
-            <a href='/' style={{ "margin-left": "1300px" , "margin-top":"30px" }} className="btn" >Back</a>
+            <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"Common Problems"} href5={"/Add_Animal"} a5={<FontAwesomeIcon icon={faPlus} />} href3={"/Animal_infoo"} a3={"All Animal"} href4={"/All_problem"} a4={"Ploblems"} href6={"/Notifications"} a6={<FontAwesomeIcon icon={faBell} />} href7={"/#"} a7={<div id="login-btn" className="fas fa-user"></div>} href8={"/"} a8={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
+
+            <a href='/' style={{ "margin-left": "1300px", "margin-top": "30px" }} className="btn" >Back</a>
 
             <section style={{ "backgroundColor": "#f5f5f5" }} class="cards contact" id="contact">
                 <h2 class="titlee">Notifications</h2>

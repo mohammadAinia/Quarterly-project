@@ -6,7 +6,7 @@ const Header = (props) => {
     <>
       <header className="header">
 
-        <a href="/" className="logo"> <i className="fas fa-paw"></i> PetCare</a>
+        <a href="#" className="logo"> <i className="fas fa-paw"></i> PetCare</a>
 
         <nav className="navbar">
           <a href={props.href1}>{props.a1}</a>
@@ -16,13 +16,12 @@ const Header = (props) => {
           <a style={{"fontSize":"20px"}} href={props.href5}>{props.a5}</a>
           <a style={{"fontSize":"20px"}} href={props.href6}>{props.a6}</a>
           <a style={{"fontSize":"20px"}} href={props.href7}>{props.a7}</a>
-          <a href={props.href8}>{props.a8}</a>
+          <a style={{"fontSize":"20px"}} href={props.href8}>{props.a8}</a>
 
         </nav>
 
         <div className="icons">
-          <a href='/Log_out'><div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div></a>
-
+          <a href={props.log}>{props.log2}</a>
         </div>
       </header>
     </>

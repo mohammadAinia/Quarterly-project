@@ -1,4 +1,4 @@
-.animal .box-container{
+/* .animal .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem,1fr));
     gap: 2rem;
@@ -53,4 +53,4 @@
     transform: translateY(-20px);
     opacity: 1;
 
-  }
+  } */
