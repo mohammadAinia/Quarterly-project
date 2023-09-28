@@ -5,7 +5,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import animal_image from '../../Assert/Images/—Pngtree—parrot_1001948.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faRightFromBracket, faBell } from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faBell } from '@fortawesome/free-solid-svg-icons'
 
 const Home_owner = () => {
   const [name, setName] = useState('')
@@ -39,7 +39,7 @@ const Home_owner = () => {
   return (
     <>
 
-      <Header href1={"/Animal"} a1={"Animal"} href2={"#"} a2={"Adopt Animal"} href3={"/common_users"} a3={"Common Problems"} href4={"/Add_Animal"} a4={"Add Animal"} href5={"/Animal_infoo"} a5={"All Animal"} href6={"/All_problem"} a6={"Ploblems"} href7={"/Notifications"} a7={<FontAwesomeIcon icon={faBell} />} href8={"/#"} a8={<div id="login-btn" className="fas fa-user"></div>} />
+      <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"Common Problems"} href5={"/Add_Animal"} a5={<FontAwesomeIcon icon={faPlus} />} href3={"/Animal_infoo"} a3={"All Animal"} href4={"/All_problem"} a4={"Ploblems"} href6={"/Notifications"} a6={<FontAwesomeIcon icon={faBell} />} href7={"/#"} a7={<div id="login-btn" className="fas fa-user"></div>} />
 
       <section class="banner" style={{ "margin-top": "1600px" }}>
         

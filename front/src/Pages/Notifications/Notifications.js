@@ -14,7 +14,7 @@ const Notifications = () => {
         axios.get('http://localhost:3001/#/#')
             .then(res => {
                 if (1 == 1) {
-                    setInfo(res.data)
+                    setInfo(res.data.result)
                 }
                 else {
                     navigate('/login')
@@ -28,7 +28,7 @@ const Notifications = () => {
             <a href='/' style={{ "margin-left": "1300px" , "margin-top":"30px" }} className="btn" >Back</a>
 
             <section style={{ "backgroundColor": "#f5f5f5" }} class="cards contact" id="contact">
-                <h2 class="title">Notifications</h2>
+                <h2 class="titlee">Notifications</h2>
 
                 <div class="content">
                     {Info.map((d, i) => {

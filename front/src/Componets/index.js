@@ -38,6 +38,12 @@ export {default as Your_ploblem} from '../Pages/Your_ploblem/Your_ploblem'
 export {default as All_problem} from '../Pages/All_problem/All_problem'
 export {default as Update_problem} from '../Pages/Update_problem/Update_problem'
 export {default as Notifications} from '../Pages/Notifications/Notifications'
+export {default as Adopt} from './Adopt/Adopt'
+export {default as Adoptt} from '../Pages/Adoptt/Adoptt'
+export {default as Health_record} from '../Pages/Adoptt/Health_record/Health_record'
+
+
+
 
 
 
