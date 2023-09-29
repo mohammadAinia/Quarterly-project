@@ -47,8 +47,8 @@ const Home_owner = () => {
           return (
             <div key={i}>
               <Bunner header={"Welcome" + name} p1={user.one}
-                p2={user.two}
-                p3={user.three} p4={Isnotefi} image={animal_image} />
+                p2={user.gen_tip}
+                p3={user.gen_tip} p4={Isnotefi} image={animal_image} />
             </div>
           )
         })}
