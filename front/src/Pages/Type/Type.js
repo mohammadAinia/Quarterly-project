@@ -11,7 +11,7 @@ const Type = () => {
                 <div class="content">
                     <form action="#">
                         <div class="button">
-                            <a href="/Register_owner">Animal Owner</a>
+                            <a style={{"width":"300px"}} href="/Register_owner">Animal Owner</a>
                         </div>
                         <div class="button">
                             <a href="/Register_veterinarian">Veterinarian</a>

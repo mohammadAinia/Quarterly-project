@@ -4,6 +4,8 @@ import './Login.css'
 // import { Search_animal } from '../../Componets/index'
 import React, { useState } from 'react'
 import { Header } from '../../Componets'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faRightToBracket } from '@fortawesome/free-solid-svg-icons'
 
 const Login = () => {
 
@@ -29,7 +31,7 @@ const Login = () => {
 
     return (
         <>
-            <Header href1={"/Animal"} a1={"Animal"} href3={"#"} a3={"Common Problems"} href2={"#"} a2={"Adopt Animal"} href4={"/login"} a4={"Login"} />
+            <Header href1={"/Animal"} a1={"Animal"} href3={"#"} a3={"Common Problems"} href2={"#"} a2={"Adopt Animal"} log={'/login'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightToBracket} /></div>} />
 
             <div className="container">
                 <div className="title">Login</div>
