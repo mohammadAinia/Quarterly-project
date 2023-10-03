@@ -193,21 +193,9 @@ const home_owner=(req,res) => {
                                 return res.json({valid:true,username:resp.first_name,result,resultt,resulttt,resultttt:true}) 
                         }
                         })
-                    
-                    
                 }})
                 }
-                // return res.json({valid:true,username:resp.first_name,result}) + console.log()
             })
-                // models.animal.findAll({ where: { owner: req.session.username }, attributes:['name','urlImage']}).then((result) => {
-                
-                //     var ress=[result]
-                //     console.log(ress)
-                //     return console.log(req.session.username+" sess") +res.json({valid:true,username:resp.first_name,result:ress})
-                //     })
-                //     .catch((err) => {
-                //         return res.json({ valid: false });
-                //     });
             }
             )
             .catch((err) => {
@@ -220,9 +208,7 @@ const home_owner=(req,res) => {
 const notifcation =(owner)=>{
 // var sql='select * from animals join health_records on animals.id=health_records.animal_id join vacciens on vacciens.animal_id=animals.id join vaccien_informations on vaccien_informations.id=vacciens.vacc_info_id where animals.owner=?'
 var sqll='select vacciens.id_v_r,animals.type,vacciens.next_appointment,animals.name,animals.age,vaccien_informations.name_vacc,animals.id from animals join health_records on animals.id=health_records.animal_id join vacciens on vacciens.animal_id=animals.id join vaccien_informations on vaccien_informations.id=vacciens.vacc_info_id where animals.owner=?'
-// var sqlll='select * from notifications where animal_id=?'
 var sqlll='select * from notifications where animal_id=? AND special=?'
-
 
 db.query(sqll,[owner],(err, result) => {
     if(err)console.log(err)

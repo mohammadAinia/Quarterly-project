@@ -32,56 +32,85 @@ function update_info_auto(req,res){//
 function add_vac(req,res){
     
     const iddd =req.params.id
-
-    models.health_record.findOne({where:{animal_id:iddd}}).then(
-        result => {
-            
-            models.vaccien_information.findOne({where:{id:req.body.Name_vaccines}}).then(////.mdnflkadlfkjakmddlkamskdmaksmdkamdkmaksmmask.dm.asmdc
-                ress=>{
-                    var date1=ress.duration_ef*30
-                    const d = new Date();
-                    console.log(d+"1")
-                    var resultt = d.setDate(d.getDate() + date1);
-                    console.log(resultt+"2")
-                    var dad=new Date(resultt)
-                    console.log(dad+"3")
-                    var date = dad.getFullYear()+'/'+(dad.getMonth()+1)+'/'+dad.getDate();
-                    console.log(date+"4") 
-                    var dada=new Date(date)
-                    information_vac={
-                        date_take_vac:req.body.Vaccine_history,
-                        vacc_info_id:ress.id,
-                        animal_id:result.animal_id,
-                        health_record_id:result.id,
-                        next_appointment:dada
-                    }
-                    console.log(iddd+"thsslkjjflksmd")
-                    models.vaccien.create(information_vac).then(
-                    result=>{
-                        res.json({valid:true})
-                    }
-                    ).catch(error => {
-                        console.log(error)
-
-                        res.status(500).json({
-                            message: "error in add vac "+error
-                        })
-                    })
-                }
-            ).catch(error => {
-                console.log(error)
-                res.status(500).json({
-                    message: "error in add vac "+error
-                })
-            })
+    console.log(iddd+"this is id")
+    sql='select * from health_records where animal_id=?'
+    db.query(sql,[iddd],(err,result)=>{
+        models.vaccien_information.findOne({where:{id:req.body.Name_vaccines}}).then(
+        ress=>{
+            var count_days=ress.duration_ef*30
+            var date=new Date(req.body.Vaccine_history)
+            var newDate=new Date(date)
+            newDate.setDate(date.getDate()+count_days)
+            console.log(newDate)
+            var datee = newDate.getFullYear()+'-'+(newDate.getMonth()+1)+'-'+newDate.getDate();
+            console.log(datee)
+            var date_take_vac=req.body.Vaccine_history
+            var vacc_info_id=ress.id
+            var animal_id=result[0].animal_id
+            var health_record_id=result[0].id
+            var sqll= "INSERT vacciens (date_take_vac,vacc_info_id,animal_id,health_record_id,next_appointment) VALUES('" + date_take_vac + "','" + vacc_info_id + "','" + animal_id + "','" + health_record_id + "','" + datee + "')"
+        db.query(sqll,(err,ress)=>{
+            res.json({valid:true})
+        })
         }
     ).catch(error => {
         console.log(error)
-
         res.status(500).json({
             message: "error in add vac "+error
         })
     })
+    })
+
+
+    // models.health_record.findOne({where:{animal_id:iddd}}).then(
+    //     result => {
+            
+    //         models.vaccien_information.findOne({where:{id:req.body.Name_vaccines}}).then(////.mdnflkadlfkjakmddlkamskdmaksmdkamdkmaksmmask.dm.asmdc
+    //             ress=>{
+    //                 var date1=ress.duration_ef*30
+    //                 const d = new Date();
+    //                 console.log(d+"1")
+    //                 var resultt = d.setDate(d.getDate() + date1);
+    //                 console.log(resultt+"2")
+    //                 var dad=new Date(resultt)
+    //                 console.log(dad+"3")
+    //                 var date = dad.getFullYear()+'/'+(dad.getMonth()+1)+'/'+dad.getDate();
+    //                 console.log(date+"4") 
+    //                 var dada=new Date(date)
+    //                 information_vac={
+    //                     date_take_vac:req.body.Vaccine_history,
+    //                     vacc_info_id:ress.id,
+    //                     animal_id:result.animal_id,
+    //                     health_record_id:result.id,
+    //                     next_appointment:dada
+    //                 }
+    //                 console.log(iddd+"thsslkjjflksmd")
+    //                 models.vaccien.create(information_vac).then(
+    //                 result=>{
+    //                     res.json({valid:true})
+    //                 }
+    //                 ).catch(error => {
+    //                     console.log(error)
+
+    //                     res.status(500).json({
+    //                         message: "error in add vac "+error
+    //                     })
+    //                 })
+    //             }
+    //         ).catch(error => {
+    //             console.log(error)
+    //             res.status(500).json({
+    //                 message: "error in add vac "+error
+    //             })
+    //         })
+    //     }
+    // ).catch(error => {
+    //     console.log(error)
+
+    //     res.status(500).json({
+    //         message: "error in add vac "+error
+    //     })
+    // })
 }
 function show_all_animal(req,res) {//tested
     const sql='SELECT * from animals JOIN health_records on animals.id=health_records.animal_id JOIN vacciens on animals.id=vacciens.animal_id JOIN vaccien_informations on vacciens.vacc_info_id=vaccien_informations.id WHERE animals.owner=? '

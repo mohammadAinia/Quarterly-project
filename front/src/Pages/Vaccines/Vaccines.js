@@ -39,7 +39,7 @@ const Vaccines = () => {
 
                             <div className="input-box">
                                 <span className="details">Name Vaccines *</span>
-                                <select name="Vaccines" id="cars" required onChange={e => setName_vaccines(e.target.value)}>
+                                <select name="Vaccines" idd="cars" required onChange={e => setName_vaccines(e.target.value)}>
                                     <optgroup label="Cat">
                                         <option value={x1} >quadruple vaccination</option>
                                         <option value={x2}>Rabies vaccination</option>

@@ -46,7 +46,7 @@ const Home_owner = () => {
         {Advice.map((user, i) => {
           return (
             <div key={i}>
-              <Bunner header={"Welcome" + name} p1={user.one}
+              <Bunner header={"Welcome  " + name} p1={user.one}
                 p2={user.gen_tip}
                 p3={user.gen_tip} p4={Isnotefi} image={animal_image} />
             </div>
