@@ -33,13 +33,15 @@ const Adoptt = () => {
         <h2 className="title">Adopt</h2>
         <div className="content">
           <div className="card">
-            {Adopt_info.map((d, i) => {
+          <Adopt />
+
+            {/* {Adopt_info.map((d, i) => {
               return (
                 <div key={i}>
                   <Adopt />
                 </div>
               )
-            })}
+            })} */}
           </div>
         </div>
       </section >
