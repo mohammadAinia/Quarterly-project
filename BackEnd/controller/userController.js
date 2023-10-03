@@ -186,7 +186,7 @@ const home_owner=(req,res) => {
                     
                     if (err)return res.json(err)
                     else{
-                        sql='select* from tip_gen limit 1'
+                        sql='select* from tip_gen limit 3'
                         db.query(sql,(err,resulttt)=>{
                             if (err) console.log(err)
                             else{

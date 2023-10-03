@@ -44,7 +44,7 @@ const Home_owner = () => {
       <section className="bbanner" style={{ "margin-top": "1600px" }}>
         <div className="row">
           <div className="content">
-            <h3>{"Welcome" + name}</h3>
+            <h3>{"Welcome   " + name}</h3>
             <br />
             <br />
             <br />
@@ -58,7 +58,8 @@ const Home_owner = () => {
                   <div key={i}>
                     <Bunner p1={user.one}
                       p2={user.gen_tip}
-                      p3={user.gen_tip} />
+                      // p3={user.gen_tip} 
+                      />
                   </div>
                 )
               })}

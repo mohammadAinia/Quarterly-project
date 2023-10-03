@@ -4,11 +4,11 @@ const Bunner = (props) => {
     return (
         <>
             <p>{props.p1}</p>
-            <br />
+            {/* <br /> */}
             <p>{props.p2}</p>
-            <br />
+            {/* <br /> */}
             <p>{props.p3}</p>
-            <br />
+            {/* <br /> */}
         </>
     )
 }
