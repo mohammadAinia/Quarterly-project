@@ -225,7 +225,7 @@ db.query(sqll,[owner],(err, result) => {
                 if (err) console.log(err)
                 else if (resu.length==0) {
                     var tt="Vaccien"
-                    var tostring=toString(u.id_v_r)
+                    var tostring=u.id_v_r
                     var sql1= "INSERT notifications (title,details,email,animal_id,special) VALUES('" + tt + "','" + not + "','" + owner + "','" + u.id + "','" + tostring + "')"              
                     db.query(sql1,(err,resus)=>{
                         if(err)console.log(err)

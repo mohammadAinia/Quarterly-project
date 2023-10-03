@@ -13,7 +13,7 @@ const Notifications = () => {
 
     useEffect(() => {
 
-        axios.get('http://localhost:3001/#/#')
+        axios.get('http://localhost:3001/noti/notifications',{ withCredentials: true })
             .then(res => {
                 if (1 == 1) {
                     setInfo(res.data)
@@ -35,10 +35,10 @@ const Notifications = () => {
                 <h2 class="titlee">Notifications</h2>
 
                 <div class="content">
-                    {Info.map((d, i) => {
+                    {Info.map((d,i) => {
                         return (
                             <div key={i}>
-                                <Notification title={d.title} text={d.text} id={d.id} />
+                                <Notification title={d.title} text={d.details} id={d.id_notification} />
                             </div>
                         )
                     })}
