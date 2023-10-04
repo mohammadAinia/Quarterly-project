@@ -21,7 +21,7 @@ const Your_prob = (props) => {
 
     return (
         <>
-            <form >
+            <form  style={{ "margin-top": "200px" }} >
                 <div className="box">
 
                     <h2>{props.name}</h2>

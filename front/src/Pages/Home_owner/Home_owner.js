@@ -41,7 +41,7 @@ const Home_owner = () => {
 
       <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"Common Problems"} href5={"/Add_Animal"} a5={<FontAwesomeIcon icon={faPlus} />} href3={"/Animal_infoo"} a3={"All Animal"} href4={"/All_problem"} a4={"Ploblems"} href6={"/Notifications"} a6={<FontAwesomeIcon icon={faBell} />} href7={"/#"} a7={<div id="login-btn" className="fas fa-user"></div>} href8={"/"} a8={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
 
-      <section className="bbanner" style={{ "margin-top": "1600px" }}>
+      <section className="bbanner" style={{ "margin-top": "1800px" }}>
         <div className="row">
           <div className="content">
             <h3>{"Welcome   " + name}</h3>
@@ -49,9 +49,10 @@ const Home_owner = () => {
             <br />
             <br />
             <br />
-            <h3>advice</h3>
             <br />
             <div className='nav'>
+
+            <h3 style={{ "margin-left": "10px" }}>     your advice</h3>
 
               {Advice.map((user, i) => {
                 return (
@@ -63,9 +64,9 @@ const Home_owner = () => {
                   </div>
                 )
               })}
-              <p>{Isnotefi}</p>
+              
             </div>
-
+            <p style={{ "color": "red" }}>{Isnotefi}</p>
           </div>
           <div className="image">
             <img src={animal_image} alt="" />

@@ -190,7 +190,7 @@ const home_owner=(req,res) => {
                         db.query(sql,(err,resulttt)=>{
                             if (err) console.log(err)
                             else{
-                                return res.json({valid:true,username:resp.first_name,result,resultt,resulttt,resultttt:true}) 
+                                return res.json({valid:true,username:resp.first_name,result,resultt,resulttt,resultttt:"you have new notifications"}) 
                         }
                         })
                 }})
