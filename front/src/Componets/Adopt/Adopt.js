@@ -10,7 +10,7 @@ const Adopt = (props) => {
 
                 <div className="profiletext">
                     <div className="imgBx">
-                        <img src={b} />
+                        <img src={props.image} />
                     </div>
                 </div>
                 <div className="icons" style={{ "color": "#ff6e01", "font-size": "4em", "text-align": "center" }}>
@@ -18,14 +18,12 @@ const Adopt = (props) => {
                 </div>
                 <div className="info">
                     <h3>
-                        Cat
+                        {props.name}
                     </h3>
                     <br />
                     <h3 style={{ "color": "#ff6e01", "font-size": "1.7em", "font-weight": "500", "margin": "10px" }}>description</h3>
                     <p>
-                        I have a medium-sized cat in good health,
-                        34 feet tall and 45 pounds in weight.
-                        She eats meat and is cheerful
+                        {props.details}
                     </p>
                     <h3 style={{ "color": "#ff6e01", "font-size": "1.7em", "font-weight": "500", "margin": "10px" }}>Price</h3>
                     <p>
@@ -37,49 +35,12 @@ const Adopt = (props) => {
                     </p>
                     <h3 style={{ "color": "#ff6e01", "font-size": "1.7em", "font-weight": "500", "margin": "10px" }}>phone</h3>
                     <p>
-                        050505055
+                        {props.phone}
                     </p>
                     <a href={`health_record${props.id}`} className="btn">Health Record</a>
                 </div>
             </div>
 
-
-            <div className="card">
-
-                <div className="profiletext">
-                    <div className="imgBx">
-                        <img src={a} />
-                    </div>
-                </div>
-                <div className="icons" style={{ "color": "#ff6e01", "font-size": "4em", "text-align": "center" }}>
-                    <i className="fa-solid fa-user-large"></i>
-                </div>
-                <div className="info">
-                    <h3>
-                        Cat
-                    </h3>
-                    <br />
-                    <h3 style={{ "color": "#ff6e01", "font-size": "1.7em", "font-weight": "500", "margin": "10px" }}>description</h3>
-                    <p>
-                        I have a medium-sized cat in good health,
-                        34 feet tall and 45 pounds in weight.
-                        She eats meat and is cheerful
-                    </p>
-                    <h3 style={{ "color": "#ff6e01", "font-size": "1.7em", "font-weight": "500", "margin": "10px" }}>Price</h3>
-                    <p>
-                        2828828
-                    </p>
-                    <h3 style={{ "color": "#ff6e01", "font-size": "1.7em", "font-weight": "500", "margin": "10px" }}>date</h3>
-                    <p>
-                        2022
-                    </p>
-                    <h3 style={{ "color": "#ff6e01", "font-size": "1.7em", "font-weight": "500", "margin": "10px" }}>phone</h3>
-                    <p>
-                        050505055
-                    </p>
-                    <a href={`health_record${props.id}`} className="btn">Health Record</a>
-                </div>
-            </div>
         </>
     )
 }

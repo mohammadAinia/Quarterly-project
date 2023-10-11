@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { Container, Login, Register_owner , Animal,Cat_info,Search_animal, Parrot_info,Fish_info,
   Register_veterinarian ,Home_owner , Type ,Dog_info , Add_animal,Animal_infoo,
   Common_users,Vaccines,Update_animals,Problem_id,Health_record,
-  Animal_info_id,All_problem,Your_animal_vaccines,Adoptt,
+  Animal_info_id,All_problem,Adoptt,About_your_animal,Add_vacci,
   Your_ploblem , Update_problem, Notifications} from './Componets/index'
 
 const App = () => {
@@ -35,6 +35,7 @@ const App = () => {
               <Route path='/vaccines/:id' element={<Vaccines/>}/>
               <Route path='Animal_infoo/update/:id' element={<Update_animals/>}/>
               <Route path='Animal_info_id/:id/update/:id' element={<Update_animals/>}/>
+              <Route path='Animal_info_id/:id/add_vaccine/:id' element={<Add_vacci/>}/>
               <Route path='Animal_info_id/:id' element={<Animal_info_id/>}/>
               <Route path='Problem_id/:id' element={<Problem_id/>}/>
               <Route path='/my_problem' element={<Your_ploblem/>}/>
@@ -43,8 +44,7 @@ const App = () => {
               <Route path='/Notifications' element={<Notifications/>}/>
               <Route path='/Adopt' element={<Adoptt/>}/>
               <Route path='Health_record/:id' element={<Health_record/>}/>
-
-
+              <Route path='/d' element={<About_your_animal/>}/>
 
           </Routes>
         </Container>

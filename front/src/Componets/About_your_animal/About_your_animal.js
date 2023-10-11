@@ -7,14 +7,14 @@ const About_your_animal = (props) => {
 
     const navigate = useNavigate()
 
-    const handleDelete = async (id)=>{
-        try{
-            await axios.delete('http://localhost:3001/animal/delete/'+id)
+    const handleDelete = async (id) => {
+        try {
+            await axios.delete('http://localhost:3001/animal/delete/' + id)
             window.location.reload()
         }
-        catch(err){console.log(err)}
+        catch (err) { console.log(err) }
     }
-    
+
     return (
         <>
             <div>
@@ -65,11 +65,13 @@ const About_your_animal = (props) => {
                                 </div>
                             </div>
                             <div class="button">
-                                <button onClick={e =>handleDelete(props.id2)}>Delete</button>
+                                <button onClick={e => handleDelete(props.id2)}>Delete</button>
                             </div>
-                            <div class="buttonn">
-                                {/* <a href="/#">Update info</a> */}
+                            <div class="button">
                                 <Link to={`update/${props.id2}`}>Update</Link>
+                            </div>
+                            <div class="button">
+                                <Link to={`add_vaccine/${props.id2}`}>Add Vaccine</Link>
                             </div>
                         </form>
                     </div>

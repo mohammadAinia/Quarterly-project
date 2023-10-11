@@ -41,6 +41,8 @@ export {default as Notifications} from '../Pages/Notifications/Notifications'
 export {default as Adopt} from './Adopt/Adopt'
 export {default as Adoptt} from '../Pages/Adoptt/Adoptt'
 export {default as Health_record} from '../Pages/Adoptt/Health_record/Health_record'
+export {default as Add_vacci} from '../Pages/Add_vacci/Add_vacci'
+
 
 
 

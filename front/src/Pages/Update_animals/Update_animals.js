@@ -53,7 +53,8 @@ const Update_animals = () => {
         axios.put(`http://localhost:3001/animal/update/${id}`, formData,{ withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
-                    navigate('/Animal_infoo')
+                    alert('Modified successfully')
+                    // navigate('/Animal_infoo')
                 }
                 else {
                     alert('EROR valid eror')
