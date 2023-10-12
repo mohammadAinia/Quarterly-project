@@ -31,7 +31,7 @@ const Notifications = () => {
 
             <a href='/' style={{ "margin-left": "1300px", "margin-top": "30px" }} className="btn" >Back</a>
 
-            <section style={{ "backgroundColor": "#f5f5f5" }} class="cards contact" id="contact">
+            <section style={{ "backgroundColor": "#f5f5f5" , "margin-top":"700px" }} class="cards contact" id="contact">
                 <h2 class="titlee">Notifications</h2>
 
                 <div class="content">

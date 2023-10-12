@@ -30,7 +30,6 @@ function update_info_auto(req,res){//
     .catch()
 }
 function add_vac(req,res){
-    
     const iddd =req.params.id
     console.log(iddd+"this is id")
     sql='select * from health_records where animal_id=?'
@@ -264,19 +263,25 @@ function update(req,res) {
 function show_animal_id(req,res){
     if(req.session.username){
     const id = req.params.id;
-    const sql='SELECT * from animals JOIN health_records on animals.id=health_records.animal_id JOIN vacciens on animals.id=vacciens.animal_id JOIN vaccien_informations on vacciens.vacc_info_id=vaccien_informations.id WHERE animals.id=? '
+    const sql='SELECT * from animals JOIN health_records on animals.id=health_records.animal_id  WHERE animals.id=? '
+    const sql2='select * from vacciens join vaccien_informations on vacciens.vacc_info_id=vaccien_informations.id where animal_id=?'
+    //JOIN vacciens on animals.id=vacciens.animal_id JOIN vaccien_informations on vacciens.vacc_info_id=vaccien_informations.id
     db.query(sql,[id],(err, result) => {
         if (err) return res.json(err)
-        const agee=result[0].age
-        var today = new Date();
-        var birthDate = agee
-        var age = today.getFullYear() - birthDate.getFullYear();
-        var m = today.getMonth() - birthDate.getMonth();
-        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-            age--;
-        }
+        db.query(sql2,[id],(err, result2) => {
+            if (err) return res.json(err)
+            const agee=result[0].age
+            var today = new Date();
+            var birthDate = agee
+            var age = today.getFullYear() - birthDate.getFullYear();
+            var m = today.getMonth() - birthDate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
         
-        return res.json({result ,age:age+"year"+m+"months"})+ console.log()
+            return res.json({result ,result2,age:age+"year"+m+"months"})+ console.log()
+        })
+  
     })
 }
 else return res.json({valid:false})

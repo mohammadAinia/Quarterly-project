@@ -11,6 +11,8 @@ const Animal_info_id = () => {
     const [Name, setName] = useState('')
     const { id } = useParams()
     const [Info, setInfo] = useState([])
+    const [Vacc, setVacc] = useState([])
+
     const [Age, setAge] = useState()
 
 
@@ -21,6 +23,7 @@ const Animal_info_id = () => {
             .then(res => {
                 if (res.data) {
                     setInfo(res.data.result)
+                    setVacc(res.data.result2)
                     setAge(res.data.age)
                 }
                 else {
@@ -37,8 +40,13 @@ const Animal_info_id = () => {
                     <div key={i}>
                         <About_your_animal name={d.name} age={Age} place={d.place} color={d.color} details={d.Additional_details}
                             type={d.type} gender={d.gender} weight={d.weight} height={d.high} health={d.health_stats} id={d.id} id2={d.animal_id} />
-
-                        <Your_animal_vaccines vaccines={d.name_vacc} vaccine_date={d.date_take_vac} />
+                    </div>
+                )
+            })}
+                        {Vacc.map((d, i) => {
+                return (
+                    <div key={i}>
+                    <Your_animal_vaccines vaccines={d.name_vacc} vaccine_date={d.date_take_vac} />
                     </div>
                 )
             })}
