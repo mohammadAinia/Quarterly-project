@@ -40,11 +40,13 @@ export {default as Update_problem} from '../Pages/Update_problem/Update_problem'
 export {default as Notifications} from '../Pages/Notifications/Notifications'
 export {default as Adopt} from './Adopt/Adopt'
 export {default as Adoptt} from '../Pages/Adoptt/Adoptt'
-export {default as Health_record} from '../Pages/Adoptt/Health_record/Health_record'
 export {default as Add_vacci} from '../Pages/Add_vacci/Add_vacci'
 export {default as Type_add_animal} from '../Pages/Adoptt/Type_add_animal/Type_add_animal'
 export {default as Add_Animal_to_adopt} from '../Pages/Adoptt/Add_Animal_to_adopt/Add_Animal_to_adopt'
 export {default as Your_animal} from '../Pages/Adoptt/Your_animal/Your_animal'
+export {default as Add_animall} from './Add_animall/Add_animall'
+
+
 
 
 

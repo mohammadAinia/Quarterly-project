@@ -6,10 +6,10 @@ import axios from 'axios'
 
 const Adopt = (props) => {
 
-    const handleRequistAdopt = async () => {
+    const handleRequistAdopt = async (id) => {
         try {
-            await axios.delete('http://localhost:3001/animal/#/')
-            
+            await axios.get('http://localhost:3001/#/#/', id)
+
             alert('Your adoption request has been successful')
         }
         catch (err) { console.log(err) }
@@ -28,29 +28,24 @@ const Adopt = (props) => {
                 </div>
                 <div className="info">
                     <h3>
-                        cat
-                        {props.name}
+                        {props.type}
                     </h3>
                     <br />
+                    <h3 style={{ "color": "#ff6e01", "font-size": "1.7em", "font-weight": "500", "margin": "10px" }}>date</h3>
+                    <p>
+                        {props.date}
+                    </p>
                     <h3 style={{ "color": "#ff6e01", "font-size": "1.7em", "font-weight": "500", "margin": "10px" }}>Name</h3>
                     <p>
-                        jojo
-                    </p>
-                    <h3 style={{ "color": "#ff6e01", "font-size": "1.7em", "font-weight": "500", "margin": "10px" }}>description</h3>
-                    <p>
-                        gjfngjfn
-                        {props.details}
+                        {props.name}
                     </p>
                     <h3 style={{ "color": "#ff6e01", "font-size": "1.7em", "font-weight": "500", "margin": "10px" }}>phone</h3>
                     <p>
-                        0992288581
                         {props.phone}
                     </p>
-                    <a href={`health_record${props.id}`} className="btn">See Details</a>
+                    <a href={`Animal_info_id${props.id}`} className="btn">See Details</a>
                     <br />
-
-
-                    <a href={props.href} className="btn"> <button style={{ "color": "white", "background": "none", "fontSize": "17.5px" }} onClick={e => handleRequistAdopt} >adoption</button></a>
+                    <a href={props.href} className="btn"> <button style={{ "color": "white", "background": "none", "fontSize": "17.5px" }} onClick={e => handleRequistAdopt(props.id)} >adoption</button></a>
                 </div>
             </div>
 

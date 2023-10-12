@@ -32,12 +32,10 @@ const Adoptt = () => {
       <section style={{ "margin-top": "1200px" }} className="cards" id="services">
         <h2 className="heading">Adopt</h2>
         <div className="content">
-          <Adopt />
-
             {Adopt_info.map((d, i) => {
               return (
                 <div key={i}>
-                  <Adopt />
+                  <Adopt img={'http://localhost:3001/uploads/' + d.urlImage} type={d.type} date={d.date} name={d.name} phone={d.phone} id={d.id}/>
                 </div>
               )
             })}
