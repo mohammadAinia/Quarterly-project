@@ -5,8 +5,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 import { Container, Login, Register_owner , Animal,Cat_info,Search_animal, Parrot_info,Fish_info,
   Register_veterinarian ,Home_owner , Type ,Dog_info , Add_animal,Animal_infoo,
-  Common_users,Vaccines,Update_animals,Problem_id,Health_record,
-  Animal_info_id,All_problem,Adoptt,About_your_animal,Add_vacci,
+  Common_users,Vaccines,Update_animals,Problem_id,Health_record,Type_add_animal,Your_animal,
+  Animal_info_id,All_problem,Adoptt,About_your_animal,Add_vacci,Add_Animal_to_adopt,
   Your_ploblem , Update_problem, Notifications} from './Componets/index'
 
 const App = () => {
@@ -45,6 +45,11 @@ const App = () => {
               <Route path='/Adopt' element={<Adoptt/>}/>
               <Route path='Health_record/:id' element={<Health_record/>}/>
               <Route path='/d' element={<About_your_animal/>}/>
+              <Route path='/Choose_type_add_animal_to_adopt' element={<Type_add_animal/>}/>
+              <Route path='/Add_Animal_to_adopt' element={<Add_Animal_to_adopt/>}/>
+              <Route path='/Chose_from_your_animal' element={<Your_animal/>}/>
+
+
 
           </Routes>
         </Container>
