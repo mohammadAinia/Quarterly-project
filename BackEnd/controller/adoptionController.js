@@ -18,7 +18,8 @@ const show_ad_animal=(req,res)=>{
         if(err)console.log(err)
         res.json({result,valid:true})
     })
-}
+} 
+
 const adopt_an=(req,res)=>{
     var id=req.params.id
     var sql='update animals set owner=? where id=?'
