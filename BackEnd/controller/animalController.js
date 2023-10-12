@@ -111,29 +111,21 @@ function add_vac(req,res){
     //     })
     // })
 }
-function show_all_animal(req,res) {//tested
+function show_all_animal(req,res) {
     const sql='SELECT * from animals JOIN health_records on animals.id=health_records.animal_id JOIN vacciens on animals.id=vacciens.animal_id JOIN vaccien_informations on vacciens.vacc_info_id=vaccien_informations.id WHERE animals.owner=? '
     db.query(sql,[req.session.username], (err, result) => {
         if (err) return res.json(err)
-        return res.json(result) + console.log()
+        return res.json({result,valid:true}) + console.log()
     }
     )
-
-    // models.animal.findAll({where:{owner:req.session.username}}).then(
-    //     result => {
-    //         const ress=[result]
-    //         res.json(ress)
-    //     }
-    // )
-    //     .catch(
-    //         error => {
-    //             console.log(error+"the error in show all animal function")
-    //             res.json({
-    //                 message: "error in show all "+error
-    //             })
-    //         }
-    //     )
-
+}
+function show_all_animal_ad(req,res) {
+    const sql='SELECT * from animals WHERE owner=? '
+    db.query(sql,[req.session.username], (err, result) => {
+        if (err) return res.json(err)
+        return res.json({result,valid:true})
+    }
+    )
 }
 function search_animal(req,res) {//tested 1 issue server is off when i find
     const name=req.body.name
@@ -322,5 +314,6 @@ module.exports={
     search_animal:search_animal,
     show_det:show_det,
     add_vac:add_vac,
-    show_animal_id:show_animal_id
+    show_animal_id:show_animal_id,
+    show_all_animal_ad:show_all_animal_ad
 }

@@ -1,6 +1,7 @@
 import './Type_add_animal'
 
 const Type_add_animal = () => {
+    
     return (
         <>
             <div class="container">

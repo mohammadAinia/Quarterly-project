@@ -13,18 +13,17 @@ const Your_animal = () => {
 
     const Request_adopt = async (id) => {
         try {
-            await axios.get('http://localhost:3001/animal/#/' + id)
+            await axios.post('http://localhost:3001/adopt/add_to_ad_list/'+id,{withCredentials: true })
             alert("Added to adoption list")
         }
         catch (err) { console.log(err) }
     }
 
     useEffect(() => {
-        axios.get('http://localhost:3001/user/', { withCredentials: true })
+        axios.get('http://localhost:3001/animal/show_all_animal_ad',{withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     setAnimal_info(res.data.result)
-
                 }
                 else {
                     navigate('/login')

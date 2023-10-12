@@ -8,6 +8,8 @@ router.put('/update/:id',imageUploader.upload.single('image'),animal_controller.
 
 
 router.get('/show_all_animal',animal_controller.show_all_animal)
+router.get('/show_all_animal_ad',animal_controller.show_all_animal_ad)
+
 router.get('/show_det',animal_controller.show_det)
 router.get('/show_animal_id/:id',animal_controller.show_animal_id)
 
