@@ -4,6 +4,7 @@ const animalRouts=require('./routes/animal')
 const problimRouter=require('./routes/problim')
 const comprrout=require('./routes/comoonProb')
 const notifications=require('./routes/notificationRouts')
+const adoption=require('./routes/adoption')
 
 const app =express()
 var cors = require('cors')
@@ -45,9 +46,7 @@ app.use("/animal",animalRouts)
 app.use("/problim",problimRouter)
 app.use("/co_problim",comprrout)
 app.use("/noti",notifications)
-
-
-
+app.use("/adopt",adoption)
 
 
 module.exports=app;

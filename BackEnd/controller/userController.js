@@ -122,7 +122,6 @@ function login(req,res) {
                         if (result) {
                             req.session.username=req.body.email;
                             console.log(user.first_name);
-                            // console.log(req.session.username)
                             return res.json({ Login: true,username: req.session.username });
                         } else {
                             return res.json({

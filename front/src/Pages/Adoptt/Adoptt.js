@@ -13,10 +13,10 @@ const Adoptt = () => {
 
   useEffect(() => {
 
-    axios.get('http://localhost:3001/#/#')
+    axios.get('http://localhost:3001/adopt/show_adop',{ withCredentials: true })
       .then(res => {
-        if (1 == 1) {
-          setAdopt_info(res.data)
+        if (res.data.valid) {
+          setAdopt_info(res.data.result)
         }
         else {
           navigate('/login')

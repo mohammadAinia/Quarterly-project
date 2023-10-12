@@ -4,9 +4,6 @@ import a from '../../Assert/Images/animal_1.jpg'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
-
-
-
 const Adopt = (props) => {
 
     const handleRequistAdopt = async () => {

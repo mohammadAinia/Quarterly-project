@@ -13,10 +13,10 @@ const add_to_adlist_id=(req,res)=>{
     })
 }
 const show_ad_animal=(req,res)=>{
-    sql1=' select * from adoption join animals on animals.id=adoption.id_animal join health_records on health_records.animal_id=animals.id where animals.owner !=?'
-    db.query(sql1,[req.session.username],(err,result)=>{
+    sql1=' select * from adoption join animals on animals.id=adoption.id_animal join health_records on health_records.animal_id=animals.id where animals.owner !=? AND status_id=?'
+    db.query(sql1,[req.session.username,0],(err,result)=>{
         if(err)console.log(err)
-        res.json({result})
+        res.json({result,valid:true})
     })
 }
 const adopt_an=(req,res)=>{
@@ -31,6 +31,7 @@ const adopt_an=(req,res)=>{
         })
     })
 }
+
 module.exports={
     add_to_adlist:add_to_adlist_id ,
     show_ad_animal : show_ad_animal,
