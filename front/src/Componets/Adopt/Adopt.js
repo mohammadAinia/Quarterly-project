@@ -9,7 +9,6 @@ const Adopt = (props) => {
     const handleRequistAdopt = async (id) => {
         try {
             await axios.put('http://localhost:3001/adopt/adopt/'+id)
-
             alert('Your adoption request has been successful')
         }
         catch (err) { console.log(err) }

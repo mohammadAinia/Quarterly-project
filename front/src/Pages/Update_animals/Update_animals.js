@@ -54,7 +54,7 @@ const Update_animals = () => {
             .then(res => {
                 if (res.data.valid) {
                     alert('Modified successfully')
-                    // navigate('/Animal_infoo')
+                    window.location.reload()
                 }
                 else {
                     alert('EROR valid eror')
@@ -103,9 +103,6 @@ const Update_animals = () => {
                             </div>
                             <div class="button">
                                 <button>update</button>
-                            </div>
-                            <div class="buttonn">
-                                <a href="/Animal_infoo">Back</a>
                             </div>
                         </form>
                     </div>

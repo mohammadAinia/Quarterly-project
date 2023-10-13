@@ -45,6 +45,12 @@ export {default as Type_add_animal} from '../Pages/Adoptt/Type_add_animal/Type_a
 export {default as Add_Animal_to_adopt} from '../Pages/Adoptt/Add_Animal_to_adopt/Add_Animal_to_adopt'
 export {default as Your_animal} from '../Pages/Adoptt/Your_animal/Your_animal'
 export {default as Add_animall} from './Add_animall/Add_animall'
+export {default as Profile} from '../Pages/Profile/Profile'
+export {default as Profilee} from './Profilee/Profilee'
+export {default as Update_user} from '../Pages/Update_user/Update_user'
+
+
+
 
 
 
