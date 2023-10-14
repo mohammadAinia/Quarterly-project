@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { Container, Login, Register_owner , Animal,Cat_info,Search_animal, Parrot_info,Fish_info,
   Register_veterinarian ,Home_owner , Type ,Dog_info , Add_animal,Animal_infoo,Profile,
   Common_users,Vaccines,Update_animals,Problem_id,Type_add_animal,Your_animal,Update_user,
-  Animal_info_id,All_problem,Adoptt,About_your_animal,Add_vacci,Add_Animal_to_adopt,
+  Animal_info_id,All_problem,Adoptt,About_your_animal,Add_vacci,Add_Animal_to_adopt,Verification,
   Your_ploblem , Update_problem, Notifications} from './Componets/index'
 
 const App = () => {
@@ -43,12 +43,12 @@ const App = () => {
               <Route path='/All_problem' element={<All_problem/>}/>
               <Route path='/Notifications' element={<Notifications/>}/>
               <Route path='/Adopt' element={<Adoptt/>}/>
-              <Route path='/d' element={<About_your_animal/>}/>
               <Route path='/Choose_type_add_animal_to_adopt' element={<Type_add_animal/>}/>
               <Route path='/Add_Animal_to_adopt' element={<Add_Animal_to_adopt/>}/>
               <Route path='/Chose_from_your_animal' element={<Your_animal/>}/>
               <Route path='/profile' element={<Profile/>}/>
-              <Route path='/update_user' element={<Update_user/>}/>
+              <Route path='/update_user' element={<Verification/>}/>
+              <Route path='/update_userr/:id' element={<Update_user/>}/>
 
           </Routes>
         </Container>

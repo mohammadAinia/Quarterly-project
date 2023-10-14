@@ -29,7 +29,7 @@ const Profile = () => {
             {Info.map((d, i) => {
                 return (
                     <div key={i}>
-                        <Profilee id={d.id} first_name={d.first_name} last_name={d.last_name} email={d.email} phone={d.phone} age={d.age} gender={d.gender} password={d.password}/>
+                        <Profilee id={d.id} first_name={d.first_name} last_name={d.last_name} email={d.email} phone={d.phone} age={d.age} gender={d.gender}/>
                     </div>
                 )
             })}

@@ -14,10 +14,10 @@ const Header = (props) => {
           <a href={props.href3}>{props.a3}</a>
           <a href={props.href4}>{props.a4}</a>
           <a style={{"fontSize":"20px"}} href={props.href5}>{props.a5}</a>
-          <a style={{"fontSize":"20px"}} href={props.href6}>{props.a6}</a>
+          <a style={{"fontSize":"18.5px"}} href={props.href6}>{props.a6}</a>
           <a style={{"fontSize":"20px"}} href={props.href7}>{props.a7}</a>
           <a style={{"fontSize":"20px"}} href={props.href8}>{props.a8}</a>
-
+          <a style={{"fontSize":"20px"}} href={props.href9}>{props.a9}</a>
         </nav>
 
         <div className="icons">

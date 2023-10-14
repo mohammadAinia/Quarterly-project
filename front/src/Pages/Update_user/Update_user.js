@@ -8,9 +8,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faRightFromBracket, faBell, faHouse } from '@fortawesome/free-solid-svg-icons'
 const Update_user = () => {
 
+    const navigate = useNavigate()
+
     const [First_name, setFirst_name] = useState('')
     const [Last_name, setLast_name] = useState('')
-    const [Email, setEmail] = useState('')
     const [Age, setAge] = useState('')
     const [Phone, setPhone] = useState('')
     const [Password, setPassword] = useState('')
@@ -25,7 +26,6 @@ const Update_user = () => {
             .then(res => {
                 setFirst_name(res.data.result[0].first_name)
                 setLast_name(res.data.result[0].last_name)
-                setEmail(res.data.result[0].email)
                 setAge(res.data.result[0].age)
                 setPhone(res.data.result[0].phone)
                 setPassword(res.data.result[0].password)
@@ -37,22 +37,8 @@ const Update_user = () => {
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
         if (Password === Confirm_password) {
-
-
-            // const formData = new FormData()
-
-            // formData.append('first_name', First_name)
-            // formData.append('last_name', Last_name)
-            // formData.append('email', Email)
-            // formData.append('phone', Phone)
-            // formData.append('age', Age)
-            // formData.append('password', Password)
-
-
-
             e.preventDefault()
-
-            axios.post('http://localhost:3001/user/edit_info', {First_name ,Last_name,Age,Phone,Password})
+            axios.post('http://localhost:3001/user/edit_info', { First_name, Last_name, Age, Phone, Password })
                 .then(res => {
                     if (res.data.valid) {
                         alert('Modified successfully')
@@ -69,13 +55,14 @@ const Update_user = () => {
         else { alert("password not match") }
     }
 
+
     return (
         <>
             <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"Common Problems"} href5={"/Add_Animal"} a5={<FontAwesomeIcon icon={faPlus} />} href3={"/Animal_infoo"} a3={"All Animal"} href4={"/All_problem"} a4={"Ploblems"} href6={"/Notifications"} a6={<FontAwesomeIcon icon={faBell} />} href7={"/profile"} a7={<div id="login-btn" className="fas fa-user"></div>} href8={"/"} a8={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
 
             <form onSubmit={handleSubmit}>
 
-                <div className="containet" style={{ "margin-top": "400px" }}>
+                <div className="containet" style={{ "margin-top": "100px" }}>
 
                     <div className="left_side">
 
@@ -88,7 +75,7 @@ const Update_user = () => {
                         <br />
                         <br />
                         <div className="contaner education">
-                            <button style={{ "margin-left": "134.5px", "cursor": "pointer", "background": "white", "color": "#ff6e01" }} className='btnn titleee'>Update</button>
+                            <button style={{ "margin-left": "128px", "cursor": "pointer", "background": "white", "color": "#ff6e01" }} className='btnn titleee'>Update</button>
                         </div>
 
                     </div>
@@ -112,15 +99,6 @@ const Update_user = () => {
                                 </div>
                                 <div className="nameSkils">
                                     <input type="text" value={Last_name} onChange={e => setLast_name(e.target.value)} name='last_name' />
-                                </div>
-                            </div>
-
-                            <div className="box">
-                                <div className="fst">
-                                    <h5>Email :</h5>
-                                </div>
-                                <div className="nameSkils">
-                                    <input type="email" value={Email} onChange={e => setEmail(e.target.value)} name='email' />
                                 </div>
                             </div>
 

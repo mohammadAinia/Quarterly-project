@@ -76,8 +76,8 @@ const Register_owner = () => {
                                 <input type="password" required onChange={e => setConfirm(e.target.value)} />
                             </div>
                             <div class="gender-details">
-                                <input type="radio" name="gender" id="dot-1" onChange={e => setGender(e.target.value)} />
-                                <input type="radio" name="gender" id="dot-2" onChange={e => setGender(e.target.value)} />
+                                <input type="radio" name="gender" value="male" id="dot-1" onChange={e => setGender(e.target.value)} />
+                                <input type="radio" name="gender" value="female" id="dot-2" onChange={e => setGender(e.target.value)} />
                                 <span class="gender-title">Gender *</span>
                                 <div class="category">
                                     <label for="dot-1">

@@ -15,7 +15,7 @@ const Profilee = (props) => {
 
     return (
         <>
-            <div className="containet" style={{ "margin-top": "400px" }}>
+            <div className="containet" style={{ "margin-top": "100px" }}>
 
                 <div className="left_side">
 
@@ -93,17 +93,6 @@ const Profilee = (props) => {
                             </div>
                         </div>
 
-                    </div>
-                    <div className="skils">
-                        <h2 className="title2">security</h2>
-                        <div className="box">
-                            <div className="fst">
-                                <h5>password :</h5>
-                            </div>
-                            <div className="nameSkils">
-                                <h4>{props.password}</h4>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
