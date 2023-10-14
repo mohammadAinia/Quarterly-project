@@ -26,7 +26,7 @@ const Profilee = (props) => {
                         <h2>Profile <br /></h2>
                     </div>
                     <div className="contaner education">
-                        <Link style={{ "margin-left": "130px", "background": "white", "color": "#ff6e01" }} className='btnn titleee' to={`update_user/${props.id}`}>Update</Link>
+                        <Link style={{ "margin-left": "130px", "background": "white", "color": "#ff6e01" }} className='btnn titleee' to={`/update_user`}>Update</Link>
                         <br />
                         <br/>
                         <button onClick={e => handleDelete(props.id)} style={{ "margin-left": "134.5px","cursor":"pointer", "background": "white", "color": "#ff6e01" }} className='btnn titleee'>Delete</button>

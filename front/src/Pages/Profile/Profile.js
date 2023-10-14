@@ -12,10 +12,10 @@ const Profile = () => {
 
     useEffect(() => {
 
-        axios.get('http://localhost:3001/#/#', { withCredentials: true })
+        axios.get('http://localhost:3001/user/show_pofile', { withCredentials: true })
             .then(res => {
-                if (1 == 1) {
-                    setInfo(res.data)
+                if (res.data.valid) {
+                    setInfo(res.data.result)
                 }
                 else {
                     navigate('/login')

@@ -21,7 +21,7 @@ const Update_user = () => {
 
     useEffect(() => {
 
-        axios.get(`http://localhost:3001/#/#/${id}`, { withCredentials: true })
+        axios.get('http://localhost:3001/user/show_pofile', { withCredentials: true })
             .then(res => {
                 setFirst_name(res.data.result[0].first_name)
                 setLast_name(res.data.result[0].last_name)
@@ -39,20 +39,20 @@ const Update_user = () => {
         if (Password === Confirm_password) {
 
 
-            const formData = new FormData()
+            // const formData = new FormData()
 
-            formData.append('first_name', First_name)
-            formData.append('last_name', Last_name)
-            formData.append('email', Email)
-            formData.append('phone', Phone)
-            formData.append('age', Age)
-            formData.append('password', Password)
+            // formData.append('first_name', First_name)
+            // formData.append('last_name', Last_name)
+            // formData.append('email', Email)
+            // formData.append('phone', Phone)
+            // formData.append('age', Age)
+            // formData.append('password', Password)
 
 
 
             e.preventDefault()
 
-            axios.put(`http://localhost:3001/#/#/${id}`, formData, { withCredentials: true })
+            axios.post('http://localhost:3001/user/edit_info', {First_name ,Last_name,Age,Phone,Password})
                 .then(res => {
                     if (res.data.valid) {
                         alert('Modified successfully')

@@ -48,7 +48,7 @@ const App = () => {
               <Route path='/Add_Animal_to_adopt' element={<Add_Animal_to_adopt/>}/>
               <Route path='/Chose_from_your_animal' element={<Your_animal/>}/>
               <Route path='/profile' element={<Profile/>}/>
-              <Route path='update_user/:id' element={<Update_user/>}/>
+              <Route path='/update_user' element={<Update_user/>}/>
 
           </Routes>
         </Container>
