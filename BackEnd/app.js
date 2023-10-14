@@ -30,7 +30,7 @@ app.use(session({
 
 app.use(cors({
     origin: ['http://localhost:3000'],
-    // methods:["Post" , "Get"],
+    methods:["Post" , "Get"],
     credentials: true
 }))
 app.use(express.urlencoded({

@@ -11,9 +11,25 @@ const check_not=(req,res)=>{
     var sql='update notifications set checked=? where id_notification=?';
     const qq=1;
     const notiid=req.params.id;
+    var sqll='select title ,special,animal_id from notifications where id_notification=? '
     db.query(sql,[qq,notiid],(error,result)=>{
         if(error)console.log(error)
-        res.json({result,valid:true})
+        db.query(sqll,[notiid],(error,result2)=>{
+            if(error)console.log(error)
+            else if(result2[0].title=="adoption")
+            {
+                var sql11='update animals set owner =? where id=?'
+                db.query(sql11,[result2[0].special,result2[0].animal_id],(err,result3)=>{
+                    var qwe='update adoption set status_id=? where id_animal=?'
+                    db.query(qwe,[1,result2[0].animal_id],(err,result4)=>{
+                        res.json({result,valid:true})
+                    })
+                    
+                })
+            }
+            else
+            res.json({result,valid:true})
+        })
     })
     
 }

@@ -13,7 +13,7 @@ const Adoptt = () => {
 
   useEffect(() => {
 
-    axios.get('http://localhost:3001/adopt/show_adop',{ withCredentials: true })
+    axios.get('http://localhost:3001/adopt/show_adop',{withCredentials: true })
       .then(res => {
         if (res.data.valid) {
           setAdopt_info(res.data.result)

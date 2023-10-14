@@ -4,5 +4,5 @@ const noti=require("../controller/notifications")
 
 
 router.get('/notifications',noti.show_noti)
-router.put('/check_n/:id',noti.check_not)
+router.post('/check_n/:id',noti.check_not)
 module.exports=router

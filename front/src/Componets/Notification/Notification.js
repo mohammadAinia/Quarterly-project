@@ -9,13 +9,12 @@ const Notification = (props) => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.put('http://localhost:3001/noti/check_n/'+id,{ withCredentials: true }).then
+            await axios.post('http://localhost:3001/noti/check_n/'+id,{ withCredentials: true }).then
             (res=> 
                 {
-                    if(res.data.valid)
-                    window.location.reload()
+                if(res.data.valid)
+                window.location.reload()
                 }
-                
             )
             .catch
             (

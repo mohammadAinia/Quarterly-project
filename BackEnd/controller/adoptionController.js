@@ -30,15 +30,28 @@ const show_ad_animal=(req,res)=>{
 }
 const adopt_an=(req,res)=>{
     var id=req.params.id
-    var sql='update animals set owner=? where id=?'
-    var sql1='update adoption set status_id=? where id_animal=?'
-    db.query(sql,[req.session.username,id],(err,resultt)=>{
-        if(err)console.log(err)
-        db.query(sql1,[1,id],(err,result)=>{
-            if(err)console.log(err)
-            res.json({result})            
+    var qw='select animals.owner,animals.name, animals.id from animals where id=?'
+    db.query(qw,[id],(err,result)=>{
+        var nr=req.session.username+'ask you to adopt your animal'+result[0].name
+        var av= "insert into notifications (title,details,email,animal_id,special) values ('" + "adoption" + "','" + nr + "','" + result[0].owner + "','" + result[0].id + "','" + req.session.username + "')"
+        db.query(av,(err,result)=>{
+            res.json({result:"ok we will send the request for owner"})
         })
     })
+    // console.log(req.session.username)
+    // var sql11='select owner from animals where id=?'
+    // var sql='update animals set owner=? where id=?'
+    // var sql1='update adoption set status_id=? where id_animal=?'
+    // db.query(sql11,[id],(err,result)=>{
+    //     var not=""
+    // })
+    // db.query(sql,[req.session.username,id],(err,resultt)=>{
+    //     if(err)console.log(err)
+    //     db.query(sql1,[1,id],(err,result)=>{
+    //         if(err)console.log(err)
+    //         res.json({result})
+    //     })
+    // })
 }
 
 module.exports={
