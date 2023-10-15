@@ -122,7 +122,7 @@ const Register_veterinarian = () => {
               </div>
               <div className="gender-details">
                 <input type="radio" name="gender" id="dot-1" value="male" onChange={e => setGender(e.target.value)} />
-                <input type="radio" name="gender" id="dot-2" value="male" onChange={e => setGender(e.target.value)} />
+                <input type="radio" name="gender" id="dot-2" value="female" onChange={e => setGender(e.target.value)} />
                 <span className="gender-title">Gender *</span>
                 <div className="category">
                   <label for="dot-1">

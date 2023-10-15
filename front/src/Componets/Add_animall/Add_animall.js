@@ -103,17 +103,17 @@ const Add_animall = () => {
           </div>
           <div class="gender-details">
             <div class="gender-details">
-              <input type="radio" name="gender" id="dot-1" onChange={e => setGender(e.target.value)} />
-              <input type="radio" name="gender" id="dot-2" onChange={e => setGender(e.target.value)} />
+              <input type="radio" name="gender" value="male" id="dot-1" onChange={e => setGender(e.target.value)} />
+              <input type="radio" name="gender" value="female" id="dot-2" onChange={e => setGender(e.target.value)} />
               <span class="gender-title">Gender</span>
               <div class="category">
                 <label for="dot-1">
                   <span class="dot one"></span>
-                  <span class="gender">Male</span>
+                  <span class="gender" style={{ "color": "black" }}>Male</span>
                 </label>
                 <label for="dot-2">
                   <span class="dot two"></span>
-                  <span class="gender">Female</span>
+                  <span class="gender" style={{ "color": "black" }}>Female</span>
                 </label>
               </div>
             </div>
@@ -126,11 +126,11 @@ const Add_animall = () => {
             <div className="category">
               <label for="dot-3">
                 <span className="dot three"></span>
-                <span className="gender">Yes</span>
+                <span className="gender" style={{ "color": "black" }}>Yes</span>
               </label>
               <label for="dot-4">
                 <span className="dot four"></span>
-                <span className="gender">No</span>
+                <span className="gender" style={{ "color": "black" }}>No</span>
               </label>
             </div>
           </div>

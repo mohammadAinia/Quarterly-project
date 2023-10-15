@@ -5,7 +5,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import animal_image from '../../Assert/Images/—Pngtree—parrot_1001948.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faRightFromBracket, faBell, faHouse } from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faRightFromBracket, faBell, faHouse ,faMessage} from '@fortawesome/free-solid-svg-icons'
 
 const Home_owner = () => {
   const [name, setName] = useState('')
@@ -39,7 +39,7 @@ const Home_owner = () => {
   return (
     <>
 
-      <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"Common Problems"} href5={"/Add_Animal"} a5={<FontAwesomeIcon icon={faPlus} />} href3={"/Animal_infoo"} a3={"All Animal"} href4={"/All_problem"} a4={"Ploblems"} href6={"/Notifications"} a6={<FontAwesomeIcon icon={faBell} />} href7={"/profile"} a7={<div id="login-btn" className="fas fa-user"></div>} href8={"/"} a8={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
+      <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"Common Problems"} href5={"/Add_Animal"} a5={<FontAwesomeIcon icon={faPlus} />} href3={"/Animal_infoo"} a3={"All Animal"} href4={"/All_problem"} a4={"Ploblems"} href6={"/chat"} a6={<FontAwesomeIcon icon={faMessage} />} href7={"/Notifications"} a7={<FontAwesomeIcon icon={faBell} />} href8={"/profile"} a8={<div id="login-btn" className="fas fa-user"></div>} href9={"/"} a9={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
 
       <section className="bbanner" style={{ "margin-top": "1800px" }}>
         <div className="row">
