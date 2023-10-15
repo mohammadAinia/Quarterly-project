@@ -11,10 +11,12 @@ const Problems = (props) => {
     axios.defaults.withCredentials = true
     const handleSubmit = (id) => {
 
-        axios.post("http://localhost:3001/problim/add_answer/"+id, { Comment })
+        axios.post(`http://localhost:3001/problim/add_answer/${id}`, { Comment })
             .then(res => {
                 if(res.data.valid)
                 {alert('Published successfully')
+                window.location.reload()
+
             }
             else {
                 navigate('/login')
@@ -38,7 +40,7 @@ const Problems = (props) => {
                         <textarea placeholder="add comment" required onChange={e => setComment(e.target.value)} />
                     </div>
                     <button onClick={e =>handleSubmit(props.id1)} style={{ "font-size": "1.4rem", "padding": "0.7rem 2rem" }} className="btn">share</button><br />
-                    <Link className="btn" to={`Problem_id/${props.id2}`}>Comments</Link>
+                    <Link className="btn" to={`Problem_id/${props.id1}`}>Comments</Link>
                     {/* <Link className="btn" to={props.link}>{props.link_name}</Link> */}
                 </div>
             </form>

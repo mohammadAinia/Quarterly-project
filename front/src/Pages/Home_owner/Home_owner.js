@@ -102,7 +102,7 @@ const Home_owner = () => {
           {Problim_info.map((user, i) => {
             return (
               <div key={i}>
-                <Problems name={user.title} type={user.disc} text={user.animal_type} id1={user.id} id2={user.id} />
+                <Problems name={user.title} type={user.disc} text={user.animal_type} id1={user.id}  />
               </div>
             )
           })}

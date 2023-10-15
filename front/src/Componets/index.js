@@ -48,3 +48,11 @@ export {default as Add_animall} from './Add_animall/Add_animall'
 export {default as Profile} from '../Pages/Profile/Profile'
 export {default as Profilee} from './Profilee/Profilee'
 export {default as Update_user} from '../Pages/Update_user/Update_user'
+export {default as Page_chat} from '../Pages/Chat/Page_chat/Page_chat'
+export {default as Page_chatt} from './Page_chatt/Page_chatt'
+export {default as Conversation} from '../Pages/Chat/Conversation/Conversation'
+export {default as Conversation_receive} from './Conversation_cp/Conversation_receive/Conversation_receive'
+export {default as Conversation_sender} from './Conversation_cp/Conversation_sender/Conversation_sender'
+
+
+

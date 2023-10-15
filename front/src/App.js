@@ -6,8 +6,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { Container, Login, Register_owner , Animal,Cat_info,Search_animal, Parrot_info,Fish_info,
   Register_veterinarian ,Home_owner , Type ,Dog_info , Add_animal,Animal_infoo,Profile,
   Common_users,Vaccines,Update_animals,Problem_id,Type_add_animal,Your_animal,Update_user,
-  Animal_info_id,All_problem,Adoptt,About_your_animal,Add_vacci,Add_Animal_to_adopt,Verification,
-  Your_ploblem , Update_problem, Notifications} from './Componets/index'
+  Animal_info_id,All_problem,Adoptt,Conversation,Add_vacci,Add_Animal_to_adopt,Verification,
+  Your_ploblem , Update_problem,Page_chat,
+   Notifications} from './Componets/index'
 
 const App = () => {
   return (
@@ -49,6 +50,11 @@ const App = () => {
               <Route path='/profile' element={<Profile/>}/>
               <Route path='/update_user' element={<Verification/>}/>
               <Route path='/update_userr/:id' element={<Update_user/>}/>
+              <Route path='/chat' element={<Page_chat/>}/>
+              <Route path='/NewChat/:id' element={<Conversation/>}/>
+              <Route path='/m' element={<Conversation/>}/>
+
+
 
           </Routes>
         </Container>

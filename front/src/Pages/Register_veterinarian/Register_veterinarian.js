@@ -24,7 +24,6 @@ const Register_veterinarian = () => {
   const [Gender, setGender] = useState('')
 
   axios.defaults.withCredentials = true
-
   const handleSubmit = async (e) => {
     if (Password === Confirm) {
       e.preventDefault()
@@ -40,22 +39,6 @@ const Register_veterinarian = () => {
         .catch(err => alert(err))
     }
     else{alert("password not match")}
-
-    // const workout = { First_name, Last_name, Email, Phone, Password, Age, Nationality, Addres, university, bachelor, previous_work, Photograph, Gender }
-
-    // const response = await fetch('/user/', {
-    //   method: 'POST',
-    //   body: JSON.stringify(workout),
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   }
-    // })
-    // const json = await response.json()
-    // if (response.ok) {
-    //   console.log("hello")
-    // }
-    // else if (!response.ok)
-    //   console.log(json.error)
   }
   return (
     <>
