@@ -10,6 +10,7 @@ const Conversation = () => {
     const { id } = useParams()
 
     const [Name, setName] = useState('')
+    const [Session_id, setSession_id] = useState('')
     const [Messages, setMessages] = useState([])
     const [Message, setMessage] = useState('')
 
@@ -17,9 +18,8 @@ const Conversation = () => {
 
         axios.get(`http://localhost:3001/chat/open_char/${id}`, { withCredentials: true })
             .then(res => {
-                if(res.data.valid)
-                setName(res.data.result[0].reciver)
-                setMessages(res.data.result2)
+                setName(res.data)
+                setInfo(res.data)
             })
             .catch(err => { console.log(err) })
     }, [])
@@ -46,18 +46,18 @@ const Conversation = () => {
                         <h3 className='m'>{Name}</h3>
                         <h2 className='mm'></h2>
                         <br />
-                        {Messages.map((d, i) => {
-                            if (d.chat_id!==id) {
+                        {Info.map((d, i) => {
+                            if (1 == 1) {
                                 return (
                                     <div key={i}>
-                                        <Conversation_receive receive={d.receive} />
+                                        <Conversation_sender sender={d.sender} />
                                     </div>
                                 )
                             }
                             else {
                                 return (
                                     <div key={i}>
-                                        <Conversation_sender sender={d.sender} />
+                                        <Conversation_receive receive={d.receive} />
                                     </div>
                                 )
                             }
