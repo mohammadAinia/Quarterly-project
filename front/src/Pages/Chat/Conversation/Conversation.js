@@ -10,6 +10,7 @@ const Conversation = () => {
     const { id } = useParams()
 
     const [Name, setName] = useState('')
+    const [Session_id, setSession_id] = useState('')
     const [Info, setInfo] = useState([])
     const [Message, setMessage] = useState('')
 
@@ -17,8 +18,9 @@ const Conversation = () => {
 
         axios.get(`http://localhost:3001/#/#/${id}`, { withCredentials: true })
             .then(res => {
-                setName(res.data)
-                setInfo(res.data)
+                setName(res.data.name)
+                setSession_id(res.data.id)
+                setInfo(res.data.result)
             })
             .catch(err => { console.log(err) })
     }, [])
@@ -31,7 +33,6 @@ const Conversation = () => {
             .then(res => {
                 if (res.data.valid) {
                     window.location.reload()
-
                 }
             }
             )
@@ -47,17 +48,17 @@ const Conversation = () => {
                         <h2 className='mm'></h2>
                         <br />
                         {Info.map((d, i) => {
-                            if (1 == 1) {
+                            if (d.id === Session_id) {
                                 return (
                                     <div key={i}>
-                                        <Conversation_receive receive={d.receive} />
+                                        <Conversation_sender sender={d.sender} />
                                     </div>
                                 )
                             }
                             else {
                                 return (
                                     <div key={i}>
-                                        <Conversation_sender sender={d.sender} />
+                                        <Conversation_receive receive={d.receive} />
                                     </div>
                                 )
                             }
