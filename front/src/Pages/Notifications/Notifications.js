@@ -15,8 +15,8 @@ const Notifications = () => {
 
         axios.get('http://localhost:3001/noti/notifications',{ withCredentials: true })
             .then(res => {
-                if (1 == 1) {
-                    setInfo(res.data)
+                if (res.data.valid) {
+                    setInfo(res.data.result)
                 }
                 else {
                     navigate('/login')

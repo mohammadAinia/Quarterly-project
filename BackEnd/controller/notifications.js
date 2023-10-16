@@ -1,11 +1,15 @@
 const models=require("../models")
 const db=require("../dbb/db")
 const show_noti=(req,res)=>{
+    if(req.session.username){
     const user= req.session.username
     sql='select * from notifications where email=? AND checked=?'
     db.query(sql,[user,0],(err,result)=>{
-        res.json(result)
+        res.json({result,valid:true})
     })
+}
+else return res.json({valid:false})
+
 }
 const check_not=(req,res)=>{
     var sql='update notifications set checked=? where id_notification=?';

@@ -10,15 +10,16 @@ const Conversation = () => {
     const { id } = useParams()
 
     const [Name, setName] = useState('')
-    const [Info, setInfo] = useState([])
+    const [Messages, setMessages] = useState([])
     const [Message, setMessage] = useState('')
 
     useEffect(() => {
 
-        axios.get(`http://localhost:3001/#/#/${id}`, { withCredentials: true })
+        axios.get(`http://localhost:3001/chat/open_char/${id}`, { withCredentials: true })
             .then(res => {
-                setName(res.data)
-                setInfo(res.data)
+                if(res.data.valid)
+                setName(res.data.result[0].reciver)
+                setMessages(res.data.result2)
             })
             .catch(err => { console.log(err) })
     }, [])
@@ -27,11 +28,10 @@ const Conversation = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        axios.post('http://localhost:3001/#/#', { Message })
+        axios.post('http://localhost:3001/chat/send_message/'+id, { Message })
             .then(res => {
                 if (res.data.valid) {
                     window.location.reload()
-
                 }
             }
             )
@@ -46,8 +46,8 @@ const Conversation = () => {
                         <h3 className='m'>{Name}</h3>
                         <h2 className='mm'></h2>
                         <br />
-                        {Info.map((d, i) => {
-                            if (1 == 1) {
+                        {Messages.map((d, i) => {
+                            if (d.chat_id!==id) {
                                 return (
                                     <div key={i}>
                                         <Conversation_receive receive={d.receive} />

@@ -3,7 +3,6 @@ const db=require("../dbb/db")
 
 function show_chats(req,res){
     if(req.session.username){
-
     var sql='select * from chats where Sender=?'
     db.query(sql,[req.session.username],(error,result)=>{
         if(error)console.log(error)
@@ -49,10 +48,11 @@ else return res.json({valid:false})
 function open_chats(req,res){
     if(req.session.username){
     var id =req.params.username
-    var sql='select reciver,special,chat_id from chats where sender=? AND special=?'
+    var sql='select * from chats where sender=? AND special=?'
     db.query(sql,[req.session,username,id],(error,result)=>{
-        var sqll='select message,chat_id from messages where special=?'
+        var sqll='select * from messages where special=?'
         db.query(sqll,[id],(error,result2)=>{
+            if(error)console.log(error)
             return res.json({result2,result,valid:true})
         })
     })
@@ -64,7 +64,7 @@ function send_message_id(req,res){
      var id=req.params.id
     sql='select chat_id from chats where special=? AND Sender=?'
     db.query(sql,[id,req.session.username],(err,reslt)=>{
-        var text=req.body,text
+        var text=req.body.Message
         var sqlll= "INSERT messages (message,chat_id,special_id) VALUES('" + text + "','" + reslt[0].chat_id + "','" + id + "')"
         db.query(sqlll,(err,reslt11)=>{
             return res.json({valid:true,reslt11})

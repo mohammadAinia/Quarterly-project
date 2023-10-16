@@ -1,12 +1,16 @@
 const models=require("../models")
 const db=require("../dbb/db")
 const show_all_problems=(req,res)=>{
+    if(req.session.username){
     var sql='select * from problims '
     db.query(sql,(err,result)=>{
         if(err) console.log(err)
         else 
     return res.json({result,valid:true})
     })
+}
+else     return res.json({valid:false})
+
 }
 const show_problem_id=(req,res) => {
     if(req.session.username){
