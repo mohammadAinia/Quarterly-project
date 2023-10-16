@@ -73,3 +73,10 @@ function send_message_id(req,res){
 }
 else return res.json({valid:false})
 }
+
+module.exports={show_chats:show_chats,
+show_user:show_user,
+creat_caht:creat_caht,
+open_chats:open_chats,
+send_message_id:send_message_id
+}
