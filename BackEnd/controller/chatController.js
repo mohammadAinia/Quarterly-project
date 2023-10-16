@@ -4,7 +4,7 @@ const db=require("../dbb/db")
 function show_chats(req,res){
     if(req.session.username){
 
-    var sql='select reciver,special from chats where Sender=?'
+    var sql='select * from chats where Sender=?'
     db.query(sql,[req.session.username],(error,result)=>{
         if(error)console.log(error)
         return res.json({valid:true,result})
