@@ -29,13 +29,15 @@ const Update_problem = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        axios.put(`http://localhost:3001/problim/update_problem/${id}`,{Name,Details,Type} ,{ withCredentials: true })
+        axios.post(`http://localhost:3001/problim/update_problem/${id}`,{Name,Details,Type} )
             .then(res => {
                 if (res.data.valid) {
                     navigate('/my_problem')
                 }
                 else {
                     alert('EROR valid eror')
+                    navigate('/login')
+
                 }
             })
             .catch(err => alert(err))

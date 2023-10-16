@@ -19,6 +19,7 @@ const Add_vacci = () => {
             .then(res => {
                 if (res.data.valid) {
                     alert('Added successfully')
+                    // navigate(`Animal_info_id/${id}`)
                 }
                 else {
                     alert('err')

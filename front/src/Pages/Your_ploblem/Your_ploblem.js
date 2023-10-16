@@ -13,8 +13,8 @@ const Your_ploblem = () => {
 
         axios.get('http://localhost:3001/problim/show_my_pob', { withCredentials: true })
             .then(res => {
-                if (1 == 1) {
-                    setInfo(res.data)
+                if (res.data.valid) {
+                    setInfo(res.data.result)
                 }
                 else {
                     navigate('/login')

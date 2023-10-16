@@ -30,6 +30,7 @@ function update_info_auto(req,res){//
     .catch()
 }
 function add_vac(req,res){
+    if(req.session.username){
     const iddd =req.params.id
     console.log(iddd+"this is id")
     sql='select * from health_records where animal_id=?'
@@ -59,65 +60,21 @@ function add_vac(req,res){
         })
     })
     })
+}
+else  res.json({valid:false})
 
-
-    // models.health_record.findOne({where:{animal_id:iddd}}).then(
-    //     result => {
-            
-    //         models.vaccien_information.findOne({where:{id:req.body.Name_vaccines}}).then(////.mdnflkadlfkjakmddlkamskdmaksmdkamdkmaksmmask.dm.asmdc
-    //             ress=>{
-    //                 var date1=ress.duration_ef*30
-    //                 const d = new Date();
-    //                 console.log(d+"1")
-    //                 var resultt = d.setDate(d.getDate() + date1);
-    //                 console.log(resultt+"2")
-    //                 var dad=new Date(resultt)
-    //                 console.log(dad+"3")
-    //                 var date = dad.getFullYear()+'/'+(dad.getMonth()+1)+'/'+dad.getDate();
-    //                 console.log(date+"4") 
-    //                 var dada=new Date(date)
-    //                 information_vac={
-    //                     date_take_vac:req.body.Vaccine_history,
-    //                     vacc_info_id:ress.id,
-    //                     animal_id:result.animal_id,
-    //                     health_record_id:result.id,
-    //                     next_appointment:dada
-    //                 }
-    //                 console.log(iddd+"thsslkjjflksmd")
-    //                 models.vaccien.create(information_vac).then(
-    //                 result=>{
-    //                     res.json({valid:true})
-    //                 }
-    //                 ).catch(error => {
-    //                     console.log(error)
-
-    //                     res.status(500).json({
-    //                         message: "error in add vac "+error
-    //                     })
-    //                 })
-    //             }
-    //         ).catch(error => {
-    //             console.log(error)
-    //             res.status(500).json({
-    //                 message: "error in add vac "+error
-    //             })
-    //         })
-    //     }
-    // ).catch(error => {
-    //     console.log(error)
-
-    //     res.status(500).json({
-    //         message: "error in add vac "+error
-    //     })
-    // })
 }
 function show_all_animal(req,res) {
+    if(req.session.username){
     const sql='SELECT * from animals JOIN health_records on animals.id=health_records.animal_id JOIN vacciens on animals.id=vacciens.animal_id JOIN vaccien_informations on vacciens.vacc_info_id=vaccien_informations.id WHERE animals.owner=? '
     db.query(sql,[req.session.username], (err, result) => {
         if (err) return res.json(err)
         return res.json({result,valid:true}) + console.log()
     }
     )
+}
+else 
+return res.json({valid:false})
 }
 function show_all_animal_ad(req,res) {
     const sql='SELECT * from animals WHERE owner=? '
@@ -155,7 +112,7 @@ function search_animal(req,res) {//tested 1 issue server is off when i find
     )
 }
 function add_animal(req,res) { //tested
-    
+    if(req.session.username){
     const animal={
         name: req.body.name,
         color: req.body.animal_color,
@@ -193,14 +150,22 @@ function add_animal(req,res) { //tested
         })
     });
 }
+else return res.json({valid:false})
 
+}
 function destroy_animal(req,res) { //tested
    
         const sql = "delete from animals where id =?"
         const id = req.params.id
         db.query(sql, [id], (err, result) => {
             if (err) return res.json(err)
-            return res.json(result)
+            const sq2l = "delete from health_records where animal_id =?"
+            db.query(sq2l,[id],(err,ress)=>{
+                const sql1 = "delete from vacciens where animal_id =?"
+                db.query(sql1,[id],(errs,resss)=>{
+                    return res.json(result)
+                })
+            })
         })
     
 }
@@ -259,9 +224,11 @@ function show_animal_id(req,res){
     const sql2='select * from vacciens join vaccien_informations on vacciens.vacc_info_id=vaccien_informations.id where animal_id=?'
     //JOIN vacciens on animals.id=vacciens.animal_id JOIN vaccien_informations on vacciens.vacc_info_id=vaccien_informations.id
     db.query(sql,[id],(err, result) => {
-        if (err) return res.json(err)
+        if (result.length==0) return res.json({value:true})
+        else{
         db.query(sql2,[id],(err, result2) => {
             if (err) return res.json(err)
+            console.log(result.length)
             const agee=result[0].age
             var today = new Date();
             var birthDate = agee
@@ -271,9 +238,9 @@ function show_animal_id(req,res){
                 age--;
             }
         
-            return res.json({result ,result2,age:age+"year"+m+"months"})+ console.log()
+            return res.json({result ,result2,valid:true,age:age+"y  "+m+"  m"})+ console.log()
         })
-  
+    }
     })
 }
 else return res.json({valid:false})
@@ -306,6 +273,19 @@ models.animal.findOne({where:{id:id}}).then(
 
 }
 
+function show_vacc_for_animal(req,res){
+    var id=req.params.id
+    var sql="SELECT type FROM animals where id =?"
+    db.query(sql,[id],(err,result)=>{
+        if(err) console.log(err)
+        sqll='select * from vaccien_informations where animmal_type=?'
+        db.query(sqll,[result[0].type],(erro,result2)=>{
+            if(err) console.log(erro)
+            console.log(result2)
+            return res.json({result2,valid:true})
+        })
+    })
+}
 module.exports={
     add_animal: add_animal,
     destroy_animal: destroy_animal,
@@ -315,5 +295,6 @@ module.exports={
     show_det:show_det,
     add_vac:add_vac,
     show_animal_id:show_animal_id,
-    show_all_animal_ad:show_all_animal_ad
+    show_all_animal_ad:show_all_animal_ad,
+    show_vacc_for_animal:show_vacc_for_animal
 }

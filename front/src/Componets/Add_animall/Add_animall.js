@@ -88,6 +88,7 @@ const Add_animall = () => {
           <div class="input-box">
             <span class="details">type </span>
             <input type="text" name='type' onChange={e => setType(e.target.value)} />
+            
           </div>
           <div className="input-box">
             <span className="details">Weight kg *</span>

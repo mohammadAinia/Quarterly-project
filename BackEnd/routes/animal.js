@@ -4,7 +4,7 @@ const animal_controller=require('../controller/animalController')
 const imageUploader = require('../helper/image_uploader')
 
 router.post('/add-animal',imageUploader.upload.single('image'),animal_controller.add_animal)
-router.put('/update/:id',imageUploader.upload.single('image'),animal_controller.update)
+router.post('/update/:id',imageUploader.upload.single('image'),animal_controller.update)
 
 
 router.get('/show_all_animal',animal_controller.show_all_animal)
@@ -16,7 +16,9 @@ router.get('/show_animal_id/:id',animal_controller.show_animal_id)
 router.post('/add_vac/:id',animal_controller.add_vac)
 
 router.get('/search_animal',animal_controller.search_animal)
-router.delete('/delete/:id',animal_controller.destroy_animal)
+router.post('/delete/:id',animal_controller.destroy_animal)
+
+router.get('/get_vacc/:id',animal_controller.show_vacc_for_animal)
 
 
 module.exports=router

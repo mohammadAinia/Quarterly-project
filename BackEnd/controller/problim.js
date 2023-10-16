@@ -9,6 +9,7 @@ const show_all_problems=(req,res)=>{
     })
 }
 const show_problem_id=(req,res) => {
+    if(req.session.username){
     var id=req.params.id
     var sql='select * from problims join user_infos on problims.publisher=user_infos.email where problims.id=?'
     var sqll='select * from answer_tables join user_infos on answer_tables.publisher_ans=user_infos.email where answer_tables.id_problim=?'
@@ -16,20 +17,27 @@ const show_problem_id=(req,res) => {
         if (err) return console.log(err)
         db.query(sqll,[id], (err, resultt) => {
             if (err) return console.log(err)
-            return res.json({result,resultt}) 
+            return res.json({result,resultt,valid:true}) 
         }
         )
     }
     )
 }
+else   return res.json({valid:false}) 
+
+}
 const show_my_problems=(req,res)=>{//6
+    if(req.session.username){
     var sql='select * from problims where publisher=?'
     var publisher=req.session.username
     db.query(sql,[publisher],(err,result)=>{
         if(err) console.log(err)
         else 
-    return res.json(result)
+    return res.json({valid:true,result})
     })
+}
+else   return res.json({valid:false})
+
 }
 const add_problim=(req,res) => {
     var publisher=req.session.username
@@ -73,6 +81,7 @@ sql='SELECT * from answer_tables join problims on answer_tables.id_problim=probl
 )    
 }
 const update_problem=(req,res)=>{
+    if(req.session.username){
 var id=req.params.id
 var title=req.body.Name
 var desc=req.body.Details
@@ -83,6 +92,9 @@ db.query(sqll,[title,desc,animal_type,id],(err,result)=>{
     return res.json({result,valid:true})
 
 })
+}
+else return res.json({valid:false})
+
 }
 const delete_problem =(req,res)=>{
     const sql = "delete from problims where id =?"

@@ -21,12 +21,15 @@ const Animal_info_id = () => {
 
         axios.get(`http://localhost:3001/animal/show_animal_id/${id}`, { withCredentials: true })
             .then(res => {
-                if (res.data) {
+                if (res.data.valid) {
                     setInfo(res.data.result)
                     setVacc(res.data.result2)
                     setAge(res.data.age)
                 }
-                else {
+                else if (res.data.value){
+                    navigate('/')
+                }
+                else  {
                     navigate('/login')
                 }
             })

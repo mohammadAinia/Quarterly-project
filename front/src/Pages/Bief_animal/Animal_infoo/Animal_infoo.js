@@ -16,7 +16,7 @@ const Animal_infoo = () => {
 
     axios.get('http://localhost:3001/animal/show_all_animal', { withCredentials: true })
       .then(res => {
-        if (1 == 1) {
+        if (res.data.valid) {
           setInfo(res.data.result)
         }
         else {

@@ -16,7 +16,6 @@ const Problems = (props) => {
                 if(res.data.valid)
                 {alert('Published successfully')
                 window.location.reload()
-
             }
             else {
                 navigate('/login')

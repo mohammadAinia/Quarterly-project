@@ -50,17 +50,17 @@ const Update_animals = () => {
 
         e.preventDefault()
 
-        axios.put(`http://localhost:3001/animal/update/${id}`, formData,{ withCredentials: true })
+        axios.post(`http://localhost:3001/animal/update/${id}`, formData,{ withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     alert('Modified successfully')
-                    window.location.reload()
+                    navigate('/')
                 }
                 else {
                     alert('EROR valid eror')
                 }
             })
-            .catch(err => alert(err))
+            .catch(err => alert(err+"hello"))
     }
     return (
         <>

@@ -9,7 +9,7 @@ const About_your_animal = (props) => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete('http://localhost:3001/animal/delete/' + id)
+            await axios.post('http://localhost:3001/animal/delete/'+id)
             window.location.reload()
         }
         catch (err) { console.log(err) }

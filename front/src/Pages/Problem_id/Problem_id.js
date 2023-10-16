@@ -9,15 +9,19 @@ const Problem_id = (props) => {
 
     const [Problim_info, setProblim_info] = useState([])
     const [Comment, setComments] = useState([])
+    const navigate = useNavigate()
 
     const { id } = useParams()
 
     useEffect(() => {
 
-        axios.get(`http://localhost:3001/problim/show_problem/${id}`)
+        axios.get(`http://localhost:3001/problim/show_problem/${id}`,{withCredentials:true})
             .then(res => {
+                if(res.data.valid){
                 setProblim_info(res.data.result)
                 setComments(res.data.resultt)
+                }
+                else navigate('/login')
 
             })
             .catch(err => { console.log(err) })
