@@ -47,11 +47,9 @@ const Conversation = () => {
                 <div class="--dark-theme" id="chat">
                     <div class="chat__conversation-board">
 
-                        <h3 className='m'>{Name}Najdat Dog</h3>
+                        <h3 className='m'>{Name}</h3>
                         <h2 className='mm'></h2>
                         <br />
-                        <Conversation_sender sender={"  شو صار بالنوطه ياحباب "} />
-                        <Conversation_receive receive={"محمود الاحمد رح يسال عالنوطه اول شيييي"} />
                         {Info.map((d, i) => {
                             if (d.chat_id === Session_id) {
                                 return (

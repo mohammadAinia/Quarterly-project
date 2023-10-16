@@ -9,22 +9,6 @@ import axios from 'axios'
 
 const Page_chatt = (props) => {
 
-    // const handleNewChat = async (id) => {
-    //     try {
-    //         await axios.post('http://localhost:3001/noti/check_n/' + id, { withCredentials: true }).then
-    //             (res => {
-    //                 if (res.data.valid)
-    //                     window.location.reload()
-    //             }
-    //             )
-    //             .catch
-    //             (
-
-    //         )
-
-    //     }
-    //     catch (err) { console.log(err) }
-    // }
     return (
         <>
             <div class="card" style={{ "width": "250px", "height": "300px" }}>
@@ -37,9 +21,7 @@ const Page_chatt = (props) => {
                 <br />
                 <div>
                     <Link style={{ "margin-left": "55px", "width": "95px" }} className="btn" to={`/NewChat/${props.id}`}>New</Link>
-                    {/* <button onClick={e => handleNewChat(props.id)} style={{ "margin-left": "55px", "width": "95px" }} className="btn">New</button> */}
-                    {/* <button style={{ "margin-left": "50px", "width": "110px" }} className="btn">Profile</button> */}
-                    <Link style={{ "margin-left": "50px", "width": "110px" }} className="btn" to={`profile/${props.id}`}>Profile</Link>
+                    <Link style={{ "margin-left": "50px", "width": "110px" }} className="btn" to={`profile_id/${props.id}`}>Profile</Link>
 
                 </div>
             </div>

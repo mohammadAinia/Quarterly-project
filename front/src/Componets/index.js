@@ -53,6 +53,10 @@ export {default as Page_chatt} from './Page_chatt/Page_chatt'
 export {default as Conversation} from '../Pages/Chat/Conversation/Conversation'
 export {default as Conversation_receive} from './Conversation_cp/Conversation_receive/Conversation_receive'
 export {default as Conversation_sender} from './Conversation_cp/Conversation_sender/Conversation_sender'
+export {default as Profilee_id} from './Profilee_id/Profilee_id'
+export {default as Profile_id} from '../Pages/Chat/Profile_id/Profile_id'
+
+
 
 
 

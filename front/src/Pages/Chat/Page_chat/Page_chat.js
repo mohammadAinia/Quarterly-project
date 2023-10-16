@@ -10,6 +10,8 @@ const Page_chat = () => {
 
     const navigate = useNavigate()
     const [Info, setInfo] = useState([])
+    const [Old_chat, setOld_chat] = useState([])
+
 
     useEffect(() => {
 
@@ -17,6 +19,8 @@ const Page_chat = () => {
             .then(res => {
                 if (res.data.valid) {
                     setInfo(res.data.result)
+                    // setOld_chat(res.data.result2)
+
                 }
                 else {
                     navigate('/login')
@@ -28,33 +32,24 @@ const Page_chat = () => {
         <>
             <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"Common Problems"} href5={"/Add_Animal"} a5={<FontAwesomeIcon icon={faPlus} />} href3={"/Animal_infoo"} a3={"All Animal"} href4={"/All_problem"} a4={"Ploblems"} href6={"/Notifications"} a6={<FontAwesomeIcon icon={faBell} />} href7={"/#"} a7={<div id="login-btn" className="fas fa-user"></div>} href8={"/"} a8={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
 
-            {/* <section style={{ "backgroundColor": "#f5f5f5", "margin-top": "1000px" }} class="cards contact" id="contact">
+            <section style={{ "backgroundColor": "#f5f5f5", "margin-top": "1000px" }} class="cards contact" id="contact">
                 <h2 className="titlee">Chats</h2>
 
                 <div class="content">
-                    <Page_chatt />
-                    <Page_chatt />
-                    <Page_chatt />
-                    <Page_chatt />
-                    <Page_chatt />
-
-
-
-                    {Info.map((d, i) => {
+                    {/* {Old_chat.map((d, i) => {
                         return (
                             <div key={i}>
-                                <Notification title={d.title} text={d.details} id={d.id_notification} />
+                                <Page_chatt name={d.reciver} id={d.chat_id}/>
                             </div>
                         )
-                    })}
+                    })} */}
                 </div>
-            </section> */}
+            </section>
 
             <section style={{ "backgroundColor": "#f5f5f5", "margin-top": "0px" }} class="cards contact" id="contact">
                 <h2 className="titlee">New Chat</h2>
 
                 <div class="content">
-                    <Page_chatt name={"mohammad ainia"} />
                     {Info.map((d, i) => {
                         return (
                             <div key={i}>

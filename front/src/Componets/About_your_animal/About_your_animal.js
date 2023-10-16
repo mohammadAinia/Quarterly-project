@@ -9,7 +9,7 @@ const About_your_animal = (props) => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.post('http://localhost:3001/animal/delete/'+id)
+            await axios.post('http://localhost:3001/animal/delete/' + id)
             window.location.reload()
         }
         catch (err) { console.log(err) }
@@ -17,8 +17,8 @@ const About_your_animal = (props) => {
 
     return (
         <>
-            <div>
-                <div class="container" style={{ "margin-top": "400px", "margin-bottom": "20px" }}>
+            {/* <div> */}
+                <div class="container" style={{ "margin-top": "10px", "margin-bottom": "20px" }}>
                     <div class="title">Animal Info</div>
                     <div class="content">
                         <form action="#" >
@@ -64,6 +64,7 @@ const About_your_animal = (props) => {
                                     <p>{props.health}</p>
                                 </div>
                             </div>
+
                             <div class="button">
                                 <button onClick={e => handleDelete(props.id2)}>Delete</button>
                             </div>
@@ -76,7 +77,7 @@ const About_your_animal = (props) => {
                         </form>
                     </div>
                 </div>
-            </div>
+            {/* </div> */}
         </>
     )
 }

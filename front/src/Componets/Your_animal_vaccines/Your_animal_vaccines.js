@@ -3,9 +3,8 @@ import './Your_animal_vaccines.css'
 const Your_animal_vaccines = (props) => {
     return (
         <>
-            <div>
-                <div class="container" style={{ "margin-top": "50px", "margin-bottom": "70px" }}>
-                    <div class="title">Vaccine</div>
+            {/* <div> */}
+                {/* <div class="container" style={{ "margin-top": "50px", "margin-bottom": "70px" }}> */}
                     <div class="content">
                         <form action="#" >
                             <div class="user-details">
@@ -20,8 +19,8 @@ const Your_animal_vaccines = (props) => {
                             </div>
                         </form>
                     </div>
-                </div>
-            </div>
+                {/* </div> */}
+            {/* </div> */}
         </>
     )
 }

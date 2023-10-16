@@ -7,7 +7,7 @@ import { Container, Login, Register_owner , Animal,Cat_info,Search_animal, Parro
   Register_veterinarian ,Home_owner , Type ,Dog_info , Add_animal,Animal_infoo,Profile,
   Common_users,Vaccines,Update_animals,Problem_id,Type_add_animal,Your_animal,Update_user,
   Animal_info_id,All_problem,Adoptt,Conversation,Add_vacci,Add_Animal_to_adopt,Verification,
-  Your_ploblem , Update_problem,Page_chat,
+  Your_ploblem , Update_problem,Page_chat,Profile_id,
    Notifications} from './Componets/index'
 
 const App = () => {
@@ -52,10 +52,7 @@ const App = () => {
               <Route path='/update_userr/:id' element={<Update_user/>}/>
               <Route path='/chat' element={<Page_chat/>}/>
               <Route path='/NewChat/:id' element={<Conversation/>}/>
-              <Route path='/m' element={<Conversation/>}/>
-              <Route path='/mm' element={<Page_chat/>}/>
-
-
+              <Route path='/profile_id/:id' element={<Profile_id/>}/>
           </Routes>
         </Container>
       </Router>
@@ -63,3 +60,4 @@ const App = () => {
   )
 }
 export default App
+//website_db
