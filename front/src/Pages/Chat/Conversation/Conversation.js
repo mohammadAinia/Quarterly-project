@@ -16,20 +16,22 @@ const Conversation = () => {
 
     useEffect(() => {
 
-        axios.get(`http:localhost:3001/#/#/${id}`,{ withCredentials: true })
+        axios.get(`http://localhost:3001/chat/open_chat/${id}`,{withCredentials: true})
             .then(res => {
+                if(res.data.valid){
                 setName(res.data.name)
-                setSession_id(res.data.id)
-                setInfo(res.data.result)
+                setSession_id(res.data.idd)
+                setInfo(res.data.result2)}
+                else alert("err")
             })
-            .catch(err => { console.log(err) })
+            .catch(err => { alert(err) })
     }, [])
 
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        axios.post('http://localhost:3001/#/#', { Message })
+        axios.post('http://localhost:3001/chat/send_message', { Message })
             .then(res => {
                 if (res.data.valid) {
                     window.location.reload()
@@ -48,17 +50,17 @@ const Conversation = () => {
                         <h2 className='mm'></h2>
                         <br />
                         {Info.map((d, i) => {
-                            if (d.id === Session_id) {
+                            if (d.chat_id === Session_id) {
                                 return (
                                     <div key={i}>
-                                        <Conversation_sender sender={d.sender} />
+                                        <Conversation_sender sender={d.message} />
                                     </div>
                                 )
                             }
                             else {
                                 return (
                                     <div key={i}>
-                                        <Conversation_receive receive={d.receive} />
+                                        <Conversation_receive receive={d.message} />
                                     </div>
                                 )
                             }

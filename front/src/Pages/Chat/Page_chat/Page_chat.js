@@ -13,7 +13,7 @@ const Page_chat = () => {
 
     useEffect(() => {
 
-        axios.get('http://localhost:3001/#/#', { withCredentials: true })
+        axios.get('http://localhost:3001/chat/show_chats', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     setInfo(res.data.result)
@@ -57,7 +57,7 @@ const Page_chat = () => {
                     {Info.map((d, i) => {
                         return (
                             <div key={i}>
-                                <Page_chatt name={d.name} id={d.id}/>
+                                <Page_chatt name={d.reciver} id={d.chat_id}/>
                             </div>
                         )
                     })}

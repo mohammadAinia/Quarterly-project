@@ -36,7 +36,7 @@ const Page_chatt = (props) => {
                 </div>
                 <br />
                 <div>
-                    <Link style={{ "margin-left": "55px", "width": "95px" }} className="btn" to={`NewChat/${props.id}`}>New</Link>
+                    <Link style={{ "margin-left": "55px", "width": "95px" }} className="btn" to={`/NewChat/${props.id}`}>New</Link>
                     {/* <button onClick={e => handleNewChat(props.id)} style={{ "margin-left": "55px", "width": "95px" }} className="btn">New</button> */}
                     {/* <button style={{ "margin-left": "50px", "width": "110px" }} className="btn">Profile</button> */}
                     <Link style={{ "margin-left": "50px", "width": "110px" }} className="btn" to={`profile/${props.id}`}>Profile</Link>

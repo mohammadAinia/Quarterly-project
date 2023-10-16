@@ -47,13 +47,13 @@ else return res.json({valid:false})
 }
 function open_chats(req,res){
     if(req.session.username){
-    var id =req.params.username
+    var id =req.params.id
     var sql='select * from chats where sender=? AND special=?'
-    db.query(sql,[req.session,username,id],(error,result)=>{
-        var sqll='select * from messages where special=?'
+    db.query(sql,[req.session.username,id],(error,result)=>{
+        var sqll='select * from messages where special_id=?'
         db.query(sqll,[id],(error,result2)=>{
             if(error)console.log(error)
-            return res.json({result2,result,valid:true})
+            return res.json({result2,name:result[0].reciver,idd:result[0].chat_id,result,valid:true})
         })
     })
 }
