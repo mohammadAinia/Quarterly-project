@@ -53,6 +53,9 @@ const App = () => {
               <Route path='/chat' element={<Page_chat/>}/>
               <Route path='/NewChat/:id' element={<Conversation/>}/>
               <Route path='/m' element={<Conversation/>}/>
+              <Route path='/mm' element={<Page_chat/>}/>
+
+
           </Routes>
         </Container>
       </Router>

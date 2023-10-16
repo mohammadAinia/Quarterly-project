@@ -16,12 +16,13 @@ const Conversation = () => {
 
     useEffect(() => {
 
-        axios.get(`http://localhost:3001/chat/open_chat/${id}`,{withCredentials: true})
+        axios.get(`http://localhost:3001/chat/open_chat/${id}`, { withCredentials: true })
             .then(res => {
-                if(res.data.valid){
-                setName(res.data.name)
-                setSession_id(res.data.idd)
-                setInfo(res.data.result2)}
+                if (res.data.valid) {
+                    setName(res.data.name)
+                    setSession_id(res.data.idd)
+                    setInfo(res.data.result2)
+                }
                 else alert("err")
             })
             .catch(err => { alert(err) })
@@ -46,9 +47,11 @@ const Conversation = () => {
                 <div class="--dark-theme" id="chat">
                     <div class="chat__conversation-board">
 
-                        <h3 className='m'>{Name}</h3>
+                        <h3 className='m'>{Name}Najdat Dog</h3>
                         <h2 className='mm'></h2>
                         <br />
+                        <Conversation_sender sender={"  شو صار بالنوطه ياحباب "} />
+                        <Conversation_receive receive={"محمود الاحمد رح يسال عالنوطه اول شيييي"} />
                         {Info.map((d, i) => {
                             if (d.chat_id === Session_id) {
                                 return (
@@ -68,10 +71,10 @@ const Conversation = () => {
                     </div>
 
                     <div class="chat__conversation-panel">
-                        <div class="chatconversation-panelcontainer">
+                        <div class="chat__conversation-panel__container">
 
-                            <input class="chatconversation-panelinput panel-item" type='text' placeholder="Type a message..." onChange={e => setMessage(e.target.value)} />
-                            <button class="chatconversation-panelbutton panel-item btn-icon send-message-button">
+                            <input class="chat__conversation-panel__input panel-item" type='text' placeholder="Type a message..." onChange={e => setMessage(e.target.value)} />
+                            <button class="chat__conversation-panel__button panel-item btn-icon send-message-button">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-reactid="1036">
                                     <line x1="22" y1="2" x2="11" y2="13"></line>
                                     <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>

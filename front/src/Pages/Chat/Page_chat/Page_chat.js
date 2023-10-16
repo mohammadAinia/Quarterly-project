@@ -54,6 +54,7 @@ const Page_chat = () => {
                 <h2 className="titlee">New Chat</h2>
 
                 <div class="content">
+                    <Page_chatt name={"mohammad ainia"} />
                     {Info.map((d, i) => {
                         return (
                             <div key={i}>
