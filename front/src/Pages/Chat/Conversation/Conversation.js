@@ -32,7 +32,7 @@ const Conversation = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        axios.post('http://localhost:3001/chat/send_message', { Message })
+        axios.post(`http://localhost:3001/chat/send_message/${id}`, { Message })
             .then(res => {
                 if (res.data.valid) {
                     window.location.reload()
