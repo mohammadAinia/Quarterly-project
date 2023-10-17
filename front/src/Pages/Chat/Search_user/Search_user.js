@@ -17,24 +17,12 @@ const Search_user = () => {
     const handleSubmit = async (e) => {
 
         e.preventDefault()
-        axios.post('http://localhost:3001/#/#', { Name, Type })
+        axios.post('http://localhost:3001/chat/search_user', { Name, Type })
             .then(res => {
                 if (res.data.valid) {
-                    if ((res.data.id && Type) != null) {
-                        navigate(`/search_result${res.data.id, Type}`)
-
-                    }
-                    else if (res.data.id != null) {
-                        navigate(`/search_result${res.data.id}`)
-                    }
-                    else {
-                        navigate(`/search_result${Type}`)
-
-                    }
+                    navigate('/')
                 }
-                else {
-                    alert('The password is incorrect')
-                }
+                else alert("err")
             })
             .catch(err => alert(err))
     }
@@ -49,7 +37,7 @@ const Search_user = () => {
                         <div class="user-details">
                             <div class="input-box">
                                 <span class="details">Name</span>
-                                <input style={{ "width": "200px" }} type="text" onChange={e => setName(e.target.value)} />
+                                <input style={{ "width": "200px" }} type="text" defaultValue={""} onChange={e => setName(e.target.value)} />
                             </div>
                             <div class="input-box">
                                 <span class="details">type </span>

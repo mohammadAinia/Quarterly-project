@@ -15,7 +15,7 @@ const Search_result = () => {
 
         if ((id && Type) != null) {
 
-            axios.get(`http://localhost:3001/#/#/${id, Type}`, { withCredentials: true })
+            axios.get(`http://localhost:3001/#/#/${id}, Type}`, { withCredentials: true })
                 .then(res => {
                     if (res.data.valid) {
                         setInfo(res.data.result)

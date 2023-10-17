@@ -1,9 +1,10 @@
 const models=require("../models")
 const db=require("../dbb/db")
+var mysql = require('mysql');
 
 function show_chats(req,res){
     if(req.session.username){
-    var sql='select * from chats where Sender=?'
+    var sql='select chat_id,first_name from chats join user_infos on chats.reciver=user_infos.email where chats.Sender=?'
     db.query(sql,[req.session.username],(error,result)=>{
         if(error)console.log(error)
         return res.json({valid:true,result})
@@ -48,10 +49,10 @@ else return res.json({valid:false})
 function open_chats(req,res){
     if(req.session.username){
     var id =req.params.id
-    var sql='select * from chats where sender=? AND special=?'
+    var sql='select * from chats where sender=? AND chat_id=?'
     db.query(sql,[req.session.username,id],(error,result)=>{
         var sqll='select * from messages where special_id=?'
-        db.query(sqll,[id],(error,result2)=>{
+        db.query(sqll,result[0].special,(error,result2)=>{
             if(error)console.log(error)
             return res.json({result2,name:result[0].reciver,idd:result[0].chat_id,result,valid:true})
         })
@@ -62,10 +63,10 @@ else return res.json({valid:false})
 function send_message_id(req,res){
     if(req.session.username){
      var id=req.params.id
-    sql='select chat_id from chats where special=? AND Sender=?'
+    sql='select * from chats where chat_id=? AND Sender=?'
     db.query(sql,[id,req.session.username],(err,reslt)=>{
         var text=req.body.Message
-        var sqlll= "INSERT messages (message,chat_id,special_id) VALUES('" + text + "','" + reslt[0].chat_id + "','" + id + "')"
+        var sqlll= "INSERT messages (message,chat_id,special_id) VALUES('" + text + "','" + reslt[0].chat_id + "','" + reslt[0].special + "')"
         db.query(sqlll,(err,reslt11)=>{
             return res.json({valid:true,reslt11})
         })
@@ -73,10 +74,23 @@ function send_message_id(req,res){
 }
 else return res.json({valid:false})
 }
-
+function search_user (req,res){
+    if(req.session.username){
+    var type=req.body.Type
+    var name=req.body.Name
+    db.query("select * from user_infos join animals on animals.owner=user_infos.email where animals.type="+mysql.escape(type) +" OR user_infos.first_name IN (SELECT first_name from user_infos where first_name "+" like '"+name+"%'"+")",(err,resqq)=>{
+        if(err) console.log(err)
+        console.log(resqq)
+        return res.json({valid:true,resqq})
+    })
+    
+}
+else return res.json({valid:false})
+}
 module.exports={show_chats:show_chats,
 show_user:show_user,
 creat_caht:creat_caht,
 open_chats:open_chats,
-send_message_id:send_message_id
+send_message_id:send_message_id,
+search_user:search_user
 }

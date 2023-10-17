@@ -64,6 +64,18 @@ function add_vac(req,res){
 else  res.json({valid:false})
 
 }
+function show_vacc_id(req,res){
+    if(req.session.username){
+    var id=req.params.id
+    var sqll='select vaccien_informations.name_vacc,vacciens.date_take_vac from vaccien_informations join vacciens on vaccien_informations.id=vacciens.vacc_info_id  where vacciens.animal_id=?'
+    db.query(sqll,[id],(err,result)=>{
+        if(err)console.log(err)
+
+        return res.json({result,valid:true})
+    })
+}
+else return res.json({valid:false})
+}
 function show_all_animal(req,res) {
     if(req.session.username){
     const sql='SELECT * from animals JOIN health_records on animals.id=health_records.animal_id JOIN vacciens on animals.id=vacciens.animal_id JOIN vaccien_informations on vacciens.vacc_info_id=vaccien_informations.id WHERE animals.owner=? '
@@ -286,6 +298,7 @@ function show_vacc_for_animal(req,res){
         })
     })
 }
+
 module.exports={
     add_animal: add_animal,
     destroy_animal: destroy_animal,
@@ -296,5 +309,6 @@ module.exports={
     add_vac:add_vac,
     show_animal_id:show_animal_id,
     show_all_animal_ad:show_all_animal_ad,
-    show_vacc_for_animal:show_vacc_for_animal
+    show_vacc_for_animal:show_vacc_for_animal,
+    show_vacc_id:show_vacc_id
 }
