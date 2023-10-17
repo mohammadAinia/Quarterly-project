@@ -7,7 +7,7 @@ import { Container, Login, Register_owner , Animal,Cat_info,Search_animal, Parro
   Register_veterinarian ,Home_owner , Type ,Dog_info , Add_animal,Animal_infoo,Profile,
   Common_users,Vaccines,Update_animals,Problem_id,Type_add_animal,Your_animal,Update_user,
   Animal_info_id,All_problem,Adoptt,Conversation,Add_vacci,Add_Animal_to_adopt,Verification,
-  Your_ploblem , Update_problem,Page_chat,Profile_id,
+  Your_ploblem , Update_problem,Page_chat,Profile_id,Vaccine_id,Search_user,Search_result,
    Notifications} from './Componets/index'
 
 const App = () => {
@@ -35,8 +35,10 @@ const App = () => {
               <Route path='/common_users' element={<Common_users/>}/>
               <Route path='/vaccines/:id' element={<Vaccines/>}/>
               <Route path='Animal_infoo/update/:id' element={<Update_animals/>}/>
+              <Route path='Animal_infoo/show_vaccines/:id' element={<Vaccine_id/>}/>
               <Route path='Animal_info_id/:id/update/:id' element={<Update_animals/>}/>
               <Route path='Animal_info_id/:id/add_vaccine/:id' element={<Add_vacci/>}/>
+              <Route path='Animal_info_id/:id/show_vaccines/:id' element={<Vaccine_id/>}/>
               <Route path='Animal_info_id/:id' element={<Animal_info_id/>}/>
               <Route path='Problem_id/:id' element={<Problem_id/>}/>
               <Route path='/my_problem' element={<Your_ploblem/>}/>
@@ -53,6 +55,13 @@ const App = () => {
               <Route path='/chat' element={<Page_chat/>}/>
               <Route path='/NewChat/:id' element={<Conversation/>}/>
               <Route path='/profile_id/:id' element={<Profile_id/>}/>
+              <Route path='/Search_user' element={<Search_user/>}/>
+              <Route path='/search_result/:id/:Type' element={<Search_result/>}/>
+              <Route path='/search_result/:id' element={<Search_result/>}/>
+              <Route path='/search_result/:Type' element={<Search_result/>}/>
+
+
+
           </Routes>
         </Container>
       </Router>

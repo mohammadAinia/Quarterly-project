@@ -87,8 +87,12 @@ const Add_animall = () => {
           </div>
           <div class="input-box">
             <span class="details">type </span>
-            <input type="text" name='type' onChange={e => setType(e.target.value)} />
-            
+            <select name="type" idd="animal" required onChange={e => setType(e.target.value)}>
+              <option value={"cat"} >Cat</option>
+              <option value={"dog"} >Dog</option>
+              <option value={"bird"} >Bird</option>
+              <option value={"reptile"} >Reptile</option>
+            </select>
           </div>
           <div className="input-box">
             <span className="details">Weight kg *</span>

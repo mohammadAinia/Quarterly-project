@@ -39,16 +39,16 @@ const Animal_info_id = () => {
         <>
             <Header href1={"/Animal"} a1={"Animal"} href3={"#"} a3={"Common Problems"} href2={"#"} a2={"Adopt Animal"} href4={"/login"} a4={"Login"} />
             <div style={{ "margin-top": "1400px", "margin-bottom": "20px" }}>
-                    {Info.map((d, i) => {
-                        return (
-                            <div key={i}>
-                                <About_your_animal name={d.name} age={Age} place={d.place} color={d.color} details={d.Additional_details}
-                                    type={d.type} gender={d.gender} weight={d.weight} height={d.high} health={d.health_stats} id={d.id} id2={d.animal_id} />
-                            </div>
-                        )
-                    })}
+                {Info.map((d, i) => {
+                    return (
+                        <div key={i}>
+                            <About_your_animal name={d.name} age={Age} place={d.place} color={d.color} details={d.Additional_details}
+                                type={d.type} gender={d.gender} weight={d.weight} height={d.high} health={d.health_stats} id={d.id} id2={d.animal_id} />
+                        </div>
+                    )
+                })}
             </div>
-            <div >
+            {/* <div >
                 <div class="container" style={{ "margin-bottom": "50px" }}>
                 <div class="title">Vaccine</div>
 
@@ -60,7 +60,7 @@ const Animal_info_id = () => {
                         )
                     })}
                 </div>
-            </div>
+            </div> */}
         </>
     )
 }

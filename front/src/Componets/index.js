@@ -55,6 +55,11 @@ export {default as Conversation_receive} from './Conversation_cp/Conversation_re
 export {default as Conversation_sender} from './Conversation_cp/Conversation_sender/Conversation_sender'
 export {default as Profilee_id} from './Profilee_id/Profilee_id'
 export {default as Profile_id} from '../Pages/Chat/Profile_id/Profile_id'
+export {default as Vaccine_id} from '../Pages/Bief_animal/Vaccine_id/Vaccine_id'
+export {default as Search_user} from '../Pages/Chat/Search_user/Search_user'
+export {default as Search_result} from '../Pages/Chat/Search_result/Search_result'
+
+
 
 
 

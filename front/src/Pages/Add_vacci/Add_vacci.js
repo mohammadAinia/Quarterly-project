@@ -1,14 +1,31 @@
 import './Add_vacci.css'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Header } from '../../Componets'
+
 
 const Add_vacci = () => {
     const navigate = useNavigate()
     const x1 = 1, x2 = 2, x3 = 3, x4 = 4
     const [Name_vaccines, setName_vaccines] = useState('')
     const [Vaccine_history, setVaccine_history] = useState('')
+    const [Info_vaccines, setInfo_vaccines] = useState([])
+
+
+    useEffect(() => {
+
+        axios.get('http://localhost:3001/#/#', { withCredentials: true })
+            .then(res => {
+                if (res.data.valid) {
+                    setInfo_vaccines(res.data.result)
+                }
+                else {
+                    navigate('/login')
+                }
+            })
+            .catch(err => { console.log(err) })
+    }, [])
 
     const { id } = useParams()
 
@@ -40,14 +57,21 @@ const Add_vacci = () => {
                             <div className="input-box">
                                 <span className="details">Name Vaccines *</span>
                                 <select name="Vaccines" idd="cars" required onChange={e => setName_vaccines(e.target.value)}>
-                                    <optgroup label="Cat">
+                                    {Info_vaccines.map((d, i) => {
+                                        return (
+                                            <div key={i}>
+                                                <option value={d.id} >{d.name}</option>
+                                            </div>
+                                        )
+                                    })}
+                                    {/* <optgroup label="Cat">
                                         <option value={x1} >quadruple vaccination</option>
                                         <option value={x2}>Rabies vaccination</option>
                                     </optgroup>
                                     <optgroup label="Dog">
                                         <option value={x3}>Quadruple vaccination</option>
                                         <option value={x4}>Coronavirus vaccination</option>
-                                    </optgroup>
+                                    </optgroup> */}
                                 </select>
                             </div>
 

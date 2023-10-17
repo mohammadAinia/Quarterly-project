@@ -82,11 +82,11 @@ const Register_owner = () => {
                                 <div class="category">
                                     <label for="dot-1">
                                         <span class="dot one"></span>
-                                        <span class="gender">Male</span>
+                                        <span class="gender" style={{ "color": "black" }}>Male</span>
                                     </label>
                                     <label for="dot-2">
                                         <span class="dot two"></span>
-                                        <span class="gender">Female</span>
+                                        <span class="gender" style={{ "color": "black" }}>Female</span>
                                     </label>
                                 </div>
                             </div>

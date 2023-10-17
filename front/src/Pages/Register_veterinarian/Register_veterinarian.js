@@ -110,19 +110,16 @@ const Register_veterinarian = () => {
                 <div className="category">
                   <label for="dot-1">
                     <span className="dot one"></span>
-                    <span className="gender">Male</span>
+                    <span className="gender" style={{ "color": "black" }}>Male</span>
                   </label>
                   <label for="dot-2">
                     <span className="dot two"></span>
-                    <span className="gender">Female</span>
+                    <span className="gender" style={{ "color": "black" }}>Female</span>
                   </label>
                 </div>
               </div>
               <div className="button">
                 <button>Register</button>
-              </div>
-              <div className="buttonn">
-                <a href="/Back_to_type">Back</a>
               </div>
             </form>
           </div>
