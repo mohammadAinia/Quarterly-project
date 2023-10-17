@@ -43,6 +43,7 @@ const Search_user = () => {
                             <div class="input-box">
                                 <span class="details">type </span>
                                 <select style={{ "width": "200px" }} name="type" idd="animal" required onChange={e => setType(e.target.value)}>
+                                    <option value={""} ></option>
                                     <option value={"cat"} >Cat</option>
                                     <option value={"dog"} >Dog</option>
                                     <option value={"bird"} >Bird</option>
