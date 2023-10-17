@@ -14,18 +14,22 @@ function show_pofile(req,res){
     res.json({valid:false})
 }
 function check_password (req,res){
-    pass= req.body.password
-    sql='select password from user_infos where email=?'
+    pass= req.body.Password
+    sql='select * from user_infos where email=?'
     db.query(sql,[req.session.username],(err,result)=>{
-        bcryptjs.compare(
-            req.body.password,
+        console.log(result[0].password)
+        console.log(pass)
+        console.log(req.session.username)
+            bcryptjs.compare(
+            pass,
             result[0].password,
-            function (err,result) {
-                if (result) {
+            function (err,resultt) {
+                if (resultt) {
+                    console.log("jsdf")
                     return res.json({result,valid:true});
                 } else {
-                    return res.json({
-                        valid:false
+                    console.log("sljgsjg")
+                    return res.json({valid:false
                     });
                 }
             }
@@ -37,15 +41,18 @@ function edit_info(req,res){
     var ln=req.body.Last_name
     var phone=req.body.Phone
     var age=req.body.Age
-    var ps=req.body.password
+    var ps=req.body.Password
         bcryptjs.genSalt(10,(err,salt) => {
         bcryptjs.hash(req.body.password,salt,function (err,hash) {
             var password=hash
-            sql='update user_infos set first_name=?,last_name=?,phone=?,age=?,password=? where email=?'
-            db.query(sql,[fn,ln,phone,age,password,req.session.username],(error,result)=>{
-                if(error)console.log(error)
-                res.json({result,valid:true})
+            bcryptjs.hash(ps,salt,function (err,hash) {
+                sql='update user_infos set first_name=?,last_name=?,phone=?,age=?,password=? where email=?'
+                db.query(sql,[fn,ln,phone,age,hash,req.session.username],(error,result)=>{
+                    if(error)console.log(error)
+                    res.json({result,valid:true})
+                })
             })
+        
         });
         });
     

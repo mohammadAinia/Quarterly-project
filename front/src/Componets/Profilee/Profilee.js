@@ -6,7 +6,7 @@ const Profilee = (props) => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete('http://localhost:3001/#/#/' + id)
+            await axios.delete('http://localhost:3001/user/#/' + id)
             window.location.reload()
             alert('Deleted successfully')
         }

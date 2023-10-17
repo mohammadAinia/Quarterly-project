@@ -4,7 +4,7 @@ var mysql = require('mysql');
 
 function show_chats(req,res){
     if(req.session.username){
-    var sql='select chat_id,first_name from chats join user_infos on chats.reciver=user_infos.email where chats.Sender=?'
+    var sql='select chat_id,first_name,reciver from chats join user_infos on chats.reciver=user_infos.email where chats.Sender=?'
     db.query(sql,[req.session.username],(error,result)=>{
         if(error)console.log(error)
         return res.json({valid:true,result})
@@ -87,10 +87,31 @@ function search_user (req,res){
 }
 else return res.json({valid:false})
 }
+function show_pofile(req,res){
+    if(req.session.username){
+        sqlll='select reciver from chats where chat_id=?'
+        sql='select * from user_infos where email=?'
+            db.query(sqlll,[req.params.id],(err,ress)=>{
+                console.log(ress)
+                db.query(sql,[ress[0].reciver],(error,result)=>{
+                    console.log(result)
+                    sqll='select type from animals where owner=?'
+                    db.query(sqll,[result[0].email],(errr,results)=>{
+                        
+                        res.json({result,valid:true,results})
+                    })
+                })
+            })
+
+    }
+    else 
+    res.json({valid:false})
+}
 module.exports={show_chats:show_chats,
 show_user:show_user,
 creat_caht:creat_caht,
 open_chats:open_chats,
 send_message_id:send_message_id,
-search_user:search_user
+search_user:search_user,
+show_pofile:show_pofile
 }

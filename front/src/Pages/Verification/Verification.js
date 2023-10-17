@@ -16,10 +16,10 @@ const Verification = () => {
     const handleSubmit = async (e) => {
 
         e.preventDefault()
-        axios.post('http://localhost:3001/#/#', Password)
+        axios.post('http://localhost:3001/user/check_password', {Password})
             .then(res => {
                 if (res.data.valid) {
-                    navigate(`/update_userr${Password}`)
+                    navigate(`/update_userr/${Password}`)
                 }
                 else {
                     alert('The password is incorrect')

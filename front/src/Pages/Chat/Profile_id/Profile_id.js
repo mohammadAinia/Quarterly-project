@@ -9,13 +9,15 @@ import { faPlus, faRightFromBracket, faBell, faHouse } from '@fortawesome/free-s
 const Profile_id = () => {
     const { id } = useParams()
     const [Info, setInfo] = useState([])
+    const [Animals, setAnimals] = useState([])
 
     useEffect(() => {
 
-        axios.get(`http://localhost:3001/#/#/${id}`, { withCredentials: true })
+        axios.get(`http://localhost:3001/chat/show_profile/${id}`, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     setInfo(res.data.result)
+                    setAnimals(res.data.results)
                 }
                 else alert("err")
             })
@@ -29,7 +31,7 @@ const Profile_id = () => {
             {Info.map((d, i) => {
                 return (
                     <div key={i}>
-                        <Profilee_id first_name={d.first_name} last_name={d.last_name} email={d.email} phone={d.phone} age={d.age} gender={d.gender} animals={d.animals} />
+                        <Profilee_id first_name={d.first_name} last_name={d.last_name} email={d.email} phone={d.phone} age={d.age} gender={d.gender} animals={Animals[1].type} />
                     </div>
                 )
             })}
