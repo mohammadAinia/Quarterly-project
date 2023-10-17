@@ -13,41 +13,16 @@ const Search_result = () => {
 
     useEffect(() => {
 
-        if ((id && Type) != null) {
+        axios.get(`http://localhost:3001/#/#/${id,Type}`, { withCredentials: true })
+            .then(res => {
+                if (res.data.valid) {
+                    setInfo(res.data.result)
+                }
+                else alert("err")
+            })
+            .catch(err => { alert(err) })
 
-            axios.get(`http://localhost:3001/#/#/${id}, Type}`, { withCredentials: true })
-                .then(res => {
-                    if (res.data.valid) {
-                        setInfo(res.data.result)
-                    }
-                    else alert("err")
-                })
-                .catch(err => { alert(err) })
-        }
-        else if (id != null) {
-
-            axios.get(`http://localhost:3001/#/#/${id}`, { withCredentials: true })
-                .then(res => {
-                    if (res.data.valid) {
-                        setInfo(res.data.result)
-                    }
-                    else alert("err")
-                })
-                .catch(err => { alert(err) })
-        }
-        else {
-            axios.get(`http://localhost:3001/#/#/${Type}`, { withCredentials: true })
-                .then(res => {
-                    if (res.data.valid) {
-                        setInfo(res.data.result)
-                    }
-                    else alert("err")
-                })
-                .catch(err => { alert(err) })
-        }
     }, [])
-
-
 
     return (
         <>

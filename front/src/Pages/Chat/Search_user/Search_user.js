@@ -19,17 +19,7 @@ const Search_user = () => {
         axios.post('http://localhost:3001/chat/search_user', { Name, Type })
             .then(res => {
                 if (res.data.valid) {
-                    if ((res.data.id && Type) != null) {
-                        navigate(`/search_result${res.data.id, Type}`)
-
-                    }
-                    else if (res.data.id != null) {
-                        navigate(`/search_result${res.data.id}`)
-                    }
-                    else {
-                        navigate(`/search_result${Type}`)
-
-                    }
+                    navigate(`/search_result${res.data.id, Type}`)
                 }
                 else {
                     alert('The password is incorrect')
