@@ -12,7 +12,6 @@ const Search_user = () => {
     const [Name, setName] = useState('')
     const [Type, setType] = useState('')
 
-
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
 
@@ -20,9 +19,11 @@ const Search_user = () => {
         axios.post('http://localhost:3001/chat/search_user', { Name, Type })
             .then(res => {
                 if (res.data.valid) {
-                    navigate('/')
+                    navigate(`/search_result${res.data.id, Type}`)
                 }
-                else alert("err")
+                else {
+                    alert('The password is incorrect')
+                }
             })
             .catch(err => alert(err))
     }
@@ -42,6 +43,7 @@ const Search_user = () => {
                             <div class="input-box">
                                 <span class="details">type </span>
                                 <select style={{ "width": "200px" }} name="type" idd="animal" required onChange={e => setType(e.target.value)}>
+                                    <option value={""} ></option>
                                     <option value={"cat"} >Cat</option>
                                     <option value={"dog"} >Dog</option>
                                     <option value={"bird"} >Bird</option>
@@ -59,5 +61,4 @@ const Search_user = () => {
         </>
     )
 }
-
 export default Search_user
