@@ -59,9 +59,7 @@ const App = () => {
               <Route path='/search_result/:id/:Type' element={<Search_result/>}/>
               <Route path='/search_result/:id' element={<Search_result/>}/>
               <Route path='/search_result/:Type' element={<Search_result/>}/>
-
-
-
+              
           </Routes>
         </Container>
       </Router>

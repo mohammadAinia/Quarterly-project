@@ -12,7 +12,6 @@ const Search_user = () => {
     const [Name, setName] = useState('')
     const [Type, setType] = useState('')
 
-
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
 
@@ -20,9 +19,21 @@ const Search_user = () => {
         axios.post('http://localhost:3001/chat/search_user', { Name, Type })
             .then(res => {
                 if (res.data.valid) {
-                    navigate('/')
+                    if ((res.data.id && Type) != null) {
+                        navigate(`/search_result${res.data.id, Type}`)
+
+                    }
+                    else if (res.data.id != null) {
+                        navigate(`/search_result${res.data.id}`)
+                    }
+                    else {
+                        navigate(`/search_result${Type}`)
+
+                    }
                 }
-                else alert("err")
+                else {
+                    alert('The password is incorrect')
+                }
             })
             .catch(err => alert(err))
     }
@@ -59,5 +70,4 @@ const Search_user = () => {
         </>
     )
 }
-
 export default Search_user
