@@ -303,8 +303,3 @@ module.exports={
     singup_vet: singup_vet,
     home_owner: home_owner,
 };
-
-
-
-//            var date = dad.getFullYear()+'-'+(dad.getMonth()+1)+'-'+dad.getDate();
-// var ddd= new Date(date)

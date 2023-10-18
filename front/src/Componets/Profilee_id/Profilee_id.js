@@ -61,7 +61,7 @@ const Profilee_id = (props) => {
 
                         <div className="box">
                             <div className="fst">
-                                <h5>Age :</h5>
+                                <h5>BirthDate :</h5>
                             </div>
                             <div className="nameSkils">
                                 <h4>{props.age}</h4>
