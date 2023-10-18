@@ -1,10 +1,10 @@
-import './Animal_info_id.css'
+import './Animal_info_adopt.css'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { Header, About_your_animal, Your_animal_vaccines } from '../../../Componets'
+import { Header, About_animal_adopt, Your_animal_vaccines } from '../../../Componets'
 import { useNavigate, useParams } from 'react-router-dom'
 
-const Animal_info_id = () => {
+const Animal_info_adopt = () => {
     const navigate = useNavigate()
 
 
@@ -14,8 +14,6 @@ const Animal_info_id = () => {
     const [Vacc, setVacc] = useState([])
 
     const [Age, setAge] = useState()
-
-
 
     useEffect(() => {
 
@@ -42,27 +40,14 @@ const Animal_info_id = () => {
                 {Info.map((d, i) => {
                     return (
                         <div key={i}>
-                            <About_your_animal name={d.name} age={Age} place={d.place} color={d.color} details={d.Additional_details}
+                            <About_animal_adopt name={d.name} age={Age} place={d.place} color={d.color} details={d.Additional_details}
                                 type={d.type} gender={d.gender} weight={d.weight} height={d.high} health={d.health_stats} id2={d.animal_id} />
                         </div>
                     )
                 })}
             </div>
-            {/* <div >
-                <div class="container" style={{ "margin-bottom": "50px" }}>
-                <div class="title">Vaccine</div>
-
-                    {Vacc.map((d, i) => {
-                        return (
-                            <div key={i}>
-                                <Your_animal_vaccines vaccines={d.name_vacc} vaccine_date={d.date_take_vac} />
-                            </div>
-                        )
-                    })}
-                </div>
-            </div> */}
         </>
     )
 }
 
-export default Animal_info_id
+export default Animal_info_adopt

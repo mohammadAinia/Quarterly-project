@@ -8,7 +8,8 @@ import { Container, Login, Register_owner , Animal,Cat_info,Search_animal, Parro
   Common_users,Vaccines,Update_animals,Problem_id,Type_add_animal,Your_animal,Update_user,
   Animal_info_id,All_problem,Adoptt,Conversation,Add_vacci,Add_Animal_to_adopt,Verification,
   Your_ploblem , Update_problem,Page_chat,Profile_id,Vaccine_id,Search_user,Search_result,
-   Notifications} from './Componets/index'
+   Notifications,About_animal_adopt,Animal_info_adopt
+  } from './Componets/index'
 
 const App = () => {
   return (
@@ -59,6 +60,8 @@ const App = () => {
               <Route path='/search_result/:id/:Type' element={<Search_result/>}/>
               <Route path='/search_result/:id' element={<Search_result/>}/>
               <Route path='/search_result/:Type' element={<Search_result/>}/>
+              <Route path='Animal_info_adopt/:id' element={<Animal_info_adopt/>}/>
+
               
           </Routes>
         </Container>

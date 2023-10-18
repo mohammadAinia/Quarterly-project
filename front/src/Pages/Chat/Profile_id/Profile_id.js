@@ -10,6 +10,7 @@ const Profile_id = () => {
     const { id } = useParams()
     const [Info, setInfo] = useState([])
     const [Animals, setAnimals] = useState([])
+    var names = ''
 
     useEffect(() => {
 
@@ -23,6 +24,14 @@ const Profile_id = () => {
             })
             .catch(err => { alert(err) })
     }, [])
+
+    // Animals.map((d, i) => {
+    //     return (
+    //         <div key={i}>
+    //             {names = names+ d.animals}
+    //         </div>
+    //     )
+    // })
 
     return (
         <>
