@@ -8,12 +8,12 @@ import { faPlus, faRightFromBracket, faBell, faHouse } from '@fortawesome/free-s
 
 const Search_result = () => {
 
-    const { id, Type } = useParams()
+    const { Type } = useParams()
     const [Info, setInfo] = useState([])
 
     useEffect(() => {
 
-        axios.get(`http://localhost:3001/#/#/${id,Type}`, { withCredentials: true })
+        axios.get(`http://localhost:3001/#/#/${Type}`, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     setInfo(res.data.result)
