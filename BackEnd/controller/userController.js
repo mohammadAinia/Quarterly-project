@@ -2,7 +2,8 @@ const { json }=require("body-parser");
 const models=require("../models");
 const bcryptjs=require("bcryptjs");
 const db=require("../dbb/db")
-const moment=require("moment")
+const moment=require("moment")   
+//
 const singup_vet=(req,res) => {
     models.user_info.findOne({ where: { email: req.body.Email } }).then((result) => {
             if (result) {
