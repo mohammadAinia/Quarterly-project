@@ -219,7 +219,7 @@ db.query(sqll,[owner],(err, result) => {
             var ddss= new Date(datee)
             var Difference_In_Time = dad.getTime() - ddss.getTime();
             var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
-            var not="the days rimining for next vacc for animal"+u.name+""+Difference_In_Days +"day/s"
+            var not="The remaining days for next vacc for animal"+  u.name +" "+Difference_In_Days +"day/s"
             console.log(not)
             db.query(sqlll,[u.id,u.id_v_r],(err,resu)=>{
                 if (err) console.log(err)
