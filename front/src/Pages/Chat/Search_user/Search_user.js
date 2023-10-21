@@ -9,23 +9,12 @@ import axios from 'axios'
 const Search_user = () => {
 
     const navigate = useNavigate()
-    const [Name, setName] = useState('')
     const [Type, setType] = useState('')
 
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
+        navigate(`/search_result/${Type}`)
 
-        e.preventDefault()
-        axios.post('http://localhost:3001/chat/search_user', { Name, Type })
-            .then(res => {
-                if (res.data.valid) {
-                    navigate(`/search_result${res.data.id, Type}`)
-                }
-                else {
-                    alert('The password is incorrect')
-                }
-            })
-            .catch(err => alert(err))
     }
     return (
         <>
@@ -33,16 +22,12 @@ const Search_user = () => {
 
             <div class="container">
                 <div class="title">Search</div>
-                <div class="content">
+                <div class="content"  style={{ "width": "300px" }}>
                     <form onSubmit={handleSubmit}>
                         <div class="user-details">
                             <div class="input-box">
-                                <span class="details">Name</span>
-                                <input style={{ "width": "200px" }} type="text" defaultValue={""} onChange={e => setName(e.target.value)} />
-                            </div>
-                            <div class="input-box">
                                 <span class="details">type </span>
-                                <select style={{ "width": "200px" }} name="type" idd="animal" required onChange={e => setType(e.target.value)}>
+                                <select style={{ "width": "250px" }}  name="type" idd="animal" required onChange={e => setType(e.target.value)} >
                                     <option value={""} ></option>
                                     <option value={"cat"} >Cat</option>
                                     <option value={"dog"} >Dog</option>
