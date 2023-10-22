@@ -30,14 +30,14 @@ const All_problem = () => {
         <>
             <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"Common Problems"} href5={"/Add_Animal"} a5={<FontAwesomeIcon icon={faPlus} />} href3={"/Animal_infoo"} a3={"All Animal"} href4={"/All_problem"} a4={"Ploblems"} href6={"/Notifications"} a6={<FontAwesomeIcon icon={faBell} />} href7={"/#"} a7={<div id="login-btn" className="fas fa-user"></div>} href8={"/"} a8={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
 
-            <section className="pricing" id="pricing" style={{ "margin-top":"900px" }}>
-                <h2 className="heading">All Proplem</h2>
+            <section className="pricing" id="pricing" style={{ "margin-top":"500px"}}>
+                <h2 className="heading" style={{ "margin-left":"100px"}}>All Proplem</h2>
 
-                <div className="box-container">
+                <div className="box-container" style={{ "width":"600px" }}>
                     {Problim_info.map((user, i) => {
                         return (
                             <div key={i}>
-                                <Problems name={user.title} text={user.disc} type={user.animal_type} id1={user.id} id2={user.id} />
+                                <Problems name={user.title} text={user.disc} type={user.animal_type} id1={user.id} />
                             </div>
                         )
                     })}

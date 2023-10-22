@@ -6,10 +6,12 @@ const Common_proplem = (props) => {
 
 
             <div className="box">
-                {/* <img src="images/pricing1.png" alt=""/> */}
-                <h3>{props.name}</h3>
-                <p>{props.detals}</p>
-                <h4 className="price"><a href="/#">{props.a}</a></h4>
+                <h2 style={{ "font-size": "24px" }}>{props.type}</h2>
+                <br />
+                <h2>{props.name}</h2>
+                <br />
+                <p style={{ "font-size": "15px" }}>{props.detals}</p>
+                {/* <h4 className="price"><a href="/#">{props.a}</a></h4> */}
             </div>
 
 

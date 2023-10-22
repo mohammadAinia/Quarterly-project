@@ -59,9 +59,11 @@ export {default as Profilee_id} from './Profilee_id/Profilee_id'
 export {default as Profile_id} from '../Pages/Chat/Profile_id/Profile_id'
 export {default as Vaccine_id} from '../Pages/Bief_animal/Vaccine_id/Vaccine_id'
 export {default as Search_user} from '../Pages/Chat/Search_user/Search_user'
-export {default as Search_result} from '../Pages/Chat/Search_result/Search_result'
+export {default as Search_result} from '../Pages/Chat/Search_result/Search_result' 
 export {default as Choose_button} from './Choose_button/Choose_button'
 export {default as Type_search} from '../Pages/Chat/Type_search/Type_search'
+export {default as Add_common} from '../Pages/Veterinarian/Add_common/Add_common'
+
 
 
 
