@@ -57,7 +57,7 @@ const App = () => {
               <Route path='/NewChat/:id' element={<Conversation/>}/>
               <Route path='/profile_id/:id' element={<Profile_id/>}/>
               <Route path='/Search_user' element={<Search_user/>}/>
-              <Route path='/search_result/:id' element={<Search_result/>}/>
+              <Route path='/search_result/:Type' element={<Search_result/>}/>
               <Route path='Animal_info_adopt/:id' element={<Animal_info_adopt/>}/>
               <Route path='Animal_info_adopt/:id/show_vaccines/:id' element={<Vaccine_id/>}/>
               <Route path='/Search_type' element={<Type_search/>}/>

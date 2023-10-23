@@ -1,5 +1,4 @@
 const models=require("../models")
-const animalcon=require('./animalController')
 const db=require("../dbb/db")
 const add_to_adlist_id=(req,res)=>{
     const animal_id =req.params.id

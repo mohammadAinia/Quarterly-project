@@ -13,7 +13,7 @@ const Search_result = () => {
 
     useEffect(() => {
 
-        axios.get(`http://localhost:3001/#/#/${Type}`, { withCredentials: true })
+        axios.get(`http://localhost:3001/chat/search_user/${Type}`, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     setInfo(res.data.result)
@@ -35,7 +35,7 @@ const Search_result = () => {
                     {Info.map((d, i) => {
                         return (
                             <div key={i}>
-                                <Page_chatt name={d.reciver} id={d.chat_id} />
+                                <Page_chatt name={d.first_name} id={d.id} />
                             </div>
                         )
                     })}

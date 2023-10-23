@@ -13,6 +13,7 @@ const Search_user = () => {
 
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
+        alert(Type)
         navigate(`/search_result/${Type}`)
 
     }

@@ -20,7 +20,7 @@ const Page_chatt = (props) => {
                 </div>
                 <br />
                 <div>
-                    <Link style={{ "margin-left": "55px", "width": "95px" }} className="btn" to={`/NewChat/${props.id}`}>New</Link>
+                    <Link style={{"margin-left": "55px", "width": "95px" }} className="btn" to={`/NewChat/${props.id}`}>New</Link>
                     <Link style={{ "margin-left": "50px", "width": "110px" }} className="btn" to={`/profile_id/${props.id}`}>Profile</Link>
 
                 </div>

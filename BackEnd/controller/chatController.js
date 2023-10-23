@@ -24,6 +24,7 @@ else return res.json({valid:false})
 function creat_caht(req,res){
     if(req.session.username){
     var s= req.session.username
+    var id=req.params.id
     var sql2='SELECT special FROM chats WHERE special=(SELECT max(special) from chats)'
     var sql1='select email from user_infos where id=?'
     db.query(sql1,[id],(error,result)=>{
@@ -76,12 +77,11 @@ else return res.json({valid:false})
 }
 function search_user (req,res){
     if(req.session.username){
-    var type=req.body.Type
-    var name=req.body.Name
-    db.query("select * from user_infos join animals on animals.owner=user_infos.email where animals.type="+mysql.escape(type) +" OR user_infos.first_name IN (SELECT first_name from user_infos where first_name "+" like '"+name+"%'"+")",(err,resqq)=>{
+    var type=req.params.Type
+    sql='select * from user_infos where email IN (select owner from animals  where type=? AND owner!=? AND owner not in(select reciver from chats))'
+    db.query(sql,[type,req.session.username],(err,result)=>{
         if(err) console.log(err)
-        console.log(resqq)
-        return res.json({valid:true,resqq})
+        return res.json({valid:true,result})
     })
     
 }
@@ -115,3 +115,5 @@ send_message_id:send_message_id,
 search_user:search_user,
 show_pofile:show_pofile
 }
+
+// db.query("select * from user_infos join animals on animals.owner=user_infos.email where animals.type="+mysql.escape(type) +")"
