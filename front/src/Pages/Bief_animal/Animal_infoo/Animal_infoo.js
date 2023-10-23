@@ -30,7 +30,7 @@ const Animal_infoo = () => {
     <>
       <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"Common Problems"} href5={"/Add_Animal"} a5={<FontAwesomeIcon icon={faPlus} />} href3={"/Animal_infoo"} a3={"All Animal"} href4={"/All_problem"} a4={"Ploblems"} href6={"/Notifications"} a6={<FontAwesomeIcon icon={faBell} />} href7={"/#"} a7={<div id="login-btn" className="fas fa-user"></div>} href8={"/"} a8={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
 
-      <div style={{ "margin-top": "10px", "margin-bottom": "20px" }}>
+      <div style={{ "margin-top": "8000px", "margin-bottom": "20px" }}>
           {Info.map((d, i) => {
             return (
               <div key={i}>

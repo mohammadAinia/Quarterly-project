@@ -11,7 +11,7 @@ const Your_prob = (props) => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete('http://localhost:3001/problim/delete/'+id)
+            await axios.delete('http://localhost:3001/problim/delete/' + id)
             window.location.reload()
         }
         catch (err) { console.log(err) }
@@ -21,12 +21,13 @@ const Your_prob = (props) => {
 
     return (
         <>
-            <form  style={{ "margin-top": "200px" }} >
+            <form  >
                 <div className="box">
-
+                    <h2 style={{ "font-size": "24px" }}>{props.type}</h2>
+                    <br />
                     <h2>{props.name}</h2>
-                    <h2>{props.type}</h2>
-                    <p style={{ "font-size": "10px" }}>{props.text}</p> <br />
+                    <br />
+                    <p style={{ "font-size": "15px" }}>{props.text}</p> <br />
 
                     <button style={{ "font-size": "1.4rem", "padding": "0.7rem 2rem" }} className="btn" onClick={e => handleDelete(props.id1)}>delete</button><br />
                     <Link className="btn" to={`update_problem/${props.id2}`}>Update</Link>

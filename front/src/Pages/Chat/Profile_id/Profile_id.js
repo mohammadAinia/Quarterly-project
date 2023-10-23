@@ -44,6 +44,13 @@ const Profile_id = () => {
                     </div>
                 )
             })}
+            {/* {Animals.map((d, i) => {
+                return (
+                    <div key={i}>
+                        <Profilee_id first_name={d.name} />
+                    </div>
+                )
+            })} */}
         </>
     )
 }

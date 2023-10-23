@@ -25,14 +25,14 @@ const Your_ploblem = () => {
     return (
         <>
 
-            <section className="pricing" id="pricing">
-                <h2 className="heading">Proplem</h2>
+            <section className="pricing" id="pricing" style={{ "margin-top":"400px"}}>
+                <h2 className="heading" style={{ "margin-left":"90px"}}>Proplem</h2>
 
-                <div className="box-container">
+                <div className="box-container" style={{ "width":"600px" }}>
                     {Info.map((user, i) => {
                         return (
                             <div key={i}>
-                                <Your_prob name={user.title} type={user.disc} text={user.animal_type} id1={user.id} id2={user.id} />
+                                <Your_prob name={user.title} text={user.disc} type={user.animal_type} id1={user.id} id2={user.id} />
                             </div>
                         )
                     })}
