@@ -17,6 +17,8 @@ const Search_result = () => {
             .then(res => {
                 if (res.data.valid) {
                     setInfo(res.data.result)
+                    console.log(res.data.result)
+                    console.log(Type)
                 }
                 else alert("err")
             })

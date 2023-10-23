@@ -8,7 +8,8 @@ import { Container, Login, Register_owner , Animal,Cat_info,Search_animal, Parro
   Common_users,Vaccines,Update_animals,Problem_id,Type_add_animal,Your_animal,Update_user,
   Animal_info_id,All_problem,Adoptt,Conversation,Add_vacci,Add_Animal_to_adopt,Verification,
   Your_ploblem , Update_problem,Page_chat,Profile_id,Vaccine_id,Search_user,Search_result,
-   Notifications,About_animal_adopt,Animal_info_adopt,Type_search,Common_vete,Add_common
+   Notifications,Animal_info_adopt,Type_search,Common_vete,Add_common,
+   Search_problem,Search_result2,
   } from './Componets/index'
 
 const App = () => {
@@ -63,6 +64,10 @@ const App = () => {
               <Route path='/Search_type' element={<Type_search/>}/>
               <Route path='/m' element={<Common_vete/>}/>
               <Route path='/Add_problem' element={<Add_common/>}/>
+              <Route path='/Search_type_common' element={<Search_problem/>}/>
+              <Route path='/search_result2/:Type' element={<Search_result2/>}/>
+
+
 
 
 
