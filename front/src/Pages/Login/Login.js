@@ -18,13 +18,13 @@ const Login = () => {
         e.preventDefault()
         axios.post('http://localhost:3001/user/login', { email, password })
             .then(res => {
-                if (res.data.Login==='user') {
+                if (res.data.Login) {
                     navigate('/')
                 }
-                else if(res.data.Login=='doc')
-                {
-                    navigate('/Home_vet')
-                }
+                // else if(res.data.Login==='doc')
+                // {
+                //     navigate('/Home_vet')
+                // }
                 else {
                     alert('no record')
                 }
