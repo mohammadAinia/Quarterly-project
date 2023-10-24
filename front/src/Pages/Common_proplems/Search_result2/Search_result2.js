@@ -13,7 +13,7 @@ const Search_result2 = () => {
 
   useEffect(() => {
 
-    axios.get(`http://localhost:3001/#/#/${Type}`, { withCredentials: true })
+    axios.post(`http://localhost:3001/co_problim/search`,{Type})
       .then(res => {
         if (res.data.valid) {
           setInfo(res.data.result)

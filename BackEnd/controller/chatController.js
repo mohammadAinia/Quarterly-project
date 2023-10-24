@@ -81,6 +81,7 @@ function search_user (req,res){
     sql='select * from user_infos where email IN (select owner from animals  where type=? AND owner!=? AND owner not in(select reciver from chats))'
     db.query(sql,[type,req.session.username],(err,result)=>{
         if(err) console.log(err)
+        console.log(result)
         return res.json({valid:true,result})
     })
     
@@ -92,12 +93,9 @@ function show_pofile(req,res){
         sqlll='select reciver from chats where chat_id=?'
         sql='select * from user_infos where email=?'
             db.query(sqlll,[req.params.id],(err,ress)=>{
-                console.log(ress)
                 db.query(sql,[ress[0].reciver],(error,result)=>{
-                    console.log(result)
-                    sqll='select type from animals where owner=?'
+                    sqll='select DISTINCT type from animals where owner=?'
                     db.query(sqll,[result[0].email],(errr,results)=>{
-                        
                         res.json({result,valid:true,results})
                     })
                 })
