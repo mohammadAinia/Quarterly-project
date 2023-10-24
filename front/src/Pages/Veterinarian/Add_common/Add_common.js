@@ -11,6 +11,8 @@ const Add_common = () => {
     const navigate = useNavigate()
     const [Title, setTitle] = useState('')
     const [Details, setDetails] = useState('')
+    const [Type, setType] = useState('')
+
 
 
 
@@ -18,14 +20,13 @@ const Add_common = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        axios.post('http://localhost:3001/problim/update_problem', { Title, Details })
+        axios.post('http://localhost:3001/#/#', { Title, Details })
             .then(res => {
                 if (res.data.valid) {
                     alert('Added successfully')
                 }
                 else {
                     navigate('/login')
-
                 }
             })
             .catch(err => alert(err))
@@ -45,8 +46,17 @@ const Add_common = () => {
                                 <input type="text" required onChange={e => setTitle(e.target.value)} />
                             </div>
                             <div class="input-box">
+                                <span class="details">type </span>
+                                <select style={{ "width": "200px" }}  name="type" idd="animal" required onChange={e => setType(e.target.value)} >
+                                    <option value={"cat"} >Cat</option>
+                                    <option value={"dog"} >Dog</option>
+                                    <option value={"bird"} >Bird</option>
+                                    <option value={"reptile"} >Reptile</option>
+                                </select>
+                            </div>
+                            <div class="input-box">
                                 <span class="details">Details </span>
-                                <input type="text" required onChange={e => setDetails(e.target.value)} />
+                                <input style={{ "width": "440px" }} type="text" required onChange={e => setDetails(e.target.value)} />
                             </div>
                         </div>
                         <div class="button">

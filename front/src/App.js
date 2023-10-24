@@ -9,7 +9,7 @@ import { Container, Login, Register_owner , Animal,Cat_info,Search_animal, Parro
   Animal_info_id,All_problem,Adoptt,Conversation,Add_vacci,Add_Animal_to_adopt,Verification,
   Your_ploblem , Update_problem,Page_chat,Profile_id,Vaccine_id,Search_user,Search_result,
    Notifications,Animal_info_adopt,Type_search,Common_vete,Add_common,
-   Search_problem,Search_result2,Page_new_chat,
+   Search_problem,Search_result2,Page_new_chat,Home,
   } from './Componets/index'
 
 const App = () => {
@@ -62,7 +62,8 @@ const App = () => {
               <Route path='Animal_info_adopt/:id' element={<Animal_info_adopt/>}/>
               <Route path='Animal_info_adopt/:id/show_vaccines/:id' element={<Vaccine_id/>}/>
               <Route path='/Search_type' element={<Type_search/>}/>
-              <Route path='/m' element={<Page_new_chat/>}/>
+              <Route path='/common_vete' element={<Common_vete/>}/>
+              <Route path='/m' element={<Home/>}/>
               <Route path='/Add_problem' element={<Add_common/>}/>
               <Route path='/Search_type_common' element={<Search_problem/>}/>
               <Route path='/search_result2/:Type' element={<Search_result2/>}/>

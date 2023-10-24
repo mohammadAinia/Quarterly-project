@@ -18,8 +18,12 @@ const Login = () => {
         e.preventDefault()
         axios.post('http://localhost:3001/user/login', { email, password })
             .then(res => {
-                if (res.data.Login) {
+                if (res.data.Login==='user') {
                     navigate('/')
+                }
+                else if(res.data.Login=='doc')
+                {
+                    navigate('/Home_vet')
                 }
                 else {
                     alert('no record')
@@ -27,7 +31,6 @@ const Login = () => {
             })
             .catch(err => { console.log(err) })
     }
-
 
     return (
         <>

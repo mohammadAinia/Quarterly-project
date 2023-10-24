@@ -124,7 +124,7 @@ function login(req,res) {
                             req.session.roleee='doc'
                             req.session.username=req.body.email;
                             console.log(user.first_name);
-                            return res.json({ Login: true,username: req.session.username });
+                            return res.json({ Login: true, username: req.session.username });
                         } else {
                             return res.json({
                                 message: "incorrect password",
@@ -143,6 +143,7 @@ function login(req,res) {
                             notifcation(user.email)
                             req.session.username=user.email;
                             return res.json({ Login: true,username: req.session.username });
+
                         } else {
                             return res.status(401).json({
                                 message: "incorrect password",

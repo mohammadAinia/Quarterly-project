@@ -66,6 +66,8 @@ export {default as Type_search} from '../Pages/Chat/Type_search/Type_search'
 export {default as Add_common} from '../Pages/Veterinarian/Add_common/Add_common'
 export {default as Search_problem} from '../Pages/Common_proplems/Search_problem/Search_problem'
 export {default as Search_result2} from '../Pages/Common_proplems/Search_result2/Search_result2'
+export {default as Home} from '../Pages/Veterinarian/Home/Home'
+
 
 
 
