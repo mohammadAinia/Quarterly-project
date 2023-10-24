@@ -11,14 +11,17 @@ const Add_vacci = () => {
     const [Name_vaccines, setName_vaccines] = useState('')
     const [Vaccine_history, setVaccine_history] = useState('')
     const [Info_vaccines, setInfo_vaccines] = useState([])
-
+    const name=[]
+    
 
     useEffect(() => {
 
         axios.get(`http://localhost:3001/animal/get_vacc/${id}`, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
+
                     setInfo_vaccines(res.data.result2)
+                    
                 }
                 else {
                     navigate('/login')
@@ -26,6 +29,11 @@ const Add_vacci = () => {
             })
             .catch(err => { console.log(err) })
     }, [])
+    Info_vaccines.map((u,i)=>{
+        name.push([u.name_vacc,u.id])
+        
+    })
+    // console.log(name[0][0])
 
     const { id } = useParams()
 
@@ -56,14 +64,10 @@ const Add_vacci = () => {
 
                             <div className="input-box">
                                 <span className="details">Name Vaccines *</span>
-                                <select name="Vaccines" idd="cars" required onChange={e => setName_vaccines(e.target.value)}>
-                                    {Info_vaccines.map((d, i) => {
-                                        return (
-                                            <div key={i}>
-                                                <option value={d.id} >{d.name}</option>
-                                            </div>
-                                        )
-                                    })}
+                                <select  name="Vaccines" idd="cars" required onChange={e => setName_vaccines(e.target.value)}>
+                                    {name.map((d, i) =>
+                                    (<option key={i} value={d[i][1]} > {d[i][0]} </option>)
+                                    )}
                                     {/* <optgroup label="Cat">
                                         <option value={x1} >quadruple vaccination</option>
                                         <option value={x2}>Rabies vaccination</option>

@@ -26,6 +26,7 @@ function add_vac(req,res){
             var health_record_id=result[0].id
             var sqll= "INSERT vacciens (date_take_vac,vacc_info_id,animal_id,health_record_id,next_appointment) VALUES('" + date_take_vac + "','" + vacc_info_id + "','" + animal_id + "','" + health_record_id + "','" + datee + "')"
         db.query(sqll,(err,ress)=>{
+            if(err)console.log(err)
             res.json({valid:true})
         })
         }
