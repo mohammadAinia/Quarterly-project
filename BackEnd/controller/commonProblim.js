@@ -11,19 +11,29 @@ function show_all_comon_prob(req,res){
 }
 function add_common_problem(req,res){
     if(req.session.username){
-    var title=req.body.title
-    var desc=req.body.desc
-    var animal_type=req.body.type
-    var pub=req.session.username
-    var sql="INSERT common_problems (title,disc,animal_type,publisher) VALUES('" + title + "','" + desc + "','" + animal_type + "','" + pub + "')"
-    db.query(sql,(error,result)=>{
-        if(error) {
-            console.log(error)
+    const sqll='select * from user_infos where email=?'
+    db.query(sqll,[req.session.username],(error,result)=>{
+        if(error){console.log(error)}
+        else if(result[0].rolee=='doc'){
+            var title=req.body.title
+            var desc=req.body.desc
+            var animal_type=req.body.type
+            var pub=req.session.username
+            var sql="INSERT common_problems (title,disc,animal_type,publisher) VALUES('" + title + "','" + desc + "','" + animal_type + "','" + pub + "')"
+            db.query(sql,(error,result)=>{
+                if(error) {
+                    console.log(error)
+                }
+                else {
+                    return res.json({valid:true,result})
+                }
+            })
         }
-        else {
-            return res.json({valid:true,result})
+        else{
+            return res.json({message:"you dont have permissions "})
         }
     })
+
 }
 else {
     return res.json({valid:false})

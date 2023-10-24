@@ -15,10 +15,10 @@ const Add_vacci = () => {
 
     useEffect(() => {
 
-        axios.get('http://localhost:3001/#/#', { withCredentials: true })
+        axios.get(`http://localhost:3001/animal/get_vacc/${id}`, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
-                    setInfo_vaccines(res.data.result)
+                    setInfo_vaccines(res.data.result2)
                 }
                 else {
                     navigate('/login')

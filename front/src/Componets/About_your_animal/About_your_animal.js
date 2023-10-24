@@ -71,7 +71,7 @@ const About_your_animal = (props) => {
                                 <Link to={`update/${props.id2}`}>Update</Link>
                             </div>
                             <div class="button">
-                                <Link to={`add_vaccine/${props.id2}`}>Add Vaccine</Link>
+                                <Link to={`/add_vaccine/${props.id2}`}>Add Vaccine</Link>
                             </div>
                             <div class="button">
                                 <button onClick={e => handleDelete(props.id2)}>Delete</button>

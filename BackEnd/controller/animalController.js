@@ -4,31 +4,7 @@ const validateor=require('fastest-validator')
 const date = require('date-and-time')
 const vaccien=require("../models/vaccien")
 const db=require("../dbb/db")
-function update_info_auto(req,res){//
-    models.vaccien.findAll()
-    .then(
-        reult=>{
-            models.vaccien_information.findOne({where:{id:reult.vacc_info_id}}).then(
-                result=>{
-                    var date1=new Date(reult.date_take_vac)
-                    var nowDate = new Date(); 
-                    var date = nowDate.getFullYear()+'/'+(nowDate.getMonth()+1)+'/'+nowDate.getDate(); 
-                    var dada=new Date(date)
 
-                    var diff=dada.getTime()-date1.getTime()
-                    var numofday=diff/(1000 * 3600 * 24)
-                    var numofdayvac=result.duration_ef*30
-                    if(numofday<numofdayvac){
-
-                    }
-                    
-
-                }
-            ).catch()
-        }
-    )
-    .catch()
-}
 function add_vac(req,res){
     if(req.session.username){
     const iddd =req.params.id
@@ -299,6 +275,26 @@ function show_vacc_for_animal(req,res){
     })
 }
 
+function add_vac_info(req,res){
+    if(req.session.roleee){
+    var namev=req.body.Name_vaccines
+    var duration_ef=req.body.duration_ef
+    var recommended_age=req.body.recommended_age
+    var number_of_repetition=req.body.number_of_repetition
+    var category=req.body.category
+    var disc=req.body.disc
+    var type=req.body.animal_type
+
+    var sql="INSERT vaccien_informations (name_vacc,duration_ef,recommended_age,number_of_repetition,category,description,animmal_type) VALUES('" + namev + "','" + duration_ef + "','" + recommended_age + "','" + number_of_repetition + "','" + category + "','" + disc + "','" + type + "')"
+        db.query(sql,(error,result)=>{
+            if(error){console.log(error)}
+            
+            else {return res.json({valid:true,result})}
+        })
+    }
+    else{return res.json({ valid:false})}
+}
+
 module.exports={
     add_animal: add_animal,
     destroy_animal: destroy_animal,
@@ -310,5 +306,6 @@ module.exports={
     show_animal_id:show_animal_id,
     show_all_animal_ad:show_all_animal_ad,
     show_vacc_for_animal:show_vacc_for_animal,
-    show_vacc_id:show_vacc_id
+    show_vacc_id:show_vacc_id,
+    add_vac_info:add_vac_info
 }

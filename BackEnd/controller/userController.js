@@ -121,6 +121,7 @@ function login(req,res) {
                     user.password,
                     function (err,result) {
                         if (result) {
+                            req.session.roleee='doc'
                             req.session.username=req.body.email;
                             console.log(user.first_name);
                             return res.json({ Login: true,username: req.session.username });
@@ -141,7 +142,6 @@ function login(req,res) {
                             })
                             notifcation(user.email)
                             req.session.username=user.email;
-                            console.log(user.first_name);
                             return res.json({ Login: true,username: req.session.username });
                         } else {
                             return res.status(401).json({
