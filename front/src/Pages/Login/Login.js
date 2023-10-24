@@ -21,13 +21,16 @@ const Login = () => {
                 if (res.data.Login) {
                     navigate('/')
                 }
+                // else if(res.data.Login==='doc')
+                // {
+                //     navigate('/Home_vet')
+                // }
                 else {
                     alert('no record')
                 }
             })
             .catch(err => { console.log(err) })
     }
-
 
     return (
         <>
