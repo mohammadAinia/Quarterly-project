@@ -53,7 +53,7 @@ const Page_chat = () => {
                     {Info.map((d, i) => {
                         return (
                             <div key={i}>
-                                <Page_chatt name={d.first_name} id={d.chat_id} />
+                                <Page_chatt name={d.first_name} href_link1={`/NewChat/${d.chat_id}`} name_link1={"new"}/>
                             </div>
                         )
                     })}

@@ -1,7 +1,7 @@
 import './Search_result.css'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { Header, Page_chatt } from '../../../Componets'
+import { Header, Page_new_chat } from '../../../Componets'
 import { useNavigate, useParams } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faRightFromBracket, faBell, faHouse } from '@fortawesome/free-solid-svg-icons'
@@ -37,7 +37,7 @@ const Search_result = () => {
                     {Info.map((d, i) => {
                         return (
                             <div key={i}>
-                                <Page_chatt name={d.first_name} id={d.id} />
+                                <Page_new_chat name={d.first_name} href_link1={`/CreateChat/${d.chat_id}`} />
                             </div>
                         )
                     })}
