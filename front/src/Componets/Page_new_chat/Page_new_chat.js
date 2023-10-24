@@ -12,8 +12,14 @@ const Page_new_chat = (props) => {
 
   const create_new_chat = async (id) => {
     try {
-      axios.get('http://localhost:3001/#/#/' + id)
-      navigate(`/NewChat${id}`)
+      axios.post('http://localhost:3001/chat/create_chat/'+id,{ withCredentials: true })
+      .then(
+        res=>{
+          var e=res.data.result12
+          navigate(`/NewChat/${e}`)
+        }
+      ).catch()
+      
     }
     catch (err) { alert(err) }
   }

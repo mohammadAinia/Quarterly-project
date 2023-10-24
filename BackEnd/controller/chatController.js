@@ -39,7 +39,11 @@ function creat_caht(req,res){
                 var sqll= "INSERT chats (Sender,reciver,special) VALUES('" + reciver + "','" + s + "','" + max + "')"
             db.query(sqll,(error,result3)=>{
                 if (error) console.log(error)
-                return res.json({valid:true})
+                sqlll='select chat_id from chats where reciver=? '
+                db.query(sqlll,[result[0].email],(error,result12)=>{
+                    return res.json({valid:true,result12:result12[0].chat_id})
+                })
+                
             })
             })
         })

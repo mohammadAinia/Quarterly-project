@@ -17,8 +17,6 @@ const Search_result = () => {
             .then(res => {
                 if (res.data.valid) {
                     setInfo(res.data.result)
-                    console.log(res.data.result)
-                    console.log(Type)
                 }
                 else alert("err")
             })
@@ -37,7 +35,7 @@ const Search_result = () => {
                     {Info.map((d, i) => {
                         return (
                             <div key={i}>
-                                <Page_new_chat name={d.first_name} href_link1={`/CreateChat/${d.chat_id}`} />
+                                <Page_new_chat name={d.first_name} id={d.id} href_link1={`/CreateChat/${d.id}`} />
                             </div>
                         )
                     })}

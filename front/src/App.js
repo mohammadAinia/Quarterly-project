@@ -66,11 +66,6 @@ const App = () => {
               <Route path='/Add_problem' element={<Add_common/>}/>
               <Route path='/Search_type_common' element={<Search_problem/>}/>
               <Route path='/search_result2/:Type' element={<Search_result2/>}/>
-
-
-
-
-
           </Routes>
         </Container>
       </Router>

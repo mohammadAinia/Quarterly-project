@@ -53,7 +53,6 @@ const add_problim=(req,res) => {
     var sql= "insert into problims (title,disc,publisher,animal_type,date_prob) values ('" + title + "','" + desc + "','" + publisher + "','" + animal_type + "','" + date + "')"
     db.query(sql,(err, result) => {
         if (err) return res.json(err)+console.log(err)
-        
         return res.json({result,valid:true}) + console.log()
     }
     )
