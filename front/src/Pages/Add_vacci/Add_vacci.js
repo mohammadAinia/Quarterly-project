@@ -6,13 +6,11 @@ import { Header } from '../../Componets'
 
 
 const Add_vacci = () => {
+    
     const navigate = useNavigate()
-    const x1 = 1, x2 = 2, x3 = 3, x4 = 4
     const [Name_vaccines, setName_vaccines] = useState('')
     const [Vaccine_history, setVaccine_history] = useState('')
     const [Info_vaccines, setInfo_vaccines] = useState([])
-    const name=[]
-    
 
     useEffect(() => {
 
@@ -21,7 +19,7 @@ const Add_vacci = () => {
                 if (res.data.valid) {
 
                     setInfo_vaccines(res.data.result2)
-                    
+
                 }
                 else {
                     navigate('/login')
@@ -29,11 +27,6 @@ const Add_vacci = () => {
             })
             .catch(err => { console.log(err) })
     }, [])
-    Info_vaccines.map((u,i)=>{
-        name.push([u.name_vacc,u.id])
-        
-    })
-    // console.log(name[0][0])
 
     const { id } = useParams()
 
@@ -44,7 +37,6 @@ const Add_vacci = () => {
             .then(res => {
                 if (res.data.valid) {
                     alert('Added successfully')
-                    // navigate(`Animal_info_id/${id}`)
                 }
                 else {
                     alert('err')
@@ -57,6 +49,7 @@ const Add_vacci = () => {
             <Header href1={"/Animal"} a1={"Animal"} href2={"#"} a2={"Adopt Animal"} href3={"/Proplem_veterianarian"} a3={"Common Problems"} href4={"/Add_Animal"} a4={"Add Animal"} href5={"/login_out"} a5={"Login Out"} />
 
             <div className="container">
+
                 <div className="title">Add Vaccines</div>
                 <div className="content">
                     <form onSubmit={handleSubmit}>
@@ -64,18 +57,13 @@ const Add_vacci = () => {
 
                             <div className="input-box">
                                 <span className="details">Name Vaccines *</span>
-                                <select  name="Vaccines" idd="cars" required onChange={e => setName_vaccines(e.target.value)}>
-                                    {name.map((d, i) =>
-                                    (<option key={i} value={d[i][1]} > {d[i][0]} </option>)
-                                    )}
-                                    {/* <optgroup label="Cat">
-                                        <option value={x1} >quadruple vaccination</option>
-                                        <option value={x2}>Rabies vaccination</option>
-                                    </optgroup>
-                                    <optgroup label="Dog">
-                                        <option value={x3}>Quadruple vaccination</option>
-                                        <option value={x4}>Coronavirus vaccination</option>
-                                    </optgroup> */}
+                                <select name="Vaccines" idd="cars" required onChange={e => setName_vaccines(e.target.value)}>
+
+                                    {Info_vaccines.map((user, i) => {
+                                        return (
+                                            <option key={i} value={user.id} >{user.name_vacc}</option>
+                                        )
+                                    })}
                                 </select>
                             </div>
 

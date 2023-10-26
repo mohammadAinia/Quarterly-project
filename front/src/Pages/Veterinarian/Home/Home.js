@@ -19,7 +19,7 @@ const Home = () => {
 
     useEffect(() => {
 
-        axios.get('http://localhost:3001/#/#', { withCredentials: true })
+        axios.get('http://localhost:3001/user/', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     setName(res.data.username)
@@ -38,9 +38,9 @@ const Home = () => {
         [])
     return (
         <>
-            <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_vete"} a2={"Common Problems"}  href3={"/#"} a3={"All Follow"} href4={"/All_problem"} a4={"Ploblems"} href6={"/chat"} a6={<FontAwesomeIcon icon={faMessage} />} href7={"/Notifications"} a7={<FontAwesomeIcon icon={faBell} />} href8={"/profile"} a8={<div id="login-btn" className="fas fa-user"></div>} href9={"/"} a9={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
+            <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_vete"} a2={"Common Problems"}  href3={"#"} a3={"All Follow"} href4={"/All_problem"} a4={"Ploblems"} href6={"/chat"} a6={<FontAwesomeIcon icon={faMessage} />} href7={"/Notifications"} a7={<FontAwesomeIcon icon={faBell} />} href8={"/profile"} a8={<div id="login-btn" className="fas fa-user"></div>} href9={"/"} a9={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
 
-            <section className="bbanner" style={{ "margin-top": "1100px" }}>
+            <section className="bbanner" style={{ "margin-top": "1500px" }}>
                 <div className="row">
                     <div className="content">
                         <h3>{"Welcome   " + name}</h3>
