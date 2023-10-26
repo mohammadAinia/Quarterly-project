@@ -6,11 +6,14 @@ import { Header } from '../../Componets'
 
 
 const Add_vacci = () => {
-    
+
     const navigate = useNavigate()
     const [Name_vaccines, setName_vaccines] = useState('')
     const [Vaccine_history, setVaccine_history] = useState('')
     const [Info_vaccines, setInfo_vaccines] = useState([])
+
+    const { id } = useParams()
+
 
     useEffect(() => {
 
@@ -28,7 +31,6 @@ const Add_vacci = () => {
             .catch(err => { console.log(err) })
     }, [])
 
-    const { id } = useParams()
 
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {

@@ -67,6 +67,11 @@ export {default as Add_common} from '../Pages/Veterinarian/Add_common/Add_common
 export {default as Search_problem} from '../Pages/Common_proplems/Search_problem/Search_problem'
 export {default as Search_result2} from '../Pages/Common_proplems/Search_result2/Search_result2'
 export {default as Home} from '../Pages/Veterinarian/Home/Home'
+export {default as All_follow} from './1veterinarian/All_follow/All_follow'
+export {default as All_followw} from '../Pages/Veterinarian/All_followw/All_followw'
+export {default as Add_report} from '../Pages/Veterinarian/Add_report/Add_report'
+
+
 
 
 
