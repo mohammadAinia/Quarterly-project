@@ -11,16 +11,21 @@ const Requests = (props) => {
 
   const handleAccept = async (id) => {
     try {
-      await axios.post('http://localhost:3001/#/#/' + id, { withCredentials: true }).then
+        axios.get('http://localhost:3001/vet/accept_requset/'+id, { withCredentials: true }).then
         (res => {
-          if (res.data.valid)
-            window.location.reload()
+          if (res.data.valid){
           alert('The request has been accepted')
+          window.location.reload()
+        }
+        else{
+          alert("njnj")
+        }
         }
         )
         .catch
-        (
-
+        ( err=>{
+          alert(err)
+        }
       )
 
     }

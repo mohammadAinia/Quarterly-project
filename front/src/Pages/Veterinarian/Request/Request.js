@@ -15,11 +15,11 @@ const Request = () => {
 
   useEffect(() => {
 
-    axios.get('http://localhost:3001/#/#', { withCredentials: true })
+    axios.get('http://localhost:3001/vet/show_req', { withCredentials: true })
       .then(res => {
         if (res.data.valid) {
           setInfo(res.data.result)
-          setAnimal_id(res.data.result2)
+          // setAnimal_id(res.data.result2)
 
         }
         else {
@@ -40,7 +40,7 @@ const Request = () => {
           {Info.map((d, i) => {
             return (
               <div key={i}>
-                <Requests title={d.title} text={d.details} id={Animal_id} id2={"#"}/>
+                <Requests title={d.title} text={d.owner} id={d.animal_id_f} id2={d.f_id}/>
               </div>
             )
           })}

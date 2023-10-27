@@ -15,7 +15,7 @@ const All_doctor = () => {
 
     useEffect(() => {
 
-        axios.get('http://localhost:3001/#/#', { withCredentials: true })
+        axios.get('http://localhost:3001/vet/show_all_vet', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     setInfo(res.data.result)

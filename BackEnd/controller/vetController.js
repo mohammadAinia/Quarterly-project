@@ -2,6 +2,7 @@ const models=require("../models")
 const db=require("../dbb/db")
 function home_vat(req,res){
     if (req.session.username) {
+        evints(req.session.username)
         models.user_info.findOne({ where: { email: req.session.username } }).then((resp) => {
             sql='select * from animals join follow_t on follow_t.animal_id_f=animals.id where follow_t.vet=? AND special=?'
             db.query(sql,[req.session.username,1],(err, result) => {
@@ -45,7 +46,7 @@ else {return res.json({valid:false})}
 }
 function show_requsts(req,res){
     if(req.session.username&&req.session.roleee){
-        sql='select * from animals join follow_t on follow_t.animal_id_f=animals.id join health_records on animals.id=health_records.animal_id where follow_t.vet=? AND follow.special=?'
+        sql='select * from animals join follow_t on follow_t.animal_id_f=animals.id join health_records on animals.id=health_records.animal_id where follow_t.vet=? AND follow_t.special=?'
         db.query(sql,[req.session.username,0],(error,result)=>{
         if(error){console.log(error)}
         else {
@@ -58,10 +59,11 @@ else{
 }
 }
 function accept_req(req,res){
-    if(req.session.username&&req.session.roleee){
-        sql='update follow_t set special=? where f_id=?'
-        id=req.params.id
+    if(req.session.roleee){
+        var sql='update follow_t set special=? where f_id=?'
+        var id=req.params.id
         db.query(sql,[1,id],(error,result)=>{
+            if(error) console.log(error)
             return res.json({valid:true,result})
         })
     }
@@ -70,7 +72,7 @@ function accept_req(req,res){
 function show_all_vet(req,res){
     if (req.session.username) {
 
-    sql='select * from user_infos where rolee =?'
+    sql='select * from user_infos where rolee=?'
     db.query(sql,['doc'],(error,result)=>{
         if(error){console.log(error)}
         else {
@@ -83,52 +85,12 @@ function show_all_vet(req,res){
     }
 }
 
-
-
-
-
-
-
-
-
-const event =(animal)=>{
-    var sqll='delete from event_gen'
-    db.query(sqll,(err,result)=>{
-        animal.map((u,i)=>{
-           var sql='select * from tip where animal_type=?'
-            var dad=new Date(u.age)
-            var d=new Date()
-            var datee = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
-            var ddss= new Date(datee)
-            var Difference_In_Time = ddss.getTime() - dad.getTime();
-           var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
-            var mon=Difference_In_Days/30
-            var mm=parseInt(mon)
-            db.query(sql,[u.type],(err,result)=>{
-                if (err) console.log(err)
-                result.map((uu,i)=>{
-                    if (uu.animal_type=u.type&&mm>=uu.min_age&&mm<=uu.max_age){
-                        var f="the tip for day is " + uu.tip +" for the animal " + u.name
-                        var sql= "INSERT tip_gen (gen_tip) VALUES('" + f + "')"
-                        db.query(sql,(err,result)=>{
-                            if(err)console.log(err)
-                            return true 
-                        })
-                    }
-            })
-        }
-            )
-            
-            
-    })
-    })
-    }
-
-
-    const evints =(vet)=>{
-        var sqll='select vacciens.id_v_r,animals.type,vacciens.next_appointment,animals.name,animals.age,vaccien_informations.name_vacc,animals.id from animals join health_records on animals.id=health_records.animal_id join vacciens on vacciens.animal_id=animals.id join vaccien_informations on vaccien_informations.id=vacciens.vacc_info_id join follow_t on follow_t.animal_id_f=animals.id where follow_t.vet=?'
+const evints =(vet)=>{
+    var sqll1='delete from event_gen'
+    db.query(sqll1,(err,resulttt)=>{
+        var sqll='select vacciens.id_v_r,animals.type,vacciens.next_appointment,animals.name,animals.age,vaccien_informations.name_vacc,animals.id from animals join health_records on animals.id=health_records.animal_id join vacciens on vacciens.animal_id=animals.id join vaccien_informations on vaccien_informations.id=vacciens.vacc_info_id join follow_t on follow_t.animal_id_f=animals.id where follow_t.vet=? AND follow_t.special=?'
         // var sqlll='select * from notifications where animal_id=? AND special=?'
-        db.query(sqll,[owner],(err, result) => {
+        db.query(sqll,[vet,1],(err, result) => {
             if(err)console.log(err)
             result.map((u,i)=>{//here we sshow th num of day for evre vacc rim
                     var dad=new Date(u.next_appointment)
@@ -159,7 +121,7 @@ const event =(animal)=>{
         //             // if (err) console.log(err)
         //             // else if (resuq.length==0) {
         //                 // var tt="birthDate"
-
+    
         //                 var sql1= "INSERT event_gen (disc) VALUES('" + tt + "')"              
         //                 db.query(sql1,(err,resus)=>{
         //                     if(err)console.log(err)
@@ -169,8 +131,9 @@ const event =(animal)=>{
         // })
         }
         )
-        }
-
+    })
+   
+    }
 
 module.exports={home_vat:home_vat,
     all_an:all_an,
