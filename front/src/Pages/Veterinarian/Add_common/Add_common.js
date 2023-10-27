@@ -20,7 +20,7 @@ const Add_common = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        axios.post('http://localhost:3001/#/#', { Title, Details })
+        axios.post('http://localhost:3001/co_problim/add_common', { Title, Details,Type })
             .then(res => {
                 if (res.data.valid) {
                     alert('Added successfully')

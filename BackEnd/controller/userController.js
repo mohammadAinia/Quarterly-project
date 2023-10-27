@@ -115,7 +115,7 @@ function login(req,res) {
                 return res.json({
                     message: "this email is not exist",
                 });
-            } else if (user.rolee=="DOC") {
+            } else if (user.rolee=="doc") {
                 bcryptjs.compare(
                     req.body.password,
                     user.password,
@@ -124,7 +124,7 @@ function login(req,res) {
                             req.session.roleee='doc'
                             req.session.username=req.body.email;
                             console.log(user.first_name);
-                            return res.json({ Login: true, username: req.session.username });
+                            return res.json({ Login: true, username: req.session.username ,roleee:true});
                         } else {
                             return res.json({
                                 message: "incorrect password",
@@ -141,8 +141,9 @@ function login(req,res) {
                                 tips(resu)
                             })
                             notifcation(user.email)
+                            req.session.roleee='user'
                             req.session.username=user.email;
-                            return res.json({ Login: true,username: req.session.username });
+                            return res.json({ Login: true,username: req.session.username ,roleee:false});
 
                         } else {
                             return res.status(401).json({

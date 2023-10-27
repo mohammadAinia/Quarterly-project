@@ -15,9 +15,9 @@ function add_common_problem(req,res){
     db.query(sqll,[req.session.username],(error,result)=>{
         if(error){console.log(error)}
         else if(result[0].rolee=='doc'){
-            var title=req.body.title
-            var desc=req.body.desc
-            var animal_type=req.body.type
+            var title=req.body.Title
+            var desc=req.body.Details
+            var animal_type=req.body.Type
             var pub=req.session.username
             var sql="INSERT common_problems (title,disc,animal_type,publisher) VALUES('" + title + "','" + desc + "','" + animal_type + "','" + pub + "')"
             db.query(sql,(error,result)=>{

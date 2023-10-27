@@ -19,7 +19,7 @@ const Home = () => {
 
     useEffect(() => {
 
-        axios.get('http://localhost:3001/#/#', { withCredentials: true })
+        axios.get('http://localhost:3001/user/', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     setName(res.data.username)
