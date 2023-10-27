@@ -11,7 +11,7 @@ const Home = () => {
     const [name, setName] = useState('')
     const [Animall_info, setAnimal_info] = useState([])
     const [Problim_info, setProblim_info] = useState([])
-    const [Advice, setAdvice] = useState([])
+    const [Events, setEvent] = useState([])
     const [Isnotefi, setIsnotefi] = useState('')
 
 
@@ -19,13 +19,13 @@ const Home = () => {
 
     useEffect(() => {
 
-        axios.get('http://localhost:3001/user/', { withCredentials: true })
+        axios.get('http://localhost:3001/vet/home_vet', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     setName(res.data.username)
-                    // setAnimal_info(res.data.result)
+                    setAnimal_info(res.data.result)
                     setProblim_info(res.data.resultt)
-                    setAdvice(res.data.resulttt)
+                    setEvent(res.data.resulttt)
                     setIsnotefi(res.data.resultttt)
                 }
                 else {
@@ -40,7 +40,7 @@ const Home = () => {
         <>
             <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_vete"} a2={"Common Problems"}  href3={"all_follow"} a3={"All Follow"} href4={"/All_problem"} a4={"Ploblems"} href5={"#"} a5={<FontAwesomeIcon icon={faLink} />} a6={<FontAwesomeIcon icon={faMessage} />} href6={"/Notifications"} a7={<FontAwesomeIcon icon={faBell} />} href7={"/profile"} a8={<div id="login-btn" className="fas fa-user"></div>} href8={"/"} a9={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
 
-            <section className="bbanner" style={{ "margin-top": "1500px" }}>
+            <section className="bbanner" style={{ "margin-top": "2000px" }}>
                 <div className="row">
                     <div className="content">
                         <h3>{"Welcome   " + name}</h3>
@@ -53,11 +53,11 @@ const Home = () => {
 
                             <h3 style={{ "margin-left": "10px" }}>     New events</h3>
 
-                            {Advice.map((user, i) => {
+                            {Events.map((user, i) => {
                                 return (
                                     <div key={i}>
                                         <Bunner p1={user.one}
-                                            p2={user.gen_tip}
+                                            p2={user.disc}
                                         // p3={user.gen_tip} 
                                         />
                                     </div>
@@ -82,13 +82,13 @@ const Home = () => {
                 </div>
                 <div className="box-container">
 
-                    {/* {Animall_info.map((user, i) => {
+                    {Animall_info.map((user, i) => {
                         return (
                             <div key={i}>
                                 <Card image={'http://localhost:3001/uploads/' + user.urlImage} name={user.name} link={"see details"} id={user.id} />
                             </div>
                         )
-                    })} */}
+                    })}
                 </div>
             </section>
 

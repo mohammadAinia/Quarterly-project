@@ -6,6 +6,7 @@ const comprrout=require('./routes/comoonProb')
 const notifications=require('./routes/notificationRouts')
 const adoption=require('./routes/adoption')
 const chat=require('./routes/chats')
+const vet=require('./routes/vetController')
 
 const app =express()
 var cors = require('cors')
@@ -49,6 +50,7 @@ app.use("/co_problim",comprrout)
 app.use("/noti",notifications)
 app.use("/adopt",adoption)
 app.use("/chat",chat)
+app.use("/vet",vet)
 
 
 module.exports=app;

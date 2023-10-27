@@ -24,6 +24,7 @@ const Add_common = () => {
             .then(res => {
                 if (res.data.valid) {
                     alert('Added successfully')
+                    navigate('/common_vete')
                 }
                 else {
                     navigate('/login')

@@ -24,7 +24,7 @@ const Login = () => {
                 else 
                 if(res.data.roleee)
                 {
-                    navigate('/m')
+                    navigate('/Home_vet')
                 }
                 else {
                     alert('no record')
