@@ -1,16 +1,13 @@
-import './All_follow.css'
+import './Details_animal_requts.css'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 
-const All_follow = (props) => {
-
-    const navigate = useNavigate()
-
+const Details_animal_requts = (props) => {
     return (
         <>
             <div class="container" style={{ "margin-top": "10px", "margin-bottom": "20px" }}>
-                <div class="title">Animal Info</div>
+                <div class="title">Animal details</div>
                 <div class="content">
                     <form action="#" >
                         <div class="user-details">
@@ -55,14 +52,9 @@ const All_follow = (props) => {
                                 <p>{props.health}</p>
                             </div>
                         </div>
-
                         <div class="button">
                             <Link to={`show_vaccines/${props.id2}`}>Vaccines</Link>
                         </div>
-                        <div class="button">
-                            <Link to={`/add_report/${props.id2}`}>Add Report</Link>
-                        </div>
-
                     </form>
                 </div>
             </div>
@@ -70,4 +62,4 @@ const All_follow = (props) => {
     )
 }
 
-export default All_follow
+export default Details_animal_requts

@@ -35,7 +35,7 @@ const Search_result = () => {
                     {Info.map((d, i) => {
                         return (
                             <div key={i}>
-                                <Page_new_chat name={d.first_name} id={d.id} href_link1={`/CreateChat/${d.id}`} />
+                                <Page_new_chat name={d.first_name} id={d.id} />
                             </div>
                         )
                     })}

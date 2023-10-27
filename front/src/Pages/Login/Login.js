@@ -21,8 +21,7 @@ const Login = () => {
                 if (!res.data.roleee) {
                     navigate('/')
                 }
-                else 
-                if(res.data.roleee)
+                else if(res.data.roleee)
                 {
                     navigate('/Home_vet')
                 }
