@@ -9,9 +9,9 @@ import {
   Common_users, Vaccines, Update_animals, Problem_id, Type_add_animal, Your_animal, Update_user,
   Animal_info_id, All_problem, Adoptt, Conversation, Add_vacci, Add_Animal_to_adopt, Verification,
   Your_ploblem, Update_problem, Page_chat, Profile_id, Vaccine_id, Search_user, Search_result,
-  Notifications, Animal_info_adopt, Type_search, Common_vete, Add_common,Request,
+  Notifications, Animal_info_adopt, Type_search, Common_vete, Add_common,Request,Your_animall,
   Search_problem, Search_result2, All_followw, Home,Add_report,All_doctor,Details_animal,
-} from './Componets/index'
+  Profile_vet_id} from './Componets/index'
 
 const App = () => {
   return (
@@ -74,6 +74,11 @@ const App = () => {
             <Route path='requst' element={<Request />} />
             <Route path='animal_dtails/:id' element={<Details_animal />} />
             <Route path='all_doc' element={<All_doctor />} />
+            <Route path='show_animal_requst/:id' element={<Your_animall />} />
+            <Route path='profile_id_vet/:id' element={<Profile_vet_id />} />
+
+
+
 
           </Routes>
         </Container>

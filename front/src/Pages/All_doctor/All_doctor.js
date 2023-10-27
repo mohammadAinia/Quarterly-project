@@ -1,5 +1,5 @@
 import './All_doctor.css'
-import { Header, Notification, All_doc } from '../../Componets'
+import { Header, All_doc } from '../../Componets'
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'

@@ -76,6 +76,12 @@ export {default as Details_animal_requts} from './Details_animal_requts/Details_
 export {default as Details_animal} from '../Pages/Veterinarian/Details_animal/Details_animal'
 export {default as All_doc} from './All_doc/All_doc'
 export {default as All_doctor} from '../Pages/All_doctor/All_doctor'
+export {default as Your_animall} from '../Pages/All_doctor/Your_animall/Your_animall'
+export {default as Profile_id_vet} from './1veterinarian/Profile_id_vet/Profile_id_vet'
+export {default as Profile_vet_id} from '../Pages/All_doctor/Profile_vet_id/Profile_vet_id'
+
+
+
 
 
 
