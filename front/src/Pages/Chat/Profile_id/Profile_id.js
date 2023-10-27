@@ -10,8 +10,7 @@ const Profile_id = () => {
     const { id } = useParams()
     const [Info, setInfo] = useState([])
     const [Animals, setAnimals] = useState([])
-    var names = ''
-    var a=[]
+    var a = []
 
     useEffect(() => {
         axios.get(`http://localhost:3001/chat/show_profile/${id}`, { withCredentials: true })
@@ -25,10 +24,10 @@ const Profile_id = () => {
             .catch(err => { alert(err) })
     }, [])
 
-    Animals.map((d,i)=>{
-        
-            a.push(d.type+",")
-    
+    Animals.map((d, i) => {
+
+        a.push(d.type + ",")
+
     })
     return (
         <>
@@ -41,13 +40,6 @@ const Profile_id = () => {
                     </div>
                 )
             })}
-            {/* {Animals.map((d, i) => {
-                return (
-                    <div key={i}>
-                        <Profilee_id first_name={d.name} />
-                    </div>
-                )
-            })} */}
         </>
     )
 }

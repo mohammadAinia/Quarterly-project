@@ -31,7 +31,6 @@ const Add_common = () => {
             })
             .catch(err => alert(err))
 
-
     }
 
     return (
