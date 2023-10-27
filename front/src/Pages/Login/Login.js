@@ -21,10 +21,9 @@ const Login = () => {
                 if (!res.data.roleee) {
                     navigate('/')
                 }
-                else 
-                if(res.data.roleee)
+                else if(res.data.roleee)
                 {
-                    navigate('/m')
+                    navigate('/Home_vet')
                 }
                 else {
                     alert('no record')
