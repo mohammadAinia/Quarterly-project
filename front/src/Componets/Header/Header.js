@@ -18,6 +18,8 @@ const Header = (props) => {
           <a style={{"fontSize":"20px"}} href={props.href7}>{props.a7}</a>
           <a style={{"fontSize":"20px"}} href={props.href8}>{props.a8}</a>
           <a style={{"fontSize":"20px"}} href={props.href9}>{props.a9}</a>
+          <a style={{"fontSize":"20px"}} href={props.href10}>{props.a10}</a>
+
         </nav>
 
         <div className="icons">

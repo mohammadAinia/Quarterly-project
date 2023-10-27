@@ -10,6 +10,8 @@ const Request = () => {
 
   const navigate = useNavigate()
   const [Info, setInfo] = useState([])
+  const [Animal_id, setAnimal_id] = useState()
+
 
   useEffect(() => {
 
@@ -17,6 +19,8 @@ const Request = () => {
       .then(res => {
         if (res.data.valid) {
           setInfo(res.data.result)
+          setAnimal_id(res.data.result2)
+
         }
         else {
           navigate('/login')
@@ -33,18 +37,13 @@ const Request = () => {
         <h2 class="titlee">Follow-up requests</h2>
 
         <div class="content">
-        <Requests />
-        <Requests />
-        <Requests />
-
-
-          {/* {Info.map((d, i) => {
+          {Info.map((d, i) => {
             return (
               <div key={i}>
-                <Requests title={d.title} text={d.details} id={d.id_notification} />
+                <Requests title={d.title} text={d.details} id={Animal_id} id2={"#"}/>
               </div>
             )
-          })} */}
+          })}
         </div>
       </section>
     </>

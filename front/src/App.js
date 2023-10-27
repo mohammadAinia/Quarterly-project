@@ -10,7 +10,7 @@ import {
   Animal_info_id, All_problem, Adoptt, Conversation, Add_vacci, Add_Animal_to_adopt, Verification,
   Your_ploblem, Update_problem, Page_chat, Profile_id, Vaccine_id, Search_user, Search_result,
   Notifications, Animal_info_adopt, Type_search, Common_vete, Add_common,Request,
-  Search_problem, Search_result2, All_followw, Home,Add_report,All_follow,Details_animal,
+  Search_problem, Search_result2, All_followw, Home,Add_report,All_doctor,Details_animal,
 } from './Componets/index'
 
 const App = () => {
@@ -73,6 +73,7 @@ const App = () => {
             <Route path='all_follow/show_vaccines/:id' element={<Vaccine_id />} />
             <Route path='requst' element={<Request />} />
             <Route path='animal_dtails/:id' element={<Details_animal />} />
+            <Route path='all_doc' element={<All_doctor />} />
 
           </Routes>
         </Container>

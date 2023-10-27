@@ -34,14 +34,14 @@ const Requests = (props) => {
           <FontAwesomeIcon icon={faPaw} />
         </div>
         <div class="info">
-          <h3>{props.title}jhfdj</h3>
-          <p>{props.text} fjhshjlasf</p>
+          <h3>{props.title}</h3>
+          <p>{props.text}</p>
         </div>
         <div>
           <Link style={{ "margin-left": "175px", "width": "110px" }} className="btn" to={`/animal_dtails/${props.id}`}>details</Link>
         </div>
         <div>
-          <button onClick={e => handleAccept(props.id)} style={{ "margin-left": "150px" }} className="btn">Acceptance</button>
+          <button onClick={e => handleAccept(props.id2)} style={{ "margin-left": "150px" }} className="btn">Acceptance</button>
         </div>
 
       </div>
