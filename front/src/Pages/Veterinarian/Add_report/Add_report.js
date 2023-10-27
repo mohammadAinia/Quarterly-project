@@ -20,7 +20,7 @@ const Add_report = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        axios.post(`http://localhost:3001/#/#/${id}`, { Report, Next_visit, Current_date })
+        axios.post(`http://localhost:3001/vet/medical/add_report/${id}`, { Report, Next_visit })
             .then(res => {
                 if (res.data.valid) {
                     alert('The report has been sent successfully')
@@ -54,7 +54,7 @@ const Add_report = () => {
                             </div>
                             <div class="input-box">
                                 <span class="details">Next visit </span>
-                                <input style={{"width":"440px"}}  type="date" required onChange={e => setReport(e.target.value)} />
+                                <input style={{"width":"440px"}}  type="date" required onChange={e => setNext_visit(e.target.value)} />
                             </div>
                         </div>
                         <div class="button">

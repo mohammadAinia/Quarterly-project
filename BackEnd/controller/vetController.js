@@ -3,8 +3,8 @@ const db=require("../dbb/db")
 function home_vat(req,res){
     if (req.session.username) {
         models.user_info.findOne({ where: { email: req.session.username } }).then((resp) => {
-            sql='select * from animals join follow_t on follow_t.animal_id_f=animals.id where follow_t.vet=?'
-            db.query(sql,[req.session.username],(err, result) => {
+            sql='select * from animals join follow_t on follow_t.animal_id_f=animals.id where follow_t.vet=? AND special=?'
+            db.query(sql,[req.session.username,1],(err, result) => {
                 if (err) return res.json(err)
                 else {
                 var sqll='select * from problims LIMIT 3'
@@ -43,6 +43,53 @@ function all_an(req,res){
 }
 else {return res.json({valid:false})}
 }
+function show_requsts(req,res){
+    if(req.session.username&&req.session.roleee){
+        sql='select * from animals join follow_t on follow_t.animal_id_f=animals.id join health_records on animals.id=health_records.animal_id where follow_t.vet=? AND follow.special=?'
+        db.query(sql,[req.session.username,0],(error,result)=>{
+        if(error){console.log(error)}
+        else {
+            return res.json({valid:true,result})
+        }
+    })
+}
+else{
+    res.json({valid:false})
+}
+}
+function accept_req(req,res){
+    if(req.session.username&&req.session.roleee){
+        sql='update follow_t set special=? where f_id=?'
+        id=req.params.id
+        db.query(sql,[1,id],(error,result)=>{
+            return res.json({valid:true,result})
+        })
+    }
+    else {return res.json({valid:false})}
+}
+function show_all_vet(req,res){
+    if (req.session.username) {
+
+    sql='select * from user_infos where rolee =?'
+    db.query(sql,['doc'],(error,result)=>{
+        if(error){console.log(error)}
+        else {
+            return res.json({valid:true,result})
+        }
+    })
+    }
+    else {
+        res.json({valid:false})
+    }
+}
+
+
+
+
+
+
+
+
 
 const event =(animal)=>{
     var sqll='delete from event_gen'
@@ -126,6 +173,8 @@ const event =(animal)=>{
 
 
 module.exports={home_vat:home_vat,
-    all_an:all_an
-
+    all_an:all_an,
+    show_requsts:show_requsts,
+    accept_req:accept_req,
+    show_all_vet
 }

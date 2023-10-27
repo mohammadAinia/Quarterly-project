@@ -4,9 +4,9 @@ function add_report(req,res){
     if(req.session.roleee=='doc'){
     var id=req.params.id
     var vet=req.session.username
-    var report=req.body.report
-    var next_vist=req.body.next_vist
-    var current_date=req.body.current_date
+    var report=req.body.Report
+    var next_vist=req.body.Next_visit
+    var current_date=new Date()
     var sql="INSERT medical_report (rep_animal_id,vet,reportt,date_rep,next_vist) VALUES('" + id + "','" + vet + "','" + report + "','" + current_date + "','" + next_vist + "')"
     db.query(sql,(error,result)=>{
         if (error){console.log(error+"line 15")}
