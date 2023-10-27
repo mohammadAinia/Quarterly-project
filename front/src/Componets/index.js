@@ -70,6 +70,13 @@ export {default as Home} from '../Pages/Veterinarian/Home/Home'
 export {default as All_follow} from './1veterinarian/All_follow/All_follow'
 export {default as All_followw} from '../Pages/Veterinarian/All_followw/All_followw'
 export {default as Add_report} from '../Pages/Veterinarian/Add_report/Add_report'
+export {default as Requests} from './Requests/Requests'
+export {default as Request} from '../Pages/Veterinarian/Request/Request'
+export {default as Details_animal_requts} from './Details_animal_requts/Details_animal_requts'
+export {default as Details_animal} from '../Pages/Veterinarian/Details_animal/Details_animal'
+
+
+
 
 
 

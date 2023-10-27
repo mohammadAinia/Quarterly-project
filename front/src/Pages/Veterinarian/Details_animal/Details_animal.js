@@ -1,10 +1,11 @@
-import './Animal_info_id.css'
+import './Details_animal.css'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { Header, About_your_animal, Your_animal_vaccines } from '../../../Componets'
+import { Header, Details_animal_requts } from '../../../Componets'
 import { useNavigate, useParams } from 'react-router-dom'
 
-const Animal_info_id = () => {
+const Details_animal = () => {
+
     const navigate = useNavigate()
 
 
@@ -14,8 +15,6 @@ const Animal_info_id = () => {
     const [Vacc, setVacc] = useState([])
 
     const [Age, setAge] = useState()
-
-
 
     useEffect(() => {
 
@@ -35,6 +34,7 @@ const Animal_info_id = () => {
             })
             .catch(err => { console.log(err) })
     }, [])
+
     return (
         <>
             <Header href1={"/Animal"} a1={"Animal"} href3={"#"} a3={"Common Problems"} href2={"#"} a2={"Adopt Animal"} href4={"/login"} a4={"Login"} />
@@ -42,7 +42,7 @@ const Animal_info_id = () => {
                 {Info.map((d, i) => {
                     return (
                         <div key={i}>
-                            <About_your_animal name={d.name} age={Age} place={d.place} color={d.color} details={d.Additional_details}
+                            <Details_animal_requts name={d.name} age={Age} place={d.place} color={d.color} details={d.Additional_details}
                                 type={d.type} gender={d.gender} weight={d.weight} height={d.high} health={d.health_stats} id2={d.animal_id} />
                         </div>
                     )
@@ -52,4 +52,4 @@ const Animal_info_id = () => {
     )
 }
 
-export default Animal_info_id
+export default Details_animal

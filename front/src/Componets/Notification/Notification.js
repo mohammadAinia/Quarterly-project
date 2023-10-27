@@ -18,9 +18,8 @@ const Notification = (props) => {
             )
             .catch
             (
-
+                
             )
-            
         }
         catch (err) { console.log(err) }
     }

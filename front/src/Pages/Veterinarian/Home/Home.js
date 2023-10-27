@@ -38,7 +38,7 @@ const Home = () => {
         [])
     return (
         <>
-            <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_vete"} a2={"Common Problems"}  href3={"all_follow"} a3={"All Follow"} href4={"/All_problem"} a4={"Ploblems"} href5={"#"} a5={<FontAwesomeIcon icon={faLink} />} a6={<FontAwesomeIcon icon={faMessage} />} href6={"/Notifications"} a7={<FontAwesomeIcon icon={faBell} />} href7={"/profile"} a8={<div id="login-btn" className="fas fa-user"></div>} href8={"/"} a9={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
+            <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_vete"} a2={"Common Problems"}  href3={"all_follow"} a3={"All Follow"} href4={"/All_problem"} a4={"Ploblems"} href5={"/requst"} a5={<FontAwesomeIcon icon={faLink} />} a6={<FontAwesomeIcon icon={faMessage} />} href6={"/Notifications"} a7={<FontAwesomeIcon icon={faBell} />} href7={"/profile"} a8={<div id="login-btn" className="fas fa-user"></div>} href8={"/"} a9={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
 
             <section className="bbanner" style={{ "margin-top": "1500px" }}>
                 <div className="row">
