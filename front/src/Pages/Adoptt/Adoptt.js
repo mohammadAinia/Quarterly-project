@@ -29,7 +29,7 @@ const Adoptt = () => {
     <>
       <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"Common Problems"} href5={"/Choose_type_add_animal_to_adopt"} a5={<FontAwesomeIcon icon={faPlus} />} href3={"/Animal_infoo"} a3={"All Animal"} href4={"/All_problem"} a4={"Ploblems"} href6={"/Notifications"} a6={<FontAwesomeIcon icon={faBell} />} href7={"/#"} a7={<div id="login-btn" className="fas fa-user"></div>} href8={"/"} a8={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
 
-      <section style={{ "margin-top": "1200px" }} className="cards" id="services">
+      <section style={{ "margin-top": "00px" }} className="cards" id="services">
         <h2 className="heading">Adopt</h2>
         <div className="content">
             {Adopt_info.map((d, i) => {
