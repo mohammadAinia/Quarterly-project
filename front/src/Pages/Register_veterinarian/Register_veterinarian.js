@@ -18,7 +18,7 @@ const Register_veterinarian = () => {
   const [Nationality, setNationality] = useState('')
   const [Addres, setAddres] = useState('')
   const [University, setUniversity] = useState('')
-  const [Bachelor, setBachelor] = useState('')
+  const [Bachelor, setBachelor] = useState()
   const [Previous_work, setPrevious_work] = useState('')
   const [Gender, setGender] = useState('')
 

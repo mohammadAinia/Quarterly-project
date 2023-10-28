@@ -75,6 +75,7 @@ const App = () => {
             <Route path='all_follow/show_vaccines/:id' element={<Vaccine_id />} />
             <Route path='requst' element={<Request />} />
             <Route path='animal_dtails/:id' element={<Details_animal />} />
+            <Route path='animal_dtails/:id/show_vaccines/:id' element={<Vaccine_id />} />
             <Route path='all_doc' element={<All_doctor />} />
             <Route path='show_animal_requst/:id' element={<Your_animall />} />
             <Route path='profile_id_vet/:id' element={<Profile_vet_id />} />

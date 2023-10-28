@@ -38,7 +38,7 @@ const Details_animal = () => {
     return (
         <>
             <Header href1={"/Animal"} a1={"Animal"} href3={"#"} a3={"Common Problems"} href2={"#"} a2={"Adopt Animal"} href4={"/login"} a4={"Login"} />
-            <div style={{ "margin-top": "1400px", "margin-bottom": "20px" }}>
+            <div style={{ "margin-top": "100px", "margin-bottom": "20px" }}>
                 {Info.map((d, i) => {
                     return (
                         <div key={i}>
