@@ -2,7 +2,6 @@ const { json }=require("body-parser");
 const models=require("../models");
 const bcryptjs=require("bcryptjs");
 const db=require("../dbb/db")
-const moment=require("moment")   
 //
 const singup_vet=(req,res) => {
     models.user_info.findOne({ where: { email: req.body.Email } }).then((result) => {
@@ -25,29 +24,42 @@ const singup_vet=(req,res) => {
                         };
                         models.user_info.create(user).then((result) => {
                                 // res.status(200).json(result)
-                                const veterinarians={
-                                    user_id: result.id,
-                                    address: req.body.Addres,
-                                    bsc: req.body.Bachelor,
-                                    university: req.body.University,
-                                    exp: req.body.exp,
-                                    num_year_exp: req.body.num_year_exp,
-                                    deatalis: req.body.Previous_work,
-                                    url_bsc: req.file.bsc,
-                                    url_prev_imag: req.file.prev,
-                                };
-                                models.veterinariann.create(veterinarians).then((result) => {
-                                        req.session.username=user.email;
+                                
+                                    user_id= result.id
+                                    address= req.body.Addres
+                                    bsc= req.body.Bachelor
+                                    university= req.body.University
+                                    // exp: req.body.exp,
+                                    // num_year_exp: req.body.num_year_exp,
+                                    deatalis= req.body.Previous_work
+                                    url_bsc= req.file.filename,
+
+                                    url_prev_imag= req.file.filename
+                                
+                                var sql= "insert into veterinariann (address,bsc,university,deatalis,url_bsc,url_prev_imag) values ('" + address + "','" + bsc + "','" + university + "','" + deatalis + "','" + url_bsc + "','" + url_prev_imag + "')"
+                                db.query(sql,(error,resss)=>{
+                                    if(error){console.log(error)}
+                                    else{
                                         return res.json({
-                                            Login: true,
-                                            username: req.session.username,
-                                        });
-                                    })
-                                    .catch((error) => {
-                                        return res.json({
-                                            valid: false,
-                                        });
-                                    });
+                                                        valid:true,
+                                                        Login: true,
+                                                        username: req.session.username,
+                                                    });
+                                    }
+                                })
+                                // models.veterinariann.create(veterinarians).then((result) => {
+                                //         req.session.username=user.email;
+                                //         return res.json({
+                                //             valid:true,
+                                //             Login: true,
+                                //             username: req.session.username,
+                                //         });
+                                //     })
+                                //     .catch((error) => {
+                                //         return res.json({
+                                //             valid: false,
+                                //         });
+                                //     });
                             })
                             .catch((error) => {
                                 res.status(500).json({
@@ -141,7 +153,7 @@ function login(req,res) {
                                 tips(resu)
                             })
                             notifcation(user.email)
-                            req.session.roleee='user'
+                            // req.session.roleee='user'
                             req.session.username=user.email;
                             return res.json({ Login: true,username: req.session.username ,roleee:false});
 
@@ -176,7 +188,7 @@ function show_users(req,res) {
 }
 
 const home_owner=(req,res) => {
-    if (req.session.username) {
+    if (req.session.username&&!req.session.roleee) {
         models.user_info.findOne({ where: { email: req.session.username } }).then((resp) => {
 
             sql='select * from animals where owner=?'
@@ -221,6 +233,7 @@ db.query(sqll,[owner],(err, result) => {
             var ddss= new Date(datee)
             var Difference_In_Time = dad.getTime() - ddss.getTime();
             var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+            if(Difference_In_Days<7){
             var not="The remaining days for next vacc for animal"+  u.name +" "+Difference_In_Days +"day/s"
             console.log(not)
             db.query(sqlll,[u.id,u.id_v_r],(err,resu)=>{
@@ -234,10 +247,12 @@ db.query(sqll,[owner],(err, result) => {
                     })
                 }
             })
-    })
+        }
+        })
     result.map((u,i)=>{//here we sshow th num of day for evre vacc rim
         var agee=new Date(u.age)
         var days= daysUntilBirthday(agee)
+        if(days<7){
         var birthDate= "left for birth for  " +u.name+"   is   "+days+"   day/s"
         var birthDatee="birthDate"
         db.query(sqlll,[u.id,birthDatee],(err,resuq)=>{
@@ -250,7 +265,8 @@ db.query(sqll,[owner],(err, result) => {
                 })
             }
         })
-})
+    }
+    })
 }
 )
 }

@@ -84,6 +84,27 @@ function show_all_vet(req,res){
         res.json({valid:false})
     }
 }
+function show_profile_vet(req,res){
+    var id= req.params.id
+    sql='select * from user_infos join veterinarianns on user_infos.id=veterinarianns.user_id where user_infos.id=?'
+    db.query(sql,[id],(err,result)=>{
+        if(err) console.log(err)
+
+        return res.json({valid:true,result})
+    })
+}
+function add_req(req,res){
+    id=req.params.id
+    id2=req.params.id2
+    sq='select email from user_infos where id=?'
+    db.query(sq,[id],(error,result)=>{
+        if(error)console.log(error)
+        var sql1= "INSERT follow_t (animal_id_f,vet,owner,special) VALUES('" + id2 + "','" + result[0].email + "','" + req.session.username + "','" + 0 + "')"              
+        db.query(sql1,(err,result1)=>{
+            return res.json({valid:true,result:result1})
+        })
+    })
+}
 
 const evints =(vet)=>{
     var sqll1='delete from event_gen'
@@ -139,5 +160,7 @@ module.exports={home_vat:home_vat,
     all_an:all_an,
     show_requsts:show_requsts,
     accept_req:accept_req,
-    show_all_vet
+    show_all_vet,
+    show_profile_vet:show_profile_vet,
+    add_req:add_req
 }

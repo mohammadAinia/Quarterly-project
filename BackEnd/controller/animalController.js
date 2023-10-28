@@ -295,6 +295,14 @@ function add_vac_info(req,res){
     }
     else{return res.json({ valid:false})}
 }
+function show_all__req(req,res) {
+    const sql='SELECT * from animals WHERE animals.owner=? AND id not in  (select animal_id_f from follow_t ) '
+    db.query(sql,[req.session.username], (err, result) => {
+        if (err) return res.json(err)
+        return res.json({result,valid:true})
+    }
+    )
+}
 
 module.exports={
     add_animal: add_animal,
@@ -308,5 +316,7 @@ module.exports={
     show_all_animal_ad:show_all_animal_ad,
     show_vacc_for_animal:show_vacc_for_animal,
     show_vacc_id:show_vacc_id,
-    add_vac_info:add_vac_info
+    add_vac_info:add_vac_info,
+    show_all__req:show_all__req,
+    
 }

@@ -21,5 +21,6 @@ router.post('/delete/:id',animal_controller.destroy_animal)
 router.get('/get_vacc/:id',animal_controller.show_vacc_for_animal)
 router.get('/show_all_vac/:id',animal_controller.show_vacc_id)
 
+router.get('/show_req',animal_controller.show_all__req)
 
 module.exports=router

@@ -63,13 +63,16 @@ const add_answer=(req,res) => {
     console.log("add is invoked")
     var id = req.params.id;
     var answer=req.body.Comment
+    console.log(answer+",dsfm,ad,fm")
     var publisher=req.session.username
     const d = new Date();
     var date = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
     var sql= "INSERT answer_tables (id_problim,answer,publisher_ans,date) VALUES('" + id + "','" + answer + "','" + publisher + "','" + date + "')"
     db.query(sql, (err, result) => {
+        
         if (err) console.log(err+"this is err")
-        return res.json({result,valid:true}) + console.log()
+        
+        return res.json({result,valid:true})
     }
     )
 }

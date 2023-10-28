@@ -39,6 +39,7 @@ const Add_vacci = () => {
             .then(res => {
                 if (res.data.valid) {
                     alert('Added successfully')
+                    navigate(-1)
                 }
                 else {
                     alert('err')

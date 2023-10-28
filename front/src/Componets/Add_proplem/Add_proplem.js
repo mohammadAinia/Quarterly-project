@@ -20,6 +20,8 @@ const Add_proplem = () => {
             .then(res => {
                 if (res.data.valid) {
                     alert("Published successfully")
+                    window.location.reload()
+
                 }
                 else {
                     alert('Not published')

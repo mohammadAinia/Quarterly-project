@@ -7,19 +7,21 @@ import { useNavigate, useParams } from 'react-router-dom'
 const Your_animall = () => {
 
     const [Animall_info, setAnimal_info] = useState([])
+    const { id } = useParams()
 
     const navigate = useNavigate()
 
-    const AddRequst = async (id) => {
+    const AddRequst = async (id2) => {
         try {
-            await axios.post('http://localhost:3001/#/#/' + id, { withCredentials: true })
+            await axios.get(`http://localhost:3001/vet/addreq/${id}/${id2}`, { withCredentials: true })
             alert('The request has been sent successfully')
+            navigate(-1)
         }
         catch (err) { console.log(err) }
     }
 
     useEffect(() => {
-        axios.get('http://localhost:3001/animal/show_all_animal_ad', { withCredentials: true })
+        axios.get('http://localhost:3001/animal/show_req', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     setAnimal_info(res.data.result)

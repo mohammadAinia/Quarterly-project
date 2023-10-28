@@ -12,7 +12,7 @@ const Profile_vet_id = () => {
     const [Info, setInfo] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/#/#/${id}`, { withCredentials: true })
+        axios.get(`http://localhost:3001/vet/profile/${id}`, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     setInfo(res.data.result)
