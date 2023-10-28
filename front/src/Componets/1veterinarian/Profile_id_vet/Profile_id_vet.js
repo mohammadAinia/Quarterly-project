@@ -86,6 +86,15 @@ const Profile_id_vet = (props) => {
 
                         <div className="box">
                             <div className="fst">
+                                <h5>university :</h5>
+                            </div>
+                            <div className="nameSkils">
+                                <h4>{props.university}</h4>
+                            </div>
+                        </div>
+
+                        <div className="box">
+                            <div className="fst">
                                 <h5>Gender :</h5>
                             </div>
                             <div className="nameSkils">

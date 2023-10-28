@@ -41,8 +41,9 @@ const Problems = (props) => {
                         <textarea placeholder="add comment" required onChange={e => setComment(e.target.value)} />
                     </div>
                     <button onClick={e => handleSubmit(props.id1)} style={{ "font-size": "1.4rem", "padding": "0.7rem 2rem" }} className="btn">share</button><br />
-                    <Link className="btn" to={`Problem_id/${props.id1}`}>Comments</Link>
-                    {/* <Link className="btn" to={props.link}>{props.link_name}</Link> */}
+                    {/* <Link className="btn" to={`Problem_id/${props.id1}`}>Comments</Link> */}
+                    <Link className="btn" to={props.hreflink}>Comments</Link>
+
                 </div>
             </form>
 

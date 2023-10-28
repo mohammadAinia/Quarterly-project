@@ -38,7 +38,7 @@ const Problem_id = (props) => {
                     {Problim_info.map((user, i) => {
                         return (
                             <div key={i}>
-                                <Problems name={user.title} type={user.disc} text={user.animal_type} id1={id} id2={user.id} />
+                                <Problems name={user.title} text={user.disc} type={user.animal_type} id1={id} id2={user.id} hreflink={""}/>
                             </div>
                         )
                     })}
@@ -46,7 +46,7 @@ const Problem_id = (props) => {
             </section>
 
             <div>
-                <div className="container" style={{ "margin-top": "50px", "margin-bottom": "70px" }}>
+                <div className="container" style={{ "margin-top": "50px", "margin-bottom": "70px","margin-left": "90px" }}>
                     <div className="title">Comments</div>
                     <div className="content">
                         <form action="#" >

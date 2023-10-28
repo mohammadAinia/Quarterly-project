@@ -21,7 +21,7 @@ const Your_animall = () => {
     }
 
     useEffect(() => {
-        axios.get('http://localhost:3001/animal/show_req', { withCredentials: true })
+        axios.get('http://localhost:3001/animal/show_all_animal_ad', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     setAnimal_info(res.data.result)
@@ -31,7 +31,6 @@ const Your_animall = () => {
                 }
             })
             .catch(err => { console.log(err) })
-
     },
         [])
     return (

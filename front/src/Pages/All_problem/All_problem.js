@@ -37,7 +37,7 @@ const All_problem = () => {
                     {Problim_info.map((user, i) => {
                         return (
                             <div key={i}>
-                                <Problems name={user.title} text={user.disc} type={user.animal_type} id1={user.id} />
+                                <Problems name={user.title} text={user.disc} hreflink={`Problem_id/${user.id}`} type={user.animal_type} id1={user.id} />
                             </div>
                         )
                     })}
