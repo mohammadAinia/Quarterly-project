@@ -1,7 +1,7 @@
 const models=require("../models")
 const db=require("../dbb/db")
 function home_vat(req,res){
-    if (req.session.username) {
+    if (req.session.username&&req.session.roleee) {
         evints(req.session.username)
         models.user_info.findOne({ where: { email: req.session.username } }).then((resp) => {
             sql='select * from animals join follow_t on follow_t.animal_id_f=animals.id where follow_t.vet=? AND special=?'

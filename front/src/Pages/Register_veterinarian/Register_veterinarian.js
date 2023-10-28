@@ -33,11 +33,11 @@ const Register_veterinarian = () => {
     formData.append('phone', Phone)
     formData.append('password', Password)
     formData.append('age', Age)
-    formData.append('Nationality', Nationality)
     formData.append('gender', Gender)
+    // formData.append('Nationality', Nationality)
     formData.append('address', Addres)
     formData.append('university', University)
-    formData.append('bachelors', Bachelor)
+    formData.append('image', Bachelor)
     formData.append('previous_work', Previous_work)
 
 
@@ -63,7 +63,7 @@ const Register_veterinarian = () => {
         <div className="container" >
           <div className="title">Registration Veterinarian</div>
           <div className="content">
-            <form onSubmit={handleSubmit}>
+            <form action="#" onSubmit={handleSubmit} enctype="multipart/form-data">
               <div className="user-details">
                 <div className="input-box">
                   <span className="details">First Name *</span>
@@ -107,7 +107,7 @@ const Register_veterinarian = () => {
                 </div>
                 <div className="input-box">
                   <span className="details">A copy of the bachelor's degree *</span>
-                  <input type="file" name='bachelors' required onChange={e => setBachelor(e.target.value)} />
+                  <input type="file"  required onChange={e => setBachelor(e.target.files[0])} />
                 </div>
                 <div className="input-box">
                   <span className="details">Details of previous work</span>

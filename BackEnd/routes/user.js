@@ -6,7 +6,7 @@ const profileCons =require('../controller/profileController')
 
 //sing-up
 router.post('/signup_user', userController.singup_user)
-router.post('/signup_vet',imageUploader.upload.single("image"), userController.singup_vet)
+router.post('/signup_vet',imageUploader.upload.single('image'), userController.singup_vet)
 
 
 //login

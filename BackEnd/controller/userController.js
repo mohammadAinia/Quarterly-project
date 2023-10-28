@@ -4,39 +4,37 @@ const bcryptjs=require("bcryptjs");
 const db=require("../dbb/db")
 //
 const singup_vet=(req,res) => {
-    models.user_info.findOne({ where: { email: req.body.Email } }).then((result) => {
+    models.user_info.findOne({ where: { email: req.body.email } }).then((result) => {
             if (result) {
                 res.json({
                     message: "email alrady exist ",
                 });
             } else {
                 bcryptjs.genSalt(10,(err,salt) => {
-                    bcryptjs.hash(req.body.Password,salt,function (err,hash) {
+                    bcryptjs.hash(req.body.password,salt,function (err,hash) {
                         const user={
-                            first_name: req.body.First_name,
-                            last_name: req.body.Last_name,
-                            email: req.body.Email,
-                            phone: req.body.Phone,
+                            first_name: req.body.first_name,
+                            last_name: req.body.last_name,
+                            email: req.body.email,
+                            phone: req.body.phone,
                             password: hash,
                             rolee: "doc",
-                            age: req.body.Age,
-                            gender: req.body.Gender,
+                            age: req.body.age,
+                            gender: req.body.gender,
                         };
                         models.user_info.create(user).then((result) => {
                                 // res.status(200).json(result)
                                 
                                     user_id= result.id
-                                    address= req.body.Addres
-                                    bsc= req.body.Bachelor
-                                    university= req.body.University
+                                    address= req.body.addres
+                                    bsc= req.body.bachelor
+                                    university= req.body.university
                                     // exp: req.body.exp,
                                     // num_year_exp: req.body.num_year_exp,
-                                    deatalis= req.body.Previous_work
-                                    url_bsc= req.file.filename,
-
-                                    url_prev_imag= req.file.filename
+                                    deatalis= req.body.previous_work
+                                    url_bsc= req.file.filename
                                 
-                                var sql= "insert into veterinariann (address,bsc,university,deatalis,url_bsc,url_prev_imag) values ('" + address + "','" + bsc + "','" + university + "','" + deatalis + "','" + url_bsc + "','" + url_prev_imag + "')"
+                                var sql= "insert into veterinarianns (user_id,address,bsc,university,deatalis,url_bsc) values ('" + user_id + "','" + address + "','" + bsc + "','" + university + "','" + deatalis + "','" + url_bsc + "')"
                                 db.query(sql,(error,resss)=>{
                                     if(error){console.log(error)}
                                     else{
@@ -62,6 +60,7 @@ const singup_vet=(req,res) => {
                                 //     });
                             })
                             .catch((error) => {
+                                console.log(error+"fsdfs")
                                 res.status(500).json({
                                     message: "somthing wrong1111"+error,
                                 });
@@ -71,6 +70,7 @@ const singup_vet=(req,res) => {
             }
         })
         .catch((error) => {
+            console.log(error+"sfsdf")
             res.status(500).json({
                 message: "somthing wrong 500"+error,
             });
