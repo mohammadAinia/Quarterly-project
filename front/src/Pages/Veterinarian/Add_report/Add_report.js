@@ -1,11 +1,10 @@
 import './Add_report.css'
 import { Header, Profilee } from '../../../Componets/index'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faRightFromBracket, faBell, faHouse } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus, faBell, faRightFromBracket, faHouse } from '@fortawesome/free-solid-svg-icons'
 const Add_report = () => {
 
     const navigate = useNavigate()
@@ -35,6 +34,8 @@ const Add_report = () => {
 
     return (
         <>
+            <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"Common Problems"} href5={"/Add_Animal"} a5={<FontAwesomeIcon icon={faPlus} />} href3={"/Animal_infoo"} a3={"My Animals"} href4={"/All_problem"} a4={"Forum"} href6={"/Notifications"} a6={<FontAwesomeIcon icon={faBell} />} href7={"/#"} a7={<div id="login-btn" className="fas fa-user"></div>} href8={"/"} a8={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
+
             <div class="container">
                 <div class="title">Add Report</div>
                 <div class="content" style={{ "width": "450px" }}>
@@ -54,7 +55,7 @@ const Add_report = () => {
                             </div>
                             <div class="input-box">
                                 <span class="details">Next visit </span>
-                                <input style={{"width":"440px"}}  type="date" required onChange={e => setNext_visit(e.target.value)} />
+                                <input style={{ "width": "440px" }} type="date" required onChange={e => setNext_visit(e.target.value)} />
                             </div>
                         </div>
                         <div class="button">

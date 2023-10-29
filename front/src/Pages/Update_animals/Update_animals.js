@@ -3,7 +3,8 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { Header } from '../../Componets'
 import { useNavigate, useParams } from 'react-router-dom'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus, faRightFromBracket, faBell, faHouse, faMessage, faUserDoctor, faStethoscope } from '@fortawesome/free-solid-svg-icons'
 const Update_animals = () => {
 
     const navigate = useNavigate()
@@ -21,7 +22,7 @@ const Update_animals = () => {
 
     useEffect(() => {
 
-        axios.get(`http://localhost:3001/animal/show_animal_id/${id}`,{ withCredentials: true })
+        axios.get(`http://localhost:3001/animal/show_animal_id/${id}`, { withCredentials: true })
             .then(res => {
                 setName(res.data.result[0].name)
                 setPicture(res.data.result[0].urlIimage)
@@ -50,7 +51,7 @@ const Update_animals = () => {
 
         e.preventDefault()
 
-        axios.post(`http://localhost:3001/animal/update/${id}`, formData,{ withCredentials: true })
+        axios.post(`http://localhost:3001/animal/update/${id}`, formData, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     alert('Modified successfully')
@@ -60,11 +61,11 @@ const Update_animals = () => {
                     alert('EROR valid eror')
                 }
             })
-            .catch(err => alert(err+"hello"))
+            .catch(err => alert(err + "hello"))
     }
     return (
         <>
-            <Header href1={"/Animal"} a1={"Animal"} href5={"/Add_Animal"} a5={"Add Animal"} href3={"#"} a3={"Common Problems"} href2={"#"} a2={"Adopt Animal"} href6={"/login"} a6={"Login"} />
+            <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"Common Problems"} href5={"/Add_Animal"} a5={<FontAwesomeIcon icon={faPlus} />} href6={"all_doc"} a6={<FontAwesomeIcon icon={faStethoscope} />} href3={"/Animal_infoo"} a3={"My Animals"} href4={"/All_problem"} a4={"Forum"} href7={"/chat"} a7={<FontAwesomeIcon icon={faMessage} />} href8={"/Notifications"} a8={<FontAwesomeIcon icon={faBell} />} href9={"/profile"} a9={<div id="login-btn" className="fas fa-user"></div>} href10={"/"} a10={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
             <div>
                 <div class="container" style={{ "margin-top": "270px", "margin-bottom": "70px" }}>
                     <div class="title">update Animal</div>
@@ -81,7 +82,7 @@ const Update_animals = () => {
                                 </div>
                                 <div class="input-box">
                                     <span class="details">Picture of an animal</span>
-                                    <input type="file"  onChange={e => setPicture(e.target.files[0])} />
+                                    <input type="file" onChange={e => setPicture(e.target.files[0])} />
                                 </div>
                                 <div class="input-box">
                                     <span class="details">Additional details </span>

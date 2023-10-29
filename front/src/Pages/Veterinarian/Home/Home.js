@@ -5,7 +5,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import animal_image from '../../../Assert/Images/—Pngtree—parrot_1001948.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faRightFromBracket, faBell, faHouse, faMessage, faLink,faSyringe } from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faRightFromBracket, faBell, faHouse, faMessage, faLink, faSyringe } from '@fortawesome/free-solid-svg-icons'
 
 const Home = () => {
     const [name, setName] = useState('')
@@ -39,7 +39,7 @@ const Home = () => {
     return (
         <>
 
-            <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_vete"} a2={"Common Problems"} href5={"/requst"} a5={<FontAwesomeIcon icon={faLink} />} href6={"all_vaccine"} a6={<FontAwesomeIcon icon={faSyringe} />} href3={"all_follow"} a3={"All Follow"} href4={"/All_problem"} a4={"Ploblems"} href7={"/chat"} a7={<FontAwesomeIcon icon={faMessage} />} href8={"/Notifications"} a8={<FontAwesomeIcon icon={faBell} />} href9={"profile"} a9={<div id="login-btn" className="fas fa-user"></div>} href10={"Home_vet"} a10={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
+            <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_vete"} a2={"Common Problems"} href5={"/requst"} a5={<FontAwesomeIcon icon={faLink} />} href6={"all_vaccine"} a6={<FontAwesomeIcon icon={faSyringe} />} href3={"all_follow"} a3={"All Follow"} href4={"/All_problem"} a4={"Forum"} href7={"/chat"} a7={<FontAwesomeIcon icon={faMessage} />} href8={"/Notifications"} a8={<FontAwesomeIcon icon={faBell} />} href9={"profile"} a9={<div id="login-btn" className="fas fa-user"></div>} href10={"Home_vet"} a10={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
 
             <section className="bbanner" style={{ "margin-top": "2000px" }}>
                 <div className="row">
@@ -96,13 +96,13 @@ const Home = () => {
             <Add_proplem />
 
             <section className="pricing" id="pricing">
-                <h2 className="heading">Proplem</h2>
+                <h2 className="heading">Forum</h2>
 
                 <div className="box-container" >
                     {Problim_info.map((user, i) => {
                         return (
                             <div key={i}>
-                                <Problems name={user.title} text={user.disc} type={user.animal_type} id1={user.id} />
+                                <Problems name={user.title} text={user.disc} type={user.animal_type} hreflink={`Problem_id/${user.id}`} id1={user.id} />
                             </div>
                         )
                     })}

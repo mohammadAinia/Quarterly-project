@@ -2,7 +2,9 @@ import './Your_ploblem.css'
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import {Your_prob} from '../../Componets/index'
+import {Your_prob ,Header} from '../../Componets/index'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus, faRightFromBracket, faBell, faHouse ,faMessage ,faUserDoctor,faStethoscope} from '@fortawesome/free-solid-svg-icons'
 
 const Your_ploblem = () => {
 
@@ -24,9 +26,11 @@ const Your_ploblem = () => {
     }, [])
     return (
         <>
+              <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"Common Problems"} href5={"/Add_Animal"} a5={<FontAwesomeIcon icon={faPlus} />} href6={"all_doc"} a6={<FontAwesomeIcon icon={faStethoscope} />} href3={"/Animal_infoo"} a3={"My Animals"} href4={"/All_problem"} a4={"Forum"} href7={"/chat"} a7={<FontAwesomeIcon icon={faMessage} />} href8={"/Notifications"} a8={<FontAwesomeIcon icon={faBell} />} href9={"/profile"} a9={<div id="login-btn" className="fas fa-user"></div>} href10={"/"} a10={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
 
-            <section className="pricing" id="pricing" style={{ "margin-top":"400px"}}>
-                <h2 className="heading" style={{ "margin-left":"90px"}}>Proplem</h2>
+
+            <section className="pricing" id="pricing" style={{ "margin-top":"2400px"}}>
+                <h2 className="heading" style={{ "margin-left":"90px"}}>Forum</h2>
 
                 <div className="box-container" style={{ "width":"600px" }}>
                     {Info.map((user, i) => {

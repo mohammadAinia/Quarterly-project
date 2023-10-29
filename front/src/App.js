@@ -70,6 +70,8 @@ const App = () => {
             <Route path='/Search_type_common' element={<Search_problem />} />
             <Route path='/search_result2/:Type' element={<Search_result2 />} />
             <Route path='Home_vet' element={<Home />} />
+            <Route path='Home_vet/Problem_id/:id' element={<Problem_id />} />
+            <Route path='Home_vet/Animal_info_id/:id' element={<Animal_info_id />} />
             <Route path='add_report/:id' element={<Add_report />} />
             <Route path='all_follow' element={<All_followw />} />
             <Route path='all_follow/show_vaccines/:id' element={<Vaccine_id />} />
