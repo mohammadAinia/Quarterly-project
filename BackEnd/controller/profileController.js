@@ -41,20 +41,22 @@ function edit_info(req,res){
     var ln=req.body.Last_name
     var phone=req.body.Phone
     var age=req.body.Age
-    var ps=req.body.Password
-        bcryptjs.genSalt(10,(err,salt) => {
-        bcryptjs.hash(req.body.password,salt,function (err,hash) {
-            var password=hash
-            bcryptjs.hash(ps,salt,function (err,hash) {
-                sql='update user_infos set first_name=?,last_name=?,phone=?,age=?,password=? where email=?'
-                db.query(sql,[fn,ln,phone,age,hash,req.session.username],(error,result)=>{
-                    if(error)console.log(error)
-                    res.json({result,valid:true})
-                })
-            })
+    sql='update user_infos set first_name=?,last_name=?,phone=?,age=? where email=?'
+    db.query(sql,[fn,ln,phone,age,req.session.username],(error,result)=>{
+        if(error)console.log(error)
+        res.json({result,valid:true})
+    })
+
+    // var ps=req.body.Password
+        // bcryptjs.genSalt(10,(err,salt) => {
+        // bcryptjs.hash(req.body.password,salt,function (err,hash) {
+        //     var password=hash
+        //     bcryptjs.hash(ps,salt,function (err,hash) {
+                
+        //     })
         
-        });
-        });
+        // });
+        // });
     
 }
 

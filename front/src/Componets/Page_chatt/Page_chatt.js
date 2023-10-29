@@ -21,7 +21,7 @@ const Page_chatt = (props) => {
                 <br />
                 <div>
                     
-                    <Link style={{"margin-left": "55px", "width": "95px" }} className="btn" to={props.href_link1}> {props.name_link1}</Link>
+                    <Link style={{"margin-left": "55px", "width": "100px" }} className="btn" to={props.href_link1}> {props.name_link1}</Link>
                     <Link style={{ "margin-left": "50px", "width": "110px" }} className="btn" to={props.href_link2}>{props.name_link2}</Link>
 
                 </div>
