@@ -24,6 +24,7 @@ const Add_report = () => {
             .then(res => {
                 if (res.data.valid) {
                     alert('The report has been sent successfully')
+                    navigate(-1)
                 }
                 else {
                     navigate('/login')
