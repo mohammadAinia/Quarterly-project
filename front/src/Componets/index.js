@@ -81,8 +81,16 @@ export {default as Profile_id_vet} from './1veterinarian/Profile_id_vet/Profile_
 export {default as Profile_vet_id} from '../Pages/All_doctor/Profile_vet_id/Profile_vet_id'
 export {default as All_vaccine} from './1veterinarian/All_vaccine/All_vaccine'
 export {default as All_veci} from '../Pages/Veterinarian/All_veci/All_veci'
-export {default as Add_vaccine} from './1veterinarian/Add_vaccine/Add_vaccine'
-export {default as Add_vaci} from '../Pages/Veterinarian/Add_vaci/Add_vaci'
+export {default as Add_advice} from './1veterinarian/Add_advice/Add_advice'
+export {default as Add_advices} from '../Pages/Veterinarian/Add_advices/Add_advices'
+export {default as All_advice} from './1veterinarian/All_advice/All_advice'
+export {default as All_advices} from '../Pages/Veterinarian/All_advices/All_advices'
+export {default as Add_veci} from './1veterinarian/Add_veci/Add_veci'
+export {default as Add_vecine} from '../Pages/Veterinarian/Add_vecine/Add_vecine'
+
+
+
+
 
 
 

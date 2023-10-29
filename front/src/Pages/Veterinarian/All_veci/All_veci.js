@@ -35,10 +35,6 @@ const All_veci = () => {
                     <div className="content">
                         <form action="#" >
                             <div className="user-details">
-                            <All_vaccine text={"hekwkw"} />
-                            <All_vaccine text={"wkndfef"} />
-                            <All_vaccine text={"fknjwkf"} />
-
                                 {Vaccine.map((user, i) => {
                                     return (
                                         <div key={i}>
