@@ -20,9 +20,9 @@ const add_to_adlist_id=(req,res)=>{
 }
 const show_ad_animal=(req,res)=>{
     var a=0
-    sql1="select animals.urlImage,animals.type,animals.age,animals.name,user_infos.phone,animals.id from adoption join animals on animals.id=adoption.id_animal JOIN user_infos on user_infos.email=animals.owner where adoption.status_id=?"
+    sql1="select animals.urlImage,animals.type,animals.age,animals.name,user_infos.phone,animals.id from adoption join animals on animals.id=adoption.id_animal JOIN user_infos on user_infos.email=animals.owner where adoption.status_id=? AND current_owner!=? "
 
-    db.query(sql1,[a],(err,result)=>{
+    db.query(sql1,[a,req.session.username],(err,result)=>{
         if(err)console.log(err)
         res.json({result,valid:true})
     })

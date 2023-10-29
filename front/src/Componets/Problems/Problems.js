@@ -7,11 +7,10 @@ const Problems = (props) => {
     const navigate = useNavigate()
     const [Comment, setComment] = useState('')
 
-
     axios.defaults.withCredentials = true
     const handleSubmit = (id) => {
 
-        axios.get(`http://localhost:3001/problim/add_answer/${id}`, { Comment })
+        axios.post(`http://localhost:3001/problim/add_answer/${id}`, { Comment })
             .then(res => {
                 if (res.data.valid) {
                     alert('Published successfully'+Comment)

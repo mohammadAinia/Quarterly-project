@@ -14,8 +14,8 @@ const Update_user = () => {
     const [Last_name, setLast_name] = useState('')
     const [Age, setAge] = useState('')
     const [Phone, setPhone] = useState('')
-    const [Password, setPassword] = useState('')
-    const [Confirm_password, setConfirm_password] = useState('')
+    // const [Password, setPassword] = useState('')
+    // const [Confirm_password, setConfirm_password] = useState('')
 
 
     const { id } = useParams()
@@ -28,7 +28,7 @@ const Update_user = () => {
                 setLast_name(res.data.result[0].last_name)
                 setAge(res.data.result[0].age)
                 setPhone(res.data.result[0].phone)
-                setPassword(res.data.result[0].password)
+                // setPassword(res.data.result[0].password)
 
             })
             .catch(err => { console.log(err) })
@@ -36,9 +36,8 @@ const Update_user = () => {
 
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
-        if (Password === Confirm_password) {
             e.preventDefault()
-            axios.post('http://localhost:3001/user/edit_info', { First_name, Last_name, Age, Phone, Password })
+            axios.post('http://localhost:3001/user/edit_info', { First_name, Last_name, Age, Phone })
                 .then(res => {
                     if (res.data.valid) {
                         alert('Modified successfully')
@@ -51,14 +50,13 @@ const Update_user = () => {
                     }
                 })
                 .catch(err => alert(err))
-        }
-        else { alert("password not match") }
+        
     }
 
 
     return (
         <>
-            <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"Common Problems"} href5={"/Add_Animal"} a5={<FontAwesomeIcon icon={faPlus} />} href3={"/Animal_infoo"} a3={"All Animal"} href4={"/All_problem"} a4={"Ploblems"} href6={"/Notifications"} a6={<FontAwesomeIcon icon={faBell} />} href7={"/profile"} a7={<div id="login-btn" className="fas fa-user"></div>} href8={"/"} a8={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
+            <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"Common Problems"} href5={"/Add_Animal"} a5={<FontAwesomeIcon icon={faPlus} />} href3={"/Animal_infoo"} a3={"My Animals"} href4={"/All_problem"} a4={"Forum"} href6={"/Notifications"} a6={<FontAwesomeIcon icon={faBell} />} href7={"/profile"} a7={<div id="login-btn" className="fas fa-user"></div>} href8={"/"} a8={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
 
             <form onSubmit={handleSubmit}>
 
@@ -121,7 +119,7 @@ const Update_user = () => {
                             </div>
 
                         </div>
-                        <div className="skils">
+                        {/* <div className="skils">
                             <h2 className="title2">security</h2>
                             <div className="box">
                                 <div className="fst">
@@ -139,7 +137,7 @@ const Update_user = () => {
                                     <input type="password" onChange={e => setConfirm_password(e.target.value)} />
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </form>
