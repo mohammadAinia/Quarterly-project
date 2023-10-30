@@ -36,7 +36,7 @@ const Your_animall = () => {
     return (
         <>
             <section className="animal" id="animal">
-                <SectionHeader>Your Animals</SectionHeader>
+                <SectionHeader>Chose from your animal </SectionHeader>
                 <div className="">
                     <div className="heading">
                     </div>

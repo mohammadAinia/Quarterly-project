@@ -28,7 +28,7 @@ const Profile_vet_id = () => {
             {Info.map((d, i) => {
                 return (
                     <div key={i}>
-                        <Profile_id_vet university={d.university} first_name={d.first_name} last_name={d.last_name} email={d.email} phone={d.phone} age={d.age} Nationality={d.Nationality} Addres={d.address} gender={d.gender} />
+                        <Profile_id_vet university={d.university} first_name={d.first_name} last_name={d.last_name} email={d.email} phone={d.phone} age={d.age} Nationality={d.nation} Addres={d.address} gender={d.gender} />
                     </div>
                 )
             })}

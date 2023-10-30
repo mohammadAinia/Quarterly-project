@@ -67,7 +67,7 @@ const Add_animall = () => {
           </div>
           <div class="input-box">
             <span class="details">Age *</span>
-            <input type="month" name='age' required onChange={e => setAge(e.target.value)} />
+            <input type="date" name='age' required onChange={e => setAge(e.target.value)} />
           </div>
           <div class="input-box">
             <span class="details">Animal Place *</span>

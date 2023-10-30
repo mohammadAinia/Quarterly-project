@@ -9,7 +9,6 @@ const Problems = (props) => {
 
     axios.defaults.withCredentials = true
     const handleSubmit = (id) => {
-
         axios.post(`http://localhost:3001/problim/add_answer/${id}`, { Comment })
             .then(res => {
                 if (res.data.valid) {
@@ -22,7 +21,9 @@ const Problems = (props) => {
 
             }
             )
-            .catch(err => { console.log(err) })
+            .catch(err => { 
+                alert(err)
+                console.log(err) })
     }
 
     return (

@@ -12,7 +12,7 @@ const Your_animal_vaccines = (props) => {
                             <p>{props.vaccines}</p>
                         </div>
                         <div className="input-box">
-                            <span className="details">Vaccine of date animla</span>
+                            <span className="details">Date of taking </span>
                             <p>{props.vaccine_date}</p>
                         </div>
                     </div>

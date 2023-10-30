@@ -34,7 +34,7 @@ const Register_veterinarian = () => {
     formData.append('password', Password)
     formData.append('age', Age)
     formData.append('gender', Gender)
-    // formData.append('Nationality', Nationality)
+    formData.append('Nationality', Nationality)
     formData.append('address', Addres)
     formData.append('university', University)
     formData.append('image', Bachelor)

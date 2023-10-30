@@ -26,15 +26,15 @@ const singup_vet=(req,res) => {
                                 // res.status(200).json(result)
                                 
                                     user_id= result.id
-                                    address= req.body.addres
-                                    bsc= req.body.bachelor
+                                    address= req.body.address
+                                    bsc= req.body.Nationality
                                     university= req.body.university
                                     // exp: req.body.exp,
                                     // num_year_exp: req.body.num_year_exp,
-                                    deatalis= req.body.previous_work
+                                     deatalis= req.body.previous_work
                                     url_bsc= req.file.filename
                                 
-                                var sql= "insert into veterinarianns (user_id,address,bsc,university,deatalis,url_bsc) values ('" + user_id + "','" + address + "','" + bsc + "','" + university + "','" + deatalis + "','" + url_bsc + "')"
+                                var sql= "insert into veterinarianns (user_id,address,nation,university,deatalis,url_bsc) values ('" + user_id + "','" + address + "','" + bsc + "','" + university + "','" + deatalis + "','" + url_bsc + "')"
                                 db.query(sql,(error,resss)=>{
                                     if(error){console.log(error)}
                                     else{
@@ -150,6 +150,7 @@ function login(req,res) {
                             sql='select * from animals where owner=?'
                             db.query(sql,[user.email],(err,resu)=>{
                                 if (err)console.log(err)
+                                // console.log(resu)
                                 tips(resu)
                             })
                             notifcation(user.email)
@@ -282,10 +283,11 @@ function daysUntilBirthday(dateOfBirth) {
     return daysLeft;
   }
 const tips =(animal)=>{
- var sqll='delete from tip_gen'
+ var sqll='delete from tip_gen' 
  db.query(sqll,(err,result)=>{
     animal.map((u,i)=>{//here we sshow th num of day for evre vacc rim
         var sql='select * from tip where animal_type=?'
+        console.log(u.type)
         var dad=new Date(u.age)
         var d=new Date()
         var datee = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
@@ -297,7 +299,8 @@ const tips =(animal)=>{
         db.query(sql,[u.type],(err,result)=>{
             if (err) console.log(err)
             result.map((uu,i)=>{
-                if (uu.animal_type=u.type&&mm>=uu.min_age&&mm<=uu.max_age){
+                if (uu.animal_type==u.type&&mm>=uu.min_age&&mm<=uu.max_age){
+                    console.log(uu.tip)
                     var f="the tip for day is " + uu.tip +" for the animal " + u.name
                     var sql= "INSERT tip_gen (gen_tip) VALUES('" + f + "')"
                     db.query(sql,(err,result)=>{
