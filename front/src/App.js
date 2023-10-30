@@ -11,7 +11,7 @@ import {
   Your_ploblem, Update_problem, Page_chat, Profile_id, Vaccine_id, Search_user, Search_result,
   Notifications, Animal_info_adopt, Type_search, Common_vete, Add_common,Request,Your_animall,
   Search_problem, Search_result2, All_followw, Home,Add_report,All_doctor,Details_animal,
-  Profile_vet_id,All_veci,Add_advices,All_advices,Add_vecine
+  Profile_vet_id,All_veci,Add_advices,All_advices,Add_vecine,General_user
 } from './Componets/index'
 
 const App = () => {
@@ -85,6 +85,8 @@ const App = () => {
             <Route path='add_vaci' element={<Add_vecine />} />
             <Route path='all_advice' element={<All_advices />} /> 
             <Route path='add_advice' element={<Add_advices />} /> 
+            <Route path='m' element={<General_user />} /> 
+
 
 
 

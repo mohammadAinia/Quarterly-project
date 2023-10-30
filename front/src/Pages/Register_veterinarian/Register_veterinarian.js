@@ -57,7 +57,7 @@ const Register_veterinarian = () => {
   }
   return (
     <>
-      <Header href1={"/Animal"} a1={"Animal"} href3={"#"} a3={"Common Problems"} href2={"#"} a2={"Adopt Animal"} href4={"/login"} a4={"Login"} />
+      <Header href1={"/Animal"} a1={"Animal"} href3={"#"} a3={"FAQs"} href2={"#"} a2={"Adopt Animal"} href4={"/login"} a4={"Login"} />
 
       <div style={{ "margin-top": "600px", "margin-bottom": "70px" }}>
         <div className="container" >

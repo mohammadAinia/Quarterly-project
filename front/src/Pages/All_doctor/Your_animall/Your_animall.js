@@ -1,9 +1,10 @@
 import './Your_animall.css'
-import { Card, SectionHeader } from '../../../Componets/index'
+import { Card, SectionHeader ,Header} from '../../../Componets/index'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus, faRightFromBracket, faBell, faHouse } from '@fortawesome/free-solid-svg-icons'
 const Your_animall = () => {
 
     const [Animall_info, setAnimal_info] = useState([])
@@ -35,6 +36,8 @@ const Your_animall = () => {
         [])
     return (
         <>
+        <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"FAQs"} href5={"/Add_Animal"} a5={<FontAwesomeIcon icon={faPlus} />} href3={"/Animal_infoo"} a3={"All Animal"} href4={"/All_problem"} a4={"Ploblems"} href6={"/Notifications"} a6={<FontAwesomeIcon icon={faBell} />} href7={"/profile"} a7={<div id="login-btn" className="fas fa-user"></div>} href8={"/"} a8={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
+
             <section className="animal" id="animal">
                 <SectionHeader>Chose from your animal </SectionHeader>
                 <div className="">

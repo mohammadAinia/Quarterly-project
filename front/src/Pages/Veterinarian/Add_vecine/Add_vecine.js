@@ -1,8 +1,5 @@
 import './Add_vecine.css'
-// import axios from 'axios'
-// import { useState } from 'react'
 import { Header, Add_veci } from '../../../Componets'
-// import { useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faBell, faRightFromBracket, faHouse } from '@fortawesome/free-solid-svg-icons'
 
