@@ -40,7 +40,7 @@ const Register_owner = () => {
 
     return (
         <div>
-            <Header href1={"/Animal"} a1={"Animal"} href3={"#"} a3={"Common Problems"} href2={"#"} a2={"Adopt Animal"} href4={"/login"} a4={"Login"} />
+            <Header href1={"/Animal"} a1={"Animal"} href3={"#"} a3={"FAQs"} href2={"#"} a2={"Adopt Animal"} href4={"/login"} a4={"Login"} />
 
             <div className="container">
                 <div className="title">Registration Owner</div>

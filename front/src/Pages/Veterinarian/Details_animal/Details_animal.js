@@ -37,7 +37,7 @@ const Details_animal = () => {
 
     return (
         <>
-            <Header href1={"/Animal"} a1={"Animal"} href3={"#"} a3={"Common Problems"} href2={"#"} a2={"Adopt Animal"} href4={"/login"} a4={"Login"} />
+            <Header href1={"/Animal"} a1={"Animal"} href3={"#"} a3={"FAQs"} href2={"#"} a2={"Adopt Animal"} href4={"/login"} a4={"Login"} />
             <div style={{ "margin-top": "100px", "margin-bottom": "20px" }}>
                 {Info.map((d, i) => {
                     return (

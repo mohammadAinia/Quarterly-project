@@ -87,6 +87,9 @@ export {default as All_advice} from './1veterinarian/All_advice/All_advice'
 export {default as All_advices} from '../Pages/Veterinarian/All_advices/All_advices'
 export {default as Add_veci} from './1veterinarian/Add_veci/Add_veci'
 export {default as Add_vecine} from '../Pages/Veterinarian/Add_vecine/Add_vecine'
+export {default as General_user} from '../Pages/General_user/General_user'
+
+
 
 
 

@@ -3,7 +3,8 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { Header, Conversation_sender, Conversation_receive } from '../../../Componets'
 import { useNavigate, useParams } from 'react-router-dom'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus, faRightFromBracket, faBell, faHouse, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 const Conversation = () => {
     const navigate = useNavigate()
 
@@ -43,6 +44,8 @@ const Conversation = () => {
     }
     return (
         <>
+            <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"FAQs"} href5={"/Search_type"} a5={<FontAwesomeIcon icon={faMagnifyingGlass} />} href3={"/Animal_infoo"} a3={"All Animal"} href4={"/All_problem"} a4={"Ploblems"} href6={"/Notifications"} a6={<FontAwesomeIcon icon={faBell} />} href7={"/#"} a7={<div id="login-btn" className="fas fa-user"></div>} href8={"/"} a8={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
+
             <form onSubmit={handleSubmit}>
                 <div class="--dark-theme" id="chat">
                     <div class="chat__conversation-board">
