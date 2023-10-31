@@ -191,7 +191,10 @@ const evints =(vet)=>{
                     var ddss= new Date(datee)
                     var Difference_In_Time = dad.getTime() - ddss.getTime();
                     var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
-                    var not="The remaining days for next vacc  for  animal"+  u.name +" "+Difference_In_Days +"day/s"
+                    var ss=Math.round(Difference_In_Days)
+                    // console.log(ss)
+                    if(ss>0){
+                    var not="The remaining days for next vacc  for  animal  " +  u.name +" "+ss +" day/s"
                     // db.query(sqlll,[u.id,u.id_v_r],(err,resu)=>{
                         // if (err) console.log(err)
                         // else if (resu.length==0) {
@@ -201,6 +204,7 @@ const evints =(vet)=>{
                             db.query(sql1,(err,resus)=>{
                                 if(err)console.log(err)
                             })
+                    }
                         // }
                     // })
             })
