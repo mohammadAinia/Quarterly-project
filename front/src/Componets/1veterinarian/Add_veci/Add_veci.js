@@ -21,10 +21,11 @@ const Add_veci = () => {
 
         e.preventDefault()
 
-        axios.post('http://localhost:3001/#/#', { Name, Type, Minage, Maxage, Description, Number_of_doses })
+        axios.post('http://localhost:3001/vet/addNewV', { Name, Type, Minage, Maxage, Description, Number_of_doses })
             .then(res => {
                 if (res.data.valid) {
                     alert('The vaccine was added successfully')
+                navigate(-1)
                 }
                 else {
                     alert('EROR')
@@ -45,12 +46,12 @@ const Add_veci = () => {
                         <input type="text" required onChange={e => setDescription(e.target.value)} />
                     </div>
                     <div class="input-box">
-                        <span class="details">Min Age *</span>
-                        <input type="number" placeholder='num month' required onChange={e => setMinage(e.target.value)} />
+                        <span class="details">duration effectiveness  *</span>
+                        <input type="number" placeholder='Duration in mothes' required onChange={e => setMinage(e.target.value)} />
                     </div>
                     <div class="input-box">
-                        <span class="details">Max Age *</span>
-                        <input type="number" placeholder='num month' required onChange={e => setMaxage(e.target.value)} />
+                        <span class="details">recommended age *</span>
+                        <input type="number" placeholder='num of months' required onChange={e => setMaxage(e.target.value)} />
                     </div>
                     <div class="input-box">
                         <span class="details">Number of doses *</span>
@@ -60,6 +61,7 @@ const Add_veci = () => {
                     <div class="input-box">
                         <span class="details">type Animal</span>
                         <select name="type" idd="animal" required onChange={e => setType(e.target.value)}>
+                            <option value={""} ></option>
                             <option value={"cat"} >Cat</option>
                             <option value={"dog"} >Dog</option>
                             <option value={"bird"} >Bird</option>

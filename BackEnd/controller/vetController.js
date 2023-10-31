@@ -105,6 +105,77 @@ function add_req(req,res){
         })
     })
 }
+function add__new_vacc(req,res){
+    if(req.session.roleee=='doc'){
+    // var id=req.params.id
+    var name=req.body.Name
+    var Type=req.body.Type
+    var Minage=req.body.Minage
+    var Maxage=req.body.Maxage
+    var Description=req.body.Description
+    var Number_of_doses=req.body.Number_of_doses
+
+    var sql="INSERT vaccien_informations  (name_vacc,duration_ef,recommended_age,number_of_repetition,animmal_type,description) VALUES('" + name + "','" + Minage + "','" + Maxage + "','" + Number_of_doses + "','" + Type + "','" + Description + "')"
+    db.query(sql,(error,result)=>{
+        if (error){console.log(error+"line 15")}
+        else{
+            return res.json({valid:true,result})
+        }
+    })
+}
+else{ 
+    return res.json({valid:false})
+}
+}
+
+function show_all_vacc(req,res){
+    if (req.session.username&&req.session.roleee) {
+
+    sql='select * from vaccien_informations '
+    db.query(sql,(error,result)=>{
+        if(error){console.log(error)}
+        else {
+            return res.json({valid:true,result})
+        }
+    })
+    }
+    else {
+        res.json({valid:false})
+    }
+}
+function show_all_comon_prob(req,res){
+    if (req.session.username&&req.session.roleee){
+    sql='select * from tip'
+    db.query(sql, (err, result) => {
+        if (err) return res.json(err)
+        return res.json({result,valid:true})
+    }
+    )
+}
+    else   {return res.json({valid:false})}
+
+}
+function add_advice(req,res){
+    if(req.session.roleee=='doc'){
+    var name=req.body.Tip
+    var Type=req.body.Type
+    var Minage=req.body.Minage
+    var Maxage=req.body.Maxage
+
+
+    var sql="INSERT tip  (tip,animal_type,min_age,max_age) VALUES('" + name + "','" + Type + "','" + Minage + "','" + Maxage + "')"
+    db.query(sql,(error,result)=>{
+        if (error){console.log(error+"line 15")}
+        else{
+            return res.json({valid:true,result})
+        }
+    })
+}
+else{ 
+    return res.json({valid:false})
+}
+}
+
 
 const evints =(vet)=>{
     var sqll1='delete from event_gen'
@@ -162,5 +233,9 @@ module.exports={home_vat:home_vat,
     accept_req:accept_req,
     show_all_vet,
     show_profile_vet:show_profile_vet,
-    add_req:add_req
+    add_req:add_req,
+    add__new_vacc:add__new_vacc,
+    show_all_vacc:show_all_vacc,
+    show_all_comon_prob:show_all_comon_prob,
+    add_advice:add_advice
 }

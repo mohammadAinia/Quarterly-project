@@ -15,10 +15,10 @@ const All_veci = () => {
 
     useEffect(() => {
 
-        axios.get(`http://localhost:3001/#/#/${id}`, { withCredentials: true })
+        axios.get(`http://localhost:3001/vet/showAllV`, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
-                    setVaccines(res.data.resultt)
+                    setVaccines(res.data.result)
                 }
                 else navigate('/login')
 
@@ -38,7 +38,7 @@ const All_veci = () => {
                                 {Vaccine.map((user, i) => {
                                     return (
                                         <div key={i}>
-                                            <All_vaccine text={user.answer} />
+                                            <All_vaccine text={user.name_vacc} />
                                         </div>
                                     )
                                 })}

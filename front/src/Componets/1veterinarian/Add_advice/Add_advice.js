@@ -18,10 +18,11 @@ const Add_advice = () => {
 
         e.preventDefault()
 
-        axios.post('http://localhost:3001/#/#', { Tip, Type, Minage, Maxage })
+        axios.post('http://localhost:3001/vet/Add_advice', { Tip, Type, Minage, Maxage })
             .then(res => {
                 if (res.data.valid) {
                     alert('The Advice was added successfully')
+                    navigate(-1)
                 }
                 else {
                     alert('EROR')

@@ -7,7 +7,7 @@ const All_advice = (props) => {
     return (
         <>
             <div class="container" style={{ "margin-top": "10px", "margin-bottom": "20px" }}>
-                <div class="title">All Advice</div>
+                <div class="title">Advice</div>
                 <div class="content">
                     <form action="#" >
                         <div class="user-details">
