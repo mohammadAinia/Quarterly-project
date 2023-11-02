@@ -9,7 +9,7 @@ const Animal_info = (props) => {
 
                     <div className="content">
                         <h3>{props.header}</h3>
-                        <p>{props.p}</p>
+                        <p style={{"text-transform":"lowercase"}}>{props.p}</p>
                         <p>{props.age}</p>
                     </div>
                     <div className="image">

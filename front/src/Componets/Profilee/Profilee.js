@@ -29,7 +29,7 @@ const Profilee = (props) => {
                         <Link style={{ "margin-left": "130px", "background": "white", "color": "#ff6e01" }} className='btnn titleee' to={`/update_user`}>Update</Link>
                         <br />
                         <br/>
-                        <button onClick={e => handleDelete(props.id)} style={{ "margin-left": "134.5px","cursor":"pointer", "background": "white", "color": "#ff6e01" }} className='btnn titleee'>Delete</button>
+                        {/* <button onClick={e => handleDelete(props.id)} style={{ "margin-left": "134.5px","cursor":"pointer", "background": "white", "color": "#ff6e01" }} className='btnn titleee'>Delete</button> */}
                     </div>
 
                 </div>

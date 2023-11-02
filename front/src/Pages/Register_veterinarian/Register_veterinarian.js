@@ -3,7 +3,8 @@ import React, { useState } from 'react'
 import { Header } from '../../Componets'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faRightToBracket } from '@fortawesome/free-solid-svg-icons'
 
 const Register_veterinarian = () => {
   const navigate = useNavigate()
@@ -57,7 +58,7 @@ const Register_veterinarian = () => {
   }
   return (
     <>
-      <Header href1={"/Animal"} a1={"Animal"} href3={"#"} a3={"FAQs"} href2={"#"} a2={"Adopt Animal"} href4={"/login"} a4={"Login"} />
+      <Header href1={"/Animal"} a1={"About Pets"} href3={"#"} a3={"FAQs"} log={'/login'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightToBracket} /></div>} />
 
       <div style={{ "margin-top": "600px", "margin-bottom": "70px" }}>
         <div className="container" >
@@ -107,7 +108,7 @@ const Register_veterinarian = () => {
                 </div>
                 <div className="input-box">
                   <span className="details">A copy of the bachelor's degree *</span>
-                  <input type="file"  required onChange={e => setBachelor(e.target.files[0])} />
+                  <input type="file" required onChange={e => setBachelor(e.target.files[0])} />
                 </div>
                 <div className="input-box">
                   <span className="details">Details of previous work</span>
