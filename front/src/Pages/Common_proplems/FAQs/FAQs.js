@@ -17,7 +17,7 @@ const FAQs = () => {
 
     useEffect(() => {
 
-        axios.get('http://localhost:3001/#/#', { withCredentials: true })
+        axios.get('http://localhost:3001/co_problim/FAQ')
             .then(res => {
                 setProplems(res.data)
 
