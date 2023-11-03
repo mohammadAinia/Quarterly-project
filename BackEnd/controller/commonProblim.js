@@ -54,8 +54,19 @@ function search(req,res){
 }
 else   return res.json({valid:false})
 }
+function show_all_comon_prob2(req,res){
+    
+    sql='select * from common_problems'
+    db.query(sql, (err, result) => {
+        if (err) return res.json(err)
+        return res.json(result) + console.log()
+    }
+    )
+}
 module.exports={
     show_all_comon_prob:show_all_comon_prob,
     search:search,
-    add_common_problem:add_common_problem
+    add_common_problem:add_common_problem,
+    show_all_comon_prob2:show_all_comon_prob2
+
 }
