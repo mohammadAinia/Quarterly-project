@@ -33,7 +33,7 @@ const Add_proplem = () => {
         <>
             <section className="contact" id="contact">
 
-                <h2 className="heading">Do you have a proplem ?</h2>
+                <h2 className="heading">Do you have a problem ?</h2>
 
                 <form onSubmit={handleSubmit}>
                     <div className="t1">

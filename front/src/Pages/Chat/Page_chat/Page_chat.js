@@ -29,9 +29,9 @@ const Page_chat = () => {
             <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"Common Problems"} href5={"/Search_type"} a5={<FontAwesomeIcon icon={faMagnifyingGlass} />} href3={"/Animal_infoo"} a3={"My Animals"} href4={"/All_problem"} a4={"Forum"} href6={"/Notifications"} a6={<FontAwesomeIcon icon={faBell} />} href7={"/#"} a7={<div id="login-btn" className="fas fa-user"></div>} href8={"/"} a8={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
 
             <section style={{ "backgroundColor": "#f5f5f5", "margin-top": "0px" }} class="cards contact" id="contact">
-                <h2 className="titlee">Message Box</h2>
+                <h2 style={{ "width": "303px", }} className="titlee">Message Box</h2>
 
-                <div class="content">
+                <div style={{ "margin-left": "30px", }} class="content">
                     {Info.map((d, i) => {
                         return (
                             <div key={i}>

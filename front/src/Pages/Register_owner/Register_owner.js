@@ -3,7 +3,8 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { Header } from '../../Componets'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faRightToBracket } from '@fortawesome/free-solid-svg-icons'
 
 const Register_owner = () => {
 
@@ -40,7 +41,7 @@ const Register_owner = () => {
 
     return (
         <div>
-            <Header href1={"/Animal"} a1={"Animal"} href3={"#"} a3={"FAQs"} href2={"#"} a2={"Adopt Animal"} href4={"/login"} a4={"Login"} />
+            <Header href1={"/Animal"} a1={"About Pets"} href3={"#"} a3={"FAQs"} log={'/login'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightToBracket} /></div>} />
 
             <div className="container">
                 <div className="title">Registration Owner</div>
@@ -93,9 +94,6 @@ const Register_owner = () => {
                         </div>
                         <div className="button">
                             <button>Register</button>
-                        </div>
-                        <div className="buttonn">
-                            <a href="/Back_to_type">Back</a>
                         </div>
                     </form>
                 </div>

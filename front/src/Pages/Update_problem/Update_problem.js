@@ -85,9 +85,6 @@ const Update_problem = () => {
                             <div class="button">
                                 <button>update</button>
                             </div>
-                            <div class="buttonn">
-                                <a href="/my_problem">Back</a>
-                            </div>
                         </form>
                     </div>
                 </div>
