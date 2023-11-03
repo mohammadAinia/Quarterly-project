@@ -15,7 +15,7 @@ import {
 const General_user = () => {
     return (
         <>
-            <Header href1={"/Animal"} a1={"About Pets"} href3={"#"} a3={"FAQs"} log={'/Loginn'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightToBracket} /></div>} />
+            <Header href1={"/Animal"} a1={"About Pets"} href3={"FAQs"} a3={"FAQs"} log={'/Loginn'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightToBracket} /></div>} />
 
             <section className="main">
                 <div>
@@ -161,9 +161,9 @@ const General_user = () => {
 
             <section class="footer">
 
-                <div style={{"margin-left":"200px"}} class="box-container">
+                <div style={{ "margin-left": "200px" }} class="box-container">
 
-                    <div  class="box">
+                    <div class="box">
                         <h3><i class="fas fa-paw"></i> PetCare</h3>
                         <p>University of Kalamoon.</p>
                         {/* <p class="links"><i class="fas fa-clock"></i>monday - friday</p>
@@ -178,10 +178,10 @@ const General_user = () => {
                     </div>
                     <div class="box">
                         <h3>Social Media</h3>
-                            <div class="share">
-                                <a style={{"fontSize":"30px","padding":"10px"}} href="https://www.facebook.com/mmyyyttt/" class="fab fa-facebook-f"></a>
-                                <a style={{"fontSize":"30px","padding":"10px"}} href="https://www.instagram.com/7mody_ai/?next=%2F" class="fab fa-instagram"></a>
-                            </div>
+                        <div class="share">
+                            <a style={{ "fontSize": "30px", "padding": "10px" }} href="https://www.facebook.com/mmyyyttt/" class="fab fa-facebook-f"></a>
+                            <a style={{ "fontSize": "30px", "padding": "10px" }} href="https://www.instagram.com/7mody_ai/?next=%2F" class="fab fa-instagram"></a>
+                        </div>
                     </div>
 
                 </div>
