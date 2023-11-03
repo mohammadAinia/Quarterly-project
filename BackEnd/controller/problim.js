@@ -103,9 +103,9 @@ else return res.json({valid:false})
 
 }
 const delete_problem =(req,res)=>{
-    const sql = "delete from problims where id =?"
-    const sqll='delete from answer_table where id_problim=?'
-    const id = req.params.id
+    const sql = 'delete from problims where id =?'
+    const sqll='delete from answer_tables where id_problim=?'
+    var id = req.params.id
     db.query(sql, [id], (err, result) => {
         if (err) return res.json(err)
         db.query(sqll, [id], (err, result) => {
