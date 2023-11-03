@@ -1,134 +1,232 @@
 .main {
-    width: 2000px;
-    min-height: 280vh;
-    display: flex;
-    align-items: center;
-    background: url(../../Assert/Images/home3.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+  width: 2000px;
+  min-height: 460vh;
+  display: flex;
+  align-items: center;
+  background: url(../../Assert/Images/home3.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin-left: 90px;
 }
 
 .main h2 {
-    margin-top: 1800px;
-    color: #fff;
-    font-size: 1.8em;
-    font-weight: 500;
+  margin-top: 3700px;
+  color: #fff;
+  font-size: 1.8em;
+  font-weight: 500;
 }
 
 .main h2 span {
-    display: inline-block;
-    margin: 10px;
-    color: #ff9748;
-    font-size: 3em;
-    font-weight: 600;
+  display: inline-block;
+  margin: 10px;
+  color: #ff9748;
+  font-size: 3em;
+  font-weight: 600;
 }
 
 .main h3 {
-    color: #ff9748;
-    font-size: 2em;
-    font-weight: 700;
-    letter-spacing: 7px;
-    margin-top: 10px;
-    margin-bottom: 30px;
-    margin-left: 12px;
+  color: #ff9748;
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: 7px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  margin-left: 12px;
 }
 
 .main-btn {
-    color: #ff9748;
-    font-size: 1.6em;
-    font-weight: 600;
-    background-color: #fff;
-    text-decoration: none;
-    display: inline-block;
-    padding: 0.9375em 2.1875em;
-    letter-spacing: 1.5px;
-    border-radius: 15px;
-    margin-bottom: 40px;
-    margin-right: 20px;
-    transition: 0.5s ease;
+  color: #ff9748;
+  font-size: 1.6em;
+  font-weight: 600;
+  background-color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.9375em 2.1875em;
+  letter-spacing: 1.5px;
+  border-radius: 15px;
+  margin-bottom: 40px;
+  margin-right: 20px;
+  transition: 0.5s ease;
 }
 
 .main-btn:hover {
-    background-color: #ff9748;
-    color: #fff;
-    transform: scale(1.1);
+  background-color: #ff9748;
+  color: #fff;
+  transform: scale(1.1);
 }
+
 .main h2 span:hover {
-    color: #fff;
+  color: #fff;
 
 }
-.about .box-container{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 6rem;
-  }
-  
-  .about .deco-title{
-    font-size: 10rem;
-    font-weight: 700;
-    white-space: nowrap;
-    line-height: 0.5;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 1px #ff6e01;
-    transform-origin: top left;
-    transform: rotate(0.25turn);
-    position: absolute;
-    top: 115%;
-    left: 49%;
-    z-index: -1;
-  }
-  
-  .about .box-container .image{
-    flex: 1 1 31rem;
-  }
-  
-  .about .box-container .image img{
-    width: 100%;
-  }
-  
-  .about .content{
-    flex: 1 1 41rem;
-  }
-  
-  .about .content .title{
-    font-size: 4rem;
-    color: var(--black);
-    color:#ff6e01;
-  }
-  
-  .about .content p{
-    font-size: 1.7rem;
-    color: #444;
-    padding: 1rem 0;
-    line-height: 2;
-  }
-  
-  .about .content .icons-container{
-    display: flex;
-    flex-wrap: wrap;
-    gap: .5rem;
-    margin-top: 3rem;
-  }
-  
-  .about .content .icons-container .icons{
-    flex: 1 1 16rem;
-    text-align: center;
-    background: var(--bg);
-    padding: 3rem 2rem;
-  }
-  
-  .about .content .icons-container .icons .fas{
-    height: 5rem;
-    font-size: 4rem;
-    color: var(--main);
-  }
-  
-  .about .content .icons-container .icons h3{
-    padding-top: 1rem;
-    font-size: 1.5rem;
-    color: #444;
-    font-weight: normal;
-  }
+
+.about .box-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6rem;
+}
+
+.about .deco-title {
+  font-size: 10rem;
+  font-weight: 700;
+  white-space: nowrap;
+  line-height: 0.5;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #ff6e01;
+  transform-origin: top left;
+  transform: rotate(0.25turn);
+  position: absolute;
+  top: 115%;
+  left: 49%;
+  z-index: -1;
+}
+
+.about .box-container .image {
+  flex: 1 1 31rem;
+  margin-left: 10px;
+}
+
+.about .box-container .image img {
+  width: 130%;
+}
+
+.about .content {
+  flex: 1 1 41rem;
+  margin-left: 400px;
+}
+
+.about .content .title {
+  font-size: 4rem;
+  color: var(--black);
+  color: #ff6e01;
+}
+
+.about .content p {
+  font-size: 1.7rem;
+  color: #444;
+  padding: 1rem 0;
+  line-height: 2;
+}
+
+.about .content .icons-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: 3rem;
+}
+
+.about .content .icons-container .icons {
+  flex: 1 1 16rem;
+  text-align: center;
+  background: var(--bg);
+  padding: 3rem 2rem;
+}
+
+.about .content .icons-container .icons:hover {
+  transform: scale(1.1);
+  color: black;
+  background-color: #fff;
+}
+
+.about .content .icons-container .icons .fas {
+  height: 5rem;
+  font-size: 4rem;
+  color: var(--main);
+}
+
+.about .content .icons-container .icons h3 {
+  padding-top: 1rem;
+  font-size: 1.5rem;
+  color: #444;
+  font-weight: normal;
+}
+
+.footer {
+  background: url(../../Assert/Images/footer.jpg) no-repeat;
+  background-size: cover;
+  padding: 3rem 7%;
+}
+
+.footer .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 1.5rem;
+}
+
+.footer .box-container .box h3 {
+  font-size: 2.5rem;
+  color: var(--main);
+  padding: 1rem 0;
+}
+
+.footer .box-container .box p {
+  font-size: 1.7rem;
+  line-height: 1.8;
+  color: var(--white);
+  padding: 1rem 0;
+}
+
+.footer .box-container .box .links {
+  display: block;
+  font-size: 1.8rem;
+  color: var(--white);
+  padding: 1rem 0;
+}
+
+.footer .box-container .box .links i {
+  color: var(--main);
+  padding-right: .5rem;
+}
+
+.footer .box-container .box .links:hover i {
+  padding-right: 2rem;
+}
+
+.footer .box-container .box .days {
+  margin-left: 2.2rem;
+  line-height: .2;
+}
+
+.footer .box-container .box .email {
+  width: 100%;
+  margin: .7rem 0;
+  padding: 1rem;
+  border-radius: .5rem;
+  background: var(--white);
+  font-size: 1.6rem;
+  color: var(--black);
+  text-transform: none;
+}
+
+.footer .box-container .box .share a {
+  height: 5rem;
+  width: 5rem;
+  line-height: 3rem;
+  color: var(--black);
+  background: var(--white);
+  font-size: 1.2rem;
+  border-radius: 5rem;
+  margin-right: .8rem;
+  text-align: center;
+  margin-top: 1.4rem;
+}
+
+.footer .box-container .box .share a:hover {
+  background: var(--main);
+}
+
+.footer .credit {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 2.5rem;
+  color: var(--black);
+  border-top: .2rem solid rgba(0, 0, 0, 0.2);
+}
+
+.footer .credit .link {
+  color: var(--main);
+}
