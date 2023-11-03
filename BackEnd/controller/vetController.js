@@ -197,7 +197,7 @@ const evints =(vet)=>{
                     var not="The remaining days for next vacc  for  animal  " +  u.name +" "+ss +" day/s"
                     // db.query(sqlll,[u.id,u.id_v_r],(err,resu)=>{
                         // if (err) console.log(err)
-                        // else if (resu.length==0) {
+                        // else if (resu.length==0) hhkh{.m,m.
                             // var tt="Vaccien"
                             // var tostring=u.id_v_r
                             var sql1= "INSERT event_gen (disc) VALUES('" + not + "')"              
