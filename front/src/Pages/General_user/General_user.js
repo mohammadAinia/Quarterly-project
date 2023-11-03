@@ -173,10 +173,9 @@ const General_user = () => {
                     <div class="box">
                         <h3>Contact Info</h3>
                         <a href="#" class="links"><i class="fas fa-phone"></i> 0992288581</a>
-                        <a href="mailto:mmyyttt@gmail.com" class="links"><i class="fas fa-envelope"></i> mmyyttt@gmail.com</a>
+                        <a href="mailto:mmyyttt@gmail.com" class="links"><i class="fas fa-envelope"></i> petcare@gmail.com</a>
                         <a href="#" class="links"><i class="fas fa-map-marker-alt"></i> Deir Atiya, Syria</a>
                     </div>
-
                     <div class="box">
                         <h3>Social Media</h3>
                             <div class="share">
