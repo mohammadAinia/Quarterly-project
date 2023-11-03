@@ -19,7 +19,7 @@ function show_user(req,res){
         return res.json({result})
     })
 }
-else return res.json({valid:false})
+else return res.json({valid:false}) 
 }
 function creat_caht(req,res){
     if(req.session.username){
