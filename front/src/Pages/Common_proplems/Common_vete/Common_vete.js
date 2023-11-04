@@ -23,7 +23,7 @@ const Common_vete = () => {
         [])
     return (
         <>
-              <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_vete"} a2={"FAQs"} href3={"/all_follow"} a3={"All Follow"} href4={"/All_problem"} a4={"Forum"} href6={"/Notifications"} a6={<FontAwesomeIcon icon={faBell} />} href7={"/profile"} a7={<div id="login-btn" className="fas fa-user"></div>} href8={"Home_vet"} a8={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
+              <Header href1={"/Adopt"} a1={"Adopt"} href2={"common_vete"} a2={"FAQs"} href3={"/all_follow"} a3={"All Follow"} href4={"/All_problem"} a4={"Forum"}href5={"Add_problem"} a5={<FontAwesomeIcon icon={faPlus} />} href6={"/Notifications"} a6={<FontAwesomeIcon icon={faBell} />} href7={"/profile_vet"} a7={<div id="login-btn" className="fas fa-user"></div>} href8={"Home_vet"} a8={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
             <section className="pricing" id="pricing" style={{ "margin-top":"3500px"}}>
 
                 <h2 className="heading" style={{ "margin-left":"100px"}}>FAQs</h2>

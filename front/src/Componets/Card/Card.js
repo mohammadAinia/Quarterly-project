@@ -10,7 +10,7 @@ const Card = (props) => {
                     <img src={props.image} alt="You don't have any animals" />
                     <div className="content">
                         <h3>{props.name}</h3>
-                        <a href={props.href} className="btn">{props.a} <Link style={{ "color": "white"}} to={`Animal_info_id/${props.id}`}>{props.link}</Link> </a>
+                        <a href={props.href} className="btn">{props.a} <Link style={{ "color": "white"}} to={`Animal_info_id_follow/${props.id}`}>{props.link}</Link> </a>
                     </div>
                 </div>
             </div>

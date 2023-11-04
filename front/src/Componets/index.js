@@ -89,36 +89,9 @@ export {default as Add_veci} from './1veterinarian/Add_veci/Add_veci'
 export {default as Add_vecine} from '../Pages/Veterinarian/Add_vecine/Add_vecine'
 export {default as General_user} from '../Pages/General_user/General_user'
 export {default as FAQs} from '../Pages/Common_proplems/FAQs/FAQs'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export {default as Profile_veterinarian} from '../Pages/Veterinarian/Profile_veterinarian/Profile_veterinarian'
+export {default as Profile_vet} from './1veterinarian/Profile_vet/Profile_vet'
+export {default as Update_vet} from '../Pages/Veterinarian/Update_vet/Update_vet'
+export {default as Animal_info_id_follow} from '../Pages/Veterinarian/Animal_info_id_follow/Animal_info_id_follow'
 
 
