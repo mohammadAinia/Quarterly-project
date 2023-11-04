@@ -11,7 +11,8 @@ import {
   Your_ploblem, Update_problem, Page_chat, Profile_id, Vaccine_id, Search_user, Search_result,
   Notifications, Animal_info_adopt, Type_search, Common_vete, Add_common,Request,Your_animall,
   Search_problem, Search_result2, All_followw, Home,Add_report,All_doctor,Details_animal,Update_vet,
-  Profile_vet_id,All_veci,Add_advices,All_advices,Add_vecine,General_user,FAQs,Profile_veterinarian
+  Profile_vet_id,All_veci,Add_advices,All_advices,Add_vecine,General_user,FAQs,Profile_veterinarian,
+  Notifications_vet,Animal_info_id_follow,All_problems_vet
 } from './Componets/index'
 
 const App = () => {
@@ -92,7 +93,12 @@ const App = () => {
             <Route path='FAQs' element={<FAQs />} /> 
             <Route path='profile_vet' element={<Profile_veterinarian />} /> 
             <Route path='update_vet' element={<Update_vet />} /> 
-            <Route path='Animal_info_id_follow' element={<Profile_veterinarian />} /> 
+            <Route path='Animal_info_id_follow' element={<Animal_info_id_follow />} /> 
+            <Route path='Notifications_vet' element={<Notifications_vet />} /> 
+            <Route path='Forum_vet' element={<All_problems_vet />} /> 
+            <Route path='Forum_vet/Problem_id/:id' element={<Problem_id />} /> 
+
+
 
 
           </Routes>

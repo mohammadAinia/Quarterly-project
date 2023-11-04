@@ -39,7 +39,7 @@ const Home = () => {
     return (
         <>
 
-            <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_vete"} a2={"FAQs"} href5={"/requst"} a5={<FontAwesomeIcon icon={faLink} />} href6={"all_advice"} a6={<FontAwesomeIcon icon={faNotesMedical} />} href7={"all_vaccine"} a7={<FontAwesomeIcon icon={faSyringe} />} href3={"all_follow"} a3={"All Follow"} href4={"/All_problem"} a4={"Forum"} href8={"/chat"} a8={<FontAwesomeIcon icon={faMessage} />} href9={"/Notifications"} a9={<FontAwesomeIcon icon={faBell} />} href10={"profile_vet"} a10={<div id="login-btn" className="fas fa-user"></div>} href11={"Home_vet"} a11={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
+            <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_vete"} a2={"FAQs"} href5={"/requst"} a5={<FontAwesomeIcon icon={faLink} />} href6={"all_advice"} a6={<FontAwesomeIcon icon={faNotesMedical} />} href7={"all_vaccine"} a7={<FontAwesomeIcon icon={faSyringe} />} href3={"all_follow"} a3={"All Follow"} href4={"/Forum_vet"} a4={"Forum"} href8={"/chat"} a8={<FontAwesomeIcon icon={faMessage} />} href9={"/Notifications_vet"} a9={<FontAwesomeIcon icon={faBell} />} href10={"profile_vet"} a10={<div id="login-btn" className="fas fa-user"></div>} href11={"Home_vet"} a11={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
 
             <section className="bbanner" style={{ "margin-top": "1810px" }}>
                 <div className="row">

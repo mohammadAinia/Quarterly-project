@@ -93,5 +93,9 @@ export {default as Profile_veterinarian} from '../Pages/Veterinarian/Profile_vet
 export {default as Profile_vet} from './1veterinarian/Profile_vet/Profile_vet'
 export {default as Update_vet} from '../Pages/Veterinarian/Update_vet/Update_vet'
 export {default as Animal_info_id_follow} from '../Pages/Veterinarian/Animal_info_id_follow/Animal_info_id_follow'
+export {default as Notifications_vet} from '../Pages/Veterinarian/Notifications_vet/Notifications_vet'
+export {default as All_problems_vet} from '../Pages/Veterinarian/All_problems_vet/All_problems_vet'
+
+
 
 
