@@ -93,7 +93,7 @@ const Home_owner = () => {
         </div>
       </section>
 
-      <Add_proplem />
+      <Add_proplem href={"my_problem"}/>
 
       <section className="pricing" id="pricing">
         <h2 className="heading">Forum</h2>

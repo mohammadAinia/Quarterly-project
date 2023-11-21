@@ -95,6 +95,14 @@ export {default as Update_vet} from '../Pages/Veterinarian/Update_vet/Update_vet
 export {default as Animal_info_id_follow} from '../Pages/Veterinarian/Animal_info_id_follow/Animal_info_id_follow'
 export {default as Notifications_vet} from '../Pages/Veterinarian/Notifications_vet/Notifications_vet'
 export {default as All_problems_vet} from '../Pages/Veterinarian/All_problems_vet/All_problems_vet'
+export {default as Problem_id_vet} from '../Pages/Veterinarian/Problem_id_vet/Problem_id_vet'
+export {default as Your_problem_vet} from '../Pages/Veterinarian/Your_problem_vet/Your_problem_vet'
+export {default as Update_problem_vet} from '../Pages/Veterinarian/Update_problem_vet/Update_problem_vet'
+export {default as Animal_follow_id} from '../Pages/Veterinarian/Animal_follow_id/Animal_follow_id'
+
+
+
+
 
 
 

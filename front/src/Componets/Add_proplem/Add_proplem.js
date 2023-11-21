@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
 
-const Add_proplem = () => {
+const Add_proplem = (props) => {
     const navigate = useNavigate()
 
     const [Name, setName] = useState('')
@@ -67,7 +67,8 @@ const Add_proplem = () => {
 
                     <div>
                         <button  className="btn">share</button><br/>
-                        <a href='/my_problem' className="btn">my problem</a>
+                        {/* <a href='/my_problem' className="btn">my problem</a> */}
+                        <a href={props.href} className="btn">my problem</a>
 
                     </div>
 

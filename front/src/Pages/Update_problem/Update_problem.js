@@ -6,9 +6,8 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faRightFromBracket, faBell, faHouse, faMessage, faUserDoctor, faStethoscope } from '@fortawesome/free-solid-svg-icons'
 const Update_problem = () => {
+
     const navigate = useNavigate()
-
-
     const [Name, setName] = useState('')
     const [Details, setDetails] = useState('')
     const [Type, setType] = useState('')

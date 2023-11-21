@@ -12,7 +12,8 @@ import {
   Notifications, Animal_info_adopt, Type_search, Common_vete, Add_common,Request,Your_animall,
   Search_problem, Search_result2, All_followw, Home,Add_report,All_doctor,Details_animal,Update_vet,
   Profile_vet_id,All_veci,Add_advices,All_advices,Add_vecine,General_user,FAQs,Profile_veterinarian,
-  Notifications_vet,Animal_info_id_follow,All_problems_vet
+  Notifications_vet,Animal_info_id_follow,All_problems_vet,Problem_id_vet,Your_problem_vet,Update_problem_vet,
+  Animal_follow_id
 } from './Componets/index'
 
 const App = () => {
@@ -73,8 +74,8 @@ const App = () => {
             <Route path='/Search_type_common' element={<Search_problem />} />
             <Route path='/search_result2/:Type' element={<Search_result2 />} />
             <Route path='Home_vet' element={<Home />} />
-            <Route path='Home_vet/Problem_id/:id' element={<Problem_id />} />
-            <Route path='Home_vet/Animal_info_id/:id' element={<Animal_info_id />} />
+            <Route path='Home_vet/Problem_id/:id' element={<Problem_id_vet />} />
+            <Route path='Home_vet/Animal_info_id_follow/:id' element={<Animal_follow_id />} />
             <Route path='Home_vet/Animal_info_id/:id/update/:id' element={<Update_animals />} />
             <Route path='Home_vet/Animal_info_id/:id/show_vaccines/:id' element={<Vaccine_id />} />
             <Route path='add_report/:id' element={<Add_report />} />
@@ -96,7 +97,11 @@ const App = () => {
             <Route path='Animal_info_id_follow' element={<Animal_info_id_follow />} /> 
             <Route path='Notifications_vet' element={<Notifications_vet />} /> 
             <Route path='Forum_vet' element={<All_problems_vet />} /> 
-            <Route path='Forum_vet/Problem_id/:id' element={<Problem_id />} /> 
+            <Route path='Forum_vet/Problem_id/:id' element={<Problem_id_vet />} />
+            <Route path='my_problem_vet' element={<Your_problem_vet />} /> 
+            <Route path='my_problem_vet/update_problem/:id' element={<Update_problem_vet />} /> 
+
+
 
 
 

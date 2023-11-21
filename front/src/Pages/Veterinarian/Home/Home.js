@@ -93,7 +93,7 @@ const Home = () => {
                 </div>
             </section>
 
-            <Add_proplem />
+            <Add_proplem href={"my_problem_vet"}/>
 
             <section className="pricing" id="pricing">
                 <h2 className="heading">Forum</h2>
