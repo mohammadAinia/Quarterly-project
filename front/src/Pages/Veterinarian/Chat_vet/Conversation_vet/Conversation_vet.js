@@ -1,13 +1,12 @@
-import './Conversation.css'
+import './Conversation_vet.css'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { Header, Conversation_sender, Conversation_receive } from '../../../Componets'
+import { Header, Conversation_sender, Conversation_receive } from '../../../../Componets'
 import { useNavigate, useParams } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faRightFromBracket, faBell, faHouse, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
-const Conversation = () => {
-    const navigate = useNavigate()
 
+const Conversation_vet = () => {
     const { id } = useParams()
 
     const [Name, setName] = useState('')
@@ -44,9 +43,9 @@ const Conversation = () => {
     }
     return (
         <>
-            <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"FAQs"} href3={"/Animal_infoo"} a3={"My Animals"} href4={"/All_problem"} a4={"Forum"} href6={"/Notifications"} a6={<FontAwesomeIcon icon={faBell} />} href7={"/profile"} a7={<div id="login-btn" className="fas fa-user"></div>} href8={"/"} a8={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
+            <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_vete"} a2={"FAQs"} href3={"/all_follow"} a3={"All Follow"} href4={"/Forum_vet"} a4={"Forum"} href6={"/Notifications_vet"} a6={<FontAwesomeIcon icon={faBell} />} href7={"/profile_vet"} a7={<div id="login-btn" className="fas fa-user"></div>} href8={"Home_vet"} a8={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
 
-            <form style={{"margin-top" : "80px"}} onSubmit={handleSubmit}>
+            <form style={{ "margin-top": "80px" }} onSubmit={handleSubmit}>
                 <div class="--dark-theme" id="chat">
                     <div class="chat__conversation-board">
 
@@ -90,4 +89,4 @@ const Conversation = () => {
     )
 }
 
-export default Conversation
+export default Conversation_vet

@@ -99,6 +99,21 @@ export {default as Problem_id_vet} from '../Pages/Veterinarian/Problem_id_vet/Pr
 export {default as Your_problem_vet} from '../Pages/Veterinarian/Your_problem_vet/Your_problem_vet'
 export {default as Update_problem_vet} from '../Pages/Veterinarian/Update_problem_vet/Update_problem_vet'
 export {default as Animal_follow_id} from '../Pages/Veterinarian/Animal_follow_id/Animal_follow_id'
+export {default as Vaccine_vet_id} from '../Pages/Veterinarian/Vaccine_vet_id/Vaccine_vet_id'
+export {default as Page_chat_vet} from '../Pages/Veterinarian/Chat_vet/Page_chat_vet/Page_chat_vet'
+export {default as Conversation_vet} from '../Pages/Veterinarian/Chat_vet/Conversation_vet/Conversation_vet'
+export {default as Profile_id_vett} from '../Pages/Veterinarian/Chat_vet/Profile_id_vett/Profile_id_vett'
+export {default as Type_search_vet} from '../Pages/Veterinarian/Chat_vet/Type_search_vet/Type_search_vet'
+export {default as Search_user_vet} from '../Pages/Veterinarian/Chat_vet/Search_user_vet/Search_user_vet'
+export {default as Search_result_vet} from '../Pages/Veterinarian/Chat_vet/Search_result_vet/Search_result_vet'
+
+
+
+
+
+
+
+
 
 
 
