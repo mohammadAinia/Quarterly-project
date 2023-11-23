@@ -17,7 +17,7 @@ const Add_Animal_to_adopt = () => {
           </div>
         </div>
       </div>
-    </>//j
+    </>
   )
 }
 

@@ -14,7 +14,8 @@ import {
   Profile_vet_id, All_veci, Add_advices, All_advices, Add_vecine, General_user, FAQs, Profile_veterinarian,
   Notifications_vet, Animal_info_id_follow, All_problems_vet, Problem_id_vet, Your_problem_vet, Update_problem_vet,
   Animal_follow_id, Vaccine_vet_id, Page_chat_vet, Conversation_vet,Profile_id_vett,Search_user_vet
-  ,Type_search_vet,Search_result_vet
+  ,Type_search_vet,Search_result_vet,Adopt_vet,Type_add_animal_vet,Your_animal_vet,Add_Animal_to_adopt_vet,
+  Animal_info_adopt_vet
 } from './Componets/index'
 
 const App = () => {
@@ -56,9 +57,13 @@ const App = () => {
             <Route path='/All_problem/Problem_id/:id' element={<Problem_id />} />
             <Route path='/Notifications' element={<Notifications />} />
             <Route path='/Adopt' element={<Adoptt />} />
+            <Route path='/Adopt_vet' element={<Adopt_vet />} />
             <Route path='/Choose_type_add_animal_to_adopt' element={<Type_add_animal />} />
+            <Route path='/Choose_type_add_animal_to_adopt_vet' element={<Type_add_animal_vet />} />
             <Route path='/Add_Animal_to_adopt' element={<Add_Animal_to_adopt />} />
+            <Route path='/Add_Animal_to_adopt_vet' element={<Add_Animal_to_adopt_vet />} />
             <Route path='/Chose_from_your_animal' element={<Your_animal />} />
+            <Route path='/Chose_from_your_animal_vet' element={<Your_animal_vet />} />
             <Route path='/profile' element={<Profile />} />
             <Route path='/update_user' element={<Verification />} />
             <Route path='/update_userr/:id' element={<Update_user />} />
@@ -71,8 +76,9 @@ const App = () => {
             <Route path='/Search_user_vet' element={<Search_user_vet />} />
             <Route path='/search_result/:Type' element={<Search_result />} />
             <Route path='/search_result_vet/:Type' element={<Search_result_vet />} />
-
             <Route path='Animal_info_adopt/:id' element={<Animal_info_adopt />} />
+            <Route path='Animal_info_adopt_vet/:id' element={<Animal_info_adopt_vet />} />
+
             <Route path='Animal_info_adopt/:id/show_vaccines/:id' element={<Vaccine_id />} />
             <Route path='/Search_type' element={<Type_search />} />
             <Route path='/Search_type_vet' element={<Type_search_vet />} />

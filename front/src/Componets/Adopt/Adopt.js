@@ -43,7 +43,7 @@ const Adopt = (props) => {
                     <p>
                         {props.phone}
                     </p>
-                    <a href={`Animal_info_adopt/${props.id}`} className="btn">See Details</a>
+                    <a href={props.details} className="btn">See Details</a>
                     <br />
                     <a href={props.href} className="btn"> <button style={{ "color": "white", "background": "none", "fontSize": "17.5px" }} onClick={e => handleRequistAdopt(props.id)} >adoption</button></a>
                 </div>

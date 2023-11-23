@@ -106,6 +106,16 @@ export {default as Profile_id_vett} from '../Pages/Veterinarian/Chat_vet/Profile
 export {default as Type_search_vet} from '../Pages/Veterinarian/Chat_vet/Type_search_vet/Type_search_vet'
 export {default as Search_user_vet} from '../Pages/Veterinarian/Chat_vet/Search_user_vet/Search_user_vet'
 export {default as Search_result_vet} from '../Pages/Veterinarian/Chat_vet/Search_result_vet/Search_result_vet'
+export {default as Adopt_vet} from '../Pages/Veterinarian/Adopt_vet/Adopt_vet'
+export {default as Type_add_animal_vet} from '../Pages/Veterinarian/Adopt_vet/Type_add_animal_vet/Type_add_animal_vet'
+export {default as Your_animal_vet} from '../Pages/Veterinarian/Adopt_vet/Your_animal_vet/Your_animal_vet'
+export {default as Add_Animal_to_adopt_vet} from '../Pages/Veterinarian/Adopt_vet/Add_Animal_to_adopt_vet/Add_Animal_to_adopt_vet'
+export {default as Animal_info_adopt_vet} from '../Pages/Veterinarian/Adopt_vet/Animal_info_adopt_vet/Animal_info_adopt_vet'
+
+
+
+
+
 
 
 
