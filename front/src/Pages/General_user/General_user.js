@@ -1,8 +1,8 @@
 import './General_user.css'
-import bunner from '../../../src/Assert/Images/care.jpg'
-import bunner2 from '../../../src/Assert/Images/adopt5.jpg'
-import bunner3 from '../../../src/Assert/Images/vet.jpg'
-import bunner4 from '../../../src/Assert/Images/comunity.jpg'
+import bunner from '../../../src/Assert/Images/comu.png'
+import bunner2 from '../../../src/Assert/Images/adopt5.png'
+import bunner3 from '../../../src/Assert/Images/vetclinic.png'
+import bunner4 from '../../../src/Assert/Images/contact.png'
 
 
 import { Header } from '../../Componets'
@@ -29,7 +29,7 @@ const General_user = () => {
 
             <section class="about" id="about">
 
-                <h2 style={{ "margin-top": "120px", "margin-left": "19px" }} class="deco-title">care them</h2>
+                <h2 style={{ "margin-top": "120px", "margin-left": "30px" }} class="deco-title">care them</h2>
 
                 <div class="box-container">
 
@@ -63,7 +63,7 @@ const General_user = () => {
 
             <section class="about" id="about">
 
-                <h2 style={{ "margin-top": "1100px", "margin-left": "18px" }} class="deco-title">Adopt me !</h2>
+                <h2 style={{ "margin-top": "980px", "margin-left": "30px" }} class="deco-title">Adopt me !</h2>
 
                 <div class="box-container">
 
@@ -96,7 +96,7 @@ const General_user = () => {
 
             <section class="about" id="about">
 
-                <h2 style={{ "margin-top": "1970px", "font-size": "40px" }} class="deco-title">communication</h2>
+                <h2 style={{ "margin-top": "1780px", "font-size": "70px","margin-left": "30px" }} class="deco-title">communication</h2>
 
                 <div class="box-container">
 
@@ -129,7 +129,7 @@ const General_user = () => {
 
             <section class="about" id="about">
 
-                <h2 style={{ "margin-top": "2510px", "font-size": "90px", "margin-left": "px" }} class="deco-title">cooperation</h2>
+                <h2 style={{ "margin-top": "2590px","font-size": "70px", "margin-left": "30px" }} class="deco-title">cooperation</h2>
 
                 <div class="box-container">
 
@@ -186,7 +186,7 @@ const General_user = () => {
 
                 </div>
 
-                <div class="credit">&copy; 2023 Quarterly project ,Developed by <a href="#" class="link">Ainia , Nafory , Najdat</a></div>
+                <div style={{ "color": "white" }}  class="credit">&copy; 2023 Quarterly project , Developed by <a href="#" class="link">Ainia , Nafory , Najdat</a></div>
 
             </section>
         </>
