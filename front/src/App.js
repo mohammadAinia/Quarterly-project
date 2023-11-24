@@ -15,7 +15,7 @@ import {
   Notifications_vet, Animal_info_id_follow, All_problems_vet, Problem_id_vet, Your_problem_vet, Update_problem_vet,
   Animal_follow_id, Vaccine_vet_id, Page_chat_vet, Conversation_vet,Profile_id_vett,Search_user_vet
   ,Type_search_vet,Search_result_vet,Adopt_vet,Type_add_animal_vet,Your_animal_vet,Add_Animal_to_adopt_vet,
-  Animal_info_adopt_vet
+  Animal_info_adopt_vet,Search_vet
 } from './Componets/index'
 
 const App = () => {
@@ -73,11 +73,14 @@ const App = () => {
             <Route path='/profile_id/:id' element={<Profile_id />} />
             <Route path='/profile_id_vettt/:id' element={<Profile_id_vett />} />
             <Route path='/Search_user' element={<Search_user />} />
+            <Route path='/Search_vet' element={<Search_vet />} />
+
             <Route path='/Search_user_vet' element={<Search_user_vet />} />
             <Route path='/search_result/:Type' element={<Search_result />} />
             <Route path='/search_result_vet/:Type' element={<Search_result_vet />} />
             <Route path='Animal_info_adopt/:id' element={<Animal_info_adopt />} />
             <Route path='Animal_info_adopt_vet/:id' element={<Animal_info_adopt_vet />} />
+            <Route path='Animal_info_adopt_vet/:id/show_vaccines/:id' element={<Vaccine_vet_id />} />
 
             <Route path='Animal_info_adopt/:id/show_vaccines/:id' element={<Vaccine_id />} />
             <Route path='/Search_type' element={<Type_search />} />

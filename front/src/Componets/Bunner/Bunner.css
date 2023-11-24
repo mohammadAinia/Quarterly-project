@@ -1,6 +1,13 @@
 
 .bbanner{
-    background: url(../../Assert/Images/banner.png) no-repeat;
+    /* background: url(../../Assert/Images/banner.png) no-repeat; */
+    background: url(../../Assert/Images/main3.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 1900px;
+    height: 1000px;
+
   }
   
   .bbanner .row{

@@ -60,6 +60,8 @@ export {default as Profilee_id} from './Profilee_id/Profilee_id'
 export {default as Profile_id} from '../Pages/Chat/Profile_id/Profile_id'
 export {default as Vaccine_id} from '../Pages/Bief_animal/Vaccine_id/Vaccine_id'
 export {default as Search_user} from '../Pages/Chat/Search_user/Search_user'
+export {default as Search_vet} from '../Pages/Chat/Search_vet/Search_vet'
+
 export {default as Search_result} from '../Pages/Chat/Search_result/Search_result' 
 export {default as Choose_button} from './Choose_button/Choose_button'
 export {default as Type_search} from '../Pages/Chat/Type_search/Type_search'
@@ -105,6 +107,8 @@ export {default as Conversation_vet} from '../Pages/Veterinarian/Chat_vet/Conver
 export {default as Profile_id_vett} from '../Pages/Veterinarian/Chat_vet/Profile_id_vett/Profile_id_vett'
 export {default as Type_search_vet} from '../Pages/Veterinarian/Chat_vet/Type_search_vet/Type_search_vet'
 export {default as Search_user_vet} from '../Pages/Veterinarian/Chat_vet/Search_user_vet/Search_user_vet'
+export {default as Search_vet_page} from '../Pages/Veterinarian/Chat_vet/Search_vet_page/Search_vet_page'
+
 export {default as Search_result_vet} from '../Pages/Veterinarian/Chat_vet/Search_result_vet/Search_result_vet'
 export {default as Adopt_vet} from '../Pages/Veterinarian/Adopt_vet/Adopt_vet'
 export {default as Type_add_animal_vet} from '../Pages/Veterinarian/Adopt_vet/Type_add_animal_vet/Type_add_animal_vet'

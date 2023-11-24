@@ -1,4 +1,4 @@
-import './Search_problem.css'
+import './Search_vet.css'
 import { Header, Profilee } from '../../../Componets/index'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faRightFromBracket, faBell, faHouse } from '@fortawesome/free-solid-svg-icons'
@@ -6,15 +6,14 @@ import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const Search_problem = () => {
-
+const Search_vet = () => {
     const navigate = useNavigate()
     const [Type, setType] = useState('')
 
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
         // alert(Type)
-        navigate(`/search_result2/${Type}`)
+        navigate(`/search_result/${Type}`)
 
     }
     return (
@@ -27,14 +26,8 @@ const Search_problem = () => {
                     <form onSubmit={handleSubmit}>
                         <div class="user-details">
                             <div class="input-box">
-                                <span class="details">type </span>
-                                <select style={{ "width": "250px" }} name="type" idd="animal" required onChange={e => setType(e.target.value)} >
-                                    <option value={""} ></option>
-                                    <option value={"cat"} >Cat</option>
-                                    <option value={"dog"} >Dog</option>
-                                    <option value={"bird"} >Bird</option>
-                                    <option value={"reptile"} >Reptile</option>
-                                </select>
+                                <span class="details">Name </span>
+                                <input style={{ "width": "280px" }} type="text" required onChange={e => setType(e.target.value)} />
                             </div>
                         </div>
                         <div class="button">
@@ -48,4 +41,4 @@ const Search_problem = () => {
     )
 }
 
-export default Search_problem
+export default Search_vet
