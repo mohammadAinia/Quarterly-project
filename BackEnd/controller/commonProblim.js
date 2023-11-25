@@ -7,7 +7,7 @@ function show_all_comon_prob(req,res){
         if (err) return res.json(err)
         return res.json(result) + console.log()
     }
-    )
+    ) 
 } 
 function add_common_problem(req,res){
     if(req.session.username){

@@ -13,7 +13,7 @@ router.get('/accept_requset/:id',vet.accept_req)
 router.get('/addreq/:id/:id2',vet.add_req)
 router.get('/showAllV',vet.show_all_vacc)
 router.get('/showall_ad',vet.show_all_comon_prob)
-
+router.get('/show_profile',vet.show_profile_vet_p)
 router.post('/medical/add_report/:id',medical.add_report)
 router.post('/addNewV',vet.add__new_vacc)
 router.post('/Add_advice',vet.add_advice)

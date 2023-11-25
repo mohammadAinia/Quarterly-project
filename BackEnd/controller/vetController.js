@@ -231,9 +231,19 @@ const evints =(vet)=>{
    
     }
 
+
+    function show_profile_vet_p(req,res){
+        var id=req.session.username
+        sql='select * from user_infos join veterinarianns on user_infos.id=veterinarianns.user_id where user_infos.email=?'
+        db.query(sql,[id],(err,result)=>{
+            if(err) console.log(err)
+    
+            return res.json({valid:true,result})
+        })
+    }
 module.exports={home_vat:home_vat,
     all_an:all_an,
-    show_requsts:show_requsts,
+    show_requsts:show_requsts, 
     accept_req:accept_req,
     show_all_vet,
     show_profile_vet:show_profile_vet,
@@ -241,5 +251,6 @@ module.exports={home_vat:home_vat,
     add__new_vacc:add__new_vacc,
     show_all_vacc:show_all_vacc,
     show_all_comon_prob:show_all_comon_prob,
-    add_advice:add_advice
+    add_advice:add_advice,
+    show_profile_vet_p:show_profile_vet_p
 }

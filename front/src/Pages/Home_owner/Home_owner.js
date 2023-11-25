@@ -41,10 +41,10 @@ const Home_owner = () => {
 
       <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"FAQs"} href5={"/Add_Animal"} a5={<FontAwesomeIcon icon={faPlus} />} href6={"all_doc"} a6={<FontAwesomeIcon icon={faStethoscope} />} href3={"/Animal_infoo"} a3={"My Animals"} href4={"/All_problem"} a4={"Forum"} href7={"/chat"} a7={<FontAwesomeIcon icon={faMessage} />} href8={"/Notifications"} a8={<FontAwesomeIcon icon={faBell} />} href9={"/profile"} a9={<div id="login-btn" className="fas fa-user"></div>} href10={"/"} a10={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
 
-      <section className="bbanner" style={{ "margin-top": "1800px" }}>
+      <section className="bbanner" style={{ "margin-top": "2200px","margin-left":"200px" }}>
         <div className="row">
           <div style={{ "margin-top": "170px","margin-left":"260px" }} className="content">
-            <h3>{"Welcome   " + name}</h3>
+            <h3 style={{"fontSize":"30px" }}>{"Welcome   " + name}</h3>
             <br />
             <br />
             <br />
@@ -52,11 +52,11 @@ const Home_owner = () => {
             <br />
             <div className='nav'>
 
-            <h3 style={{ "margin-left": "10px" }}>     your advice</h3>
+            <h3 style={{ "margin-left": "10px","fontSize":"28px" }}>     your advice</h3>
 
               {Advice.map((user, i) => {
                 return (
-                  <div key={i}>
+                  <div  style={{"fontSize":"40px" }} key={i}>
                     <Bunner p1={user.one}
                       p2={user.gen_tip}
                       // p3={user.gen_tip} 

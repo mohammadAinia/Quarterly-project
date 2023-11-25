@@ -12,7 +12,7 @@ const Profile_veterinarian = () => {
     const [Info, setInfo] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:3001/#/#', { withCredentials: true })
+        axios.get('http://localhost:3001/vet/show_profile', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     setInfo(res.data.result)

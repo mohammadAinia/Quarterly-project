@@ -109,13 +109,27 @@ function show_pofile(req,res){
     else 
     res.json({valid:false})
 }
+function search_vet (req,res){
+    if(req.session.username){
+    var name=req.params.Type
+    sql='select * from user_infos where email IN (select email from user_infos  where first_name=? AND email!=? AND owner not in(select reciver from chats where Sender=?))'
+    db.query(sql,[name,req.session.username,req.session.username],(err,result)=>{
+        if(err) console.log(err)
+        console.log(result)
+        return res.json({valid:true,result})
+    })
+    
+}
+else return res.json({valid:false})
+}
 module.exports={show_chats:show_chats,
 show_user:show_user,
 creat_caht:creat_caht,
 open_chats:open_chats,
 send_message_id:send_message_id,
 search_user:search_user,
-show_pofile:show_pofile
+show_pofile:show_pofile,
+search_vet:search_vet
 }
 
 // db.query("select * from user_infos join animals on animals.owner=user_infos.email where animals.type="+mysql.escape(type) +")"

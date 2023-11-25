@@ -29,7 +29,7 @@ const General_user = () => {
 
             <section class="about" id="about">
 
-                <h2 style={{ "margin-top": "120px", "margin-left": "19px" }} class="deco-title">care them</h2>
+                <h2 style={{ "margin-top": "60px", "margin-left": "30px" }} class="deco-title">care them</h2>
 
                 <div class="box-container">
 
@@ -63,7 +63,7 @@ const General_user = () => {
 
             <section class="about" id="about">
 
-                <h2 style={{ "margin-top": "980px", "margin-left": "30px" }} class="deco-title">Adopt me !</h2>
+                <h2 style={{ "margin-top": "1100px", "margin-left": "30px" }} class="deco-title">Adopt me !</h2>
 
                 <div class="box-container">
 
@@ -96,7 +96,7 @@ const General_user = () => {
 
             <section class="about" id="about">
 
-                <h2 style={{ "margin-top": "1970px", "font-size": "40px" }} class="deco-title">communication</h2>
+                <h2 style={{ "margin-top": "2000px","font-size": "80px","margin-left": "30px" }} class="deco-title">communication</h2>
 
                 <div class="box-container">
 
@@ -129,7 +129,7 @@ const General_user = () => {
 
             <section class="about" id="about">
 
-                <h2 style={{ "margin-top": "2510px", "font-size": "90px", "margin-left": "px" }} class="deco-title">cooperation</h2>
+                <h2 style={{ "margin-top": "2900px", "font-size": "90px", "margin-left": "30px" }} class="deco-title">cooperation</h2>
 
                 <div class="box-container">
 
