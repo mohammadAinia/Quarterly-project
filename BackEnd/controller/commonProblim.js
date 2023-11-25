@@ -8,7 +8,7 @@ function show_all_comon_prob(req,res){
         return res.json(result) + console.log()
     }
     )
-}
+} 
 function add_common_problem(req,res){
     if(req.session.username){
     const sqll='select * from user_infos where email=?'

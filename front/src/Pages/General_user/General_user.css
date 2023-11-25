@@ -1,6 +1,6 @@
 .main {
-  width: 2000px;
-  min-height: 460vh;
+  width: 2300px;
+  min-height: 505vh;
   display: flex;
   align-items: center;
   background: url(../../Assert/Images/home3.jpg) no-repeat;
@@ -11,7 +11,7 @@
 }
 
 .main h2 {
-  margin-top: 3700px;
+  margin-top: 4100px;
   color: #fff;
   font-size: 1.8em;
   font-weight: 500;
