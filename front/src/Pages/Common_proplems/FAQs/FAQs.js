@@ -10,6 +10,7 @@ import {
     faUsers, faArrowRightArrowLeft, faPaperPlane
 } from '@fortawesome/free-solid-svg-icons'
 
+
 const FAQs = () => {
     const [Proplems, setProplems] = useState([])
 

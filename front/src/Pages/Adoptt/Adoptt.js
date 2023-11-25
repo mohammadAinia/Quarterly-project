@@ -27,7 +27,7 @@ const Adoptt = () => {
 
   return (
     <>
-      <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"FAQs"} href5={"/Choose_type_add_animal_to_adopt"} a5={<FontAwesomeIcon icon={faPlus} />} href3={"/Animal_infoo"} a3={"My Animals"} href4={"/All_problem"} a4={"Forum"} href6={"/Notifications"} a6={<FontAwesomeIcon icon={faBell} />} href7={"/#"} a7={<div id="login-btn" className="fas fa-user"></div>} href8={"/"} a8={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
+      <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"FAQs"} href5={"/Choose_type_add_animal_to_adopt"} a5={<FontAwesomeIcon icon={faPlus} />} href3={"/Animal_infoo"} a3={"My Animals"} href4={"/All_problem"} a4={"Forum"} href6={"/Notifications"} a6={<FontAwesomeIcon icon={faBell} />} href7={"/profile"} a7={<div id="login-btn" className="fas fa-user"></div>} href8={"/"} a8={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
 
       <section style={{ "margin-top": "00px" }} className="cards" id="services">
         <h2 className="heading">Adopt</h2>
@@ -35,7 +35,7 @@ const Adoptt = () => {
             {Adopt_info.map((d, i) => {
               return (
                 <div key={i}>
-                  <Adopt image={'http://localhost:3001/uploads/'+d.urlImage} type={d.type} date={d.age} name={d.name} phone={d.phone} id={d.id}/>
+                  <Adopt image={'http://localhost:3001/uploads/'+d.urlImage} type={d.type} date={d.age} name={d.name} phone={d.phone} details={`Animal_info_adopt/${d.id}`} id={d.id}/>
                 </div>
               )
             })}

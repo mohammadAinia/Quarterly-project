@@ -43,7 +43,7 @@ const Home_owner = () => {
 
       <section className="bbanner" style={{ "margin-top": "1800px" }}>
         <div className="row">
-          <div className="content">
+          <div style={{ "margin-top": "170px","margin-left":"260px" }} className="content">
             <h3>{"Welcome   " + name}</h3>
             <br />
             <br />
@@ -66,10 +66,10 @@ const Home_owner = () => {
               })}
               
             </div>
-            <p style={{ "color": "red" }}>{Isnotefi}</p>
+            <p style={{ "color": "black" }}>{Isnotefi}</p>
           </div>
-          <div className="image">
-            <img src={animal_image} alt="" />
+          <div style={{ "padding-right": "60px" }}  className="image">
+            {/* <img src={animal_image} alt="" /> */}
           </div>
         </div>
       </section>
@@ -86,14 +86,14 @@ const Home_owner = () => {
           {Animall_info.map((user, i) => {
             return (
               <div key={i}>
-                <Card image={'http://localhost:3001/uploads/' + user.urlImage} name={user.name} link={"see details"} id={user.id} />
+                <Card image={'http://localhost:3001/uploads/' + user.urlImage} name={user.name} href_link={`Animal_info_id/${user.id}`} link={"see details"} id={user.id} />
               </div>
             )
           })}
         </div>
       </section>
 
-      <Add_proplem />
+      <Add_proplem href={"my_problem"}/>
 
       <section className="pricing" id="pricing">
         <h2 className="heading">Forum</h2>

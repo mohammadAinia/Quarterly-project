@@ -21,9 +21,10 @@ const Problems = (props) => {
 
             }
             )
-            .catch(err => { 
+            .catch(err => {
                 alert(err)
-                console.log(err) })
+                console.log(err)
+            })
     }
 
     return (
@@ -33,15 +34,14 @@ const Problems = (props) => {
             <form >
                 <div className="box">
                     <h2 style={{ "font-size": "24px" }}>{props.type}</h2>
-                    <br/>
+                    <br />
                     <h2>{props.name}</h2>
-                    <br/>
+                    <br />
                     <p style={{ "font-size": "15px" }}>{props.text}</p> <br />
                     <div class="inputBox">
                         <textarea placeholder="add comment" required onChange={e => setComment(e.target.value)} />
                     </div>
                     <button onClick={e => handleSubmit(props.id1)} style={{ "font-size": "1.4rem", "padding": "0.7rem 2rem" }} className="btn">share</button><br />
-                    {/* <Link className="btn" to={`Problem_id/${props.id1}`}>Comments</Link> */}
                     <Link className="btn" to={props.hreflink}>Comments</Link>
 
                 </div>

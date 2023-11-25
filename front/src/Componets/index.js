@@ -60,6 +60,8 @@ export {default as Profilee_id} from './Profilee_id/Profilee_id'
 export {default as Profile_id} from '../Pages/Chat/Profile_id/Profile_id'
 export {default as Vaccine_id} from '../Pages/Bief_animal/Vaccine_id/Vaccine_id'
 export {default as Search_user} from '../Pages/Chat/Search_user/Search_user'
+export {default as Search_vet} from '../Pages/Chat/Search_vet/Search_vet'
+
 export {default as Search_result} from '../Pages/Chat/Search_result/Search_result' 
 export {default as Choose_button} from './Choose_button/Choose_button'
 export {default as Type_search} from '../Pages/Chat/Type_search/Type_search'
@@ -89,18 +91,30 @@ export {default as Add_veci} from './1veterinarian/Add_veci/Add_veci'
 export {default as Add_vecine} from '../Pages/Veterinarian/Add_vecine/Add_vecine'
 export {default as General_user} from '../Pages/General_user/General_user'
 export {default as FAQs} from '../Pages/Common_proplems/FAQs/FAQs'
+export {default as Profile_veterinarian} from '../Pages/Veterinarian/Profile_veterinarian/Profile_veterinarian'
+export {default as Profile_vet} from './1veterinarian/Profile_vet/Profile_vet'
+export {default as Update_vet} from '../Pages/Veterinarian/Update_vet/Update_vet'
+export {default as Animal_info_id_follow} from '../Pages/Veterinarian/Animal_info_id_follow/Animal_info_id_follow'
+export {default as Notifications_vet} from '../Pages/Veterinarian/Notifications_vet/Notifications_vet'
+export {default as All_problems_vet} from '../Pages/Veterinarian/All_problems_vet/All_problems_vet'
+export {default as Problem_id_vet} from '../Pages/Veterinarian/Problem_id_vet/Problem_id_vet'
+export {default as Your_problem_vet} from '../Pages/Veterinarian/Your_problem_vet/Your_problem_vet'
+export {default as Update_problem_vet} from '../Pages/Veterinarian/Update_problem_vet/Update_problem_vet'
+export {default as Animal_follow_id} from '../Pages/Veterinarian/Animal_follow_id/Animal_follow_id'
+export {default as Vaccine_vet_id} from '../Pages/Veterinarian/Vaccine_vet_id/Vaccine_vet_id'
+export {default as Page_chat_vet} from '../Pages/Veterinarian/Chat_vet/Page_chat_vet/Page_chat_vet'
+export {default as Conversation_vet} from '../Pages/Veterinarian/Chat_vet/Conversation_vet/Conversation_vet'
+export {default as Profile_id_vett} from '../Pages/Veterinarian/Chat_vet/Profile_id_vett/Profile_id_vett'
+export {default as Type_search_vet} from '../Pages/Veterinarian/Chat_vet/Type_search_vet/Type_search_vet'
+export {default as Search_user_vet} from '../Pages/Veterinarian/Chat_vet/Search_user_vet/Search_user_vet'
+export {default as Search_vet_page} from '../Pages/Veterinarian/Chat_vet/Search_vet_page/Search_vet_page'
 
-
-
-
-
-
-
-
-
-
-
-
+export {default as Search_result_vet} from '../Pages/Veterinarian/Chat_vet/Search_result_vet/Search_result_vet'
+export {default as Adopt_vet} from '../Pages/Veterinarian/Adopt_vet/Adopt_vet'
+export {default as Type_add_animal_vet} from '../Pages/Veterinarian/Adopt_vet/Type_add_animal_vet/Type_add_animal_vet'
+export {default as Your_animal_vet} from '../Pages/Veterinarian/Adopt_vet/Your_animal_vet/Your_animal_vet'
+export {default as Add_Animal_to_adopt_vet} from '../Pages/Veterinarian/Adopt_vet/Add_Animal_to_adopt_vet/Add_Animal_to_adopt_vet'
+export {default as Animal_info_adopt_vet} from '../Pages/Veterinarian/Adopt_vet/Animal_info_adopt_vet/Animal_info_adopt_vet'
 
 
 

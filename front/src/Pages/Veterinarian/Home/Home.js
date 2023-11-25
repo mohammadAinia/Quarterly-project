@@ -39,11 +39,11 @@ const Home = () => {
     return (
         <>
 
-            <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_vete"} a2={"FAQs"} href5={"/requst"} a5={<FontAwesomeIcon icon={faLink} />} href6={"all_advice"} a6={<FontAwesomeIcon icon={faNotesMedical} />} href7={"all_vaccine"} a7={<FontAwesomeIcon icon={faSyringe} />} href3={"all_follow"} a3={"All Follow"} href4={"/All_problem"} a4={"Forum"} href8={"/chat"} a8={<FontAwesomeIcon icon={faMessage} />} href9={"/Notifications"} a9={<FontAwesomeIcon icon={faBell} />} href10={"profile"} a10={<div id="login-btn" className="fas fa-user"></div>} href11={"Home_vet"} a11={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
+            <Header href1={"/Adopt_vet"} a1={"Adopt"} href2={"/common_vete"} a2={"FAQs"} href5={"/requst"} a5={<FontAwesomeIcon icon={faLink} />} href6={"all_advice"} a6={<FontAwesomeIcon icon={faNotesMedical} />} href7={"all_vaccine"} a7={<FontAwesomeIcon icon={faSyringe} />} href3={"all_follow"} a3={"All Follow"} href4={"/Forum_vet"} a4={"Forum"} href8={"/chat_vet"} a8={<FontAwesomeIcon icon={faMessage} />} href9={"/Notifications_vet"} a9={<FontAwesomeIcon icon={faBell} />} href10={"profile_vet"} a10={<div id="login-btn" className="fas fa-user"></div>} href11={"Home_vet"} a11={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
 
-            <section className="bbanner" style={{ "margin-top": "1810px" }}>
+            <section className="bbanner" style={{ "margin-top": "2000px" }}>
                 <div className="row">
-                    <div className="content">
+                    <div style={{ "margin-top": "170px","margin-left":"260px" }} className="content">
                         <h3>{"Welcome   " + name}</h3>
                         <br />
                         <br />
@@ -69,7 +69,7 @@ const Home = () => {
                         <p style={{ "color": "red" }}>{Isnotefi}</p>
                     </div>
                     <div className="image">
-                        <img src={animal_image} alt="" />
+                        {/* <img src={animal_image} alt="" /> */}
                     </div>
                 </div>
             </section>
@@ -86,14 +86,14 @@ const Home = () => {
                     {Animall_info.map((user, i) => {
                         return (
                             <div key={i}>
-                                <Card image={'http://localhost:3001/uploads/' + user.urlImage} name={user.name} link={"see details"} id={user.id} />
+                                <Card image={'http://localhost:3001/uploads/' + user.urlImage} name={user.name} href_link={`Animal_info_id_follow/${user.id}`} link={"see details"} id={user.id} />
                             </div>
                         )
                     })}
                 </div>
             </section>
 
-            <Add_proplem />
+            <Add_proplem href={"my_problem_vet"}/>
 
             <section className="pricing" id="pricing">
                 <h2 className="heading">Forum</h2>
