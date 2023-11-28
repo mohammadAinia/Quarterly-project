@@ -188,7 +188,7 @@ function show_users(req,res) {
         })
         .catch((err) => res.status(404).json({ err }));
 }
-
+//
 const home_owner=(req,res) => {
     if (req.session.username&&!req.session.roleee) {
         models.user_info.findOne({ where: { email: req.session.username } }).then((resp) => {
