@@ -13,7 +13,7 @@ router.post('/signup_vet',imageUploader.upload.single('image'), userController.s
 router.post('/login', userController.login)
 
 router.get('/',userController.home_owner)
-router.get('/logout', userController.logout)
+router.post('/logout', userController.logout)
 // profile
 
 router.get('/show_pofile',profileCons.show_pofile)

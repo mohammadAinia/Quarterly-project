@@ -175,6 +175,7 @@ function login(req,res) {
 }
 
 function logout(req,res) {
+    req.session.destroy()    
     res.status(200).json({ message: "ok is done" });
     //redirect to the home page here
 }
