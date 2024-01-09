@@ -8,8 +8,8 @@
 body{
   height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
   padding: 10px;
   background: linear-gradient(135deg, #f6f8f9, #f1eef2);
 }
@@ -164,7 +164,7 @@ form .input-box span.details{
     /* transform: scale(0.99); */
     background: linear-gradient(-135deg, #f18221, #ea9f5d);
   }
- @media(max-width: 584px){
+ /* @media(max-width: 584px){
  .container{
   max-width: 100%;
 }
@@ -187,4 +187,48 @@ form .user-details .input-box{
   .container .content .category{
     flex-direction: column;
   }
+} */
+@media (max-width: 768px) {
+  .container {
+    margin-top: 30px;
+  }
+
+  form .user-details .input-box {
+    width: 100%;
+  }
 }
+
+@media (max-width: 584px) {
+  .container {
+    padding: 20px;
+  }
+
+  form .user-details {
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 459px) {
+  form .category {
+    flex-direction: column;
+  }
+}
+.container .title {
+  font-size: 20px;
+}
+
+.user-details .input-box span.details {
+  font-size: 14px;
+}
+
+.user-details .input-box input {
+  height: 40px;
+  font-size: 14px;
+}
+
+form .button input,
+form .button button,
+form .button a {
+  font-size: 16px;
+}
+

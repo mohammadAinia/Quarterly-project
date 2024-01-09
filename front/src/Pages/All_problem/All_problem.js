@@ -30,7 +30,7 @@ const All_problem = () => {
         <>
             <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"FAQs"} href3={"/Animal_infoo"} a3={"My Animals"} href4={"/All_problem"} a4={"Forum"} href6={"/Notifications"} a6={<FontAwesomeIcon icon={faBell} />} href7={"/profile"} a7={<div id="login-btn" className="fas fa-user"></div>} href8={"/"} a8={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
 
-            <section className="pricing" id="pricing" style={{ "margin-top":"2500px"}}>
+            <section className="pricing" id="pricing" style={{ "margin-top":""}}>
                 <h2 className="heading" style={{ "margin-left":"100px"}}>Forum</h2>
 
                 <div className="box-container" style={{ "width":"600px" }}>

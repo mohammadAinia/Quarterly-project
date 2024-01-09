@@ -3,7 +3,28 @@
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 2rem;
   }
-  
+  /* @media screen and (max-width: 1200px) {
+    .pricing .box-container {
+        grid-template-columns: 1fr;
+    }
+  }
+  .pricing .box-container .box img {
+    max-width: 100%;
+    height: auto;
+}
+.pricing .box-container .box h3 {
+  font-size: 2.6rem; 
+}
+
+.pricing .box-container .box .price {
+  font-size: 2.2rem; 
+}
+
+.pricing .box-container .box p {
+  font-size: 1.5rem; 
+} */
+
+
   .pricing .box-container .box{
     background: var(--bg);
     padding: 3rem;
