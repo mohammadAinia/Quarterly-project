@@ -54,3 +54,25 @@
     opacity: 1;
 
   }
+  @media (max-width: 768px) {
+    .animal .box-container {
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    }
+  
+    .animal .box-container .box {
+      height: 80vh; /* Adjust the height for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .animal .box-container .box {
+      height: 60vh; /* Adjust the height for even smaller screens */
+    }
+  }
+  .animal .box-container .box .content h3 {
+    font-size: 2rem; /* Use a relative unit like 'rem' for responsiveness */
+  }
+  .animal .box-container .box .content {
+    padding: 2vw; /* Use 'vw' for padding */
+  }
+      
