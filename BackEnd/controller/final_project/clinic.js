@@ -12,10 +12,9 @@ closeq=req.body.closeq
         else {
             return res.json(result)
         }
-
     })
 }
-function open_c (req,res){
+function showd_c (req,res){
     id=req.params.id
     sql='select * from clinics where c_id=?'
     db.query(sql,[id],(err,result)=>{
@@ -37,17 +36,7 @@ function show_all (req,res){
 
     })
 }
-function show_all (req,res){
-    id=req.params.id
-    sql='select * from clinics '
-    db.query(sql,(err,result)=>{
-        if(err){console.log(err)}
-        else {
-            return res.json(result)
-        }
 
-    })
-}
 function search_clinc (req,res){
     if(req.session.username){
     var name=req.params.name
@@ -62,5 +51,60 @@ function search_clinc (req,res){
 else return res.json({valid:false})
 }
 function add_doc_to_cli(req,res){
+    id=req.body.id
+    id_vet=req.params.id
+    sql='select * from veterinarianns where id=?'
+    db.query(sql,[id],(error,result)=>{
+        if(result[0].cl_id!=null){
+            return res.json({valid:false})
+        }
+        else 
+        {var sql1='update veterinarianns set cl_id=? where id=?'
+            db.query(sql1,[cl,id_vet],(error,result1)=>{
+                if(error){console.log}
+                else return res.json({valid:true})
+            })
+    }
+    }
+        
+    )
+}
+
+module.exports={
+    create_clinic,
+    showd_c,
+    show_all,
+    search_clinc,
+    add_doc_to_cli,
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// result.forEach((el,index,are)=>{
+//     console.log(el.id)
+//     console.log(index)
+//     console.log(are)
+// });

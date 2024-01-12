@@ -58,7 +58,8 @@ function show_all_animal(req,res) {
     const sql=' SELECT * from animals JOIN health_records on animals.id=health_records.animal_id  WHERE animals.owner=?'
     db.query(sql,[req.session.username], (err, result) => {
         if (err) return res.json(err)
-        return res.json({result,valid:true}) + console.log()
+       
+        return res.json({result,valid:true}) 
     }
     )
 }
