@@ -7,7 +7,7 @@ const notifications=require('./routes/notificationRouts')
 const adoption=require('./routes/adoption')
 const chat=require('./routes/chats')
 const vet=require('./routes/vetController')
-const clinic=require('./routes/final_project_router/clinicR')
+const clinic=require('./routes/clinicR')
 
 
 const app =express()
