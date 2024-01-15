@@ -16,7 +16,7 @@ import c7 from '../../../Assert/Images/c7.png'
 import c8 from '../../../Assert/Images/c8.png'
 import line from '../../../Assert/Images/Line1.png'
 import clinic from '../../../Assert/Images/clinic.png'
-// import c11 from '../../../Assert/Images/c11.png'
+import vector11 from '../../../Assert/Images/vector11.png'
 import Vector4 from '../../../Assert/Images/Vector4.png'
 import Vector5 from '../../../Assert/Images/Vector5.png'
 // import Vector10 from '../../../Assert/Images/Vector10.png'
@@ -73,6 +73,19 @@ const Clinic = () => {
 
             <div class="card-madical">
                 <div class="overlap-group-wrapper">
+                    
+                    <div class="overlap-groupp">
+                        <div class="ellipsee"><img class="clinic" src={clinic} /></div>
+                        <div class="text-wrapperr">Day Clinic</div>
+                        <img class="linee" src={line} />
+                        <div class="elementtt"><FontAwesomeIcon icon={faClock} /></div>
+                        <div class="elementt">8AM - 4PM</div>
+                        <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
+                        <div class="divv">Al-Nabek</div>
+                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
+                    </div>
+
+
                     <div class="overlap-groupp">
                         <div class="ellipsee"><img class="clinic" src={clinic} /></div>
                         <div class="text-wrapperr">Day Clinic</div>
@@ -94,43 +107,6 @@ const Clinic = () => {
                         <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
                     </div>
                     <div class="overlap-groupp">
-                        <div class="ellipsee"><img class="clinic" src={clinic} /></div>
-                        <div class="text-wrapperr">Day Clinic</div>
-                        <img class="linee" src={line} />
-                        <div class="elementtt"><FontAwesomeIcon icon={faClock} /></div>
-                        <div class="elementt">8AM - 4PM</div>
-                        <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
-                        <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
-                    </div>
-                    <div class="overlap-groupp">
-                        <div class="ellipsee"><img class="clinic" src={clinic} /></div>
-                        <div class="text-wrapperr">Day Clinic</div>
-                        <img class="linee" src={line} />
-                        <div class="elementtt"><FontAwesomeIcon icon={faClock} /></div>
-                        <div class="elementt">8AM - 4PM</div>
-                        <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
-                        <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
-                    </div>                    <div class="overlap-groupp">
-                        <div class="ellipsee"><img class="clinic" src={clinic} /></div>
-                        <div class="text-wrapperr">Day Clinic</div>
-                        <img class="linee" src={line} />
-                        <div class="elementtt"><FontAwesomeIcon icon={faClock} /></div>
-                        <div class="elementt">8AM - 4PM</div>
-                        <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
-                        <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
-                    </div>                    <div class="overlap-groupp">
-                        <div class="ellipsee"><img class="clinic" src={clinic} /></div>
-                        <div class="text-wrapperr">Day Clinic</div>
-                        <img class="linee" src={line} />
-                        <div class="elementtt"><FontAwesomeIcon icon={faClock} /></div>
-                        <div class="elementt">8AM - 4PM</div>
-                        <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
-                        <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
-                    </div>                    <div class="overlap-groupp">
                         <div class="ellipsee"><img class="clinic" src={clinic} /></div>
                         <div class="text-wrapperr">Day Clinic</div>
                         <img class="linee" src={line} />
@@ -150,7 +126,7 @@ const Clinic = () => {
                         <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
                         <div class="divv">Al-Nabek</div>
                         <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
-                    </div>           <div class="overlap-groupp">
+                    </div>                    <div class="overlap-groupp">
                         <div class="ellipsee"><img class="clinic" src={clinic} /></div>
                         <div class="text-wrapperr">Day Clinic</div>
                         <img class="linee" src={line} />
@@ -159,7 +135,7 @@ const Clinic = () => {
                         <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
                         <div class="divv">Al-Nabek</div>
                         <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
-                    </div>           <div class="overlap-groupp">
+                    </div>                    <div class="overlap-groupp">
                         <div class="ellipsee"><img class="clinic" src={clinic} /></div>
                         <div class="text-wrapperr">Day Clinic</div>
                         <img class="linee" src={line} />
@@ -168,7 +144,7 @@ const Clinic = () => {
                         <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
                         <div class="divv">Al-Nabek</div>
                         <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
-                    </div>           <div class="overlap-groupp">
+                    </div>                    <div class="overlap-groupp">
                         <div class="ellipsee"><img class="clinic" src={clinic} /></div>
                         <div class="text-wrapperr">Day Clinic</div>
                         <img class="linee" src={line} />
@@ -177,7 +153,7 @@ const Clinic = () => {
                         <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
                         <div class="divv">Al-Nabek</div>
                         <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
-                    </div>           <div class="overlap-groupp">
+                    </div>                    <div class="overlap-groupp">
                         <div class="ellipsee"><img class="clinic" src={clinic} /></div>
                         <div class="text-wrapperr">Day Clinic</div>
                         <img class="linee" src={line} />
@@ -186,106 +162,7 @@ const Clinic = () => {
                         <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
                         <div class="divv">Al-Nabek</div>
                         <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
-                    </div>           <div class="overlap-groupp">
-                        <div class="ellipsee"><img class="clinic" src={clinic} /></div>
-                        <div class="text-wrapperr">Day Clinic</div>
-                        <img class="linee" src={line} />
-                        <div class="elementtt"><FontAwesomeIcon icon={faClock} /></div>
-                        <div class="elementt">8AM - 4PM</div>
-                        <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
-                        <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
-                    </div>           <div class="overlap-groupp">
-                        <div class="ellipsee"><img class="clinic" src={clinic} /></div>
-                        <div class="text-wrapperr">Day Clinic</div>
-                        <img class="linee" src={line} />
-                        <div class="elementtt"><FontAwesomeIcon icon={faClock} /></div>
-                        <div class="elementt">8AM - 4PM</div>
-                        <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
-                        <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
-                    </div>           <div class="overlap-groupp">
-                        <div class="ellipsee"><img class="clinic" src={clinic} /></div>
-                        <div class="text-wrapperr">Day Clinic</div>
-                        <img class="linee" src={line} />
-                        <div class="elementtt"><FontAwesomeIcon icon={faClock} /></div>
-                        <div class="elementt">8AM - 4PM</div>
-                        <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
-                        <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
-                    </div>           <div class="overlap-groupp">
-                        <div class="ellipsee"><img class="clinic" src={clinic} /></div>
-                        <div class="text-wrapperr">Day Clinic</div>
-                        <img class="linee" src={line} />
-                        <div class="elementtt"><FontAwesomeIcon icon={faClock} /></div>
-                        <div class="elementt">8AM - 4PM</div>
-                        <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
-                        <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
-                    </div>           <div class="overlap-groupp">
-                        <div class="ellipsee"><img class="clinic" src={clinic} /></div>
-                        <div class="text-wrapperr">Day Clinic</div>
-                        <img class="linee" src={line} />
-                        <div class="elementtt"><FontAwesomeIcon icon={faClock} /></div>
-                        <div class="elementt">8AM - 4PM</div>
-                        <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
-                        <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
-                    </div>           <div class="overlap-groupp">
-                        <div class="ellipsee"><img class="clinic" src={clinic} /></div>
-                        <div class="text-wrapperr">Day Clinic</div>
-                        <img class="linee" src={line} />
-                        <div class="elementtt"><FontAwesomeIcon icon={faClock} /></div>
-                        <div class="elementt">8AM - 4PM</div>
-                        <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
-                        <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
-                    </div>           <div class="overlap-groupp">
-                        <div class="ellipsee"><img class="clinic" src={clinic} /></div>
-                        <div class="text-wrapperr">Day Clinic</div>
-                        <img class="linee" src={line} />
-                        <div class="elementtt"><FontAwesomeIcon icon={faClock} /></div>
-                        <div class="elementt">8AM - 4PM</div>
-                        <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
-                        <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
-                    </div>           <div class="overlap-groupp">
-                        <div class="ellipsee"><img class="clinic" src={clinic} /></div>
-                        <div class="text-wrapperr">Day Clinic</div>
-                        <img class="linee" src={line} />
-                        <div class="elementtt"><FontAwesomeIcon icon={faClock} /></div>
-                        <div class="elementt">8AM - 4PM</div>
-                        <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
-                        <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
-                    </div>           <div class="overlap-groupp">
-                        <div class="ellipsee"><img class="clinic" src={clinic} /></div>
-                        <div class="text-wrapperr">Day Clinic</div>
-                        <img class="linee" src={line} />
-                        <div class="elementtt"><FontAwesomeIcon icon={faClock} /></div>
-                        <div class="elementt">8AM - 4PM</div>
-                        <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
-                        <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
-                    </div>           <div class="overlap-groupp">
-                        <div class="ellipsee"><img class="clinic" src={clinic} /></div>
-                        <div class="text-wrapperr">Day Clinic</div>
-                        <img class="linee" src={line} />
-                        <div class="elementtt"><FontAwesomeIcon icon={faClock} /></div>
-                        <div class="elementt">8AM - 4PM</div>
-                        <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
-                        <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
-                    </div>           <div class="overlap-groupp">
-                        <div class="ellipsee"><img class="clinic" src={clinic} /></div>
-                        <div class="text-wrapperr">Day Clinic</div>
-                        <img class="linee" src={line} />
-                        <div class="elementtt"><FontAwesomeIcon icon={faClock} /></div>
-                        <div class="elementt">8AM - 4PM</div>
-                        <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
-                        <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
-                    </div>           <div class="overlap-groupp">
+                    </div>                    <div class="overlap-groupp">
                         <div class="ellipsee"><img class="clinic" src={clinic} /></div>
                         <div class="text-wrapperr">Day Clinic</div>
                         <img class="linee" src={line} />
