@@ -74,4 +74,364 @@
   .pricing .box-container .box .inputBox textarea:valid{
     border-color: #f18221;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .madicals {
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.madicals .div {
+    height: 982px;
+    position: relative;
+    width: 1899px;
+}
+
+.madicals .overlap {
+    height: 701px;
+    left: 72px;
+    position: absolute;
+    top: 98px;
+    width: 784px;
+}
+
+.madicals .overlap-group {
+    height: 650px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 784px;
+}
+
+.madicals .streamline-pet-paw {
+    height: 134px;
+    left: 650px;
+    position: absolute;
+    top: 33px;
+    width: 134px;
+    transition: transform 0.3s ease;
+}
+
+.madicals .frame {
+    height: 400px;
+    left: 256px;
+    position: absolute;
+    top: 110px;
+    width: 470px;
+}
+
+.madicals .overlap-group-2 {
+    height: 400px;
+    position: relative;
+}
+
+.madicals .ellipse {
+    background-color: #00daea;
+    border-radius: 124px/116.5px;
+    height: 233px;
+    left: 222px;
+    position: absolute;
+    top: 121px;
+    width: 248px;
+    transition: transform 0.3s ease; /* Add a smooth transition for better visual effect */
+}
+
+.madicals .ellipse-6 {
+    background-color: #fecc02;
+    border-radius: 124px/116.5px;
+    height: 233px;
+    left: 57px;
+    position: absolute;
+    top: 167px;
+    width: 248px;
+    transition: transform 0.3s ease; /* Add a smooth transition for better visual effect */
+}
+
+/* On hover, swap the positions of .ellipse and .ellipse-6 */
+.madicals .overlap-group-2:hover .ellipse {
+    transform: translate(20px, 26px); /* Move .ellipse down by 26px to match the position of .ellipse-6 */
+}
+
+.madicals .overlap-group-2:hover .ellipse-6 {
+    transform: translate(0, 26px); /* Move .ellipse-6 up by 26px to match the position of .ellipse */
+}
+.madicals .overlap-group-2:hover .ellipse-2 {
+    transform: translate(20px, -26px); /* Move .ellipse-6 up by 26px to match the position of .ellipse */
+}
+.madicals .overlap-group-2:hover .ellipse-3 {
+    transform: translate(0, -26px); /* Move .ellipse-6 up by 26px to match the position of .ellipse */
+}
+.madicals .overlap-group-2:hover .ellipse-4 {
+    transform: translate(0, -26px); /* Move .ellipse-6 up by 26px to match the position of .ellipse */
+}
+.madicals .overlap-group-2:hover .ellipse-5 {
+    transform: translate(-20px, 26px); /* Move .ellipse-6 up by 26px to match the position of .ellipse */
+}
+.madicals .overlap-group-2:hover .ellipse-7 {
+    transform: translate(20px, 26px); /* Move .ellipse-6 up by 46px to match the position of .ellipse */
+}
+.madicals .overlap-2:hover .ellipse-8 {
+    transform: translate(-5px, -10px); /* Move .ellipse-6 up by 46px to match the position of .ellipse */
+}
+.madicals .overlap-2:hover .ellipse-9 {
+    transform: translate(5px, 10px); /* Move .ellipse-6 up by 46px to match the position of .ellipse */
+}
+
+.madicals .ellipse-2 {
+    background-color: #fecc02;
+    border-radius: 124px/116.5px;
+    height: 233px;
+    left: 222px;
+    position: absolute;
+    top: 71px;
+    width: 248px;
+    transition: transform 0.3s ease;
+}
+
+.madicals .ellipse-3 {
+    background-color: #00daea;
+    border-radius: 124px/116.5px;
+    height: 233px;
+    left: 57px;
+    position: absolute;
+    top: 0;
+    width: 248px;
+    transition: transform 0.3s ease;
+}
+
+.madicals .ellipse-4 {
+    background-color: #fecc02;
+    border-radius: 124px/116.5px;
+    height: 233px;
+    left: 0;
+    position: absolute;
+    top: 14px;
+    width: 248px;
+    transition: transform 0.3s ease;
+}
+
+.madicals .ellipse-5 {
+    background-color: #00daea;
+    border-radius: 124px/116.5px;
+    height: 233px;
+    left: 38px;
+    position: absolute;
+    top: 97px;
+    width: 248px;
+    transition: transform 0.3s ease;
+}
+
+/* .madicals .ellipse-6 {
+    background-color: #fecc02;
+    border-radius: 124px/116.5px;
+    height: 233px;
+    left: 57px;
+    position: absolute;
+    top: 167px;
+    width: 248px;
+} */
+
+.madicals .ellipse-7 {
+    background-color: #00daea;
+    border-radius: 124px/116.5px;
+    height: 233px;
+    left: 154px;
+    position: absolute;
+    top: 130px;
+    width: 248px;
+    transition: transform 0.3s ease;
+}
+
+.madicals .vector {
+    height: 374px;
+    left: 8px;
+    position: absolute;
+    top: 20px;
+    width: 459px;
+}
+
+.madicals .overlap-wrapper {
+    height: 156px;
+    left: 153px;
+    position: absolute;
+    top: 473px;
+    width: 156px;
+}
+
+.madicals .overlap-2 {
+    height: 155px;
+    position: relative;
+    top: 1px;
+    width: 152px;
+}
+
+.madicals .ellipse-8 {
+    background-color: #00daea;
+    border-radius: 73px/71.5px;
+    height: 143px;
+    left: 0;
+    position: absolute;
+    top: 12px;
+    width: 146px;
+    transition: transform 0.3s ease;
+
+}
+
+.madicals .ellipse-9 {
+    background-color: #fecc02;
+    border-radius: 73px/71.5px;
+    height: 143px;
+    left: 6px;
+    position: absolute;
+    top: 0;
+    width: 146px;
+    transition: transform 0.3s ease;
+
+}
+
+.madicals .img {
+    height: 143px;
+    left: 2px;
+    object-fit: cover;
+    position: absolute;
+    top: 6px;
+    width: 146px;
+}
+
+.madicals .overlap-group-wrapper {
+    height: 156px;
+    left: 602px;
+    position: absolute;
+    top: 494px;
+    width: 156px;
+}
+
+.madicals .noto-cat-face {
+    height: 261px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 261px;
+}
+
+.madicals .div-wrapper {
+    height: 156px;
+    left: 368px;
+    position: absolute;
+    top: 545px;
+    width: 156px;
+}
+
+.madicals .frame-2 {
+    height: 156px;
+    left: 74px;
+    position: absolute;
+    top: 289px;
+    width: 156px;
+}
+
+.madicals .streamline-pet-paw-2 {
+    height: 134px;
+    left: 907px;
+    position: absolute;
+    top: 184px;
+    width: 134px;
+}
+
+.madicals .emojione-bird {
+    height: 119px;
+    left: 895px;
+    position: absolute;
+    top: 578px;
+    width: 119px;
+}
+
+.madicals .text-wrapper {
+    color: #4ac4d8;
+    font-family: "Poppins-Bold", Helvetica;
+    font-size: 66px;
+    font-weight: 700;
+    height: 110px;
+    left: 1206px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 218px;
+    width: 608px;
+}
+
+.madicals .p {
+    color: #4ac4d8;
+    font-family: "Poppins-Bold", Helvetica;
+    font-size: 30px;
+    font-weight: 700;
+    height: 110px;
+    left: 1221px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 351px;
+    width: 578px;
+}
+
+.madicals .frame-3 {
+    align-items: center;
+    background-color: #fecc02;
+    border-radius: 14px;
+    display: inline-flex;
+    gap: 10px;
+    justify-content: center;
+    left: 1383px;
+    padding: 8px 32px;
+    position: absolute;
+    top: 517px;
+    /* transition: transform 0.3s ease; */
+
+}
+
+.madicals .text-wrapper-2 {
+    color: #ffffff;
+    font-family: "Poppins-Bold", Helvetica;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+    text-align: center;
+    width: fit-content;
+}
+.madicals .frame-3:hover {
+    background-color: #ffffff;
+}
+.madicals .frame-3:hover .text-wrapper-2{
+    /* letter-spacing: 2px; */
+    color: #fecc02;}
+
+
+
+
   

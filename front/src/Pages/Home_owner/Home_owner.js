@@ -3,9 +3,18 @@ import { Card, Bunner, Problems, Header, SectionHeader, Animal_info, Button, Add
 import './Home_owner.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import animal_image from '../../Assert/Images/—Pngtree—parrot_1001948.png'
+import one from '../../Assert/Images/1.png'
+import two from '../../Assert/Images/2.png'
+import three from '../../Assert/Images/3.png'
+import four from '../../Assert/Images/4.png'
+import five from '../../Assert/Images/5.png'
+import six from '../../Assert/Images/6.png'
+import seven from '../../Assert/Images/7.png'
+import eight from '../../Assert/Images/8.png'
+import nine from '../../Assert/Images/9.png'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faRightFromBracket, faBell, faHouse ,faMessage ,faUserDoctor,faStethoscope} from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faRightFromBracket, faBell, faHouse, faMessage, faUserDoctor, faStethoscope } from '@fortawesome/free-solid-svg-icons'
 
 const Home_owner = () => {
   const [name, setName] = useState('')
@@ -41,10 +50,10 @@ const Home_owner = () => {
 
       <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"FAQs"} href5={"/Add_Animal"} a5={<FontAwesomeIcon icon={faPlus} />} href6={"all_doc"} a6={<FontAwesomeIcon icon={faStethoscope} />} href3={"/Animal_infoo"} a3={"My Animals"} href4={"/All_problem"} a4={"Forum"} href7={"/chat"} a7={<FontAwesomeIcon icon={faMessage} />} href8={"/Notifications"} a8={<FontAwesomeIcon icon={faBell} />} href9={"/profile"} a9={<div id="login-btn" className="fas fa-user"></div>} href10={"/"} a10={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
 
-      <section className="bbanner" style={{ "margin-top": "","margin-left":"200px" }}>
+      <section className="bbanner" style={{ "margin-left": "200px" }}>
         <div className="row">
-          <div style={{ "margin-top": "170px","margin-left":"260px" }} className="content">
-            <h3 style={{"fontSize":"30px" }}>{"Welcome   " + name}</h3>
+          <div style={{ "margin-top": "170px", "margin-left": "260px" }} className="content">
+            <h3 style={{ "fontSize": "30px" }}>{"Welcome   " + name}</h3>
             <br />
             <br />
             <br />
@@ -52,27 +61,99 @@ const Home_owner = () => {
             <br />
             <div className='nav'>
 
-            <h3 style={{ "margin-left": "10px","fontSize":"28px" }}>     your advice</h3>
+              <h3 style={{ "margin-left": "10px", "fontSize": "28px" }}>     your advice</h3>
 
               {Advice.map((user, i) => {
                 return (
-                  <div  style={{"fontSize":"40px" }} key={i}>
+                  <div style={{ "fontSize": "40px" }} key={i}>
                     <Bunner p1={user.one}
                       p2={user.gen_tip}
-                      // p3={user.gen_tip} 
-                      />
+                    // p3={user.gen_tip} 
+                    />
                   </div>
                 )
               })}
-              
+
             </div>
             <p style={{ "color": "black" }}>{Isnotefi}</p>
           </div>
-          <div style={{ "padding-right": "60px" }}  className="image">
+          <div style={{ "padding-right": "60px" }} className="image">
             {/* <img src={animal_image} alt="" /> */}
           </div>
         </div>
       </section>
+
+      <div className="madicals">
+        <div className="div">
+          <div className="overlap">
+            <div className="overlap-group">
+              <img className="streamline-pet-paw" alt="Streamline pet paw" src={three} />
+              <div className="frame">
+                <div className="overlap-group-2">
+                  <div className="ellipse" />
+                  <div className="ellipse-2" />
+                  <div className="ellipse-3" />
+                  <div className="ellipse-4" />
+                  <div className="ellipse-5" />
+                  <div className="ellipse-6" />
+                  <div className="ellipse-7" />
+                  <img className="vector" alt="Vector" src={one} />
+                </div>
+              </div>
+              <div className="overlap-wrapper">
+                <div className="overlap-2">
+                  <div className="ellipse-8" />
+                  <div className="ellipse-9" />
+                  <img className="img" alt="Ellipse" src={eight} />
+                </div>
+              </div>
+              <div className="overlap-group-wrapper">
+                <div className="overlap-2">
+                  <div className="ellipse-8" />
+                  <div className="ellipse-9" />
+                  <img className="img" alt="Ellipse" src={six} />
+                </div>
+              </div>
+              <img className="noto-cat-face" alt="Noto cat face" src={four} />
+            </div>
+            <div className="div-wrapper">
+              <div className="overlap-2">
+                <div className="ellipse-8" />
+                <div className="ellipse-9" />
+                <img className="img" alt="Ellipse" src={nine} />
+              </div>
+            </div>
+            <div className="frame-2">
+              <div className="overlap-2">
+                <div className="ellipse-8" />
+                <div className="ellipse-9" />
+                <img className="img" alt="Ellipse" src={seven}/>
+              </div>
+            </div>
+          </div>
+          <img className="streamline-pet-paw-2" alt="Streamline pet paw" src={two} />
+          <img className="emojione-bird" alt="Emojione bird" src={five} />
+          <div className="text-wrapper">Veterinary clinics</div>
+          <p className="p">Book an appointment for your animal</p>
+          <div className="frame-3">
+            <a className="text-wrapper-2" href='clinic'>Booking</a>
+            {/* <div className="text-wrapper-2">Booking</div> */}
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
       <section className="animal" id="animal" >
@@ -93,7 +174,7 @@ const Home_owner = () => {
         </div>
       </section>
 
-      <Add_proplem href={"my_problem"}/>
+      <Add_proplem href={"my_problem"} />
 
       <section className="pricing" id="pricing">
         <h2 className="heading">Forum</h2>
@@ -102,7 +183,7 @@ const Home_owner = () => {
           {Problim_info.map((user, i) => {
             return (
               <div key={i}>
-                <Problems name={user.title} text={user.disc} type={user.animal_type} hreflink={`Problem_id/${user.id}`} id1={user.id}  />
+                <Problems name={user.title} text={user.disc} type={user.animal_type} hreflink={`Problem_id/${user.id}`} id1={user.id} />
               </div>
             )
           })}
