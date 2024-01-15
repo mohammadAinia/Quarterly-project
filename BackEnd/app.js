@@ -7,6 +7,8 @@ const notifications=require('./routes/notificationRouts')
 const adoption=require('./routes/adoption')
 const chat=require('./routes/chats')
 const vet=require('./routes/vetController')
+const clinic=require('./routes/final_project_router/clinicR')
+
 
 const app =express()
 var cors = require('cors')
@@ -51,6 +53,7 @@ app.use("/noti",notifications)
 app.use("/adopt",adoption)
 app.use("/chat",chat)
 app.use("/vet",vet)
+app.use("/clinic",clinic)
 
 
 module.exports=app;
