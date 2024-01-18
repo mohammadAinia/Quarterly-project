@@ -566,6 +566,19 @@
     letter-spacing: 0;
     line-height: normal;
 }
+h1{
+    font-size: 70px;
+    color: #40aac0;
+    transition: color 0.3s ease; /* Smooth transition effect */
+    background-color: #ffffff;
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    padding-bottom: 20px;
 
+}
+ h1:hover {
+    color: #00D7E9; /* Change the color on hover */
+  }
 
 

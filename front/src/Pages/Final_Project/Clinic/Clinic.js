@@ -70,6 +70,8 @@ const Clinic = () => {
                     <img className="frame2" src={c7} />
                 </div>
             </div>
+            
+            <h1>Madicals</h1>
 
             <div class="card-madical">
                 <div class="overlap-group-wrapper">
@@ -82,7 +84,7 @@ const Clinic = () => {
                         <div class="elementt">8AM - 4PM</div>
                         <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
                         <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
+                        <div class="framee"><a class="text-wrapper-22" href='Specific_clinic'>View</a></div>
                     </div>
 
 
