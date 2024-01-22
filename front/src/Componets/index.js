@@ -116,6 +116,8 @@ export {default as Your_animal_vet} from '../Pages/Veterinarian/Adopt_vet/Your_a
 export {default as Add_Animal_to_adopt_vet} from '../Pages/Veterinarian/Adopt_vet/Add_Animal_to_adopt_vet/Add_Animal_to_adopt_vet'
 export {default as Animal_info_adopt_vet} from '../Pages/Veterinarian/Adopt_vet/Animal_info_adopt_vet/Animal_info_adopt_vet'
 export {default as Clinic} from '../Pages/Final_Project/Clinic/Clinic'
+export {default as Specific_clinic} from '../Pages/Final_Project/Specific_clinic/Specific_clinic'
+
 
 
 

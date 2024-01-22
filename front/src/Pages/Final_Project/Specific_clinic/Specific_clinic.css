@@ -1,0 +1,548 @@
+.specific-clinic {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.specific-clinic .div {
+    background-color: #ffffff;
+    width: 2067px;
+    height: 1171px;
+    position: relative;
+}
+
+.specific-clinic .overlap-group {
+    position: absolute;
+    width: 907px;
+    height: 1005px;
+    top: 53px;
+    left: 53px;
+}
+
+.specific-clinic .vector {
+    position: absolute;
+    width: 807px;
+    height: 818px;
+    top: 119px;
+    left: 101px;
+}
+
+.specific-clinic .img {
+    position: absolute;
+    width: 461px;
+    height: 364px;
+    top: 0;
+    left: 0;
+}
+
+.specific-clinic .vector-2 {
+    position: absolute;
+    width: 93px;
+    height: 96px;
+    top: 909px;
+    left: 36px;
+}
+
+.specific-clinic .vector-3 {
+    position: absolute;
+    width: 93px;
+    height: 96px;
+    top: 71px;
+    left: 782px;
+}
+
+.specific-clinic .overlap {
+    position: absolute;
+    width: 983px;
+    height: 941px;
+    top: 129px;
+    left: 1007px;
+}
+
+.specific-clinic .vector-4 {
+    position: absolute;
+    width: 835px;
+    height: 941px;
+    top: 0;
+    left: 0;
+}
+
+.specific-clinic .your-pet-s-health-is {
+    position: absolute;
+    width: 709px;
+    height: 53px;
+    top: 144px;
+    left: 75px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #989898;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.specific-clinic .text-wrapper {
+    position: absolute;
+    width: 709px;
+    height: 53px;
+    top: 554px;
+    left: 274px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+.specific-clinic .texxxt-wrapper {
+    position: absolute;
+    width: 709px;
+    height: 53px;
+    top: 554px;
+    left: -90px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+.specific-clinic .texxt-wrapper {
+    position: absolute;
+    width: 709px;
+    height: 53px;
+    top: 647px;
+    left: -90px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+.specific-clinic .texxxxxt-wrapper {
+    position: absolute;
+    width: 709px;
+    height: 53px;
+    top: 745px;
+    left: -90px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+.specific-clinic .state-of-the-art {
+    position: absolute;
+    width: 709px;
+    height: 53px;
+    top: 649px;
+    left: 222px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.specific-clinic .your-pet-s-wellness {
+    position: absolute;
+    width: 492px;
+    height: 53px;
+    top: 745px;
+    left: 274px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.specific-clinic .passionate {
+    position: absolute;
+    width: 675px;
+    height: 228px;
+    top: 207px;
+    left: 230px;
+    font-family: "Inter-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 64px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+
+
+.overlapp .text-wrapper-22:hover {
+    color: #00aaff; /* Change the text color on hover */
+    transition: color 0.3s ease; /* Add a smooth transition effect */
+}
+
+.overlapp .div-wrapperr:hover {
+    background-color: #f0f0f0; /* Change the background color on hover */
+    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+}
+
+.overlapp .vectorr,
+.overlapp .imgg,
+.overlapp .vector-22,
+.overlapp .vector-33 {
+    transition: transform 0.3s ease; /* Add a smooth transition effect for image transformations */
+}
+
+.overlapp .vectorr:hover,
+.overlapp .imgg:hover,
+.overlapp .vector-22:hover,
+.overlapp .vector-33:hover {
+    transform: translateY(-20px); /* Move images slightly upwards on hover */
+}
+
+/******************************************/
+
+.framee {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.framee .divv {
+    background-color: #ffffff;
+    width: 2067px;
+    height: 1828px;
+    position: relative;
+}
+
+.framee .overlapp {
+    position: absolute;
+    width: 2067px;
+    height: 911px;
+    top: 0;
+    left: 0;
+}
+
+.framee .overlap-groupp {
+    position: relative;
+    width: 1938px;
+    height: 911px;
+    top: 0;
+    left: 129px;
+
+}
+
+.framee .vectorr {
+    position: absolute;
+    width: 1588px;
+    height: 779px;
+    top: 0;
+    left: 350px;
+}
+
+.framee .text-wrapperr {
+    position: absolute;
+    width: 796px;
+    height: 374px;
+    top: 57px;
+    left: 507px;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #000000;
+    font-size: 96px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.framee .div-wrapperr {
+    display: inline-flex;
+    padding: 16px 36px;
+    top: 460px;
+    left: 766px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: absolute;
+    background-color: #e3efff;
+    border-radius: 43px;
+}
+
+.framee .text-wrapper-22 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Poppins-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 32px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.framee .imgg {
+    position: absolute;
+    width: 494px;
+    height: 212px;
+    top: 0;
+    left: 1248px;
+}
+
+.framee .text-wrapper-33 {
+    position: absolute;
+    width: 651px;
+    height: 195px;
+    top: 896px;
+    left: 0;
+    font-family: "Poppins-Light", Helvetica;
+    font-weight: 300;
+    color: #000000;
+    font-size: 64px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.framee .vector-22 {
+    position: absolute;
+    width: 93px;
+    height: 96px;
+    top: 277px;
+    left: 1679px;
+}
+
+.framee .vector-33 {
+    position: absolute;
+    width: 195px;
+    height: 477px;
+    top: 51px;
+    left: 0;
+}
+
+.framee .overlap-group-22 {
+    /* position: absolute;
+    width: 1767px;
+    height: 637px;
+    top: 995px;
+    left: 150px; */
+    position: relative;
+    top: 995px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    /* background-image: url(./img/rectangle-18.png); */
+    background-size: 100% 100%;
+    background-color: #ffffff;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+}
+
+.framee .overlap-22 {
+    /* position: absolute;
+    width: 910px;
+    height: 128px;
+    top: 43px;
+    left: 745px; */
+    width: 85%; 
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    margin-top: 109px;
+    margin-left: 1500px;
+    /* width: 100%;
+    height: 100%; */
+    /* top: 118px;
+    left: 76px; */
+    /* margin-right: 16px; 
+    margin-bottom: 16px; */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+}
+.framee .spimage {
+    width: 1767px;
+    height: 637px;
+}
+
+.framee .spimage .sprectangle {
+    position: relative;
+    width: 1767px;
+    height: 637px;
+    bottom: 90px;
+    right: 760px;
+}
+
+
+.framee .text-wrapper-44 {
+    /* position: absolute;
+    width: 910px;
+    height: 128px;
+    top: 0;
+    left: 0; */
+    font-family: "Poppins-Light", Helvetica;
+    font-weight: 300;
+    color: #000000;
+    font-size: 48px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: px;
+    margin-left: 0px;
+    /* top: 118px;
+    left: 76px; */
+    margin-right: 1040px; /* Added margin-right to create space between elements */
+    /* display: flex; */
+    /* flex-wrap: wrap; 
+    /* justify-content: center; */
+    padding-top: px;
+}
+
+.framee .linee {
+    position: absolute;
+    width: 224px;
+    height: 5px;
+    top: 170px;
+    left: 1130px;
+}
+
+.framee .text-wrapper-55 {
+    position: absolute;
+    width: 808px;
+    height: 65px;
+    top: 231px;
+    left: 815px;
+    font-family: "Poppins-Light", Helvetica;
+    font-weight: 300;
+    color: #000000;
+    font-size: 32px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+.framee .texxxxt-wrapper {
+    position: absolute;
+    width: 808px;
+    height: 65px;
+    top: 231px;
+    left: 645px;
+    font-family: "Poppins-Light", Helvetica;
+    font-weight: 300;
+    color: #000000;
+    font-size: 32px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    
+}
+.framee .texxxxxt-wrapper {
+    position: absolute;
+    width: 808px;
+    height: 65px;
+    top: 340px;
+    left: 645px;
+    font-family: "Poppins-Light", Helvetica;
+    font-weight: 300;
+    color: #000000;
+    font-size: 32px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+.framee .texxxxxxt-wrapper {
+    position: absolute;
+    width: 808px;
+    height: 65px;
+    top: 445px;
+    left: 645px;
+    font-family: "Poppins-Light", Helvetica;
+    font-weight: 300;
+    color: #000000;
+    font-size: 32px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.framee .p {
+    position: absolute;
+    width: 741px;
+    top: 337px;
+    left: 968px;
+    font-family: "Poppins-Light", Helvetica;
+    font-weight: 300;
+    color: #000000;
+    font-size: 32px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.framee .text-wrapper-66 {
+    position: absolute;
+    width: 741px;
+    top: 443px;
+    left: 836px;
+    font-family: "Poppins-Light", Helvetica;
+    font-weight: 300;
+    color: #000000;
+    font-size: 32px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.framee .div-wrapper-22 {
+    display: flex;
+    width: 192px;
+    height: 55px;
+    padding: 16px 8px;
+    top: 537px;
+    left: 1097px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: absolute;
+    background-color: #e3efff;
+    border-radius: 43px;
+}
+
+.framee .text-wrapper-77 {
+    position: relative;
+    width: fit-content;
+    margin-top: -7.5px;
+    margin-bottom: -5.5px;
+    font-family: "Poppins-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.framee .overlap-group-22:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow on hover */
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+.framee .div-wrapper-22:hover a.text-wrapper-77 {
+    color: #00aaff; /* Change the text color on hover */
+    transition: color 0.3s ease; /* Add a smooth transition effect */
+}
+
+.framee .div-wrapper-22:hover {
+    background-color: #f0f0f0; /* Change the background color on hover */
+    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+}
