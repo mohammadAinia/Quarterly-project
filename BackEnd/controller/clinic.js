@@ -70,6 +70,15 @@ function add_doc_to_cli(req,res){
     )
 }
 
+function show_all_vet_without_clinic(req,res){
+    sql='select * from veterinarianns where c_id=?'
+    db.query(sql,[1],(error,result)=>{
+        if(error) console.log (error)
+        else return res.json(result)
+    }
+        
+    )
+}
 module.exports={
     create_clinic,
     showd_c,
