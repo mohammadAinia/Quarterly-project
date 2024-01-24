@@ -70,20 +70,7 @@ const Specific_clinic = () => {
                         <div class="texxxxt-wrapper"><FontAwesomeIcon icon={faCheck} /></div><div class="text-wrapper-55">4 years experience</div>
                         <div class="texxxxxt-wrapper"><FontAwesomeIcon icon={faCheck} /></div><p class="p">He has more experience with cats</p>
                         <div class="texxxxxxt-wrapper"><FontAwesomeIcon icon={faCheck} /></div><div class="text-wrapper-66">Syrian nationality</div>
-                        <div class="div-wrapper-22"><a class="text-wrapper-77" href='#'>Booking</a></div>
-                    </div>
-
-                    <div class="overlap-group-22">
-                        <div class="overlap-22">
-                            <div class="text-wrapper-44">Mohammad Ainia</div>
-                            <img class="linee" src={Linee} />
-                            <div class="spimage"><img class="sprectangle" src={avatar} /></div>
-
-                        </div>
-                        <div class="texxxxt-wrapper"><FontAwesomeIcon icon={faCheck} /></div><div class="text-wrapper-55">4 years experience</div>
-                        <div class="texxxxxt-wrapper"><FontAwesomeIcon icon={faCheck} /></div><p class="p">He has more experience with cats</p>
-                        <div class="texxxxxxt-wrapper"><FontAwesomeIcon icon={faCheck} /></div><div class="text-wrapper-66">Syrian nationality</div>
-                        <div class="div-wrapper-22"><a class="text-wrapper-77" href='#'>Booking</a></div>
+                        <div class="div-wrapper-22"><a class="text-wrapper-77" href='Booking'>Booking</a></div>
                     </div>
 
                 </div>

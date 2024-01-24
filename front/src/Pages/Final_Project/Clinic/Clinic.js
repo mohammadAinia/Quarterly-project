@@ -84,7 +84,7 @@ const Clinic = () => {
                         <div class="elementt">8AM - 4PM</div>
                         <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
                         <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='Specific_clinic'>View</a></div>
+                        <div class="framee"><a class="text-wrapper-222" href='Specific_clinic'>View</a></div>
                     </div>
 
 
@@ -96,7 +96,7 @@ const Clinic = () => {
                         <div class="elementt">8AM - 4PM</div>
                         <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
                         <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
+                        <div class="framee"><a class="text-wrapper-222" href='Specific_clinic'>View</a></div>
                     </div>
                     <div class="overlap-groupp">
                         <div class="ellipsee"><img class="clinic" src={clinic} /></div>
@@ -106,7 +106,7 @@ const Clinic = () => {
                         <div class="elementt">8AM - 4PM</div>
                         <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
                         <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
+                        <div class="framee"><a class="text-wrapper-222" href='Specific_clinic'>View</a></div>
                     </div>
                     <div class="overlap-groupp">
                         <div class="ellipsee"><img class="clinic" src={clinic} /></div>
@@ -116,7 +116,7 @@ const Clinic = () => {
                         <div class="elementt">8AM - 4PM</div>
                         <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
                         <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
+                        <div class="framee"><a class="text-wrapper-222" href='Specific_clinic'>View</a></div>
                     </div>
 
                     <div class="overlap-groupp">
@@ -127,7 +127,7 @@ const Clinic = () => {
                         <div class="elementt">8AM - 4PM</div>
                         <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
                         <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
+                        <div class="framee"><a class="text-wrapper-222" href='Specific_clinic'>View</a></div>
                     </div>                    <div class="overlap-groupp">
                         <div class="ellipsee"><img class="clinic" src={clinic} /></div>
                         <div class="text-wrapperr">Day Clinic</div>
@@ -136,7 +136,7 @@ const Clinic = () => {
                         <div class="elementt">8AM - 4PM</div>
                         <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
                         <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
+                        <div class="framee"><a class="text-wrapper-222" href='Specific_clinic'>View</a></div>
                     </div>                    <div class="overlap-groupp">
                         <div class="ellipsee"><img class="clinic" src={clinic} /></div>
                         <div class="text-wrapperr">Day Clinic</div>
@@ -145,7 +145,7 @@ const Clinic = () => {
                         <div class="elementt">8AM - 4PM</div>
                         <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
                         <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
+                        <div class="framee"><a class="text-wrapper-222" href='Specific_clinic'>View</a></div>
                     </div>                    <div class="overlap-groupp">
                         <div class="ellipsee"><img class="clinic" src={clinic} /></div>
                         <div class="text-wrapperr">Day Clinic</div>
@@ -154,7 +154,7 @@ const Clinic = () => {
                         <div class="elementt">8AM - 4PM</div>
                         <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
                         <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
+                        <div class="framee"><a class="text-wrapper-222" href='Specific_clinic'>View</a></div>
                     </div>                    <div class="overlap-groupp">
                         <div class="ellipsee"><img class="clinic" src={clinic} /></div>
                         <div class="text-wrapperr">Day Clinic</div>
@@ -163,7 +163,7 @@ const Clinic = () => {
                         <div class="elementt">8AM - 4PM</div>
                         <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
                         <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
+                        <div class="framee"><a class="text-wrapper-222" href='Specific_clinic'>View</a></div>
                     </div>                    <div class="overlap-groupp">
                         <div class="ellipsee"><img class="clinic" src={clinic} /></div>
                         <div class="text-wrapperr">Day Clinic</div>
@@ -172,7 +172,7 @@ const Clinic = () => {
                         <div class="elementt">8AM - 4PM</div>
                         <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
                         <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
+                        <div class="framee"><a class="text-wrapper-222" href='Specific_clinic'>View</a></div>
                     </div>
                 </div>
             </div>
