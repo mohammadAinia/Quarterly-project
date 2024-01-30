@@ -10,23 +10,21 @@ import avatar from '../../../Assert/Images/avatar.png'
 import spvector9 from '../../../Assert/Images/spvector9.png'
 import spvector10 from '../../../Assert/Images/spvector10.png'
 import spvector11 from '../../../Assert/Images/spvector11.png'
-// import Vectorr from '../../../Assert/Images/Vectorr.png'
-// import Vectorr from '../../../Assert/Images/Vectorr.png'
-
-
-
+import { Button, Card, Header, SectionHeader } from '../../../Componets/index'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-    faRightToBracket, faPaw, faStoreSlash, faCoins, faFaceSmileWink, faBolt,
+    faRightToBracket, faPaw, faStoreSlash, faCoins, faFaceSmileWink, faBolt,faRightFromBracket,
     faClock, faArrowsRotate, faComments, faHandHoldingHeart, faHouseCircleCheck,
-    faUsers, faArrowRightArrowLeft, faPaperPlane, faCheck, faStar
+    faUsers, faArrowRightArrowLeft, faPaperPlane, faCheck, faStar,faPlus,faBell,faHouse
 } from '@fortawesome/free-solid-svg-icons'
 
 const Specific_clinic = () => {
-    
+
     return (
         <>
+            <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"FAQs"} href5={"/Add_Vets_to_clinic"} a5={<FontAwesomeIcon icon={faPlus} />} href3={"/Animal_infoo"} a3={"My Animals"} href4={"/All_problem"} a4={"Forum"} href6={"/Notifications"} a6={<FontAwesomeIcon icon={faBell} />} href7={"/profile"} a7={<div id="login-btn" className="fas fa-user"></div>} href8={"/"} a8={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
+
             <div class="specific-clinic">
                 <div class="div">
                     <div class="overlap-group">

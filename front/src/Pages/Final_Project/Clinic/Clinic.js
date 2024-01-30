@@ -3,8 +3,8 @@ import { Button, Card, Header, SectionHeader } from '../../../Componets/index'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
     faRightToBracket, faPaw, faStoreSlash, faCoins, faFaceSmileWink, faBolt,
-    faClock, faArrowsRotate, faComments, faHandHoldingHeart, faHouseCircleCheck,
-    faUsers, faArrowRightArrowLeft, faPaperPlane, faLocationDot
+    faClock, faArrowsRotate, faComments, faHandHoldingHeart, faHouseCircleCheck,faPlus,
+    faUsers, faArrowRightArrowLeft, faPaperPlane, faLocationDot,faRightFromBracket,faBell,faHouse
 } from '@fortawesome/free-solid-svg-icons'
 import c1 from '../../../Assert/Images/c1.png'
 import c2 from '../../../Assert/Images/c2.png'
@@ -28,7 +28,7 @@ import Vector5 from '../../../Assert/Images/Vector5.png'
 const Clinic = () => {
     return (
         <>
-            <Header href1={"/Animal"} a1={"About Pets"} href3={"FAQs"} a3={"FAQs"} log={'/Loginn'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightToBracket} /></div>} />
+            <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"FAQs"} href5={"/add_clinic"} a5={<FontAwesomeIcon icon={faPlus} />} href3={"/Animal_infoo"} a3={"My Animals"} href4={"/All_problem"} a4={"Forum"} href6={"/Notifications"} a6={<FontAwesomeIcon icon={faBell} />} href7={"/profile"} a7={<div id="login-btn" className="fas fa-user"></div>} href8={"/"} a8={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
             <div className="macbook-pro">
                 <div className="div">
                     <div className="overlap">
@@ -70,12 +70,12 @@ const Clinic = () => {
                     <img className="frame2" src={c7} />
                 </div>
             </div>
-            
+
             <h1>Madicals</h1>
 
             <div class="card-madical">
                 <div class="overlap-group-wrapper">
-                    
+
                     <div class="overlap-groupp">
                         <div class="ellipsee"><img class="clinic" src={clinic} /></div>
                         <div class="text-wrapperr">Day Clinic</div>

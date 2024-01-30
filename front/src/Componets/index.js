@@ -118,6 +118,10 @@ export {default as Animal_info_adopt_vet} from '../Pages/Veterinarian/Adopt_vet/
 export {default as Clinic} from '../Pages/Final_Project/Clinic/Clinic'
 export {default as Specific_clinic} from '../Pages/Final_Project/Specific_clinic/Specific_clinic'
 export {default as Appointment_Booking} from '../Pages/Final_Project/Appointment_Booking/Appointment_Booking'
+export {default as Add_clinic} from '../Pages/Final_Project/Site_Manager/Add_clinic/Add_clinic'
+export {default as Add_Vets_to_clinic} from '../Pages/Final_Project/Site_Manager/Add_Vets_to_clinic/Add_Vets_to_clinic'
+
+
 
 
 

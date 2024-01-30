@@ -1,0 +1,321 @@
+.add-clinic {
+    background-color: rgba(255, 255, 255, 1);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.add-clinic .overlap-group-wrapper {
+    /* background-color: rgba(255, 255, 255, 1); */
+    background: linear-gradient(
+        90deg,
+        rgba(0, 215, 233, 0.8),
+        rgb(0, 0, 0)
+      );
+      background-size: 200% 200%;
+      animation: waveAnimation 10s infinite;    width: 2068px;
+    height: 1171px;
+
+}
+
+.add-clinic .overlap-group {
+    position: relative;
+    width: 1491px;
+    height: 960px;
+    top: 106px;
+    left: 288px;
+    background-color: #fafafa;
+    border-radius: 81px;
+    box-shadow: 0px 4px 94.6px #00000040;
+}
+
+.add-clinic .overlap {
+    position: absolute;
+    width: 622px;
+    height: 960px;
+    top: 0;
+    left: 869px;
+}
+
+.add-clinic .rectangle {
+    position: absolute;
+    width: 608px;
+    height: 960px;
+    top: 0;
+    left: 14px;
+    background-color: #b4f7ee;
+    border-radius: 0px 81px 81px 0px;
+    box-shadow: -6px 4px 16px #00000040;
+}
+
+.add-clinic .div {
+    position: absolute;
+    width: 369px;
+    height: 91px;
+    top: 25px;
+    left: 14px;
+    border-radius: 0px 46px 46px 0px;
+    background: linear-gradient(90deg, rgb(1, 135, 115) 30%, rgb(0, 223, 193) 105%);
+    transition: width 0.3s ease;
+
+}
+.add-clinic .div:hover {
+    width: 420px; /* Adjust the increased width */
+  }
+
+.add-clinic .text-wrapper {
+    position: absolute;
+    width: 274px;
+    height: 58px;
+    top: 47px;
+    left: 49px;
+    font-family: "Poppins-Light", Helvetica;
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 36px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.add-clinic .text-wrapper-2 {
+    position: absolute;
+    width: 274px;
+    height: 58px;
+    top: 174px;
+    left: 3px;
+    font-family: "Poppins-ExtraLight", Helvetica;
+    font-weight: 200;
+    color: #000000;
+    font-size: 26px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.add-clinic .text-wrapper-3 {
+    position: absolute;
+    width: 594px;
+    height: 58px;
+    top: 465px;
+    left: 22px;
+    font-family: "Poppins-ExtraLight", Helvetica;
+    font-weight: 200;
+    color: #000000;
+    font-size: 26px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.add-clinic .text-wrapper-4 {
+    position: absolute;
+    width: 274px;
+    height: 58px;
+    top: 320px;
+    left: 64px;
+    font-family: "Poppins-ExtraLight", Helvetica;
+    font-weight: 200;
+    color: #000000;
+    font-size: 26px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.add-clinic .text-wrapper-5 {
+    position: absolute;
+    width: 274px;
+    height: 58px;
+    top: 608px;
+    left: 6px;
+    font-family: "Poppins-ExtraLight", Helvetica;
+    font-weight: 200;
+    color: #000000;
+    font-size: 26px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.add-clinic .text-wrapper-6 {
+    position: absolute;
+    width: 72px;
+    height: 58px;
+    top: 429px;
+    left: 340px;
+    font-family: "Poppins-ExtraLight", Helvetica;
+    font-weight: 200;
+    color: #000000;
+    font-size: 26px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.add-clinic .rectangle-2 {
+    position: absolute;
+    width: 472px;
+    height: 63px;
+    top: 232px;
+    left: 82px;
+    background-color: #fafafa;
+    border-radius: 11px;
+    border: 2px solid;
+    border-color: #018773;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+}
+.add-clinic .rectangle-2:focus {
+    box-shadow: 0 0 10px rgba(1, 135, 115, 0.7);
+    transform: scale(1.02);
+  }
+
+.add-clinic .rectangle-3 {
+    position: absolute;
+    width: 472px;
+    height: 63px;
+    top: 520px;
+    left: 82px;
+    background-color: #fafafa;
+    border-radius: 11px;
+    border: 2px solid;
+    border-color: #018773;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.add-clinic .rectangle-3:focus {
+    box-shadow: 0 0 10px rgba(1, 135, 115, 0.7);
+    transform: scale(1.02);
+  }
+
+.add-clinic .rectangle-4 {
+    position: absolute;
+    width: 190px;
+    height: 63px;
+    top: 375px;
+    left: 82px;
+    background-color: #fafafa;
+    border-radius: 11px;
+    border: 2px solid;
+    border-color: #018773;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.add-clinic .rectangle-4:focus {
+    box-shadow: 0 0 10px rgba(1, 135, 115, 0.7);
+    transform: scale(1.02);
+  }
+
+.add-clinic .rectangle-5 {
+    position: absolute;
+    width: 190px;
+    height: 63px;
+    top: 660px;
+    left: 82px;
+    background-color: #fafafa;
+    border-radius: 11px;
+    border: 2px solid;
+    border-color: #018773;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+}
+.add-clinic .rectangle-5:focus {
+    box-shadow: 0 0 10px rgba(1, 135, 115, 0.7);
+    transform: scale(1.02);
+  }
+
+.add-clinic .frame {
+    display: flex;
+    width: 150px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 20px;
+    position: absolute;
+    top: 820px;
+    left: 229px;
+    border-radius: 65px;
+    background: linear-gradient(200deg, rgb(1, 135, 115) 25%, rgba(0, 223, 193, 0) 120%);
+    overflow: hidden;
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+.add-clinic .frame:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.2);
+  }
+
+.add-clinic .text-wrapper-7 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Poppins-Regular", Helvetica;
+    font-weight: 400;
+    color: #fafafa;
+    font-size: 28px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    background-color: transparent;
+}
+
+.add-clinic .rectangle-wrapper {
+    position: absolute;
+    width: 554px;
+    height: 554px;
+    top: 203px;
+    left: 163px;
+    /* background-image: url(./img/3625753-1.png); */
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.add-clinic .rectangle-6 {
+    position: relative;
+    width: 120px;
+    height: 96px;
+    top: 376px;
+    left: 217px;
+    background-color: #fafafa;
+}
+
+.add-clinic .add_clinic_image {
+    width: 554px;
+    height: 554px;
+}
+
+.add-clinic .add_clinic_image .add_clinic_element {
+    position: absolute;
+    width: 554px;
+    height: 554px;
+    top: 200px;
+    left: -706px;
+    object-fit: cover;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+
+}
+
+/* Smooth transition for input fields */
+.add-clinic input {
+    transition: border-color 0.3s ease;
+}
+
+.add-clinic input:focus {
+    border-color: #018773;
+}
+
+
+.add-clinic .add_clinic_image .add_clinic_element:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+@keyframes waveAnimation {
+    0%,
+    100% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+  }
