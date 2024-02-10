@@ -23,6 +23,21 @@ const Home_owner = () => {
   const [Advice, setAdvice] = useState([])
   const [Isnotefi, setIsnotefi] = useState('')
 
+  const ads = [one, two, three, four, five, six, seven, eight, nine];
+  const [currentAdIndex, setCurrentAdIndex] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      // Change to the next advertisement every 6 seconds
+      setCurrentAdIndex((prevIndex) =>
+        prevIndex === ads.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 4000);
+
+    // Clear the interval when the component unmounts
+    return () => clearInterval(intervalId);
+  }, []);
+
 
   const navigate = useNavigate()
 
@@ -47,8 +62,25 @@ const Home_owner = () => {
     [])
   return (
     <>
+      <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"FAQs"} href5={"/Add_Animal"} a5={<FontAwesomeIcon icon={faPlus} />} href6={"all_doc"} a6={<FontAwesomeIcon icon={faStethoscope} />} href3={"/Animal_infoo"} a3={"My Animals"} href4={"/All_problem"} a4={"Forum"} href7={"/chat"} a7={<FontAwesomeIcon icon={faMessage} />} href8={"/Notifications"} a8={"Notifications"} href9={"/profile"} a9={"profile"} href10={"/"} a10={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
 
-      <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"FAQs"} href5={"/Add_Animal"} a5={<FontAwesomeIcon icon={faPlus} />} href6={"all_doc"} a6={<FontAwesomeIcon icon={faStethoscope} />} href3={"/Animal_infoo"} a3={"My Animals"} href4={"/All_problem"} a4={"Forum"} href7={"/chat"} a7={<FontAwesomeIcon icon={faMessage} />} href8={"/Notifications"} a8={<FontAwesomeIcon icon={faBell} />} href9={"/profile"} a9={<div id="login-btn" className="fas fa-user"></div>} href10={"/"} a10={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
+      {/* <div style={{ marginLeft: "60px", marginBottom: "20px" }} className="image">
+        {ads.map((ad, index) => (
+          <img
+            key={index}
+            src={ad}
+            alt="Advertisement"
+            style={{
+              width: '100%',
+              height: '100%',
+              position: 'absolute',
+              opacity: currentAdIndex === index ? 1 : 0,
+              transition: 'opacity 1s ease',
+            }}
+          />
+        ))}
+      </div> */}
+
 
       <section className="bbanner" style={{ "margin-left": "200px" }}>
         <div className="row">
@@ -77,9 +109,22 @@ const Home_owner = () => {
             </div>
             <p style={{ "color": "black" }}>{Isnotefi}</p>
           </div>
-          <div style={{ "padding-right": "60px" }} className="image">
+          <div style={{ "padding-right": "60px" }}  className="image">
             {/* <img src={animal_image} alt="" /> */}
           </div>
+          {/* <div style={{ paddingRight: "60px" }} className="image">
+           
+           <img
+             src={ads[currentAdIndex]}
+             alt="Advertisement"
+             style={{
+               width: '100%',
+               height: '100%',
+               transition: 'transform 1s ease',
+               transform: `translateX(-${currentAdIndex * 100}%)`,
+             }}
+           />
+         </div> */}
         </div>
       </section>
 
@@ -127,7 +172,7 @@ const Home_owner = () => {
               <div className="overlap-2">
                 <div className="ellipse-8" />
                 <div className="ellipse-9" />
-                <img className="img" alt="Ellipse" src={seven}/>
+                <img className="img" alt="Ellipse" src={seven} />
               </div>
             </div>
           </div>
@@ -156,7 +201,7 @@ const Home_owner = () => {
 
 
 
-      <section className="animal" id="animal" >
+      {/* <section className="animal" id="animal" >
         <SectionHeader>Your Animals</SectionHeader>
         <div className="">
           <div className="heading">
@@ -172,11 +217,26 @@ const Home_owner = () => {
             )
           })}
         </div>
+      </section> */}
+      <section className="animal" id="animal">
+        <SectionHeader>Your Animals</SectionHeader>
+        <div className="box-container">
+          {Animall_info.map((user, i) => (
+            <Card
+              key={i}
+              image={`http://localhost:3001/uploads/${user.urlImage}`}
+              name={user.name}
+              href_link={`Animal_info_id/${user.id}`}
+              link={"see details"}
+              id={user.id}
+            />
+          ))}
+        </div>
       </section>
 
       <Add_proplem href={"my_problem"} />
 
-      <section className="pricing" id="pricing">
+      {/* <section className="pricing" id="pricing">
         <h2 className="heading">Forum</h2>
 
         <div className="box-container" >
@@ -188,7 +248,7 @@ const Home_owner = () => {
             )
           })}
         </div>
-      </section>
+      </section> */}
 
     </>
   )

@@ -1,9 +1,10 @@
-.pricing .box-container{
+.pricing .box-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 2rem;
-  }
-  /* @media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 1200px) {
     .pricing .box-container {
         grid-template-columns: 1fr;
     }
@@ -22,44 +23,45 @@
 
 .pricing .box-container .box p {
   font-size: 1.5rem; 
-} */
+}
 
 
-  .pricing .box-container .box{
+.pricing .box-container .box {
     background: var(--bg);
     padding: 3rem;
     text-align: center;
     border-radius: 79% 51% 81% 19% / 58% 93% 7% 42%;
-  }
-  
-  .pricing .box-container .box:hover{
+}
+
+.pricing .box-container .box:hover {
     border-radius: .5rem;
-  }
-  
-  .pricing .box-container .box img{
+}
+
+.pricing .box-container .box img {
     height: 15.5rem;
     width: 15.5rem;
     margin-bottom: .5rem;
-  }
-  
-  .pricing .box-container .box h3{
+}
+
+.pricing .box-container .box h3 {
     font-size: 2.6rem;
     color: var(--black);
     padding: 1rem 0;
-  }
-  
-  .pricing .box-container .box .price{
+}
+
+.pricing .box-container .box .price {
     font-size: 2.2rem;
     color: var(--main);
     padding: .5rem 0;
-  }
-  
-  .pricing .box-container .box p{
+}
+
+.pricing .box-container .box p {
     font-size: 1.5rem;
     color: var(--black);
     padding: .5rem 0;
-  }
-  .pricing .box-container .box .inputBox textarea{
+}
+
+.pricing .box-container .box .inputBox textarea {
     height: 30px;
     width: 50%;
     outline: none;
@@ -69,11 +71,12 @@
     border: 1px solid #ccc;
     border-bottom-width: 2px;
     transition: all 0.3s ease;
-  }
-  .pricing .box-container .box .inputBox textarea:focus,
-  .pricing .box-container .box .inputBox textarea:valid{
+}
+
+.pricing .box-container .box .inputBox textarea:focus,
+.pricing .box-container .box .inputBox textarea:valid {
     border-color: #f18221;
-  }
+}
 
 
 
@@ -94,7 +97,7 @@
 
 
 
-  .madicals {
+.madicals {
     background-color: transparent;
     display: flex;
     flex-direction: row;
@@ -154,7 +157,8 @@
     position: absolute;
     top: 121px;
     width: 248px;
-    transition: transform 0.3s ease; /* Add a smooth transition for better visual effect */
+    transition: transform 0.3s ease;
+    /* Add a smooth transition for better visual effect */
 }
 
 .madicals .ellipse-6 {
@@ -165,37 +169,54 @@
     position: absolute;
     top: 167px;
     width: 248px;
-    transition: transform 0.3s ease; /* Add a smooth transition for better visual effect */
+    transition: transform 0.3s ease;
+    /* Add a smooth transition for better visual effect */
 }
 
 /* On hover, swap the positions of .ellipse and .ellipse-6 */
 .madicals .overlap-group-2:hover .ellipse {
-    transform: translate(20px, 26px); /* Move .ellipse down by 26px to match the position of .ellipse-6 */
+    transform: translate(20px, 26px);
+    /* Move .ellipse down by 26px to match the position of .ellipse-6 */
 }
 
 .madicals .overlap-group-2:hover .ellipse-6 {
-    transform: translate(0, 26px); /* Move .ellipse-6 up by 26px to match the position of .ellipse */
+    transform: translate(0, 26px);
+    /* Move .ellipse-6 up by 26px to match the position of .ellipse */
 }
+
 .madicals .overlap-group-2:hover .ellipse-2 {
-    transform: translate(20px, -26px); /* Move .ellipse-6 up by 26px to match the position of .ellipse */
+    transform: translate(20px, -26px);
+    /* Move .ellipse-6 up by 26px to match the position of .ellipse */
 }
+
 .madicals .overlap-group-2:hover .ellipse-3 {
-    transform: translate(0, -26px); /* Move .ellipse-6 up by 26px to match the position of .ellipse */
+    transform: translate(0, -26px);
+    /* Move .ellipse-6 up by 26px to match the position of .ellipse */
 }
+
 .madicals .overlap-group-2:hover .ellipse-4 {
-    transform: translate(0, -26px); /* Move .ellipse-6 up by 26px to match the position of .ellipse */
+    transform: translate(0, -26px);
+    /* Move .ellipse-6 up by 26px to match the position of .ellipse */
 }
+
 .madicals .overlap-group-2:hover .ellipse-5 {
-    transform: translate(-20px, 26px); /* Move .ellipse-6 up by 26px to match the position of .ellipse */
+    transform: translate(-20px, 26px);
+    /* Move .ellipse-6 up by 26px to match the position of .ellipse */
 }
+
 .madicals .overlap-group-2:hover .ellipse-7 {
-    transform: translate(20px, 26px); /* Move .ellipse-6 up by 46px to match the position of .ellipse */
+    transform: translate(20px, 26px);
+    /* Move .ellipse-6 up by 46px to match the position of .ellipse */
 }
+
 .madicals .overlap-2:hover .ellipse-8 {
-    transform: translate(-5px, -10px); /* Move .ellipse-6 up by 46px to match the position of .ellipse */
+    transform: translate(-5px, -10px);
+    /* Move .ellipse-6 up by 46px to match the position of .ellipse */
 }
+
 .madicals .overlap-2:hover .ellipse-9 {
-    transform: translate(5px, 10px); /* Move .ellipse-6 up by 46px to match the position of .ellipse */
+    transform: translate(5px, 10px);
+    /* Move .ellipse-6 up by 46px to match the position of .ellipse */
 }
 
 .madicals .ellipse-2 {
@@ -424,14 +445,12 @@
     text-align: center;
     width: fit-content;
 }
+
 .madicals .frame-3:hover {
     background-color: #ffffff;
 }
-.madicals .frame-3:hover .text-wrapper-2{
+
+.madicals .frame-3:hover .text-wrapper-2 {
     /* letter-spacing: 2px; */
-    color: #fecc02;}
-
-
-
-
-  
+    color: #fecc02;
+}

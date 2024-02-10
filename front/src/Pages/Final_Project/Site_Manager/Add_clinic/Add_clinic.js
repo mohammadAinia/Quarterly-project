@@ -6,27 +6,27 @@ import React, { useState, useEffect } from 'react';
 const Add_clinic = () => {
     return (
         <>
-            <div class="add-clinic">
+            <div class="add-clinicc">
                 <form>
-                    <div class="overlap-group-wrapper">
-                        <div class="overlap-group">
-                            <div class="overlap">
+                    <div class="overlap-group-wrapperr">
+                        <div class="overlap-groupp">
+                            <div class="overlapp">
 
-                                <div class="add_clinic_image"><img class="add_clinic_element" src={add_clinic} /></div>
+                                <div class="add_clinic_imagee"><img class="add_clinic_elementt" src={add_clinic} /></div>
 
-                                <div class="rectangle"></div>
-                                <div class="div"></div>
-                                <div class="text-wrapper">Add Clinic</div>
-                                <div class="text-wrapper-2">Name Clinic</div>
-                                <div class="text-wrapper-3">Location</div>
-                                <div class="text-wrapper-4">Working Time</div>
-                                <div class="text-wrapper-5">From</div>
-                                <div class="text-wrapper-6">To</div>
-                                <input type='text' class="rectangle-2" />
-                                <input type='time' class="rectangle-4" />
+                                <div class="rectanglee"></div>
+                                <div class="divv"></div>
+                                <div class="text-wrapperr">Add Clinic</div>
+                                <div class="text-wrapper-22">Name Clinic</div>
+                                <div class="text-wrapper-33">Location</div>
+                                <div class="text-wrapper-44">Working Time</div>
+                                <div class="text-wrapper-55">From</div>
+                                <div class="text-wrapper-66">To</div>
+                                <input type='textt' class="rectangle-22" />
+                                <input type='timee' class="rectangle-44" />
 
 
-                                <select name="Vaccines" class="rectangle-3" required >
+                                <select name="Vacciness" class="rectangle-33" required >
 
                                     <option>Damascus</option>
                                     <option>homs</option>
@@ -35,14 +35,14 @@ const Add_clinic = () => {
                                     <option>Rif Damascus,Yabrod</option>
 
                                 </select>
-                                <input type='time' class="rectangle-5" />
-                                <div class="frame">
-                                    <button className="text-wrapper-7">Add</button>
+                                <input type='timee' class="rectangle-55" />
+                                <div class="framee">
+                                    <button className="text-wrapper-77">Add</button>
 
                                 </div>
 
                             </div>
-                            <div class="rectangle-wrapper"><div class="rectangle-6"></div></div>
+                            <div class="rectangle-wrapperr"><div class="rectangle-66"></div></div>
 
                         </div>
                     </div>

@@ -1,4 +1,4 @@
-.add-clinic {
+.add-clinicc {
     background-color: rgba(255, 255, 255, 1);
     display: flex;
     flex-direction: row;
@@ -6,7 +6,7 @@
     width: 100%;
 }
 
-.add-clinic .overlap-group-wrapper {
+.add-clinicc .overlap-group-wrapperr {
     /* background-color: rgba(255, 255, 255, 1); */
     background: linear-gradient(
         90deg,
@@ -19,7 +19,7 @@
 
 }
 
-.add-clinic .overlap-group {
+.add-clinicc .overlap-groupp {
     position: relative;
     width: 1491px;
     height: 960px;
@@ -30,7 +30,7 @@
     box-shadow: 0px 4px 94.6px #00000040;
 }
 
-.add-clinic .overlap {
+.add-clinicc .overlapp {
     position: absolute;
     width: 622px;
     height: 960px;
@@ -38,7 +38,7 @@
     left: 869px;
 }
 
-.add-clinic .rectangle {
+.add-clinicc .rectanglee {
     position: absolute;
     width: 608px;
     height: 960px;
@@ -49,7 +49,7 @@
     box-shadow: -6px 4px 16px #00000040;
 }
 
-.add-clinic .div {
+.add-clinicc .divv {
     position: absolute;
     width: 369px;
     height: 91px;
@@ -60,11 +60,11 @@
     transition: width 0.3s ease;
 
 }
-.add-clinic .div:hover {
+.add-clinicc .divv:hover {
     width: 420px; /* Adjust the increased width */
   }
 
-.add-clinic .text-wrapper {
+.add-clinicc .text-wrapperr {
     position: absolute;
     width: 274px;
     height: 58px;
@@ -79,7 +79,7 @@
     line-height: normal;
 }
 
-.add-clinic .text-wrapper-2 {
+.add-clinicc .text-wrapper-22 {
     position: absolute;
     width: 274px;
     height: 58px;
@@ -94,7 +94,7 @@
     line-height: normal;
 }
 
-.add-clinic .text-wrapper-3 {
+.add-clinicc .text-wrapper-33 {
     position: absolute;
     width: 274px;
     height: 58px;
@@ -109,7 +109,7 @@
     line-height: normal;
 }
 
-.add-clinic .text-wrapper-4 {
+.add-clinicc .text-wrapper-44 {
     position: absolute;
     width: 274px;
     height: 58px;
@@ -124,7 +124,7 @@
     line-height: normal;
 }
 
-.add-clinic .text-wrapper-5 {
+.add-clinicc .text-wrapper-55 {
     position: absolute;
     width: 153px;
     height: 58px;
@@ -139,7 +139,7 @@
     line-height: normal;
 }
 
-.add-clinic .text-wrapper-6 {
+.add-clinicc .text-wrapper-66 {
     position: absolute;
     width: 72px;
     height: 58px;
@@ -154,7 +154,7 @@
     line-height: normal;
 }
 
-.add-clinic .rectangle-2 {
+.add-clinicc .rectangle-22 {
     position: absolute;
     width: 472px;
     height: 63px;
@@ -167,12 +167,12 @@
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 
 }
-.add-clinic .rectangle-2:focus {
+.add-clinicc .rectangle-22:focus {
     box-shadow: 0 0 10px rgba(1, 135, 115, 0.7);
     transform: scale(1.02);
   }
 
-.add-clinic .rectangle-3 {
+.add-clinicc .rectangle-33 {
     position: absolute;
     width: 472px;
     height: 63px;
@@ -185,12 +185,12 @@
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.add-clinic .rectangle-3:focus {
+.add-clinicc .rectangle-33:focus {
     box-shadow: 0 0 10px rgba(1, 135, 115, 0.7);
     transform: scale(1.02);
   }
 
-.add-clinic .rectangle-4 {
+.add-clinicc .rectangle-44 {
     position: absolute;
     width: 146px;
     height: 63px;
@@ -202,12 +202,12 @@
     border-color: #018773;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
-.add-clinic .rectangle-4:focus {
+.add-clinicc .rectangle-44:focus {
     box-shadow: 0 0 10px rgba(1, 135, 115, 0.7);
     transform: scale(1.02);
   }
 
-.add-clinic .rectangle-5 {
+.add-clinicc .rectangle-55 {
     position: absolute;
     width: 146px;
     height: 63px;
@@ -220,12 +220,12 @@
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 
 }
-.add-clinic .rectangle-5:focus {
+.add-clinicc .rectangle-55:focus {
     box-shadow: 0 0 10px rgba(1, 135, 115, 0.7);
     transform: scale(1.02);
   }
 
-.add-clinic .frame {
+.add-clinicc .framee {
     display: flex;
     width: 178px;
     align-items: center;
@@ -240,12 +240,12 @@
     overflow: hidden;
     transition: transform 0.5s ease, box-shadow 0.3s ease;
 }
-.add-clinic .frame:hover {
+.add-clinicc .framee:hover {
     transform: scale(1.05);
     box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.2);
   }
 
-.add-clinic .text-wrapper-7 {
+.add-clinicc .text-wrapper-77 {
     position: relative;
     width: fit-content;
     margin-top: -1px;
@@ -259,7 +259,7 @@
     background-color: transparent;
 }
 
-.add-clinic .rectangle-wrapper {
+.add-clinicc .rectangle-wrapperr {
     position: absolute;
     width: 554px;
     height: 554px;
@@ -270,7 +270,7 @@
     background-position: 50% 50%;
 }
 
-.add-clinic .rectangle-6 {
+.add-clinicc .rectangle-66 {
     position: relative;
     width: 120px;
     height: 96px;
@@ -279,12 +279,12 @@
     background-color: #fafafa;
 }
 
-.add-clinic .add_clinic_image {
+.add-clinicc .add_clinic_imagee {
     width: 554px;
     height: 554px;
 }
 
-.add-clinic .add_clinic_image .add_clinic_element {
+.add-clinicc .add_clinic_imagee .add_clinic_elementt {
     position: absolute;
     width: 554px;
     height: 554px;
@@ -296,16 +296,16 @@
 }
 
 /* Smooth transition for input fields */
-.add-clinic input {
+.add-clinicc input {
     transition: border-color 0.3s ease;
 }
 
-.add-clinic input:focus {
+.add-clinicc input:focus {
     border-color: #018773;
 }
 
 
-.add-clinic .add_clinic_image .add_clinic_element:hover {
+.add-clinicc .add_clinic_imagee .add_clinic_elementt:hover {
     transform: scale(1.05);
     opacity: 0.8;
 }
