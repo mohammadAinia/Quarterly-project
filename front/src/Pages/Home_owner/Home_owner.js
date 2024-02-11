@@ -12,6 +12,14 @@ import six from '../../Assert/Images/6.png'
 import seven from '../../Assert/Images/7.png'
 import eight from '../../Assert/Images/8.png'
 import nine from '../../Assert/Images/9.png'
+import rightt from '../../Assert/Images/right.png'
+import left from '../../Assert/Images/left.png'
+import cat_day from '../../Assert/Images/cat_day.jpg'
+import adv2 from '../../Assert/Images/adv2.jpg'
+
+
+
+
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faRightFromBracket, faBell, faHouse, faMessage, faUserDoctor, faStethoscope } from '@fortawesome/free-solid-svg-icons'
@@ -24,19 +32,24 @@ const Home_owner = () => {
   const [Isnotefi, setIsnotefi] = useState('')
 
   const ads = [one, two, three, four, five, six, seven, eight, nine];
-  const [currentAdIndex, setCurrentAdIndex] = useState(0);
+
+  const [backgroundImages, setBackgroundImages] = useState([
+    (cat_day),
+    (adv2),
+    // Add more background images as needed
+  ]);
+  const [currentBackgroundIndex, setCurrentBackgroundIndex] = useState(0);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      // Change to the next advertisement every 6 seconds
-      setCurrentAdIndex((prevIndex) =>
-        prevIndex === ads.length - 1 ? 0 : prevIndex + 1
+      setCurrentBackgroundIndex(prevIndex =>
+        prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
       );
-    }, 4000);
+    }, 5000);
 
-    // Clear the interval when the component unmounts
     return () => clearInterval(intervalId);
   }, []);
+
 
 
   const navigate = useNavigate()
@@ -60,26 +73,31 @@ const Home_owner = () => {
 
   },
     [])
+
+  const handleLeftClick = () => {
+    setCurrentBackgroundIndex(prevIndex =>
+      prevIndex === 0 ? backgroundImages.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleRightClick = () => {
+    setCurrentBackgroundIndex(prevIndex =>
+      prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
+    );
+  };
   return (
     <>
       <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"FAQs"} href5={"/Add_Animal"} a5={<FontAwesomeIcon icon={faPlus} />} href6={"all_doc"} a6={<FontAwesomeIcon icon={faStethoscope} />} href3={"/Animal_infoo"} a3={"My Animals"} href4={"/All_problem"} a4={"Forum"} href7={"/chat"} a7={<FontAwesomeIcon icon={faMessage} />} href8={"/Notifications"} a8={"Notifications"} href9={"/profile"} a9={"profile"} href10={"/"} a10={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
 
-      {/* <div style={{ marginLeft: "60px", marginBottom: "20px" }} className="image">
-        {ads.map((ad, index) => (
-          <img
-            key={index}
-            src={ad}
-            alt="Advertisement"
-            style={{
-              width: '100%',
-              height: '100%',
-              position: 'absolute',
-              opacity: currentAdIndex === index ? 1 : 0,
-              transition: 'opacity 1s ease',
-            }}
-          />
-        ))}
-      </div> */}
+      <div class="framee2">
+        <div class="overlap-group-wrapperr2">
+          <div class="overlap-groupp2" style={{ backgroundImage: `url(${backgroundImages[currentBackgroundIndex]})` }}>
+            <img class="imgg2" src={left} onClick={handleLeftClick} />
+            <img class="imgg-22" src={rightt} onClick={handleRightClick} />
+            <div class="text-wrapperr2">August 2, 2024</div>
+          </div>
+        </div>
+      </div>
 
 
       <section className="bbanner" style={{ "margin-left": "200px" }}>
@@ -109,7 +127,7 @@ const Home_owner = () => {
             </div>
             <p style={{ "color": "black" }}>{Isnotefi}</p>
           </div>
-          <div style={{ "padding-right": "60px" }}  className="image">
+          <div style={{ "padding-right": "60px" }} className="image">
             {/* <img src={animal_image} alt="" /> */}
           </div>
           {/* <div style={{ paddingRight: "60px" }} className="image">
