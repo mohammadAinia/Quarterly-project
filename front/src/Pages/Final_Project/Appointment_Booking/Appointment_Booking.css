@@ -214,8 +214,6 @@
     left: 306px;
     background-color: #2d2c2a;
     border-radius: 37px;
-    opacity: 0; /* Initialize opacity to 0 for fade-in effect */
-    transition: opacity 1s ease-in-out;
 }
 
 .appointment .text-wrapper {
