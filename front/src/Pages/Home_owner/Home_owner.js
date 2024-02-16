@@ -16,10 +16,12 @@ import rightt from '../../Assert/Images/right.png'
 import left from '../../Assert/Images/left.png'
 import cat_day from '../../Assert/Images/cat_day.jpg'
 import adv2 from '../../Assert/Images/adv2.jpg'
-
-
-
-
+import advice3 from '../../Assert/Images/Advice_Vector.png'
+import advice4 from '../../Assert/Images/Advice2_Vector.png'
+import advice5 from '../../Assert/Images/Advice3_Vector.png'
+import advice6 from '../../Assert/Images/Advice_Vector29.png'
+import advice7 from '../../Assert/Images/advice6_Vector.png'
+import advice1 from '../../Assert/Images/Advice_Vector27.png'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faRightFromBracket, faBell, faHouse, faMessage, faUserDoctor, faStethoscope } from '@fortawesome/free-solid-svg-icons'
@@ -45,7 +47,7 @@ const Home_owner = () => {
       setCurrentBackgroundIndex(prevIndex =>
         prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
       );
-    }, 5000);
+    }, 3000);
 
     return () => clearInterval(intervalId);
   }, []);
@@ -94,14 +96,38 @@ const Home_owner = () => {
           <div class="overlap-groupp2" style={{ backgroundImage: `url(${backgroundImages[currentBackgroundIndex]})` }}>
             <img class="imgg2" src={left} onClick={handleLeftClick} />
             <img class="imgg-22" src={rightt} onClick={handleRightClick} />
-            <div class="text-wrapperr2">August 2, 2024</div>
           </div>
         </div>
       </div>
 
 
-      <section className="bbanner" style={{ "margin-left": "200px" }}>
-        <div className="row">
+      <div class="advice">
+        <div class="div">
+          {/* <div class="advice_box">
+            <img class="advice_vector" src={advice7} />
+          </div>
+          <div class="overlap">
+            <div class="rectangle">
+              <p class="text-wrapper">It is recommended to take your animal and walk it for 10 minutes </p>
+            </div>
+            <img class="vector" src={advice1} />
+          </div> */}
+          {Advice.map((user, i) => {
+            return (
+              <div key={i}>
+                <Bunner
+                  p={user.gen_tip}
+                />
+              </div>
+            )
+          })}
+
+        </div>
+      </div>
+
+
+
+      {/* <div className="row">
           <div style={{ "margin-top": "170px", "margin-left": "260px" }} className="content">
             <h3 style={{ "fontSize": "30px" }}>{"Welcome   " + name}</h3>
             <br />
@@ -118,7 +144,6 @@ const Home_owner = () => {
                   <div style={{ "fontSize": "40px" }} key={i}>
                     <Bunner p1={user.one}
                       p2={user.gen_tip}
-                    // p3={user.gen_tip} 
                     />
                   </div>
                 )
@@ -128,23 +153,8 @@ const Home_owner = () => {
             <p style={{ "color": "black" }}>{Isnotefi}</p>
           </div>
           <div style={{ "padding-right": "60px" }} className="image">
-            {/* <img src={animal_image} alt="" /> */}
           </div>
-          {/* <div style={{ paddingRight: "60px" }} className="image">
-           
-           <img
-             src={ads[currentAdIndex]}
-             alt="Advertisement"
-             style={{
-               width: '100%',
-               height: '100%',
-               transition: 'transform 1s ease',
-               transform: `translateX(-${currentAdIndex * 100}%)`,
-             }}
-           />
-         </div> */}
-        </div>
-      </section>
+        </div> */}
 
       <div className="madicals">
         <div className="div">

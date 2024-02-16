@@ -3,11 +3,13 @@
   flex-wrap: wrap;
   justify-content: space-between; 
   padding: 150px; 
+  
 }
 
 .animal .box-container .box {
   flex: 0 1 calc(24% - 1rem); 
   height: 300px; 
+  width: 2200px;
   position: relative;
   overflow: hidden;
   display: flex;
