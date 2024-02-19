@@ -6,7 +6,7 @@ place=req.body.place
 number=req.body.number
 openq=req.body.openq
 closeq=req.body.closeq
-    var sql= "INSERT clinics (c_name,c_place,c_number,time_open,time_close) VALUES('" + namee + "','" + place + "','" + number + "','" + openq + "','" + closeq + "')"
+    var sql="INSERT clinics (c_name,c_place,c_number,time_open,time_close) VALUES('" + namee + "','" + place + "','" + number + "','" + openq + "','" + closeq + "')"
     db.query(sql,(err,result)=>{
         if(err){console.log(err)}
         else {
@@ -78,6 +78,10 @@ function show_all_vet_without_clinic(req,res){
     }
         
     )
+}
+function update_time (req,res){
+    var sql='update clinics set time_open=?,time_close=?'
+
 }
 module.exports={
     create_clinic,
