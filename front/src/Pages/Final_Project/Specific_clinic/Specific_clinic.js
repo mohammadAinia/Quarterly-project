@@ -27,6 +27,8 @@ const Specific_clinic = () => {
     const navigate = useNavigate()
     const { id } = useParams()
     const [Info, setInfo] = useState([])
+    const [Clinic_Name, setClinic_Name] = useState('')
+
 
     useEffect(() => {
 
@@ -34,6 +36,8 @@ const Specific_clinic = () => {
             .then(res => {
                 if (res.data.valid) {
                     setInfo(res.data.result)
+                    setClinic_Name(res.data.username)
+
                 }
                 else {
                     navigate('/login')
@@ -71,8 +75,8 @@ const Specific_clinic = () => {
                     <div class="overlapp">
                         <div class="overlap-groupp">
                             <img class="vectorr" src={spvector9} />
-                            <div class="text-wrapperr">Welcome to Day’s clinic</div>
-                            <div class="div-wrapperr"><div class="text-wrapper-22">Booking now</div></div>
+                            <div class="text-wrapperr">{"Welcome to " + Clinic_Name + " clinic"}</div>
+                            {/* <div class="div-wrapperr"><div class="text-wrapper-22">Booking now</div></div> */}
                             <img class="imgg" src={spvector10} />
                             <div class="text-wrapper-33">Our medical staff</div>
                             <img class="vector-22" src={Vectorr} />

@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 import {
   Container, Login, Register_owner, Animal, Cat_info, Search_animal, Parrot_info, Fish_info,
-  Register_veterinarian, Home_owner, Type, Dog_info, Add_animal, Animal_infoo, Profile,
+  Register_veterinarian, Home_owner, Type, Dog_info, Add_animal, Animal_infoo, Profile,Administrator_home,
   Common_users, Vaccines, Update_animals, Problem_id, Type_add_animal, Your_animal, Update_user,
   Animal_info_id, All_problem, Adoptt, Conversation, Add_vacci, Add_Animal_to_adopt, Verification,
   Your_ploblem, Update_problem, Page_chat, Profile_id, Vaccine_id, Search_user, Search_result,
@@ -123,10 +123,12 @@ const App = () => {
             {/********************************* Final Project *************************************************************************************************************** */}
             
             <Route path='clinic' element={<Clinic />} /> 
-            <Route path='Specific_clinic' element={<Specific_clinic />} /> 
+            <Route path='Specific_clinic/:id' element={<Specific_clinic />} /> 
             <Route path='Booking/:id' element={<Appointment_Booking />} /> 
             <Route path='add_clinic' element={<Add_clinic />} /> 
             <Route path='Add_Vets_to_clinic' element={<Add_Vets_to_clinic />} /> 
+            <Route path='m' element={<Administrator_home />} /> 
+
 
 
           </Routes>

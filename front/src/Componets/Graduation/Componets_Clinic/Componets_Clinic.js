@@ -21,7 +21,7 @@ const Componets_Clinic = (props) => {
                 <div class="elementt">{props.Working_hours}</div>
                 <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
                 <div class="divv">{props.location}</div>
-                <div class="framee"><a class="text-wrapper-222" href='Specific_clinic'>View</a></div>
+                <div class="framee"><a class="text-wrapper-222" href={`Specific_clinic/${props.id}`}>View</a></div>
             </div>
         </>
 

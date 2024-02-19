@@ -115,20 +115,22 @@ export {default as Type_add_animal_vet} from '../Pages/Veterinarian/Adopt_vet/Ty
 export {default as Your_animal_vet} from '../Pages/Veterinarian/Adopt_vet/Your_animal_vet/Your_animal_vet'
 export {default as Add_Animal_to_adopt_vet} from '../Pages/Veterinarian/Adopt_vet/Add_Animal_to_adopt_vet/Add_Animal_to_adopt_vet'
 export {default as Animal_info_adopt_vet} from '../Pages/Veterinarian/Adopt_vet/Animal_info_adopt_vet/Animal_info_adopt_vet'
-export {default as Clinic} from '../Pages/Final_Project/Clinic/Clinic'
-export {default as Specific_clinic} from '../Pages/Final_Project/Specific_clinic/Specific_clinic'
-export {default as Appointment_Booking} from '../Pages/Final_Project/Appointment_Booking/Appointment_Booking'
-export {default as Add_clinic} from '../Pages/Final_Project/Site_Manager/Add_clinic/Add_clinic'
-export {default as Add_Vets_to_clinic} from '../Pages/Final_Project/Site_Manager/Add_Vets_to_clinic/Add_Vets_to_clinic'
+
 
 
 // Graduation Project
 
 
 
-
+export {default as Clinic} from '../Pages/Final_Project/Clinic/Clinic'
+export {default as Specific_clinic} from '../Pages/Final_Project/Specific_clinic/Specific_clinic'
+export {default as Appointment_Booking} from '../Pages/Final_Project/Appointment_Booking/Appointment_Booking'
+export {default as Add_clinic} from '../Pages/Final_Project/Site_Manager/Add_clinic/Add_clinic'
+export {default as Add_Vets_to_clinic} from '../Pages/Final_Project/Site_Manager/Add_Vets_to_clinic/Add_Vets_to_clinic'
 export {default as Componets_Clinic} from './Graduation/Componets_Clinic/Componets_Clinic'
 export {default as Componets_Specific_clinic} from './Graduation/Componets_Specific_clinic/Componets_Specific_clinic'
+export {default as Administrator_home} from '../Pages/Final_Project/Site_Manager/Administrator_home/Administrator_home'
+
 
 
 
