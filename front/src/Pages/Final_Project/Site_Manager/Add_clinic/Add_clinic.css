@@ -1,0 +1,321 @@
+.add-clinicc {
+    background-color: rgba(255, 255, 255, 1);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.add-clinicc .overlap-group-wrapperr {
+    /* background-color: rgba(255, 255, 255, 1); */
+    background: linear-gradient(
+        90deg,
+        rgba(0, 215, 233, 0.8),
+        rgb(0, 0, 0)
+      );
+      background-size: 200% 200%;
+      animation: waveAnimation 10s infinite;    width: 2068px;
+    height: 1171px;
+
+}
+
+.add-clinicc .overlap-groupp {
+    position: relative;
+    width: 1491px;
+    height: 960px;
+    top: 106px;
+    left: 288px;
+    background-color: #fafafa;
+    border-radius: 81px;
+    box-shadow: 0px 4px 94.6px #00000040;
+}
+
+.add-clinicc .overlapp {
+    position: absolute;
+    width: 622px;
+    height: 960px;
+    top: 0;
+    left: 869px;
+}
+
+.add-clinicc .rectanglee {
+    position: absolute;
+    width: 608px;
+    height: 960px;
+    top: 0;
+    left: 14px;
+    background-color: #b4f7ee;
+    border-radius: 0px 81px 81px 0px;
+    box-shadow: -6px 4px 16px #00000040;
+}
+
+.add-clinicc .divv {
+    position: absolute;
+    width: 369px;
+    height: 91px;
+    top: 25px;
+    left: 14px;
+    border-radius: 0px 46px 46px 0px;
+    background: linear-gradient(90deg, rgb(1, 135, 115) 30%, rgb(0, 223, 193) 105%);
+    transition: width 0.3s ease;
+
+}
+.add-clinicc .divv:hover {
+    width: 420px; /* Adjust the increased width */
+  }
+
+.add-clinicc .text-wrapperr {
+    position: absolute;
+    width: 274px;
+    height: 58px;
+    top: 47px;
+    left: 49px;
+    font-family: "Poppins-Light", Helvetica;
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 36px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.add-clinicc .text-wrapper-22 {
+    position: absolute;
+    width: 274px;
+    height: 58px;
+    top: 174px;
+    left: 22px;
+    font-family: "Poppins-ExtraLight", Helvetica;
+    font-weight: 200;
+    color: #000000;
+    font-size: 26px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.add-clinicc .text-wrapper-33 {
+    position: absolute;
+    width: 274px;
+    height: 58px;
+    top: 535px;
+    left: 0;
+    font-family: "Poppins-ExtraLight", Helvetica;
+    font-weight: 200;
+    color: #000000;
+    font-size: 26px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.add-clinicc .text-wrapper-44 {
+    position: absolute;
+    width: 274px;
+    height: 58px;
+    top: 355px;
+    left: 24px;
+    font-family: "Poppins-ExtraLight", Helvetica;
+    font-weight: 200;
+    color: #000000;
+    font-size: 26px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.add-clinicc .text-wrapper-55 {
+    position: absolute;
+    width: 153px;
+    height: 58px;
+    top: 429px;
+    left: 38px;
+    font-family: "Poppins-ExtraLight", Helvetica;
+    font-weight: 200;
+    color: #000000;
+    font-size: 26px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.add-clinicc .text-wrapper-66 {
+    position: absolute;
+    width: 72px;
+    height: 58px;
+    top: 429px;
+    left: 340px;
+    font-family: "Poppins-ExtraLight", Helvetica;
+    font-weight: 200;
+    color: #000000;
+    font-size: 26px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.add-clinicc .rectangle-22 {
+    position: absolute;
+    width: 472px;
+    height: 63px;
+    top: 232px;
+    left: 82px;
+    background-color: #fafafa;
+    border-radius: 11px;
+    border: 2px solid;
+    border-color: #018773;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+}
+.add-clinicc .rectangle-22:focus {
+    box-shadow: 0 0 10px rgba(1, 135, 115, 0.7);
+    transform: scale(1.02);
+  }
+
+.add-clinicc .rectangle-33 {
+    position: absolute;
+    width: 472px;
+    height: 63px;
+    top: 593px;
+    left: 82px;
+    background-color: #fafafa;
+    border-radius: 11px;
+    border: 2px solid;
+    border-color: #018773;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.add-clinicc .rectangle-33:focus {
+    box-shadow: 0 0 10px rgba(1, 135, 115, 0.7);
+    transform: scale(1.02);
+  }
+
+.add-clinicc .rectangle-44 {
+    position: absolute;
+    width: 146px;
+    height: 63px;
+    top: 414px;
+    left: 162px;
+    background-color: #fafafa;
+    border-radius: 11px;
+    border: 2px solid;
+    border-color: #018773;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.add-clinicc .rectangle-44:focus {
+    box-shadow: 0 0 10px rgba(1, 135, 115, 0.7);
+    transform: scale(1.02);
+  }
+
+.add-clinicc .rectangle-55 {
+    position: absolute;
+    width: 146px;
+    height: 63px;
+    top: 414px;
+    left: 408px;
+    background-color: #fafafa;
+    border-radius: 11px;
+    border: 2px solid;
+    border-color: #018773;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+}
+.add-clinicc .rectangle-55:focus {
+    box-shadow: 0 0 10px rgba(1, 135, 115, 0.7);
+    transform: scale(1.02);
+  }
+
+.add-clinicc .framee {
+    display: flex;
+    width: 178px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 20px;
+    position: absolute;
+    top: 770px;
+    left: 229px;
+    border-radius: 65px;
+    background: linear-gradient(200deg, rgb(1, 135, 115) 25%, rgba(0, 223, 193, 0) 120%);
+    overflow: hidden;
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+.add-clinicc .framee:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.2);
+  }
+
+.add-clinicc .text-wrapper-77 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Poppins-Regular", Helvetica;
+    font-weight: 400;
+    color: #fafafa;
+    font-size: 38px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    background-color: transparent;
+}
+
+.add-clinicc .rectangle-wrapperr {
+    position: absolute;
+    width: 554px;
+    height: 554px;
+    top: 203px;
+    left: 163px;
+    /* background-image: url(./img/3625753-1.png); */
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.add-clinicc .rectangle-66 {
+    position: relative;
+    width: 120px;
+    height: 96px;
+    top: 376px;
+    left: 217px;
+    background-color: #fafafa;
+}
+
+.add-clinicc .add_clinic_imagee {
+    width: 554px;
+    height: 554px;
+}
+
+.add-clinicc .add_clinic_imagee .add_clinic_elementt {
+    position: absolute;
+    width: 554px;
+    height: 554px;
+    top: 200px;
+    left: -706px;
+    object-fit: cover;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+
+}
+
+/* Smooth transition for input fields */
+.add-clinicc input {
+    transition: border-color 0.3s ease;
+}
+
+.add-clinicc input:focus {
+    border-color: #018773;
+}
+
+
+.add-clinicc .add_clinic_imagee .add_clinic_elementt:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+@keyframes waveAnimation {
+    0%,
+    100% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+  }

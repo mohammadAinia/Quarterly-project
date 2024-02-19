@@ -1,78 +1,78 @@
-.animal .box-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem,1fr));
-    gap: 2rem;
-  }
+.animal .box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+  padding: 150px; 
   
-  .animal .box-container .box{
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .animal .box-container .box img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-  
-  .animal .box-container .box:hover img{
-    transform: scale(1.1);
-  }
-  
-  .animal .box-container .box .content{
-    text-align: center;
-    position: absolute;
-    bottom: 0;
-    left: 0; right: 0;
-    padding: 20px;
-    z-index: 1;
-    transition: 0.5s ease;
-  }
-  
-  .animal .box-container .box:hover::after{
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--black);
-    opacity: 0.5;
-    transition: 0.5s ease;
-  }
-  
-  .animal .box-container .box .content h3{
-    text-align: center;
-    font-size: 3rem;
-    color: var(--white);
-    opacity: 0.5;
-  
-  }
-  
-  .animal .box-container .box:is(:hover, :focus-within) .content{
-    transform: translateY(-20px);
-    opacity: 1;
+}
 
-  }
-  @media (max-width: 768px) {
-    .animal .box-container {
-      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    }
-  
-    .animal .box-container .box {
-      height: 80vh; /* Adjust the height for smaller screens */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .animal .box-container .box {
-      height: 60vh; /* Adjust the height for even smaller screens */
-    }
-  }
-  .animal .box-container .box .content h3 {
-    font-size: 2rem; /* Use a relative unit like 'rem' for responsiveness */
-  }
-  .animal .box-container .box .content {
-    padding: 2vw; /* Use 'vw' for padding */
-  }
-      
+.animal .box-container .box {
+  flex: 0 1 calc(24% - 1rem); 
+  height: 300px; 
+  width: 2200px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.animal .box-container .box img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.animal .box-container .box:hover img {
+  transform: scale(1.1);
+}
+
+.animal .box-container .box .content {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  z-index: 1;
+  transition: 0.5s ease;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+}
+
+.animal .box-container .box:hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--black);
+  opacity: 0.5;
+  transition: 0.5s ease;
+}
+
+.animal .box-container .box .content h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.animal .box-container .box:is(:hover, :focus-within) .content {
+  transform: translateY(-20px);
+  opacity: 1;
+}
+
+
+
+.animal .box-container .box .content h3 {
+  font-size: 2rem;
+}
+
+.animal .box-container .box .content {
+  padding: 2vw;
+}
+.animal .box-container .box .content a {
+  text-decoration: none;
+  color: white;
+}

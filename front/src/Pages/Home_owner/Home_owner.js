@@ -12,6 +12,16 @@ import six from '../../Assert/Images/6.png'
 import seven from '../../Assert/Images/7.png'
 import eight from '../../Assert/Images/8.png'
 import nine from '../../Assert/Images/9.png'
+import rightt from '../../Assert/Images/right.png'
+import left from '../../Assert/Images/left.png'
+import cat_day from '../../Assert/Images/cat_day.jpg'
+import adv2 from '../../Assert/Images/adv2.jpg'
+import advice3 from '../../Assert/Images/Advice_Vector.png'
+import advice4 from '../../Assert/Images/Advice2_Vector.png'
+import advice5 from '../../Assert/Images/Advice3_Vector.png'
+import advice6 from '../../Assert/Images/Advice_Vector29.png'
+import advice7 from '../../Assert/Images/advice6_Vector.png'
+import advice1 from '../../Assert/Images/Advice_Vector27.png'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faRightFromBracket, faBell, faHouse, faMessage, faUserDoctor, faStethoscope } from '@fortawesome/free-solid-svg-icons'
@@ -22,6 +32,26 @@ const Home_owner = () => {
   const [Problim_info, setProblim_info] = useState([])
   const [Advice, setAdvice] = useState([])
   const [Isnotefi, setIsnotefi] = useState('')
+
+  const ads = [one, two, three, four, five, six, seven, eight, nine];
+
+  const [backgroundImages, setBackgroundImages] = useState([
+    (cat_day),
+    (adv2),
+    // Add more background images as needed
+  ]);
+  const [currentBackgroundIndex, setCurrentBackgroundIndex] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentBackgroundIndex(prevIndex =>
+        prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 3000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
 
 
   const navigate = useNavigate()
@@ -45,13 +75,59 @@ const Home_owner = () => {
 
   },
     [])
+
+  const handleLeftClick = () => {
+    setCurrentBackgroundIndex(prevIndex =>
+      prevIndex === 0 ? backgroundImages.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleRightClick = () => {
+    setCurrentBackgroundIndex(prevIndex =>
+      prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
+    );
+  };
   return (
     <>
+      <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"FAQs"} href5={"/Add_Animal"} a5={<FontAwesomeIcon icon={faPlus} />} href6={"all_doc"} a6={<FontAwesomeIcon icon={faStethoscope} />} href3={"/Animal_infoo"} a3={"My Animals"} href4={"/All_problem"} a4={"Forum"} href7={"/chat"} a7={<FontAwesomeIcon icon={faMessage} />} href8={"/Notifications"} a8={"Notifications"} href9={"/profile"} a9={"profile"} href10={"/"} a10={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
 
-      <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"FAQs"} href5={"/Add_Animal"} a5={<FontAwesomeIcon icon={faPlus} />} href6={"all_doc"} a6={<FontAwesomeIcon icon={faStethoscope} />} href3={"/Animal_infoo"} a3={"My Animals"} href4={"/All_problem"} a4={"Forum"} href7={"/chat"} a7={<FontAwesomeIcon icon={faMessage} />} href8={"/Notifications"} a8={<FontAwesomeIcon icon={faBell} />} href9={"/profile"} a9={<div id="login-btn" className="fas fa-user"></div>} href10={"/"} a10={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
+      <div class="framee2">
+        <div class="overlap-group-wrapperr2">
+          <div class="overlap-groupp2" style={{ backgroundImage: `url(${backgroundImages[currentBackgroundIndex]})` }}>
+            <img class="imgg2" src={left} onClick={handleLeftClick} />
+            <img class="imgg-22" src={rightt} onClick={handleRightClick} />
+          </div>
+        </div>
+      </div>
 
-      <section className="bbanner" style={{ "margin-left": "200px" }}>
-        <div className="row">
+
+      <div class="advice">
+        <div class="div">
+          {/* <div class="advice_box">
+            <img class="advice_vector" src={advice7} />
+          </div>
+          <div class="overlap">
+            <div class="rectangle">
+              <p class="text-wrapper">It is recommended to take your animal and walk it for 10 minutes </p>
+            </div>
+            <img class="vector" src={advice1} />
+          </div> */}
+          {Advice.map((user, i) => {
+            return (
+              <div key={i}>
+                <Bunner
+                  p={user.gen_tip}
+                />
+              </div>
+            )
+          })}
+
+        </div>
+      </div>
+
+
+
+      {/* <div className="row">
           <div style={{ "margin-top": "170px", "margin-left": "260px" }} className="content">
             <h3 style={{ "fontSize": "30px" }}>{"Welcome   " + name}</h3>
             <br />
@@ -68,7 +144,6 @@ const Home_owner = () => {
                   <div style={{ "fontSize": "40px" }} key={i}>
                     <Bunner p1={user.one}
                       p2={user.gen_tip}
-                    // p3={user.gen_tip} 
                     />
                   </div>
                 )
@@ -78,10 +153,8 @@ const Home_owner = () => {
             <p style={{ "color": "black" }}>{Isnotefi}</p>
           </div>
           <div style={{ "padding-right": "60px" }} className="image">
-            {/* <img src={animal_image} alt="" /> */}
           </div>
-        </div>
-      </section>
+        </div> */}
 
       <div className="madicals">
         <div className="div">
@@ -127,7 +200,7 @@ const Home_owner = () => {
               <div className="overlap-2">
                 <div className="ellipse-8" />
                 <div className="ellipse-9" />
-                <img className="img" alt="Ellipse" src={seven}/>
+                <img className="img" alt="Ellipse" src={seven} />
               </div>
             </div>
           </div>
@@ -156,7 +229,7 @@ const Home_owner = () => {
 
 
 
-      <section className="animal" id="animal" >
+      {/* <section className="animal" id="animal" >
         <SectionHeader>Your Animals</SectionHeader>
         <div className="">
           <div className="heading">
@@ -172,11 +245,26 @@ const Home_owner = () => {
             )
           })}
         </div>
+      </section> */}
+      <section className="animal" id="animal">
+        <SectionHeader>Your Animals</SectionHeader>
+        <div className="box-container">
+          {Animall_info.map((user, i) => (
+            <Card
+              key={i}
+              image={`http://localhost:3001/uploads/${user.urlImage}`}
+              name={user.name}
+              href_link={`Animal_info_id/${user.id}`}
+              link={"see details"}
+              id={user.id}
+            />
+          ))}
+        </div>
       </section>
 
       <Add_proplem href={"my_problem"} />
 
-      <section className="pricing" id="pricing">
+      {/* <section className="pricing" id="pricing">
         <h2 className="heading">Forum</h2>
 
         <div className="box-container" >
@@ -188,7 +276,7 @@ const Home_owner = () => {
             )
           })}
         </div>
-      </section>
+      </section> */}
 
     </>
   )

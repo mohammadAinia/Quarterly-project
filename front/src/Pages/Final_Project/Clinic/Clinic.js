@@ -1,10 +1,14 @@
 import './Clinic.css'
-import { Button, Card, Header, SectionHeader } from '../../../Componets/index'
+import React from 'react';
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { Button, Card, Header, Componets_Clinic, SectionHeader } from '../../../Componets/index'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-    faRightToBracket, faPaw, faStoreSlash, faCoins, faFaceSmileWink, faBolt,
-    faClock, faArrowsRotate, faComments, faHandHoldingHeart, faHouseCircleCheck,
-    faUsers, faArrowRightArrowLeft, faPaperPlane, faLocationDot
+    faRightToBracket, faPaw, faStoreSlash, faCoins, faFaceSmileWink, faBolt, faSearch,
+    faClock, faArrowsRotate, faComments, faHandHoldingHeart, faHouseCircleCheck, faPlus,
+    faUsers, faArrowRightArrowLeft, faPaperPlane, faLocationDot, faRightFromBracket, faBell, faHouse
 } from '@fortawesome/free-solid-svg-icons'
 import c1 from '../../../Assert/Images/c1.png'
 import c2 from '../../../Assert/Images/c2.png'
@@ -26,9 +30,33 @@ import Vector5 from '../../../Assert/Images/Vector5.png'
 
 
 const Clinic = () => {
+
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+    const handleSearchClick = () => {
+        setIsSearchOpen(!isSearchOpen);
+    };
+
+
+
+    const [Clinics, setClinics] = useState([])
+
+    const navigate = useNavigate()
+
+    useEffect(() => {
+
+        axios.get('http://localhost:3001/#########', { withCredentials: true })
+            .then(res => {
+                setClinics(res.data)
+
+            })
+            .catch(err => { console.log(err) })
+    },
+        [])
+
     return (
         <>
-            <Header href1={"/Animal"} a1={"About Pets"} href3={"FAQs"} a3={"FAQs"} log={'/Loginn'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightToBracket} /></div>} />
+            <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"FAQs"} href5={"/add_clinic"} a5={<FontAwesomeIcon icon={faPlus} />} href3={"/Animal_infoo"} a3={"My Animals"} href4={"/All_problem"} a4={"Forum"} href6={"/Notifications"} a6={<FontAwesomeIcon icon={faBell} />} href7={"/profile"} a7={<div id="login-btn" className="fas fa-user"></div>} href8={"/"} a8={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
             <div className="macbook-pro">
                 <div className="div">
                     <div className="overlap">
@@ -70,114 +98,45 @@ const Clinic = () => {
                     <img className="frame2" src={c7} />
                 </div>
             </div>
-            
+
             <h1>Madicals</h1>
 
             <div class="card-madical">
                 <div class="overlap-group-wrapper">
-                    
-                    <div class="overlap-groupp">
-                        <div class="ellipsee"><img class="clinic" src={clinic} /></div>
-                        <div class="text-wrapperr">Day Clinic</div>
-                        <img class="linee" src={line} />
-                        <div class="elementtt"><FontAwesomeIcon icon={faClock} /></div>
-                        <div class="elementt">8AM - 4PM</div>
-                        <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
-                        <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='Specific_clinic'>View</a></div>
-                    </div>
 
+                    {/* <div class="overlap-groupp">
+                        <div class="ellipsee"><img class="clinic" src={clinic} /></div>
+                        <div class="text-wrapperr">Day Clinic</div>
+                        <img class="linee" src={line} />
+                        <div class="elementtt"><FontAwesomeIcon icon={faClock} /></div>
+                        <div class="elementt">8AM - 4PM</div>
+                        <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
+                        <div class="divv">Al-Nabek</div>
+                        <div class="framee"><a class="text-wrapper-222" href='Specific_clinic'>View</a></div>
+                    </div> */}
+                    {Clinics.map((i, d) => {
+                        return (
+                            <div key={d}>
 
-                    <div class="overlap-groupp">
-                        <div class="ellipsee"><img class="clinic" src={clinic} /></div>
-                        <div class="text-wrapperr">Day Clinic</div>
-                        <img class="linee" src={line} />
-                        <div class="elementtt"><FontAwesomeIcon icon={faClock} /></div>
-                        <div class="elementt">8AM - 4PM</div>
-                        <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
-                        <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
-                    </div>
-                    <div class="overlap-groupp">
-                        <div class="ellipsee"><img class="clinic" src={clinic} /></div>
-                        <div class="text-wrapperr">Day Clinic</div>
-                        <img class="linee" src={line} />
-                        <div class="elementtt"><FontAwesomeIcon icon={faClock} /></div>
-                        <div class="elementt">8AM - 4PM</div>
-                        <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
-                        <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
-                    </div>
-                    <div class="overlap-groupp">
-                        <div class="ellipsee"><img class="clinic" src={clinic} /></div>
-                        <div class="text-wrapperr">Day Clinic</div>
-                        <img class="linee" src={line} />
-                        <div class="elementtt"><FontAwesomeIcon icon={faClock} /></div>
-                        <div class="elementt">8AM - 4PM</div>
-                        <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
-                        <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
-                    </div>
+                                <Componets_Clinic name_clinic={"i."} Working_hours={"i."} location={"i."} />
 
-                    <div class="overlap-groupp">
-                        <div class="ellipsee"><img class="clinic" src={clinic} /></div>
-                        <div class="text-wrapperr">Day Clinic</div>
-                        <img class="linee" src={line} />
-                        <div class="elementtt"><FontAwesomeIcon icon={faClock} /></div>
-                        <div class="elementt">8AM - 4PM</div>
-                        <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
-                        <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
-                    </div>                    <div class="overlap-groupp">
-                        <div class="ellipsee"><img class="clinic" src={clinic} /></div>
-                        <div class="text-wrapperr">Day Clinic</div>
-                        <img class="linee" src={line} />
-                        <div class="elementtt"><FontAwesomeIcon icon={faClock} /></div>
-                        <div class="elementt">8AM - 4PM</div>
-                        <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
-                        <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
-                    </div>                    <div class="overlap-groupp">
-                        <div class="ellipsee"><img class="clinic" src={clinic} /></div>
-                        <div class="text-wrapperr">Day Clinic</div>
-                        <img class="linee" src={line} />
-                        <div class="elementtt"><FontAwesomeIcon icon={faClock} /></div>
-                        <div class="elementt">8AM - 4PM</div>
-                        <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
-                        <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
-                    </div>                    <div class="overlap-groupp">
-                        <div class="ellipsee"><img class="clinic" src={clinic} /></div>
-                        <div class="text-wrapperr">Day Clinic</div>
-                        <img class="linee" src={line} />
-                        <div class="elementtt"><FontAwesomeIcon icon={faClock} /></div>
-                        <div class="elementt">8AM - 4PM</div>
-                        <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
-                        <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
-                    </div>                    <div class="overlap-groupp">
-                        <div class="ellipsee"><img class="clinic" src={clinic} /></div>
-                        <div class="text-wrapperr">Day Clinic</div>
-                        <img class="linee" src={line} />
-                        <div class="elementtt"><FontAwesomeIcon icon={faClock} /></div>
-                        <div class="elementt">8AM - 4PM</div>
-                        <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
-                        <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
-                    </div>                    <div class="overlap-groupp">
-                        <div class="ellipsee"><img class="clinic" src={clinic} /></div>
-                        <div class="text-wrapperr">Day Clinic</div>
-                        <img class="linee" src={line} />
-                        <div class="elementtt"><FontAwesomeIcon icon={faClock} /></div>
-                        <div class="elementt">8AM - 4PM</div>
-                        <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
-                        <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-22" href='#'>View</a></div>
-                    </div>
+                            </div>
+                        )
+                    })}
+                    <Componets_Clinic name_clinic={"Day Clinic"} Working_hours={"8AM - 4PM"} location={"Al-Nabek"} />
+
                 </div>
             </div>
-
-
+            <button className="search-button" onClick={handleSearchClick}>
+                <FontAwesomeIcon icon={faSearch} />
+            </button>
+            {isSearchOpen && (
+                <div className="search-popup">
+                    {/* Your search input field and other content for searching */}
+                    <input className="search-input" type="text" placeholder="Search..." />
+                    {/* Other search-related elements */}
+                </div>
+            )}
         </>
     );
 

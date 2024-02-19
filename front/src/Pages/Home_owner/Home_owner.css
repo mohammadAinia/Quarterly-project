@@ -1,65 +1,69 @@
-.pricing .box-container{
+.pricing .box-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 2rem;
-  }
-  /* @media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 1200px) {
     .pricing .box-container {
         grid-template-columns: 1fr;
     }
-  }
-  .pricing .box-container .box img {
+}
+
+.pricing .box-container .box img {
     max-width: 100%;
     height: auto;
 }
+
 .pricing .box-container .box h3 {
-  font-size: 2.6rem; 
+    font-size: 2.6rem;
 }
 
 .pricing .box-container .box .price {
-  font-size: 2.2rem; 
+    font-size: 2.2rem;
 }
 
 .pricing .box-container .box p {
-  font-size: 1.5rem; 
-} */
+    font-size: 1.5rem;
+}
 
 
-  .pricing .box-container .box{
+.pricing .box-container .box {
     background: var(--bg);
     padding: 3rem;
     text-align: center;
     border-radius: 79% 51% 81% 19% / 58% 93% 7% 42%;
-  }
-  
-  .pricing .box-container .box:hover{
+}
+
+.pricing .box-container .box:hover {
     border-radius: .5rem;
-  }
-  
-  .pricing .box-container .box img{
+}
+
+.pricing .box-container .box img {
     height: 15.5rem;
     width: 15.5rem;
     margin-bottom: .5rem;
-  }
-  
-  .pricing .box-container .box h3{
+}
+
+.pricing .box-container .box h3 {
     font-size: 2.6rem;
     color: var(--black);
     padding: 1rem 0;
-  }
-  
-  .pricing .box-container .box .price{
+}
+
+.pricing .box-container .box .price {
     font-size: 2.2rem;
     color: var(--main);
     padding: .5rem 0;
-  }
-  
-  .pricing .box-container .box p{
+}
+
+.pricing .box-container .box p {
     font-size: 1.5rem;
     color: var(--black);
     padding: .5rem 0;
-  }
-  .pricing .box-container .box .inputBox textarea{
+}
+
+.pricing .box-container .box .inputBox textarea {
     height: 30px;
     width: 50%;
     outline: none;
@@ -69,11 +73,62 @@
     border: 1px solid #ccc;
     border-bottom-width: 2px;
     transition: all 0.3s ease;
-  }
-  .pricing .box-container .box .inputBox textarea:focus,
-  .pricing .box-container .box .inputBox textarea:valid{
+}
+
+.pricing .box-container .box .inputBox textarea:focus,
+.pricing .box-container .box .inputBox textarea:valid {
     border-color: #f18221;
-  }
+}
+
+.framee2 {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.framee2 .overlap-group-wrapperr2 {
+    background-color: #ffffff;
+    width: 2068px;
+    height: 1171px;
+}
+
+.framee2 .overlap-groupp2 {
+    position: relative;
+    height: 1171px;
+    /* background-image: url(../../Assert/Images/cat_day.jpg); */
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.framee2 .imgg2 {
+    top: 375px;
+    left: 82px;
+    position: absolute;
+    width: 38px;
+    height: 70px;
+}
+
+.framee2 .imgg-22 {
+    top: 376px;
+    left: 1948px;
+    position: absolute;
+    width: 38px;
+    height: 70px;
+}
+
+.framee2 .text-wrapperr2 {
+    position: absolute;
+    top: 1026px;
+    left: 389px;
+    font-family: "Poor Story-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 64px;
+    letter-spacing: 0;
+    line-height: normal;
+}
 
 
 
@@ -94,12 +149,15 @@
 
 
 
-  .madicals {
+
+
+.madicals {
     background-color: transparent;
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 100%;
+    margin-top: auto;
 }
 
 .madicals .div {
@@ -154,7 +212,8 @@
     position: absolute;
     top: 121px;
     width: 248px;
-    transition: transform 0.3s ease; /* Add a smooth transition for better visual effect */
+    transition: transform 0.3s ease;
+    /* Add a smooth transition for better visual effect */
 }
 
 .madicals .ellipse-6 {
@@ -165,37 +224,54 @@
     position: absolute;
     top: 167px;
     width: 248px;
-    transition: transform 0.3s ease; /* Add a smooth transition for better visual effect */
+    transition: transform 0.3s ease;
+    /* Add a smooth transition for better visual effect */
 }
 
 /* On hover, swap the positions of .ellipse and .ellipse-6 */
 .madicals .overlap-group-2:hover .ellipse {
-    transform: translate(20px, 26px); /* Move .ellipse down by 26px to match the position of .ellipse-6 */
+    transform: translate(20px, 26px);
+    /* Move .ellipse down by 26px to match the position of .ellipse-6 */
 }
 
 .madicals .overlap-group-2:hover .ellipse-6 {
-    transform: translate(0, 26px); /* Move .ellipse-6 up by 26px to match the position of .ellipse */
+    transform: translate(0, 26px);
+    /* Move .ellipse-6 up by 26px to match the position of .ellipse */
 }
+
 .madicals .overlap-group-2:hover .ellipse-2 {
-    transform: translate(20px, -26px); /* Move .ellipse-6 up by 26px to match the position of .ellipse */
+    transform: translate(20px, -26px);
+    /* Move .ellipse-6 up by 26px to match the position of .ellipse */
 }
+
 .madicals .overlap-group-2:hover .ellipse-3 {
-    transform: translate(0, -26px); /* Move .ellipse-6 up by 26px to match the position of .ellipse */
+    transform: translate(0, -26px);
+    /* Move .ellipse-6 up by 26px to match the position of .ellipse */
 }
+
 .madicals .overlap-group-2:hover .ellipse-4 {
-    transform: translate(0, -26px); /* Move .ellipse-6 up by 26px to match the position of .ellipse */
+    transform: translate(0, -26px);
+    /* Move .ellipse-6 up by 26px to match the position of .ellipse */
 }
+
 .madicals .overlap-group-2:hover .ellipse-5 {
-    transform: translate(-20px, 26px); /* Move .ellipse-6 up by 26px to match the position of .ellipse */
+    transform: translate(-20px, 26px);
+    /* Move .ellipse-6 up by 26px to match the position of .ellipse */
 }
+
 .madicals .overlap-group-2:hover .ellipse-7 {
-    transform: translate(20px, 26px); /* Move .ellipse-6 up by 46px to match the position of .ellipse */
+    transform: translate(20px, 26px);
+    /* Move .ellipse-6 up by 46px to match the position of .ellipse */
 }
+
 .madicals .overlap-2:hover .ellipse-8 {
-    transform: translate(-5px, -10px); /* Move .ellipse-6 up by 46px to match the position of .ellipse */
+    transform: translate(-5px, -10px);
+    /* Move .ellipse-6 up by 46px to match the position of .ellipse */
 }
+
 .madicals .overlap-2:hover .ellipse-9 {
-    transform: translate(5px, 10px); /* Move .ellipse-6 up by 46px to match the position of .ellipse */
+    transform: translate(5px, 10px);
+    /* Move .ellipse-6 up by 46px to match the position of .ellipse */
 }
 
 .madicals .ellipse-2 {
@@ -424,14 +500,115 @@
     text-align: center;
     width: fit-content;
 }
+
 .madicals .frame-3:hover {
     background-color: #ffffff;
 }
-.madicals .frame-3:hover .text-wrapper-2{
+
+.madicals .frame-3:hover .text-wrapper-2 {
     /* letter-spacing: 2px; */
-    color: #fecc02;}
+    color: #fecc02;
+}
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.advice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    min-height: 500px;
+  }
+  
+  .advice .div {
+    background-color: #ffffff;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    max-width: 2068px;
+    display: flex; /* Add display flex */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    padding: 70px;
+    padding-left: 230px;
+  }
+  
+  .advice .overlap {
+    width: calc(50% - 80px); /* Adjusted width to take 50% of the container minus some spacing */
+    height: auto;
+    margin-bottom: 20px; /* ملاحظة مهمة في حال اصبحت العناصر متداخلة او عنصر لايظهر زود هذا المارجن */
+    position: relative;
+    left: 20px; /* Adjusted left to create spacing between elements */
+    top: 20px; /* Adjusted top to create spacing between elements */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+  
+  .advice .rectangle {
+    width: 220%; /* Make the rectangle take full width of its container */
+    height: auto;
+    background-color: #fff4ca;
+    border-radius: 77px;
+    box-shadow: inset 0px 4px 4px #00000040;
+  }
+  
+  .advice .vector {
+    width: 153px;
+    height: 166px;
+    position: absolute;
+    top: -35px;
+    left: -20px;
+  }
+  
+  .advice .rectangle .text-wrapper {
+    width: auto;
+    height: auto;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    overflow: initial;
+    padding: 30px;
+    padding-left: 150px;
+  }
+  
+  .advice .overlap-wrapper {
+    position: absolute;
+    width: 197px;
+    height: 166px;
+    top: 60px;
+    left: 0;
+    background-size: 100% 100%;
+  }
+  
+  .advice_box {
+    width: 56px;
+    height: 81px;
+  }
+  
+  .advice_box .advice_vector {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 100px;
+    left: 47px;
+    z-index: 1;
+  }
+  
 
   

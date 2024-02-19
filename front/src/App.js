@@ -15,7 +15,8 @@ import {
   Notifications_vet, Animal_info_id_follow, All_problems_vet, Problem_id_vet, Your_problem_vet, Update_problem_vet,
   Animal_follow_id, Vaccine_vet_id, Page_chat_vet, Conversation_vet,Profile_id_vett,Search_user_vet
   ,Type_search_vet,Search_result_vet,Adopt_vet,Type_add_animal_vet,Your_animal_vet,Add_Animal_to_adopt_vet,
-  Animal_info_adopt_vet,Search_vet, Clinic,Specific_clinic
+  Animal_info_adopt_vet,Search_vet, Clinic,Specific_clinic,Appointment_Booking,Add_clinic,Add_Vets_to_clinic,
+
 } from './Componets/index'
 
 const App = () => {
@@ -118,9 +119,14 @@ const App = () => {
             <Route path='my_problem_vet' element={<Your_problem_vet />} />
             <Route path='my_problem_vet/update_problem/:id' element={<Update_problem_vet />} />
             <Route path='chat_vet' element={<Page_chat_vet />} /> 
+
+            {/********************************* Final Project *************************************************************************************************************** */}
+            
             <Route path='clinic' element={<Clinic />} /> 
             <Route path='Specific_clinic' element={<Specific_clinic />} /> 
-
+            <Route path='Booking/:id' element={<Appointment_Booking />} /> 
+            <Route path='add_clinic' element={<Add_clinic />} /> 
+            <Route path='Add_Vets_to_clinic' element={<Add_Vets_to_clinic />} /> 
 
 
           </Routes>

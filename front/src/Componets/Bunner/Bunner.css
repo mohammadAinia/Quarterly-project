@@ -1,58 +1,18 @@
+@keyframes move {
+    0% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    100% { transform: translateX(-5px); }
+  }
+  
+  .move-animation {
+    animation: move 2s ease infinite;
+  }
+  @keyframes shake {
+    0% { transform: translateY(-5px); }
+    50% { transform: translateY(5px); }
+    100% { transform: translateY(-5px); }
+}
 
-.bbanner{
-    /* background: url(../../Assert/Images/banner.png) no-repeat; */
-    /* background: url(../../Assert/Images/main3.jpg) no-repeat; */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    width: 2400px;
-    height: 1300px;
-
-  }
-  
-  .bbanner .row{
-    display:flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 6rem;
-  }
-  
-  .bbanner .row .content{
-    flex:  1 1 39rem;
-  }
-  .bbanner .row .content .nav{
-    border: dotted 2.5px #ff6e01;
-    width: 700px;
-  }
-
-  .bbanner .row .content h3{
-    font-size: 2rem;
-    color: var(--main);
-    
-    text-transform: uppercase;
-  }
-  
-  .bbanner .row .content p{
-    font-size: 1.6rem;
-    color: var(--black);
-    padding: 6px;
-    line-height: 1.8;
-  }
-  .bbanner .row .content ul li{
-    font-size: 1.6rem;
-    color: var(--black);
-    padding: 1rem 0;
-    line-height: 1.8;
-  }
-  .bbanner .row .content p:hover{
-    color: chocolate;
-  }
-  
-  .bbanner .row .image{
-    flex: 1 1 41rem;
-    margin-bottom: -14rem;
-  }
-  
-  .bbanner .row .image img{
-    width: 100%;
-  }
+.shake-animation {
+    animation: shake 3s ease infinite;
+}
