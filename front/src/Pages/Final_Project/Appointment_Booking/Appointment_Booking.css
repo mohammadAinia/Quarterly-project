@@ -229,6 +229,7 @@
     letter-spacing: 0;
     line-height: normal;
     white-space: nowrap;
+    background-color: #000000;
 }
 
 .appointment .rectangle-10 {
@@ -295,6 +296,20 @@
     background-color: #ffffff;
     border-radius: 4px;
     transform: rotate(166.39deg);
+    transition: transform 0.3s ease-in-out; /* Add transition for smooth effect */
+
+}
+.blink-animation {
+    animation: blink 3s infinite; /* Adjust duration as needed */
+}
+
+@keyframes blink {
+    0%, 50% {
+        transform: scaleY(1); /* Keep the eye open */
+    }
+    51%, 100% {
+        transform: scaleY(0.1); /* Close the eye */
+    }
 }
 
 .appointment .text-wrapper-2 {

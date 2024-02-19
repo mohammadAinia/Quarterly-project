@@ -122,6 +122,16 @@ export {default as Add_clinic} from '../Pages/Final_Project/Site_Manager/Add_cli
 export {default as Add_Vets_to_clinic} from '../Pages/Final_Project/Site_Manager/Add_Vets_to_clinic/Add_Vets_to_clinic'
 
 
+// Graduation Project
+
+
+
+
+export {default as Componets_Clinic} from './Graduation/Componets_Clinic/Componets_Clinic'
+export {default as Componets_Specific_clinic} from './Graduation/Componets_Specific_clinic/Componets_Specific_clinic'
+
+
+
 
 
 

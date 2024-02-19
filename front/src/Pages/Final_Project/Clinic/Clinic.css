@@ -582,3 +582,34 @@ h1{
   }
 
 
+  /* Styles for the search button */
+.search-button {
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+    background-color: #00D7E9;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Styles for the search popup */
+.search-popup {
+    position: fixed;
+    bottom: 33px; /* Adjust as needed */
+    right: 200px;
+    padding: 10px;
+    z-index: 999; /* Ensure the popup appears above other elements */
+}
+.search-input{
+    color: #ffd100;
+    
+    border: 1.5px solid #00D7E9;
+}
+
+/* Additional styles for search input field, etc. */
+

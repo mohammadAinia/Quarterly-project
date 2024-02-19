@@ -10,16 +10,38 @@ import avatar from '../../../Assert/Images/avatar.png'
 import spvector9 from '../../../Assert/Images/spvector9.png'
 import spvector10 from '../../../Assert/Images/spvector10.png'
 import spvector11 from '../../../Assert/Images/spvector11.png'
-import { Button, Card, Header, SectionHeader } from '../../../Componets/index'
+import { Button, Card, Componets_Specific_clinic, Header, SectionHeader } from '../../../Componets/index'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-    faRightToBracket, faPaw, faStoreSlash, faCoins, faFaceSmileWink, faBolt,faRightFromBracket,
+    faRightToBracket, faPaw, faStoreSlash, faCoins, faFaceSmileWink, faBolt, faRightFromBracket,
     faClock, faArrowsRotate, faComments, faHandHoldingHeart, faHouseCircleCheck,
-    faUsers, faArrowRightArrowLeft, faPaperPlane, faCheck, faStar,faPlus,faBell,faHouse
+    faUsers, faArrowRightArrowLeft, faPaperPlane, faCheck, faStar, faPlus, faBell, faHouse
 } from '@fortawesome/free-solid-svg-icons'
+import { useNavigate, useParams } from 'react-router-dom'
+import axios from 'axios'
+import { useState, useEffect } from 'react'
 
 const Specific_clinic = () => {
+
+    const navigate = useNavigate()
+    const { id } = useParams()
+    const [Info, setInfo] = useState([])
+
+    useEffect(() => {
+
+        axios.get(`http://localhost:3001/#/#/${id}`, { withCredentials: true })
+            .then(res => {
+                if (res.data.valid) {
+                    setInfo(res.data.result)
+                }
+                else {
+                    navigate('/login')
+                }
+            })
+            .catch(err => { console.log(err) })
+    }, [])
+
 
     return (
         <>
@@ -58,18 +80,17 @@ const Specific_clinic = () => {
                         <img class="vector-33" src={spvector11} />
                     </div>
 
-                    <div class="overlap-group-22">
-                        <div class="overlap-22">
-                            <div class="text-wrapper-44">Mohammad Ainia</div>
-                            <img class="linee" src={Linee} />
-                            <div class="spimage"><img class="sprectangle" src={avatar} /></div>
 
-                        </div>
-                        <div class="texxxxt-wrapper"><FontAwesomeIcon icon={faCheck} /></div><div class="text-wrapper-55">4 years experience</div>
-                        <div class="texxxxxt-wrapper"><FontAwesomeIcon icon={faCheck} /></div><p class="p">He has more experience with cats</p>
-                        <div class="texxxxxxt-wrapper"><FontAwesomeIcon icon={faCheck} /></div><div class="text-wrapper-66">Syrian nationality</div>
-                        <div class="div-wrapper-22"><a class="text-wrapper-77" href='Booking'>Booking</a></div>
-                    </div>
+                    {Info.map((d, i) => {
+                        return (
+                            <div key={i}>
+                                <Componets_Specific_clinic Veterinarian_name={"d."} Veterinarian_experience={"d."} Veterinarian_His_field_of_work={"d."}
+                                    Veterinarian_nationality={"d."} id={'d.'} /></div>
+                        )
+                    })}
+                    <Componets_Specific_clinic Veterinarian_name={"Mohammad Ainia"} Veterinarian_experience={"4 years experience"} Veterinarian_His_field_of_work={"He has more experience with cats"}
+                        Veterinarian_nationality={"Syrian nationality"} href={'Booking'} />
+
 
                 </div>
             </div>

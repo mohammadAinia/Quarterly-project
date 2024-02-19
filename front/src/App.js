@@ -124,7 +124,7 @@ const App = () => {
             
             <Route path='clinic' element={<Clinic />} /> 
             <Route path='Specific_clinic' element={<Specific_clinic />} /> 
-            <Route path='Booking' element={<Appointment_Booking />} /> 
+            <Route path='Booking/:id' element={<Appointment_Booking />} /> 
             <Route path='add_clinic' element={<Add_clinic />} /> 
             <Route path='Add_Vets_to_clinic' element={<Add_Vets_to_clinic />} /> 
 
