@@ -16,6 +16,7 @@ import {
   Animal_follow_id, Vaccine_vet_id, Page_chat_vet, Conversation_vet,Profile_id_vett,Search_user_vet
   ,Type_search_vet,Search_result_vet,Adopt_vet,Type_add_animal_vet,Your_animal_vet,Add_Animal_to_adopt_vet,
   Animal_info_adopt_vet,Search_vet, Clinic,Specific_clinic,Appointment_Booking,Add_clinic,Add_Vets_to_clinic,
+  Choose_a_clinic_for_delete,Componets_Clinic_To_choose,Choose_a_clinic_for_link_vet
 
 } from './Componets/index'
 
@@ -124,10 +125,15 @@ const App = () => {
             
             <Route path='clinic' element={<Clinic />} /> 
             <Route path='Specific_clinic/:id' element={<Specific_clinic />} /> 
-            <Route path='Booking/:id' element={<Appointment_Booking />} /> 
+            <Route path='Specific_clinic/Booking/:id' element={<Appointment_Booking />} /> 
             <Route path='add_clinic' element={<Add_clinic />} /> 
             <Route path='Add_Vets_to_clinic' element={<Add_Vets_to_clinic />} /> 
-            <Route path='m' element={<Administrator_home />} /> 
+            <Route path='m' element={<Administrator_home />} /> Choosing_a_doctor's_clinic
+            <Route path='choose_clinic' element={<Choose_a_clinic_for_delete />} /> 
+            <Route path='Choosing_a_doctor_clinic' element={<Componets_Clinic_To_choose />} /> 
+            <Route path='p' element={<Choose_a_clinic_for_link_vet />} /> 
+
+
 
 
 

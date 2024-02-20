@@ -122,7 +122,8 @@ const Clinic = () => {
                                 name_clinic={clinic.name}
                                 Working_hours={clinic.workingHours}
                                 location={clinic.location}
-                                id={clinic.id}
+                                href={`Specific_clinic/${clinic.id}`}
+                                button={"View"}
                             />
                         ))
                     ) : (
@@ -132,11 +133,12 @@ const Clinic = () => {
                                 name_clinic={clinic.name}
                                 Working_hours={clinic.workingHours}
                                 location={clinic.location}
-                                id={clinic.id}
-                            />
+                                href={`Specific_clinic/${clinic.id}`}
+                                button={"View"} />
                         ))
                     )}
-                    <Componets_Clinic name_clinic={"Day Clinic"} Working_hours={"8AM - 4PM"} location={"Al-Nabek"} />
+                    <Componets_Clinic href={`Specific_clinic/${clinic.id}`}
+                        button={"View"} name_clinic={"Day Clinic"} Working_hours={"8AM - 4PM"} location={"Al-Nabek"} />
 
                 </div>
             </div>

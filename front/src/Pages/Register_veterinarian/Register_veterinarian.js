@@ -47,8 +47,8 @@ const Register_veterinarian = () => {
 
       axios.post('http://localhost:3001/user/signup_vet', formData)
         .then(res => {
-          if (res.data.Login) {
-            navigate('/')
+          if (res.data.valid) {
+            navigate(`/Choosing_a_doctor_clinic/${res.data.id}`)
           }
         }
         )
@@ -60,7 +60,7 @@ const Register_veterinarian = () => {
     <>
       <Header href1={"/Animal"} a1={"About Pets"} href3={"#"} a3={"FAQs"} log={'/login'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightToBracket} /></div>} />
 
-      <div style={{ "margin-top": "600px", "margin-bottom": "70px" }}>
+      <div>
         <div className="container" >
           <div className="title">Registration Veterinarian</div>
           <div className="content">
