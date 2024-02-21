@@ -68,7 +68,7 @@ const Appointment_Booking = () => {
 
 
     const handleDateChange = (event) => {
-        const selectedDate = new Date(event.target.value);
+        const selectedDate = new Date(event.target.value); ////
 
         setDay_of_booking(event.target.value)
 
