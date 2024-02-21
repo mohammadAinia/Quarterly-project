@@ -116,26 +116,34 @@ const Clinic = () => {
                 <div class="overlap-group-wrapper">
 
                     {Search_result !== '' ? (
-                        filteredClinics.map((clinic, index) => (
-                            <Componets_Clinic
-                                key={index}
-                                name_clinic={clinic.name}
-                                Working_hours={clinic.workingHours}
-                                location={clinic.location}
-                                href={`Specific_clinic/${clinic.id}`}
-                                button={"View"}
-                            />
-                        ))
+                        filteredClinics.map((clinic, index) => {
+                            return (
+                                <div key={index}>
+                                    <Componets_Clinic
+                                        name_clinic={clinic.name}
+                                        Working_hours={clinic.workingHours}
+                                        location={clinic.location}
+                                        href={`Specific_clinic/${clinic.id}`}
+                                        button={"View"}
+                                    />
+                                </div>
+                            )
+
+                        })
                     ) : (
-                        Clinics.map((clinic, index) => (
-                            <Componets_Clinic
-                                key={index}
-                                name_clinic={clinic.name}
-                                Working_hours={clinic.workingHours}
-                                location={clinic.location}
-                                href={`Specific_clinic/${clinic.id}`}
-                                button={"View"} />
-                        ))
+                        Clinics.map((clinic, index) => {
+                            return (
+                                <div key={index}>
+                                    <Componets_Clinic
+                                        name_clinic={clinic.name}
+                                        Working_hours={clinic.workingHours}
+                                        location={clinic.location}
+                                        href={`Specific_clinic/${clinic.id}`}
+                                        button={"View"}
+                                    />
+                                </div>
+                            )
+                        })
                     )}
                     <Componets_Clinic href={`Specific_clinic/${clinic.id}`}
                         button={"View"} name_clinic={"Day Clinic"} Working_hours={"8AM - 4PM"} location={"Al-Nabek"} />
