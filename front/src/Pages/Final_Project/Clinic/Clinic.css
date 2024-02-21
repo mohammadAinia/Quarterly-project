@@ -177,6 +177,7 @@
     top: 69px;
     left: 101px;
 }
+
 .macbook-pro .vector-55 {
     position: absolute;
     width: 710px;
@@ -349,6 +350,7 @@
     top: 878px;
     left: 1100px;
 }
+
 .macbook-pro .frame2 {
     position: absolute;
     width: 138px;
@@ -356,6 +358,7 @@
     top: 578px;
     left: 899px;
 }
+
 .box2 {
     width: 133px;
     height: 134px;
@@ -368,6 +371,7 @@
     top: 0;
     left: 0;
 }
+
 .box1 {
     width: 101px;
     height: 104px;
@@ -380,6 +384,7 @@
     top: 0;
     left: 0;
 }
+
 /* ************************************************************** */
 .card-madical {
     background-color: #ffffff;
@@ -393,9 +398,11 @@
     background-color: #ffffff;
     /* width: 1512px; */
     /* height: 982px; */
-    width: 85%; /* Use 100% width to make it responsive */
+    width: 85%;
+    /* Use 100% width to make it responsive */
     display: flex;
-    flex-wrap: wrap; /* Added flex-wrap property */
+    flex-wrap: wrap;
+    /* Added flex-wrap property */
     justify-content: center;
 
 }
@@ -408,18 +415,22 @@
     height: 435px;
     /* top: 118px;
     left: 76px; */
-    margin-right: 16px; /* Added margin-right to create space between elements */
-    margin-bottom: 16px; /* Added margin-bottom to create space between rows */
-        transition: transform 0.3s ease;
+    margin-right: 16px;
+    /* Added margin-right to create space between elements */
+    margin-bottom: 16px;
+    /* Added margin-bottom to create space between rows */
+    transition: transform 0.3s ease;
 
     border-radius: 29px;
     box-shadow: 0px 4px 4px #00000040;
     background: linear-gradient(180deg, rgb(239.06, 236.07, 236.07) 0%, rgba(239.06, 236.07, 236.07, 0) 100%);
 }
+
 .card-madical .overlap-groupp:hover {
     transform: translateY(-20px);
     box-shadow: 0px 8px 8px #00000060;
 }
+
 .card-madical .framee:hover {
     transform: scale(1.1);
     box-shadow: 0px 4px 8px #00000040;
@@ -432,7 +443,7 @@
     top: 57px;
     left: 51px;
     border-radius: 37.5px/37px;
-    background: linear-gradient(180deg, rgba(0, 218, 234,0.6) 30%, rgba(234, 211, 0,0.3) 95%);
+    background: linear-gradient(180deg, rgba(0, 218, 234, 0.6) 30%, rgba(234, 211, 0, 0.3) 95%);
 }
 
 .card-madical .text-wrapperr {
@@ -470,6 +481,7 @@
     letter-spacing: 0;
     line-height: normal;
 }
+
 .card-madical .elementtt {
     position: absolute;
     width: 90px;
@@ -483,6 +495,7 @@
     letter-spacing: 0;
     line-height: normal;
 }
+
 .card-madical .elementttT {
     position: absolute;
     width: 90px;
@@ -523,7 +536,7 @@
     top: 369px;
     left: 117px;
     border-radius: 23px;
-    background: linear-gradient(130deg, rgba(0, 218, 234,0.6) 30%, rgba(234, 211, 0,0.3) 95%);
+    background: linear-gradient(130deg, rgba(0, 218, 234, 0.6) 30%, rgba(234, 211, 0, 0.3) 95%);
 }
 
 .card-madical .text-wrapper-222 {
@@ -537,12 +550,13 @@
     letter-spacing: 0;
     line-height: normal;
 }
+
 .clinic {
     position: absolute;
-    left:18px;
-    top:15px
-    
+    left: 18px;
+    top: 15px
 }
+
 .labelll {
     width: 393px;
     height: 89px;
@@ -566,10 +580,12 @@
     letter-spacing: 0;
     line-height: normal;
 }
-h1{
+
+h1 {
     font-size: 70px;
     color: #40aac0;
-    transition: color 0.3s ease; /* Smooth transition effect */
+    transition: color 0.3s ease;
+    /* Smooth transition effect */
     background-color: #ffffff;
     position: relative;
     text-align: center;
@@ -577,12 +593,14 @@ h1{
     padding-bottom: 20px;
 
 }
- h1:hover {
-    color: #00D7E9; /* Change the color on hover */
-  }
+
+h1:hover {
+    color: #00D7E9;
+    /* Change the color on hover */
+}
 
 
-  /* Styles for the search button */
+/* Styles for the search button */
 .search-button {
     position: fixed;
     bottom: 30px;
@@ -595,21 +613,51 @@ h1{
     height: 70px;
     font-size: 30px;
     cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Add box-shadow transition */
+
+}
+
+.search-button:hover {
+    transform: scale(1.05);
+    /* Scale up slightly on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    /* Add shadow on hover */
 }
 
 /* Styles for the search popup */
 .search-popup {
     position: fixed;
-    bottom: 33px; /* Adjust as needed */
-    right: 200px;
+    bottom: 32px;
+    right: 120px;
+    transform: scale(0.9);
+    /* Initially move the popup below the viewport */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    /* Smooth transition effect */
     padding: 10px;
-    z-index: 999; /* Ensure the popup appears above other elements */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    opacity: 0;
+    /* Ensure the popup appears above other elements */
 }
-.search-input{
-    color: #ffd100;
-    
-    border: 1.5px solid #00D7E9;
+
+.search-popup.active {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.search-input {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+.search-input:focus {
+    border-color: #007bff;
 }
 
 /* Additional styles for search input field, etc. */
-

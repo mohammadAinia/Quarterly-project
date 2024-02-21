@@ -2,7 +2,7 @@ import './Clinic.css'
 import React from 'react';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { Button, Card, Header, Componets_Clinic, SectionHeader } from '../../../Componets/index'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -32,27 +32,38 @@ import Vector5 from '../../../Assert/Images/Vector5.png'
 const Clinic = () => {
 
     const [isSearchOpen, setIsSearchOpen] = useState(false);
-
-    const handleSearchClick = () => {
-        setIsSearchOpen(!isSearchOpen);
-    };
-
-
-
+    const [Search_result, setSearch_result] = useState('')
     const [Clinics, setClinics] = useState([])
+    const [filteredClinics, setFilteredClinics] = useState([]);
 
     const navigate = useNavigate()
 
     useEffect(() => {
-
-        axios.get('http://localhost:3001/#########', { withCredentials: true })
+        axios.get('http://localhost:3001/#', { withCredentials: true })
             .then(res => {
-                setClinics(res.data)
-
+                setClinics(res.data);
+                // setFilteredClinics(res.data); // Initialize filteredClinics with all clinics
             })
-            .catch(err => { console.log(err) })
-    },
-        [])
+            .catch(err => {
+                console.log(err);
+            });
+    }, []);
+
+
+    const handleSearchInputChange = (event) => {
+        const { value } = event.target;
+        setSearch_result(event.value)
+
+        // Filter clinics based on search input
+        const filtered = Clinics.filter(clinic =>
+            Clinics.name.toLowerCase().includes(value.toLowerCase())
+        );
+        setFilteredClinics(filtered);
+    };
+
+    const handleSearchClick = () => {
+        setIsSearchOpen(!isSearchOpen);
+    };
 
     return (
         <>
@@ -104,37 +115,49 @@ const Clinic = () => {
             <div class="card-madical">
                 <div class="overlap-group-wrapper">
 
-                    {/* <div class="overlap-groupp">
-                        <div class="ellipsee"><img class="clinic" src={clinic} /></div>
-                        <div class="text-wrapperr">Day Clinic</div>
-                        <img class="linee" src={line} />
-                        <div class="elementtt"><FontAwesomeIcon icon={faClock} /></div>
-                        <div class="elementt">8AM - 4PM</div>
-                        <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
-                        <div class="divv">Al-Nabek</div>
-                        <div class="framee"><a class="text-wrapper-222" href='Specific_clinic'>View</a></div>
-                    </div> */}
-                    {Clinics.map((i, d) => {
-                        return (
-                            <div key={d}>
-
-                                <Componets_Clinic name_clinic={"i."} Working_hours={"i."} location={"i."} />
-
-                            </div>
-                        )
-                    })}
-                    <Componets_Clinic name_clinic={"Day Clinic"} Working_hours={"8AM - 4PM"} location={"Al-Nabek"} />
+                    {Search_result !== '' ? (
+                        filteredClinics.map((clinic, index) => (
+                            <Componets_Clinic
+                                key={index}
+                                name_clinic={clinic.name}
+                                Working_hours={clinic.workingHours}
+                                location={clinic.location}
+                                href={`Specific_clinic/${clinic.id}`}
+                                button={"View"}
+                            />
+                        ))
+                    ) : (
+                        Clinics.map((clinic, index) => (
+                            <Componets_Clinic
+                                key={index}
+                                name_clinic={clinic.name}
+                                Working_hours={clinic.workingHours}
+                                location={clinic.location}
+                                href={`Specific_clinic/${clinic.id}`}
+                                button={"View"} />
+                        ))
+                    )}
+                    <Componets_Clinic href={`Specific_clinic/${clinic.id}`}
+                        button={"View"} name_clinic={"Day Clinic"} Working_hours={"8AM - 4PM"} location={"Al-Nabek"} />
 
                 </div>
             </div>
-            <button className="search-button" onClick={handleSearchClick}>
+            <button className={`search-button ${isSearchOpen ? 'active' : ''}`} onClick={handleSearchClick}>
                 <FontAwesomeIcon icon={faSearch} />
             </button>
-            {isSearchOpen && (
+            {/* {isSearchOpen && (
                 <div className="search-popup">
-                    {/* Your search input field and other content for searching */}
-                    <input className="search-input" type="text" placeholder="Search..." />
-                    {/* Other search-related elements */}
+                    <input className="search-input" type="text" placeholder="Search..." onChange={e => setSearch_result(e.target.value)} />
+                </div>
+            )} */}
+            {isSearchOpen && (
+                <div className={`search-popup ${isSearchOpen ? 'active' : ''}`}>
+                    <input
+                        className="search-input"
+                        type="text"
+                        placeholder="Search..."
+                        onChange={handleSearchInputChange}
+                    />
                 </div>
             )}
         </>

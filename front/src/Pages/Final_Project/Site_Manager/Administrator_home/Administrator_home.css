@@ -1,0 +1,356 @@
+.admin-page {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.admin-page .div {
+    background-color: #ffffff;
+    width: 2068px;
+    height: 1171px;
+    position: relative;
+}
+
+.admin-page .overlap-group {
+    position: absolute;
+    width: 959px;
+    height: 1050px;
+    top: 121px;
+    left: 1109px;
+}
+
+.admin-page .vector {
+    position: absolute;
+    width: 852px;
+    height: 801px;
+    top: 94px;
+    left: 0;
+    object-fit: cover;
+}
+
+.admin-page .img {
+    position: absolute;
+    width: 239px;
+    height: 357px;
+    top: 0;
+    left: 720px;
+}
+
+.admin-page .frame {
+    position: absolute;
+    width: 701px;
+    height: 278px;
+    top: 772px;
+    left: 257px;
+    z-index: 2;
+
+}
+.admin-page .frame2 {
+    position: absolute;
+    width: 701px;
+    height: 278px;
+    top: 800px;
+    left: 357px;
+    z-index: 1;
+}
+
+.admin-page .text-wrapper {
+    position: absolute;
+    width: 759px;
+    top: 172px;
+    left: 102px;
+    font-family: "Irish Grover-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffcc04;
+    font-size: 63px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.admin-page .div-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    position: absolute;
+    top: 362px;
+    left: 279px;
+    border-radius: 30px;
+    border: 2px solid;
+    border-color: #239bb4;
+    width: 165px;
+    height: 70px;
+}
+
+.admin-page .text-wrapper-2 {
+    position: relative;
+    width: fit-content;
+    margin-top: -2px;
+    font-family: "Poppins-Regular", Helvetica;
+    font-weight: 400;
+    color: #239bb4;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.admin-page .frame-2 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    position: absolute;
+    top: 362px;
+    left: 476px;
+    border-radius: 30px;
+    border: 2px solid;
+    border-color: #239bb4;
+}
+
+.admin-page .frame-3 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    position: absolute;
+    top: 473px;
+    left: 476px;
+    border-radius: 30px;
+    border: 2px solid;
+    border-color: #239bb4;
+}
+
+.admin-page .frame-4 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    position: absolute;
+    top: 584px;
+    left: 476px;
+    border-radius: 30px;
+    border: 2px solid;
+    border-color: #239bb4;
+}
+
+.admin-page .frame-5 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    position: absolute;
+    top: 695px;
+    left: 476px;
+    border-radius: 30px;
+    border: 2px solid;
+    border-color: #239bb4;
+}
+
+.admin-page .frame-6 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    position: absolute;
+    top: 806px;
+    left: 476px;
+    border-radius: 30px;
+    border: 2px solid;
+    border-color: #239bb4;
+}
+
+.admin-page .frame-7 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    position: absolute;
+    top: 917px;
+    left: 476px;
+    border-radius: 30px;
+    border: 2px solid;
+    border-color: #239bb4;
+}
+
+.admin-page .frame-8 {
+    display: flex;
+    width: 162px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    position: absolute;
+    top: 473px;
+    left: 279px;
+    border-radius: 30px;
+    border: 2px solid;
+    border-color: #239bb4;
+}
+
+.admin-page .frame-9 {
+    display: flex;
+    width: 162px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    position: absolute;
+    top: 584px;
+    left: 279px;
+    border-radius: 30px;
+    border: 2px solid;
+    border-color: #239bb4;
+}
+
+.admin-page .frame-10 {
+    display: flex;
+    width: 162px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    position: absolute;
+    top: 695px;
+    left: 279px;
+    border-radius: 30px;
+    border: 2px solid;
+    border-color: #239bb4;
+}
+
+.admin-page .frame-11 {
+    display: flex;
+    width: 162px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    position: absolute;
+    top: 806px;
+    left: 279px;
+    border-radius: 30px;
+    border: 2px solid;
+    border-color: #239bb4;
+}
+
+.admin-page .frame-12 {
+    display: flex;
+    width: 162px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    position: absolute;
+    top: 917px;
+    left: 279px;
+    border-radius: 30px;
+    border: 2px solid;
+    border-color: #239bb4;
+}
+.admin-page .div-wrapper:hover {
+    background-color: #239bb4; /* Change background color on hover */
+    transition: background-color 0.9s ease; /* Smooth transition effect */
+}
+.admin-page .div-wrapper:hover .text-wrapper-2 {
+    color: #ffffff; /* Change text color on hover */
+    transition: color 0.9s ease; /* Smooth transition effect */
+}
+.admin-page .frame-2:hover {
+    background-color: #239bb4; /* Change background color on hover */
+    transition: background-color 0.9s ease; /* Smooth transition effect */
+}
+.admin-page .frame-2:hover .text-wrapper-2 {
+    color: #ffffff; /* Change text color on hover */
+    transition: color 0.9s ease; /* Smooth transition effect */
+}
+.admin-page .frame-3:hover {
+    background-color: #239bb4; /* Change background color on hover */
+    transition: background-color 0.9s ease; /* Smooth transition effect */
+
+}
+.admin-page .frame-3:hover .text-wrapper-2 {
+    color: #ffffff; /* Change text color on hover */
+    transition: color 0.9s ease; /* Smooth transition effect */
+}
+.admin-page .frame-4:hover {
+    background-color: #239bb4; /* Change background color on hover */
+    transition: background-color 0.9s ease; /* Smooth transition effect */
+}
+.admin-page .frame-4:hover .text-wrapper-2 {
+    color: #ffffff; /* Change text color on hover */
+    transition: color 0.9s ease; /* Smooth transition effect */
+}
+.admin-page .frame-5:hover {
+    background-color: #239bb4; /* Change background color on hover */
+    transition: background-color 0.9s ease; /* Smooth transition effect */
+}
+.admin-page .frame-5:hover .text-wrapper-2 {
+    color: #ffffff; /* Change text color on hover */
+    transition: color 0.9s ease; /* Smooth transition effect */
+}
+.admin-page .frame-6:hover {
+    background-color: #239bb4; /* Change background color on hover */
+    transition: background-color 0.9s ease; /* Smooth transition effect */
+}
+.admin-page .frame-6:hover .text-wrapper-2 {
+    color: #ffffff; /* Change text color on hover */
+    transition: color 0.9s ease; /* Smooth transition effect */
+}
+.admin-page .frame-7:hover {
+    background-color: #239bb4; /* Change background color on hover */
+    transition: background-color 0.9s ease; /* Smooth transition effect */
+}
+.admin-page .frame-7:hover .text-wrapper-2 {
+    color: #ffffff; /* Change text color on hover */
+    transition: color 0.9s ease; /* Smooth transition effect */
+}
+.admin-page .frame-8:hover {
+    background-color: #239bb4; /* Change background color on hover */
+    transition: background-color 0.9s ease; /* Smooth transition effect */
+}
+.admin-page .frame-8:hover .text-wrapper-2 {
+    color: #ffffff; /* Change text color on hover */
+    transition: color 0.9s ease; /* Smooth transition effect */
+}
+.admin-page .frame-9:hover {
+    background-color: #239bb4; /* Change background color on hover */
+    transition: background-color 0.9s ease; /* Smooth transition effect */
+}
+.admin-page .frame-9:hover .text-wrapper-2 {
+    color: #ffffff; /* Change text color on hover */
+    transition: color 0.9s ease; /* Smooth transition effect */
+}
+.admin-page .frame-10:hover {
+    background-color: #239bb4; /* Change background color on hover */
+    transition: background-color 0.9s ease; /* Smooth transition effect */
+}
+.admin-page .frame-10:hover .text-wrapper-2 {
+    color: #ffffff; /* Change text color on hover */
+    transition: color 0.9s ease; /* Smooth transition effect */
+}
+.admin-page .frame-11:hover {
+    background-color: #239bb4; /* Change background color on hover */
+    transition: background-color 0.9s ease; /* Smooth transition effect */
+}
+.admin-page .frame-11:hover .text-wrapper-2 {
+    color: #ffffff; /* Change text color on hover */
+    transition: color 0.9s ease; /* Smooth transition effect */
+}
+.admin-page .frame-12:hover {
+    background-color: #239bb4; /* Change background color on hover */
+    transition: background-color 0.9s ease; /* Smooth transition effect */
+}
+.admin-page .frame-12:hover .text-wrapper-2 {
+    color: #ffffff; /* Change text color on hover */
+    transition: color 0.9s ease; /* Smooth transition effect */
+}
