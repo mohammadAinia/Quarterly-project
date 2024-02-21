@@ -33,7 +33,7 @@ const Componets_Clinic_with_button = (props) => {
                 <div class="elementt">{props.Working_hours}</div>
                 <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
                 <div class="divv">{props.location}</div>
-                <div class="framee"><button class="text-wrapper-222" onClick={handleDelete(props.id)}>{props.button}</button></div>
+                <div class="framee"><button class="text-wrapper-222" onClick={()=>handleDelete(props.id)}>{props.button}</button></div>
             </div>
         </>
 
