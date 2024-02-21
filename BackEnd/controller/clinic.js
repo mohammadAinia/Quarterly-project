@@ -50,7 +50,7 @@ function search_clinc (req,res){
 }
 else return res.json({valid:false})
 }
-function add_doc_to_cli(req,res){
+function add_doc_to_cli(req,res){// here is test  قبل فكرة انو الطبيب مايكنلو حساب بلا العيادة
     id=req.body.id
     id_vet=req.params.id
     sql='select * from veterinarianns where id=?'
@@ -66,8 +66,35 @@ function add_doc_to_cli(req,res){
             })
     }
     }
-        
     )
+}
+function add_doc_to_cli_new(req,res){
+    //parameter
+    bcryptjs.genSalt(10,(err,salt) => {
+    bcryptjs.hash(req.body.password,salt,function (err,hash) {
+        id_admin=res.session.clinc_admin
+    sql='select id_c from clinc where admin_clinc=?'
+    db.query(sql,[id_admin],(error,result)=>{
+        if(error){console.log(error+"  add_doc_to_cli_new")}
+        else {
+            var sql2="INSERT user-infos (email,password,phone,rolee,first_name,last_name,age,gender) VALUES('" + email + "','" + hash + "','" + phone + "','" + "doc" + "','" + first + "','" + last + "','" + age + "','" + gender + "')"
+            db.query(sql2,(error,result)=>{
+                if(error){console.log(error+"ff")}
+                else {
+                    var sql1="INSERT veterinarianns (address,nation,university,num_year_exp,deatalis,url_bsc,cl_id) VALUES('" + adre + "','" + nation + "','" + uni + "','" + numy + "','" + det + "','" + bsc + "','" + result[0].id_c + "')"
+                    db.query(sql1,(error,result)=>{
+                        if(error){console.log(error+"ff")}
+                        else {
+                            res.json({valid:true})
+                        }
+                    })
+                }
+            })
+            
+        }
+    })
+    });
+});
 }
 
 function show_all_vet_without_clinic(req,res){
@@ -82,6 +109,14 @@ function show_all_vet_without_clinic(req,res){
 function update_time (req,res){
     var sql='update clinics set time_open=?,time_close=?'
 
+}
+function make_appointment(req,res){
+    //parameter
+    var sql="INSERT aapointmint (a_clinic_id,a_vet_id,date_ap,animal_id_ap,time_ap) VALUES('" + namee + "','" + place + "','" + number + "','" + openq + "','" + closeq + "')"
+    db.query(sql,(error,result)=>{})
+}
+function show_avilable_app(req,res){
+    
 }
 module.exports={
     create_clinic,
@@ -121,3 +156,13 @@ module.exports={
 //     console.log(index)
 //     console.log(are)
 // });
+
+
+
+
+
+
+
+
+
+
