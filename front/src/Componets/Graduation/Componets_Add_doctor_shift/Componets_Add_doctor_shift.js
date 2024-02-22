@@ -1,20 +1,9 @@
-import './Componets_Del_Vet.css'
+import './Componets_Add_doctor_shift.css'
 import React from 'react'
 import all_vet_Vector_34 from '../../../Assert/Images/all_vet_Vector_34.png'
 import axios from 'axios'
-import { Link, useNavigate } from 'react-router-dom'
-import { useEffect } from 'react'
 
-const Componets_Del_Vet = (props) => {
-
-    const handleAction = async (id) => {
-        try {
-            await axios.post('http://localhost:3001/#/#/' + id)
-            alert("The doctor has been successfully added to the clinic")
-            window.location.reload()
-        }
-        catch (err) { console.log(err) }
-    }
+const Componets_Add_doctor_shift = (props) => {
     return (
         <>
             <div class="frame">
@@ -32,7 +21,7 @@ const Componets_Del_Vet = (props) => {
                     <div class="text-wrapper-3">Email :</div>
                     <div class="text-wrapper-4">{props.email}</div>
                 </div>
-                <div class="div-wrapper"><button class="text-wrapper-5" onClick={e => handleAction(props.id)}>Delete</button></div>
+                <div class="div-wrapper"><a class="text-wrapper-5" href='#'>Select</a></div>
             </div>
         </>
 
@@ -40,4 +29,4 @@ const Componets_Del_Vet = (props) => {
     )
 }
 
-export default Componets_Del_Vet
+export default Componets_Add_doctor_shift

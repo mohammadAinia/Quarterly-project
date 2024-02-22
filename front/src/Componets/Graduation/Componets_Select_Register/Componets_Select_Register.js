@@ -7,9 +7,10 @@ import { useEffect } from 'react'
 
 const Componets_Select_Register = (props) => {
 
+    
     const handleAction = async (id) => {
         try {
-            await axios.post('http://localhost:3001/clinic/add_to_clinic/'+id)
+            axios.post('http://localhost:3001/clinic/add_to_clinic/'+id)
             alert("The doctor has been successfully added to the clinic")
             window.location.reload()
         }
@@ -33,7 +34,7 @@ const Componets_Select_Register = (props) => {
                     <div class="text-wrapper-3">Email :</div>
                     <div class="text-wrapper-4">{props.email}</div>
                 </div>
-                <div class="div-wrapper"><button class="text-wrapper-5" onClick={() => handleAction(props.id)}>Select</button></div>
+                <div class="div-wrapper"><button class="text-wrapper-5" onClick={e => handleAction(props.id)}>Select</button></div>
             </div>
         </>
 

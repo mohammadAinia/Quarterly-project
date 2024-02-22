@@ -141,6 +141,12 @@ export {default as Componets_Select_Register} from './Graduation/Componets_Selec
 export {default as Adding_new_doctor_clinic} from '../Pages/Final_Project/Clinic_manager/Adding_new_doctor_clinic/Adding_new_doctor_clinic'
 export {default as Componets_Del_Vet} from './Graduation/Componets_Del_Vet/Componets_Del_Vet'
 export {default as Del_Vet} from '../Pages/Final_Project/Clinic_manager/Del_Vet/Del_Vet'
+export {default as Add_doctor_shift} from '../Pages/Final_Project/Clinic_manager/Add_doctor_shift/Add_doctor_shift'
+export {default as Componets_Add_doctor_shift} from './Graduation/Componets_Add_doctor_shift/Componets_Add_doctor_shift'
+export {default as Add_doctor_shift_time} from '../Pages/Final_Project/Clinic_manager/Add_doctor_shift_time/Add_doctor_shift_time'
+
+
+
 
 
 

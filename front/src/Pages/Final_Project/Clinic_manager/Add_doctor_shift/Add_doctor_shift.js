@@ -1,18 +1,18 @@
-import './Select_Register.css'
+import './Add_doctor_shift.css'
 import React from 'react'
-import { Componets_Select_Register } from '../../../../Componets'
+import { Componets_Add_doctor_shift } from '../../../../Componets'
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const Select_Register = () => {
+const Add_doctor_shift = () => {
 
     const navigate = useNavigate()
     const [Info, setInfo] = useState([])
 
     useEffect(() => {
 
-        axios.get('http://localhost:3001/clinic/showall_without_clinc', { withCredentials: true })
+        axios.get('http://localhost:3001/clinic/#', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     setInfo(res.data.result)
@@ -23,7 +23,6 @@ const Select_Register = () => {
             })
             .catch(err => { console.log(err) })
     }, [])
-
     return (
         <>
             <div class="all-vet">
@@ -32,10 +31,12 @@ const Select_Register = () => {
                     {Info.map((d, i) => {
                         return (
                             <div key={i}>
-                                <Componets_Select_Register name={d.first_name} age={d.age} email={d.email} id={d.id} />
+                                <Componets_Add_doctor_shift name={d.first_name} age={d.age} email={d.email} id={d.id} />
                             </div>
                         )
                     })}
+                    <Componets_Add_doctor_shift name={""} age={""} email={''} id={""} />
+
                 </div>
             </div>
         </>
@@ -43,4 +44,4 @@ const Select_Register = () => {
     )
 }
 
-export default Select_Register
+export default Add_doctor_shift

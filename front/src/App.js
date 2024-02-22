@@ -17,7 +17,7 @@ import {
   ,Type_search_vet,Search_result_vet,Adopt_vet,Type_add_animal_vet,Your_animal_vet,Add_Animal_to_adopt_vet,
   Animal_info_adopt_vet,Search_vet, Clinic,Specific_clinic,Appointment_Booking,Add_clinic,Add_Vets_to_clinic,
   Choose_a_clinic_for_delete,Componets_Clinic_To_choose,Choose_a_clinic_for_link_vet,Home_for_clinic_manager,
-  Choose_register_new_doctor,Select_Register,Adding_new_doctor_clinic,Del_Vet
+  Choose_register_new_doctor,Select_Register,Adding_new_doctor_clinic,Del_Vet,Add_doctor_shift
 
 } from './Componets/index'
 
@@ -138,6 +138,8 @@ const App = () => {
             <Route path='Select_Register' element={<Select_Register />} /> 
             <Route path='Adding_new_doctor_clinic' element={<Adding_new_doctor_clinic />} /> 
             <Route path='Del_Vet' element={<Del_Vet />} /> 
+            <Route path='Add_doctor_shift' element={<Add_doctor_shift />} /> 
+
 
 
 
