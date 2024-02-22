@@ -26,15 +26,17 @@ function showd_c (req,res){
     })
 }
 function show_all (req,res){
-    id=req.params.id
+    if (req.session.username){
     sql='select * from clinics '
     db.query(sql,(err,result)=>{
         if(err){console.log(err)}
         else {
-            return res.json(result)
+            return res.json({result,valid:true})
         }
 
     })
+}
+else res.json({valid:false})
 }
 
 function search_clinc (req,res){
@@ -77,7 +79,7 @@ function add_doc_to_cli_new(req,res){
     db.query(sql,[id_admin],(error,result)=>{
         if(error){console.log(error+"  add_doc_to_cli_new")}
         else {
-            var sql2="INSERT user-infos (email,password,phone,rolee,first_name,last_name,age,gender) VALUES('" + email + "','" + hash + "','" + phone + "','" + "doc" + "','" + first + "','" + last + "','" + age + "','" + gender + "')"
+            var sql2="INSERT user_infos (email,password,phone,rolee,first_name,last_name,age,gender) VALUES('" + email + "','" + hash + "','" + phone + "','" + "doc" + "','" + first + "','" + last + "','" + age + "','" + gender + "')"
             db.query(sql2,(error,result)=>{
                 if(error){console.log(error+"ff")}
                 else {
@@ -124,7 +126,10 @@ module.exports={
     show_all,
     search_clinc,
     add_doc_to_cli,
-    
+    show_avilable_app,
+    update_time,
+    show_all_vet_without_clinic,
+    add_doc_to_cli_new,
 }
 
 

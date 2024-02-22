@@ -39,7 +39,7 @@ const Clinic = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        axios.get('http://localhost:3001/#', { withCredentials: true })
+        axios.get('http://localhost:3001/clinic/showall', { withCredentials: true })
             .then(res => {
                 setClinics(res.data);
                 // setFilteredClinics(res.data); // Initialize filteredClinics with all clinics
@@ -119,10 +119,10 @@ const Clinic = () => {
                         filteredClinics.map((clinic, index) => (
                             <Componets_Clinic
                                 key={index}
-                                name_clinic={clinic.name}
-                                Working_hours={clinic.workingHours}
-                                location={clinic.location}
-                                href={`Specific_clinic/${clinic.id}`}
+                                name_clinic={clinic.c_name}
+                                Working_hours={clinic.time_open}
+                                location={clinic.c_place}
+                                href={`Specific_clinic/${clinic.id_c}`}
                                 button={"View"}
                             />
                         ))
@@ -130,14 +130,14 @@ const Clinic = () => {
                         Clinics.map((clinic, index) => (
                             <Componets_Clinic
                                 key={index}
-                                name_clinic={clinic.name}
-                                Working_hours={clinic.workingHours}
-                                location={clinic.location}
-                                href={`Specific_clinic/${clinic.id}`}
+                                name_clinic={clinic.c_name}
+                                Working_hours={clinic.time_open}
+                                location={clinic.c_place}
+                                href={`Specific_clinic/${clinic.id_c}`}
                                 button={"View"} />
                         ))
                     )}
-                    <Componets_Clinic href={`Specific_clinic/${clinic.id}`}
+                    <Componets_Clinic href={`Specific_clinic/${clinic.id_c}`}
                         button={"View"} name_clinic={"Day Clinic"} Working_hours={"8AM - 4PM"} location={"Al-Nabek"} />
 
                 </div>
