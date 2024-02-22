@@ -9,7 +9,7 @@ const Componets_Select_Register = (props) => {
 
     const handleAction = async (id) => {
         try {
-            await axios.post('http://localhost:3001/#/#/' + id)
+            await axios.post('http://localhost:3001/clinic/add_to_clinic/'+id)
             alert("The doctor has been successfully added to the clinic")
             window.location.reload()
         }

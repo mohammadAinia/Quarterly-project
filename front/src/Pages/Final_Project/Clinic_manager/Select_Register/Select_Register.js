@@ -13,7 +13,7 @@ const Select_Register = () => {
 
     useEffect(() => {
 
-        axios.get('http://localhost:3001/vet/show_all_vet', { withCredentials: true })
+        axios.get('http://localhost:3001/clinic/showall_without_clinc', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     setInfo(res.data.result)

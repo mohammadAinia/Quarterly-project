@@ -156,6 +156,8 @@ function login(req,res) {
                             notifcation(user.email)
                             // req.session.roleee='user'
                             req.session.username=user.email;
+                            req.session.admin=user.email;
+
                             return res.json({ Login: true,username: req.session.username ,roleee:false});
 
                         } else {

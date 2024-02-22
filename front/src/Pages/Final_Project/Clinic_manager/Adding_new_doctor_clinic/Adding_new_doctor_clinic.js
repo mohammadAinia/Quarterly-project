@@ -46,11 +46,11 @@ const Adding_new_doctor_clinic = () => {
         if (Password === Confirm) {
             e.preventDefault()
 
-            axios.post('http://localhost:3001/user/signup_vet', formData)
+            axios.post('http://localhost:3001/clinic/add_new_vet', formData)
                 .then(res => {
                     if (res.data.valid) {
                         alert('The doctor has been successfully registered to the clinic')
-                        window.location.reload()
+                    navigate(-1)
                     }
                 }
                 )

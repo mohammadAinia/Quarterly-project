@@ -13,7 +13,7 @@ const Del_Vet = () => {
 
     useEffect(() => {
 
-        axios.get('http://localhost:3001/#/#', { withCredentials: true })
+        axios.get('http://localhost:3001/clinic/show_under', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     setInfo(res.data.result)
