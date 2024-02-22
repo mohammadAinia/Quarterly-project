@@ -42,7 +42,7 @@ const Clinic = () => {
         axios.get('http://localhost:3001/clinic/showall', { withCredentials: true })
             .then(res => {
                 setClinics(res.data);
-                // setFilteredClinics(res.data); // Initialize filteredClinics with all clinics
+                setFilteredClinics(res.data); // Initialize filteredClinics with all clinics
             })
             .catch(err => {
                 console.log(err);
@@ -56,7 +56,7 @@ const Clinic = () => {
 
         // Filter clinics based on search input
         const filtered = Clinics.filter(clinic =>
-            Clinics.name.toLowerCase().includes(value.toLowerCase())
+            clinic.name.toLowerCase().includes(value.toLowerCase())
         );
         setFilteredClinics(filtered);
     };
@@ -131,15 +131,19 @@ const Clinic = () => {
 
                         })
                     ) : (
-                        Clinics.map((clinic, index) => (
-                            <Componets_Clinic
-                                key={index}
-                                name_clinic={clinic.name}
-                                Working_hours={clinic.workingHours}
-                                location={clinic.location}
-                                href={`Specific_clinic/${clinic.id}`}
-                                button={"View"} />
-                        ))
+                        Clinics.map((clinic, index) => {
+                            return (
+                                <div key={index}>
+                                    <Componets_Clinic
+                                        name_clinic={clinic.name}
+                                        Working_hours={clinic.workingHours}
+                                        location={clinic.location}
+                                        href={`Specific_clinic/${clinic.id}`}
+                                        button={"View"}
+                                    />
+                                </div>
+                            )
+                        })
                     )}
                     <Componets_Clinic href={`Specific_clinic/${clinic.id_c}`}
                         button={"View"} name_clinic={"Day Clinic"} Working_hours={"8AM - 4PM"} location={"Al-Nabek"} />

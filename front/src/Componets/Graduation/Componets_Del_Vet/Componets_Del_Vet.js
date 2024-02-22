@@ -8,13 +8,17 @@ import { useEffect } from 'react'
 const Componets_Del_Vet = (props) => {
 
     const handleAction = async (id) => {
-        try {
-            await axios.post('http://localhost:3001/#/#/' + id)
-            alert("The doctor has been successfully added to the clinic")
-            window.location.reload()
-        }
-        catch (err) { console.log(err) }
+        await axios.post('http://localhost:3001/#/#/' + id)
+            .then(res => {
+                if (res.data.valid) {
+                    alert("The doctor has been successfully added to the clinic")
+                    window.location.reload()
+                }
+            })
+            .catch(err => alert(err))
     }
+
+
     return (
         <>
             <div class="frame">

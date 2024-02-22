@@ -1,11 +1,11 @@
-import './Add_doctor_shift.css'
+import './Edit_doctor_shift.css'
 import React from 'react'
 import { Componets_Add_doctor_shift } from '../../../../Componets'
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const Add_doctor_shift = () => {
+const Edit_doctor_shift = () => {
 
     const navigate = useNavigate()
     const [Info, setInfo] = useState([])
@@ -31,17 +31,18 @@ const Add_doctor_shift = () => {
                     {Info.map((d, i) => {
                         return (
                             <div key={i}>
-                                <Componets_Add_doctor_shift href={`Add_doctor_shift_time/${d.id}`} name={d.first_name} age={d.age} email={d.email}  />
+                                <Componets_Add_doctor_shift href={`Edit_doctor_shift_time/${d.id}`} name={d.first_name} age={d.age} email={d.email}  />
                             </div>
                         )
                     })}
-                    <Componets_Add_doctor_shift name={""} age={""} email={''} href={`Add_doctor_shift_time/${5}`}/>
-                    
+                    <Componets_Add_doctor_shift href={`Edit_doctor_shift_time/${3}`} name={""} age={""} email={''} id={1} />
+
                 </div>
             </div>
         </>
 
+
     )
 }
 
-export default Add_doctor_shift
+export default Edit_doctor_shift

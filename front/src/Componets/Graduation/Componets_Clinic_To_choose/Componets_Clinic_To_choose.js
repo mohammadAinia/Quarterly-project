@@ -32,7 +32,7 @@ const Componets_Clinic_To_choose = (props) => {
                 <div class="elementt">{props.Working_hours}</div>
                 <div class="elementttT"><FontAwesomeIcon icon={faLocationDot} /></div>
                 <div class="divv">{props.location}</div>
-                <div class="framee"><button class="text-wrapper-222" onClick={()=>Processing_of_adding_a_doctor_to_a_clinic(props.id)}>{props.button}</button></div>
+                <div class="framee"><button class="text-wrapper-222" onClick={e=>Processing_of_adding_a_doctor_to_a_clinic(props.id)}>{props.button}</button></div>
             </div>
         </>
     )

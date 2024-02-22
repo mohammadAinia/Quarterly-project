@@ -16,7 +16,6 @@ const Add_vacci = () => {
 
     const { id } = useParams()
 
-
     useEffect(() => {
 
         axios.get(`http://localhost:3001/animal/get_vacc/${id}`, { withCredentials: true })

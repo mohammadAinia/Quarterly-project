@@ -21,7 +21,7 @@ const Componets_Add_doctor_shift = (props) => {
                     <div class="text-wrapper-3">Email :</div>
                     <div class="text-wrapper-4">{props.email}</div>
                 </div>
-                <div class="div-wrapper"><a class="text-wrapper-5" href='#'>Select</a></div>
+                <div class="div-wrapper"><a class="text-wrapper-5" href={props.href}>Select</a></div>
             </div>
         </>
 
