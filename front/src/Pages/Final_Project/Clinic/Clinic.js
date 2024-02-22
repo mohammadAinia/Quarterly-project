@@ -116,24 +116,28 @@ const Clinic = () => {
                 <div class="overlap-group-wrapper">
 
                     {Search_result !== '' ? (
-                        filteredClinics.map((clinic, index) => (
-                            <Componets_Clinic
-                                key={index}
-                                name_clinic={clinic.c_name}
-                                Working_hours={clinic.time_open}
-                                location={clinic.c_place}
-                                href={`Specific_clinic/${clinic.id_c}`}
-                                button={"View"}
-                            />
-                        ))
+                        filteredClinics.map((clinic, index) => {
+                            return (
+                                <div key={index}>
+                                    <Componets_Clinic
+                                        name_clinic={clinic.name}
+                                        Working_hours={clinic.workingHours}
+                                        location={clinic.location}
+                                        href={`Specific_clinic/${clinic.id}`}
+                                        button={"View"}
+                                    />
+                                </div>
+                            )
+
+                        })
                     ) : (
                         Clinics.map((clinic, index) => (
                             <Componets_Clinic
                                 key={index}
-                                name_clinic={clinic.c_name}
-                                Working_hours={clinic.time_open}
-                                location={clinic.c_place}
-                                href={`Specific_clinic/${clinic.id_c}`}
+                                name_clinic={clinic.name}
+                                Working_hours={clinic.workingHours}
+                                location={clinic.location}
+                                href={`Specific_clinic/${clinic.id}`}
                                 button={"View"} />
                         ))
                     )}

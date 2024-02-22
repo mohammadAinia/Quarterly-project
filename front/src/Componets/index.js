@@ -134,6 +134,16 @@ export {default as Choose_a_clinic_for_delete} from '../Pages/Final_Project/Site
 export {default as Componets_Clinic_with_button} from './Graduation/Componets_Clinic_with_button/Componets_Clinic_with_button'
 export {default as Componets_Clinic_To_choose} from './Graduation/Componets_Clinic_To_choose/Componets_Clinic_To_choose'
 export {default as Choose_a_clinic_for_link_vet} from '../Pages/Final_Project/Site_Manager/Choose_a_clinic_for_link_vet/Choose_a_clinic_for_link_vet'
+export {default as Home_for_clinic_manager} from '../Pages/Final_Project/Clinic_manager/Home_for_clinic_manager/Home_for_clinic_manager'
+export {default as Choose_register_new_doctor} from '../Pages/Final_Project/Clinic_manager/Choose_register_new_doctor/Choose_register_new_doctor'
+export {default as Select_Register} from '../Pages/Final_Project/Clinic_manager/Select_Register/Select_Register'
+export {default as Componets_Select_Register} from './Graduation/Componets_Select_Register/Componets_Select_Register'
+export {default as Adding_new_doctor_clinic} from '../Pages/Final_Project/Clinic_manager/Adding_new_doctor_clinic/Adding_new_doctor_clinic'
+export {default as Componets_Del_Vet} from './Graduation/Componets_Del_Vet/Componets_Del_Vet'
+export {default as Del_Vet} from '../Pages/Final_Project/Clinic_manager/Del_Vet/Del_Vet'
+
+
+
 
 
 

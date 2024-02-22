@@ -1,0 +1,117 @@
+.choose {
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.choose .div {
+    width: 1899px;
+    height: 982px;
+    position: relative;
+}
+
+.choose .overlap-group {
+    position: absolute;
+    width: 740px;
+    height: 740px;
+    top: 115px;
+    left: 580px;
+    background-color: #ffffff;
+    border: 1px solid;
+    border-color: #000000;
+}
+.choose .overlap {
+    position: absolute;
+    width: 739px;
+    height: 352px;
+    top: 0;
+    left: 0;
+    background-image: url(../../../../Assert/Images/choose_Vector34.png);
+    background-size: 100% 100%;
+}
+
+.choose .text-wrapper {
+    position: absolute;
+    width: 365px;
+    height: 86px;
+    top: 28px;
+    left: 186px;
+    font-family: "Poppins-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 50px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.choose .vector {
+    position: absolute;
+    width: 142px;
+    height: 147px;
+    top: 203px;
+    left: 64px;
+}
+
+.choose .frame {
+    top: 401px;
+    display: flex;
+    width: 400px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 8px 32px;
+    position: absolute;
+    left: 155px;
+    background-color: #fecc02;
+    border-radius: 14px;
+        height: 60px;
+
+}
+
+.choose .text-wrapper-2 {
+    position: relative;
+    width: fit-content;
+    /* height: 50px; */
+    margin-top: -1px;
+    font-family: "Poppins-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.choose .div-wrapper {
+    top: 536px;
+    height: 60px;
+    display: flex;
+    width: 400px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 8px 32px;
+    position: absolute;
+    left: 155px;
+    background-color: #fecc02;
+    border-radius: 14px;
+}
+
+.choose .img {
+    position: absolute;
+    width: 91px;
+    height: 103px;
+    top: 182px;
+    left: 1536px;
+}
+
+.choose .vector-2 {
+    position: absolute;
+    width: 93px;
+    height: 99px;
+    top: 462px;
+    left: 222px;
+}

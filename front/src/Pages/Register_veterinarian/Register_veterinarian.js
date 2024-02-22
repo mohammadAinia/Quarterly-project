@@ -48,7 +48,8 @@ const Register_veterinarian = () => {
       axios.post('http://localhost:3001/user/signup_vet', formData)
         .then(res => {
           if (res.data.valid) {
-            navigate(`/Choosing_a_doctor_clinic/${res.data.id}`)
+            // navigate(`/Choosing_a_doctor_clinic/${res.data.id}`)
+            navigate('/')
           }
         }
         )
