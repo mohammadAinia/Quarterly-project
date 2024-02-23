@@ -62,12 +62,13 @@ function add_doc_to_cli(req,res){// here is test  قبل فكرة انو الط�
             return res.json({valid:false})
         }
         else 
-        {var sql1='update veterinarianns set cl_id=? where id=?'
-            db.query(sql1,[id,result[0].id_c],(error,result1)=>{
+        {   
+            var sql1='update veterinarianns set cl_id=? where user_id=?'
+            db.query(sql1,[result[0].id_c,id],(error,result1)=>{ 
                 if(error){console.log(error)}
                 else return res.json({valid:true})
             })
-    }
+    } 
     }
     )
 }
@@ -182,12 +183,23 @@ const singup_vet_from_admin=(req,res) => {
         });
 };
 function show_all_under(req,res){
-    sql='select * from veterinarianns where cl_id in (select id_c from clinics where admin_clinic=?)'
+    sql='select * from user_infos where id in (select veterinarianns.user_id from veterinarianns join clinics on veterinarianns.cl_id=clinics.id_c where clinics.admin_clinic=?)'
     db.query(sql,[req.session.admin],(error,result)=>{
         if(error){console.log(error)}
         else{
             res.json({valid:true,result})
             console.log("doneeee")
+        }
+    })
+}
+function set_tozero(req,res){
+
+    id=req.params.id
+    var sql='update veterinarianns set cl_id=? where user_id=?'
+    db.query(sql,[0,id],(error,result)=>{
+        if(error){console.log(error)}
+        else {
+            req.json({valid:true})
         }
     })
 }
@@ -202,7 +214,8 @@ module.exports={
     show_all_vet_without_clinic,
     add_doc_to_cli_new,
     singup_vet_from_admin,
-    show_all_under
+    show_all_under,
+    set_tozero
 }
 
 

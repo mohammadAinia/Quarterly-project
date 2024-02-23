@@ -2,17 +2,19 @@ import './Componets_Select_Register.css'
 import React from 'react'
 import all_vet_Vector_34 from '../../../Assert/Images/all_vet_Vector_34.png'
 import axios from 'axios'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 
 const Componets_Select_Register = (props) => {
+    const navigate = useNavigate()
 
     const handleAction = async (id) => {
-        axios.post('http://localhost:3001/clinic/add_to_clinic/' + id)
+        axios.get(`http://localhost:3001/clinic/add_to_clinic/${id}`, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     alert("The doctor has been successfully added to the clinic")
-                    window.location.reload()
+                    navigate(-1)
+
                 }
             })
             .catch(err => alert(err))
