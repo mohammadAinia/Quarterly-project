@@ -8,7 +8,7 @@ import { useEffect } from 'react'
 const Componets_Del_Vet = (props) => {
 
     const handleAction = async (id) => {
-        axios.post('http://localhost:3001/#/#/' + id)
+        await axios.get(`http://localhost:3001/clinic/del_vet/${id}`)
             .then(res => {
                 if (res.data.valid) {
                     alert("The doctor has been successfully added to the clinic")
