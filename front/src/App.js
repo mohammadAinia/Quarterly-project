@@ -145,18 +145,6 @@ const App = () => {
             <Route path='Edit_doctor_shift_time/:id' element={<Edit_doctor_shift_time />} /> 
             <Route path='Appointment_clinic_director' element={<Appointment_clinic_director />} /> 
 
-
-
-            
-
-
-
-
-
-
-
-
-
           </Routes>
         </Container>
       </Router>

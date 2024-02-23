@@ -183,6 +183,7 @@ const singup_vet_from_admin=(req,res) => {
         });
 };
 function show_all_under(req,res){
+
     sql='select * from user_infos where id in (select veterinarianns.user_id from veterinarianns join clinics on veterinarianns.cl_id=clinics.id_c where clinics.admin_clinic=?)'
     db.query(sql,[req.session.admin],(error,result)=>{
         if(error){console.log(error)}
@@ -199,7 +200,55 @@ function set_tozero(req,res){
     db.query(sql,[0,id],(error,result)=>{
         if(error){console.log(error)}
         else {
-            req.json({valid:true})
+            res.json({valid:true})
+        }
+    })
+}
+function add_shift_time(req,res){
+  sqll='select * from clinics where admin_clinic=?'
+  db.query(sqll,[req.session.admin],(error,result)=>{
+    if(error){console.log(error)}
+    else {
+        id=req.params.id
+        days=['S','Su','M','Tu','W','Th']
+        days.forEach(d => {
+            var sql= "insert into work_time (start,end,day,vet_id,clinic_id) values ('" + req.body.All_Day_From + "','" + req.body.All_Day_To + "','" + "null" + "','" + id + "','" + result[0].id_c + "')"
+            db.query(sql,(error,result)=>{
+                if(error){console.log(error)}
+                
+            })
+        });
+        res.json({valid:true})
+    }
+  })
+}
+function add_shift_time_eachday(req,res){
+    sqll='select * from clinics where admin_clinic=?'
+    db.query(sqll,[req.session.admin],(error,result)=>{
+      if(error){console.log(error)}
+      else {
+          id=req.params.id
+          days=['S','Su','M','Tu','W','Th']
+          start=[req.body]
+          days.forEach(d => {
+              var sql= "insert into work_time (start,end,day,vet_id,clinic_id) values ('" + req.body.All_Day_From + "','" + req.body.All_Day_To + "','" + "null" + "','" + id + "','" + result[0].id_c + "')"
+              db.query(sql,(error,result)=>{
+                  if(error){console.log(error)}
+                  
+              })
+          });
+          res.json({valid:true})
+      }
+    })
+  }
+function show_vet_without_time (req,res){
+
+    sql='select *  from user_infos where id in (select user_id from veterinarianns where cl_id=(select id_c from clinics where admin_clinic=?) and  user_id not in (select vet_id from work_time))'
+    db.query(sql,[req.session.admin],(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            res.json({valid:true,result})
+            console.log("doneeee")
         }
     })
 }
@@ -215,7 +264,9 @@ module.exports={
     add_doc_to_cli_new,
     singup_vet_from_admin,
     show_all_under,
-    set_tozero
+    set_tozero,
+    add_shift_time,
+    show_vet_without_time
 }
 
 

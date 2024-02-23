@@ -7,9 +7,12 @@ router.get('/add_to_clinic/:id',clinic.add_doc_to_cli)
 router.get('/showall',clinic.show_all)
 router.get('/showall_without_clinc',clinic.show_all_vet_without_clinic)
 router.get('/show_under',clinic.show_all_under)
-router.get('/del_vet',clinic.set_tozero)
+router.get('/show_vet_without_time',clinic.show_vet_without_time)
+
+router.get('/del_vet/:id',clinic.set_tozero)
 
 
 router.post('/add_new_vet',imageUploader.upload.single('image'),clinic.singup_vet_from_admin)
+router.post('/add_shift/:id',clinic.add_shift_time)
 
 module.exports=router 
