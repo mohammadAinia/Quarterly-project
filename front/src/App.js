@@ -18,7 +18,7 @@ import {
   Animal_info_adopt_vet,Search_vet, Clinic,Specific_clinic,Appointment_Booking,Add_clinic,Add_Vets_to_clinic,
   Choose_a_clinic_for_delete,Componets_Clinic_To_choose,Choose_a_clinic_for_link_vet,Home_for_clinic_manager,
   Choose_register_new_doctor,Select_Register,Adding_new_doctor_clinic,Del_Vet,Add_doctor_shift,Add_doctor_shift_time,
-  Edit_doctor_shift,Edit_doctor_shift_time
+  Edit_doctor_shift,Edit_doctor_shift_time,Appointment_clinic_director
 
 } from './Componets/index'
 
@@ -143,10 +143,11 @@ const App = () => {
             <Route path='Add_doctor_shift_time/:id' element={<Add_doctor_shift_time />} /> 
             <Route path='Edit_doctor_shift' element={<Edit_doctor_shift />} /> 
             <Route path='Edit_doctor_shift_time/:id' element={<Edit_doctor_shift_time />} /> 
+            <Route path='Appointment_clinic_director' element={<Appointment_clinic_director />} /> 
 
 
 
-
+            
 
 
 

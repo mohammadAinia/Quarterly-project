@@ -146,6 +146,7 @@ export {default as Componets_Add_doctor_shift_time} from './Graduation/Componets
 export {default as Edit_doctor_shift} from '../Pages/Final_Project/Clinic_manager/Edit_doctor_shift/Edit_doctor_shift'
 export {default as Edit_doctor_shift_time} from '../Pages/Final_Project/Clinic_manager/Edit_doctor_shift_time/Edit_doctor_shift_time'
 export {default as Componets_Edit_doctor_shift_time} from './Graduation/Componets_Edit_doctor_shift_time/Componets_Edit_doctor_shift_time'
+export {default as Appointment_clinic_director} from '../Pages/Final_Project/Site_Manager/Appointment_clinic_director/Appointment_clinic_director'
 
 
 

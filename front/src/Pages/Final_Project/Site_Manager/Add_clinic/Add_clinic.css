@@ -83,7 +83,7 @@
     position: absolute;
     width: 274px;
     height: 58px;
-    top: 174px;
+    top: 140px;
     left: 22px;
     font-family: "Poppins-ExtraLight", Helvetica;
     font-weight: 200;
@@ -98,7 +98,7 @@
     position: absolute;
     width: 274px;
     height: 58px;
-    top: 535px;
+    top: 420px;
     left: 0;
     font-family: "Poppins-ExtraLight", Helvetica;
     font-weight: 200;
@@ -108,12 +108,41 @@
     letter-spacing: 0;
     line-height: normal;
 }
+.add-clinicc .text-wrapper-333 {
+    position: absolute;
+    width: 274px;
+    height: 58px;
+    top: 550px;
+    left: -10px;
+    font-family: "Poppins-ExtraLight", Helvetica;
+    font-weight: 200;
+    color: #000000;
+    font-size: 26px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+.add-clinicc .text-wrapper-3333 {
+    position: absolute;
+    width: 274px;
+    height: 58px;
+    top: 680px;
+    left: 30px;
+    font-family: "Poppins-ExtraLight", Helvetica;
+    font-weight: 200;
+    color: #000000;
+    font-size: 26px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
 
 .add-clinicc .text-wrapper-44 {
     position: absolute;
     width: 274px;
     height: 58px;
-    top: 355px;
+    top: 285px;
     left: 24px;
     font-family: "Poppins-ExtraLight", Helvetica;
     font-weight: 200;
@@ -128,7 +157,7 @@
     position: absolute;
     width: 153px;
     height: 58px;
-    top: 429px;
+    top: 350px;
     left: 38px;
     font-family: "Poppins-ExtraLight", Helvetica;
     font-weight: 200;
@@ -143,7 +172,7 @@
     position: absolute;
     width: 72px;
     height: 58px;
-    top: 429px;
+    top: 350px;
     left: 340px;
     font-family: "Poppins-ExtraLight", Helvetica;
     font-weight: 200;
@@ -158,7 +187,7 @@
     position: absolute;
     width: 472px;
     height: 63px;
-    top: 232px;
+    top: 190px;
     left: 82px;
     background-color: #fafafa;
     border-radius: 11px;
@@ -171,12 +200,42 @@
     box-shadow: 0 0 10px rgba(1, 135, 115, 0.7);
     transform: scale(1.02);
   }
+  .add-clinicc .rectangle-222 {
+    position: absolute;
+    width: 472px;
+    height: 63px;
+    top: 600px;
+    left: 82px;
+    background-color: #fafafa;
+    border-radius: 11px;
+    border: 2px solid;
+    border-color: #018773;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+}
+.add-clinicc .rectangle-222:focus {
+    box-shadow: 0 0 10px rgba(1, 135, 115, 0.7);
+    transform: scale(1.02);
+}
+.add-clinicc .rectangle-2222 {
+    position: absolute;
+    width: 472px;
+    height: 63px;
+    top: 730px;
+    left: 82px;
+    background-color: #fafafa;
+    border-radius: 11px;
+    border: 2px solid;
+    border-color: #018773;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+}
 
 .add-clinicc .rectangle-33 {
     position: absolute;
     width: 472px;
     height: 63px;
-    top: 593px;
+    top: 470px;
     left: 82px;
     background-color: #fafafa;
     border-radius: 11px;
@@ -194,7 +253,7 @@
     position: absolute;
     width: 146px;
     height: 63px;
-    top: 414px;
+    top: 335px;
     left: 162px;
     background-color: #fafafa;
     border-radius: 11px;
@@ -211,7 +270,7 @@
     position: absolute;
     width: 146px;
     height: 63px;
-    top: 414px;
+    top: 335px;
     left: 408px;
     background-color: #fafafa;
     border-radius: 11px;
@@ -231,9 +290,11 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 10px 20px;
+    /* padding: 10px 20px; */
+    padding-top: 15px;
+    padding-bottom: 20px;
     position: absolute;
-    top: 770px;
+    top: 840px;
     left: 229px;
     border-radius: 65px;
     background: linear-gradient(200deg, rgb(1, 135, 115) 25%, rgba(0, 223, 193, 0) 120%);

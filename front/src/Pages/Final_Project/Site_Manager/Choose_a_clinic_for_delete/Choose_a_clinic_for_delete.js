@@ -21,10 +21,10 @@ const Choose_a_clinic_for_delete = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        axios.get('http://localhost:3001/#', { withCredentials: true })
+        axios.get('http://localhost:3001/clinic/showall', { withCredentials: true })
             .then(res => {
                 setClinics(res.data);
-                // setFilteredClinics(res.data); // Initialize filteredClinics with all clinics
+                setFilteredClinics(res.data); // Initialize filteredClinics with all clinics
             })
             .catch(err => {
                 console.log(err);
@@ -37,7 +37,7 @@ const Choose_a_clinic_for_delete = () => {
 
         // Filter clinics based on search input
         const filtered = Clinics.filter(clinic =>
-            Clinics.name.toLowerCase().includes(value.toLowerCase())
+            clinic.name.toLowerCase().includes(value.toLowerCase())
         );
         setFilteredClinics(filtered);
     };
@@ -53,26 +53,35 @@ const Choose_a_clinic_for_delete = () => {
                 <div class="overlap-group-wrapper">
 
                     {Search_result !== '' ? (
-                        filteredClinics.map((clinic, index) => (
-                            <Componets_Clinic_with_button
-                                key={index}
-                                name_clinic={clinic.name}
-                                Working_hours={clinic.workingHours}
-                                location={clinic.location}
-                                button={"Delete"} />
+                        filteredClinics.map((clinic, index) => {
+                            return (
+                                <div key={index}>
+                                    <Componets_Clinic_with_button
+                                        name_clinic={clinic.name}
+                                        Working_hours={clinic.workingHours}
+                                        location={clinic.location}
+                                        button={"Delete"}
+                                        id={clinic.id}
+                                    />
+                                </div>
+                            )
 
-                        ))
+                        })
                     ) : (
-                        Clinics.map((clinic, index) => (
-                            <Componets_Clinic_with_button
-                                key={index}
-                                name_clinic={clinic.name}
-                                Working_hours={clinic.workingHours}
-                                location={clinic.location}
-                                button={"Delete"}
-                                id={clinic.id}
-                            />
-                        ))
+                        Clinics.map((clinic, index) => {
+                            return (
+                                <div key={index}>
+                                    <Componets_Clinic_with_button
+                                        name_clinic={clinic.name}
+                                        Working_hours={clinic.workingHours}
+                                        location={clinic.location}
+                                        button={"Delete"}
+                                        id={clinic.id}
+                                    />
+                                </div>
+                            )
+
+                        })
                     )}
                     <Componets_Clinic_with_button name_clinic={"Day Clinic"} Working_hours={"8AM - 4PM"} location={"Al-Nabek"}
                         button={"Delete"} id={1} />
@@ -82,11 +91,7 @@ const Choose_a_clinic_for_delete = () => {
             <button className={`search-button ${isSearchOpen ? 'active' : ''}`} onClick={handleSearchClick}>
                 <FontAwesomeIcon icon={faSearch} />
             </button>
-            {/* {isSearchOpen && (
-    <div className="search-popup">
-        <input className="search-input" type="text" placeholder="Search..." onChange={e => setSearch_result(e.target.value)} />
-    </div>
-)} */}
+
             {isSearchOpen && (
                 <div className={`search-popup ${isSearchOpen ? 'active' : ''}`}>
                     <input

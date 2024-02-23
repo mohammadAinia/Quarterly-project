@@ -2,6 +2,12 @@ import './Add_Vets_to_clinic.css'
 import add_clinic from '../../../../Assert/Images/add_clinic.png'
 import React, { useState, useEffect } from 'react';
 
+
+
+//هذه تحتاج الى حذف راجع وتاكد 
+
+
+
 const Add_Vets_to_clinic = () => {
     return (
         <>
