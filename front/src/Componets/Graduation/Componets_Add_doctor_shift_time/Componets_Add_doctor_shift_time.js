@@ -53,10 +53,11 @@ const Componets_Add_doctor_shift_time = () => {
 
         }
         else {
-            axios.post('http://localhost:3001/#/#', Saturday_From, Saturday_To, Sunday_From, Sunday_To, Monday_From, Monday_To, Tuesday_From, Tuesday_To, Wednesday_From, Wednesday_To, Thursday_From, Thursday_To)
+            axios.post(`http://localhost:3001/clinic/add_shift_days/${id}`,{ Saturday_From, Saturday_To, Sunday_From, Sunday_To, Monday_From, Monday_To, Tuesday_From, Tuesday_To, Wednesday_From, Wednesday_To, Thursday_From, Thursday_To},{ withCredentials: true })
                 .then(res => {
                     if (res.data.valid) {
-                        alert('##')
+                        navigate(-1)
+
                     }
                 })
                 .catch(err => alert(err))

@@ -14,5 +14,6 @@ router.get('/del_vet/:id',clinic.set_tozero)
 
 router.post('/add_new_vet',imageUploader.upload.single('image'),clinic.singup_vet_from_admin)
 router.post('/add_shift/:id',clinic.add_shift_time)
+router.post('/add_shift_days/:id',clinic.add_shift_time_diff)
 
 module.exports=router 
