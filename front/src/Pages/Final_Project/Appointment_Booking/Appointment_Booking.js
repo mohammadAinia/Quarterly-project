@@ -19,19 +19,10 @@ const Appointment_Booking = () => {
     const [showTimeText, setShowTimeText] = useState(false);
     const [pageCompletion, setPageCompletion] = useState(0);
     const [circleBeating, setCircleBeating] = useState(false);
+    const [availableWorkingHours, setAvailableWorkingHours] = useState([]);
 
-    useEffect(() => {
-        // Get the current date
-        const currentDate = new Date();
 
-        // Set the minimum date to today
-        setMinDate(currentDate.toISOString().split('T')[0]);
 
-        // Set the maximum date to one week from today
-        const maxDate = new Date(currentDate);
-        maxDate.setDate(currentDate.getDate() + 7);
-        setMaxDate(maxDate.toISOString().split('T')[0]);
-    }, []);
 
     const navigate = useNavigate()
     const [Animals, setAnimals] = useState([])
@@ -64,24 +55,60 @@ const Appointment_Booking = () => {
             .catch(err => { console.log(err) })
     }, [])
 
-    
+    useEffect(() => {
+        // Get the current date
+        const currentDate = new Date();
+
+        // Set the minimum date to today
+        setMinDate(currentDate.toISOString().split('T')[0]);
+
+        // Set the maximum date to one week from today
+        const maxDate = new Date(currentDate);
+        maxDate.setDate(currentDate.getDate() + 14);
+        setMaxDate(maxDate.toISOString().split('T')[0]);
+    }, []);
+
+    const fetchWorkingHours = (date) => {
+        axios.get(`http://localhost:3001/working-hours?date=${date}`)
+            .then(res => {
+                setAvailableWorkingHours(res.data);
+            })
+            .catch(err => {
+                console.error('Error fetching working hours:', err);
+            });
+    };
+
+
 
 
     const handleDateChange = (event) => {
         const selectedDate = new Date(event.target.value); ////
 
-        setDay_of_booking(event.target.value)
+
+        //هذه اذا بدي ياه اظهر اشعار لايحجز ايام السبت او الخميس
+        // const dayOfWeek = selectedDate.getDay();
+        // if (dayOfWeek === 4 || dayOfWeek === 6) { // Thursday or Saturday
+        //     alert('Appointments cannot be booked on Thursdays or Saturdays.');
+        //     return;
+        // }
+
+        const formattedDate = event.target.value;
+        setDay_of_booking(formattedDate);
+        fetchWorkingHours(formattedDate);
+
 
         // Check if the selected date is a Thursday or Saturday
-        const isThursday = selectedDate.getDay() === 4; // 4 corresponds to Thursday
-        const isSaturday = selectedDate.getDay() === 6; // 6 corresponds to Saturday
+        // const isThursday = selectedDate.getDay() === 4; // 4 corresponds to Thursday
+        // const isSaturday = selectedDate.getDay() === 6; // 6 corresponds to Saturday
 
-        // Update selectedPet based on the day of the week
-        if (isThursday || isSaturday) {
-            setSelectedPet('rabbit');
-        } else {
-            setSelectedPet('cat'); // For other days, set to 'cat' by default
-        }
+        // // Update selectedPet based on the day of the week
+        // if (isThursday || isSaturday) {
+        //     setSelectedPet('rabbit');
+        // } else {
+        //     setSelectedPet('cat'); // For other days, set to 'cat' by default
+        // }
+
+
         setShowTimeSelection(true);
         setShowTimeText(true) // Show the time selection box when a date is selected
 
@@ -178,7 +205,21 @@ const Appointment_Booking = () => {
                                     max={maxDate}
                                     onChange={handleDateChange}
                                 />
+
+
                                 {showTimeSelection && (
+                                    <select
+                                        className="rectangle-13"
+                                        name="Vaccines"
+                                        required
+                                        value={selectedPet}
+                                    >
+                                        {availableWorkingHours.map((hour, index) => (
+                                            <option key={index} value={hour}>{hour}</option>
+                                        ))}
+                                    </select>
+                                )}
+                                {/* {showTimeSelection && (
                                     <select
                                         className="rectangle-13"
                                         name="Vaccines"
@@ -187,9 +228,7 @@ const Appointment_Booking = () => {
                                     >
                                         {selectedPet !== 'rabbit' ? (
                                             <>
-                                                {/* <option value="10-AM">10-AM</option>
-                                                <option value="10:30-AM">10:30-AM</option>
-                                                <option value="11-AM">11-AM</option> */}
+
                                                 {Working_hours_one.map((user, i) => {
                                                     return (
                                                         <option key={i} value={"user.id"} >{"user."}</option>
@@ -198,8 +237,7 @@ const Appointment_Booking = () => {
                                             </>
                                         ) : (
                                             <>
-                                                {/* <option value="9-AM">9-AM</option>
-                                                <option value="9:30-AM">9:30-AM</option> */}
+
                                                 {Working_hours_two.map((user, i) => {
                                                     return (
                                                         <option key={i} value={"user.id"} >{"user."}</option>
@@ -208,7 +246,7 @@ const Appointment_Booking = () => {
                                             </>
                                         )}
                                     </select>
-                                )}
+                                )} */}
                                 <img class="vector-2" src={b_Vector21} />
                                 <div class="ellipse" id="bird-eye"></div>
                                 <div class="text-wrapper-2">Select Service</div>
