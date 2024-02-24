@@ -8,7 +8,8 @@ router.get('/showall',clinic.show_all)
 router.get('/showall_without_clinc',clinic.show_all_vet_without_clinic)
 router.get('/show_under',clinic.show_all_under)
 router.get('/show_vet_without_time',clinic.show_vet_without_time)
-
+router.get('/show_vet_with_time',clinic.show_vet_with_time)
+router.get('/showc/:id',clinic.showd_c)
 router.get('/del_vet/:id',clinic.set_tozero)
 
 

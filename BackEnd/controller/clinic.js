@@ -18,11 +18,11 @@ closeq=req.body.closeq
 }
 function showd_c (req,res){
     id=req.params.id
-    sql='select * from clinics where c_id=?'
+    sql='select veterinarianns.user_id,user_infos.first_name,user_infos.last_name,veterinarianns.deatalis,veterinarianns.nation,veterinarianns.address from user_infos join veterinarianns on user_infos.id=veterinarianns.user_id where cl_id in (select id_c from clinics where id_c=?)'
     db.query(sql,[id],(err,result)=>{
         if(err){console.log(err)}
         else {
-            return res.json(result)
+            return res.json({result,valid:true})
         }
 
     })
@@ -256,6 +256,17 @@ function show_vet_without_time (req,res){
         }
     })
 }
+function show_vet_with_time (req,res){
+
+    sql='select *  from user_infos where id in (select user_id from veterinarianns where cl_id=(select id_c from clinics where admin_clinic=?) and  user_id  in (select vet_id from work_time))'
+    db.query(sql,[req.session.admin],(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            res.json({valid:true,result})
+            console.log("doneeee")
+        }
+    })
+}
 module.exports={
     create_clinic,
     showd_c,
@@ -271,7 +282,8 @@ module.exports={
     set_tozero,
     add_shift_time,
     show_vet_without_time,
-    add_shift_time_diff
+    add_shift_time_diff,
+    show_vet_with_time
 }
 
 

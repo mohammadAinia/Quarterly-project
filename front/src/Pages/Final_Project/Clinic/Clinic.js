@@ -41,8 +41,8 @@ const Clinic = () => {
     useEffect(() => {
         axios.get('http://localhost:3001/clinic/showall', { withCredentials: true })
             .then(res => {
-                setClinics(res.data);
-                setFilteredClinics(res.data); // Initialize filteredClinics with all clinics
+                setClinics(res.data.result);
+                setFilteredClinics(res.data.result); // Initialize filteredClinics with all clinics
             })
             .catch(err => {
                 console.log(err);
@@ -117,13 +117,15 @@ const Clinic = () => {
 
                     {Search_result !== '' ? (
                         filteredClinics.map((clinic, index) => {
+                            var cli=clinic.time_open+'-'+clinic.time_close
+
                             return (
                                 <div key={index}>
                                     <Componets_Clinic
-                                        name_clinic={clinic.name}
-                                        Working_hours={clinic.workingHours}
-                                        location={clinic.location}
-                                        href={`Specific_clinic/${clinic.id}`}
+                                        name_clinic={clinic.c_name}
+                                        Working_hours={clinic.cli}
+                                        location={clinic.c_place}
+                                        href={`Specific_clinic/${clinic.id_c}`}
                                         button={"View"}
                                     />
                                 </div>
@@ -132,13 +134,16 @@ const Clinic = () => {
                         })
                     ) : (
                         Clinics.map((clinic, index) => {
+                            
+                            var cli=clinic.time_open+'-'+clinic.time_close
+
                             return (
                                 <div key={index}>
                                     <Componets_Clinic
-                                        name_clinic={clinic.name}
-                                        Working_hours={clinic.workingHours}
-                                        location={clinic.location}
-                                        href={`Specific_clinic/${clinic.id}`}
+                                        name_clinic={clinic.c_name}
+                                        Working_hours={cli}
+                                        location={clinic.c_place}
+                                        href={`Specific_clinic/${clinic.id_c}`}
                                         button={"View"}
                                     />
                                 </div>
