@@ -18,11 +18,11 @@ closeq=req.body.closeq
 }
 function showd_c (req,res){
     id=req.params.id
-    sql='select * from clinics where c_id=?'
+    sql='select veterinarianns.user_id,user_infos.first_name,user_infos.last_name,veterinarianns.deatalis,veterinarianns.nation,veterinarianns.address from user_infos join veterinarianns on user_infos.id=veterinarianns.user_id where cl_id in (select id_c from clinics where id_c=?)'
     db.query(sql,[id],(err,result)=>{
         if(err){console.log(err)}
         else {
-            return res.json(result)
+            return res.json({result,valid:true})
         }
 
     })
@@ -183,6 +183,7 @@ const singup_vet_from_admin=(req,res) => {
         });
 };
 function show_all_under(req,res){
+
     sql='select * from user_infos where id in (select veterinarianns.user_id from veterinarianns join clinics on veterinarianns.cl_id=clinics.id_c where clinics.admin_clinic=?)'
     db.query(sql,[req.session.admin],(error,result)=>{
         if(error){console.log(error)}
@@ -199,7 +200,70 @@ function set_tozero(req,res){
     db.query(sql,[0,id],(error,result)=>{
         if(error){console.log(error)}
         else {
-            req.json({valid:true})
+            res.json({valid:true})
+        }
+    })
+}
+function add_shift_time(req,res){
+  sqll='select * from clinics where admin_clinic=?'
+  db.query(sqll,[req.session.admin],(error,result)=>{
+    if(error){console.log(error)}
+    else {
+        id=req.params.id
+        days=['S','Su','M','Tu','W','Th']
+        days.forEach(d => {
+            var sql= "insert into work_time (start,end,day,vet_id,clinic_id) values ('" + req.body.All_Day_From + "','" + req.body.All_Day_To + "','" + "null" + "','" + id + "','" + result[0].id_c + "')"
+            db.query(sql,(error,result)=>{
+                if(error){console.log(error)}
+                
+            })
+        });
+        res.json({valid:true})
+    }
+  })
+}
+function add_shift_time_diff(req,res){
+    sqll='select * from clinics where admin_clinic=?'
+    db.query(sqll,[req.session.admin],(error,result)=>{
+    if(error){console.log(error)}
+    else {
+        id=req.params.id
+        days=['S','Su','M','Tu','W','Th']
+        start=[req.body.Saturday_From,req.body.Sunday_From,req.body.Monday_From,req.body.Tuesday_From,req.body.Wednesday_From,req.body.Thursday_From]
+        end=[req.body.Saturday_To,req.body.Sunday_To,req.body.Monday_To,req.body.Tuesday_To,req.body.Wednesday_To,req.body.Thursday_To]
+            for (let index = 0; index < days.length; index++) {
+                var sql= "insert into work_time (start,end,day,vet_id,clinic_id) values ('" + start[index] + "','" + end[index] + "','" + days[index] + "','" + id + "','" + result[0].id_c + "')"
+                db.query(sql,(error,result)=>{
+                    if(error){console.log(error)}
+                    
+                })
+                
+            }
+        
+        
+        res.json({valid:true})
+        }
+    })
+    }
+function show_vet_without_time (req,res){
+
+    sql='select *  from user_infos where id in (select user_id from veterinarianns where cl_id=(select id_c from clinics where admin_clinic=?) and  user_id not in (select vet_id from work_time))'
+    db.query(sql,[req.session.admin],(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            res.json({valid:true,result})
+            console.log("doneeee")
+        }
+    })
+}
+function show_vet_with_time (req,res){
+
+    sql='select *  from user_infos where id in (select user_id from veterinarianns where cl_id=(select id_c from clinics where admin_clinic=?) and  user_id  in (select vet_id from work_time))'
+    db.query(sql,[req.session.admin],(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            res.json({valid:true,result})
+            console.log("doneeee")
         }
     })
 }
@@ -215,7 +279,11 @@ module.exports={
     add_doc_to_cli_new,
     singup_vet_from_admin,
     show_all_under,
-    set_tozero
+    set_tozero,
+    add_shift_time,
+    show_vet_without_time,
+    add_shift_time_diff,
+    show_vet_with_time
 }
 
 

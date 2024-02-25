@@ -12,7 +12,7 @@ const Add_doctor_shift = () => {
 
     useEffect(() => {
 
-        axios.get('http://localhost:3001/clinic/show_under', { withCredentials: true })
+        axios.get('http://localhost:3001/clinic/show_vet_without_time', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     setInfo(res.data.result)

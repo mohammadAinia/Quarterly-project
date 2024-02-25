@@ -2,11 +2,13 @@ import './Componets_Add_doctor_shift_time.css'
 import axios from 'axios'
 import { useState } from 'react'
 import { Header } from '../../../Componets'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+
 
 const Componets_Add_doctor_shift_time = () => {
-
+    const { id } = useParams()
     const navigate = useNavigate()
+
 
     const [sameWorkingHours, setSameWorkingHours] = useState(null); // Initial state set to null
 
@@ -40,20 +42,22 @@ const Componets_Add_doctor_shift_time = () => {
 
         e.preventDefault()
         if (sameWorkingHours === true) {
-            axios.post('http://localhost:3001/#/#', All_Day_From, All_Day_To)
+            axios.post(`http://localhost:3001/clinic/add_shift/${id}`, {All_Day_From, All_Day_To},{ withCredentials: true })
                 .then(res => {
                     if (res.data.valid) {
-                        alert('##')
+                        alert('the time shift was added ')
+                        navigate(-1)
                     }
                 })
                 .catch(err => alert(err))
 
         }
-        else {
-            axios.post('http://localhost:3001/#/#', Saturday_From, Saturday_To, Sunday_From, Sunday_To, Monday_From, Monday_To, Tuesday_From, Tuesday_To, Wednesday_From, Wednesday_To, Thursday_From, Thursday_To)
+        else { 
+            axios.post(`http://localhost:3001/clinic/add_shift_days/${id}`,{ Saturday_From, Saturday_To, Sunday_From, Sunday_To, Monday_From, Monday_To, Tuesday_From, Tuesday_To, Wednesday_From, Wednesday_To, Thursday_From, Thursday_To},{ withCredentials: true })
                 .then(res => {
                     if (res.data.valid) {
-                        alert('##')
+                        navigate(-1)
+
                     }
                 })
                 .catch(err => alert(err))

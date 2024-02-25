@@ -32,7 +32,7 @@ const Specific_clinic = () => {
 
     useEffect(() => {
 
-        axios.get(`http://localhost:3001/#/#/${id}`, { withCredentials: true })
+        axios.get(`http://localhost:3001/clinic/showc/${id}`, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     setInfo(res.data.result)
@@ -86,10 +86,11 @@ const Specific_clinic = () => {
 
 
                     {Info.map((d, i) => {
+                        var full=d.first_name+'  '+d.last_name
                         return (
                             <div key={i}>
-                                <Componets_Specific_clinic Veterinarian_name={"d."} Veterinarian_experience={"d."} Veterinarian_His_field_of_work={"d."}
-                                    Veterinarian_nationality={"d."} id={'d.'} /></div>
+                                <Componets_Specific_clinic Veterinarian_name={full} Veterinarian_experience={d.address} Veterinarian_His_field_of_work={d.deatalis}
+                                    Veterinarian_nationality={d.nation} id={d.user_id} /></div>
                         )
                     })}
                     <Componets_Specific_clinic Veterinarian_name={"Mohammad Ainia"} Veterinarian_experience={"4 years experience"} Veterinarian_His_field_of_work={"He has more experience with cats"}

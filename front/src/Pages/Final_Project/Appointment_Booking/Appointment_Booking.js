@@ -39,7 +39,7 @@ const Appointment_Booking = () => {
 
     useEffect(() => {
 
-        axios.get(`http://localhost:3001/#/#/${id}`, { withCredentials: true })
+        axios.get(`http://localhost:3001/clinic/#/${id}`, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     setAnimals(res.data.result)
