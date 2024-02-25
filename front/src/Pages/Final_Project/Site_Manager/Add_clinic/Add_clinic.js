@@ -11,6 +11,8 @@ const Add_clinic = () => {
     const [From, setFrom] = useState('')
     const [To, setTo] = useState('')
     const [Location, setLocation] = useState('')
+    const [Location_details, setLocation_details] = useState('')
+
     const [Phone, setPhone] = useState('')
     // const [Map, setMap] = useState('')
 
@@ -18,7 +20,7 @@ const Add_clinic = () => {
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
         e.preventDefault()
-        axios.post('http://localhost:3001/#/#', { Name_clinic, From, To, Location,Phone })
+        axios.post('http://localhost:3001/#/#', { Name_clinic, From, To, Location, Location_details, Phone })
             .then(res => {
                 if (res.data.valid) {
 
@@ -49,16 +51,16 @@ const Add_clinic = () => {
                                 <div class="text-wrapperr">Add Clinic</div>
                                 <div class="text-wrapper-22">Name Clinic</div>
                                 <div class="text-wrapper-33">Location</div>
-                                <div class="text-wrapper-333">Phone</div>
-                                <div class="text-wrapper-3333">Location map</div>
+                                <div class="text-wrapper-333">Location details</div>
+                                <div class="text-wrapper-3333">Phone</div>
 
 
                                 <div class="text-wrapper-44">Working Time</div>
                                 <div class="text-wrapper-55">From</div>
                                 <div class="text-wrapper-66">To</div>
                                 <input type='text' class="rectangle-22" onChange={e => setName_clinic(e.target.value)} />
-                                <input type='number' class="rectangle-222" onChange={e => setPhone(e.target.value)} />
-                                {/* <input type='' class="rectangle-2222" onChange={e => setMap(e.target.value)} /> */}
+                                <input type='text' class="rectangle-222" onChange={e => setLocation_details(e.target.value)} />
+                                <input type='number' class="rectangle-2222" onChange={e => setPhone(e.target.value)} />
 
 
                                 <input type='time' class="rectangle-44" onChange={e => setFrom(e.target.value)} />
@@ -73,7 +75,7 @@ const Add_clinic = () => {
                                     <option>Rif Damascus,Yabrod</option>
 
                                 </select>
-                                
+
                                 <input type='time' class="rectangle-55" onChange={e => setTo(e.target.value)} />
                                 <div class="framee">
                                     <button className="text-wrapper-77">Add</button>
