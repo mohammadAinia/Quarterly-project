@@ -35,6 +35,10 @@ const Specific_clinic = () => {
     const [Clinic_Name, setClinic_Name] = useState('')
     const [Location, setLocation] = useState('')
     const [Phone, setPhone] = useState('')
+    const [one, setone] = useState('')
+    const [two, settwo] = useState('')
+    const [three, setthree] = useState('')
+
 
 
 
@@ -48,6 +52,11 @@ const Specific_clinic = () => {
                     setClinic_Name(res.data.username)
                     setLocation(res.data.location)
                     setPhone(res.data.phone)
+                    setone(res.data.one)
+                    settwo(res.data.two)
+                    setthree(res.data.three)
+
+
 
                 }
                 else {
@@ -73,13 +82,16 @@ const Specific_clinic = () => {
                     <div class="overlap">
                         <img class="vector-4" src={spVector2} />
                         <p class="your-pet-s-health-is">&nbsp;&nbsp; Your Pet&#39;s Health is Our Top Priority</p>
-                        <div class="texxxt-wrapper"><FontAwesomeIcon icon={faStar} /></div><p class="text-wrapper">Trusted Veterinary Professionals with a Passion for Animals</p>
-                        <div class="texxt-wrapper"><FontAwesomeIcon icon={faStar} /></div><p class="state-of-the-art">State-of-the-Art Facilities for Your Pet&#39;s Wellbeing</p>
-                        <div class="texxxxxt-wrapper"><FontAwesomeIcon icon={faStar} /></div><p class="your-pet-s-wellness">Your Pet&#39;s Wellness Journey Starts Here</p>
+                        <div class="texxxt-wrapper"><FontAwesomeIcon icon={faStar} /></div><p class="text-wrapper">{one}</p>
+                        <div class="texxt-wrapper"><FontAwesomeIcon icon={faStar} /></div><p class="state-of-the-art">{two}</p>
+                        <div class="texxxxxt-wrapper"><FontAwesomeIcon icon={faStar} /></div><p class="your-pet-s-wellness">{three}</p>
                         <p class="passionate">Passionate Veterinary Care&nbsp;&nbsp;for Happy Healthy Pets.</p>
                     </div>
                 </div>
             </div>
+            {/* Your Pet&#39;s Wellness Journey Starts Here */}
+            {/* State-of-the-Art Facilities for Your Pet&#39;s Wellbeing */}
+            {/* Trusted Veterinary Professionals with a Passion for Animals */}
 
             <div class="framee">
                 <div class="divv">
@@ -104,8 +116,10 @@ const Specific_clinic = () => {
                                     Veterinarian_nationality={d.nation} id={d.user_id} /></div>
                         )
                     })}
-                    <Componets_Specific_clinic Veterinarian_name={"Mohammad Ainia"} Veterinarian_experience={"4 years experience"} Veterinarian_His_field_of_work={"He has more experience with cats"}
-                        Veterinarian_nationality={"Syrian nationality"} href={'Booking'} />
+                     {/* <Componets_Specific_clinic Veterinarian_name={"full"} Veterinarian_experience={"d.address"} Veterinarian_His_field_of_work={"d.deatalis"}
+                                    Veterinarian_nationality={"nation"} /> */}
+                    {/* <Componets_Specific_clinic Veterinarian_name={"Mohammad Ainia"} Veterinarian_experience={"4 years experience"} Veterinarian_His_field_of_work={"He has more experience with cats"}
+                        Veterinarian_nationality={"Syrian nationality"} href={'Booking'} /> */}
 
 
                 </div>

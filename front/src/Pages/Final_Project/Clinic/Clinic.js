@@ -56,7 +56,7 @@ const Clinic = () => {
 
         // Filter clinics based on search input
         const filtered = Clinics.filter(clinic =>
-            clinic.name.toLowerCase().includes(value.toLowerCase())
+            clinic.c_name.toLowerCase().includes(value.toLowerCase())
         );
         setFilteredClinics(filtered);
     };
@@ -117,13 +117,13 @@ const Clinic = () => {
 
                     {Search_result !== '' ? (
                         filteredClinics.map((clinic, index) => {
-                            var cli=clinic.time_open+'-'+clinic.time_close
+                            var cli = clinic.time_open + '-' + clinic.time_close
 
                             return (
                                 <div key={index}>
                                     <Componets_Clinic
                                         name_clinic={clinic.c_name}
-                                        Working_hours={clinic.cli}
+                                        Working_hours={cli}
                                         location={clinic.c_place}
                                         href={`Specific_clinic/${clinic.id_c}`}
                                         button={"View"}
@@ -134,8 +134,8 @@ const Clinic = () => {
                         })
                     ) : (
                         Clinics.map((clinic, index) => {
-                            
-                            var cli=clinic.time_open+'-'+clinic.time_close
+
+                            var cli = clinic.time_open + '-' + clinic.time_close
 
                             return (
                                 <div key={index}>
@@ -150,8 +150,6 @@ const Clinic = () => {
                             )
                         })
                     )}
-                    <Componets_Clinic href={`Specific_clinic/${clinic.id_c}`}
-                        button={"View"} name_clinic={"Day Clinic"} Working_hours={"8AM - 4PM"} location={"Al-Nabek"} />
 
                 </div>
             </div>

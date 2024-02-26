@@ -4,6 +4,7 @@
     flex-direction: row;
     justify-content: center;
     width: 100%;
+    padding-bottom: 604px; 
 }
 
 .specific-clinic .div {
@@ -552,19 +553,15 @@
 
 
 
-
-
-
-
-
-
 .footer-clinic {
     background-color: #ffffff;
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 100%;
-    margin-top: 50px;
+    position:relative; /* Position the footer relative to its containing block */
+    bottom: 0px; 
+    top: 1500px;
 }
 
 .footer-clinic .div {
@@ -639,3 +636,4 @@
     top: 455px;
     left: 226px;
 }
+

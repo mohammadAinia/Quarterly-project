@@ -149,6 +149,8 @@ export {default as Componets_Edit_doctor_shift_time} from './Graduation/Componet
 export {default as Appointment_clinic_director} from '../Pages/Final_Project/Site_Manager/Appointment_clinic_director/Appointment_clinic_director'
 export {default as My_appointments} from '../Pages/Final_Project/My_appointments/My_appointments'
 export {default as Componets_My_appointments} from './Graduation/Componets_My_appointments/Componets_My_appointments'
+export {default as Add_information_to_clinic} from '../Pages/Final_Project/Clinic_manager/Add_information_to_clinic/Add_information_to_clinic'
+export {default as Edit_information_to_clinic} from '../Pages/Final_Project/Clinic_manager/Edit_information_to_clinic/Edit_information_to_clinic'
 
 
 

@@ -30,9 +30,9 @@ const Home_for_clinic_manager = () => {
                     </div>
                     <div class="text-wrapper">Clinic Manager Control Panel</div>
                     <div class="div-wrapper"><a href='/Choose_register_new_doctor' class="text-wrapper-2">Add Vet</a></div>
-                    <div class="frame-2"><a href='Add_doctor_shift' class="text-wrapper-2">Add doctor's working hours</a></div>
-                    <div class="frame-3"><a href='Edit_doctor_shift' class="text-wrapper-2">Changing doctor's working hours</a></div>
-                    <div class="frame-4"><a href='#' class="text-wrapper-2"> -----</a></div>
+                    <div class="frame-2"><a href='Edit_doctor_shift' class="text-wrapper-2">Changing doctor's working hours</a></div>
+                    <div class="frame-3"><a href='Add_information_to_clinic' class="text-wrapper-2">Add information to a clinic</a></div>
+                    <div class="frame-4"><a href='Edit_information_to_clinic' class="text-wrapper-2">Edit information to a clinic</a></div>
                     <div class="frame-5"><a href='#' class="text-wrapper-2"> -----</a></div>
                     <div class="frame-6"><a href='#' class="text-wrapper-2"> -----</a></div>
                     <div class="frame-7"><a href='#' class="text-wrapper-2"> -----</a></div>

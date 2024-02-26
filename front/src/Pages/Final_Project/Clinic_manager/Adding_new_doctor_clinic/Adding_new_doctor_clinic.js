@@ -50,7 +50,7 @@ const Adding_new_doctor_clinic = () => {
                 .then(res => {
                     if (res.data.valid) {
                         alert('The doctor has been successfully registered to the clinic')
-                    navigate(-1)
+                        navigate(`Add_doctor_shift_time/${res.data.id}`)
                     }
                 }
                 )

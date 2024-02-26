@@ -18,7 +18,8 @@ import {
   Animal_info_adopt_vet,Search_vet, Clinic,Specific_clinic,Appointment_Booking,Add_clinic,Add_Vets_to_clinic,
   Choose_a_clinic_for_delete,Componets_Clinic_To_choose,Choose_a_clinic_for_link_vet,Home_for_clinic_manager,
   Choose_register_new_doctor,Select_Register,Adding_new_doctor_clinic,Del_Vet,Add_doctor_shift,Add_doctor_shift_time,
-  Edit_doctor_shift,Edit_doctor_shift_time,Appointment_clinic_director,My_appointments
+  Edit_doctor_shift,Edit_doctor_shift_time,Appointment_clinic_director,My_appointments,Add_information_to_clinic,
+  Edit_information_to_clinic
 
 } from './Componets/index'
 
@@ -78,14 +79,12 @@ const App = () => {
             <Route path='/profile_id_vettt/:id' element={<Profile_id_vett />} />
             <Route path='/Search_user' element={<Search_user />} />
             <Route path='/Search_vet' element={<Search_vet />} />
-
             <Route path='/Search_user_vet' element={<Search_user_vet />} />
             <Route path='/search_result/:Type' element={<Search_result />} />
             <Route path='/search_result_vet/:Type' element={<Search_result_vet />} />
             <Route path='Animal_info_adopt/:id' element={<Animal_info_adopt />} />
             <Route path='Animal_info_adopt_vet/:id' element={<Animal_info_adopt_vet />} />
             <Route path='Animal_info_adopt_vet/:id/show_vaccines/:id' element={<Vaccine_vet_id />} />
-
             <Route path='Animal_info_adopt/:id/show_vaccines/:id' element={<Vaccine_id />} />
             <Route path='/Search_type' element={<Type_search />} />
             <Route path='/Search_type_vet' element={<Type_search_vet />} />
@@ -145,9 +144,11 @@ const App = () => {
             <Route path='Edit_doctor_shift_time/:id' element={<Edit_doctor_shift_time />} /> 
             <Route path='Appointment_clinic_director' element={<Appointment_clinic_director />} /> 
             <Route path='My_appointments' element={<My_appointments />} /> 
+            <Route path='Add_information_to_clinic' element={<Add_information_to_clinic />} /> 
+            <Route path='Edit_information_to_clinic' element={<Edit_information_to_clinic />} /> 
 
-
-
+            
+            
             
 
 
