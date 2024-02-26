@@ -32,6 +32,7 @@ const Appointment_Booking = () => {
     const [Sick_animal, setSick_animal] = useState('')
     const [Day_of_booking, setDay_of_booking] = useState('')
     const [Type_Service, setType_Service] = useState('')
+    const [Time, setTime] = useState('')
 
 
 
@@ -39,7 +40,7 @@ const Appointment_Booking = () => {
 
     useEffect(() => {
 
-        axios.get(`http://localhost:3001/animal/show_all_animal`, { withCredentials: true })
+        axios.get(`http://localhost:3001/clinic/show_all_animal`, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     setAnimals(res.data.result)
@@ -146,7 +147,7 @@ const Appointment_Booking = () => {
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
         e.preventDefault()
-        axios.post(`http://localhost:3001/#/#/${id}`, { Sick_animal, Type_Service, Day_of_booking })
+        axios.post(`http://localhost:3001/clinic/make_appointment/${id}`, { Sick_animal, Type_Service, Day_of_booking ,selectedPet,Time},{ withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     alert('The appointment has been booked successfully. You can view the appointment details from your appointments')
@@ -210,7 +211,7 @@ const Appointment_Booking = () => {
                                         className="rectangle-13"
                                         name="Vaccines"
                                         required
-                                        value={selectedPet}
+                                        onChange={e => setTime(e.target.value)}
                                     >
                                         {availableWorkingHours.map((hour, index) => (
                                             <option key={index} value={hour}>{hour}</option>

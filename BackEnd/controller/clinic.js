@@ -267,7 +267,19 @@ function show_vet_with_time (req,res){
         }
     })
 }
-
+function show_all_animal(req,res) {
+    if(req.session.username){
+    const sql=' SELECT * from animals   WHERE animals.owner=?'
+    db.query(sql,[req.session.username], (err, result) => {
+        if (err) return res.json(err)
+       
+        return res.json({result,valid:true}) 
+    }
+    )
+}
+else 
+return res.json({valid:false})
+}
 function show_av_time(req,res){
     var date=req.params.date
     id=req.params.id
@@ -319,6 +331,27 @@ function show_av_time(req,res){
         }
     })
 }
+function make_appointment(req,res){
+    let animal=req.body.Sick_animal
+    let Type_Service=req.body.Type_Service
+    let Day_of_booking=req.body.Day_of_booking
+    let selectedPet=req.body.Time
+    let hh=req.params.id
+    var sqll='select cl_id from veterinarianns where user_id=?'
+    db.query(sqll,[hh],(error,result1)=>{
+        if(error){console.log(error)}
+        else{
+            var sql="INSERT booking (datebooking,timebookig,vet_idb,clinic_idb,owner_idb,animal_idb,service) VALUES('" + Day_of_booking + "','" + selectedPet + "','" + hh + "','" + result1[0].cl_id + "','" + req.session.username + "','" + animal + "','" + Type_Service + "')"
+            db.query(sql,(error,result)=>{
+                if(error){console.log(error)}
+                else{
+                    res.json({valid:true,result})
+                    
+                }
+            })
+        }
+    })
+}
 module.exports={
     create_clinic,
     showd_c,
@@ -336,7 +369,9 @@ module.exports={
     show_vet_without_time,
     add_shift_time_diff,
     show_vet_with_time,
-    show_av_time
+    show_all_animal,
+    show_av_time,
+    make_appointment
 }
 function add30MinutesToTime(time) {
     const [hour, minute] = time.split(':').map(Number);
