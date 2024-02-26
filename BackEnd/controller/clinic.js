@@ -267,6 +267,58 @@ function show_vet_with_time (req,res){
         }
     })
 }
+
+function show_av_time(req,res){
+    var date=req.params.date
+    id=req.params.id
+    console.log(date)
+    sql='select * from booking where vet_idb=? and datebooking=?'
+    db.query(sql,[id,date],(error,result)=>{
+
+        if(error){console.log(error)}
+        else if (result.length==0){
+        sql1='select * from work_time where vet_id=?'
+        db.query(sql1,[id],(error,result1)=>{
+            if(error){console.log(error)}
+            else{
+                const av_time=[]
+                var startTime=result1[0].start
+                av_time.push(startTime)
+                    while (isTime1LessThan(av_time[av_time.length-1],result1[0].end)) {
+                        newTime = add30MinutesToTime(av_time[av_time.length-1]);
+                        av_time.push(newTime)
+                    }
+                    res.json({av_time,valid:true})
+            }
+        })        
+        }
+        else {
+
+            sql11='select * from work_time where vet_id=?'
+            db.query(sql11,[id],(error,result2)=>{
+                if(error){console.log(error)}
+                else{
+                    var av_time=[]
+                var startTime=result2[0].start
+                av_time.push(startTime)
+                    while (isTime1LessThan(av_time[av_time.length-1],result2[0].end)) {
+                                var newTime = add30MinutesToTime(av_time[av_time.length-1]);
+                                    av_time.push(newTime)
+                    }
+                    for (let index = 0; index < result.length; index++) {
+                        for (let ii = 0; ii < av_time.length; ii++) {
+                            if(checkIfTimesAreEqual(result[index].timebookig,av_time[ii])==true){
+                                av_time= av_time.filter((e)=> e!=av_time[ii])
+                                console.log('vfslknkjsfgkjs')
+                            }
+                        }
+                    }
+                    res.json({av_time,valid:true})
+                }
+            })
+        }
+    })
+}
 module.exports={
     create_clinic,
     showd_c,
@@ -283,33 +335,85 @@ module.exports={
     add_shift_time,
     show_vet_without_time,
     add_shift_time_diff,
-    show_vet_with_time
+    show_vet_with_time,
+    show_av_time
+}
+function add30MinutesToTime(time) {
+    const [hour, minute] = time.split(':').map(Number);
+
+    let newHour = hour;
+    let newMinute = minute + 30;
+
+    if (newMinute >= 60) {
+        newHour = (newHour + Math.floor(newMinute / 60)) % 24;
+        newMinute = newMinute % 60;
+    }
+
+    return `${String(newHour).padStart(2, '0')}:${String(newMinute).padStart(2, '0')}`;
+}
+////////////////////////////////////////////////////////////////////////////
+function isTime1LessThan(time1, time2) {
+    const [h1, m1] = time1.split(':').map(Number);
+    const [h2, m2] = time2.split(':').map(Number);
+
+    if (h1 < h2 || (h1 === h2 && m1 < m2)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+/////////////////////////////////////////
+function checkIfTimesAreEqual(time1, time2) {
+    const [hours1, minutes1] = time1.split(':').map(Number);
+    const [hours2, minutes2] = time2.split(':').map(Number);
+
+    return hours1 === hours2 && minutes1 === minutes2;
 }
 
+// Example usage
+
+
+// Test the function
 
 
 
 
 
 
+// Test the function
 
 
+// function isTime1GreaterThan(time1, time2) {
+//     const [h1, m1] = time1.split(':').map(Number);
+//     const [h2, m2] = time2.split(':').map(Number);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//     if (h1 > h2 || (h1 === h2 && m1 > m2)) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+// av_time.push(time)
+//                 while (isTime1GreaterThan(time,av_time[av_time.length-1])==true) {
+//                 const date = new Date(`2022-01-01T${time}:00`);
+//                 const minutesToAdd = 30;
+//                 const nDate = new Date(date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(), date.getMinutes() + minutesToAdd);
+//                 const formattedTime = nDate.toLocaleDateString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
+//                 console.log(formattedTime);
+//                 av_time.push(formattedTime)
+//                 }  
+//                 // const time1 = "12:30";
+//                 // const time2 = "10:45";
+//                 // const result = isTime1GreaterThan(time1, time2);
+//                 // console.log(result); // This will output true
+// // Test the function
+///////////////////////////////////////////////////////////////////////
+// console.log(time)
+// const date =new Date(` ${time}`)
+// date.setMinutes(date.getMinutes()+30)
+// const nDate=date.toLocaleDateString('en-US',{hour:'2-digit',minute:'2-digit'});
+// console.log(nDate)
+///////////////////////////////////////////////////////////////////////
 // result.forEach((el,index,are)=>{
 //     console.log(el.id)
 //     console.log(index)

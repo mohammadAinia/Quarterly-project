@@ -39,14 +39,12 @@ const Appointment_Booking = () => {
 
     useEffect(() => {
 
-        axios.get(`http://localhost:3001/clinic/#/${id}`, { withCredentials: true })
+        axios.get(`http://localhost:3001/animal/show_all_animal`, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     setAnimals(res.data.result)
-                    setWorking_hours_one(res.data.result2)
-                    setWorking_hours_two(res.data.result3)
-
-
+                    // setWorking_hours_one(res.data.result2)
+                    // setWorking_hours_two(res.data.result3)
                 }
                 else {
                     navigate('/login')
@@ -69,9 +67,9 @@ const Appointment_Booking = () => {
     }, []);
 
     const fetchWorkingHours = (date) => {
-        axios.get(`http://localhost:3001/working-hours?date=${date}`)
+        axios.get(`http://localhost:3001/clinic/show_av_time/${date}/${id}`,{ withCredentials: true })
             .then(res => {
-                setAvailableWorkingHours(res.data);
+                setAvailableWorkingHours(res.data.av_time);
             })
             .catch(err => {
                 console.error('Error fetching working hours:', err);
@@ -192,7 +190,7 @@ const Appointment_Booking = () => {
 
                                     {Animals.map((user, i) => {
                                         return (
-                                            <option key={i} value={"user.id"} >{"user."}</option>
+                                            <option key={i} value={user.id} >{user.name}</option>
                                         )
                                     })}
 

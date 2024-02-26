@@ -11,6 +11,7 @@ router.get('/show_vet_without_time',clinic.show_vet_without_time)
 router.get('/show_vet_with_time',clinic.show_vet_with_time)
 router.get('/showc/:id',clinic.showd_c)
 router.get('/del_vet/:id',clinic.set_tozero)
+router.get('/show_av_time/:date/:id',clinic.show_av_time)
 
 
 router.post('/add_new_vet',imageUploader.upload.single('image'),clinic.singup_vet_from_admin)
