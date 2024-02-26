@@ -113,7 +113,7 @@
     width: 274px;
     height: 58px;
     top: 550px;
-    left: -10px;
+    left: 40px;
     font-family: "Poppins-ExtraLight", Helvetica;
     font-weight: 200;
     color: #000000;
@@ -127,7 +127,7 @@
     width: 274px;
     height: 58px;
     top: 680px;
-    left: 30px;
+    left: -10px;
     font-family: "Poppins-ExtraLight", Helvetica;
     font-weight: 200;
     color: #000000;
@@ -228,7 +228,10 @@
     border: 2px solid;
     border-color: #018773;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
-
+}
+.add-clinicc .rectangle-2222:focus {
+    box-shadow: 0 0 10px rgba(1, 135, 115, 0.7);
+    transform: scale(1.02);
 }
 
 .add-clinicc .rectangle-33 {

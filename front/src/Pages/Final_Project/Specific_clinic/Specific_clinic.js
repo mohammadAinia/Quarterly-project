@@ -4,12 +4,17 @@ import sphand2 from '../../../Assert/Images/sphand2.png'
 import spVector from '../../../Assert/Images/spVector.png'
 import spVector2 from '../../../Assert/Images/spVector2.png'
 import spVector3 from '../../../Assert/Images/spVector3.png'
-import Linee from '../../../Assert/Images/Linee.png'
+import footer_Vector from '../../../Assert/Images/footer_Vector.png'
 import Vectorr from '../../../Assert/Images/Vectorr.png'
-import avatar from '../../../Assert/Images/avatar.png'
+import footer_phone from '../../../Assert/Images/footer_phone.png'
 import spvector9 from '../../../Assert/Images/spvector9.png'
 import spvector10 from '../../../Assert/Images/spvector10.png'
 import spvector11 from '../../../Assert/Images/spvector11.png'
+import footer_Vector37 from '../../../Assert/Images/footer_Vector37.png'
+import footer_Vector_one from '../../../Assert/Images/footer_Vector_one.png'
+import footer_Vector_two from '../../../Assert/Images/footer_Vector_two.png'
+
+
 import { Button, Card, Componets_Specific_clinic, Header, SectionHeader } from '../../../Componets/index'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -28,6 +33,10 @@ const Specific_clinic = () => {
     const { id } = useParams()
     const [Info, setInfo] = useState([])
     const [Clinic_Name, setClinic_Name] = useState('')
+    const [Location, setLocation] = useState('')
+    const [Phone, setPhone] = useState('')
+
+
 
 
     useEffect(() => {
@@ -37,6 +46,8 @@ const Specific_clinic = () => {
                 if (res.data.valid) {
                     setInfo(res.data.result)
                     setClinic_Name(res.data.username)
+                    setLocation(res.data.location)
+                    setPhone(res.data.phone)
 
                 }
                 else {
@@ -86,7 +97,7 @@ const Specific_clinic = () => {
 
 
                     {Info.map((d, i) => {
-                        var full=d.first_name+'  '+d.last_name
+                        var full = d.first_name + '  ' + d.last_name
                         return (
                             <div key={i}>
                                 <Componets_Specific_clinic Veterinarian_name={full} Veterinarian_experience={d.address} Veterinarian_His_field_of_work={d.deatalis}
@@ -97,6 +108,19 @@ const Specific_clinic = () => {
                         Veterinarian_nationality={"Syrian nationality"} href={'Booking'} />
 
 
+                </div>
+            </div>
+
+            <div class="footer-clinic">
+                <div class="div">
+                    <img class="vector" src={footer_Vector37} />
+                    <div class="text-wrapper">{Location}</div>
+                    <div class="text-wrapper-2">{Phone}</div>
+                    <img class="phone-solid" src={footer_phone} />
+                    <img class="location1" src={footer_Vector_one} />
+                    <img class="location2" src={footer_Vector_two} />
+
+                    <img class="img" src={footer_Vector} />
                 </div>
             </div>
         </>
