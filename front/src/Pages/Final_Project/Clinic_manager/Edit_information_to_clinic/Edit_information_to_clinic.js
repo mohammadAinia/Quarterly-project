@@ -13,12 +13,12 @@ const Edit_information_to_clinic = () => {
 
     useEffect(() => {
 
-        axios.get('http://localhost:3001/#/#', { withCredentials: true })
+        axios.get('http://localhost:3001/clinic/show_info_clinic', { withCredentials: true })
             .then(res => {
                 //راجع صفحة اسمها Update_animals للاستذكار
-                setOne(res.data.result[0].One)
-                setTwo(res.data.result[0].Two)
-                setThree(res.data.result[0].Three)
+                setOne(res.data.result[0].special)
+                setTwo(res.data.result[0].spe1)
+                setThree(res.data.result[0].spe2)
 
             })
             .catch(err => { console.log(err) })
@@ -28,7 +28,7 @@ const Edit_information_to_clinic = () => {
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
         e.preventDefault()
-        axios.post('http://localhost:3001/#/#', { One, Two, Three })
+        axios.post('http://localhost:3001/clinic/add_info_to_clinic', { One, Two, Three })
             .then(res => {
                 if (res.data.valid) {
                     alert('The information has been successfully modified')
