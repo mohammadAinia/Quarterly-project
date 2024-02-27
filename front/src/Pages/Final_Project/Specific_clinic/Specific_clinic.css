@@ -4,7 +4,6 @@
     flex-direction: row;
     justify-content: center;
     width: 100%;
-    padding-bottom: 604px; 
 }
 
 .specific-clinic .div {
@@ -553,25 +552,26 @@
 
 
 
-.footer-clinic {
+.framee .footer-clinic {
     background-color: #ffffff;
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 100%;
     position:relative; /* Position the footer relative to its containing block */
-    bottom: 0px; 
-    top: 1500px;
+    /* bottom: 0px; 
+    top: 1000px; */
+    margin-top: 1020px;
 }
 
-.footer-clinic .div {
+.framee .footer-clinic .div {
     background-color: #ffffff;
     width: 2068px;
     height: 604px;
     position: relative;
 }
 
-.footer-clinic .vector {
+.framee .footer-clinic .vector {
     position: absolute;
     width: 1289px;
     height: 604px;
@@ -579,7 +579,7 @@
     left: 779px;
 }
 
-.footer-clinic .text-wrapper {
+.framee .footer-clinic .text-wrapper {
     position: absolute;
     width: 423px;
     height: 64px;
@@ -593,7 +593,7 @@
     line-height: normal;
 }
 
-.footer-clinic .text-wrapper-2 {
+.framee .footer-clinic .text-wrapper-2 {
     position: absolute;
     width: 423px;
     height: 64px;
@@ -607,21 +607,21 @@
     line-height: normal;
 }
 
-.footer-clinic .phone-solid {
+.framee .footer-clinic .phone-solid {
     position: absolute;
     width: 58px;
     height: 58px;
     top: 290px;
     left: 58px;
 }
-.footer-clinic .location1 {
+.framee .footer-clinic .location1 {
     position: absolute;
     width: 41px;
     height: 55px;
     top: 100px;
     left: 71px;
 }
-.footer-clinic .location2 {
+.framee .footer-clinic .location2 {
     position: absolute;
     width: 65.4px;
     height: 51.23px;
@@ -629,7 +629,7 @@
     left: 58px;
 }
 
-.footer-clinic .img {
+.framee .footer-clinic .img {
     position: absolute;
     width: 99px;
     height: 102px;

@@ -116,27 +116,27 @@ const Specific_clinic = () => {
                                     Veterinarian_nationality={d.nation} id={d.user_id} /></div>
                         )
                     })}
-                     {/* <Componets_Specific_clinic Veterinarian_name={"full"} Veterinarian_experience={"d.address"} Veterinarian_His_field_of_work={"d.deatalis"}
-                                    Veterinarian_nationality={"nation"} /> */}
+
                     {/* <Componets_Specific_clinic Veterinarian_name={"Mohammad Ainia"} Veterinarian_experience={"4 years experience"} Veterinarian_His_field_of_work={"He has more experience with cats"}
                         Veterinarian_nationality={"Syrian nationality"} href={'Booking'} /> */}
 
+                    <div class="footer-clinic">
+                        <div class="div">
+                            <img class="vector" src={footer_Vector37} />
+                            <div class="text-wrapper">{Location}</div>
+                            <div class="text-wrapper-2">{Phone}</div>
+                            <img class="phone-solid" src={footer_phone} />
+                            <img class="location1" src={footer_Vector_one} />
+                            <img class="location2" src={footer_Vector_two} />
 
+                            <img class="img" src={footer_Vector} />
+                        </div>
+                    </div>
                 </div>
+
             </div>
 
-            <div class="footer-clinic">
-                <div class="div">
-                    <img class="vector" src={footer_Vector37} />
-                    <div class="text-wrapper">{Location}</div>
-                    <div class="text-wrapper-2">{Phone}</div>
-                    <img class="phone-solid" src={footer_phone} />
-                    <img class="location1" src={footer_Vector_one} />
-                    <img class="location2" src={footer_Vector_two} />
 
-                    <img class="img" src={footer_Vector} />
-                </div>
-            </div>
         </>
     )
 }
