@@ -1,11 +1,15 @@
 import './Componets_Edit_doctor_shift_time.css'
 import React from 'react'
 import axios from 'axios'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Header } from '../../../Componets'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+
 
 const Componets_Edit_doctor_shift_time = () => {
+
+    const { id } = useParams()
+    const navigate = useNavigate()
 
     const [Saturday_From, setSaturday_From] = useState('')
     const [Saturday_To, setSaturday_To] = useState('')
@@ -25,11 +29,41 @@ const Componets_Edit_doctor_shift_time = () => {
     const [Thursday_From, setThursday_From] = useState('')
     const [Thursday_To, setThursday_To] = useState('')
 
+    useEffect(() => {
+
+        axios.get(`http://localhost:3001/#/${id}`, { withCredentials: true })
+            .then(res => {
+                if (res.data.valid) {
+                    setSaturday_From(res.data.Saturday_From)
+                    setSaturday_To(res.data.Saturday_To)
+
+                    setSunday_From(res.data.Sunday_From)
+                    setSunday_To(res.data.Sunday_To)
+
+                    setMonday_From(res.data.Monday_From)
+                    setMonday_To(res.data.Monday_To)
+
+                    setTuesday_From(res.data.Tuesday_From)
+                    setTuesday_To(res.data.Tuesday_To)
+
+                    setWednesday_From(res.data.Wednesday_From)
+                    setWednesday_To(res.data.Wednesday_To)
+
+                    setThursday_From(res.data.Thursday_From)
+                    setThursday_To(res.data.Thursday_To)
+
+                }
+            })
+            .catch(err => { console.log(err) })
+
+    }, [])
+
+
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
 
         e.preventDefault()
-        axios.post('http://localhost:3001/#/#', Saturday_From, Saturday_To, Sunday_From, Sunday_To, Monday_From, Monday_To, Tuesday_From, Tuesday_To, Wednesday_From, Wednesday_To, Thursday_From, Thursday_To)
+        axios.post(`http://localhost:3001/#/#/${id}`, Saturday_From, Saturday_To, Sunday_From, Sunday_To, Monday_From, Monday_To, Tuesday_From, Tuesday_To, Wednesday_From, Wednesday_To, Thursday_From, Thursday_To, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     alert('Modified successfully')
@@ -39,12 +73,13 @@ const Componets_Edit_doctor_shift_time = () => {
     }
     return (
         <>
-            <form action="#" onSubmit={handleSubmit} enctype="multipart/form-data">
+            <form onSubmit={handleSubmit} enctype="multipart/form-data">
 
                 <div class="user-details">
                     <div class="input-box">
-                        <span class="details" style={{ "margin-left": "280px", "width": "100px" }}>Saturday</span>
+                        <span class="details" style={{ "margin-left": "220px", "width": "200px" }}>Saturday {Saturday_From+' '+Saturday_To}</span>
                     </div>
+
                     <div class="input-box">
                     </div>
                     <div class="input-box">
@@ -58,7 +93,7 @@ const Componets_Edit_doctor_shift_time = () => {
 
 
                     <div class="input-box">
-                        <span class="details" style={{ "margin-left": "280px", "width": "100px" }}>Sunday</span>
+                        <span class="details" style={{ "margin-left": "220px", "width": "200px" }}>Sunday {Sunday_From+' '+Sunday_To}</span>
                     </div>
                     <div class="input-box">
                     </div>
@@ -73,7 +108,7 @@ const Componets_Edit_doctor_shift_time = () => {
 
 
                     <div class="input-box">
-                        <span class="details" style={{ "margin-left": "280px", "width": "100px" }}>Monday</span>
+                        <span class="details" style={{ "margin-left": "220px", "width": "200px" }}>Monday {Monday_From+' '+Monday_To}</span>
                     </div>
                     <div class="input-box">
                     </div>
@@ -87,7 +122,7 @@ const Componets_Edit_doctor_shift_time = () => {
                     </div>
 
                     <div class="input-box">
-                        <span class="details" style={{ "margin-left": "280px", "width": "100px" }}>Tuesday</span>
+                        <span class="details" style={{ "margin-left": "220px", "width": "200px" }}>Tuesday {Tuesday_From+' '+Tuesday_To}</span>
                     </div>
                     <div class="input-box">
                     </div>
@@ -101,7 +136,7 @@ const Componets_Edit_doctor_shift_time = () => {
                     </div>
 
                     <div class="input-box">
-                        <span class="details" style={{ "margin-left": "280px", "width": "100px" }}>Wednesday</span>
+                        <span class="details" style={{ "margin-left": "220px", "width": "200px" }}>Wednesday {Wednesday_From+' '+Wednesday_To}</span>
                     </div>
                     <div class="input-box">
                     </div>
@@ -115,7 +150,7 @@ const Componets_Edit_doctor_shift_time = () => {
                     </div>
 
                     <div class="input-box">
-                        <span class="details" style={{ "margin-left": "280px", "width": "100px" }}>Thursday</span>
+                        <span class="details" style={{ "margin-left": "220px", "width": "200px" }}>Thursday {Thursday_From+' '+Thursday_To}</span>
                     </div>
                     <div class="input-box">
                     </div>

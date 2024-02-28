@@ -151,6 +151,7 @@ export {default as My_appointments} from '../Pages/Final_Project/My_appointments
 export {default as Componets_My_appointments} from './Graduation/Componets_My_appointments/Componets_My_appointments'
 export {default as Add_information_to_clinic} from '../Pages/Final_Project/Clinic_manager/Add_information_to_clinic/Add_information_to_clinic'
 export {default as Edit_information_to_clinic} from '../Pages/Final_Project/Clinic_manager/Edit_information_to_clinic/Edit_information_to_clinic'
+export {default as Loading_page} from '../Pages/Loading_page/Loading_page'
 
 
 

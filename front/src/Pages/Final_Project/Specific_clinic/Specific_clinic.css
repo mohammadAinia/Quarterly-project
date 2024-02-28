@@ -591,7 +591,10 @@
     font-size: 25px;
     letter-spacing: 0;
     line-height: normal;
+    animation: riseAndRotate 3s ease infinite alternate;  /* Apply animation */
+
 }
+
 
 .framee .footer-clinic .text-wrapper-2 {
     position: absolute;
@@ -613,6 +616,18 @@
     height: 58px;
     top: 290px;
     left: 58px;
+    animation: floatAnimation 5s ease infinite alternate; /* Apply animation */
+}
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0); /* Initial position */
+    }
+    50% {
+        transform: translateY(-10px); /* Float up halfway */
+    }
+    100% {
+        transform: translateY(0); /* Return to initial position */
+    }
 }
 .framee .footer-clinic .location1 {
     position: absolute;
@@ -620,7 +635,23 @@
     height: 55px;
     top: 100px;
     left: 71px;
+    /* animation: bounceAndRotate 3s ease infinite; 
+    transform-origin: center bottom;  */
+    animation: riseAndRotate 3s ease infinite; /* Apply animation */
+    transform-origin: center; 
 }
+@keyframes riseAndRotate {
+    0% {
+        transform: translateY(0) rotate(0deg); /* Initial position */
+    }
+    50% {
+        transform: translateY(-50px) rotate(0deg); /* Rise to the top */
+    }
+    100% {
+        transform: translateY(0) rotate(1440deg); /* Rotate around itself twice while staying at the top */
+    }
+}
+
 .framee .footer-clinic .location2 {
     position: absolute;
     width: 65.4px;

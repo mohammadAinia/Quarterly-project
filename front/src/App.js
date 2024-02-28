@@ -19,7 +19,7 @@ import {
   Choose_a_clinic_for_delete,Componets_Clinic_To_choose,Choose_a_clinic_for_link_vet,Home_for_clinic_manager,
   Choose_register_new_doctor,Select_Register,Adding_new_doctor_clinic,Del_Vet,Add_doctor_shift,Add_doctor_shift_time,
   Edit_doctor_shift,Edit_doctor_shift_time,Appointment_clinic_director,My_appointments,Add_information_to_clinic,
-  Edit_information_to_clinic
+  Edit_information_to_clinic,Loading_page
 
 } from './Componets/index'
 
@@ -31,7 +31,8 @@ const App = () => {
           <Routes>
 
             <Route path='/' element={<Home_owner />} />
-            <Route path='/login' element={<General_user />} />
+            <Route path='login' element={<Loading_page />} />
+            <Route path='start' element={<General_user />} />
             <Route path='Loginn' element={<Login />} />
             <Route path='/Registration' element={<Type />} />
             <Route path='/Register_owner' element={<Register_owner />} />
@@ -146,6 +147,7 @@ const App = () => {
             <Route path='My_appointments' element={<My_appointments />} /> 
             <Route path='Add_information_to_clinic' element={<Add_information_to_clinic />} /> 
             <Route path='Edit_information_to_clinic' element={<Edit_information_to_clinic />} /> 
+            <Route path='n' element={<Loading_page/>} /> 
 
             
             
