@@ -352,6 +352,28 @@ function make_appointment(req,res){
         }
     })
 }
+function add_info_to_clinic(req,res){
+    q=req.body.One
+    qq=req.body.Two  
+    qqq=req.body.Three
+    var sql='update clinics set special=?,spe1=?,spe2=? where admin_clinic=?'
+    db.query(sql,[q,qq,qqq,req.session.admin],(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            res.json({valid:true,result})
+    
+        }
+    })
+}
+function show_info_clinic(req,res){
+    sql='select * from clinics where admin_clinic=?'
+    db.query(sql,[req.session.admin],(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            res.json({valid:true,result})
+        }
+    })
+}
 module.exports={
     create_clinic,
     showd_c,
@@ -371,7 +393,9 @@ module.exports={
     show_vet_with_time,
     show_all_animal,
     show_av_time,
-    make_appointment
+    make_appointment,
+    add_info_to_clinic,
+    show_info_clinic
 }
 function add30MinutesToTime(time) {
     const [hour, minute] = time.split(':').map(Number);

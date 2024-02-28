@@ -13,7 +13,7 @@ const Add_information_to_clinic = () => {
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
         e.preventDefault()
-        axios.post('http://localhost:3001/#/#', { One, Two, Three })
+        axios.post('http://localhost:3001/clinic/add_info_to_clinic', { One, Two, Three })
             .then(res => {
                 if (res.data.valid) {
                     alert('Information has been added to the clinic successfully')
