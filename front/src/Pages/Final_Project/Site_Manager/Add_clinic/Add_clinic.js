@@ -19,20 +19,24 @@ const Add_clinic = () => {
 
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
-        e.preventDefault()
-        axios.post('http://localhost:3001/clinic/add_new_clinic', { Name_clinic, From, To, Location, Location_details, Phone })
-            .then(res => {
-                if (res.data.valid) {
-
-                    alert('The clinic has been added successfully')
-                    navigate(`Appointment_clinic_director${res.data.id}`)
-                }
-                else {
-                    alert('It didnt work')
-                }
-            })
-            .catch(err => { console.log(err) })
-    }
+        e.preventDefault();
+        if (From && To && From < To) {
+            axios.post('http://localhost:3001/clinic/add_new_clinic', { Name_clinic, From, To, Location, Location_details, Phone })
+                .then(res => {
+                    if (res.data.valid) {
+                        alert('The clinic has been added successfully');
+                        navigate(`Appointment_clinic_director${res.data.id}`);
+                    } else {
+                        alert('It didnt work');
+                    }
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+        } else {
+            alert('Please enter valid working hours');
+        }
+    };
     return (
         <>
             <div class="add-clinicc">
