@@ -49,12 +49,12 @@ const Specific_clinic = () => {
             .then(res => {
                 if (res.data.valid) {
                     setInfo(res.data.result)
-                    setClinic_Name(res.data.username)
-                    setLocation(res.data.location)
-                    setPhone(res.data.phone)
-                    setone(res.data.one)
-                    settwo(res.data.two)
-                    setthree(res.data.three)
+                    setClinic_Name(res.data.result1.name)
+                    setLocation(res.data.result1[0].location+','+res.data.result1[0].det_loc)
+                    setPhone(res.data.result1[0].phone)
+                    setone(res.data.result1[0].special)
+                    settwo(res.data.result1[0].spe1)
+                    setthree(res.data.result1[0].spe2)
 
 
 

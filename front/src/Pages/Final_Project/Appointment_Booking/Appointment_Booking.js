@@ -147,7 +147,7 @@ const Appointment_Booking = () => {
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
         e.preventDefault()
-        axios.post(`http://localhost:3001/clinic/make_appointment/${id}`, { Sick_animal, Type_Service, Day_of_booking ,selectedPet,Time},{ withCredentials: true })
+        axios.post(`http://localhost:3001/clinic/make_appointment/${id}`, { Sick_animal, Type_Service, Day_of_booking ,selectedPet,Time})
             .then(res => {
                 if (res.data.valid) {
                     alert('The appointment has been booked successfully. You can view the appointment details from your appointments')

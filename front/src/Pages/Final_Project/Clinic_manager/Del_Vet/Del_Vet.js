@@ -38,7 +38,6 @@ const Del_Vet = () => {
                             </div>
                         )
                     })}
-                    <Componets_Del_Vet name={""} age={""} email={""} id={""} />
 
                 </div>
             </div>

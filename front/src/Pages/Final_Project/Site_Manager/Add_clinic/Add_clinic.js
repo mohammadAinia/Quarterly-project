@@ -20,13 +20,12 @@ const Add_clinic = () => {
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
         e.preventDefault()
-        axios.post('http://localhost:3001/#/#', { Name_clinic, From, To, Location, Location_details, Phone })
+        axios.post('http://localhost:3001/clinic/add_new_clinic', { Name_clinic, From, To, Location, Location_details, Phone })
             .then(res => {
                 if (res.data.valid) {
 
                     alert('The clinic has been added successfully')
-                    window.location.reload()
-
+                    navigate(-1)
                 }
                 else {
                     alert('It didnt work')
@@ -34,8 +33,6 @@ const Add_clinic = () => {
             })
             .catch(err => { console.log(err) })
     }
-
-
     return (
         <>
             <div class="add-clinicc">

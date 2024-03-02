@@ -13,7 +13,7 @@ const Componets_Select_Register = (props) => {
             .then(res => {
                 if (res.data.valid) {
                     alert("The doctor has been successfully added to the clinic")
-                    navigate(`Add_doctor_shift_time/${res.data.id}`)
+                    navigate(`Add_doctor_shift_time/${id}`)
 
                 }
             })
