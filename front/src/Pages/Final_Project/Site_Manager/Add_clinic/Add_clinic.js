@@ -25,7 +25,7 @@ const Add_clinic = () => {
                 if (res.data.valid) {
 
                     alert('The clinic has been added successfully')
-                    navigate(-1)
+                    navigate(`Appointment_clinic_director${res.data.id}`)
                 }
                 else {
                     alert('It didnt work')

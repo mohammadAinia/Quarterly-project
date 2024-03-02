@@ -2,12 +2,14 @@ import './Appointment_clinic_director.css'
 import React, { useState } from 'react'
 import { Header } from '../../../../Componets'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,useParams } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRightToBracket } from '@fortawesome/free-solid-svg-icons'
 
 const Appointment_clinic_director = () => {
+
     const navigate = useNavigate()
+    const { id } = useParams()
 
     const [First_name, setFirst_name] = useState('')
     const [Last_name, setLast_name] = useState('')
@@ -26,11 +28,12 @@ const Appointment_clinic_director = () => {
         if (Password === Confirm) {
             e.preventDefault()
 
-            axios.post('http://localhost:3001/#/#', First_name ,Last_name,Email,Phone,Password,Age,Nationality,Addres)
+            axios.post(`http://localhost:3001/#/#${id}`, First_name ,Last_name,Email,Phone,Password,Age,Nationality,Addres)
                 .then(res => {
                     if (res.data.valid) {
                         // navigate(`/Choosing_a_doctor_clinic/${res.data.id}`)
                         alert('The manager has been added successfully')
+                        navigate('/m')
                     }
                 }
                 )
@@ -45,7 +48,7 @@ const Appointment_clinic_director = () => {
 
             <div>
                 <div className="container" >
-                    <div className="title">Appoint a site manager</div>
+                    <div className="title">Appointment of a clinic director</div>
                     <div className="content">
                         <form action="#" onSubmit={handleSubmit} enctype="multipart/form-data">
                             <div className="user-details">
