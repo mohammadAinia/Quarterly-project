@@ -19,10 +19,16 @@ closeq=req.body.closeq
 function showd_c (req,res){
     id=req.params.id
     sql='select veterinarianns.user_id,user_infos.first_name,user_infos.last_name,veterinarianns.deatalis,veterinarianns.nation,veterinarianns.address from user_infos join veterinarianns on user_infos.id=veterinarianns.user_id where cl_id in (select id_c from clinics where id_c=?)'
+    sqll='select * from clinics where id_c=?'
     db.query(sql,[id],(err,result)=>{
         if(err){console.log(err)}
         else {
-            return res.json({result,valid:true})
+            db.query(sqll,[id],(error,result1)=>{
+                if(error){console.log(error)}
+                else{
+                    res.json({valid:true,result,result1})
+                }
+            })
         }
 
     })
