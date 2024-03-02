@@ -29,7 +29,7 @@ const Administrator_home = () => {
                     </div>
                     <div class="text-wrapper">Manager dashboard</div>
                     <div class="div-wrapper"><a href='/add_clinic' class="text-wrapper-2">Add Clinic</a></div>
-                    <div class="frame-2"><a href='Appointment_clinic_director' class="text-wrapper-2">Appointment of a clinic director</a></div>
+                    <div class="frame-2"><a href='#' class="text-wrapper-2"> -----</a></div>
                     <div class="frame-3"><a href='#' class="text-wrapper-2"> -----</a></div>
                     <div class="frame-4"><a href='#' class="text-wrapper-2"> -----</a></div>
                     <div class="frame-5"><a href='#' class="text-wrapper-2"> -----</a></div>

@@ -19,7 +19,7 @@ import {
   Choose_a_clinic_for_delete,Componets_Clinic_To_choose,Choose_a_clinic_for_link_vet,Home_for_clinic_manager,
   Choose_register_new_doctor,Select_Register,Adding_new_doctor_clinic,Del_Vet,Add_doctor_shift,Add_doctor_shift_time,
   Edit_doctor_shift,Edit_doctor_shift_time,Appointment_clinic_director,My_appointments,Add_information_to_clinic,
-  Edit_information_to_clinic,Loading_page
+  Edit_information_to_clinic,Loading_page, Report
 
 } from './Componets/index'
 
@@ -129,6 +129,7 @@ const App = () => {
             <Route path='Specific_clinic/:id' element={<Specific_clinic />} /> 
             <Route path='Specific_clinic/Booking/:id' element={<Appointment_Booking />} /> 
             <Route path='add_clinic' element={<Add_clinic />} /> 
+            <Route path='add_clinic/Appointment_clinic_director/:id' element={<Appointment_clinic_director />} /> 
             <Route path='Add_Vets_to_clinic' element={<Add_Vets_to_clinic />} /> 
             <Route path='m' element={<Administrator_home />} /> 
             <Route path='choose_clinic' element={<Choose_a_clinic_for_delete />} /> 
@@ -143,11 +144,13 @@ const App = () => {
             <Route path='Select_Register/Add_doctor_shift_time/:id' element={<Add_doctor_shift_time />} /> 
             <Route path='Edit_doctor_shift' element={<Edit_doctor_shift />} /> 
             <Route path='Edit_doctor_shift_time/:id' element={<Edit_doctor_shift_time />} /> 
-            <Route path='Appointment_clinic_director' element={<Appointment_clinic_director />} /> 
+            <Route path='Appointment_clinic_director/:id' element={<Appointment_clinic_director />} /> 
             <Route path='My_appointments' element={<My_appointments />} /> 
-            <Route path='Add_information_to_clinic' element={<Add_information_to_clinic />} /> 
+            <Route path='Add_information_to_clinic' element={<Add_information_to_clinic />} /> {/*هذه الصفحة تم الغائها  */}
             <Route path='Edit_information_to_clinic' element={<Edit_information_to_clinic />} /> 
             <Route path='n' element={<Loading_page/>} /> 
+            <Route path='n' element={<Report/>} /> 
+
           </Routes>
         </Container>
       </Router>

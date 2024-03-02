@@ -591,8 +591,6 @@
     font-size: 25px;
     letter-spacing: 0;
     line-height: normal;
-    animation: riseAndRotate 3s ease infinite alternate;  /* Apply animation */
-
 }
 
 

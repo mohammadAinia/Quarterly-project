@@ -41,7 +41,7 @@ const Loading_page = () => {
         // Simulate loading delay
         const timer = setTimeout(() => {
             navigate('/start')
-        }, 6500); // Adjust the delay time as needed
+        }, 4000); // Adjust the delay time as needed
 
         return () => clearTimeout(timer);
     }, []);
