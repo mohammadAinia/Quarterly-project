@@ -52,7 +52,7 @@ function search_clinc (req,res){
     })
     
 }
-else return res.json({valid:false})
+else return res.json({valid:false}) 
 }
 function add_doc_to_cli(req,res){// here is test  قبل فكرة انو الطبيب مايكنلو حساب بلا العيادة
     id=req.params.id
@@ -67,7 +67,7 @@ function add_doc_to_cli(req,res){// here is test  قبل فكرة انو الط�
             db.query(sql1,[result[0].id_c,id],(error,result1)=>{ 
                 if(error){console.log(error)}
                 else return res.json({valid:true})
-            })
+            })///////////////////////////////////////////////
     } 
     }
     )
@@ -374,6 +374,30 @@ function show_info_clinic(req,res){
         }
     })
 }
+function show_next_appointment(req,res){
+    sql='select booking.service,clinics.c_name,c_name,user_infos.first_name,animals.name,booking.datebooking,booking.timebookig FROM booking join clinics on clinics.id_c=booking.clinic_idb join user_infos on user_infos.id=booking.vet_idb join animals on booking.animal_idb=animals.id where booking.owner_idb=?'
+    db.query(sql,[req.session.admin],(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            res.json({valid:true,result})
+        }
+    })
+}
+function add_new_clinic(req,res){
+    namee=req.body.Name_clinic
+    timeo=req.body.From
+    timec=req.body.To
+    loc=req.body.Location
+    detloc=req.body.Location_details
+    phone=req.body.Phone
+    var sql="INSERT clinics(c_name,time_open,time_close,location,det_loc,phone) VALUES('" + namee + "','" + timeo + "','" + timec + "','" + loc + "','" + detloc + "','" + phone + "')"
+    db.query(sql,(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            res.json({valid:true,result})
+        }
+    })
+}
 module.exports={
     create_clinic,
     showd_c,
@@ -395,7 +419,9 @@ module.exports={
     show_av_time,
     make_appointment,
     add_info_to_clinic,
-    show_info_clinic
+    show_info_clinic,
+    show_next_appointment,
+    add_new_clinic
 }
 function add30MinutesToTime(time) {
     const [hour, minute] = time.split(':').map(Number);

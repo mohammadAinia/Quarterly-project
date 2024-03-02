@@ -140,7 +140,7 @@ const App = () => {
             <Route path='Adding_new_doctor_clinic' element={<Adding_new_doctor_clinic />} /> 
             <Route path='Del_Vet' element={<Del_Vet />} /> 
             <Route path='Add_doctor_shift' element={<Add_doctor_shift />} /> 
-            <Route path='Add_doctor_shift_time/:id' element={<Add_doctor_shift_time />} /> 
+            <Route path='Select_Register/Add_doctor_shift_time/:id' element={<Add_doctor_shift_time />} /> 
             <Route path='Edit_doctor_shift' element={<Edit_doctor_shift />} /> 
             <Route path='Edit_doctor_shift_time/:id' element={<Edit_doctor_shift_time />} /> 
             <Route path='Appointment_clinic_director' element={<Appointment_clinic_director />} /> 
@@ -148,19 +148,6 @@ const App = () => {
             <Route path='Add_information_to_clinic' element={<Add_information_to_clinic />} /> 
             <Route path='Edit_information_to_clinic' element={<Edit_information_to_clinic />} /> 
             <Route path='n' element={<Loading_page/>} /> 
-
-            
-            
-            
-
-
-
-
-
-
-
-
-
           </Routes>
         </Container>
       </Router>
