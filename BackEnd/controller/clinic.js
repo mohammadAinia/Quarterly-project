@@ -210,6 +210,16 @@ function set_tozero(req,res){
         }
     })
 }
+function show_shift_time(req,res){
+    id=req.params.id
+    sql='select * from work_time where vet_id=?'
+    db.query(sql,[id],(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            res.json({valid:true,result})
+        }
+    })
+}
 function add_shift_time(req,res){
   sqll='select * from clinics where admin_clinic=?'
   db.query(sqll,[req.session.admin],(error,result)=>{
@@ -218,7 +228,7 @@ function add_shift_time(req,res){
         id=req.params.id
         days=['S','Su','M','Tu','W','Th']
         days.forEach(d => {
-            var sql= "insert into work_time (start,end,day,vet_id,clinic_id) values ('" + req.body.All_Day_From + "','" + req.body.All_Day_To + "','" + "null" + "','" + id + "','" + result[0].id_c + "')"
+            var sql= "insert into work_time (start,end,day,vet_id,clinic_id) values ('" + req.body.All_Day_From + "','" + req.body.All_Day_To + "','" + d + "','" + id + "','" + result[0].id_c + "')"
             db.query(sql,(error,result)=>{
                 if(error){console.log(error)}
                 
@@ -251,6 +261,24 @@ function add_shift_time_diff(req,res){
         }
     })
     }
+function update_time_shift(req,res){
+    id=req.params.id
+        days=['S','Su','M','Tu','W','Th']
+        start=[req.body.Saturday_From,req.body.Sunday_From,req.body.Monday_From,req.body.Tuesday_From,req.body.Wednesday_From,req.body.Thursday_From]
+        end=[req.body.Saturday_To,req.body.Sunday_To,req.body.Monday_To,req.body.Tuesday_To,req.body.Wednesday_To,req.body.Thursday_To]
+            for (let index = 0; index < days.length; index++) {
+                var sql='update work_time set start=? ,end=? where vet_id=? and day=?'
+                db.query(sql,[start[index],end[index],id,days[index]],(error,result)=>{
+                    if(error){console.log(error)}
+
+                })
+                
+            }
+            res.json({valid:true})
+
+        
+        
+}
 function show_vet_without_time (req,res){
 
     sql='select *  from user_infos where id in (select user_id from veterinarianns where cl_id=(select id_c from clinics where admin_clinic=?) and  user_id not in (select vet_id from work_time))'
@@ -427,7 +455,9 @@ module.exports={
     add_info_to_clinic,
     show_info_clinic,
     show_next_appointment,
-    add_new_clinic
+    add_new_clinic,
+    show_shift_time
+    ,update_time_shift
 }
 function add30MinutesToTime(time) {
     const [hour, minute] = time.split(':').map(Number);

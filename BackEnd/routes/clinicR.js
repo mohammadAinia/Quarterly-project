@@ -15,6 +15,7 @@ router.get('/show_av_time/:date/:id',clinic.show_av_time)
 router.get('/show_all_animal',clinic.show_all_animal)
 router.get('/show_info_clinic',clinic.show_info_clinic)
 router.get('/show_next_appointment',clinic.show_next_appointment)
+router.get('/show_shift_time/:id',clinic.show_shift_time)
 
 
 router.post('/add_new_vet',imageUploader.upload.single('image'),clinic.singup_vet_from_admin)
@@ -23,4 +24,5 @@ router.post('/add_shift_days/:id',clinic.add_shift_time_diff)
 router.post('/make_appointment/:id',clinic.make_appointment)
 router.post('/add_info_to_clinic',clinic.add_info_to_clinic)
 router.post('/add_new_clinic',clinic.add_new_clinic)
+router.post('/update_time_shift/:id',clinic.update_time_shift)
 module.exports=router 

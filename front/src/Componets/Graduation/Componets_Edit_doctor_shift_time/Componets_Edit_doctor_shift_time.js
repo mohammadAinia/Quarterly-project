@@ -31,27 +31,26 @@ const Componets_Edit_doctor_shift_time = () => {
 
     useEffect(() => {
 
-        axios.get(`http://localhost:3001/#/${id}`, { withCredentials: true })
+        axios.get(`http://localhost:3001/clinic/show_shift_time/${id}`, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
-                    setSaturday_From(res.data.Saturday_From)
-                    setSaturday_To(res.data.Saturday_To)
+                    setSaturday_From(res.data.result[0].start)
+                    setSaturday_To(res.data.result[0].end)
 
-                    setSunday_From(res.data.Sunday_From)
-                    setSunday_To(res.data.Sunday_To)
+                    setSunday_From(res.data.result[1].start)
+                    setSunday_To(res.data.result[1].end)
 
-                    setMonday_From(res.data.Monday_From)
-                    setMonday_To(res.data.Monday_To)
+                    setMonday_From(res.data.result[2].start)
+                    setMonday_To(res.data.result[2].end)
 
-                    setTuesday_From(res.data.Tuesday_From)
-                    setTuesday_To(res.data.Tuesday_To)
+                    setTuesday_From(res.data.result[3].start)
+                    setTuesday_To(res.data.result[3].end)
 
-                    setWednesday_From(res.data.Wednesday_From)
-                    setWednesday_To(res.data.Wednesday_To)
+                    setWednesday_From(res.data.result[4].start)
+                    setWednesday_To(res.data.result[4].end)
 
-                    setThursday_From(res.data.Thursday_From)
-                    setThursday_To(res.data.Thursday_To)
-
+                    setThursday_From(res.data.result[5].start)
+                    setThursday_To(res.data.result[5].end)
                 }
             })
             .catch(err => { console.log(err) })
@@ -63,10 +62,11 @@ const Componets_Edit_doctor_shift_time = () => {
     const handleSubmit = async (e) => {
 
         e.preventDefault()
-        axios.post(`http://localhost:3001/#/#/${id}`, Saturday_From, Saturday_To, Sunday_From, Sunday_To, Monday_From, Monday_To, Tuesday_From, Tuesday_To, Wednesday_From, Wednesday_To, Thursday_From, Thursday_To, { withCredentials: true })
+        axios.post(`http://localhost:3001/clinic/update_time_shift/${id}`, {Saturday_From, Saturday_To, Sunday_From, Sunday_To, Monday_From, Monday_To, Tuesday_From, Tuesday_To, Wednesday_From, Wednesday_To, Thursday_From, Thursday_To}, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     alert('Modified successfully')
+                    navigate(-2)
                 }
             })
             .catch(err => alert(err))
@@ -84,11 +84,11 @@ const Componets_Edit_doctor_shift_time = () => {
                     </div>
                     <div class="input-box">
                         <span class="details">From *</span>
-                        <input type="time" name='name' required onChange={e => setSaturday_From(e.target.value)} />
+                        <input type="time"defaultValue={Saturday_From}  name='name' required onChange={e => setSaturday_From(e.target.value)} />
                     </div>
                     <div class="input-box">
                         <span class="details">To *</span>
-                        <input type="time" name='age' required onChange={e => setSaturday_To(e.target.value)} />
+                        <input type="time" defaultValue={Saturday_To} name='age' required onChange={e => setSaturday_To(e.target.value)} />
                     </div>
 
 
@@ -99,11 +99,11 @@ const Componets_Edit_doctor_shift_time = () => {
                     </div>
                     <div class="input-box">
                         <span class="details">From *</span>
-                        <input type="time" name='name' required onChange={e => setSunday_From(e.target.value)} />
+                        <input type="time" defaultValue={Sunday_From} name='name' required onChange={e => setSunday_From(e.target.value)} />
                     </div>
                     <div class="input-box">
                         <span class="details">To *</span>
-                        <input type="time" name='age' required onChange={e => setSunday_To(e.target.value)} />
+                        <input type="time" defaultValue={Sunday_To} name='age' required onChange={e => setSunday_To(e.target.value)} />
                     </div>
 
 
@@ -114,11 +114,11 @@ const Componets_Edit_doctor_shift_time = () => {
                     </div>
                     <div class="input-box">
                         <span class="details">From *</span>
-                        <input type="time" name='name' required onChange={e => setMonday_From(e.target.value)} />
+                        <input type="time" defaultValue={Monday_From} name='name' required onChange={e => setMonday_From(e.target.value)} />
                     </div>
                     <div class="input-box">
                         <span class="details">To *</span>
-                        <input type="time" name='age' required onChange={e => setMonday_To(e.target.value)} />
+                        <input type="time" name='age' defaultValue={Monday_To} required onChange={e => setMonday_To(e.target.value)} />
                     </div>
 
                     <div class="input-box">
@@ -128,11 +128,11 @@ const Componets_Edit_doctor_shift_time = () => {
                     </div>
                     <div class="input-box">
                         <span class="details">From *</span>
-                        <input type="time" name='name' required onChange={e => setTuesday_From(e.target.value)} />
+                        <input type="time" defaultValue={Tuesday_From} name='name' required onChange={e => setTuesday_From(e.target.value)} />
                     </div>
                     <div class="input-box">
                         <span class="details">To *</span>
-                        <input type="time" name='age' required onChange={e => setTuesday_To(e.target.value)} />
+                        <input type="time" name='age' defaultValue={Tuesday_To} required onChange={e => setTuesday_To(e.target.value)} />
                     </div>
 
                     <div class="input-box">
@@ -142,11 +142,11 @@ const Componets_Edit_doctor_shift_time = () => {
                     </div>
                     <div class="input-box">
                         <span class="details">From *</span>
-                        <input type="time" name='name' required onChange={e => setWednesday_From(e.target.value)} />
+                        <input type="time" defaultValue={Wednesday_From} name='name' required onChange={e => setWednesday_From(e.target.value)} />
                     </div>
                     <div class="input-box">
                         <span class="details">To *</span>
-                        <input type="time" name='age' required onChange={e => setWednesday_To(e.target.value)} />
+                        <input type="time" name='age' defaultValue={Wednesday_To} required onChange={e => setWednesday_To(e.target.value)} />
                     </div>
 
                     <div class="input-box">
@@ -156,11 +156,11 @@ const Componets_Edit_doctor_shift_time = () => {
                     </div>
                     <div class="input-box">
                         <span class="details">From *</span>
-                        <input type="time" name='name' required onChange={e => setThursday_From(e.target.value)} />
+                        <input type="time" name='name' defaultValue={Thursday_From} required onChange={e => setThursday_From(e.target.value)} />
                     </div>
                     <div class="input-box">
                         <span class="details">To *</span>
-                        <input type="time" name='age' required onChange={e => setThursday_To(e.target.value)} />
+                        <input type="time" name='age' defaultValue={Thursday_To} required onChange={e => setThursday_To(e.target.value)} />
                     </div>
                 </div>
 
