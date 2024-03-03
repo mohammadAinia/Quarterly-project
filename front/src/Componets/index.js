@@ -153,6 +153,8 @@ export {default as Add_information_to_clinic} from '../Pages/Final_Project/Clini
 export {default as Edit_information_to_clinic} from '../Pages/Final_Project/Clinic_manager/Edit_information_to_clinic/Edit_information_to_clinic'
 export {default as Loading_page} from '../Pages/Loading_page/Loading_page'
 export {default as Report} from '../Pages/Final_Project/Report/Report'
+export {default as Modifying_clinic_working_hours} from '../Pages/Final_Project/Clinic_manager/Modifying_clinic_working_hours/Modifying_clinic_working_hours'
+export {default as Componets_Modifying_clinic_working_hours} from './Graduation/Componets_Modifying_clinic_working_hours/Componets_Modifying_clinic_working_hours'
 
 
 
