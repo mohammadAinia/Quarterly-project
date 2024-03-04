@@ -25,7 +25,7 @@ const Add_clinic = () => {
                 .then(res => {
                     if (res.data.valid) {
                         alert('The clinic has been added successfully');
-                        navigate(`Appointment_clinic_director${res.data.id}`);
+                        navigate(`Appointment_clinic_director/${res.data.result.insertId}`);
                     } else {
                         alert('It didnt work');
                     }

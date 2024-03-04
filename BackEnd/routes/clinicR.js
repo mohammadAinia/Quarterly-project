@@ -16,9 +16,11 @@ router.get('/show_all_animal',clinic.show_all_animal)
 router.get('/show_info_clinic',clinic.show_info_clinic)
 router.get('/show_next_appointment',clinic.show_next_appointment)
 router.get('/show_shift_time/:id',clinic.show_shift_time)
+router.get('/get_time',clinic.get_time)
 
 
 router.post('/add_new_vet',imageUploader.upload.single('image'),clinic.singup_vet_from_admin)
+router.post('/add_new_admin_for_clinic/:id',clinic.add_new_admin_for_clinic)
 router.post('/add_shift/:id',clinic.add_shift_time)
 router.post('/add_shift_days/:id',clinic.add_shift_time_diff)
 router.post('/make_appointment/:id',clinic.make_appointment)

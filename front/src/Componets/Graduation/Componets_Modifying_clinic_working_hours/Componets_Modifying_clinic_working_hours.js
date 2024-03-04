@@ -12,11 +12,11 @@ const Componets_Modifying_clinic_working_hours = () => {
 
     useEffect(() => {
 
-        axios.get('http://localhost:3001/#/#/', { withCredentials: true })
+        axios.get('http://localhost:3001/clinic/get_time', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
-                    setFrom(res.data.result[0].start)
-                    setTo(res.data.result[0].end)
+                    setFrom(res.data.result[0].time_open)
+                    setTo(res.data.result[0].time_close)
                 }
             })
             .catch(err => { console.log(err) })

@@ -28,13 +28,13 @@ const Appointment_clinic_director = () => {
         if (Password === Confirm) {
             e.preventDefault()
 
-            axios.post(`http://localhost:3001/#/#${id}`, First_name ,Last_name,Email,Phone,Password,Age,Nationality,Addres)
+            axios.post(`http://localhost:3001/clinic/add_new_admin_for_clinic/${id}`,{First_name,Last_name,Email,Phone,Password,Age,Nationality,Addres},{withCredentials:true})
                 .then(res => {
                     if (res.data.valid) {
                         // navigate(`/Choosing_a_doctor_clinic/${res.data.id}`)
                         alert('The manager has been added successfully')
                         navigate('/m')
-                    }
+                    } 
                 }
                 )
                 .catch(err => alert(err))

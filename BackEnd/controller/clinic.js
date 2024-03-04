@@ -188,6 +188,31 @@ const singup_vet_from_admin=(req,res) => {
             });
         });
 };
+function add_new_admin_for_clinic(req,res){
+    q=req.body.First_name
+    qq=req.body.Last_name
+    qqq=req.body.Email
+    qqqq=req.body.Phone
+    qqqqq=req.body.Password
+    qqqqqq=req.body.Age
+    id=req.params.id
+    bcryptjs.genSalt(10,(err,salt) => {
+        bcryptjs.hash(qqqqq,salt,function (err,hash) {
+            var sql= "insert into user_infos (email,password,phone,last_name,first_name,age) values ('" + qqq + "','" + hash + "','" + qqqq + "','" + qq + "','" + q + "','" + qqqqqq + "')"
+            db.query(sql,(error,result)=>{
+                if(error){console.log(error)}
+                else{
+                    sqql='update clinics set admin_clinic=? where id_c=?'
+                    db.query(sqql,[qqq,id],(error,result)=>{
+                        if(error){console.log(error)}
+                        else{
+                            res.json({valid:true,result})
+                        }
+                    })                    
+                }
+            })
+        })})
+}
 function show_all_under(req,res){
 
     sql='select * from user_infos where id in (select veterinarianns.user_id from veterinarianns join clinics on veterinarianns.cl_id=clinics.id_c where clinics.admin_clinic=?)'
@@ -337,7 +362,7 @@ function show_av_time(req,res){
                     res.json({av_time,valid:true})
             }
         })        
-        }
+        } 
         else {
 
             sql11='select * from work_time where vet_id=?'
@@ -432,6 +457,15 @@ function add_new_clinic(req,res){
         }
     })
 }
+function get_time(req,res){
+    sql='select * from clinics where admin_clinic=?'
+    db.query(sql,[req.session.admin],(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            res.json({valid:true,result})
+        }
+    })
+}
 module.exports={
     create_clinic,
     showd_c,
@@ -444,7 +478,7 @@ module.exports={
     add_doc_to_cli_new,
     singup_vet_from_admin,
     show_all_under,
-    set_tozero,
+    set_tozero, 
     add_shift_time,
     show_vet_without_time,
     add_shift_time_diff,
@@ -457,7 +491,9 @@ module.exports={
     show_next_appointment,
     add_new_clinic,
     show_shift_time
-    ,update_time_shift
+    ,update_time_shift,
+    add_new_admin_for_clinic,
+    get_time
 }
 function add30MinutesToTime(time) {
     const [hour, minute] = time.split(':').map(Number);
