@@ -215,20 +215,6 @@ const Home_owner = () => {
         </div>
       </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       {/* <section className="animal" id="animal" >
         <SectionHeader>Your Animals</SectionHeader>
         <div className="">

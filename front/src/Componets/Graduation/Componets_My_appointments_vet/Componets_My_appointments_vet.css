@@ -1,0 +1,37 @@
+.nice-button {
+    background-color: #3dbbcf;
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position:absolute;
+    top: 670px;
+    left: 160px;
+}
+
+.nice-button:hover {
+    background-color: #2a9baa; /* Darker Green */
+}
+
+.green-check {
+    position: absolute;
+    top: 620px; /* Adjust this value as needed to align the check mark with the button */
+    left: 320px;
+    animation: fadeInOut 2s ease infinite; /* Add animation */
+
+}
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 1;
+    }
+}

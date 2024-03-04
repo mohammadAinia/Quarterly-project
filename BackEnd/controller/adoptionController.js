@@ -67,5 +67,5 @@ const adopt_an=(req,res)=>{
 module.exports={
     add_to_adlist:add_to_adlist_id ,
     show_ad_animal : show_ad_animal,
-    adopt_an:adopt_an
+    adopt_an:adopt_an 
 }

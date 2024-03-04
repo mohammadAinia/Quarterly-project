@@ -204,7 +204,7 @@ const home_owner=(req,res) => {
                     
                     if (err)return res.json(err)
                     else{
-                        sql='select* from tip_gen limit 3'
+                        sql='select* from tip_gen limit 4'
                         db.query(sql,(err,resulttt)=>{
                             if (err) console.log(err)
                             else{
@@ -304,7 +304,7 @@ const tips =(animal)=>{
             result.map((uu,i)=>{
                 if (uu.animal_type==u.type&&mm>=uu.min_age&&mm<=uu.max_age){
                     console.log(uu.tip)
-                    var f="the tip for day is " + uu.tip +" for the animal " + u.name
+                    var f="the tip for day is " + uu.tip +"  " + u.name ///
                     var sql= "INSERT tip_gen (gen_tip) VALUES('" + f + "')"
                     db.query(sql,(err,result)=>{
                         if(err)console.log(err)

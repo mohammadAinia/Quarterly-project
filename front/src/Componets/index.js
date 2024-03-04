@@ -155,6 +155,9 @@ export {default as Loading_page} from '../Pages/Loading_page/Loading_page'
 export {default as Report} from '../Pages/Final_Project/Report/Report'
 export {default as Modifying_clinic_working_hours} from '../Pages/Final_Project/Clinic_manager/Modifying_clinic_working_hours/Modifying_clinic_working_hours'
 export {default as Componets_Modifying_clinic_working_hours} from './Graduation/Componets_Modifying_clinic_working_hours/Componets_Modifying_clinic_working_hours'
+export {default as My_appointments_vet} from '../Pages/Veterinarian/My_appointments_vet/My_appointments_vet'
+export {default as Componets_My_appointments_vet} from './Graduation/Componets_My_appointments_vet/Componets_My_appointments_vet'
+export {default as Diagnosis} from '../Pages/Veterinarian/Diagnosis/Diagnosis'
 
 
 

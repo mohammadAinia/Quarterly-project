@@ -32,6 +32,8 @@ const My_appointments = () => {
                             </div>
                         )
                     })}
+                                          <Componets_My_appointments Type={""} clinic={""} vet={""}
+                                    animal={""} date={""} time={""} />
 
 
                 </div>
