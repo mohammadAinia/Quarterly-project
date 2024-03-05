@@ -13,7 +13,7 @@ const My_appointments_vet = () => {
 
 
   useEffect(() => {
-    axios.get('http://localhost:3001/#/#', { withCredentials: true })
+    axios.get('http://localhost:3001/clinic/show_appointment_vet', { withCredentials: true })
       .then(res => {
         setInfo(res.data.result);
         // setInfoID(res.data.id)
@@ -32,12 +32,11 @@ const My_appointments_vet = () => {
             return (
               <div key={i}>
                 <Componets_My_appointments_vet Type={d.service} clinic={d.c_name}
-                  animal={d.name} date={d.datebooking} time={d.timebookig} href={`Diagnosis${d.id}`} />
+                  animal={d.name} date={d.datebooking} time={d.timebookig} href={`Diagnosis/${d.id_b}/${d.id}`} />
               </div>
             )
           })}
-          <Componets_My_appointments_vet Type={""} clinic={""} vet={""}
-            animal={""} date={""} time={""}  href={`Diagnosis/${6}`} />
+
 
 
 

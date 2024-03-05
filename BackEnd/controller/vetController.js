@@ -1,6 +1,7 @@
 const models=require("../models")
 const db=require("../dbb/db")
 function home_vat(req,res){
+    check_if_dosnot()
     if (req.session.username&&req.session.roleee) {
         evints(req.session.username)
         models.user_info.findOne({ where: { email: req.session.username } }).then((resp) => {
@@ -239,6 +240,19 @@ const evints =(vet)=>{
             if(err) console.log(err)
     
             return res.json({valid:true,result})
+        })
+    }
+function check_if_dosnot(){
+        sql='select * from clinics where admin_clinic=?'
+        db.query(sql,["N"],(error,result)=>{
+            if(error){console.log(error)}
+            else if (result.length!=0){
+                sql='delete from clinics where id_c=?'
+                db.query(sql,[result[0].id_c],(error,result)=>{
+                    if(error){console.log(error)}
+                    
+                })
+            }
         })
     }
 module.exports={home_vat:home_vat,

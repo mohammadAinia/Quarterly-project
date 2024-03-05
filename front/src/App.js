@@ -154,9 +154,9 @@ const App = () => {
             <Route path='Modifying_clinic_working_hours' element={<Modifying_clinic_working_hours/>} /> 
             <Route path='My_appointments_vet' element={<My_appointments_vet/>} /> 
             <Route path='My_appointments_vet/Diagnosis/:id' element={<Diagnosis/>} /> 
-            <Route path='Diagnosis/:id' element={<Diagnosis/>} /> 
+            <Route path='Diagnosis/:id/:ii' element={<Diagnosis/>} /> 
 
-            
+             
           </Routes>
         </Container>
       </Router>

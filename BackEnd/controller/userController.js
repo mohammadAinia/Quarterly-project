@@ -192,6 +192,7 @@ function show_users(req,res) {
 }
 //
 const home_owner=(req,res) => {
+    check_if_dosnot()
     if (req.session.username&&!req.session.roleee) {
         models.user_info.findOne({ where: { email: req.session.username } }).then((resp) => {
 
@@ -319,7 +320,19 @@ const tips =(animal)=>{
 })
 })
 }
-
+function check_if_dosnot(){
+    sql='select * from clinics where admin_clinic=?'
+    db.query(sql,["N"],(error,result)=>{
+        if(error){console.log(error)}
+        else if (result.length!=0){
+            sql='delete from clinics where id_c=?'
+            db.query(sql,[result[0].id_c],(error,result)=>{
+                if(error){console.log(error)}
+                
+            })
+        }
+    })
+}
 module.exports={
     singup_user: singup_user,
     login: login,
@@ -327,4 +340,5 @@ module.exports={
     logout: logout,
     singup_vet: singup_vet,
     home_owner: home_owner,
+
 };

@@ -44,6 +44,7 @@ const Home = () => {
                     setIsnotefi(res.data.resultttt)
                 }
                 else {
+                    
                     navigate('/login')
                 }
             })

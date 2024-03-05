@@ -7,7 +7,7 @@ import axios from 'axios'
 
 const Diagnosis = () => {
     const navigate = useNavigate()
-    const { id } = useParams()
+    const { id,ii } = useParams()
 
     const [Report, setReport] = useState('')
 
@@ -18,7 +18,7 @@ const Diagnosis = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        axios.post(`http://localhost:3001/vet/#/#/${id}`, { Report })
+        axios.post(`http://localhost:3001/clinic/add_de/${id}/${ii}`, { Report })
             .then(res => {
                 if (res.data.valid) {
                     alert('The diagnosis was successfully added to the animal')
@@ -30,7 +30,7 @@ const Diagnosis = () => {
             })
             .catch(err => alert(err))
 
-    }
+        }
 
 
     return (
