@@ -496,9 +496,9 @@ function add_de (req,res){
                 else{
                     res.json({valid:true,result})
                     
-                }
-            })
-        }
+                }  
+            })  
+        } 
     })
 }
 module.exports={
