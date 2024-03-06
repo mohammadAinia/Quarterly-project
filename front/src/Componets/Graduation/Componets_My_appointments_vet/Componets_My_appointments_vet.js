@@ -5,7 +5,7 @@ const Componets_My_appointments_vet = (props) => {
 
     return (
         <>
-            <div class="overlap-group">
+            {/* <div class="overlap-group"> */}
                 <div class="rectangle"></div>
                 <img class="vector" src={My_AppointmentVector_36} />
                 <div class="text-wrapper">{props.Type}</div>
@@ -29,7 +29,7 @@ const Componets_My_appointments_vet = (props) => {
                         <animate attributeName="opacity" from="0.2" to="1" dur="1s" repeatCount="indefinite" />
                     </svg>
                 ) : null}
-            </div>
+            {/* </div> */}
 
 
         </>

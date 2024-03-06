@@ -6,6 +6,7 @@ import { useEffect, useState, useRef } from 'react'
 import { Componets_My_appointments_vet } from '../../../Componets'
 
 
+
 const My_appointments_vet = () => {
 
   const [Info, setInfo] = useState([])
@@ -22,71 +23,26 @@ const My_appointments_vet = () => {
 
   return (
     <>
-      <div class="frame_My_appointments">
-        <div class="div">
-
-          {Info.map((d, i) => {
-            if(d.check_==0){
-              return (
-            
-                <div key={i}>
-                  if (d.check_==0) {
-                    <Componets_My_appointments_vet
-                    Type={d.service}
-                    clinic={d.c_name}
-                    animal={d.name}
-                    date={d.datebooking}
-                    time={d.timebookig}
-                    href={`Diagnosis/${d.id_b}/${d.id}`}
-                    test={false}
-                  />
-                  }
-                
-                  
-                </div>
-              )
-            }
-            else{
-              return (
-            
-                <div key={i}>
-                  if (d.check_==0) {
-                    <Componets_My_appointments_vet
-                    Type={d.service}
-                    clinic={d.c_name}
-                    animal={d.name}
-                    date={d.datebooking}
-                    time={d.timebookig}
-                    href={`Diagnosis/${d.id_b}/${d.id}`}
-                    test={true}
-                  />
-                  }
-                
-                  
-                </div>
-              )
-            }
-         
-          })}
-          {/* <Componets_My_appointments_vet Type={""} test={true} clinic={""}
-            animal={""} date={""} time={""} href={""} />
-          <Componets_My_appointments_vet Type={""} test={true} clinic={""}
-            animal={""} date={""} time={""} href={""} />
-          <Componets_My_appointments_vet Type={""} clinic={""}
-            animal={""} date={""} time={""} href={""} />
-          <Componets_My_appointments_vet Type={""} clinic={""}
-            animal={""} date={""} time={""} href={""} />
-          <Componets_My_appointments_vet Type={""} clinic={""}
-            animal={""} date={""} time={""} href={""} test={true}/> */}
-
-
-
-
+      <div className="frame_My_appointments">
+        <div className="div">
+          {/* <div className="appointments-container"> */}
+          {Info.map((d, i) => (
+            <div key={i} className="overlap-group">
+              <Componets_My_appointments_vet
+                Type={d.service}
+                clinic={d.c_name}
+                animal={d.name}
+                date={d.datebooking}
+                time={d.timebookig}
+                href={`Diagnosis/${d.id_b}/${d.id}`}
+                test={d.check_ !== 0}
+              />
+            </div>
+          ))}
+          {/* </div> */}
         </div>
-        <div class="text-wrapper-13">My appointments</div>
-
+        <div className="text-wrapper-13">My appointments</div>
       </div>
-
     </>
   )
 }
