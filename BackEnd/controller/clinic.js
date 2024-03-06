@@ -471,7 +471,7 @@ function show_appointment_vet(req,res){
     db.query(sqll,[req.session.username],(error,result)=>{
         if(error){console.log(error)}
         else{
-            sql='select booking.id_b,booking.service,clinics.c_name,c_name,user_infos.first_name,animals.name,animals.id,booking.datebooking,booking.timebookig FROM booking join clinics on clinics.id_c=booking.clinic_idb join user_infos on user_infos.id=booking.vet_idb join animals on booking.animal_idb=animals.id where booking.vet_idb=?'
+            sql='select booking.check_,booking.id_b,booking.service,clinics.c_name,c_name,user_infos.first_name,animals.name,animals.id,booking.datebooking,booking.timebookig FROM booking join clinics on clinics.id_c=booking.clinic_idb join user_infos on user_infos.id=booking.vet_idb join animals on booking.animal_idb=animals.id where booking.vet_idb=?'
             db.query(sql,[result[0].id],(error,result)=>{
                 if(error){console.log(error)}
                 else{
@@ -482,7 +482,7 @@ function show_appointment_vet(req,res){
         }
     }) 
     
-}
+} 
 function add_de (req,res){
     id=req.params.id
     ii=req.params.ii
@@ -490,8 +490,14 @@ function add_de (req,res){
     db.query(sql,(error,result)=>{
         if(error){console.log(error)}
         else{
-            res.json({valid:true,result})
-            
+            sql='update booking set check_=? where id_b=?'
+            db.query(sql,[id,1],(error,result)=>{
+                if(error){console.log(error)}
+                else{
+                    res.json({valid:true,result})
+                    
+                }
+            })
         }
     })
 }

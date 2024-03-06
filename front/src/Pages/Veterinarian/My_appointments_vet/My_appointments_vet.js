@@ -26,19 +26,47 @@ const My_appointments_vet = () => {
         <div class="div">
 
           {Info.map((d, i) => {
-            return (
-              <div key={i}>
-                <Componets_My_appointments_vet
-                  Type={d.service}
-                  clinic={d.c_name}
-                  animal={d.name}
-                  date={d.datebooking}
-                  time={d.timebookig}
-                  href={`Diagnosis/${d.id_b}/${d.id}`}
-                  test={"d."}
-                />
-              </div>
-            )
+            if(d.check_==0){
+              return (
+            
+                <div key={i}>
+                  if (d.check_==0) {
+                    <Componets_My_appointments_vet
+                    Type={d.service}
+                    clinic={d.c_name}
+                    animal={d.name}
+                    date={d.datebooking}
+                    time={d.timebookig}
+                    href={`Diagnosis/${d.id_b}/${d.id}`}
+                    test={false}
+                  />
+                  }
+                
+                  
+                </div>
+              )
+            }
+            else{
+              return (
+            
+                <div key={i}>
+                  if (d.check_==0) {
+                    <Componets_My_appointments_vet
+                    Type={d.service}
+                    clinic={d.c_name}
+                    animal={d.name}
+                    date={d.datebooking}
+                    time={d.timebookig}
+                    href={`Diagnosis/${d.id_b}/${d.id}`}
+                    test={true}
+                  />
+                  }
+                
+                  
+                </div>
+              )
+            }
+         
           })}
           {/* <Componets_My_appointments_vet Type={""} test={true} clinic={""}
             animal={""} date={""} time={""} href={""} />
