@@ -27,7 +27,8 @@ const Add_clinic = () => {
                         alert('The clinic has been added successfully');
                         navigate(`Appointment_clinic_director/${res.data.result.insertId}`);
                     } else {
-                        alert('It didnt work');
+                        navigate('/login')
+
                     }
                 })
                 .catch(err => {

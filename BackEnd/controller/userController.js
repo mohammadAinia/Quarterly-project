@@ -136,7 +136,7 @@ function login(req,res) {
                             req.session.roleee='doc'
                             req.session.username=req.body.email;
                             
-                            return res.json({ Login: true, username: req.session.username ,roleee:true});
+                            return res.json({ Login: true, username: req.session.username ,roleee:true,adminstritor:false});
                         } else {
                             return res.json({
                                 message: "incorrect password",
@@ -144,7 +144,26 @@ function login(req,res) {
                         }
                     }
                 );
-            } else if ((user.rolee="user")) {
+            } 
+
+            else if(user.rolee=="admin"){
+                console.log("admin")
+                bcryptjs.compare(req.body.password,user.password,function (err,result) {
+                    if (result) {
+                        req.session.username=user.email;
+                        req.session.admin=user.email;
+                        req.session.adminstritor=user.email
+                        return res.json({ Login: true,username: req.session.username ,roleee:false,adminstritor:true});
+
+                    } else {
+                        return res.status(401).json({
+                            message: "incorrect password",
+                        });
+                    }
+                }
+            );
+            } 
+            else if ((user.rolee=="user")) {
                 bcryptjs.compare(req.body.password,user.password,function (err,result) {
                         if (result) {
                             sql='select * from animals where owner=?'
@@ -158,7 +177,7 @@ function login(req,res) {
                             req.session.username=user.email;
                             req.session.admin=user.email;
 
-                            return res.json({ Login: true,username: req.session.username ,roleee:false});
+                            return res.json({ Login: true,username: req.session.username ,roleee:false,adminstritor:false});
 
                         } else {
                             return res.status(401).json({
@@ -167,7 +186,8 @@ function login(req,res) {
                         }
                     }
                 );
-            } else return res.json({ Login: false });
+            }   
+            else return res.json({ Login: false });
         })
         .catch((error) => {
             return res.json({
@@ -240,7 +260,7 @@ db.query(sqll,[owner],(err, result) => {
             var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
             if(Difference_In_Days<7){
             var not="The remaining days for next vacc for animal"+  u.name +" "+Difference_In_Days +"day/s"
-            console.log(not)
+            console.log(not) 
             db.query(sqlll,[u.id,u.id_v_r],(err,resu)=>{
                 if (err) console.log(err)
                 else if (resu.length==0) {

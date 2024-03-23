@@ -131,7 +131,7 @@ const App = () => {
             <Route path='add_clinic' element={<Add_clinic />} />
             <Route path='add_clinic/Appointment_clinic_director/:id' element={<Appointment_clinic_director />} />
             <Route path='Add_Vets_to_clinic' element={<Add_Vets_to_clinic />} />
-            <Route path='m' element={<Administrator_home />} />
+            <Route path='/Loginn/m' element={<Administrator_home />} />
             <Route path='choose_clinic' element={<Choose_a_clinic_for_delete />} />
             <Route path='Choosing_a_doctor_clinic' element={<Componets_Clinic_To_choose />} />
             <Route path='mm' element={<Home_for_clinic_manager />} />
