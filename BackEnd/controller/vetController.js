@@ -66,7 +66,7 @@ function accept_req(req,res){
         db.query(sql,[1,id],(error,result)=>{
             if(error) console.log(error)
             return res.json({valid:true,result})
-        })
+        }) 
     }
     else {return res.json({valid:false})}
 }

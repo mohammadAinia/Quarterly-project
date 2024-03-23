@@ -1,6 +1,7 @@
 const models=require("../models")
 const db=require("../dbb/db")
 const bcryptjs=require("bcryptjs");
+const { DATE }=require("sequelize");
 
 function create_clinic(req,res){
 namee=req.body.name
@@ -18,6 +19,7 @@ closeq=req.body.closeq
 }
 function showd_c (req,res){
     id=req.params.id
+    check_date()
     sql='select veterinarianns.user_id,user_infos.first_name,user_infos.last_name,veterinarianns.deatalis,veterinarianns.nation,veterinarianns.address from user_infos join veterinarianns on user_infos.id=veterinarianns.user_id where cl_id in (select id_c from clinics where id_c=?)'
     sqll='select * from clinics where id_c=?'
     db.query(sql,[id],(err,result)=>{
@@ -333,7 +335,7 @@ function show_all_animal(req,res) {
         if (err) return res.json(err)
        
         return res.json({result,valid:true}) 
-    }
+    } 
     )
 }
 else 
@@ -352,6 +354,7 @@ function show_av_time(req,res){
         db.query(sql1,[id],(error,result1)=>{
             if(error){console.log(error)}
             else{
+                console.log('dfsds')
                 const av_time=[]
                 var startTime=result1[0].start
                 av_time.push(startTime)
@@ -360,10 +363,11 @@ function show_av_time(req,res){
                         av_time.push(newTime)
                     }
                     res.json({av_time,valid:true})
-            }
+            } 
         })        
         } 
         else {
+            console.log('1234567')
 
             sql11='select * from work_time where vet_id=?'
             db.query(sql11,[id],(error,result2)=>{
@@ -432,7 +436,7 @@ function show_info_clinic(req,res){
             res.json({valid:true,result})
         }
     })
-}
+} 
 function show_next_appointment(req,res){
     sql='select booking.service,clinics.c_name,c_name,user_infos.first_name,animals.name,booking.datebooking,booking.timebookig FROM booking join clinics on clinics.id_c=booking.clinic_idb join user_infos on user_infos.id=booking.vet_idb join animals on booking.animal_idb=animals.id where booking.owner_idb=?'
     db.query(sql,[req.session.admin],(error,result)=>{
@@ -443,6 +447,7 @@ function show_next_appointment(req,res){
     })
 }
 function add_new_clinic(req,res){
+    if(req.session.adminstritor){
     namee=req.body.Name_clinic
     timeo=req.body.From
     timec=req.body.To
@@ -455,8 +460,12 @@ function add_new_clinic(req,res){
         else{
             res.json({valid:true,result})
         }
-    })
+    }) 
 }
+else  res.json({valid:false})
+
+}
+
 function get_time(req,res){
     sql='select * from clinics where admin_clinic=?'
     db.query(sql,[req.session.admin],(error,result)=>{
@@ -500,7 +509,7 @@ function add_de (req,res){
             })  
         } 
     })
-}
+} 
 module.exports={
     create_clinic,
     showd_c,
@@ -563,12 +572,14 @@ function checkIfTimesAreEqual(time1, time2) {
 
     return hours1 === hours2 && minutes1 === minutes2;
 }
-
-// Example usage
-
-
-// Test the function
-
+function check_date(){
+    sql='delete from booking where datebooking < CURRENT_DATE() '
+   
+    db.query(sql,(error,result)=>{
+        if(error){console.log(error)}
+        else {console.log('doneeeeeeeeee')}
+    })
+}
 
 
 
