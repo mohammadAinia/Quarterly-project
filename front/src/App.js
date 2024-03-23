@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 import {
   Container, Login, Register_owner, Animal, Cat_info, Search_animal, Parrot_info, Fish_info,
-  Register_veterinarian, Home_owner, Type, Dog_info, Add_animal, Animal_infoo, Profile,Administrator_home,
+  Register_veterinarian, Home_owner, Type, Dog_info, Add_animal, Animal_infoo, Profile, Administrator_home,
   Common_users, Vaccines, Update_animals, Problem_id, Type_add_animal, Your_animal, Update_user,
   Animal_info_id, All_problem, Adoptt, Conversation, Add_vacci, Add_Animal_to_adopt, Verification,
   Your_ploblem, Update_problem, Page_chat, Profile_id, Vaccine_id, Search_user, Search_result,
@@ -13,14 +13,14 @@ import {
   Search_problem, Search_result2, All_followw, Home, Add_report, All_doctor, Details_animal, Update_vet,
   Profile_vet_id, All_veci, Add_advices, All_advices, Add_vecine, General_user, FAQs, Profile_veterinarian,
   Notifications_vet, Animal_info_id_follow, All_problems_vet, Problem_id_vet, Your_problem_vet, Update_problem_vet,
-  Animal_follow_id, Vaccine_vet_id, Page_chat_vet, Conversation_vet,Profile_id_vett,Search_user_vet
-  ,Type_search_vet,Search_result_vet,Adopt_vet,Type_add_animal_vet,Your_animal_vet,Add_Animal_to_adopt_vet,
-  Animal_info_adopt_vet,Search_vet, Clinic,Specific_clinic,Appointment_Booking,Add_clinic,Add_Vets_to_clinic,
-  Choose_a_clinic_for_delete,Componets_Clinic_To_choose,Choose_a_clinic_for_link_vet,Home_for_clinic_manager,
-  Choose_register_new_doctor,Select_Register,Adding_new_doctor_clinic,Del_Vet,Add_doctor_shift,Add_doctor_shift_time,
-  Edit_doctor_shift,Edit_doctor_shift_time,Appointment_clinic_director,My_appointments,Add_information_to_clinic,
-  Edit_information_to_clinic,Loading_page, Report,Modifying_clinic_working_hours,My_appointments_vet,
-  Diagnosis,
+  Animal_follow_id, Vaccine_vet_id, Page_chat_vet, Conversation_vet, Profile_id_vett, Search_user_vet
+  , Type_search_vet, Search_result_vet, Adopt_vet, Type_add_animal_vet, Your_animal_vet, Add_Animal_to_adopt_vet,
+  Animal_info_adopt_vet, Search_vet, Clinic, Specific_clinic, Appointment_Booking, Add_clinic, Add_Vets_to_clinic,
+  Choose_a_clinic_for_delete, Componets_Clinic_To_choose, Choose_a_clinic_for_link_vet, Home_for_clinic_manager,
+  Choose_register_new_doctor, Select_Register, Adding_new_doctor_clinic, Del_Vet, Add_doctor_shift, Add_doctor_shift_time,
+  Edit_doctor_shift, Edit_doctor_shift_time, Appointment_clinic_director, My_appointments, Add_information_to_clinic,
+  Edit_information_to_clinic, Loading_page, Report, Modifying_clinic_working_hours, My_appointments_vet,
+  Diagnosis
 
 } from './Componets/index'
 
@@ -30,7 +30,6 @@ const App = () => {
       <Router>
         <Container>
           <Routes>
-
             <Route path='/' element={<Home_owner />} />
             <Route path='login' element={<Loading_page />} />
             <Route path='start' element={<General_user />} />
@@ -122,41 +121,41 @@ const App = () => {
             <Route path='Forum_vet/Problem_id/:id' element={<Problem_id_vet />} />
             <Route path='my_problem_vet' element={<Your_problem_vet />} />
             <Route path='my_problem_vet/update_problem/:id' element={<Update_problem_vet />} />
-            <Route path='chat_vet' element={<Page_chat_vet />} /> 
+            <Route path='chat_vet' element={<Page_chat_vet />} />
 
             {/********************************* Final Project *************************************************************************************************************** */}
-            
-            <Route path='clinic' element={<Clinic />} /> 
-            <Route path='Specific_clinic/:id' element={<Specific_clinic />} /> 
-            <Route path='Specific_clinic/Booking/:id' element={<Appointment_Booking />} /> 
-            <Route path='add_clinic' element={<Add_clinic />} /> 
-            <Route path='add_clinic/Appointment_clinic_director/:id' element={<Appointment_clinic_director />} /> 
-            <Route path='Add_Vets_to_clinic' element={<Add_Vets_to_clinic />} /> 
-            <Route path='/Loginn/m' element={<Administrator_home />} /> 
-            <Route path='choose_clinic' element={<Choose_a_clinic_for_delete />} /> 
-            <Route path='Choosing_a_doctor_clinic' element={<Componets_Clinic_To_choose />} /> 
-            <Route path='mm' element={<Home_for_clinic_manager />} /> 
-            <Route path='Choose_register_new_doctor' element={<Choose_register_new_doctor />} /> 
-            <Route path='Select_Register' element={<Select_Register />} /> 
-            <Route path='Adding_new_doctor_clinic' element={<Adding_new_doctor_clinic />} /> 
-            <Route path='Del_Vet' element={<Del_Vet />} /> 
-            <Route path='Add_doctor_shift' element={<Add_doctor_shift />} /> 
-            <Route path='Select_Register/Add_doctor_shift_time/:id' element={<Add_doctor_shift_time />} /> 
-            <Route path='Edit_doctor_shift' element={<Edit_doctor_shift />} /> 
-            <Route path='Edit_doctor_shift_time/:id' element={<Edit_doctor_shift_time />} /> 
-            <Route path='Appointment_clinic_director/:id' element={<Appointment_clinic_director />} /> 
-            <Route path='My_appointments' element={<My_appointments />} /> 
-            <Route path='p' element={<My_appointments />} /> 
+
+            <Route path='clinic' element={<Clinic />} />
+            <Route path='Specific_clinic/:id' element={<Specific_clinic />} />
+            <Route path='Specific_clinic/Booking/:id' element={<Appointment_Booking />} />
+            <Route path='add_clinic' element={<Add_clinic />} />
+            <Route path='add_clinic/Appointment_clinic_director/:id' element={<Appointment_clinic_director />} />
+            <Route path='Add_Vets_to_clinic' element={<Add_Vets_to_clinic />} />
+            <Route path='/Loginn/m' element={<Administrator_home />} />
+            <Route path='choose_clinic' element={<Choose_a_clinic_for_delete />} />
+            <Route path='Choosing_a_doctor_clinic' element={<Componets_Clinic_To_choose />} />
+            <Route path='mm' element={<Home_for_clinic_manager />} />
+            <Route path='Choose_register_new_doctor' element={<Choose_register_new_doctor />} />
+            <Route path='Select_Register' element={<Select_Register />} />
+            <Route path='Adding_new_doctor_clinic' element={<Adding_new_doctor_clinic />} />
+            <Route path='Del_Vet' element={<Del_Vet />} />
+            <Route path='Add_doctor_shift' element={<Add_doctor_shift />} />
+            <Route path='Select_Register/Add_doctor_shift_time/:id' element={<Add_doctor_shift_time />} />
+            <Route path='Edit_doctor_shift' element={<Edit_doctor_shift />} />
+            <Route path='Edit_doctor_shift_time/:id' element={<Edit_doctor_shift_time />} />
+            <Route path='Appointment_clinic_director/:id' element={<Appointment_clinic_director />} />
+            <Route path='My_appointments' element={<My_appointments />} />
+            <Route path='p' element={<My_appointments />} />
 
             <Route path='Add_information_to_clinic' element={<Add_information_to_clinic />} /> {/*هذه الصفحة تم الغائها  */}
-            <Route path='Edit_information_to_clinic' element={<Edit_information_to_clinic />} /> 
-            <Route path='n' element={<Report/>} /> 
-            <Route path='Modifying_clinic_working_hours' element={<Modifying_clinic_working_hours/>} /> 
-            <Route path='My_appointments_vet' element={<My_appointments_vet/>} /> 
-            <Route path='My_appointments_vet/Diagnosis/:id' element={<Diagnosis/>} /> 
-            <Route path='Diagnosis/:id/:ii' element={<Diagnosis/>} /> 
+            <Route path='Edit_information_to_clinic' element={<Edit_information_to_clinic />} />
+            <Route path='n' element={<Report />} />
+            <Route path='Modifying_clinic_working_hours' element={<Modifying_clinic_working_hours />} />
+            <Route path='My_appointments_vet' element={<My_appointments_vet />} />
+            <Route path='My_appointments_vet/Diagnosis/:id' element={<Diagnosis />} />
+            <Route path='Diagnosis/:id/:ii' element={<Diagnosis />} />
 
-             
+
           </Routes>
         </Container>
       </Router>
