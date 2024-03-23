@@ -1,0 +1,9 @@
+  
+ .frame_My_appointments .overlap-group {
+    width: calc(20.33% - -250px); /* Adjust width calculation as needed */
+    margin-bottom: 50px;
+    /* margin-left: 20px; */
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }

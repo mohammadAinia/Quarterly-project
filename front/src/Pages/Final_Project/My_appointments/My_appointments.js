@@ -23,22 +23,21 @@ const My_appointments = () => {
         <>
             <div class="frame_My_appointments">
                 <div class="div">
-
-                    {Info.map((d, i) => {
-                        return (
-                            <div key={i}>
-                                <Componets_My_appointments Type={d.service} clinic={d.c_name} vet={d.first_name}
-                                    animal={d.name} date={d.datebooking} time={d.timebookig} />
-                            </div>
-                        )
-                    })}
-                                          <Componets_My_appointments Type={""} clinic={""} vet={""}
-                                    animal={""} date={""} time={""} />
-
-
+                    <div className="appointments-container">
+                        {Info.map((d, i) => (
+                            <Componets_My_appointments
+                                key={i}
+                                Type={d.service}
+                                clinic={d.c_name}
+                                vet={d.first_name}
+                                animal={d.name}
+                                date={d.datebooking}
+                                time={d.timebookig}
+                            />
+                        ))}
+                    </div>
                 </div>
                 <div class="text-wrapper-13">My appointments</div>
-
             </div>
         </>
 

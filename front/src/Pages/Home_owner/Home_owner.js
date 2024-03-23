@@ -16,12 +16,37 @@ import rightt from '../../Assert/Images/right.png'
 import left from '../../Assert/Images/left.png'
 import cat_day from '../../Assert/Images/cat_day.jpg'
 import adv2 from '../../Assert/Images/adv2.jpg'
-import advice3 from '../../Assert/Images/Advice_Vector.png'
-import advice4 from '../../Assert/Images/Advice2_Vector.png'
-import advice5 from '../../Assert/Images/Advice3_Vector.png'
-import advice6 from '../../Assert/Images/Advice_Vector29.png'
-import advice7 from '../../Assert/Images/advice6_Vector.png'
-import advice1 from '../../Assert/Images/Advice_Vector27.png'
+import advstorePolygon_5 from '../../Assert/Images/advstorePolygon_5.png'
+import advstorePolygon_4 from '../../Assert/Images/advstorePolygon_4.png'
+import advstorePolygon_3 from '../../Assert/Images/advstorePolygon_3.png'
+import advstoreVector_54 from '../../Assert/Images/advstoreVector_54.png'
+import advstorePolygon_2 from '../../Assert/Images/advstorePolygon_2.png'
+import advstoreVector_55 from '../../Assert/Images/advstoreVector_55.png'
+import advstoreVector_52 from '../../Assert/Images/advstoreVector_52.png'
+import advstorePolygon_1 from '../../Assert/Images/advstorePolygon_1.png'
+import advstoreVector_53 from '../../Assert/Images/advstoreVector_53.png'
+import advstorePolygon_8 from '../../Assert/Images/advstorePolygon_8.png'
+import advstorePolygon_7 from '../../Assert/Images/advstorePolygon_7.png'
+import advstorePolygon_6 from '../../Assert/Images/advstorePolygon_6.png'
+import advstoreVector_59 from '../../Assert/Images/advstoreVector_59.png'
+import advstoreVector_58 from '../../Assert/Images/advstoreVector_58.png'
+import ADVSTORELine_5 from '../../Assert/Images/ADVSTORELine_5.png'
+import advstoreLine_9 from '../../Assert/Images/advstoreLine_9.png'
+import advstoreVector__52 from '../../Assert/Images/advstoreVector__52.png'
+import advstoreePolygon_1 from '../../Assert/Images/advstoreePolygon_1.png'
+import advstoreeVector_56 from '../../Assert/Images/advstoreeVector_56.png'
+import advstoreeVector_57 from '../../Assert/Images/advstoreeVector_57.png'
+
+
+
+
+
+
+
+
+
+
+
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faRightFromBracket, faBell, faHouse, faMessage, faUserDoctor, faStethoscope } from '@fortawesome/free-solid-svg-icons'
@@ -232,6 +257,130 @@ const Home_owner = () => {
           })}
         </div>
       </section> */}
+
+
+      <div class="adv-store">
+        <div class="div">
+          <div class="overlap">
+            <div class="overlap-group">
+              <div class="ellipse"></div>
+              <div class="ellipse-2"></div>
+              <div class="ellipse-3"></div>
+              <img class="vector" src={advstoreVector_54} />
+              <img class="polygon" src={advstorePolygon_2} />
+              <div class="ellipse-4"></div>
+              <div class="ellipse-5"></div>
+              <img class="img" src={advstoreVector_55} />
+              <img class="vector-2" src={advstoreVector_52} />
+              <img class="polygon-2" src={advstorePolygon_1} />
+              <div class="ellipse-6"></div>
+              <div class="ellipse-7"></div>
+              <img class="vector-3" src={advstoreVector_55} />
+              <img class="vector-4" src={advstoreVector__52} />
+              <img class="polygon-3" src={advstoreePolygon_1} />
+              <div class="ellipse-8"></div>
+              <div class="ellipse-9"></div>
+              <img class="vector-5" src={advstoreVector_53} />
+              <div class="ellipse-10"></div>
+              <div class="ellipse-11"></div>
+              <div class="ellipse-12"></div>
+              <div class="ellipse-13"></div>
+              <div class="ellipse-14"></div>
+              <div class="ellipse-15"></div>
+              <div class="ellipse-16"></div>
+              <div class="ellipse-17"></div>
+              <div class="ellipse-18"></div>
+              <div class="ellipse-19"></div>
+              <div class="ellipse-20"></div>
+              <div class="ellipse-21"></div>
+              <div class="ellipse-22"></div>
+              <div class="ellipse-23"></div>
+              <div class="ellipse-24"></div>
+              <img class="line" src={ADVSTORELine_5} />
+              <img class="line-2" src={ADVSTORELine_5} />
+              <img class="line-3" src={advstoreLine_9} />
+              <img class="line-4" src={advstoreLine_9} />
+              {/* <img class="frame" src={advstoreeVector_59} /> */}
+              <div class="rectangle"></div>
+              <img class="vector-6" src={advstoreVector_59} />
+              <img class="vector-7" src={advstoreVector_58} />
+              <div class="rectangle-2"></div>
+              <div class="rectangle-3"></div>
+              <div class="rectangle-4"></div>
+              <div class="rectangle-5"></div>
+              <div class="rectangle-6"></div>
+              <div class="ellipse-25"></div>
+              <div class="ellipse-26"></div>
+              <div class="ellipse-27"></div>
+              <div class="ellipse-28"></div>
+{/* 
+              <div class="rectanglee"></div>
+              <img class="vector-66" src={advstoreVector_59} />
+              <img class="vector-77" src={advstoreVector_58} />
+              <div class="rectangle-22"></div>
+              <div class="rectangle-33"></div>
+              <div class="rectangle-44"></div>
+              <div class="rectangle-55"></div>
+              <div class="rectangle-66"></div>
+              <div class="ellipse-255"></div>
+              <div class="ellipse-266"></div>
+              <div class="ellipse-277"></div>
+              <div class="ellipse-288"></div> */}
+            </div>
+            <img class="polygon-4" src={advstorePolygon_3} />
+            <img class="polygon-5" src={advstorePolygon_4} />
+            <img class="polygon-6" src={advstorePolygon_5} />
+          </div>
+          <div class="overlap-2">
+            <div class="ellipse-29"></div>
+            <div class="ellipse-30"></div>
+            <div class="ellipse-31"></div>
+          </div>
+          <div class="overlap-3">
+            <div class="ellipse-32"></div>
+            <div class="ellipse-33"></div>
+            <div class="ellipse-34"></div>
+          </div>
+          <div class="overlap-4">
+            <div class="ellipse-35"></div>
+            <div class="ellipse-36"></div>
+            <div class="ellipse-37"></div>
+            <div class="ellipse-38"></div>
+          </div>
+          <div class="ellipse-39"></div>
+          <div class="ellipse-40"></div>
+          <div class="ellipse-41"></div>
+          <div class="ellipse-42"></div>
+          <div class="ellipse-43"></div>
+          <div class="ellipse-44"></div>
+          <div class="ellipse-45"></div>
+          <div class="ellipse-46"></div>
+          <div class="ellipse-47"></div>
+          <div class="ellipse-48"></div>
+          <div class="ellipse-49"></div>
+          <div class="ellipse-50"></div>
+          <div class="ellipse-51"></div>
+          <div class="ellipse-52"></div>
+          <div class="ellipse-53"></div>
+          <div class="overlap-5">
+            <img class="line-5" src={ADVSTORELine_5} /> <img class="line-6" src={advstoreLine_9} />
+          </div>
+          <div class="overlap-6">
+            <img class="line-5" src={ADVSTORELine_5} /> <img class="line-6" src={advstoreLine_9} />
+          </div>
+          <img class="polygon-7" src={advstorePolygon_6} />
+          <img class="polygon-8" src={advstorePolygon_7} />
+          <img class="polygon-9" src={advstorePolygon_8} />
+          <div class="overlap-7">
+            <img class="vector-8" src={advstoreeVector_56} /> <img class="vector-9" src={advstoreeVector_57}/>
+          </div>
+          <div class="shopping-online">Shopping<br />Online</div>
+          <div class="div-wrapper"><div class="text-wrapper">Shop now</div></div>
+        </div>
+      </div>
+
+
+
       <section className="animal" id="animal">
         <SectionHeader>Your Animals</SectionHeader>
         <div className="box-container">
