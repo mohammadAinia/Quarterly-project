@@ -23,8 +23,8 @@ const Choose_a_clinic_for_delete = () => {
     useEffect(() => {
         axios.get('http://localhost:3001/clinic/showall', { withCredentials: true })
             .then(res => {
-                setClinics(res.data);
-                setFilteredClinics(res.data); // Initialize filteredClinics with all clinics
+                setClinics(res.data.result);
+                setFilteredClinics(res.data.result); // Initialize filteredClinics with all clinics
             })
             .catch(err => {
                 console.log(err);
@@ -37,7 +37,7 @@ const Choose_a_clinic_for_delete = () => {
 
         // Filter clinics based on search input
         const filtered = Clinics.filter(clinic =>
-            clinic.name.toLowerCase().includes(value.toLowerCase())
+            clinic.c_name.toLowerCase().includes(value.toLowerCase())
         );
         setFilteredClinics(filtered);
     };

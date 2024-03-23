@@ -375,7 +375,7 @@ const Home_owner = () => {
             <img class="vector-8" src={advstoreeVector_56} /> <img class="vector-9" src={advstoreeVector_57}/>
           </div>
           <div class="shopping-online">Shopping<br />Online</div>
-          <div class="div-wrapper"><div class="text-wrapper">Shop now</div></div>
+          <div class="div-wrapper"><a href='store' class="text-wrapper">Shop now</a></div>
         </div>
       </div>
 
