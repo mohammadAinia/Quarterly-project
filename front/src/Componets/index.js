@@ -158,47 +158,5 @@ export {default as Componets_Modifying_clinic_working_hours} from './Graduation/
 export {default as My_appointments_vet} from '../Pages/Veterinarian/My_appointments_vet/My_appointments_vet'
 export {default as Componets_My_appointments_vet} from './Graduation/Componets_My_appointments_vet/Componets_My_appointments_vet'
 export {default as Diagnosis} from '../Pages/Veterinarian/Diagnosis/Diagnosis'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export {default as Store} from '../Pages/Final_Project/Store/Store'
 
