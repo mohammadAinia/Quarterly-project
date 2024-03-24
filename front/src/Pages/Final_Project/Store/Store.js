@@ -42,6 +42,17 @@ import store_Rectangle_186 from '../../../Assert/Images/store_Rectangle_186.png'
 import store_Rectangle_187 from '../../../Assert/Images/store_Rectangle_187.png'
 import store_Rectangle_188 from '../../../Assert/Images/store_Rectangle_188.png'
 import store_star_solid_1 from '../../../Assert/Images/store_star_solid_1.png'
+import store_Vector_62 from '../../../Assert/Images/store_Vector_62.png'
+import store_Vector_locator from '../../../Assert/Images/store_Vector_locator.png'
+import store_Vector_62_locator from '../../../Assert/Images/store_Vector_62_locator.png'
+import store_Vector_phone from '../../../Assert/Images/store_Vector_phone.png'
+import store_Vector_phone2 from '../../../Assert/Images/store_Vector_phone2.png'
+import store_Rectangle_229 from '../../../Assert/Images/store_Rectangle_229.png'
+
+
+
+
+
 
 
 
@@ -210,7 +221,7 @@ const Store = () => {
                         <div class="frame-3"><div class="text-wrapper-32">view</div></div>
                         <img class="star-solid" src={store_star_solid_1} />
                         <img class="star-solid-2" src={store_star_solid_1} />
-                        <img class="star-solid-3" src={store_star_solid_1}/>
+                        <img class="star-solid-3" src={store_star_solid_1} />
                         <img class="star-solid-4" src={store_star_solid_1} />
                         <img class="star-solid-5" src={store_star_solid_1} />
                     </div>
@@ -414,7 +425,7 @@ const Store = () => {
                     <img class="ellipse-2" src={store_Ellipse_109} />
                     <img class="ellipse-3" src={store_Ellipse_110} />
                     <img class="ellipse-4" src={store_Ellipse_111} />
-                    <img class="ellipse-5" src={store_Ellipse_112}/>
+                    <img class="ellipse-5" src={store_Ellipse_112} />
                     <img class="ellipse-6" src={store_Ellipse_113} />
                     <img class="rectangle-16" src={store_Rectangle_159} />
                     <img class="rectangle-17" src={store_Rectangle_164} />
@@ -426,16 +437,72 @@ const Store = () => {
                     <img class="rectangle-23" src={store_Rectangle_167} />
                     <img class="rectangle-24" src={store_Rectangle_163} />
                     <img class="rectangle-25" src={store_Rectangle_168} />
-                    <div class="rectangle-wrapper"><img class="rectangle-26" src={store_Rectangle_170} /></div>
-                    <div class="img-wrapper"><img class="rectangle-26" src={store_Rectangle_184} /></div>
-                    <div class="overlap-31"><img class="rectangle-26" src={store_Rectangle_172} /></div>
+
+
+
+
+                    {/* <div class="rectangle-wrapper"><img class="rectangle-26" src={store_Rectangle_170} /></div> */}
+                    <div class="rectangle-wrapper">
+                        <img class="rectangle-26" src={store_Rectangle_170} />
+                        <p class="image-text">ACANA</p>
+                    </div>
+                    
+                    <div class="img-wrapper">
+                        <img class="rectangle-26" src={store_Rectangle_184} />
+                        <p class="image-text">Your text here</p>
+                    </div>
+                    {/* <div class="overlap-31"><img class="rectangle-26" src={store_Rectangle_172} /></div>
                     <div class="overlap-32"><img class="rectangle-26" src={store_Rectangle_185} /></div>
                     <div class="overlap-33"><img class="rectangle-26" src={store_Rectangle_174} /></div>
                     <div class="overlap-34"><img class="rectangle-26" src={store_Rectangle_186} /></div>
                     <div class="overlap-35"><img class="rectangle-26" src={store_Rectangle_176} /></div>
                     <div class="overlap-36"><img class="rectangle-26" src={store_Rectangle_187} /></div>
                     <div class="overlap-37"><img class="rectangle-26" src={store_Rectangle_178} /></div>
-                    <div class="overlap-38"><img class="rectangle-26" src={store_Rectangle_188} /></div>
+                    <div class="overlap-38"><img class="rectangle-26" src={store_Rectangle_188} /></div> */}
+
+                    <div class="boxstore">
+                        <div class="rectangle">
+                            <p class="image-text2">Have a question? Expertise is a click or call away</p>
+                            <div>
+                                <p class="image-text3">Finde a Store</p>
+                                <p class="image-text4">Finde the store nearest you</p>
+                                <p class="image-text5"><a href='#'>Store Locator</a></p>
+                                <p class="image-text6"><a href='#'> <img src={store_Vector_62} /></a></p>
+                                <p class="image-text7"> <img src={store_Vector_locator} /> </p>
+                                <p class="image-text8"> <img src={store_Vector_62_locator} /> </p>
+                            </div>
+                            <div>
+                                <p class="image-text9">Contact Us</p>
+                                <p class="image-text10">1-800-Pet-VALUE(738-8258)
+                                    MON to SAT 8am to 10pm ET
+                                    SUN 8am to 9pm ET</p>
+                                <p class="image-text11"> <img src={store_Vector_phone} /> </p>
+                                <p class="image-text12"> <img src={store_Vector_phone2} /> </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="boxfooter">
+                        <div class="rectangle">
+                            <p class="image-text13">OUR FAMILY OF BRANDS</p>
+
+                        </div>
+                    </div>
+                    <div class="boxfooter2">
+                        <div class="rectangle">
+                        </div>
+                    </div>
+                    <div class="imagefooter">
+                        <img class="rectangle" src={store_Rectangle_229} />
+                        <img class="rectangle" src={store_Rectangle_229} />
+                        <img class="rectangle" src={store_Rectangle_229} />
+
+                    </div>
+
+
+
+
+
                 </div>
             </div>
         </>

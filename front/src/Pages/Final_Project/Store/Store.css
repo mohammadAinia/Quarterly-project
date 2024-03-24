@@ -1531,7 +1531,23 @@
     left: 243px;
     background-color: #ffffff;
     box-shadow: 0px 4px 4px #00000040;
+    display: flex; /* Use flexbox for easy vertical centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
 }
+
+.image-text {
+    position: absolute;
+    top: 240px;
+    /* left:55px; */
+    text-align: center; /* Adjust as needed */
+    margin-top: 10px; /* Adjust as needed */
+    font-weight: 550;
+    font-size: 20px;
+    font-family: "Poppins-Medium", Helvetica;
+
+}
+
 
 .store .rectangle-26 {
     width: 250px;
@@ -1631,3 +1647,182 @@
     background-color: #ffffff;
     box-shadow: 0px 4px 4px #00000040;
 }
+
+
+.boxstore {
+    width: 2068px;
+    height: 438px;
+  }
+  
+  .boxstore .rectangle {
+    position: absolute;
+    width: 2068px;
+    height: 438px;
+    top: 5950px;
+    left: 0;
+    background-color: #f5f1e7;
+    display: flex; /* Use flexbox for easy vertical centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+  .image-text2 {
+    position: absolute;
+    top: 40px;
+    /* left:855px; */
+    text-align: center; /* Adjust as needed */
+    margin-top: 10px; /* Adjust as needed */
+    font-weight: 200;
+    font-size: 35px;
+    /* font-family: "Poppins-Medium", Helvetica; */
+
+}
+.image-text3 {
+    position: absolute;
+    top: 180px;
+    left:405px;
+    text-align: center; /* Adjust as needed */
+    margin-top: 10px; /* Adjust as needed */
+    font-weight: 400;
+    font-size: 30px;
+    /* font-family: "Poppins-Medium", Helvetica; */
+
+}
+.image-text4 {
+    position: absolute;
+    top: 225px;
+    left:405px;
+    text-align: center; /* Adjust as needed */
+    margin-top: 10px; /* Adjust as needed */
+    font-weight: 100;
+    font-size: 25px;
+    /* font-family: "Poppins-Medium", Helvetica; */
+}
+.image-text5 {
+    position: absolute;
+    top: 265px;
+    left:405px;
+    color:brown;
+    text-align: center; /* Adjust as needed */
+    margin-top: 10px; /* Adjust as needed */
+    font-weight: 300;
+    font-size: 25px;
+    /* font-family: "Poppins-Medium", Helvetica; */
+
+}
+.image-text5 a{
+
+    color:#F7991E;
+
+
+}
+.image-text6 {
+    position: absolute;
+    top: 275px;
+    left:580px;
+    margin-top: 10px; /* Adjust as needed */
+}
+.image-text7 {
+    position: absolute;
+    top: 185px;
+    left:300px;
+    margin-top: 10px; /* Adjust as needed */
+}
+.image-text8 {
+    position: absolute;
+    top: 219px;
+    left:314px;
+    margin-top: 10px; /* Adjust as needed */
+}
+.image-text9 {
+    position: absolute;
+    top: 180px;
+    left:1405px;
+    text-align: center; /* Adjust as needed */
+    margin-top: 10px; /* Adjust as needed */
+    font-weight: 400;
+    font-size: 30px;
+    /* font-family: "Poppins-Medium", Helvetica; */
+
+}
+.image-text10 {
+    position: absolute;
+    top: 225px;
+    left:1405px;
+    width: 500px;
+    margin-top: 10px; /* Adjust as needed */
+    font-weight: 100;
+    font-size: 25px;
+    /* font-family: "Poppins-Medium", Helvetica; */
+}
+.image-text11 {
+    position: absolute;
+    top: 190px;
+    left:1300px;
+    margin-top: 10px; /* Adjust as needed */
+    z-index: 1;
+}
+.image-text12 {
+    position: absolute;
+    top: 232px;
+    left:1300px;
+    margin-top: 10px; /* Adjust as needed */
+    z-index: 0;
+}
+.boxfooter {
+    width: 2068px;
+    height: 117px;
+}
+
+.boxfooter .rectangle {
+    position: absolute;
+    width: 2168px;
+    height: 117px;
+    top: 8050px;
+    left: 0;
+    background-color: #a7c5d5;
+    display: flex; /* Use flexbox for easy vertical centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+.image-text13 {
+    position: absolute;
+    /* top: 180px;
+    left:1405px; */
+    text-align: center; /* Adjust as needed */
+    margin-top: 10px; /* Adjust as needed */
+    font-weight: 600;
+    font-size: 42px;
+    font-family: "Poppins-Medium", Helvetica;
+
+}
+.boxfooter2 {
+    width: 2068px;
+    height: 231px;
+}
+
+.boxfooter2 .rectangle {
+    position: absolute;
+    width: 2098px;
+    height: 231px;
+    top: 8167px;
+    left: 0;
+    background-color: #bfdbe9;
+}
+.imagefooter {
+    width: 192px;
+    height: 188px;
+}
+
+.imagefooter .rectangle {
+    position: absolute;
+    
+    width: 192px;
+    height: 188px;
+    top: 8190px;
+    left: 500px;
+    background-color: #BFDBE9;
+
+}
+
+
+
