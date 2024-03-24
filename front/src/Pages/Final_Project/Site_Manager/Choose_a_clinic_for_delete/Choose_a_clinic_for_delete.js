@@ -23,9 +23,14 @@ const Choose_a_clinic_for_delete = () => {
     useEffect(() => {
         axios.get('http://localhost:3001/clinic/showall', { withCredentials: true })
             .then(res => {
+                if(res.data.valid){
                 setClinics(res.data.result);
                 setFilteredClinics(res.data.result); // Initialize filteredClinics with all clinics
-            })
+    }
+    else {
+        navigate("/login")
+    }
+})
             .catch(err => {
                 console.log(err);
             });

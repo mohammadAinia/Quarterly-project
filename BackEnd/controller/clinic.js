@@ -48,7 +48,7 @@ function show_all (req,res){
 }
 else res.json({valid:false})
 }
-
+ 
 function search_clinc (req,res){
     if(req.session.username){
     var name=req.params.name
