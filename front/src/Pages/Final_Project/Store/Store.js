@@ -1,4 +1,6 @@
 import './Store.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus, faBell, faHouse, faMessage, faUserDoctor, faStethoscope } from '@fortawesome/free-solid-svg-icons'
 
 import Store_Vector from '../../../Assert/Images/Store_Vector.png'
 import store_Vector2 from '../../../Assert/Images/store_Vector2.png'
@@ -48,6 +50,14 @@ import store_Vector_62_locator from '../../../Assert/Images/store_Vector_62_loca
 import store_Vector_phone from '../../../Assert/Images/store_Vector_phone.png'
 import store_Vector_phone2 from '../../../Assert/Images/store_Vector_phone2.png'
 import store_Rectangle_229 from '../../../Assert/Images/store_Rectangle_229.png'
+import store_Line_11 from '../../../Assert/Images/store_Line_11.png'
+import store_Rectangle_230 from '../../../Assert/Images/store_Rectangle_230.png'
+import store_Rectangle_231 from '../../../Assert/Images/store_Rectangle_231.png'
+import store_Rectangle_232 from '../../../Assert/Images/store_Rectangle_232.png'
+import store_Rectangle_233 from '../../../Assert/Images/store_Rectangle_233.png'
+
+
+
 
 
 
@@ -446,19 +456,19 @@ const Store = () => {
                         <img class="rectangle-26" src={store_Rectangle_170} />
                         <p class="image-text">ACANA</p>
                     </div>
-                    
+
                     <div class="img-wrapper">
                         <img class="rectangle-26" src={store_Rectangle_184} />
-                        <p class="image-text">Your text here</p>
+                        {/* <p class="image-text">Your text here</p> */}
                     </div>
-                    {/* <div class="overlap-31"><img class="rectangle-26" src={store_Rectangle_172} /></div>
+                    <div class="overlap-31"><img class="rectangle-26" src={store_Rectangle_172} /></div>
                     <div class="overlap-32"><img class="rectangle-26" src={store_Rectangle_185} /></div>
                     <div class="overlap-33"><img class="rectangle-26" src={store_Rectangle_174} /></div>
                     <div class="overlap-34"><img class="rectangle-26" src={store_Rectangle_186} /></div>
                     <div class="overlap-35"><img class="rectangle-26" src={store_Rectangle_176} /></div>
                     <div class="overlap-36"><img class="rectangle-26" src={store_Rectangle_187} /></div>
                     <div class="overlap-37"><img class="rectangle-26" src={store_Rectangle_178} /></div>
-                    <div class="overlap-38"><img class="rectangle-26" src={store_Rectangle_188} /></div> */}
+                    <div class="overlap-38"><img class="rectangle-26" src={store_Rectangle_188} /></div>
 
                     <div class="boxstore">
                         <div class="rectangle">
@@ -494,12 +504,62 @@ const Store = () => {
                     </div>
                     <div class="imagefooter">
                         <img class="rectangle" src={store_Rectangle_229} />
-                        <img class="rectangle" src={store_Rectangle_229} />
-                        <img class="rectangle" src={store_Rectangle_229} />
+                        <img class="rectangle2" src={store_Rectangle_230} />
+                        <img class="rectangle3" src={store_Rectangle_231} />
+                        <img class="rectangle4" src={store_Rectangle_232} />
+                        <img class="rectangle5" src={store_Rectangle_233} />
+
+
+                    </div>
+
+                    <div class="boxfooter3">
+
+                        <div class="rectangle">
+                            <div>
+                                <p class="image-text14">About Us</p>
+                                <p class="image-text15">About PetCare</p>
+                                <p class="image-text16">Companions For Change</p>
+                                <p class="image-text17">Customer Care Policy</p>
+                                <p class="image-text18">Investor Relations</p>
+                            </div>
+                            <div>
+                                <p class="image-text19">Learn More</p>
+                                <p class="image-text20">Buy Online, Pick Up In Store</p>
+                                <p class="image-text21">AutoShip</p>
+                                <p class="image-text22">FAQs</p>
+                            </div>
+                            <div>
+                                <p class="image-text23">Contact</p>
+                                <p class="image-text24">Still need some help?</p>
+                                <div class="button_footer" style={{ width: 255, height: 83, position: 'absolute',top: 330,left: 1580, background: '#0075C7', borderRadius: 6 }}>
+                                    <div class="button_footer2" style={{ width: 255, height: 83, left: 0, top: 20, position: 'absolute', textAlign: 'center', color: 'white', fontSize: 25, fontFamily: 'Poppins', fontWeight: '600', wordWrap: 'break-word' }}>Contact Us</div>
+                                </div>
+                            </div>
+                            <div>
+                            <p class="image-text25"><img src={store_Line_11}/></p>
+                            <p class="image-text26">And don’t forget to follow Us</p>
+                            <p class="image-text29"><a><FontAwesomeIcon icon={faPlus} /></a></p>
+
+
+                            <p class="image-text27">Copyright 2024 PetCare Syria Inc.</p>
+                            <p class="image-text28">Privacy Policy . Accessibility . Terms of Use</p>
+
+
+
+                            </div>
+
+
+
+
+
+
+                        </div>
 
                     </div>
 
 
+
+                    {/* <div class="boxline"><img class="line" src={store_Line_11} /></div> */}
 
 
 
