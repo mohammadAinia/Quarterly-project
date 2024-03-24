@@ -162,7 +162,7 @@ function login(req,res) {
                     }
                 }
             );
-            } 
+            }                
             else if ((user.rolee=="user")) {
                 bcryptjs.compare(req.body.password,user.password,function (err,result) {
                         if (result) {
