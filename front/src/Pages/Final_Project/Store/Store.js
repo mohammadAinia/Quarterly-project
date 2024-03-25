@@ -1,7 +1,4 @@
 import './Store.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faBell, faHouse, faMessage, faUserDoctor, faStethoscope } from '@fortawesome/free-solid-svg-icons'
-
 import Store_Vector from '../../../Assert/Images/Store_Vector.png'
 import store_Vector2 from '../../../Assert/Images/store_Vector2.png'
 import store_Vector3 from '../../../Assert/Images/store_Vector3.png'
@@ -56,17 +53,54 @@ import store_Rectangle_231 from '../../../Assert/Images/store_Rectangle_231.png'
 import store_Rectangle_232 from '../../../Assert/Images/store_Rectangle_232.png'
 import store_Rectangle_233 from '../../../Assert/Images/store_Rectangle_233.png'
 
-
-
-
-
-
-
-
-
+import React, { useEffect, useState, useRef } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebookF, faInstagram, faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import { Componets_newArrivals } from '../../../Componets'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 
 const Store = () => {
+
+    const [NewArrivalInfo, setNewArrivalInfo] = useState([])
+    const navigate = useNavigate()
+
+    useEffect(() => {
+
+        axios.get('http://localhost:3001/#/', { withCredentials: true })
+            .then(res => {
+                if (res.data.valid) {
+                    setNewArrivalInfo(res.data.result)
+                }
+                else {
+                    navigate('/login')
+                }
+            })
+            .catch(err => { console.log(err) })
+
+    },
+        [])
+
+    const frameRef = useRef(null);
+
+    const scrollRight = () => {
+        if (frameRef.current) {
+            frameRef.current.scrollBy({
+                left: 300, // Adjust as needed to control the scroll distance
+                behavior: 'smooth' // Add smooth scrolling effect
+            });
+        }
+    };
+    const scrollLeft = () => {
+        if (frameRef.current) {
+            frameRef.current.scrollBy({
+                left: -300, // Adjust as needed to control the scroll distance
+                behavior: 'smooth' // Add smooth scrolling effect
+            });
+        }
+    };
+
     return (
         <>
             <div class="store">
@@ -173,28 +207,46 @@ const Store = () => {
                     <img class="rectangle-7" src={store_Rectangle_136} />
                     <img class="rectangle-8" src={store_Rectangle_137} />
                     <img class="rectangle-9" src={store_Rectangle_138} />
-                    <img class="vector-3" src={store_Vector_60} />
+
+                    {/* الاسهم خاصة بالمنتجات الواصلة جديد */}
+                    <img className="vector-3" src={store_Vector_60} onClick={scrollRight} />
+                    <img class="vector-6" src={store_Vector_61} onClick={scrollLeft} />
+
+
+
                     <img class="vector-4" src={store_Vector_60} />
+
+
                     <img class="vector-5" src={store_Vector_60} />
-                    <img class="vector-6" src={store_Vector_61} />
                     <img class="vector-7" src={store_Vector_61} />
                     <img class="vector-8" src={store_Vector_61} />
-                    <div class="frame-2">
-                        <div class="overlap-group-2">
-                            <div class="rectangle-10"></div>
-                            <img class="rectangle-11" src={store_Rectangle_141} />
-                            <div class="rectangle-12"></div>
-                            <div class="text-wrapper-26">NEW</div>
-                            <div class="text-wrapper-27">exceed</div>
-                            <div class="text-wrapper-28">$22.99</div>
-                            <div class="text-wrapper-29">Anxiety Relief</div>
-                            <div class="text-wrapper-30">Dog Shampoo</div>
-                            <div class="rectangle-13"></div>
-                            <div class="text-wrapper-31">Available for AutoShip</div>
-                            <img class="vector-9" src={store_Vector4} />
-                            <div class="frame-3"><div class="text-wrapper-32">view</div></div>
-                        </div>
+
+                    {/* ***********************************************************************************************************************************88 */}
+
+                    {/* هنا المنتجات الواصلة جديد */}
+                    <div class="frame-2" ref={frameRef}>
+
+                        {NewArrivalInfo.map((user, i) => (
+                            <Componets_newArrivals
+                                key={i}
+                                image={`http://localhost:3001/uploads/${user.urlImage}`}
+                                brand={user.brand}
+                                price={user.price}
+                                desc={user.desc}
+                                href={`######/${user.id}`}
+
+                            />
+                        ))}
+                        <Componets_newArrivals image={store_Rectangle_141}
+                            brand={"Acana"}
+                            price={"$22.6"}
+                            desc={"shampoo"}
+                            href={`######`} />
                     </div>
+
+                    {/* *************************************************************************************************************************************/}
+
+
                     <div class="overlap-21">
                         <div class="rectangle-14"></div>
                         <img class="rectangle-11" src={store_Rectangle_141} />
@@ -367,7 +419,7 @@ const Store = () => {
                     <div class="text-wrapper-43">Bird</div>
                     <div class="text-wrapper-44">Rabbit</div>
                     <div class="text-wrapper-45">Reptile</div>
-                    <div class="frame-4">
+                    {/* <div class="frame-4">
                         <div class="overlap-group-2">
                             <div class="rectangle-10"></div>
                             <img class="rectangle-11" src={store_Rectangle_141} />
@@ -382,8 +434,8 @@ const Store = () => {
                             <img class="vector-9" src={store_Vector4} />
                             <div class="frame-3"><div class="text-wrapper-32">view</div></div>
                         </div>
-                    </div>
-                    <div class="frame-5">
+                    </div> */}
+                    {/* <div class="frame-5">
                         <div class="overlap-group-2">
                             <div class="rectangle-10"></div>
                             <img class="rectangle-11" src={store_Rectangle_141} />
@@ -398,8 +450,8 @@ const Store = () => {
                             <img class="vector-9" src={store_Vector4} />
                             <div class="frame-3"><div class="text-wrapper-32">view</div></div>
                         </div>
-                    </div>
-                    <div class="frame-6">
+                    </div> */}
+                    {/* <div class="frame-6">
                         <div class="overlap-group-2">
                             <div class="rectangle-10"></div>
                             <img class="rectangle-11" src={store_Rectangle_141} />
@@ -414,8 +466,8 @@ const Store = () => {
                             <img class="vector-9" src={store_Vector4} />
                             <div class="frame-3"><div class="text-wrapper-32">view</div></div>
                         </div>
-                    </div>
-                    <div class="frame-7">
+                    </div> */}
+                    {/* <div class="frame-7">
                         <div class="overlap-group-2">
                             <div class="rectangle-10"></div>
                             <img class="rectangle-11" src={store_Rectangle_141} />
@@ -430,7 +482,7 @@ const Store = () => {
                             <img class="vector-9" src={store_Vector4} />
                             <div class="frame-3"><div class="text-wrapper-32">view</div></div>
                         </div>
-                    </div>
+                    </div> */}
                     <img class="ellipse" src={store_Ellipse_108} />
                     <img class="ellipse-2" src={store_Ellipse_109} />
                     <img class="ellipse-3" src={store_Ellipse_110} />
@@ -531,18 +583,21 @@ const Store = () => {
                             <div>
                                 <p class="image-text23">Contact</p>
                                 <p class="image-text24">Still need some help?</p>
-                                <div class="button_footer" style={{ width: 255, height: 83, position: 'absolute',top: 330,left: 1580, background: '#0075C7', borderRadius: 6 }}>
+                                <div class="button_footer" style={{ width: 255, height: 83, position: 'absolute', top: 330, left: 1580, background: '#0075C7', borderRadius: 6 }}>
                                     <div class="button_footer2" style={{ width: 255, height: 83, left: 0, top: 20, position: 'absolute', textAlign: 'center', color: 'white', fontSize: 25, fontFamily: 'Poppins', fontWeight: '600', wordWrap: 'break-word' }}>Contact Us</div>
                                 </div>
                             </div>
                             <div>
-                            <p class="image-text25"><img src={store_Line_11}/></p>
-                            <p class="image-text26">And don’t forget to follow Us</p>
-                            <p class="image-text29"><a><FontAwesomeIcon icon={faPlus} /></a></p>
+                                <p class="image-text25"><img src={store_Line_11} /></p>
+                                <p class="image-text26">And don’t forget to follow Us</p>
+                                <p class="image-text29"><a><FontAwesomeIcon icon={faFacebookF} /> </a></p>
+                                <p class="image-text30"><a><FontAwesomeIcon icon={faInstagram} /> </a></p>
+                                <p class="image-text31"><a><FontAwesomeIcon icon={faXTwitter} /> </a></p>
 
 
-                            <p class="image-text27">Copyright 2024 PetCare Syria Inc.</p>
-                            <p class="image-text28">Privacy Policy . Accessibility . Terms of Use</p>
+
+                                <p class="image-text27">Copyright 2024 PetCare Syria Inc.</p>
+                                <p class="image-text28">Privacy Policy . Accessibility . Terms of Use</p>
 
 
 
