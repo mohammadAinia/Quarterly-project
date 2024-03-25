@@ -204,7 +204,7 @@ const evints =(vet)=>{
                             var sql1= "INSERT event_gen (disc) VALUES('" + not + "')"              
                             db.query(sql1,(err,resus)=>{
                                 if(err)console.log(err)
-                            })
+                            }) 
                     }
                         // }
                     // })
@@ -229,7 +229,22 @@ const evints =(vet)=>{
         }
         )
     })
-   
+   sq123='select concat("you have appointment at ",booking.timebookig," with ",animals.id,"/",animals.name) as nn from booking join user_infos on booking.vet_idb=user_infos.id join animals on animals.id=booking.animal_idb where booking.datebooking > CURRENT_DATE() and user_infos.email=? '
+   db.query(sq123,[vet],(error,result)=>{
+    if(error){console.log(error)}
+    else{
+        
+        result.map((u,i)=>{//here we sshow th num of day for evre vacc rim
+
+                    var sql1= "INSERT event_gen (disc) VALUES('" + u.nn + "')"              
+                    db.query(sql1,(err,resus)=>{
+                        if(err)console.log(err)
+                        
+                    }) 
+            
+    })
+    }
+})
     }
 
 
