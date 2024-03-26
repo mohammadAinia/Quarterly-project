@@ -8,6 +8,7 @@ const adoption=require('./routes/adoption')
 const chat=require('./routes/chats')
 const vet=require('./routes/vetController')
 const clinic=require('./routes/clinicR')
+const storee=require('./routes/storeR')
 
 
 const app =express()
@@ -54,6 +55,6 @@ app.use("/adopt",adoption)
 app.use("/chat",chat)
 app.use("/vet",vet)
 app.use("/clinic",clinic)
-
+app.use("/storee",storee)
 
 module.exports=app;
