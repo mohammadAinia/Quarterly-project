@@ -83,6 +83,18 @@ const Store = () => {
     },
         [])
 
+    function StarRating({ rating }) {
+        const filledStars = Math.floor(rating);
+        const stars = [];
+        for (let i = 0; i < 5; i++) {
+            if (i < filledStars) {
+                stars.push(<img key={i} className="star-solid" src={store_star_solid_1} alt="Filled Star" />);
+            }
+        }
+        return <div>{stars}</div>; // Return the array of stars wrapped in a div
+    }
+
+
     const frameRef = useRef(null);
 
     const scrollRight = () => {
@@ -115,6 +127,24 @@ const Store = () => {
     const scrollLeft2 = () => {
         if (frameRef2.current) {
             frameRef2.current.scrollBy({
+                left: -300, // Adjust as needed to control the scroll distance
+                behavior: 'smooth' // Add smooth scrolling effect
+            });
+        }
+    };
+    const frameRef3 = useRef(null);
+
+    const scrollRight3 = () => {
+        if (frameRef3.current) {
+            frameRef3.current.scrollBy({
+                left: 300, // Adjust as needed to control the scroll distance
+                behavior: 'smooth' // Add smooth scrolling effect
+            });
+        }
+    };
+    const scrollLeft3 = () => {
+        if (frameRef3.current) {
+            frameRef3.current.scrollBy({
                 left: -300, // Adjust as needed to control the scroll distance
                 behavior: 'smooth' // Add smooth scrolling effect
             });
@@ -239,8 +269,8 @@ const Store = () => {
 
 
                     {/* الاسهم الخاصة بالمنتجات الاعلى مبيعا */}
-                    <img class="vector-5" src={store_Vector_60} onClick={scrollRight} />
-                    <img class="vector-8" src={store_Vector_61} onClick={scrollLeft} />
+                    <img class="vector-5" src={store_Vector_60} onClick={scrollRight3} />
+                    <img class="vector-8" src={store_Vector_61} onClick={scrollLeft3} />
 
                     {/* ***********************************************************************************************************************************88 */}
 
@@ -267,9 +297,40 @@ const Store = () => {
 
                     {/* *************************************************************************************************************************************/}
 
-                    {/* هنا المنتجات الاعلى تقييما */}
+                    {/* Top Rated هنا المنتجات الاعلى تقييما */}
                     <div class="frame-3_me" ref={frameRef2}>
                         <div class="overlap-21">
+                            <div class="rectangle-14"></div>
+                            <img class="rectangle-11" src={store_Rectangle_141} />
+                            <div class="rectangle-15"></div>
+                            <div class="text-wrapper-26">TOP RATED</div>
+                            <div class="text-wrapper-27">ACANA</div>
+                            <div class="text-wrapper-28">$22.99</div>
+                            <div class="element">4.6</div>
+                            <div class="element2">(36)</div>
+
+                            <div class="text-wrapper-29">Classics Red</div>
+                            <div class="text-wrapper-33">Meat Recipe Dog Food</div>
+                            <div class="rectangle-13"></div>
+                            <div class="text-wrapper-31">Available for AutoShip</div>
+                            <img class="vector-9" src={store_Vector4} />
+                            <div class="frame-3"><div class="text-wrapper-32">view</div></div>
+                            {/* <StarRating rating={0} /> */}
+                            <div class="star-container">
+                                <StarRating rating={2} />
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    {/* *************************************************************************************************************************************/}
+
+
+
+                    {/* Top Sellers هنا المنتجات الاعلى مبيعا */}
+                    <div class="frame-4_me" ref={frameRef3}>
+                        <div class="overlap-22">
                             <div class="rectangle-14"></div>
                             <img class="rectangle-11" src={store_Rectangle_141} />
                             <div class="rectangle-15"></div>
@@ -292,32 +353,6 @@ const Store = () => {
                     </div>
 
 
-                    {/* *************************************************************************************************************************************/}
-
-
-
-                    {/* هنا المنتجات الاعلى مبيعا */}
-
-                    <div class="overlap-22">
-                        <div class="rectangle-14"></div>
-                        <img class="rectangle-11" src={store_Rectangle_141} />
-                        <div class="rectangle-15"></div>
-                        <div class="text-wrapper-26">TOP RATED</div>
-                        <div class="text-wrapper-27">ACANA</div>
-                        <div class="text-wrapper-28">$22.99</div>
-                        <div class="element">4.6&nbsp;&nbsp; (36)</div>
-                        <div class="text-wrapper-29">Classics Red</div>
-                        <div class="text-wrapper-33">Meat Recipe Dog Food</div>
-                        <div class="rectangle-13"></div>
-                        <div class="text-wrapper-31">Available for AutoShip</div>
-                        <img class="vector-9" src={store_Vector4} />
-                        <div class="frame-3"><div class="text-wrapper-32">view</div></div>
-                        <img class="star-solid" src={store_star_solid_1} />
-                        <img class="star-solid-2" src={store_star_solid_1} />
-                        <img class="star-solid-3" src={store_star_solid_1} />
-                        <img class="star-solid-4" src={store_star_solid_1} />
-                        <img class="star-solid-5" src={store_star_solid_1} />
-                    </div>
 
 
                     {/* *************************************************************************************************************************************/}
