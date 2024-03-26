@@ -772,17 +772,60 @@
     left: 1742px;
 }
 
+/* .store .container {
+    display:inline-flex;
+    overflow-x: auto; 
+} */
+/* .navigation-bar {
+    display: none; 
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f8f8;
+    border-top: 1px solid #ddd;
+    padding: 10px 0;
+    text-align: center;
+} */
+
 .store .frame-2 {
     position: absolute;
-    width: 269px;
-    height: 519px;
+    width: 100%;
+    height: 575px;
+    max-width: calc(100% - 400px); /* Adjust as needed */
+
+
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+
     top: 2879px;
     left: 200px;
 }
+.store .frame-2::-webkit-scrollbar {
+    width: 10px; /* Set the width of the scrollbar */
+    height: 12px;
+}
+
+.store .frame-2::-webkit-scrollbar-thumb {
+    background-color: lightblue; /* Set the color of the scrollbar thumb */
+    border-radius: 5px; /* Optional: Round the corners of the scrollbar thumb */
+
+}
+
+.store .frame-2::-webkit-scrollbar-track {
+    background-color: transparent; /* Set the color of the scrollbar track */
+}
+
 
 .store .overlap-group-2 {
     position: relative;
+    flex-wrap: nowrap;
     height: 519px;
+    display: inline-block;
+    margin-right: 343px;
+    margin-left: 10px;    
+    
 }
 
 .store .rectangle-10 {
@@ -866,8 +909,8 @@
 }
 
 .store .text-wrapper-30 {
-    width: 143px;
-    height: 27px;
+    width:10;
+    height: auto;
     top: 324px;
     left: 13px;
     font-family: "Poppins-Regular", Helvetica;
@@ -877,6 +920,7 @@
     color: #000000;
     letter-spacing: 0;
     line-height: normal;
+    overflow: hidden;
 }
 
 .store .rectangle-13 {
@@ -912,15 +956,15 @@
 
 .store .frame-3 {
     display: flex;
-    width: 62px;
-    height: 27px;
+    width: 82px;
+    height: 37px;
     align-items: center;
     justify-content: center;
     gap: 10px;
     padding: 8px 32px;
     position: absolute;
-    top: 473px;
-    left: 104px;
+    top: 465px;
+    left: 90px;
     background-color: #b8d8eb;
     border-radius: 14px;
 }
@@ -935,18 +979,49 @@
     font-family: "Poppins-Light", Helvetica;
     font-weight: 300;
     color: #000000;
-    font-size: 13px;
+    font-size: 18px;
     text-align: center;
     letter-spacing: 0;
     line-height: normal;
 }
 
-.store .overlap-21 {
+.store .frame-3_me{
+    width: 100%;
+    height: 645px;
+    max-width: calc(100% - 400px); /* Adjust as needed */
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
     position: absolute;
-    width: 269px;
-    height: 587px;
     top: 6570px;
     left: 200px;
+}
+.store .frame-3_me::-webkit-scrollbar {
+    width: 10px; /* Set the width of the scrollbar */
+    height: 12px;
+}
+
+.store .frame-3_me::-webkit-scrollbar-thumb {
+    background-color: lightblue; /* Set the color of the scrollbar thumb */
+    border-radius: 5px; /* Optional: Round the corners of the scrollbar thumb */
+
+}
+
+.store .frame-3_me::-webkit-scrollbar-track {
+    background-color: transparent; /* Set the color of the scrollbar track */
+}
+
+.store .overlap-21 {
+    position: relative;
+    flex-wrap: nowrap;
+    display: inline-block;
+    margin-right: 343px;
+    margin-left: 10px;  
+
+    /* width: 269px; */
+    height: 519px;
+    /* top: 6570px;
+    left: 200px; */
 }
 
 .store .rectangle-14 {
@@ -2162,5 +2237,29 @@
     margin-top: 10px;
     /* Adjust as needed */
     font-weight: 100;
-    font-size: 23px;
+    font-size: 29px;
+}
+.image-text30 {
+    position: absolute;
+    top: 620px;
+    left: 1650px;
+    color: #ffffff;
+    text-align: center;
+    /* Adjust as needed */
+    margin-top: 10px;
+    /* Adjust as needed */
+    font-weight: 100;
+    font-size: 33px;
+}
+.image-text31 {
+    position: absolute;
+    top: 620px;
+    left: 1730px;
+    color: #ffffff;
+    text-align: center;
+    /* Adjust as needed */
+    margin-top: 10px;
+    /* Adjust as needed */
+    font-weight: 100;
+    font-size: 33px;
 }

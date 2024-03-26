@@ -31,8 +31,15 @@ const App = () => {
         <Container>
           <Routes>
             <Route path='/' element={<Home_owner />} />
-            <Route path='login' element={<Loading_page />} />
-            <Route path='start' element={<General_user />} />
+
+
+
+            {/* بس ارجع شغل هذول السطرين مشان واجهة الترحيب وعلق التعليمة الثالثة */}
+            {/* <Route path='login' element={<Loading_page />} /> */}
+            {/* <Route path='start' element={<General_user />} /> */}
+            <Route path='login' element={<General_user />} />
+
+
             <Route path='Loginn' element={<Login />} />
             <Route path='/Registration' element={<Type />} />
             <Route path='/Register_owner' element={<Register_owner />} />
