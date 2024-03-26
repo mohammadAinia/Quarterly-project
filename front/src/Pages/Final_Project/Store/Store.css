@@ -936,7 +936,7 @@
     position: absolute;
     width: 220px;
     height: 26px;
-    top: 418px;
+    top: 423px;
     left: 49px;
     font-family: "Poppins-Light", Helvetica;
     font-weight: 300;
@@ -967,6 +967,10 @@
     left: 90px;
     background-color: #b8d8eb;
     border-radius: 14px;
+    transition: background-color 0.3s ease; /* Add transition for smooth effect */
+}
+.store .frame-3:hover {
+    background-color: #85c7f2; /* Change background color on hover */
 }
 
 .store .text-wrapper-32 {
@@ -1046,8 +1050,20 @@
 .store .element {
     position: absolute;
     height: 23px;
-    top: 551px;
+    top: 555px;
     left: 119px;
+    font-family: "Poppins-ExtraLight", Helvetica;
+    font-weight: 200;
+    color: #000000;
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+.store .element2 {
+    position: absolute;
+    height: 23px;
+    top: 555px;
+    left: 149px;
     font-family: "Poppins-ExtraLight", Helvetica;
     font-weight: 200;
     color: #000000;
@@ -1070,12 +1086,22 @@
     line-height: normal;
 }
 
-.store .star-solid {
+.store .star-container {
+    /* Adjust the container to allow inline display */
+    display: inline-block;
     position: absolute;
+        top: 555px;
+    left: 13px;
+}
+
+.store .star-solid {
+    /* position: absolute; */
     width: 19px;
     height: 16px;
-    top: 555px;
-    left: 13px;
+    /* top: 555px;
+    left: 13px; */
+    /* display: inline-block;
+    margin-right: 5px; */
 }
 
 .store .star-solid-2 {
@@ -1110,12 +1136,42 @@
     top: 555px;
 }
 
-.store .overlap-22 {
+.store .frame-4_me{
+    width: 100%;
+    height: 645px;
+    max-width: calc(100% - 400px); /* Adjust as needed */
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
     position: absolute;
-    width: 269px;
-    height: 587px;
     top: 7367px;
     left: 200px;
+}
+.store .frame-4_me::-webkit-scrollbar {
+    width: 10px; /* Set the width of the scrollbar */
+    height: 12px;
+}
+
+.store .frame-4_me::-webkit-scrollbar-thumb {
+    background-color: lightblue; /* Set the color of the scrollbar thumb */
+    border-radius: 5px; /* Optional: Round the corners of the scrollbar thumb */
+
+}
+
+.store .frame-4_me::-webkit-scrollbar-track {
+    background-color: transparent; /* Set the color of the scrollbar track */
+}
+
+.store .overlap-22 {
+    position: relative;
+    flex-wrap: nowrap;
+    display: inline-block;
+    margin-right: 343px;
+    margin-left: 10px; 
+    height: 519px;
+
+    /* top: 7367px;
+    left: 200px; */
 }
 
 .store .overlap-23 {
