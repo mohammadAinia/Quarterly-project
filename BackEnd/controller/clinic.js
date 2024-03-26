@@ -489,7 +489,7 @@ function show_appointment_vet(req,res){
                 }
             }) 
         }
-    }) 
+    })  
     
 } 
 function add_de (req,res){

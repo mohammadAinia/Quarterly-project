@@ -12,7 +12,7 @@ function home_vat(req,res){
                 var sqll='select * from problims LIMIT 3'
                 db.query(sqll,(err, resultt) =>{
                     
-                    if (err)return res.json(err)
+                    if (err)return res.json(err) 
                     else{
                         sql='select* from event_gen limit 4'
                         db.query(sql,(err,resulttt)=>{
@@ -208,7 +208,7 @@ const evints =(vet)=>{
                     }
                         // }
                     // })
-            })
+            }) 
         //     result.map((u,i)=>{//here we sshow th num of day for evre vacc rim
         //         var agee=new Date(u.age)
         //         // var days= daysUntilBirthday(agee)

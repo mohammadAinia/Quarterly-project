@@ -35,7 +35,7 @@ const My_appointments_vet = () => {
                 date={d.datebooking}
                 time={d.timebookig}
                 href={`Diagnosis/${d.id_b}/${d.id}`}
-                test={d.check_ !== 0}
+                test={d.check_!== 0}
               />
             </div>
           ))}
