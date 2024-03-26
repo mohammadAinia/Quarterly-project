@@ -101,6 +101,25 @@ const Store = () => {
         }
     };
 
+    const frameRef2 = useRef(null);
+
+    const scrollRight2 = () => {
+        if (frameRef2.current) {
+            frameRef2.current.scrollBy({
+                left: 300, // Adjust as needed to control the scroll distance
+                behavior: 'smooth' // Add smooth scrolling effect
+            });
+        }
+    };
+    const scrollLeft2 = () => {
+        if (frameRef2.current) {
+            frameRef2.current.scrollBy({
+                left: -300, // Adjust as needed to control the scroll distance
+                behavior: 'smooth' // Add smooth scrolling effect
+            });
+        }
+    };
+
     return (
         <>
             <div class="store">
@@ -213,17 +232,18 @@ const Store = () => {
                     <img class="vector-6" src={store_Vector_61} onClick={scrollLeft} />
 
 
+                    {/* الاسهم الخاصة بالمنتجات الاعلى تقييما */}
+                    <img class="vector-4" src={store_Vector_60} onClick={scrollRight2} />
+                    <img class="vector-7" src={store_Vector_61} onClick={scrollLeft2} />
 
-                    <img class="vector-4" src={store_Vector_60} />
 
-
-                    <img class="vector-5" src={store_Vector_60} />
-                    <img class="vector-7" src={store_Vector_61} />
-                    <img class="vector-8" src={store_Vector_61} />
+                    {/* الاسهم الخاصة بالمنتجات الاعلى مبيعا */}
+                    <img class="vector-5" src={store_Vector_60} onClick={scrollRight} />
+                    <img class="vector-8" src={store_Vector_61} onClick={scrollLeft} />
 
                     {/* ***********************************************************************************************************************************88 */}
 
-                    {/* هنا المنتجات الواصلة جديد */}
+                    {/*   New Arrivals    هنا المنتجات الواصلة جديد */}
                     <div class="frame-2" ref={frameRef}>
 
                         {NewArrivalInfo.map((user, i) => (
@@ -246,27 +266,37 @@ const Store = () => {
 
                     {/* *************************************************************************************************************************************/}
 
-
-                    <div class="overlap-21">
-                        <div class="rectangle-14"></div>
-                        <img class="rectangle-11" src={store_Rectangle_141} />
-                        <div class="rectangle-15"></div>
-                        <div class="text-wrapper-26">TOP RATED</div>
-                        <div class="text-wrapper-27">ACANA</div>
-                        <div class="text-wrapper-28">$22.99</div>
-                        <div class="element">4.6&nbsp;&nbsp; (36)</div>
-                        <div class="text-wrapper-29">Classics Red</div>
-                        <div class="text-wrapper-33">Meat Recipe Dog Food</div>
-                        <div class="rectangle-13"></div>
-                        <div class="text-wrapper-31">Available for AutoShip</div>
-                        <img class="vector-9" src={store_Vector4} />
-                        <div class="frame-3"><div class="text-wrapper-32">view</div></div>
-                        <img class="star-solid" src={store_star_solid_1} />
-                        <img class="star-solid-2" src={store_star_solid_1} />
-                        <img class="star-solid-3" src={store_star_solid_1} />
-                        <img class="star-solid-4" src={store_star_solid_1} />
-                        <img class="star-solid-5" src={store_star_solid_1} />
+                    {/* هنا المنتجات الاعلى تقييما */}
+                    <div class="frame-3_me" ref={frameRef2}>
+                        <div class="overlap-21">
+                            <div class="rectangle-14"></div>
+                            <img class="rectangle-11" src={store_Rectangle_141} />
+                            <div class="rectangle-15"></div>
+                            <div class="text-wrapper-26">TOP RATED</div>
+                            <div class="text-wrapper-27">ACANA</div>
+                            <div class="text-wrapper-28">$22.99</div>
+                            <div class="element">4.6&nbsp;&nbsp; (36)</div>
+                            <div class="text-wrapper-29">Classics Red</div>
+                            <div class="text-wrapper-33">Meat Recipe Dog Food</div>
+                            <div class="rectangle-13"></div>
+                            <div class="text-wrapper-31">Available for AutoShip</div>
+                            <img class="vector-9" src={store_Vector4} />
+                            <div class="frame-3"><div class="text-wrapper-32">view</div></div>
+                            <img class="star-solid" src={store_star_solid_1} />
+                            <img class="star-solid-2" src={store_star_solid_1} />
+                            <img class="star-solid-3" src={store_star_solid_1} />
+                            <img class="star-solid-4" src={store_star_solid_1} />
+                            <img class="star-solid-5" src={store_star_solid_1} />
+                        </div>
                     </div>
+
+
+                    {/* *************************************************************************************************************************************/}
+
+
+
+                    {/* هنا المنتجات الاعلى مبيعا */}
+
                     <div class="overlap-22">
                         <div class="rectangle-14"></div>
                         <img class="rectangle-11" src={store_Rectangle_141} />
@@ -287,122 +317,12 @@ const Store = () => {
                         <img class="star-solid-4" src={store_star_solid_1} />
                         <img class="star-solid-5" src={store_star_solid_1} />
                     </div>
-                    <div class="overlap-23">
-                        <div class="rectangle-14"></div>
-                        <img class="rectangle-11" src={store_Rectangle_141} />
-                        <div class="rectangle-15"></div>
-                        <div class="text-wrapper-26">TOP RATED</div>
-                        <div class="text-wrapper-27">exceed</div>
-                        <div class="element">4.6&nbsp;&nbsp; (36)</div>
-                        <div class="text-wrapper-28">$22.99</div>
-                        <div class="text-wrapper-29">Anxiety Relief</div>
-                        <div class="text-wrapper-30">Dog Shampoo</div>
-                        <div class="rectangle-13"></div>
-                        <div class="text-wrapper-31">Available for AutoShip</div>
-                        <img class="vector-9" src={store_Vector4} />
-                        <div class="frame-3"><div class="text-wrapper-32">view</div></div>
-                    </div>
-                    <div class="overlap-24">
-                        <div class="rectangle-14"></div>
-                        <img class="rectangle-11" src={store_Rectangle_141} />
-                        <div class="text-wrapper-27">exceed</div>
-                        <div class="element">4.6&nbsp;&nbsp; (36)</div>
-                        <div class="text-wrapper-28">$22.99</div>
-                        <div class="text-wrapper-29">Anxiety Relief</div>
-                        <div class="text-wrapper-30">Dog Shampoo</div>
-                        <div class="rectangle-13"></div>
-                        <div class="text-wrapper-31">Available for AutoShip</div>
-                        <img class="vector-9" src={store_Vector4} />
-                        <div class="frame-3"><div class="text-wrapper-32">view</div></div>
-                    </div>
-                    <div class="overlap-25">
-                        <div class="rectangle-14"></div>
-                        <img class="rectangle-11" src={store_Rectangle_141} />
-                        <div class="rectangle-15"></div>
-                        <div class="text-wrapper-26">TOP RATED</div>
-                        <div class="text-wrapper-27">exceed</div>
-                        <div class="element">4.6&nbsp;&nbsp; (36)</div>
-                        <div class="text-wrapper-28">$22.99</div>
-                        <div class="text-wrapper-29">Anxiety Relief</div>
-                        <div class="text-wrapper-30">Dog Shampoo</div>
-                        <div class="rectangle-13"></div>
-                        <div class="text-wrapper-31">Available for AutoShip</div>
-                        <img class="vector-9" src={store_Vector4} />
-                        <div class="frame-3"><div class="text-wrapper-32">view</div></div>
-                    </div>
-                    <div class="overlap-26">
-                        <div class="rectangle-14"></div>
-                        <img class="rectangle-11" src={store_Rectangle_141} />
-                        <div class="rectangle-15"></div>
-                        <div class="text-wrapper-26">TOP RATED</div>
-                        <div class="text-wrapper-27">exceed</div>
-                        <div class="element">4.6&nbsp;&nbsp; (36)</div>
-                        <div class="text-wrapper-28">$22.99</div>
-                        <div class="text-wrapper-29">Anxiety Relief</div>
-                        <div class="text-wrapper-30">Dog Shampoo</div>
-                        <div class="rectangle-13"></div>
-                        <div class="text-wrapper-31">Available for AutoShip</div>
-                        <img class="vector-9" src={store_Vector4} />
-                        <div class="frame-3"><div class="text-wrapper-32">view</div></div>
-                    </div>
-                    <div class="overlap-27">
-                        <div class="rectangle-14"></div>
-                        <img class="rectangle-11" src={store_Rectangle_141} />
-                        <div class="rectangle-15"></div>
-                        <div class="text-wrapper-26">TOP RATED</div>
-                        <div class="text-wrapper-27">exceed</div>
-                        <div class="element">4.6&nbsp;&nbsp; (36)</div>
-                        <div class="text-wrapper-28">$22.99</div>
-                        <div class="text-wrapper-29">Anxiety Relief</div>
-                        <div class="text-wrapper-30">Dog Shampoo</div>
-                        <div class="rectangle-13"></div>
-                        <div class="text-wrapper-31">Available for AutoShip</div>
-                        <img class="vector-9" src={store_Vector4} />
-                        <div class="frame-3"><div class="text-wrapper-32">view</div></div>
-                    </div>
-                    <div class="overlap-28">
-                        <div class="rectangle-14"></div>
-                        <img class="rectangle-11" src={store_Rectangle_141} />
-                        <div class="rectangle-15"></div>
-                        <div class="text-wrapper-26">TOP RATED</div>
-                        <div class="text-wrapper-27">exceed</div>
-                        <div class="element">4.6&nbsp;&nbsp; (36)</div>
-                        <div class="text-wrapper-28">$22.99</div>
-                        <div class="text-wrapper-29">Anxiety Relief</div>
-                        <div class="text-wrapper-30">Dog Shampoo</div>
-                        <div class="rectangle-13"></div>
-                        <div class="text-wrapper-31">Available for AutoShip</div>
-                        <img class="vector-9" src={store_Vector4} />
-                        <div class="frame-3"><div class="text-wrapper-32">view</div></div>
-                    </div>
-                    <div class="overlap-29">
-                        <div class="rectangle-14"></div>
-                        <img class="rectangle-11" src={store_Rectangle_141} />
-                        <div class="rectangle-15"></div>
-                        <div class="text-wrapper-26">TOP RATED</div>
-                        <div class="text-wrapper-27">exceed</div>
-                        <div class="element">4.6&nbsp;&nbsp; (36)</div>
-                        <div class="text-wrapper-28">$22.99</div>
-                        <div class="text-wrapper-29">Anxiety Relief</div>
-                        <div class="text-wrapper-30">Dog Shampoo</div>
-                        <div class="rectangle-13"></div>
-                        <div class="text-wrapper-31">Available for AutoShip</div>
-                        <img class="vector-9" src={store_Vector4} />
-                        <div class="frame-3"><div class="text-wrapper-32">view</div></div>
-                    </div>
-                    <div class="overlap-30">
-                        <div class="rectangle-14"></div>
-                        <img class="rectangle-11" src={store_Rectangle_141} />
-                        <div class="text-wrapper-27">exceed</div>
-                        <div class="element">4.6&nbsp;&nbsp; (36)</div>
-                        <div class="text-wrapper-28">$22.99</div>
-                        <div class="text-wrapper-29">Anxiety Relief</div>
-                        <div class="text-wrapper-30">Dog Shampoo</div>
-                        <div class="rectangle-13"></div>
-                        <div class="text-wrapper-31">Available for AutoShip</div>
-                        <img class="vector-9" src={store_Vector4} />
-                        <div class="frame-3"><div class="text-wrapper-32">view</div></div>
-                    </div>
+
+
+                    {/* *************************************************************************************************************************************/}
+
+
+
                     <div class="text-wrapper-34">Dog</div>
                     <div class="text-wrapper-35">Puppy Essentials</div>
                     <div class="text-wrapper-36">Kitten Essentials</div>
@@ -419,70 +339,7 @@ const Store = () => {
                     <div class="text-wrapper-43">Bird</div>
                     <div class="text-wrapper-44">Rabbit</div>
                     <div class="text-wrapper-45">Reptile</div>
-                    {/* <div class="frame-4">
-                        <div class="overlap-group-2">
-                            <div class="rectangle-10"></div>
-                            <img class="rectangle-11" src={store_Rectangle_141} />
-                            <div class="rectangle-12"></div>
-                            <div class="text-wrapper-26">NEW</div>
-                            <div class="text-wrapper-27">exceed</div>
-                            <div class="text-wrapper-28">$22.99</div>
-                            <div class="text-wrapper-29">Anxiety Relief</div>
-                            <div class="text-wrapper-30">Dog Shampoo</div>
-                            <div class="rectangle-13"></div>
-                            <div class="text-wrapper-31">Available for AutoShip</div>
-                            <img class="vector-9" src={store_Vector4} />
-                            <div class="frame-3"><div class="text-wrapper-32">view</div></div>
-                        </div>
-                    </div> */}
-                    {/* <div class="frame-5">
-                        <div class="overlap-group-2">
-                            <div class="rectangle-10"></div>
-                            <img class="rectangle-11" src={store_Rectangle_141} />
-                            <div class="rectangle-12"></div>
-                            <div class="text-wrapper-26">NEW</div>
-                            <div class="text-wrapper-27">exceed</div>
-                            <div class="text-wrapper-28">$22.99</div>
-                            <div class="text-wrapper-29">Anxiety Relief</div>
-                            <div class="text-wrapper-30">Dog Shampoo</div>
-                            <div class="rectangle-13"></div>
-                            <div class="text-wrapper-31">Available for AutoShip</div>
-                            <img class="vector-9" src={store_Vector4} />
-                            <div class="frame-3"><div class="text-wrapper-32">view</div></div>
-                        </div>
-                    </div> */}
-                    {/* <div class="frame-6">
-                        <div class="overlap-group-2">
-                            <div class="rectangle-10"></div>
-                            <img class="rectangle-11" src={store_Rectangle_141} />
-                            <div class="rectangle-12"></div>
-                            <div class="text-wrapper-26">NEW</div>
-                            <div class="text-wrapper-27">exceed</div>
-                            <div class="text-wrapper-28">$22.99</div>
-                            <div class="text-wrapper-29">Anxiety Relief</div>
-                            <div class="text-wrapper-30">Dog Shampoo</div>
-                            <div class="rectangle-13"></div>
-                            <div class="text-wrapper-31">Available for AutoShip</div>
-                            <img class="vector-9" src={store_Vector4} />
-                            <div class="frame-3"><div class="text-wrapper-32">view</div></div>
-                        </div>
-                    </div> */}
-                    {/* <div class="frame-7">
-                        <div class="overlap-group-2">
-                            <div class="rectangle-10"></div>
-                            <img class="rectangle-11" src={store_Rectangle_141} />
-                            <div class="rectangle-12"></div>
-                            <div class="text-wrapper-26">NEW</div>
-                            <div class="text-wrapper-27">exceed</div>
-                            <div class="text-wrapper-28">$22.99</div>
-                            <div class="text-wrapper-29">Anxiety Relief</div>
-                            <div class="text-wrapper-30">Dog Shampoo</div>
-                            <div class="rectangle-13"></div>
-                            <div class="text-wrapper-31">Available for AutoShip</div>
-                            <img class="vector-9" src={store_Vector4} />
-                            <div class="frame-3"><div class="text-wrapper-32">view</div></div>
-                        </div>
-                    </div> */}
+
                     <img class="ellipse" src={store_Ellipse_108} />
                     <img class="ellipse-2" src={store_Ellipse_109} />
                     <img class="ellipse-3" src={store_Ellipse_110} />
