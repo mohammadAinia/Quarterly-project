@@ -68,9 +68,10 @@ const Store = () => {
 
     useEffect(() => {
 
-        axios.get('http://localhost:3001/#/', { withCredentials: true })
+        axios.get('http://localhost:3001/storee/new_arrivle', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
+                    
                     setNewArrivalInfo(res.data.result)
                 }
                 else {
@@ -249,10 +250,10 @@ const Store = () => {
                         {NewArrivalInfo.map((user, i) => (
                             <Componets_newArrivals
                                 key={i}
-                                image={`http://localhost:3001/uploads/${user.urlImage}`}
-                                brand={user.brand}
-                                price={user.price}
-                                desc={user.desc}
+                                image={`http://localhost:3001/uploads/${user.image_url}`}
+                                brand={user.short_name}
+                                price={(user.price)+"$"}
+                                desc={user.store_in_name}
                                 href={`######/${user.id}`}
 
                             />
