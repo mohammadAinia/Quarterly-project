@@ -160,5 +160,7 @@ export {default as Componets_My_appointments_vet} from './Graduation/Componets_M
 export {default as Diagnosis} from '../Pages/Veterinarian/Diagnosis/Diagnosis'
 export {default as Store} from '../Pages/Final_Project/Store/Store'
 export {default as Componets_newArrivals} from './Graduation/Componets_newArrivals/Componets_newArrivals'
+export {default as Choose_Product} from '../Pages/Final_Project/Store/Choose_Product/Choose_Product'
+
 
 
