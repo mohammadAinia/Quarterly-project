@@ -14,21 +14,32 @@ function new_arrivle(req,res){
 else res.json({valid:false})
 }
 function sort_by_animal(req,res){
-    if(req.session.username)
- {   animal=req.body.animal
+    
+ 
+       animal=req.body.animal
     db.query('SELECT * FROM proudact WHERE animal_type LIKE ?', ['%'+animal+'%'], (error, results) => {
-    if (error) {
+    if (error) { 
             console.error(error);
         } else {
             res.json({valid:true,results})
         }
 
-    });}
-    else res.json({valid:false})
+    });
+    
 }
-function 
+function search_salary_and_category(req,res){
+    sql='select * from proudact where category=? AND price <= ?'
+    // sqll='SELECT * FROM proudact WHERE animal_type LIKE ?', ['%'+req.body.animals+'%'],'AND category like',['%'+req.body.category+'%']
+    db.query('SELECT * FROM proudact WHERE animal_type LIKE ? AND category LIKE ? and price >=?', ['%' + req.body.animals + '%', '%' + req.body.category + '%','%'+req.body.price+'%'],(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            res.json({valid:true,result})
+        }
+    })
+}
 
 module.exports={
     new_arrivle:new_arrivle,
-    sort_by_animal
+    sort_by_animal,
+    search_salary_and_category
 }
