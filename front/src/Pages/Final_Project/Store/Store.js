@@ -309,7 +309,7 @@ const Store = () => {
                             <div class="element">4.6</div>
                             <div class="element2">(36)</div>
 
-                            <div class="text-wrapper-29">Classics Red</div>
+                            {/* <div class="text-wrapper-29">Classics Red</div> */}
                             <div class="text-wrapper-33">Meat Recipe Dog Food</div>
                             <div class="rectangle-13"></div>
                             <div class="text-wrapper-31">Available for AutoShip</div>
@@ -338,7 +338,7 @@ const Store = () => {
                             <div class="text-wrapper-27">ACANA</div>
                             <div class="text-wrapper-28">$22.99</div>
                             <div class="element">4.6&nbsp;&nbsp; (36)</div>
-                            <div class="text-wrapper-29">Classics Red</div>
+                            {/* <div class="text-wrapper-29">Classics Red</div> */}
                             <div class="text-wrapper-33">Meat Recipe Dog Food</div>
                             <div class="rectangle-13"></div>
                             <div class="text-wrapper-31">Available for AutoShip</div>
