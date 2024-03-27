@@ -824,7 +824,8 @@
     height: 519px;
     display: inline-block;
     margin-right: 343px;
-    margin-left: 10px;    
+    margin-left: 10px;
+    overflow-inline:hidden;
     
 }
 
@@ -909,8 +910,9 @@
 }
 
 .store .text-wrapper-30 {
-    width:10;
-    height: auto;
+    max-width: 210px;
+    width: 220px; /* Set max-width to the width of overlap-group-2 minus the width of rectangle-10 */
+    height: 34px;
     top: 324px;
     left: 13px;
     font-family: "Poppins-Regular", Helvetica;
@@ -921,6 +923,7 @@
     letter-spacing: 0;
     line-height: normal;
     overflow: hidden;
+
 }
 
 .store .rectangle-13 {
@@ -1074,6 +1077,7 @@
 
 .store .text-wrapper-33 {
     position: absolute;
+    max-width: 210px;
     width: 207px;
     height: 27px;
     top: 324px;
@@ -1084,6 +1088,7 @@
     font-size: 18px;
     letter-spacing: 0;
     line-height: normal;
+    overflow: hidden;
 }
 
 .store .star-container {
