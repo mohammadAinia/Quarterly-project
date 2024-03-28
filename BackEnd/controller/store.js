@@ -37,7 +37,9 @@ function search_salary_and_category(req,res){
         }
     })
 }
-
+function open_proudact(req,res){
+    sql
+}
 module.exports={
     new_arrivle:new_arrivle,
     sort_by_animal,
