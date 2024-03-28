@@ -284,20 +284,21 @@ const Store = () => {
                                 brand={user.short_name}
                                 price={(user.price)+"$"}
                                 desc={user.store_in_name}
-                                href={`######/${user.id}`}
+                                href={`choose_product/${user.id}`}
 
                             />
                         ))} */}
+                        
                         <Componets_newArrivals image={store_Rectangle_141}
                             brand={"Acana"}
                             price={"$22.6"}
                             desc={"shampoo"}
-                            href={`######`} />
+                            href={`choose_product/${1}`} />
                         <Componets_newArrivals image={store_Rectangle_141}
                             brand={"Acana"}
                             price={"$22.6"}
                             desc={"shampoo"}
-                            href={`######`} />
+                            href={`choose_product/${3}`} />
                         <Componets_newArrivals image={store_Rectangle_141}
                             brand={"Acana"}
                             price={"$22.6"}
@@ -386,8 +387,6 @@ const Store = () => {
                             <img class="star-solid-5" src={store_star_solid_1} />
                         </div>
                     </div>
-
-{/* ظظ */}
 
 
                     {/* *************************************************************************************************************************************/}
