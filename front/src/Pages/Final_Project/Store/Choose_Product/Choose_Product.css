@@ -454,6 +454,41 @@
     background-color: #2b3848;
     border-radius: 4px;
 }
+.div-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.div-wrapper input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 128px;
+    height: 54px;
+    border: 2px solid #4e77b7; /* Border color */
+    border-radius: 4px; /* Make it a circle */
+    margin-right: 10px;
+    outline: none;
+}
+
+.div-wrapper input[type="radio"]:checked {
+    background-color: #4e77b7; /* Fill color when checked */
+}
+
+.div-wrapper label {
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* Optional: To visually indicate hover state */
+.div-wrapper input[type="radio"]:hover {
+    border-color: #336699; /* Change border color on hover */
+}
+
+.div-wrapper input[type="radio"]:checked:hover {
+    background-color: #336699; /* Change fill color on hover when checked */
+}
 
 .choose-a-product .text-wrapper-15 {
     width: 108px;
@@ -511,14 +546,14 @@
     position: absolute;
     width: 10px;
     height: 10px;
-    top: 20px;
+    top: 18px;
     left: 113px;
 }
 
 .choose-a-product .rectangle-4 {
     position: absolute;
-    width: 2px;
-    height: 10px;
+    width: 6px;
+    height: 16px;
     top: 0;
     left: 0;
     background-color: #4e77b7;
@@ -526,8 +561,8 @@
 
 .choose-a-product .rectangle-5 {
     position: absolute;
-    width: 2px;
-    height: 10px;
+    width: 6px;
+    height: 16px;
     top: 0;
     left: 0;
     background-color: #4e77b7;
@@ -536,9 +571,9 @@
 
 .choose-a-product .rectangle-6 {
     position: absolute;
-    width: 2px;
-    height: 10px;
-    top: 20px;
+    width: 6px;
+    height: 16px;
+    top: 18px;
     left: 20px;
     background-color: #4e77b7;
     transform: rotate(90deg);
@@ -546,9 +581,9 @@
 
 .choose-a-product .rectangle-7 {
     position: absolute;
-    width: 2px;
-    height: 10px;
-    top: 20px;
+    width: 6px;
+    height: 16px;
+    top: 18px;
     left: 22px;
     background-color: #4e77b7;
     transform: rotate(90deg);

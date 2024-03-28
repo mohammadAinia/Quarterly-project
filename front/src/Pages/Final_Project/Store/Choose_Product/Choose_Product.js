@@ -32,6 +32,27 @@ import React, { useState, useEffect } from 'react';
 
 const Choose_Product = () => {
 
+    const [selectedOption, setSelectedOption] = useState('');
+
+    // Function to handle selecting an option
+    const handleOptionChange = (event) => {
+        setSelectedOption(event.target.value);
+    };
+
+    const [number, setNumber] = useState(2);
+
+    // Function to handle incrementing the number
+    const incrementNumber = () => {
+        setNumber(prevNumber => prevNumber + 1);
+    };
+
+    // Function to handle decrementing the number
+    const decrementNumber = () => {
+        if (number > 1) {
+            setNumber(prevNumber => prevNumber - 1);
+        }
+    };
+
     const [largerImageSrc, setLargerImageSrc] = useState(null);
 
     useEffect(() => {
@@ -201,32 +222,60 @@ const Choose_Product = () => {
 
                     </div>
                     <img class="line" src="img/line-12.svg" />
-                    <div className='frame-1'>
-                        <div class="div-wrapper">
-                            <div class="text-wrapper-15">150 ml</div>
 
+
+                    <div className="frame-1">
+                        <div className="div-wrapper">
+                            <input 
+                                type="radio"
+                                id="option1"
+                                name="options"
+                                value="150 ml"
+                                checked={selectedOption === "150 ml"}
+                                onChange={handleOptionChange}
+                            />
+                            <label htmlFor="option1" className="text-wrapper-15">150 ml</label>
                         </div>
-                        <div class="div-wrapper">
-                            <div class="text-wrapper-15">80 ml</div>
-
+                        <div className="div-wrapper">
+                            <input
+                                type="radio"
+                                id="option2"
+                                name="options"
+                                value="80 ml"
+                                checked={selectedOption === "80 ml"}
+                                onChange={handleOptionChange}
+                            />
+                            <label htmlFor="option2" className="text-wrapper-15">80 ml</label>
                         </div>
-                        <div class="div-wrapper">
-                            <div class="text-wrapper-15">50 ml</div>
-
+                        <div className="div-wrapper">
+                            <input
+                                type="radio"
+                                id="option3"
+                                name="options"
+                                value="50 ml"
+                                checked={selectedOption === "50 ml"}
+                                onChange={handleOptionChange}
+                            />
+                            <label htmlFor="option3" className="text-wrapper-15">50 ml</label>
                         </div>
-
+                        
+                        
                     </div>
 
                     <div class="text-wrapper-16">$22.99</div>
-                    <div class="overlap-4">
-                        <div class="text-wrapper-17">1</div>
-                        <div class="overlap-5">
-                            <div class="rectangle-4"></div>
-                            <div class="rectangle-5"></div>
+
+
+                    <div className="overlap-4">
+                        <div className="text-wrapper-17">{number}</div>
+                        <div className="overlap-5" onClick={incrementNumber}>
+                            <div className="rectangle-4"></div>
+                            <div className="rectangle-5" ></div>
                         </div>
-                        <div class="rectangle-6"></div>
-                        <div class="rectangle-7"></div>
+                        <div className="rectangle-6" onClick={decrementNumber}></div>
+                        <div className="rectangle-7" onClick={decrementNumber}></div>
                     </div>
+
+
                     <div class="overlap-6"><div class="text-wrapper-18">Add to Cart</div></div>
                     <div class="overlap-7">
                         <div class="img-wrapper"><img class="vector-3" src={store2_Vector2} /></div>
