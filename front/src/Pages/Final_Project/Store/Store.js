@@ -277,7 +277,7 @@ const Store = () => {
                     {/*   New Arrivals    هنا المنتجات الواصلة جديد */}
                     <div class="frame-2" ref={frameRef}>
 
-                        {/* {NewArrivalInfo.map((user, i) => (
+                        {NewArrivalInfo.map((user, i) => (
                             <Componets_newArrivals
                                 key={i}
                                 image={`http://localhost:3001/uploads/${user.image_url}`}
@@ -287,7 +287,7 @@ const Store = () => {
                                 href={`choose_product/${user.id}`}
 
                             />
-                        ))} */}
+                        ))}
                         
                         <Componets_newArrivals image={store_Rectangle_141}
                             brand={"Acana"}
