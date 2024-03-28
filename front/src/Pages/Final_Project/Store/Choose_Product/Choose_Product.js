@@ -75,6 +75,16 @@ const Choose_Product = () => {
 
     //********************************************************************************* */
 
+    function StarRating({ rating }) {
+        const filledStars = Math.floor(rating);
+        const stars = [];
+        for (let i = 0; i < 5; i++) {
+            if (i < filledStars) {
+                stars.push(<img key={i} className="star-solid" src={store_star_solid_1} alt="Filled Star" />);
+            }
+        }
+        return <div>{stars}</div>; // Return the array of stars wrapped in a div
+    }
 
 
     return (
@@ -186,8 +196,27 @@ const Choose_Product = () => {
 
                     <div class="element">(36)</div>
                     <img class="star-solid" src={store2_star_solid_1} />
+                    <div class="star-container">
+                        <StarRating rating={2} />
+
+                    </div>
                     <img class="line" src="img/line-12.svg" />
-                    <div class="div-wrapper"><div class="text-wrapper-15">150 ml</div></div>
+                    <div className='frame-1'>
+                        <div class="div-wrapper">
+                            <div class="text-wrapper-15">150 ml</div>
+
+                        </div>
+                        <div class="div-wrapper">
+                            <div class="text-wrapper-15">80 ml</div>
+
+                        </div>
+                        <div class="div-wrapper">
+                            <div class="text-wrapper-15">50 ml</div>
+
+                        </div>
+
+                    </div>
+
                     <div class="text-wrapper-16">$22.99</div>
                     <div class="overlap-4">
                         <div class="text-wrapper-17">1</div>
