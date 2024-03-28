@@ -14,4 +14,4 @@ const connection = mysql.createConnection({
         console.log(err)
     }
   })
-  module.exports = connection
+  module.exports = connection 
