@@ -16,12 +16,14 @@ import store_Vector4 from '../../../../Assert/Images/store_Vector4.svg'
 import store_Vector_61 from '../../../../Assert/Images/store_Vector_61.png'
 import store_Vector_60 from '../../../../Assert/Images/store_Vector_60.png'
 import store2_Line_12 from '../../../../Assert/Images/store2_Line_12.png'
+import store_Rectangle_168 from '../../../../Assert/Images/store_Rectangle_168.png'
 
 
 
 
 
 
+import React, { useState, useEffect } from 'react';
 
 
 
@@ -29,6 +31,52 @@ import store2_Line_12 from '../../../../Assert/Images/store2_Line_12.png'
 
 
 const Choose_Product = () => {
+
+    const [largerImageSrc, setLargerImageSrc] = useState(null);
+
+    useEffect(() => {
+        // Set the initial larger image source when the component mounts
+        //ضع هنا تابع بجيب صورة المنتج كتهيئة
+        setLargerImageSrc(store2_Rectangle_238);
+    }, []);
+
+    // Click handler for thumbnail image
+    const handleThumbnailClick = (src) => {
+        // Update the source of the larger image
+        setLargerImageSrc(src);
+    };
+
+    //********************************************************************************* */
+
+
+    // (هنا الكود الخاص بالزووم (لاتكتر غلبه فيهن لان مستواهن اعلى من تفكيرك
+
+    const [showZoomBox, setShowZoomBox] = useState(false);
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+    // State to manage the visibility of the zoom box
+
+    const handleMouseEnter = () => {
+        setShowZoomBox(true);
+    };
+
+    const handleMouseMove = (event) => {
+        const { left, top, width, height } = event.target.getBoundingClientRect();
+        const mouseX = event.clientX - left;
+        const mouseY = event.clientY - top;
+        const relativeX = (mouseX / width) * 100;
+        const relativeY = (mouseY / height) * 100;
+        setMousePosition({ x: relativeX, y: relativeY });
+    };
+
+    const handleMouseLeave = () => {
+        setShowZoomBox(false);
+    };
+
+    //********************************************************************************* */
+
+
+
     return (
 
         <>
@@ -68,8 +116,74 @@ const Choose_Product = () => {
                     <div class="text-wrapper-13">Ingredients</div>
                     <div class="ratings-reviews">Ratings &amp; Reviews</div>
                     <div class="text-wrapper-14">Write a review</div>
-                    <img class="rectangle-2" src={store2_Rectangle_237} />
-                    <img class="rectangle-3" src={store2_Rectangle_238} />
+
+
+                    {/* *******************************************************************************************************8 */}
+
+
+
+                    {/* صور المنتج المصغرة */}
+                    <div class="frame-3_me2">
+
+                        <img
+                            className="rectangle-2"
+                            src={store_Rectangle_168}
+                            alt="Thumbnail Image"
+                            onClick={() => handleThumbnailClick(store_Rectangle_168)}
+                        />
+                        <img
+                            className="rectangle-2"
+                            src={store2_Rectangle_238}
+                            alt="Thumbnail Image"
+                            onClick={() => handleThumbnailClick(store2_Rectangle_238)}
+                        />
+
+                    </div>
+
+                    {/* صور المنتج الكبيرة */}
+                    {largerImageSrc && (
+                        <div
+                            className="rectangle-3"
+                            style={{ position: 'relative' }}
+                            onMouseEnter={handleMouseEnter}
+                            onMouseMove={handleMouseMove}
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            <img
+                                src={largerImageSrc}
+                                alt="Larger Image"
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    objectFit: 'contain',
+                                }}
+                            />
+                            {showZoomBox && (
+                                <div
+                                    className="zoom-box"
+                                    style={{
+                                        position: 'absolute',
+                                        width: '200px',
+                                        height: '200px',
+                                        border: '1px solid black',
+                                        borderRadius: 100,
+                                        pointerEvents: 'none',
+                                        left: `calc(${mousePosition.x}% - 100px)`,
+                                        top: `calc(${mousePosition.y}% - 100px)`,
+                                        backgroundImage: `url(${largerImageSrc})`,
+                                        backgroundSize: '500% 500%',
+                                        backgroundPosition: `${mousePosition.x}% ${mousePosition.y}%`,
+                                    }}
+                                />
+                            )}
+                        </div>
+                    )}
+
+
+                    {/* *******************************************************************************************************8 */}
+
+
+
                     <div class="element">(36)</div>
                     <img class="star-solid" src={store2_star_solid_1} />
                     <img class="line" src="img/line-12.svg" />
