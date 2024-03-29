@@ -23,7 +23,11 @@ import store_Rectangle_168 from '../../../../Assert/Images/store_Rectangle_168.p
 
 
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+
+
 
 
 
@@ -32,6 +36,50 @@ import React, { useState, useEffect } from 'react';
 
 const Choose_Product = () => {
 
+    //تهيئة الصورة الكبيرة
+    const [largerImageSrc, setLargerImageSrc] = useState(null);
+
+
+    //توابع جلب معلومات من الباك
+
+    const [Product_Info, setProduct_Info] = useState([])
+
+    const navigate = useNavigate()
+
+    useEffect(() => {
+
+        axios.get('http://localhost:3001/#/#', { withCredentials: true })
+            .then(res => {
+                if (res.data.valid) {
+
+                    setProduct_Info(res.data.result)
+                    //هنا عطيني صورة المنتج
+                    setLargerImageSrc(res.data.result2);
+
+
+
+                }
+                else {
+                    navigate('/login')
+                }
+            })
+            .catch(err => { console.log(err) })
+
+    },
+        [])
+
+
+
+
+
+
+
+
+    //اختبار اذا في وزن ام لا
+    const variable = "null";
+
+
+    // اختيار نجوم التقييم
     const [selectedStar, setSelectedStar] = useState(null);
 
     const handleRadioChange = (value) => {
@@ -50,7 +98,9 @@ const Choose_Product = () => {
         setSelectedOption(event.target.value);
     };
 
-    const [number, setNumber] = useState(2);
+    //اضافة ونقصان الكمية المطلوبة
+    
+    const [number, setNumber] = useState(1);
 
     // Function to handle incrementing the number
     const incrementNumber = () => {
@@ -64,13 +114,8 @@ const Choose_Product = () => {
         }
     };
 
-    const [largerImageSrc, setLargerImageSrc] = useState(null);
 
-    useEffect(() => {
-        // Set the initial larger image source when the component mounts
-        //ضع هنا تابع بجيب صورة المنتج كتهيئة
-        setLargerImageSrc(store2_Rectangle_238);
-    }, []);
+
 
     // Click handler for thumbnail image
     const handleThumbnailClick = (src) => {
@@ -107,6 +152,8 @@ const Choose_Product = () => {
 
     //********************************************************************************* */
 
+
+    //اختبار كم نجمة اظهر
     function StarRating({ rating }) {
         const filledStars = Math.floor(rating);
         const stars = [];
@@ -127,6 +174,28 @@ const Choose_Product = () => {
         }
         return <div>{stars}</div>; // Return the array of stars wrapped in a div
     }
+
+
+    //اسهم التنقل بالصور الصغيرة
+
+    const frameRef = useRef(null);
+
+    const scrollBottom = () => {
+        if (frameRef.current) {
+            frameRef.current.scrollBy({
+                top: 300, // Adjust as needed to control the scroll distance
+                behavior: 'smooth' // Add smooth scrolling effect
+            });
+        }
+    };
+    const scrollTop = () => {
+        if (frameRef.current) {
+            frameRef.current.scrollBy({
+                top: -300, // Adjust as needed to control the scroll distance
+                behavior: 'smooth' // Add smooth scrolling effect
+            });
+        }
+    };
 
 
     return (
@@ -163,7 +232,13 @@ const Choose_Product = () => {
                         <p class="p">Buy online same day pick up in one of our 600+ stores! or free shipping over</p>
                         <div class="text-wrapper-10">View Details</div>
                     </div>
-                    <p class="text-wrapper-11">exced Freshly Clean Dog Shampoo</p>
+
+                    {/* تفاصيل المنتج بالبداية اول الصفحة */}
+                    <p class="text-wrapper-11">{Product_Info.Details}</p>
+
+
+
+
                     <div class="text-wrapper-12">Product Description</div>
                     <div class="text-wrapper-13">Ingredients</div>
                     <div class="ratings-reviews">Ratings &amp; Reviews</div>
@@ -175,25 +250,25 @@ const Choose_Product = () => {
 
 
                     {/* صور المنتج المصغرة */}
-                    <div class="frame-3_me2">
+                    <div class="frame-3_me2" ref={frameRef}>
 
-                        <img
-                            className="rectangle-2"
-                            src={store_Rectangle_168}
-                            alt="Thumbnail Image"
-                            onClick={() => handleThumbnailClick(store_Rectangle_168)}
-                        />
-                        <img
-                            className="rectangle-2"
-                            src={store2_Rectangle_238}
-                            alt="Thumbnail Image"
-                            onClick={() => handleThumbnailClick(store2_Rectangle_238)}
-                        />
+
+                        {Product_Info.map((user, i) => (
+                            <img
+                                className="rectangle-2"
+                                src={user.img}
+                                alt="Thumbnail Image"
+                                onClick={() => handleThumbnailClick(user.img)}
+                            />
+
+                        ))}
+
+
 
                     </div>
                     {/* اسهم التنقل بين صور المنتج الصغيرة */}
-                    <img class="vector-5" src={store2_Vector_60} />
-                    <img class="vector-6" src={store2_Vector_61} />
+                    <img class="vector-5" src={store2_Vector_60} onClick={scrollBottom} />
+                    <img class="vector-6" src={store2_Vector_61} onClick={scrollTop} />
 
                     {/* صور المنتج الكبيرة */}
                     {largerImageSrc && (
@@ -239,10 +314,10 @@ const Choose_Product = () => {
 
 
                     {/* قسم عدد تعليقات الكلية على المنتج ومتوسط نجومه */}
-                    <div class="element">(36)</div>
+                    <div class="element">({Product_Info.comments})</div>
                     <img class="star-solid" src={store2_star_solid_1} />
                     <div class="star-container">
-                        <StarRating rating={2} />
+                        <StarRating rating={Product_Info.Avg_star} />
 
                     </div>
                     <img class="line" src="img/line-12.svg" />
@@ -251,45 +326,25 @@ const Choose_Product = () => {
 
                     {/* قسم اختيار حجم العبوة */}
                     <div className="frame-1">
-                        <div className="div-wrapper">
-                            <input
-                                type="radio"
-                                id="option1"
-                                name="options"
-                                value="150 ml"
-                                checked={selectedOption === "150 ml"}
-                                onChange={handleOptionChange}
-                            />
-                            <label htmlFor="option1" className="text-wrapper-15">150 ml</label>
-                        </div>
+                        {Product_Info.IsWeight && (
+                            <div className="div-wrapper">
+                                <input
+                                    type="radio"
+                                    id="option1"
+                                    name="options"
+                                    value="150 ml"
+                                    checked={selectedOption === "150 ml"}
+                                    onChange={handleOptionChange}
+                                />
+                                <label htmlFor="option1" className="text-wrapper-15">150 ml</label>
+                            </div>
+                        )}
 
-                        <div className="div-wrapper">
-                            <input
-                                type="radio"
-                                id="option2"
-                                name="options"
-                                value="80 ml"
-                                checked={selectedOption === "80 ml"}
-                                onChange={handleOptionChange}
-                            />
-                            <label htmlFor="option2" className="text-wrapper-15">80 ml</label>
-                        </div>
-                        <div className="div-wrapper">
-                            <input
-                                type="radio"
-                                id="option3"
-                                name="options"
-                                value="50 ml"
-                                checked={selectedOption === "50 ml"}
-                                onChange={handleOptionChange}
-                            />
-                            <label htmlFor="option3" className="text-wrapper-15">50 ml</label>
-                        </div>
                     </div>
 
 
                     {/* هنا سعر المنتج */}
-                    <div class="text-wrapper-16">$22.99</div>
+                    <div class="text-wrapper-16">{Product_Info.Price}</div>
 
 
                     {/* قسم تحديد كم حبة للاضافة الى السلة */}
@@ -473,7 +528,7 @@ const Choose_Product = () => {
                                         <StarRating2 rating={8} />
 
                                     </div>
-                     
+
                                 </div>
                             </div>
                         </div>
@@ -592,3 +647,10 @@ const Choose_Product = () => {
 }
 
 export default Choose_Product
+
+
+// useEffect(() => {
+//     // Set the initial larger image source when the component mounts
+//     //ضع هنا تابع بجيب صورة المنتج كتهيئة
+//     setLargerImageSrc(store2_Rectangle_238);
+// }, []);
