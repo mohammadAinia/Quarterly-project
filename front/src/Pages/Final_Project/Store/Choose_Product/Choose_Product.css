@@ -327,7 +327,7 @@
     position: absolute;
     width: 287px;
     height: 47px;
-    top: 471px;
+    top: 481px;
     left: 1372px;
     font-family: "Inder-Regular", Helvetica;
     font-weight: 400;
@@ -336,10 +336,12 @@
     letter-spacing: 0;
     line-height: normal;
 }
+
 .choose-a-product .frame-3_me2 {
     width: 100%;
     height: 560px;
-    max-width: calc(100% - 1900px); /* Adjust as needed */
+    max-width: calc(100% - 1900px);
+    /* Adjust as needed */
     overflow-x: hidden;
     overflow-y: auto;
     white-space: nowrap;
@@ -347,19 +349,24 @@
     top: 405px;
     left: 220px;
 }
+
 .choose-a-product .frame-3_me2::-webkit-scrollbar {
-    width: 10px; /* Set the width of the scrollbar */
+    width: 10px;
+    /* Set the width of the scrollbar */
     height: 12px;
 }
 
 .choose-a-product .frame-3_me2::-webkit-scrollbar-thumb {
-    background-color: #fecc02; /* Set the color of the scrollbar thumb */
-    border-radius: 5px; /* Optional: Round the corners of the scrollbar thumb */
+    background-color: #fecc02;
+    /* Set the color of the scrollbar thumb */
+    border-radius: 5px;
+    /* Optional: Round the corners of the scrollbar thumb */
 
 }
 
 .choose-a-product .frame-3_me2::-webkit-scrollbar-track {
-    background-color: transparent; /* Set the color of the scrollbar track */
+    background-color: transparent;
+    /* Set the color of the scrollbar track */
 }
 
 .choose-a-product .rectangle-2 {
@@ -368,8 +375,8 @@
     width: 128px;
     height: 128px;
     margin-top: 10px;
-    border: 3px solid #2B3848; 
-    box-sizing: border-box; 
+    border: 3px solid #2B3848;
+    box-sizing: border-box;
     border-radius: 14px;
 
 }
@@ -395,12 +402,19 @@
     line-height: normal;
 }
 
-.choose-a-product .star-solid {
+.choose-a-product .star-container {
+    /* Adjust the container to allow inline display */
+    display: inline-block;
     position: absolute;
-    width: 21px;
-    height: 18px;
     top: 487px;
     left: 1108px;
+}
+
+.choose-a-product .star-solid {
+    /* position: absolute; */
+    width: 21px;
+    height: 18px;
+
 }
 
 .choose-a-product .line {
@@ -411,14 +425,90 @@
     left: 1106px;
 }
 
-.choose-a-product .div-wrapper {
+.choose-a-product .frame-1 {
     position: absolute;
-    width: 128px;
-    height: 54px;
+    max-width: calc(100% - 1350px);
+    /* Adjust as needed */
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    /* width: 100%;
+    height: 645px; */
     top: 556px;
     left: 1107px;
+
+}
+
+.choose-a-product .frame-1::-webkit-scrollbar {
+    width: 10px;
+    /* Set the width of the scrollbar */
+    height: 12px;
+}
+
+.choose-a-product .frame-1::-webkit-scrollbar-thumb {
+    background-color: #fecc02;
+    /* Set the color of the scrollbar thumb */
+    border-radius: 5px;
+    /* Optional: Round the corners of the scrollbar thumb */
+
+}
+
+.choose-a-product .frame-1::-webkit-scrollbar-track {
+    background-color: transparent;
+    /* Set the color of the scrollbar track */
+}
+
+.choose-a-product .div-wrapper {
+    position: relative;
+    width: 128px;
+    height: 54px;
+    flex-wrap: nowrap;
+    display: inline-block;
+    margin-left: 10px;
+
     background-color: #2b3848;
     border-radius: 4px;
+}
+
+.div-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.div-wrapper input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 128px;
+    height: 54px;
+    border: 2px solid #4e77b7;
+    /* Border color */
+    border-radius: 4px;
+    /* Make it a circle */
+    margin-right: 10px;
+    outline: none;
+}
+
+.div-wrapper input[type="radio"]:checked {
+    background-color: #4e77b7;
+    /* Fill color when checked */
+}
+
+.div-wrapper label {
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* Optional: To visually indicate hover state */
+.div-wrapper input[type="radio"]:hover {
+    border-color: #336699;
+    /* Change border color on hover */
+}
+
+.div-wrapper input[type="radio"]:checked:hover {
+    background-color: #336699;
+    /* Change fill color on hover when checked */
 }
 
 .choose-a-product .text-wrapper-15 {
@@ -439,7 +529,7 @@
 
 .choose-a-product .text-wrapper-16 {
     height: 68px;
-    top: 696px;
+    top: 707px;
     left: 1107px;
     font-size: 45px;
     position: absolute;
@@ -462,11 +552,11 @@
 
 .choose-a-product .text-wrapper-17 {
     height: 23px;
-    top: 14px;
+    top: 16px;
     left: 65px;
     font-family: "Poppins-Medium", Helvetica;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 20px;
     position: absolute;
     color: #000000;
     letter-spacing: 0;
@@ -477,14 +567,14 @@
     position: absolute;
     width: 10px;
     height: 10px;
-    top: 20px;
+    top: 18px;
     left: 113px;
 }
 
 .choose-a-product .rectangle-4 {
     position: absolute;
-    width: 2px;
-    height: 10px;
+    width: 6px;
+    height: 16px;
     top: 0;
     left: 0;
     background-color: #4e77b7;
@@ -492,8 +582,8 @@
 
 .choose-a-product .rectangle-5 {
     position: absolute;
-    width: 2px;
-    height: 10px;
+    width: 6px;
+    height: 16px;
     top: 0;
     left: 0;
     background-color: #4e77b7;
@@ -502,9 +592,9 @@
 
 .choose-a-product .rectangle-6 {
     position: absolute;
-    width: 2px;
-    height: 10px;
-    top: 20px;
+    width: 6px;
+    height: 16px;
+    top: 18px;
     left: 20px;
     background-color: #4e77b7;
     transform: rotate(90deg);
@@ -512,9 +602,9 @@
 
 .choose-a-product .rectangle-7 {
     position: absolute;
-    width: 2px;
-    height: 10px;
-    top: 20px;
+    width: 6px;
+    height: 16px;
+    top: 18px;
     left: 22px;
     background-color: #4e77b7;
     transform: rotate(90deg);
@@ -612,7 +702,7 @@
     position: absolute;
     width: 22px;
     height: 22px;
-    top: 12px;
+    top: 0px;
     left: 0;
 }
 
@@ -649,27 +739,51 @@
 .choose-a-product .overlap-8 {
     position: absolute;
     width: 1596px;
-    height: 443px;
+    height: 400px;
     top: 1355px;
     left: 220px;
+    max-width: calc(100% - 00px);
+    /* Adjust as needed */
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* white-space: nowrap; */
     background-color: #f7f7f7;
     border-top-width: 3px;
     border-top-style: solid;
     border-color: #fecc02;
 }
 
+.choose-a-product .overlap-8::-webkit-scrollbar {
+    width: 4px;
+    /* Set the width of the scrollbar */
+    height: 8px;
+}
+
+.choose-a-product .overlap-8::-webkit-scrollbar-thumb {
+    background-color: #fecc02;
+    /* Set the color of the scrollbar thumb */
+    border-radius: 5px;
+    /* Optional: Round the corners of the scrollbar thumb */
+
+}
+
+.choose-a-product .overlap-8::-webkit-scrollbar-track {
+    background-color: transparent;
+    /* Set the color of the scrollbar track */
+}
+
 .choose-a-product .overlap-9 {
-    position: absolute;
+    /* position: absolute; */
     width: 1481px;
-    height: 284px;
+    /* height: 284px; */
     top: 35px;
     left: 34px;
 }
 
 .choose-a-product .exceed-freshly-clean {
-    position: absolute;
-    width: 1481px;
-    height: 94px;
+    /* position: absolute; */
+    width: 100%;
+    /* height: 94px; */
     top: 0;
     left: 0;
     font-family: "Poppins-ExtraLight", Helvetica;
@@ -678,14 +792,18 @@
     font-size: 17px;
     letter-spacing: 0;
     line-height: normal;
+    margin-top: 35px;
+    margin-left: 25px;
 }
 
 .choose-a-product .text-wrapper-22 {
-    position: absolute;
+    position: relative;
     width: 199px;
     height: 43px;
-    top: 90px;
-    left: 2px;
+    /* top: 90px;
+    left: 2px; */
+    margin-top: 40px;
+    margin-left: 25px;
     font-family: "Poppins-Medium", Helvetica;
     font-weight: 500;
     color: #000000;
@@ -695,10 +813,10 @@
 }
 
 .choose-a-product .text-wrapper-23 {
-    position: absolute;
+    position: relative;
     width: 493px;
-    height: 57px;
-    top: 128px;
+    height: 33px;
+    /* top: 128px; */
     left: 7px;
     font-family: "Poppins-ExtraLight", Helvetica;
     font-weight: 200;
@@ -706,13 +824,14 @@
     font-size: 17px;
     letter-spacing: 0;
     line-height: normal;
+    margin-left: 30px;
 }
 
 .choose-a-product .text-wrapper-24 {
-    top: 161px;
-    position: absolute;
+    /* top: 161px; */
+    position: relative;
     width: 493px;
-    height: 57px;
+    height: 33px;
     left: 7px;
     font-family: "Poppins-ExtraLight", Helvetica;
     font-weight: 200;
@@ -720,13 +839,15 @@
     font-size: 17px;
     letter-spacing: 0;
     line-height: normal;
+    margin-left: 30px;
+
 }
 
 .choose-a-product .text-wrapper-25 {
-    top: 194px;
-    position: absolute;
+    /* top: 194px; */
+    position: relative;
     width: 493px;
-    height: 57px;
+    height: 33px;
     left: 7px;
     font-family: "Poppins-ExtraLight", Helvetica;
     font-weight: 200;
@@ -734,13 +855,15 @@
     font-size: 17px;
     letter-spacing: 0;
     line-height: normal;
+    margin-left: 30px;
+
 }
 
 .choose-a-product .text-wrapper-26 {
-    top: 227px;
-    position: absolute;
+    /* top: 227px; */
+    position: relative;
     width: 493px;
-    height: 57px;
+    height: 33px;
     left: 7px;
     font-family: "Poppins-ExtraLight", Helvetica;
     font-weight: 200;
@@ -748,32 +871,36 @@
     font-size: 17px;
     letter-spacing: 0;
     line-height: normal;
+    margin-left: 30px;
+
 }
 
 .choose-a-product .overlap-10 {
-    position: absolute;
+    /* position: absolute; */
     width: 1497px;
-    height: 111px;
+    /* height: 111px; */
     top: 319px;
     left: 36px;
 }
 
 .choose-a-product .wet-coat-thoroughly {
-    position: absolute;
+    position: relative;
     width: 1481px;
     height: 94px;
-    top: 17px;
-    left: 16px;
+    top: 75px;
+    left: 6px;
     font-family: "Poppins-ExtraLight", Helvetica;
     font-weight: 200;
     color: #000000;
     font-size: 17px;
     letter-spacing: 0;
     line-height: normal;
+    margin-left: 35px;
+
 }
 
 .choose-a-product .text-wrapper-27 {
-    position: absolute;
+    position: relative;
     width: 47px;
     height: 43px;
     top: 0;
@@ -784,6 +911,9 @@
     font-size: 19px;
     letter-spacing: 0;
     line-height: normal;
+    margin-top: -60px;
+    margin-left: 25px;
+    /* margin-bottom: -90px; */
 }
 
 .choose-a-product .overlap-11 {
@@ -792,17 +922,40 @@
     height: 180px;
     top: 1902px;
     left: 220px;
+    max-width: calc(100% - 00px);
+    /* Adjust as needed */
+    overflow-x: hidden;
+    overflow-y: auto;
     background-color: #f7f7f7;
     border-top-width: 3px;
     border-top-style: solid;
     border-color: #fecc02;
 }
 
+.choose-a-product .overlap-11::-webkit-scrollbar {
+    width: 4px;
+    /* Set the width of the scrollbar */
+    height: 8px;
+}
+
+.choose-a-product .overlap-11::-webkit-scrollbar-thumb {
+    background-color: #fecc02;
+    /* Set the color of the scrollbar thumb */
+    border-radius: 5px;
+    /* Optional: Round the corners of the scrollbar thumb */
+
+}
+
+.choose-a-product .overlap-11::-webkit-scrollbar-track {
+    background-color: transparent;
+    /* Set the color of the scrollbar track */
+}
+
 .choose-a-product .text-wrapper-28 {
-    position: absolute;
+    position: relative;
     width: 1481px;
     height: 94px;
-    top: 32px;
+    top: 52px;
     left: 31px;
     font-family: "Poppins-ExtraLight", Helvetica;
     font-weight: 200;
@@ -818,20 +971,85 @@
     height: 771px;
     top: 2186px;
     left: 220px;
+    max-width: calc(100% - 00px);
+    overflow-x: hidden;
+    overflow-y: auto;
     background-color: #f7f7f7;
     border-top-width: 3px;
     border-top-style: solid;
     border-color: #fecc02;
 }
 
-.choose-a-product .overlap-13 {
+.choose-a-product .frame-2_me {
     position: absolute;
+    /* max-width: calc(100% - 1050px); */
+    /* Adjust as needed */
+    /* overflow-x: auto;
+    overflow-y: hidden; */
+    white-space: nowrap;
+    /* width: 100%;
+    height: 645px; */
+    top: 91px;
+    left: 1037px;
+    height: auto;
+
+}
+
+.choose-a-product .overlap-13 {
+    position: relative;
     width: 78px;
     height: 71px;
-    top: 91px;
-    left: 1047px;
+    flex-wrap: nowrap;
+    display: inline-block;
+    margin-left: 10px;
+
     border-radius: 6px;
 }
+
+.overlap-13 input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: absolute;
+    width: 100%;
+    /* Make the radio cover the entire area */
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    /* Show pointer on hover */
+}
+
+.overlap-13 .star-regular {
+    position: relative;
+    /* Ensure proper stacking */
+    z-index: 1;
+    /* Ensure star image is above radio */
+}
+
+.overlap-13 input[type="radio"]:checked+label .rectangle-8 {
+    background-color: #fecc02;
+}
+
+.overlap-13 label {
+    display: block;
+    /* Ensure the label covers the entire area */
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    /* Show pointer on hover */
+}
+
+/* Optional: To visually indicate hover state */
+.overlap-13 input[type="radio"]:hover {
+    border-color: #fecc02;
+    /* Change border color on hover */
+}
+
+.overlap-13 input[type="radio"]:checked:hover {
+    background-color: #fecc02;
+    /* Change fill color on hover when checked */
+}
+
 
 .choose-a-product .star-regular {
     position: absolute;
@@ -850,6 +1068,9 @@
     border-radius: 6px;
     border: 1px solid;
     border-color: #243746;
+    box-sizing: border-box;
+    /* Ensure the border is included in the size */
+
 }
 
 .choose-a-product .overlap-14 {
@@ -861,6 +1082,50 @@
     border-radius: 6px;
 }
 
+.overlap-14 input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: absolute;
+    width: 100%;
+    /* Make the radio cover the entire area */
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    /* Show pointer on hover */
+}
+
+.overlap-14 .star-regular {
+    position: relative;
+    /* Ensure proper stacking */
+    z-index: 1;
+    /* Ensure star image is above radio */
+}
+
+.overlap-14 input[type="radio"]:checked+label .rectangle-8 {
+    background-color: #4e77b7;
+}
+
+.overlap-14 label {
+    display: block;
+    /* Ensure the label covers the entire area */
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    /* Show pointer on hover */
+}
+
+/* Optional: To visually indicate hover state */
+.overlap-14 input[type="radio"]:hover {
+    border-color: #336699;
+    /* Change border color on hover */
+}
+
+.overlap-14 input[type="radio"]:checked:hover {
+    background-color: #336699;
+    /* Change fill color on hover when checked */
+}
+
 .choose-a-product .overlap-15 {
     position: absolute;
     width: 78px;
@@ -868,6 +1133,49 @@
     top: 91px;
     left: 1217px;
     border-radius: 6px;
+}
+.overlap-15 input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: absolute;
+    width: 100%;
+    /* Make the radio cover the entire area */
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    /* Show pointer on hover */
+}
+
+.overlap-15 .star-regular {
+    position: relative;
+    /* Ensure proper stacking */
+    z-index: 1;
+    /* Ensure star image is above radio */
+}
+
+.overlap-15 input[type="radio"]:checked+label .rectangle-8 {
+    background-color: #4e77b7;
+}
+
+.overlap-15 label {
+    display: block;
+    /* Ensure the label covers the entire area */
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    /* Show pointer on hover */
+}
+
+/* Optional: To visually indicate hover state */
+.overlap-15 input[type="radio"]:hover {
+    border-color: #336699;
+    /* Change border color on hover */
+}
+
+.overlap-15 input[type="radio"]:checked:hover {
+    background-color: #336699;
+    /* Change fill color on hover when checked */
 }
 
 .choose-a-product .overlap-16 {
@@ -879,6 +1187,54 @@
     border-radius: 6px;
 }
 
+.overlap-16 input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: absolute;
+    width: 100%;
+    /* Make the radio cover the entire area */
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    /* Show pointer on hover */
+}
+
+.overlap-16 .star-regular {
+    position: relative;
+    /* Ensure proper stacking */
+    z-index: 1;
+    /* Ensure star image is above radio */
+}
+
+.overlap-16 input[type="radio"]:checked+label .rectangle-8 {
+    background-color: #4e77b7;
+}
+
+.overlap-16 label {
+    display: block;
+    /* Ensure the label covers the entire area */
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    /* Show pointer on hover */
+}
+
+/* Optional: To visually indicate hover state */
+.overlap-16 input[type="radio"]:hover {
+    border-color: #336699;
+    /* Change border color on hover */
+}
+
+.overlap-16 input[type="radio"]:checked:hover {
+    background-color: #336699;
+    /* Change fill color on hover when checked */
+}
+
+
+
+
+
 .choose-a-product .overlap-17 {
     position: absolute;
     width: 78px;
@@ -888,19 +1244,85 @@
     border-radius: 6px;
 }
 
-.choose-a-product .overlap-18 {
+.overlap-17 input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     position: absolute;
+    width: 100%;
+    /* Make the radio cover the entire area */
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    /* Show pointer on hover */
+}
+
+.overlap-17 .star-regular {
+    position: relative;
+    /* Ensure proper stacking */
+    z-index: 1;
+    /* Ensure star image is above radio */
+}
+
+.overlap-17 input[type="radio"]:checked+label .rectangle-8 {
+    background-color: #4e77b7;
+}
+
+.overlap-17 label {
+    display: block;
+    /* Ensure the label covers the entire area */
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    /* Show pointer on hover */
+}
+
+/* Optional: To visually indicate hover state */
+.overlap-17 input[type="checkbox"]:hover {
+    border-color: #336699;
+    /* Change border color on hover */
+}
+
+.overlap-17 input[type="checkbox"]:checked:hover {
+    background-color: #336699;
+    /* Change fill color on hover when checked */
+}
+
+.choose-a-product .overlap-18 {
+    position: relative;
     width: 1481px;
     height: 164px;
-    top: 539px;
+    /* top: 539px;
+    left: 34px; */
+    display: flex;
+    flex-direction: column;
+    top: 500px;
     left: 34px;
+}
+.choose-a-product .overlap-12::-webkit-scrollbar {
+    width: 5px;
+    /* Set the width of the scrollbar */
+    height: 12px;
+}
+
+.choose-a-product .overlap-12::-webkit-scrollbar-thumb {
+    background-color: #fecc02;
+    /* Set the color of the scrollbar thumb */
+    border-radius: 5px;
+    /* Optional: Round the corners of the scrollbar thumb */
+
+}
+
+.choose-a-product .overlap-12::-webkit-scrollbar-track {
+    background-color: transparent;
+    /* Set the color of the scrollbar track */
 }
 
 .choose-a-product .text-wrapper-29 {
-    position: absolute;
+    position: relative;
     width: 1481px;
     height: 94px;
-    top: 70px;
+    top: 80px;
     left: 0;
     font-family: "Poppins-ExtraLight", Helvetica;
     font-weight: 200;
@@ -914,7 +1336,7 @@
     position: absolute;
     width: 199px;
     height: 43px;
-    top: 46px;
+    top: 50px;
     left: 2px;
     font-family: "Poppins-ExtraLight", Helvetica;
     font-weight: 200;
@@ -941,7 +1363,7 @@
     position: absolute;
     width: 199px;
     height: 43px;
-    top: 17px;
+    top: 25px;
     left: 0;
     font-family: "Poppins-Regular", Helvetica;
     font-weight: 400;
@@ -950,7 +1372,14 @@
     letter-spacing: 0;
     line-height: normal;
 }
-
+.choose-a-product .star-container3 {
+    /* Adjust the container to allow inline display */
+    display: inline-block;
+    position: absolute;
+    /* top: 14px;
+    left: 110px; */
+    /* width: 130px; */
+}
 .choose-a-product .vector-7 {
     position: absolute;
     width: 19px;
@@ -1065,19 +1494,20 @@
 
 .choose-a-product .rectangle-9 {
     position: absolute;
-    width: 418px;
+    width: 430px;
     height: 101px;
     top: 0;
     left: 0;
     border-radius: 6px;
     border: 1px solid;
     border-color: #243746;
+    background: none;
 }
 
 .choose-a-product .text-wrapper-37 {
     width: 61px;
     height: 43px;
-    top: 88px;
+    top: 99px;
     left: 33px;
     font-family: "Poppins-Regular", Helvetica;
     color: #000000;
@@ -1099,7 +1529,7 @@
 .choose-a-product .text-wrapper-38 {
     width: 127px;
     height: 43px;
-    top: 17px;
+    top: 40px;
     left: 110px;
     font-family: "Poppins-Regular", Helvetica;
     color: #000000;
@@ -1141,12 +1571,20 @@
     line-height: normal;
 }
 
-.choose-a-product .vector-11 {
+.choose-a-product .star-container2 {
+    /* Adjust the container to allow inline display */
+    display: inline-block;
     position: absolute;
-    width: 19px;
-    height: 18px;
-    top: 4px;
+    top: 14px;
     left: 110px;
+    width: 130px;
+}
+
+.choose-a-product .vector-11 {
+    /* position: absolute; */
+    /* width: 13px; */
+    height: 18px;
+
 }
 
 .choose-a-product .vector-12 {
@@ -1200,7 +1638,7 @@
 .choose-a-product .text-wrapper-40 {
     width: 61px;
     height: 43px;
-    top: 0;
+    top: 8px;
     left: 0;
     font-family: "Poppins-Regular", Helvetica;
     font-weight: 400;
@@ -1294,7 +1732,7 @@
 .choose-a-product .text-wrapper-45 {
     width: 61px;
     height: 43px;
-    top: 43px;
+    top: 51px;
     left: 0;
     font-family: "Poppins-Regular", Helvetica;
     color: #000000;
@@ -1308,7 +1746,7 @@
 .choose-a-product .text-wrapper-46 {
     width: 61px;
     height: 43px;
-    top: 86px;
+    top: 94px;
     left: 0;
     font-family: "Poppins-Regular", Helvetica;
     color: #000000;
@@ -1322,7 +1760,7 @@
 .choose-a-product .text-wrapper-47 {
     width: 61px;
     height: 43px;
-    top: 260px;
+    top: 271px;
     left: 33px;
     font-family: "Poppins-Regular", Helvetica;
     color: #000000;
@@ -1340,7 +1778,7 @@
     top: 100px;
     left: 102px;
     background-color: #243746;
-    border-radius: 27px 0px 0px 27px;
+    border-radius: 27px;
 }
 
 .choose-a-product .rectangle-11 {
@@ -1350,7 +1788,7 @@
     top: 142px;
     left: 102px;
     background-color: #243746;
-    border-radius: 27px 0px 0px 27px;
+    border-radius: 27px;
 }
 
 .choose-a-product .rectangle-12 {
@@ -1360,7 +1798,7 @@
     top: 185px;
     left: 102px;
     background-color: #243746;
-    border-radius: 27px 0px 0px 27px;
+    border-radius: 27px;
 }
 
 .choose-a-product .rectangle-13 {
@@ -1370,7 +1808,7 @@
     top: 228px;
     left: 102px;
     background-color: #243746;
-    border-radius: 27px 0px 0px 27px;
+    border-radius: 27px;
 }
 
 .choose-a-product .rectangle-14 {
@@ -1380,7 +1818,7 @@
     top: 271px;
     left: 102px;
     background-color: #243746;
-    border-radius: 27px 0px 0px 27px;
+    border-radius: 27px;
 }
 
 .choose-a-product .rectangle-15 {
@@ -1693,6 +2131,7 @@
     top: 3847px;
     left: 1716px;
 }
+
 .boxstore2 {
     width: 708px;
     height: 1px;
