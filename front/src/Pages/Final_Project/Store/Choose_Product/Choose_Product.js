@@ -27,6 +27,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios'
 // import { useNavigate } from 'react-router-dom'
 import { useNavigate, useParams } from 'react-router-dom'
+import { Componets_Product_store, Componets_user_reviews } from '../../../../Componets'
 
 
 
@@ -36,10 +37,19 @@ import { useNavigate, useParams } from 'react-router-dom'
 
 
 const Choose_Product = () => {
+
     const [Product_Info, setProduct_Info] = useState([])
     const [Size, setSize] = useState([])
+    const [Features, setFeatures] = useState([])
+    const [UserReviews, setUserReviews] = useState([])
+    const [SimilarItem, setSimilarItem] = useState([])
+    const [Recently_Viewed_Items, setRecently_Viewed_Items] = useState([])
 
-    const { id} = useParams()
+
+
+
+
+    const { id } = useParams()
 
     //تهيئة الصورة الكبيرة
     const [largerImageSrc, setLargerImageSrc] = useState(null);
@@ -58,6 +68,12 @@ const Choose_Product = () => {
 
                     setProduct_Info(res.data.result[0])
                     setSize(res.data.result3)
+
+                    setFeatures(res.data.result2)
+                    setUserReviews(res.data.result4)
+                    setRecently_Viewed_Items(res.data.result5)
+
+
                     //هنا عطيني صورة المنتج
                     // alert(res.data.result[0].image_url)
                     setLargerImageSrc(`http://localhost:3001/uploads/${res.data.result[0].image_url}`);
@@ -81,9 +97,6 @@ const Choose_Product = () => {
 
 
 
-    //اختبار اذا في وزن ام لا
-    const variable = "null";
-
 
     // اختيار نجوم التقييم
     const [selectedStar, setSelectedStar] = useState(null);
@@ -105,7 +118,7 @@ const Choose_Product = () => {
     };
 
     //اضافة ونقصان الكمية المطلوبة
-    
+
     const [number, setNumber] = useState(1);
 
     // Function to handle incrementing the number
@@ -180,6 +193,63 @@ const Choose_Product = () => {
         }
         return <div>{stars}</div>; // Return the array of stars wrapped in a div
     }
+    function StarRating3({ rating }) {
+        const filledStars = Math.floor(rating);
+        const stars = [];
+        for (let i = 0; i < 5; i++) {
+            if (i < filledStars) {
+                stars.push(<img key={i} className="star-solidd" src={store_star_solid_1} alt="Filled Star" />);
+            }
+        }
+        return <div>{stars}</div>; // Return the array of stars wrapped in a div
+    }
+    function StarRating4({ rating }) {
+        const filledStars = Math.floor(rating);
+        const stars = [];
+        for (let i = 0; i < 5; i++) {
+            if (i < filledStars) {
+                stars.push(<img key={i} className="star-soliddd" src={store_star_solid_1} alt="Filled Star" />);
+            }
+        }
+        return <div>{stars}</div>; // Return the array of stars wrapped in a div
+    }
+
+    const frameRef2 = useRef(null);
+
+    const scrollRight = () => {
+        if (frameRef2.current) {
+            frameRef2.current.scrollBy({
+                left: 300, // Adjust as needed to control the scroll distance
+                behavior: 'smooth' // Add smooth scrolling effect
+            });
+        }
+    };
+    const scrollLeft = () => {
+        if (frameRef2.current) {
+            frameRef2.current.scrollBy({
+                left: -300, // Adjust as needed to control the scroll distance
+                behavior: 'smooth' // Add smooth scrolling effect
+            });
+        }
+    };
+    const frameRef3 = useRef(null);
+
+    const scrollRight2 = () => {
+        if (frameRef3.current) {
+            frameRef3.current.scrollBy({
+                left: 300, // Adjust as needed to control the scroll distance
+                behavior: 'smooth' // Add smooth scrolling effect
+            });
+        }
+    };
+    const scrollLeft2 = () => {
+        if (frameRef3.current) {
+            frameRef3.current.scrollBy({
+                left: -300, // Adjust as needed to control the scroll distance
+                behavior: 'smooth' // Add smooth scrolling effect
+            });
+        }
+    };
 
 
     //اسهم التنقل بالصور الصغيرة
@@ -258,7 +328,7 @@ const Choose_Product = () => {
                     {/* صور المنتج المصغرة */}
                     <div class="frame-3_me2" ref={frameRef}>
 
-{/* تم تعطيل هذه الميزة سأصلحها انا لاحقا لاتقرب عليها هيي شغالة بس بدي عدل شغلة بالداتا بيز لتشتغل متل الناس  */}
+                        {/* تم تعطيل هذه الميزة سأصلحها انا لاحقا لاتقرب عليها هيي شغالة بس بدي عدل شغلة بالداتا بيز لتشتغل متل الناس  */}
                         {/* {Product_Info.map((user, i) => (
                             <img
                                 className="rectangle-2"
@@ -334,8 +404,8 @@ const Choose_Product = () => {
 
                     <div className="frame-1">
 
-                    {Size.map((user, i) => (
-                             <div className="div-wrapper">
+                        {Size.map((user, i) => (
+                            <div className="div-wrapper">
                                 <input
                                     type="radio"
                                     id="option1"
@@ -344,7 +414,7 @@ const Choose_Product = () => {
                                     checked={selectedOption === user.detalis}
                                     onChange={handleOptionChange}
                                 />
-                                
+
                                 <label htmlFor="option1" className="text-wrapper-15" >{user.detalis}</label>
                             </div>
 
@@ -367,7 +437,7 @@ const Choose_Product = () => {
 
 
                     {/* هنا سعر المنتج */}
-                    <div class="text-wrapper-16">{(Product_Info.price)+' $'}</div>
+                    <div class="text-wrapper-16">{(Product_Info.price) + ' $'}</div>
 
 
                     {/* قسم تحديد كم حبة للاضافة الى السلة */}
@@ -410,23 +480,25 @@ const Choose_Product = () => {
                     {/* قسم وصف المنتج */}
                     <div class="overlap-8">
                         <div class="overlap-9">
-                            <p class="exceed-freshly-clean">
-                                exceed Freshly Clean Dog Shampoo offers wellness that optimizes your pets&#39; health, beauty, and
-                                comfort. This Freshly Clean Dog Shampoo is hand-crafted with naturally derived ingredients including
-                                Vitamins A, E, B5, and extracts like Aloe Vera, Lavender and Rosemary.
 
-                            </p>
+
+                            {/* تفاصيل المنتج */}
+                            <p class="exceed-freshly-clean">{Product_Info.description}  </p>
+
+                            {/* ميزات المنتج */}
                             <div class="text-wrapper-22">Features :</div>
-                            <p class="text-wrapper-23">pH-balanced formula is free of parabens</p>
-                            <p class="text-wrapper-24">pH-balanced formula is free of parabens</p>
-                            <p class="text-wrapper-25">pH-balanced formula is free of parabens</p>
-                            <p class="text-wrapper-26">pH-balanced formula is free of parabens</p>
+
+                            {Features.map((user, i) => (
+
+                                <p class="text-wrapper-23">{user.Features}</p>
+                            ))}
+
                         </div>
+
+                        {/* طريقة استخدام المنتج */}
                         <div class="overlap-10">
                             <p class="wet-coat-thoroughly">
-                                Wet coat thoroughly with water. Massage shampoo through pet&#39;s coat while guarding areas around eyes
-                                and ears. Rinse well with water. Pair with eXceed Conditioner and After-Groom Finisher Fragrance Spray
-                                (sold separately).
+                                {Product_Info.use}
 
                             </p>
                             <div class="text-wrapper-27">Use :</div>
@@ -439,10 +511,7 @@ const Choose_Product = () => {
                     {/* قسم مكونات المنتج */}
                     <div class="overlap-11">
                         <p class="text-wrapper-28">
-                            Purified Water, Mild Coconut-based Cleansing and Foaming Agents, Preservative, Glycerin, Thickener, Oat
-                            Extract, Aloe Vera Extract, Plant-based Enzyme, Vitamin B5 (Panthenol), Lavender Extract, Fragrance, Vitamin
-                            E, Rosemary Extract, Capric Triglycerides, Vitamin A, Dye
-
+                            {Product_Info.Ingredients}
                         </p>
                     </div>
 
@@ -536,25 +605,29 @@ const Choose_Product = () => {
 
                         {/* قسم تعليقات المستخدمين */}
 
-                        <div class="overlap-18">
-                            <p class="text-wrapper-29">
-                                Purified Water, Mild Coconut-based Cleansing and Foaming Agents, Preservative, Glycerin, Thickener, Oat
-                                Extract, Aloe Vera Extract, Plant-based Enzyme, Vitamin B5 (Panthenol), Lavender Extract, Fragrance,
-                                Vitamin E, Rosemary Extract, Capric Triglycerides, Vitamin A, Dye
+                        {UserReviews.map((user, i) => (
 
-                            </p>
-                            <div class="text-wrapper-30">2024/2/5</div>
-                            <div class="overlap-group-wrapper">
-                                <div class="overlap-19">
-                                    <div class="text-wrapper-31">Mohammad Ainia</div>
-                                    <div class="star-container3">
-                                        <StarRating2 rating={8} />
 
-                                    </div>
+                            <Componets_user_reviews
+                                comment={user.comment}
+                                date={user.date}
+                                user_name={user.name}
+                                num_star={user.num_star}
+                            />
 
-                                </div>
-                            </div>
-                        </div>
+                        ))}
+
+                        <Componets_user_reviews
+                            comment={"fdjsHGhfvbsffs"}
+                            date={"2024/2/2"}
+                            user_name={"mohammad ainia"}
+                            num_star={4}
+                        />
+
+
+
+
+
 
                         {/* *****************************************************************************************************************************8 */}
 
@@ -573,33 +646,42 @@ const Choose_Product = () => {
 
                         <div class="text-wrapper-37">5 Stars</div>
                         <div class="overlap-21">
-                            <div class="text-wrapper-38">77 Reviews</div>
+
+                            {/* كم عدد جميع التعليقات */}
+                            <div class="text-wrapper-38">{(Product_Info.Reviews) + ' Reviews'} </div>
+
                             <div class="frame-3">
                                 <div class="overlap-22">
-                                    <div class="text-wrapper-39">4.7</div>
+
+                                    {/* متوسط التقييم */}
+                                    <div class="text-wrapper-39">{Product_Info.avg_star}</div>
+
                                     <div class="star-container2">
-                                        <StarRating2 rating={5} />
-
+                                        <StarRating rating={Product_Info.star_count} />
                                     </div>
-
-                                    {/* <img class="vector-11" src={store_star_solid_1} /> */}
-                                    {/* <img class="vector-12" src={store_star_solid_1} />
-                                    <img class="vector-13" src={store_star_solid_1} /> */}
                                 </div>
-                                {/* <img class="vector-14" src={store_star_solid_1} /> */}
                             </div>
+
+
                         </div>
+
+                        {/* هنا عدد التقييمات لكل نجمة */}
                         <div class="overlap-23">
                             <div class="overlap-24">
                                 <div class="overlap-25">
-                                    <div class="text-wrapper-40">57</div>
-                                    <div class="text-wrapper-41">10</div>
+                                    <div className="text-wrapper-40">{Product_Info.star5_count}</div>
+
+                                    <div class="text-wrapper-41">{Product_Info.star4_count}</div>
                                 </div>
-                                <div class="text-wrapper-42">20</div>
+                                <div class="text-wrapper-42">{Product_Info.star3_count}</div>
                             </div>
-                            <div class="text-wrapper-43">5</div>
+                            <div class="text-wrapper-43">{Product_Info.star2_count}</div>
                         </div>
-                        <div class="text-wrapper-44">2</div>
+                        <div class="text-wrapper-44">{Product_Info.star1_count}</div>
+
+
+
+
                         <div class="overlap-26">
                             <div class="overlap-27">
                                 <div class="overlap-28">
@@ -611,58 +693,99 @@ const Choose_Product = () => {
                             <div class="text-wrapper-46">2 Stars</div>
                         </div>
                         <div class="text-wrapper-47">1 Stars</div>
-                        <div class="rectangle-10"></div>
-                        <div class="rectangle-11"></div>
-                        <div class="rectangle-12"></div>
-                        <div class="rectangle-13"></div>
-                        <div class="rectangle-14"></div>
-                        {/* <div class="rectangle-15"></div> */}
-                        {/* <div class="rectangle-16"></div>
-                        <div class="rectangle-17"></div>
-                        <div class="rectangle-18"></div>
-                        <div class="rectangle-19"></div> */}
+
+                        {/* كمان هون ارجع حط الاسماء مشان تظهر نسبة التقدم حسب كل نجمة */}
+                        <div className="rectangle-10" style={{ width: `${(Product_Info.star5_count / 40) * 133}px` }}></div>
+                        <div className="rectangle-11" style={{ width: `${(Product_Info.star4_count / 40) * 133}px` }}></div>
+                        <div className="rectangle-12" style={{ width: `${(Product_Info.star3_count / 40) * 133}px` }}></div>
+                        <div className="rectangle-13" style={{ width: `${(Product_Info.star2_count / 40) * 133}px` }}></div>
+                        <div className="rectangle-14" style={{ width: `${(Product_Info.star1_count / 40) * 133}px` }}></div>
+
                         <div class="overlap-29"><div class="text-wrapper-48">Share</div></div>
                     </div>
+
+
+
+                    {/* ***************************************************************************************************************************8 */}
+                    {/* منتجات مشابهة */}
                     <div class="text-wrapper-49">Similar Items</div>
+                    <div class="frame-3_mee" ref={frameRef2}>
+
+                        {SimilarItem.map((user, i) => (
+
+
+                            < Componets_Product_store
+                                img={`http://localhost:3001/uploads/${user.image_url}`}
+                                brand={user.short_name}
+                                avg_review={user.avg_review}
+                                total_comments={"(" + (user.totla_commets) + ")"}
+                                price={(user.price) + ' $'}
+                                desc={user.store_in_name}
+                                href={`choose_product/${user.id}`}
+                                num_star={user.num_star}
+                            />
+                        ))}
+
+                        < Componets_Product_store
+                            img={store_Rectangle_141}
+                            brand={"Exceed"}
+                            avg_review={"4.3"}
+                            total_comments={"(" + 32 + ")"}
+                            price={("42") + " $"}
+                            desc={"shampooo"}
+                            href={`choose_product/${5}`}
+                            num_star={4}
+                        />
+
+                    </div>
+
+
+                    {/* اسهم التنقل بين العناصر */}
+                    <img class="vector-16" src={store_Vector_60} onClick={scrollRight} />
+                    <img class="vector-18" src={store_Vector_61} onClick={scrollLeft} />
+
+                    {/* ***************************************************************************************************************************8 */}
+                    {/* اخر العناصر التي تمت زيارتها */}
+
                     <div class="text-wrapper-50">Recently Viewed Items</div>
-                    <div class="overlap-30">
-                        <div class="rectangle-20"></div>
-                        <img class="rectangle-21" src={store_Rectangle_141} />
-                        <div class="text-wrapper-51">exceed</div>
-                        <div class="element-2">4.6&nbsp;&nbsp; (36)</div>
-                        <div class="text-wrapper-52">$22.99</div>
-                        <div class="text-wrapper-53">Anxiety Relief</div>
-                        <div class="text-wrapper-54">Dog Shampoo</div>
-                        <div class="frame-4">
-                            <div class="overlap-31">
-                                <div class="rectangle-22"></div>
-                                <div class="text-wrapper-55">Available for AutoShip</div>
-                                <img class="vector-15" src={store_Vector4} />
-                            </div>
-                        </div>
-                        <div class="frame-5"><div class="text-wrapper-56">view</div></div>
+                    <div class="frame-3_meee" ref={frameRef3}>
+
+
+
+
+                        {Recently_Viewed_Items.map((user, i) => (
+
+
+                            < Componets_Product_store
+                                img={`http://localhost:3001/uploads/${user.image_url}`}
+                                brand={user.short_name}
+                                avg_review={user.avg_review}
+                                total_comments={"(" + (user.totla_commets) + ")"}
+                                price={(user.price) + "$"}
+                                desc={user.store_in_name}
+                                href={`choose_product/${user.id}`}
+                                num_star={user.num_star}
+                            />
+                        ))}
+
+
+                        < Componets_Product_store
+                            img={store_Rectangle_141}
+                            brand={"Exceed"}
+                            avg_review={"4.3"}
+                            total_comments={"(" + 32 + ")"}
+                            price={("42") + " $"}
+                            desc={"shampooo"}
+                            href={`choose_product/${5}`}
+                            num_star={4}
+                        />
+
                     </div>
-                    <div class="overlap-32">
-                        <div class="rectangle-20"></div>
-                        <img class="rectangle-21" src={store_Rectangle_141} />
-                        <div class="text-wrapper-51">exceed</div>
-                        <div class="element-2">4.6&nbsp;&nbsp; (36)</div>
-                        <div class="text-wrapper-52">$22.99</div>
-                        <div class="text-wrapper-53">Anxiety Relief</div>
-                        <div class="text-wrapper-54">Dog Shampoo</div>
-                        <div class="frame-4">
-                            <div class="overlap-31">
-                                <div class="rectangle-22"></div>
-                                <div class="text-wrapper-55">Available for AutoShip</div>
-                                <img class="vector-15" src={store_Vector4} />
-                            </div>
-                        </div>
-                        <div class="frame-5"><div class="text-wrapper-56">view</div></div>
-                    </div>
-                    <img class="vector-16" src={store_Vector_60} />
-                    <img class="vector-17" src={store_Vector_60} />
-                    <img class="vector-18" src={store_Vector_61} />
-                    <img class="vector-19" src={store_Vector_61} />
+
+
+                    {/* اسهم التنقل بين عناصر */}
+                    <img class="vector-17" src={store_Vector_60} onClick={scrollRight2} />
+                    <img class="vector-19" src={store_Vector_61} onClick={scrollLeft2} />
                 </div>
             </div>
         </>
@@ -670,10 +793,3 @@ const Choose_Product = () => {
 }
 
 export default Choose_Product
-
-
-// useEffect(() => {
-//     // Set the initial larger image source when the component mounts
-//     //ضع هنا تابع بجيب صورة المنتج كتهيئة
-//     setLargerImageSrc(store2_Rectangle_238);
-// }, []);
