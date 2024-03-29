@@ -40,10 +40,11 @@ const Choose_Product = () => {
 
     const [Product_Info, setProduct_Info] = useState([])
     const [Size, setSize] = useState([])
-    const [Features, setFeatures] = useState([])
+    const [Features, setFeatures] = useState([" "])
     const [UserReviews, setUserReviews] = useState([])
     const [SimilarItem, setSimilarItem] = useState([])
     const [Recently_Viewed_Items, setRecently_Viewed_Items] = useState([])
+    const [desc, setdesc] = useState([])
 
 
 
@@ -68,7 +69,7 @@ const Choose_Product = () => {
 
                     setProduct_Info(res.data.result[0])
                     setSize(res.data.result3)
-
+                    setdesc(res.data.result1[0])
                     setFeatures(res.data.result2)
                     setUserReviews(res.data.result4)
                     setRecently_Viewed_Items(res.data.result5)
@@ -480,28 +481,25 @@ const Choose_Product = () => {
                     {/* قسم وصف المنتج */}
                     <div class="overlap-8">
                         <div class="overlap-9">
-
-
                             {/* تفاصيل المنتج */}
-                            <p class="exceed-freshly-clean">{Product_Info.description}  </p>
-
+                            <p class="exceed-freshly-clean">{desc.descc}  </p>
+                            
                             {/* ميزات المنتج */}
-                            <div class="text-wrapper-22">Features :</div>
-
+                            
+                            <div class="text-wrapper-22">{desc.type_addtion} :</div>
+                                <ul>
                             {Features.map((user, i) => (
-
-                                <p class="text-wrapper-23">{user.Features}</p>
-                            ))}
-
+                                
+                                <li class="text-wrapper-23">{user.uii}</li>
+                                ))}
+                            </ul>
                         </div>
-
                         {/* طريقة استخدام المنتج */}
                         <div class="overlap-10">
                             <p class="wet-coat-thoroughly">
-                                {Product_Info.use}
-
+                            {desc.other_f}
                             </p>
-                            <div class="text-wrapper-27">Use :</div>
+                            <div class="text-wrapper-27"></div>
                         </div>
                     </div>
 
@@ -509,9 +507,12 @@ const Choose_Product = () => {
                     {/* *****************************************************************************************************************************8 */}
 
                     {/* قسم مكونات المنتج */}
+                    if () {
+                        
+                    }
                     <div class="overlap-11">
                         <p class="text-wrapper-28">
-                            {Product_Info.Ingredients}
+                            {Product_Info.ingredients}
                         </p>
                     </div>
 
@@ -605,8 +606,8 @@ const Choose_Product = () => {
 
                         {/* قسم تعليقات المستخدمين */}
 
-                        {UserReviews.map((user, i) => (
 
+                        {/* {UserReviews.map((user, i) => (
 
                             <Componets_user_reviews
                                 comment={user.comment}
@@ -615,7 +616,7 @@ const Choose_Product = () => {
                                 num_star={user.num_star}
                             />
 
-                        ))}
+                        ))} */}
 
                         <Componets_user_reviews
                             comment={"fdjsHGhfvbsffs"}
@@ -711,7 +712,7 @@ const Choose_Product = () => {
                     <div class="text-wrapper-49">Similar Items</div>
                     <div class="frame-3_mee" ref={frameRef2}>
 
-                        {SimilarItem.map((user, i) => (
+                        {/* {SimilarItem.map((user, i) => (
 
 
                             < Componets_Product_store
@@ -724,7 +725,7 @@ const Choose_Product = () => {
                                 href={`choose_product/${user.id}`}
                                 num_star={user.num_star}
                             />
-                        ))}
+                        ))} */}
 
                         < Componets_Product_store
                             img={store_Rectangle_141}
@@ -753,7 +754,7 @@ const Choose_Product = () => {
 
 
 
-                        {Recently_Viewed_Items.map((user, i) => (
+                        {/* {Recently_Viewed_Items.map((user, i) => (
 
 
                             < Componets_Product_store
@@ -766,7 +767,7 @@ const Choose_Product = () => {
                                 href={`choose_product/${user.id}`}
                                 num_star={user.num_star}
                             />
-                        ))}
+                        ))} */}
 
 
                         < Componets_Product_store
