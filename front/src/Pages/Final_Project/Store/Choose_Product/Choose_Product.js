@@ -32,6 +32,17 @@ import React, { useState, useEffect } from 'react';
 
 const Choose_Product = () => {
 
+    const [selectedStar, setSelectedStar] = useState(null);
+
+    const handleRadioChange = (value) => {
+        // Update the state with the selected radio button value
+        setSelectedStar(value);
+    };
+
+
+
+
+
     const [selectedOption, setSelectedOption] = useState('');
 
     // Function to handle selecting an option
@@ -106,6 +117,16 @@ const Choose_Product = () => {
         }
         return <div>{stars}</div>; // Return the array of stars wrapped in a div
     }
+    function StarRating2({ rating }) {
+        const filledStars = Math.floor(rating);
+        const stars = [];
+        for (let i = 0; i < 5; i++) {
+            if (i < filledStars) {
+                stars.push(<img key={i} className="vector-11" src={store_star_solid_1} alt="Filled Star" />);
+            }
+        }
+        return <div>{stars}</div>; // Return the array of stars wrapped in a div
+    }
 
 
     return (
@@ -170,6 +191,9 @@ const Choose_Product = () => {
                         />
 
                     </div>
+                    {/* اسهم التنقل بين صور المنتج الصغيرة */}
+                    <img class="vector-5" src={store2_Vector_60} />
+                    <img class="vector-6" src={store2_Vector_61} />
 
                     {/* صور المنتج الكبيرة */}
                     {largerImageSrc && (
@@ -214,7 +238,7 @@ const Choose_Product = () => {
                     {/* *******************************************************************************************************8 */}
 
 
-
+                    {/* قسم عدد تعليقات الكلية على المنتج ومتوسط نجومه */}
                     <div class="element">(36)</div>
                     <img class="star-solid" src={store2_star_solid_1} />
                     <div class="star-container">
@@ -224,9 +248,11 @@ const Choose_Product = () => {
                     <img class="line" src="img/line-12.svg" />
 
 
+
+                    {/* قسم اختيار حجم العبوة */}
                     <div className="frame-1">
                         <div className="div-wrapper">
-                            <input 
+                            <input
                                 type="radio"
                                 id="option1"
                                 name="options"
@@ -236,6 +262,7 @@ const Choose_Product = () => {
                             />
                             <label htmlFor="option1" className="text-wrapper-15">150 ml</label>
                         </div>
+
                         <div className="div-wrapper">
                             <input
                                 type="radio"
@@ -258,13 +285,14 @@ const Choose_Product = () => {
                             />
                             <label htmlFor="option3" className="text-wrapper-15">50 ml</label>
                         </div>
-                        
-                        
                     </div>
 
+
+                    {/* هنا سعر المنتج */}
                     <div class="text-wrapper-16">$22.99</div>
 
 
+                    {/* قسم تحديد كم حبة للاضافة الى السلة */}
                     <div className="overlap-4">
                         <div className="text-wrapper-17">{number}</div>
                         <div className="overlap-5" onClick={incrementNumber}>
@@ -276,24 +304,39 @@ const Choose_Product = () => {
                     </div>
 
 
+                    {/* زر الاضافة الى السلة */}
                     <div class="overlap-6"><div class="text-wrapper-18">Add to Cart</div></div>
+
+
+                    {/* اعلان التوصيل مجاني بكثر من 50 دولار */}
                     <div class="overlap-7">
                         <div class="img-wrapper"><img class="vector-3" src={store2_Vector2} /></div>
                         <div class="text-wrapper-19">Ship To Me</div>
                         <div class="text-wrapper-20">FREE Shipping Over $49</div>
                     </div>
+
+
                     <div class="frame-2">
                         <img class="vector-4" src={store2_Vector} />
                         <p class="text-wrapper-21">Roll over image to zoom in</p>
                     </div>
-                    <img class="vector-5" src={store2_Vector_60} />
-                    <img class="vector-6" src={store2_Vector_61} />
+
+
+
+
+
+
+
+                    {/* *****************************************************************************************************************************8 */}
+
+                    {/* قسم وصف المنتج */}
                     <div class="overlap-8">
                         <div class="overlap-9">
                             <p class="exceed-freshly-clean">
                                 exceed Freshly Clean Dog Shampoo offers wellness that optimizes your pets&#39; health, beauty, and
                                 comfort. This Freshly Clean Dog Shampoo is hand-crafted with naturally derived ingredients including
                                 Vitamins A, E, B5, and extracts like Aloe Vera, Lavender and Rosemary.
+
                             </p>
                             <div class="text-wrapper-22">Features :</div>
                             <p class="text-wrapper-23">pH-balanced formula is free of parabens</p>
@@ -306,74 +349,166 @@ const Choose_Product = () => {
                                 Wet coat thoroughly with water. Massage shampoo through pet&#39;s coat while guarding areas around eyes
                                 and ears. Rinse well with water. Pair with eXceed Conditioner and After-Groom Finisher Fragrance Spray
                                 (sold separately).
+
                             </p>
                             <div class="text-wrapper-27">Use :</div>
                         </div>
                     </div>
+
+
+                    {/* *****************************************************************************************************************************8 */}
+
+                    {/* قسم مكونات المنتج */}
                     <div class="overlap-11">
                         <p class="text-wrapper-28">
                             Purified Water, Mild Coconut-based Cleansing and Foaming Agents, Preservative, Glycerin, Thickener, Oat
                             Extract, Aloe Vera Extract, Plant-based Enzyme, Vitamin B5 (Panthenol), Lavender Extract, Fragrance, Vitamin
                             E, Rosemary Extract, Capric Triglycerides, Vitamin A, Dye
+
                         </p>
                     </div>
+
+                    {/* *****************************************************************************************************************************8 */}
+
+
+                    {/* قسم التقييم والمراجعات */}
+
                     <div class="overlap-12">
-                        <div class="overlap-13">
-                            <img class="star-regular" src={store2_star_regular} />
-                            <div class="rectangle-8"></div>
+
+                        {/* قسم نجوم التقييم  */}
+
+                        <div className="frame-2_me">
+                            <div className="overlap-13">
+                                <input
+                                    type="radio"
+                                    className="star-radio"
+                                    id="star-1"
+                                    value={1}
+                                    checked={selectedStar === 1}
+                                    onChange={() => handleRadioChange(1)}
+                                />
+                                <label htmlFor="star-1">
+                                    <img className="star-regular" src={store2_star_regular} alt="Star" />
+                                    <div className="rectangle-8"></div>
+                                </label>
+                            </div>
+                            <div className="overlap-13">
+                                <input
+                                    type="radio"
+                                    className="star-radio"
+                                    id="star-2"
+                                    value={2}
+                                    checked={selectedStar === 2}
+                                    onChange={() => handleRadioChange(2)}
+                                />
+                                <label htmlFor="star-2">
+                                    <img className="star-regular" src={store2_star_regular} alt="Star" />
+                                    <div className="rectangle-8"></div>
+                                </label>
+                            </div>
+                            <div className="overlap-13">
+                                <input
+                                    type="radio"
+                                    className="star-radio"
+                                    id="star-3"
+                                    value={3}
+                                    checked={selectedStar === 3}
+                                    onChange={() => handleRadioChange(3)}
+                                />
+                                <label htmlFor="star-3">
+                                    <img className="star-regular" src={store2_star_regular} alt="Star" />
+                                    <div className="rectangle-8"></div>
+                                </label>
+                            </div>
+                            <div className="overlap-13">
+                                <input
+                                    type="radio"
+                                    className="star-radio"
+                                    id="star-4"
+                                    value={4}
+                                    checked={selectedStar === 4}
+                                    onChange={() => handleRadioChange(4)}
+                                />
+                                <label htmlFor="star-4">
+                                    <img className="star-regular" src={store2_star_regular} alt="Star" />
+                                    <div className="rectangle-8"></div>
+                                </label>
+                            </div>
+                            <div className="overlap-13">
+                                <input
+                                    type="radio"
+                                    className="star-radio"
+                                    id="star-5"
+                                    value={5}
+                                    checked={selectedStar === 5}
+                                    onChange={() => handleRadioChange(5)}
+                                />
+                                <label htmlFor="star-5">
+                                    <img className="star-regular" src={store2_star_regular} alt="Star" />
+                                    <div className="rectangle-8"></div>
+                                </label>
+                            </div>
                         </div>
-                        <div class="overlap-14">
-                            <img class="star-regular" src={store2_star_regular} />
-                            <div class="rectangle-8"></div>
-                        </div>
-                        <div class="overlap-15">
-                            <img class="star-regular" src={store2_star_regular} />
-                            <div class="rectangle-8"></div>
-                        </div>
-                        <div class="overlap-16">
-                            <img class="star-regular" src={store2_star_regular} />
-                            <div class="rectangle-8"></div>
-                        </div>
-                        <div class="overlap-17">
-                            <img class="star-regular" src={store2_star_regular} />
-                            <div class="rectangle-8"></div>
-                        </div>
+
+
+
+                        {/* *****************************************************************************************************************************8 */}
+
+
+
+                        {/* قسم تعليقات المستخدمين */}
+
                         <div class="overlap-18">
                             <p class="text-wrapper-29">
                                 Purified Water, Mild Coconut-based Cleansing and Foaming Agents, Preservative, Glycerin, Thickener, Oat
                                 Extract, Aloe Vera Extract, Plant-based Enzyme, Vitamin B5 (Panthenol), Lavender Extract, Fragrance,
                                 Vitamin E, Rosemary Extract, Capric Triglycerides, Vitamin A, Dye
+
                             </p>
                             <div class="text-wrapper-30">2024/2/5</div>
                             <div class="overlap-group-wrapper">
                                 <div class="overlap-19">
                                     <div class="text-wrapper-31">Mohammad Ainia</div>
-                                    <img class="vector-7" src={store_star_solid_1} />
-                                    <img class="vector-8" src={store_star_solid_1} />
-                                    <img class="vector-9" src={store_star_solid_1} />
-                                    <img class="vector-10" src={store_star_solid_1} />
+                                    <div class="star-container3">
+                                        <StarRating2 rating={8} />
+
+                                    </div>
+                     
                                 </div>
                             </div>
                         </div>
+
+                        {/* *****************************************************************************************************************************8 */}
+
+
+
+
                         <div class="text-wrapper-32">Rating Snapshot</div>
                         <div class="text-wrapper-33">All Reviews</div>
                         <div class="text-wrapper-34">Overall Ratting</div>
                         <div class="text-wrapper-35">Review this Product</div>
+
                         <div class="overlap-20">
-                            <div class="text-wrapper-36">Write a review</div>
-                            <div class="rectangle-9"></div>
+                            <input class='rectangle-9' type='text' placeholder="Write a review" />
+
                         </div>
+
                         <div class="text-wrapper-37">5 Stars</div>
                         <div class="overlap-21">
                             <div class="text-wrapper-38">77 Reviews</div>
                             <div class="frame-3">
                                 <div class="overlap-22">
                                     <div class="text-wrapper-39">4.7</div>
-                                    <img class="vector-11" src={store_star_solid_1} />
-                                    <img class="vector-12" src={store_star_solid_1} />
-                                    <img class="vector-13" src={store_star_solid_1} />
+                                    <div class="star-container2">
+                                        <StarRating2 rating={5} />
+
+                                    </div>
+
+                                    {/* <img class="vector-11" src={store_star_solid_1} /> */}
+                                    {/* <img class="vector-12" src={store_star_solid_1} />
+                                    <img class="vector-13" src={store_star_solid_1} /> */}
                                 </div>
-                                <img class="vector-14" src={store_star_solid_1} />
+                                {/* <img class="vector-14" src={store_star_solid_1} /> */}
                             </div>
                         </div>
                         <div class="overlap-23">
@@ -391,7 +526,7 @@ const Choose_Product = () => {
                             <div class="overlap-27">
                                 <div class="overlap-28">
                                     <div class="text-wrapper-40">4 Stars</div>
-                                    <div class="text-wrapper-40">4 Stars</div>
+                                    {/* <div class="text-wrapper-40">4 Stars</div> */}
                                 </div>
                                 <div class="text-wrapper-45">3 Stars</div>
                             </div>
@@ -403,11 +538,11 @@ const Choose_Product = () => {
                         <div class="rectangle-12"></div>
                         <div class="rectangle-13"></div>
                         <div class="rectangle-14"></div>
-                        <div class="rectangle-15"></div>
-                        <div class="rectangle-16"></div>
+                        {/* <div class="rectangle-15"></div> */}
+                        {/* <div class="rectangle-16"></div>
                         <div class="rectangle-17"></div>
                         <div class="rectangle-18"></div>
-                        <div class="rectangle-19"></div>
+                        <div class="rectangle-19"></div> */}
                         <div class="overlap-29"><div class="text-wrapper-48">Share</div></div>
                     </div>
                     <div class="text-wrapper-49">Similar Items</div>
