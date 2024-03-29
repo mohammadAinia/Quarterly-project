@@ -25,7 +25,8 @@ import store_Rectangle_168 from '../../../../Assert/Images/store_Rectangle_168.p
 
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 
 
@@ -35,6 +36,10 @@ import { useNavigate } from 'react-router-dom'
 
 
 const Choose_Product = () => {
+    const [Product_Info, setProduct_Info] = useState([])
+    const [Size, setSize] = useState([])
+
+    const { id} = useParams()
 
     //تهيئة الصورة الكبيرة
     const [largerImageSrc, setLargerImageSrc] = useState(null);
@@ -42,19 +47,20 @@ const Choose_Product = () => {
 
     //توابع جلب معلومات من الباك
 
-    const [Product_Info, setProduct_Info] = useState([])
 
     const navigate = useNavigate()
 
     useEffect(() => {
 
-        axios.get('http://localhost:3001/#/#', { withCredentials: true })
+        axios.get(`http://localhost:3001/storee/open_proudact/${id}`, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
 
-                    setProduct_Info(res.data.result)
+                    setProduct_Info(res.data.result[0])
+                    setSize(res.data.result3)
                     //هنا عطيني صورة المنتج
-                    setLargerImageSrc(res.data.result2);
+                    // alert(res.data.result[0].image_url)
+                    setLargerImageSrc(`http://localhost:3001/uploads/${res.data.result[0].image_url}`);
 
 
 
@@ -234,7 +240,7 @@ const Choose_Product = () => {
                     </div>
 
                     {/* تفاصيل المنتج بالبداية اول الصفحة */}
-                    <p class="text-wrapper-11">{Product_Info.Details}</p>
+                    <p class="text-wrapper-11">{Product_Info.short_name}</p>
 
 
 
@@ -252,16 +258,16 @@ const Choose_Product = () => {
                     {/* صور المنتج المصغرة */}
                     <div class="frame-3_me2" ref={frameRef}>
 
-
-                        {Product_Info.map((user, i) => (
+{/* تم تعطيل هذه الميزة سأصلحها انا لاحقا لاتقرب عليها هيي شغالة بس بدي عدل شغلة بالداتا بيز لتشتغل متل الناس  */}
+                        {/* {Product_Info.map((user, i) => (
                             <img
                                 className="rectangle-2"
-                                src={user.img}
+                                src={`http://localhost:3001/uploads/${user.image_url}`}
                                 alt="Thumbnail Image"
                                 onClick={() => handleThumbnailClick(user.img)}
                             />
 
-                        ))}
+                        ))} */}
 
 
 
@@ -314,10 +320,10 @@ const Choose_Product = () => {
 
 
                     {/* قسم عدد تعليقات الكلية على المنتج ومتوسط نجومه */}
-                    <div class="element">({Product_Info.comments})</div>
+                    <div class="element">({Product_Info.review_count})</div>
                     <img class="star-solid" src={store2_star_solid_1} />
                     <div class="star-container">
-                        <StarRating rating={Product_Info.Avg_star} />
+                        <StarRating rating={Product_Info.star_count} />
 
                     </div>
                     <img class="line" src="img/line-12.svg" />
@@ -325,8 +331,25 @@ const Choose_Product = () => {
 
 
                     {/* قسم اختيار حجم العبوة */}
+
                     <div className="frame-1">
-                        {Product_Info.IsWeight && (
+
+                    {Size.map((user, i) => (
+                             <div className="div-wrapper">
+                                <input
+                                    type="radio"
+                                    id="option1"
+                                    name="options"
+                                    value={user.detalis}
+                                    checked={selectedOption === user.detalis}
+                                    onChange={handleOptionChange}
+                                />
+                                
+                                <label htmlFor="option1" className="text-wrapper-15" >{user.detalis}</label>
+                            </div>
+
+                        ))}
+                        {/* {Size.detalis && (
                             <div className="div-wrapper">
                                 <input
                                     type="radio"
@@ -338,13 +361,13 @@ const Choose_Product = () => {
                                 />
                                 <label htmlFor="option1" className="text-wrapper-15">150 ml</label>
                             </div>
-                        )}
+                        )} */}
 
                     </div>
 
 
                     {/* هنا سعر المنتج */}
-                    <div class="text-wrapper-16">{Product_Info.Price}</div>
+                    <div class="text-wrapper-16">{(Product_Info.price)+' $'}</div>
 
 
                     {/* قسم تحديد كم حبة للاضافة الى السلة */}
