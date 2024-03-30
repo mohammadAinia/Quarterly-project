@@ -1,5 +1,25 @@
 const models=require("../models")
 const db=require("../dbb/db")
+// function count_of_stars(id){
+//     sql='select * from review_table where pro_id=?'
+//     db.query(sql,[id],(error,result)=>{
+//         if(error){console.log(error)}
+//         else{
+
+// var starsCount = {'1':0,'2':0,'3':0,'4':0,'5':0};
+
+// for (let i = 0; i < result.length; i++) {
+//     let rating = result[i].stars;
+//     if (starsCount[rating]) {
+//         starsCount[rating] += 1;
+//     } else {
+//         starsCount[rating] = 1;
+//     }
+// }
+// return starsCount;
+//         }
+//     })
+// }
 function new_arrivle(req,res){
     if(req.session.username){
     sql='SELECT * FROM `proudact` WHERE DATEDIFF(CURRENT_DATE(),proudact.date_added)<10'
@@ -40,7 +60,7 @@ function search_salary_and_category(req,res){
 
 function open_proudact(req,res){
     id=req.params.id
-    sql='select * from proudact where id=?'
+    sql='select * from proudact JOIN count_stars on count_stars.pr_id=proudact.id where proudact.id=?'
     db.query(sql,[id],(error,result)=>{
         if(error){console.log(error)}
         else{
@@ -54,7 +74,7 @@ function open_proudact(req,res){
                             
                         } 
                         else {
-                            sql3='select * from addition_deatlis_p where proudact_id =?'
+                            sql3='select * from option_p where proudact_id =?'
                             db.query(sql3,[result[0].id],(error,result3)=>{
                                 if(error){console.log(error)}
                                 else{ 
@@ -64,7 +84,7 @@ function open_proudact(req,res){
                         }
                     }
                     else {
-                        sql23='select * from ui where des_id=?'
+                        sql23='select * from future_ui where des_id=?'
                         db.query(sql23,[result1[0].id_ppr],(error,result2)=>{
                             if(error){console.log(error)}
                             else{
@@ -72,12 +92,11 @@ function open_proudact(req,res){
                                     res.json({result1,result,result2,valid:true})
                                     }
                                     else { 
-                                        sql32='select * from addition_deatlis_p where proudact_id=?'
+                                        sql32='select * from option_p where proudact_id=?'
                                         db.query(sql32,[result[0].id],(error,result3)=>{
                                             if(error){console.log(error)}
                                             else{
                                                 res.json({result1,result,result2,result3,valid:true})
-            
                                             }
                                         })
                                     }

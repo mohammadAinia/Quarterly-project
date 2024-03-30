@@ -45,6 +45,7 @@ const Choose_Product = () => {
     const [SimilarItem, setSimilarItem] = useState([])
     const [Recently_Viewed_Items, setRecently_Viewed_Items] = useState([])
     const [desc, setdesc] = useState([])
+    const [stars_object,set_stars_ob] = useState([])
 
 
 
@@ -73,6 +74,7 @@ const Choose_Product = () => {
                     setFeatures(res.data.result2)
                     setUserReviews(res.data.result4)
                     setRecently_Viewed_Items(res.data.result5)
+                    set_stars_ob(res.data.starss)
 
 
                     //هنا عطيني صورة المنتج
@@ -392,7 +394,8 @@ const Choose_Product = () => {
 
                     {/* قسم عدد تعليقات الكلية على المنتج ومتوسط نجومه */}
                     <div class="element">({Product_Info.review_count})</div>
-                    <img class="star-solid" src={store2_star_solid_1} />
+                    {/* <img class="star-solid" src={store2_star_solid_1} />         */} 
+                    {/* mohamad commet for star appear in the right side of proudact small photos */}
                     <div class="star-container">
                         <StarRating rating={Product_Info.star_count} />
 
@@ -507,9 +510,7 @@ const Choose_Product = () => {
                     {/* *****************************************************************************************************************************8 */}
 
                     {/* قسم مكونات المنتج */}
-                    if () {
-                        
-                    }
+
                     <div class="overlap-11">
                         <p class="text-wrapper-28">
                             {Product_Info.ingredients}
@@ -649,13 +650,13 @@ const Choose_Product = () => {
                         <div class="overlap-21">
 
                             {/* كم عدد جميع التعليقات */}
-                            <div class="text-wrapper-38">{(Product_Info.Reviews) + ' Reviews'} </div>
+                            <div class="text-wrapper-38">{(Product_Info.comments) + ' Reviews'} </div>
 
                             <div class="frame-3">
                                 <div class="overlap-22">
 
                                     {/* متوسط التقييم */}
-                                    <div class="text-wrapper-39">{Product_Info.avg_star}</div>
+                                    <div class="text-wrapper-39">{Product_Info.star_count}</div>
 
                                     <div class="star-container2">
                                         <StarRating rating={Product_Info.star_count} />
@@ -670,15 +671,15 @@ const Choose_Product = () => {
                         <div class="overlap-23">
                             <div class="overlap-24">
                                 <div class="overlap-25">
-                                    <div className="text-wrapper-40">{Product_Info.star5_count}</div>
+                                    <div className="text-wrapper-40">{Product_Info.five}</div>
 
-                                    <div class="text-wrapper-41">{Product_Info.star4_count}</div>
+                                    <div class="text-wrapper-41">{Product_Info.four}</div>
                                 </div>
-                                <div class="text-wrapper-42">{Product_Info.star3_count}</div>
+                                <div class="text-wrapper-42">{Product_Info.three}</div>
                             </div>
-                            <div class="text-wrapper-43">{Product_Info.star2_count}</div>
+                            <div class="text-wrapper-43">{Product_Info.two}</div>
                         </div>
-                        <div class="text-wrapper-44">{Product_Info.star1_count}</div>
+                        <div class="text-wrapper-44">{Product_Info.one}</div>
 
 
 
@@ -696,11 +697,11 @@ const Choose_Product = () => {
                         <div class="text-wrapper-47">1 Stars</div>
 
                         {/* كمان هون ارجع حط الاسماء مشان تظهر نسبة التقدم حسب كل نجمة */}
-                        <div className="rectangle-10" style={{ width: `${(Product_Info.star5_count / 40) * 133}px` }}></div>
-                        <div className="rectangle-11" style={{ width: `${(Product_Info.star4_count / 40) * 133}px` }}></div>
-                        <div className="rectangle-12" style={{ width: `${(Product_Info.star3_count / 40) * 133}px` }}></div>
-                        <div className="rectangle-13" style={{ width: `${(Product_Info.star2_count / 40) * 133}px` }}></div>
-                        <div className="rectangle-14" style={{ width: `${(Product_Info.star1_count / 40) * 133}px` }}></div>
+                        <div className="rectangle-10" style={{ width: `${(Product_Info.five / 40) * 133}px` }}></div>
+                        <div className="rectangle-11" style={{ width: `${(Product_Info.four / 40) * 133}px` }}></div>
+                        <div className="rectangle-12" style={{ width: `${(Product_Info.three / 40) * 133}px` }}></div>
+                        <div className="rectangle-13" style={{ width: `${(Product_Info.two / 40) * 133}px` }}></div>
+                        <div className="rectangle-14" style={{ width: `${(Product_Info.one / 40) * 133}px` }}></div>
 
                         <div class="overlap-29"><div class="text-wrapper-48">Share</div></div>
                     </div>
