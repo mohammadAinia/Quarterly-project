@@ -35,7 +35,7 @@ import { Componets_Product_store, Componets_user_reviews } from '../../../../Com
 
 
 
-
+var pricee
 const Choose_Product = () => {
 
     const [Product_Info, setProduct_Info] = useState([])
@@ -45,7 +45,7 @@ const Choose_Product = () => {
     const [SimilarItem, setSimilarItem] = useState([])
     const [Recently_Viewed_Items, setRecently_Viewed_Items] = useState([])
     const [desc, setdesc] = useState([])
-    const [stars_object, set_stars_ob] = useState([])
+    const [first_s, set_f] = useState([])
 
 
 
@@ -78,9 +78,8 @@ const Choose_Product = () => {
                     setFeatures(res.data.result2)
                     setUserReviews(res.data.result4)
                     setRecently_Viewed_Items(res.data.result5)
-                    set_stars_ob(res.data.starss)
-
-
+                    set_f(res.data.result3[0])
+                    setPrice(res.data.result3[0].special_price)
                     //هنا عطيني صورة المنتج
                     // alert(res.data.result[0].image_url)
                     setLargerImageSrc(`http://localhost:3001/uploads/${res.data.result[0].image_url}`);
@@ -166,7 +165,7 @@ const Choose_Product = () => {
 
     const [selectedOption, setSelectedOption] = useState('');
     const [quantity, setQuantity] = useState(null);
-    const [price, setPrice] = useState(null);
+    var   [price, setPrice] = useState(null);
 
     useEffect(() => {
         // Call fetchPackageInfo when the component mounts
@@ -186,22 +185,23 @@ const Choose_Product = () => {
     const fetchPackageInfo = (selectedSize) => {
         if (!selectedSize) {
 
-            const basicQuantity = 3; // Assuming Product.quantity holds the basic quantity
+            const basicQuantity = Product_Info.count_avilable; // Assuming Product.quantity holds the basic quantity
             const quantityToShow = basicQuantity === 0 ? 0 : 1; // If basic quantity is zero, show zero, otherwise show one
             setQuantity(basicQuantity);
             setNumber(quantityToShow);
-            setPrice(Product_Info.price);
+            // setPrice();
 
         } else {
 
-            axios.get(`http://localhost:3001/storee/#/${selectedSize}`, { withCredentials: true })
+            axios.get(`http://localhost:3001/storee/get_addtion/${selectedSize}`, { withCredentials: true })
                 .then(res => {
                     if (res.data.valid) {
                         const fetchedQuantity = res.data.result;
                         const quantityToShow = fetchedQuantity === 0 ? 0 : 1; // If fetched quantity is zero, show zero, otherwise show one
                         setQuantity(fetchedQuantity);
                         setNumber(quantityToShow);
-                        setPrice(res.data.result2);
+                        setPrice(res.data.result[0].special_price);
+                        
                     } else {
                         navigate('/login');
                     }
@@ -513,7 +513,7 @@ const Choose_Product = () => {
                                         type="radio"
                                         id="option1"
                                         name="options"
-                                        value={user.detalis}
+                                        value={user.id_add}
                                         checked={selectedOption === user.detalis}
                                         onChange={handleOptionChange}
                                     />
@@ -522,7 +522,7 @@ const Choose_Product = () => {
                                 </div>
 
                             ))}
-                            <div className="div-wrapper">
+                            {/* <div className="div-wrapper">
                                 <input
                                     type="radio"
                                     id="option1"
@@ -532,7 +532,7 @@ const Choose_Product = () => {
                                     onChange={handleOptionChange}
                                 />
                                 <label htmlFor="option1" className="text-wrapper-15">{"user.details"}</label>
-                            </div>
+                            </div> */}
                             {/* {Size.detalis && (
                             <div className="div-wrapper">
                                 <input

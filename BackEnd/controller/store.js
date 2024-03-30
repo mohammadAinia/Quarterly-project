@@ -109,10 +109,22 @@ function open_proudact(req,res){
         }
     })
 } 
+function show_detalis_s(req,res){
+    sql='select * from option_p where id_add=?'
+    db.query(sql,[req.params.selectedSize],(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            console.log(result)
+            res.json({valid:true,result})
+            
+        }
+    })
+}
 
 module.exports={
     new_arrivle:new_arrivle,
     sort_by_animal,
     search_salary_and_category,
-    open_proudact
+    open_proudact,
+    show_detalis_s
 }
