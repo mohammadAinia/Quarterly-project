@@ -9,4 +9,4 @@ router.get('/search_by',store.search_salary_and_category);
 router.get('/open_proudact/:id',store.open_proudact);
 
 
-module.exports=router   
+module.exports=router    
