@@ -45,7 +45,11 @@ const Choose_Product = () => {
     const [SimilarItem, setSimilarItem] = useState([])
     const [Recently_Viewed_Items, setRecently_Viewed_Items] = useState([])
     const [desc, setdesc] = useState([])
-    const [stars_object,set_stars_ob] = useState([])
+    const [stars_object, set_stars_ob] = useState([])
+
+
+
+
 
 
 
@@ -96,6 +100,53 @@ const Choose_Product = () => {
 
 
 
+    //تابع اضافة الى سلة التسوق
+    axios.defaults.withCredentials = true
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        if (quantity === 0) {
+            // Quantity is zero, item cannot be added to the cart
+            alert("This item is out of stock.");
+            return;
+        }
+
+        axios.post('http://localhost:3001/#/#', { number, selectedOption })
+            .then(res => {
+                if (res.data.valid) {
+                    alert("Added to cart successfully");
+                    window.location.reload();
+                } else {
+                    alert('Not published');
+                }
+            })
+            .catch(err => { console.log(err) });
+    };
+
+
+
+    const [Comment, setComment] = useState('')
+
+    // تابع اضافة تعليق
+    axios.defaults.withCredentials = true
+    const handleSubmit2 = async (e) => {
+        e.preventDefault();
+
+        axios.post('http://localhost:3001/#/#', { selectedStar, Comment })
+            .then(res => {
+                if (res.data.valid) {
+                    alert("Added to cart successfully");
+                    window.location.reload();
+                } else {
+                    alert('Not published');
+                }
+            })
+            .catch(err => { console.log(err) });
+    };
+
+
+
+
 
 
 
@@ -114,21 +165,63 @@ const Choose_Product = () => {
 
 
     const [selectedOption, setSelectedOption] = useState('');
+    const [quantity, setQuantity] = useState(null);
+    const [price, setPrice] = useState(null);
 
-    // Function to handle selecting an option
+    useEffect(() => {
+        // Call fetchPackageInfo when the component mounts
+        fetchPackageInfo();
+    }, []);
+
+    // معالجة اختيار حجم عبوة
     const handleOptionChange = (event) => {
-        setSelectedOption(event.target.value);
+        const selectedSize = event.target.value;
+        setSelectedOption(selectedSize);
+        // Call a function to fetch quantity and price based on the selected package size
+        fetchPackageInfo(selectedSize);
     };
+
+
+    // هنا التابع الي بجبلي معلومات الكمية والسعر بناء على اختيار الحجم
+    const fetchPackageInfo = (selectedSize) => {
+        if (!selectedSize) {
+
+            const basicQuantity = 3; // Assuming Product.quantity holds the basic quantity
+            const quantityToShow = basicQuantity === 0 ? 0 : 1; // If basic quantity is zero, show zero, otherwise show one
+            setQuantity(basicQuantity);
+            setNumber(quantityToShow);
+            setPrice(Product_Info.price);
+
+        } else {
+
+            axios.get(`http://localhost:3001/storee/#/${selectedSize}`, { withCredentials: true })
+                .then(res => {
+                    if (res.data.valid) {
+                        const fetchedQuantity = res.data.result;
+                        const quantityToShow = fetchedQuantity === 0 ? 0 : 1; // If fetched quantity is zero, show zero, otherwise show one
+                        setQuantity(fetchedQuantity);
+                        setNumber(quantityToShow);
+                        setPrice(res.data.result2);
+                    } else {
+                        navigate('/login');
+                    }
+                })
+                .catch(err => { console.log(err) });
+        }
+    };
+
+
+
 
     //اضافة ونقصان الكمية المطلوبة
 
     const [number, setNumber] = useState(1);
 
-    // Function to handle incrementing the number
-    const incrementNumber = () => {
-        setNumber(prevNumber => prevNumber + 1);
+    const incrementNumberUntil = (targetValue) => {
+        if (number < targetValue) {
+            setNumber(prevNumber => prevNumber + 1);
+        }
     };
-
     // Function to handle decrementing the number
     const decrementNumber = () => {
         if (number > 1) {
@@ -310,6 +403,7 @@ const Choose_Product = () => {
                     <div class="overlap-3">
                         <p class="p">Buy online same day pick up in one of our 600+ stores! or free shipping over</p>
                         <div class="text-wrapper-10">View Details</div>
+                        {quantity === 0 && <div className="text-wrapper-100">Out of stock</div>}
                     </div>
 
                     {/* تفاصيل المنتج بالبداية اول الصفحة */}
@@ -321,7 +415,7 @@ const Choose_Product = () => {
                     <div class="text-wrapper-12">Product Description</div>
                     <div class="text-wrapper-13">Ingredients</div>
                     <div class="ratings-reviews">Ratings &amp; Reviews</div>
-                    <div class="text-wrapper-14">Write a review</div>
+                    <div class="text-wrapper-14"> Write a review</div>
 
 
                     {/* *******************************************************************************************************8 */}
@@ -394,7 +488,7 @@ const Choose_Product = () => {
 
                     {/* قسم عدد تعليقات الكلية على المنتج ومتوسط نجومه */}
                     <div class="element">({Product_Info.review_count})</div>
-                    {/* <img class="star-solid" src={store2_star_solid_1} />         */} 
+                    {/* <img class="star-solid" src={store2_star_solid_1} />         */}
                     {/* mohamad commet for star appear in the right side of proudact small photos */}
                     <div class="star-container">
                         <StarRating rating={Product_Info.star_count} />
@@ -403,27 +497,43 @@ const Choose_Product = () => {
                     <img class="line" src="img/line-12.svg" />
 
 
+                    {/* زر الاضافة الى السلة */}
+                    <form onSubmit={handleSubmit}>
 
-                    {/* قسم اختيار حجم العبوة */}
+                        <div class="overlap-6"><button class="text-wrapper-18">Add to Cart</button></div>
 
-                    <div className="frame-1">
 
-                        {Size.map((user, i) => (
+                        {/* قسم اختيار حجم العبوة */}
+
+                        <div className="frame-1">
+
+                            {Size.map((user, i) => (
+                                <div className="div-wrapper">
+                                    <input
+                                        type="radio"
+                                        id="option1"
+                                        name="options"
+                                        value={user.detalis}
+                                        checked={selectedOption === user.detalis}
+                                        onChange={handleOptionChange}
+                                    />
+
+                                    <label htmlFor="option1" className="text-wrapper-15" >{user.detalis}</label>
+                                </div>
+
+                            ))}
                             <div className="div-wrapper">
                                 <input
                                     type="radio"
                                     id="option1"
                                     name="options"
-                                    value={user.detalis}
-                                    checked={selectedOption === user.detalis}
+                                    value={"user.details"}
+                                    checked={selectedOption === "user.details"}
                                     onChange={handleOptionChange}
                                 />
-
-                                <label htmlFor="option1" className="text-wrapper-15" >{user.detalis}</label>
+                                <label htmlFor="option1" className="text-wrapper-15">{"user.details"}</label>
                             </div>
-
-                        ))}
-                        {/* {Size.detalis && (
+                            {/* {Size.detalis && (
                             <div className="div-wrapper">
                                 <input
                                     type="radio"
@@ -437,27 +547,28 @@ const Choose_Product = () => {
                             </div>
                         )} */}
 
-                    </div>
+                        </div>
+                        {/* قسم تحديد كم حبة للاضافة الى السلة */}
+                        <div className="overlap-4">
+                            <div className="text-wrapper-17">{number}</div>
+                            <div className="overlap-5" onClick={() => incrementNumberUntil(quantity)}>
+                                <div className="rectangle-4"></div>
+                                <div className="rectangle-5" ></div>
+                            </div>
+                            <div className="rectangle-6" onClick={decrementNumber}></div>
+                            <div className="rectangle-7" onClick={decrementNumber}></div>
+                        </div>
+                    </form>
 
 
                     {/* هنا سعر المنتج */}
-                    <div class="text-wrapper-16">{(Product_Info.price) + ' $'}</div>
+                    <div class="text-wrapper-16">{(price) + ' $'}</div>
 
 
-                    {/* قسم تحديد كم حبة للاضافة الى السلة */}
-                    <div className="overlap-4">
-                        <div className="text-wrapper-17">{number}</div>
-                        <div className="overlap-5" onClick={incrementNumber}>
-                            <div className="rectangle-4"></div>
-                            <div className="rectangle-5" ></div>
-                        </div>
-                        <div className="rectangle-6" onClick={decrementNumber}></div>
-                        <div className="rectangle-7" onClick={decrementNumber}></div>
-                    </div>
 
 
-                    {/* زر الاضافة الى السلة */}
-                    <div class="overlap-6"><div class="text-wrapper-18">Add to Cart</div></div>
+
+
 
 
                     {/* اعلان التوصيل مجاني بكثر من 50 دولار */}
@@ -486,21 +597,21 @@ const Choose_Product = () => {
                         <div class="overlap-9">
                             {/* تفاصيل المنتج */}
                             <p class="exceed-freshly-clean">{desc.descc}  </p>
-                            
+
                             {/* ميزات المنتج */}
-                            
+
                             <div class="text-wrapper-22">{desc.type_addtion} :</div>
-                                <ul>
-                            {Features.map((user, i) => (
-                                
-                                <li class="text-wrapper-23">{user.uii}</li>
+                            <ul>
+                                {Features.map((user, i) => (
+
+                                    <li class="text-wrapper-23">{user.uii}</li>
                                 ))}
                             </ul>
                         </div>
                         {/* طريقة استخدام المنتج */}
                         <div class="overlap-10">
                             <p class="wet-coat-thoroughly">
-                            {desc.other_f}
+                                {desc.other_f}
                             </p>
                             <div class="text-wrapper-27"></div>
                         </div>
@@ -523,6 +634,12 @@ const Choose_Product = () => {
                     {/* قسم التقييم والمراجعات */}
 
                     <div class="overlap-12">
+
+                        {/* مربع كتابة تعليق */}
+                        <div class="overlap-20">
+                            <input class='rectangle-9' type='text' placeholder="Write a review" onChange={e => setComment(e.target.value)} />
+
+                        </div>
 
                         {/* قسم نجوم التقييم  */}
 
@@ -641,10 +758,8 @@ const Choose_Product = () => {
                         <div class="text-wrapper-34">Overall Ratting</div>
                         <div class="text-wrapper-35">Review this Product</div>
 
-                        <div class="overlap-20">
-                            <input class='rectangle-9' type='text' placeholder="Write a review" />
 
-                        </div>
+
 
                         <div class="text-wrapper-37">5 Stars</div>
                         <div class="overlap-21">

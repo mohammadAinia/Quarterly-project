@@ -266,6 +266,19 @@
     letter-spacing: 0;
     line-height: normal;
 }
+.choose-a-product .text-wrapper-100 {
+    position: absolute;
+    width: 153px;
+    height: 47px;
+    top: 450px;
+    left: 1111px;
+    font-family: "Inder-Regular", Helvetica;
+    font-weight: 400;
+    color: red;
+    font-size: 26px;
+    letter-spacing: 0;
+    line-height: normal;
+}
 
 .choose-a-product .text-wrapper-11 {
     position: absolute;
@@ -629,6 +642,7 @@
     font-family: "Poppins-Medium", Helvetica;
     font-weight: 500;
     color: #000000;
+    background:none;
     font-size: 17px;
     letter-spacing: 0;
     line-height: normal;
