@@ -179,7 +179,7 @@ const Choose_Product = () => {
         // Call a function to fetch quantity and price based on the selected package size
         fetchPackageInfo(selectedSize);
     };
-
+ 
 
     // هنا التابع الي بجبلي معلومات الكمية والسعر بناء على اختيار الحجم
     const fetchPackageInfo = (selectedSize) => {
