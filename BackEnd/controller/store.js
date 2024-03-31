@@ -71,7 +71,7 @@ function open_proudact(req,res){
                     if(result1[0].type_addtion=='0'){
                         if(result[0].size_id=='0'){
                         res.json({result1,result,valid:true})
-                            
+                             
                         } 
                         else {
                             sql3='select * from option_p where proudact_id =?'
@@ -108,7 +108,7 @@ function open_proudact(req,res){
             }) 
         }
     })
-} 
+}  
 function show_detalis_s(req,res){
     sql='select * from option_p where id_add=?'
     db.query(sql,[req.params.selectedSize],(error,result)=>{

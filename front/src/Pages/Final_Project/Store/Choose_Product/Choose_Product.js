@@ -174,7 +174,7 @@ const Choose_Product = () => {
 
     // معالجة اختيار حجم عبوة
     const handleOptionChange = (event) => {
-        const selectedSize = event.target.value;
+        var selectedSize = event.target.value;
         setSelectedOption(selectedSize);
         // Call a function to fetch quantity and price based on the selected package size
         fetchPackageInfo(selectedSize);
@@ -196,11 +196,12 @@ const Choose_Product = () => {
             axios.get(`http://localhost:3001/storee/get_addtion/${selectedSize}`, { withCredentials: true })
                 .then(res => {
                     if (res.data.valid) {
-                        const fetchedQuantity = res.data.result;
+                        const fetchedQuantity = res.data.result[0].count_av;
                         const quantityToShow = fetchedQuantity === 0 ? 0 : 1; // If fetched quantity is zero, show zero, otherwise show one
                         setQuantity(fetchedQuantity);
                         setNumber(quantityToShow);
                         setPrice(res.data.result[0].special_price);
+                        alert(res.data.result[0].special_price)
                         
                     } else {
                         navigate('/login');
@@ -510,11 +511,12 @@ const Choose_Product = () => {
                             {Size.map((user, i) => (
                                 <div className="div-wrapper">
                                     <input
+                                        key={i}
                                         type="radio"
                                         id="option1"
                                         name="options"
                                         value={user.id_add}
-                                        checked={selectedOption === user.detalis}
+                                        checked={selectedOption === user.id_add}
                                         onChange={handleOptionChange}
                                     />
 
