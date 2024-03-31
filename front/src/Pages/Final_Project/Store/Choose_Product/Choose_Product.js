@@ -174,7 +174,7 @@ const Choose_Product = () => {
 
     // معالجة اختيار حجم عبوة
     const handleOptionChange = (event) => {
-        var selectedSize = event.target.value;
+        const selectedSize = event.target.value;
         setSelectedOption(selectedSize);
         // Call a function to fetch quantity and price based on the selected package size
         fetchPackageInfo(selectedSize);
@@ -184,13 +184,13 @@ const Choose_Product = () => {
     // هنا التابع الي بجبلي معلومات الكمية والسعر بناء على اختيار الحجم
     const fetchPackageInfo = (selectedSize) => {
         if (!selectedSize) {
-
+        
             const basicQuantity = Product_Info.count_avilable; // Assuming Product.quantity holds the basic quantity
             const quantityToShow = basicQuantity === 0 ? 0 : 1; // If basic quantity is zero, show zero, otherwise show one
             setQuantity(basicQuantity);
             setNumber(quantityToShow);
             // setPrice();
-
+        
         } else {
 
             axios.get(`http://localhost:3001/storee/get_addtion/${selectedSize}`, { withCredentials: true })
@@ -519,7 +519,6 @@ const Choose_Product = () => {
                                         checked={selectedOption === user.id_add}
                                         onChange={handleOptionChange}
                                     />
-
                                     <label htmlFor="option1" className="text-wrapper-15" >{user.detalis}</label>
                                 </div>
 
