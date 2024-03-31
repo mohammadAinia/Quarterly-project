@@ -181,7 +181,7 @@ const Choose_Product = () => {
     };
  
     //fhbj
-    // هنا التابع الي بجبلي معلومات الكمية والسعر بناء على اختيار الحجم
+    // هنا التابع الي بجبلي معلومات الكمية والسعر بناء على اختيار الحجم  
     const fetchPackageInfo = (selectedSize) => {
         if (!selectedSize) {
         
