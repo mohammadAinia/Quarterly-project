@@ -191,7 +191,7 @@ const Choose_Product = () => {
             setNumber(quantityToShow);
 
             // setPrice();
-        
+        //snds
         } else {
 
             axios.get(`http://localhost:3001/storee/get_addtion/${selectedSize}`, { withCredentials: true })
