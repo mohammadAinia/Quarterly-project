@@ -83,7 +83,7 @@ const Choose_Product = () => {
                     //هنا عطيني صورة المنتج
                     // alert(res.data.result[0].image_url)
                     setLargerImageSrc(`http://localhost:3001/uploads/${res.data.result[0].image_url}`);
-                    setQuantity(res.data.result3[0].count_av)
+                    // setQuantity(res.data.result3[0].count_av)
 
 
 
@@ -189,6 +189,7 @@ const Choose_Product = () => {
             const quantityToShow = basicQuantity === 0 ? 0 : 1; // If basic quantity is zero, show zero, otherwise show one
             setQuantity(basicQuantity);
             setNumber(quantityToShow);
+            alert(basicQuantity)
             // const basicQuantity = 5; // Assuming Product.quantity holds the basic quantity
             // const quantityToShow = basicQuantity === 0 ? 0 : 1; // If basic quantity is zero, show zero, otherwise show one
             // setQuantity(basicQuantity);
