@@ -42,6 +42,7 @@ const singup_vet=(req,res) => {
                                                         valid:true,
                                                         Login: true,
                                                         username: req.session.username,
+
                                                     });
                                     }
                                 })
@@ -97,6 +98,7 @@ const singup_user=(req,res) => {
                         };
                         models.user_info.create(user).then((result) => {
                                 req.session.username=user.email;
+                                req.session.namee=user.first_name+""+user.last_name
                                 return res.json({
                                     Login: true,
                                     username: req.session.username,
@@ -135,6 +137,8 @@ function login(req,res) {
                         if (result) {
                             req.session.roleee='doc'
                             req.session.username=req.body.email;
+                            req.session.namee=user.first_name+""+user.last_name
+
                             
                             return res.json({ Login: true, username: req.session.username ,roleee:true,adminstritor:false});
                         } else {
@@ -153,6 +157,7 @@ function login(req,res) {
                         req.session.username=user.email;
                         req.session.admin=user.email;
                         req.session.adminstritor=user.email
+                        req.session.namee=user.first_name+""+user.last_name
                         return res.json({ Login: true,username: req.session.username ,roleee:false,adminstritor:true});
 
                     } else {
@@ -176,6 +181,7 @@ function login(req,res) {
                             // req.session.roleee='user'
                             req.session.username=user.email;
                             req.session.admin=user.email;
+                            req.session.namee=user.first_name+""+user.last_name
 
                             return res.json({ Login: true,username: req.session.username ,roleee:false,adminstritor:false});
 

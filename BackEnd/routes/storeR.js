@@ -10,4 +10,9 @@ router.get('/open_proudact/:id',store.open_proudact);
 router.get('/get_addtion/:selectedSize',store.show_detalis_s);
 
 
+
+router.post('/addrev/:id',store.add_rev);
+
+
+
 module.exports=router     

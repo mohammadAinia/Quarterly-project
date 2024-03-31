@@ -76,7 +76,7 @@ const Choose_Product = () => {
                     setSize(res.data.result3)
                     setdesc(res.data.result1[0])
                     setFeatures(res.data.result2)
-                    setUserReviews(res.data.result4)
+                    setUserReviews(res.data.result9)
                     setRecently_Viewed_Items(res.data.result5)
                     set_f(res.data.result3[0].count_av)
                     setPrice(res.data.result3[0].special_price)
@@ -139,7 +139,7 @@ const Choose_Product = () => {
     const handleSubmit2 = async (e) => {
         e.preventDefault();
 
-        axios.post('http://localhost:3001/#/#', { selectedStar, Comment })
+        axios.post(`http://localhost:3001/storee/addrev/${id}`, { selectedStar, Comment })
             .then(res => {
                 if (res.data.valid) {
                     alert("Added to cart successfully");
@@ -761,16 +761,16 @@ const Choose_Product = () => {
                         {/* قسم تعليقات المستخدمين */}
 
 
-                        {/* {UserReviews.map((user, i) => (
+                        {UserReviews.map((user, i) => (
 
                             <Componets_user_reviews
-                                comment={user.comment}
-                                date={user.date}
-                                user_name={user.name}
-                                num_star={user.num_star}
+                                comment={user.review}
+                                date={user.date_add}
+                                user_name={user.user_name}
+                                num_star={user.stars}
                             />
 
-                        ))} */}
+                        ))}
 
                         <Componets_user_reviews
                             comment={"fdjsHGhfvbsffs"}
