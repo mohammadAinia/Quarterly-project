@@ -78,11 +78,12 @@ const Choose_Product = () => {
                     setFeatures(res.data.result2)
                     setUserReviews(res.data.result4)
                     setRecently_Viewed_Items(res.data.result5)
-                    set_f(res.data.result3[0])
+                    set_f(res.data.result3[0].count_av)
                     setPrice(res.data.result3[0].special_price)
                     //هنا عطيني صورة المنتج
                     // alert(res.data.result[0].image_url)
                     setLargerImageSrc(`http://localhost:3001/uploads/${res.data.result[0].image_url}`);
+                    setQuantity(res.data.result3[0].count_av)
 
 
 
@@ -185,7 +186,8 @@ const Choose_Product = () => {
     const fetchPackageInfo = (selectedSize) => {
         if (!selectedSize) {
 
-            const basicQuantity = Product_Info.count_avilable; // Assuming Product.quantity holds the basic quantity
+            const basicQuantity = first_s.count_av
+            ; // Assuming Product.quantity holds the basic quantity
             const quantityToShow = basicQuantity === 0 ? 0 : 1; // If basic quantity is zero, show zero, otherwise show one
             setQuantity(basicQuantity);
             setNumber(quantityToShow);
@@ -532,6 +534,7 @@ const Choose_Product = () => {
                                         id={`option${i}`} // Use a unique id for each input
                                         name="options"
                                         value={user.id_add}
+                                        
                                         checked={selectedOption === user.id_add}
                                         onChange={handleOptionChange}
                                     />
