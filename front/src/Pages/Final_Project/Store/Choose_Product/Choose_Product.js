@@ -79,7 +79,7 @@ const Choose_Product = () => {
                     setUserReviews(res.data.result4)
                     setRecently_Viewed_Items(res.data.result5)
                     set_f(res.data.result3[0])
-                    // setPrice(res.data.result3[0].special_price)
+                    setPrice(res.data.result3[0].special_price)
                     //هنا عطيني صورة المنتج
                     // alert(res.data.result[0].image_url)
                     setLargerImageSrc(`http://localhost:3001/uploads/${res.data.result[0].image_url}`);
@@ -165,7 +165,7 @@ const Choose_Product = () => {
 
     const [selectedOption, setSelectedOption] = useState('');
     const [quantity, setQuantity] = useState(null);
-    var   [price, setPrice] = useState(null);
+    var [price, setPrice] = useState(null);
 
     useEffect(() => {
         // Call fetchPackageInfo when the component mounts
@@ -179,19 +179,19 @@ const Choose_Product = () => {
         // Call a function to fetch quantity and price based on the selected package size
         fetchPackageInfo(selectedSize);
     };
- 
+
     //fhbj
     // هنا التابع الي بجبلي معلومات الكمية والسعر بناء على اختيار الحجم  
     const fetchPackageInfo = (selectedSize) => {
         if (!selectedSize) {
-        
+
             const basicQuantity = Product_Info.count_avilable; // Assuming Product.quantity holds the basic quantity
             const quantityToShow = basicQuantity === 0 ? 0 : 1; // If basic quantity is zero, show zero, otherwise show one
             setQuantity(basicQuantity);
             setNumber(quantityToShow);
 
             // setPrice();
-        //snds
+            //snds
         } else {
 
             axios.get(`http://localhost:3001/storee/get_addtion/${selectedSize}`, { withCredentials: true })
@@ -202,8 +202,8 @@ const Choose_Product = () => {
                         setQuantity(fetchedQuantity);
                         setNumber(quantityToShow);
                         setPrice(res.data.result[0].special_price);
-                        alert(res.data.result[0].special_price)
-                        
+                        // alert(res.data.result[0].special_price)
+
                     } else {
                         navigate('/login');
                     }
@@ -371,7 +371,7 @@ const Choose_Product = () => {
             });
         }
     };
-// jbfks
+    // jbfks
 
     return (
 
@@ -504,13 +504,13 @@ const Choose_Product = () => {
                     <form onSubmit={handleSubmit}>
 
                         <div class="overlap-6"><button class="text-wrapper-18">Add to Cart</button></div>
-{/* jgkj */}
+                        {/* jgkj */}
 
                         {/* قسم اختيار حجم العبوة */}
 
                         <div className="frame-1">
 
-                            {Size.map((user, i) => (
+                            {/* {Size.map((user, i) => (
                                 <div className="div-wrapper">
                                     <input
                                         key={i}
@@ -524,6 +524,19 @@ const Choose_Product = () => {
                                     <label htmlFor="option1" className="text-wrapper-15" >{user.detalis}</label>
                                 </div>
 
+                            ))} */}
+                            {Size.map((user, i) => (
+                                <div className="div-wrapper" key={i}>
+                                    <input
+                                        type="radio"
+                                        id={`option${i}`} // Use a unique id for each input
+                                        name="options"
+                                        value={user.id_add}
+                                        checked={selectedOption === user.id_add}
+                                        onChange={handleOptionChange}
+                                    />
+                                    <label htmlFor={`option${i}`} className="text-wrapper-15">{user.detalis}</label> {/* Use the same unique id in htmlFor */}
+                                </div>
                             ))}
                             {/* <div className="div-wrapper">
                                 <input
