@@ -194,22 +194,22 @@ const Choose_Product = () => {
         
         } else {
 
-            // axios.get(`http://localhost:3001/storee/get_addtion/${selectedSize}`, { withCredentials: true })
-            //     .then(res => {
-            //         if (res.data.valid) {
-            //             const fetchedQuantity = res.data.result[0].count_av;
-            //             const quantityToShow = fetchedQuantity === 0 ? 0 : 1; // If fetched quantity is zero, show zero, otherwise show one
-            //             setQuantity(fetchedQuantity);
-            //             setNumber(quantityToShow);
-            //             setPrice(res.data.result[0].special_price);
-            //             alert(res.data.result[0].special_price)
+            axios.get(`http://localhost:3001/storee/get_addtion/${selectedSize}`, { withCredentials: true })
+                .then(res => {
+                    if (res.data.valid) {
+                        const fetchedQuantity = res.data.result[0].count_av;
+                        const quantityToShow = fetchedQuantity === 0 ? 0 : 1; // If fetched quantity is zero, show zero, otherwise show one
+                        setQuantity(fetchedQuantity);
+                        setNumber(quantityToShow);
+                        setPrice(res.data.result[0].special_price);
+                        alert(res.data.result[0].special_price)
                         
-            //         } else {
-            //             navigate('/login');
-            //         }
-            //     })
-            //     .catch(err => { console.log(err) });
-            alert("hellow")
+                    } else {
+                        navigate('/login');
+                    }
+                })
+                .catch(err => { console.log(err) });
+            // alert("hellow")
         }
     };
 
