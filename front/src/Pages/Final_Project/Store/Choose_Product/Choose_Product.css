@@ -266,6 +266,7 @@
     letter-spacing: 0;
     line-height: normal;
 }
+
 .choose-a-product .text-wrapper-100 {
     position: absolute;
     width: 153px;
@@ -642,7 +643,7 @@
     font-family: "Poppins-Medium", Helvetica;
     font-weight: 500;
     color: #000000;
-    background:none;
+    background: none;
     font-size: 17px;
     letter-spacing: 0;
     line-height: normal;
@@ -1899,6 +1900,10 @@
     left: 1182px;
     background-color: #fecc02;
     border-radius: 5px;
+}
+
+.choose-a-product .overlap-29 button {
+    background: none;
 }
 
 .choose-a-product .text-wrapper-48 {

@@ -181,19 +181,21 @@ const Choose_Product = () => {
         fetchPackageInfo(selectedSize);
     };
 
-    //fhbj
     // هنا التابع الي بجبلي معلومات الكمية والسعر بناء على اختيار الحجم  
     const fetchPackageInfo = (selectedSize) => {
         if (!selectedSize) {
 
-            const basicQuantity = first_s.count_av
-            ; // Assuming Product.quantity holds the basic quantity
+            const basicQuantity = first_s.count_av; // Assuming Product.quantity holds the basic quantity
             const quantityToShow = basicQuantity === 0 ? 0 : 1; // If basic quantity is zero, show zero, otherwise show one
             setQuantity(basicQuantity);
             setNumber(quantityToShow);
+            // const basicQuantity = 5; // Assuming Product.quantity holds the basic quantity
+            // const quantityToShow = basicQuantity === 0 ? 0 : 1; // If basic quantity is zero, show zero, otherwise show one
+            // setQuantity(basicQuantity);
+            // setNumber(quantityToShow);
+            // setPrice(30);
+            // alert(quantity)
 
-            // setPrice();
-            //snds
         } else {
 
             axios.get(`http://localhost:3001/storee/get_addtion/${selectedSize}`, { withCredentials: true })
@@ -211,9 +213,12 @@ const Choose_Product = () => {
                     }
                 })
                 .catch(err => { console.log(err) });
+
             // alert("hellow")
         }
     };
+
+
 
 
 
@@ -534,7 +539,7 @@ const Choose_Product = () => {
                                         id={`option${i}`} // Use a unique id for each input
                                         name="options"
                                         value={user.id_add}
-                                        
+
                                         checked={selectedOption === user.id_add}
                                         onChange={handleOptionChange}
                                     />
@@ -654,86 +659,90 @@ const Choose_Product = () => {
 
                     <div class="overlap-12">
 
-                        {/* مربع كتابة تعليق */}
-                        <div class="overlap-20">
-                            <input class='rectangle-9' type='text' placeholder="Write a review" onChange={e => setComment(e.target.value)} />
+                        <form onSubmit={handleSubmit2}>
 
-                        </div>
+                            {/* مربع كتابة تعليق */}
+                            <div class="overlap-20">
+                                <input class='rectangle-9' type='text' placeholder="Write a review" onChange={e => setComment(e.target.value)} />
 
-                        {/* قسم نجوم التقييم  */}
+                            </div>
 
-                        <div className="frame-2_me">
-                            <div className="overlap-13">
-                                <input
-                                    type="radio"
-                                    className="star-radio"
-                                    id="star-1"
-                                    value={1}
-                                    checked={selectedStar === 1}
-                                    onChange={() => handleRadioChange(1)}
-                                />
-                                <label htmlFor="star-1">
-                                    <img className="star-regular" src={store2_star_regular} alt="Star" />
-                                    <div className="rectangle-8"></div>
-                                </label>
+                            {/* قسم نجوم التقييم  */}
+
+                            <div className="frame-2_me">
+                                <div className="overlap-13">
+                                    <input
+                                        type="radio"
+                                        className="star-radio"
+                                        id="star-1"
+                                        value={1}
+                                        checked={selectedStar === 1}
+                                        onChange={() => handleRadioChange(1)}
+                                    />
+                                    <label htmlFor="star-1">
+                                        <img className="star-regular" src={store2_star_regular} alt="Star" />
+                                        <div className="rectangle-8"></div>
+                                    </label>
+                                </div>
+                                <div className="overlap-13">
+                                    <input
+                                        type="radio"
+                                        className="star-radio"
+                                        id="star-2"
+                                        value={2}
+                                        checked={selectedStar === 2}
+                                        onChange={() => handleRadioChange(2)}
+                                    />
+                                    <label htmlFor="star-2">
+                                        <img className="star-regular" src={store2_star_regular} alt="Star" />
+                                        <div className="rectangle-8"></div>
+                                    </label>
+                                </div>
+                                <div className="overlap-13">
+                                    <input
+                                        type="radio"
+                                        className="star-radio"
+                                        id="star-3"
+                                        value={3}
+                                        checked={selectedStar === 3}
+                                        onChange={() => handleRadioChange(3)}
+                                    />
+                                    <label htmlFor="star-3">
+                                        <img className="star-regular" src={store2_star_regular} alt="Star" />
+                                        <div className="rectangle-8"></div>
+                                    </label>
+                                </div>
+                                <div className="overlap-13">
+                                    <input
+                                        type="radio"
+                                        className="star-radio"
+                                        id="star-4"
+                                        value={4}
+                                        checked={selectedStar === 4}
+                                        onChange={() => handleRadioChange(4)}
+                                    />
+                                    <label htmlFor="star-4">
+                                        <img className="star-regular" src={store2_star_regular} alt="Star" />
+                                        <div className="rectangle-8"></div>
+                                    </label>
+                                </div>
+                                <div className="overlap-13">
+                                    <input
+                                        type="radio"
+                                        className="star-radio"
+                                        id="star-5"
+                                        value={5}
+                                        checked={selectedStar === 5}
+                                        onChange={() => handleRadioChange(5)}
+                                    />
+                                    <label htmlFor="star-5">
+                                        <img className="star-regular" src={store2_star_regular} alt="Star" />
+                                        <div className="rectangle-8"></div>
+                                    </label>
+                                </div>
                             </div>
-                            <div className="overlap-13">
-                                <input
-                                    type="radio"
-                                    className="star-radio"
-                                    id="star-2"
-                                    value={2}
-                                    checked={selectedStar === 2}
-                                    onChange={() => handleRadioChange(2)}
-                                />
-                                <label htmlFor="star-2">
-                                    <img className="star-regular" src={store2_star_regular} alt="Star" />
-                                    <div className="rectangle-8"></div>
-                                </label>
-                            </div>
-                            <div className="overlap-13">
-                                <input
-                                    type="radio"
-                                    className="star-radio"
-                                    id="star-3"
-                                    value={3}
-                                    checked={selectedStar === 3}
-                                    onChange={() => handleRadioChange(3)}
-                                />
-                                <label htmlFor="star-3">
-                                    <img className="star-regular" src={store2_star_regular} alt="Star" />
-                                    <div className="rectangle-8"></div>
-                                </label>
-                            </div>
-                            <div className="overlap-13">
-                                <input
-                                    type="radio"
-                                    className="star-radio"
-                                    id="star-4"
-                                    value={4}
-                                    checked={selectedStar === 4}
-                                    onChange={() => handleRadioChange(4)}
-                                />
-                                <label htmlFor="star-4">
-                                    <img className="star-regular" src={store2_star_regular} alt="Star" />
-                                    <div className="rectangle-8"></div>
-                                </label>
-                            </div>
-                            <div className="overlap-13">
-                                <input
-                                    type="radio"
-                                    className="star-radio"
-                                    id="star-5"
-                                    value={5}
-                                    checked={selectedStar === 5}
-                                    onChange={() => handleRadioChange(5)}
-                                />
-                                <label htmlFor="star-5">
-                                    <img className="star-regular" src={store2_star_regular} alt="Star" />
-                                    <div className="rectangle-8"></div>
-                                </label>
-                            </div>
-                        </div>
+                            <div class="overlap-29"><button class="text-wrapper-48">Share</button></div>
+                        </form>
 
 
 
@@ -837,7 +846,6 @@ const Choose_Product = () => {
                         <div className="rectangle-13" style={{ width: `${(Product_Info.two / 40) * 133}px` }}></div>
                         <div className="rectangle-14" style={{ width: `${(Product_Info.one / 40) * 133}px` }}></div>
 
-                        <div class="overlap-29"><div class="text-wrapper-48">Share</div></div>
                     </div>
 
 
