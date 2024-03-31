@@ -1272,6 +1272,10 @@
     letter-spacing: 0;
     line-height: normal;
 }
+.store .text-wrapper-35 a{
+    color: #000000;
+
+}
 
 .store .text-wrapper-36 {
     position: absolute;

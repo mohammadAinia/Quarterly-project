@@ -163,6 +163,8 @@ export { default as Componets_newArrivals } from './Graduation/Componets_newArri
 export { default as Choose_Product } from '../Pages/Final_Project/Store/Choose_Product/Choose_Product'
 export { default as Componets_user_reviews } from './Graduation/Componets_user_reviews/Componets_user_reviews'
 export { default as Componets_Product_store } from './Graduation/Componets_Product_store/Componets_Product_store'
+export { default as Product_Assortment } from '../Pages/Final_Project/Store/Product_Assortment/Product_Assortment'
+
 
 
 

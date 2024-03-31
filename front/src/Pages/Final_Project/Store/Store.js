@@ -71,7 +71,7 @@ const Store = () => {
         axios.get('http://localhost:3001/storee/new_arrivle', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
-                    
+
                     setNewArrivalInfo(res.data.result)
                 }
                 else {
@@ -282,13 +282,13 @@ const Store = () => {
                                 key={i}
                                 image={`http://localhost:3001/uploads/${user.image_url}`}
                                 brand={user.short_name}
-                                price={(user.price)+"$"}
+                                price={(user.price) + "$"}
                                 desc={user.store_in_name}
                                 href={`choose_product/${user.id}`}
 
                             />
                         ))}
-                        
+
                         <Componets_newArrivals image={store_Rectangle_141}
                             brand={"Acana"}
                             price={"$22.6"}
@@ -394,7 +394,7 @@ const Store = () => {
 
 
                     <div class="text-wrapper-34">Dog</div>
-                    <div class="text-wrapper-35">Puppy Essentials</div>
+                    <div class="text-wrapper-35"><a href='Product_Assortment'>Puppy Essentials</a></div>
                     <div class="text-wrapper-36">Kitten Essentials</div>
                     <p class="dog-collars-leashes">Dog Collars, Leashes &amp; Harnesses</p>
                     <p class="small-pet-food">Small Pet Food, Treats &amp; Hay</p>
@@ -416,7 +416,9 @@ const Store = () => {
                     <img class="ellipse-4" src={store_Ellipse_111} />
                     <img class="ellipse-5" src={store_Ellipse_112} />
                     <img class="ellipse-6" src={store_Ellipse_113} />
-                    <img class="rectangle-16" src={store_Rectangle_159} />
+                    <a href="Product_Assortment">
+                        <img className="rectangle-16" src={store_Rectangle_159} alt="Description of the image" />
+                    </a>
                     <img class="rectangle-17" src={store_Rectangle_164} />
                     <img class="rectangle-18" src={store_Rectangle_160} />
                     <img class="rectangle-19" src={store_Rectangle_165} />
