@@ -191,7 +191,7 @@ const Choose_Product = () => {
             setNumber(quantityToShow);
 
             // setPrice();
-        
+        //snds
         } else {
 
             axios.get(`http://localhost:3001/storee/get_addtion/${selectedSize}`, { withCredentials: true })
@@ -518,7 +518,7 @@ const Choose_Product = () => {
                                         id="option1"
                                         name="options"
                                         value={user.id_add}
-                                        checked={selectedOption === user.id_add}
+                                        checked={selectedOption === user.details}
                                         onChange={handleOptionChange}
                                     />
                                     <label htmlFor="option1" className="text-wrapper-15" >{user.detalis}</label>
