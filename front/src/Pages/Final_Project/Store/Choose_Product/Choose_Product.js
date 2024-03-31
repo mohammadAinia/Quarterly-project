@@ -180,7 +180,7 @@ const Choose_Product = () => {
         fetchPackageInfo(selectedSize);
     };
  
-
+    //fhbj
     // هنا التابع الي بجبلي معلومات الكمية والسعر بناء على اختيار الحجم
     const fetchPackageInfo = (selectedSize) => {
         if (!selectedSize) {
