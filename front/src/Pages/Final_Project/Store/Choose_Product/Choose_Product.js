@@ -79,7 +79,7 @@ const Choose_Product = () => {
                     setUserReviews(res.data.result4)
                     setRecently_Viewed_Items(res.data.result5)
                     set_f(res.data.result3[0])
-                    setPrice(res.data.result3[0].special_price)
+                    // setPrice(res.data.result3[0].special_price)
                     //هنا عطيني صورة المنتج
                     // alert(res.data.result[0].image_url)
                     setLargerImageSrc(`http://localhost:3001/uploads/${res.data.result[0].image_url}`);
@@ -189,6 +189,7 @@ const Choose_Product = () => {
             const quantityToShow = basicQuantity === 0 ? 0 : 1; // If basic quantity is zero, show zero, otherwise show one
             setQuantity(basicQuantity);
             setNumber(quantityToShow);
+
             // setPrice();
         
         } else {
@@ -208,6 +209,7 @@ const Choose_Product = () => {
                     }
                 })
                 .catch(err => { console.log(err) });
+            // alert("hellow")
         }
     };
 
@@ -502,7 +504,7 @@ const Choose_Product = () => {
                     <form onSubmit={handleSubmit}>
 
                         <div class="overlap-6"><button class="text-wrapper-18">Add to Cart</button></div>
-
+{/* jgkj */}
 
                         {/* قسم اختيار حجم العبوة */}
 
