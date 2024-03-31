@@ -80,12 +80,19 @@ const Choose_Product = () => {
                     setRecently_Viewed_Items(res.data.result5)
                     set_f(res.data.result3[0].count_av)
                     setPrice(res.data.result3[0].special_price)
+                    if (res.data.result3[0].count_av==0){
+                        setQuantity(0)
+                        setNumber(0)
+                    }
+                    else {
+                        setQuantity(1)
+                        setNumber(1)
+                    }
                     //هنا عطيني صورة المنتج
                     // alert(res.data.result[0].image_url)
                     setLargerImageSrc(`http://localhost:3001/uploads/${res.data.result[0].image_url}`);
                     // setQuantity(res.data.result3[0].count_av)
-
-
+// alert(res.data.result3[0].special_price)
 
                 }
                 else {
@@ -166,8 +173,8 @@ const Choose_Product = () => {
 
     const [selectedOption, setSelectedOption] = useState('');
     const [quantity, setQuantity] = useState(null);
-    var [price, setPrice] = useState(null);
-
+    var [price, setPrice] = useState('');
+    var [quantit,setQ]=useState(0)
     useEffect(() => {
         // Call fetchPackageInfo when the component mounts
         fetchPackageInfo();
@@ -189,7 +196,7 @@ const Choose_Product = () => {
             const quantityToShow = basicQuantity === 0 ? 0 : 1; // If basic quantity is zero, show zero, otherwise show one
             setQuantity(basicQuantity);
             setNumber(quantityToShow);
-            alert(basicQuantity)
+            
             // const basicQuantity = 5; // Assuming Product.quantity holds the basic quantity
             // const quantityToShow = basicQuantity === 0 ? 0 : 1; // If basic quantity is zero, show zero, otherwise show one
             // setQuantity(basicQuantity);
@@ -226,7 +233,7 @@ const Choose_Product = () => {
 
     //اضافة ونقصان الكمية المطلوبة
 
-    const [number, setNumber] = useState(1);
+    const [number, setNumber] = useState('');
 
     const incrementNumberUntil = (targetValue) => {
         if (number < targetValue) {
