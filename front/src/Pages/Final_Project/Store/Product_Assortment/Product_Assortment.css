@@ -229,12 +229,43 @@
     left: 0;
 }
 
-.product-assortment .text-wrapper-10 {
+.product-assortment .frame-3_me2 {
+    width: 100%;
+    height: 290px;
+    max-width: calc(100% - 1700px);
+    /* Adjust as needed */
+    overflow-x: hidden;
+    overflow-y: auto;
+    white-space: nowrap;
     position: absolute;
-    width: 153px;
-    height: 27px;
     top: 572px;
     left: 246px;
+}
+
+.product-assortment .frame-3_me2::-webkit-scrollbar {
+    width: 5px;
+    /* Set the width of the scrollbar */
+    height: 12px;
+}
+
+.product-assortment .frame-3_me2::-webkit-scrollbar-thumb {
+    background-color: #fecc02;
+    /* Set the color of the scrollbar thumb */
+    border-radius: 5px;
+    /* Optional: Round the corners of the scrollbar thumb */
+
+}
+
+.product-assortment .frame-3_me2::-webkit-scrollbar-track {
+    background-color: transparent;
+    /* Set the color of the scrollbar track */
+}
+
+.product-assortment .text-wrapper-10 {
+    position: relative;
+    width: 153px;
+    height: 27px;
+    left: 27px;
     font-family: "Poppins-ExtraLight", Helvetica;
     font-weight: 200;
     color: #000000;
@@ -319,12 +350,40 @@
     line-height: normal;
 }
 
-.product-assortment .text-wrapper-16 {
+.product-assortment .frame-3_me23 {
+    width: 100%;
+    height: 212px;
+    max-width: calc(100% - 1700px);
+    /* Adjust as needed */
+    overflow-x: hidden;
+    overflow-y: auto;
+    white-space: nowrap;
     position: absolute;
-    width: 164px;
-    height: 27px;
     top: 1046px;
     left: 259px;
+}
+
+.product-assortment .frame-3_me23::-webkit-scrollbar {
+    width: 5px;
+    height: 12px;
+}
+
+.product-assortment .frame-3_me23::-webkit-scrollbar-thumb {
+    background-color: #fecc02;
+    border-radius: 5px;
+
+}
+
+.product-assortment .frame-3_me23::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.product-assortment .text-wrapper-16 {
+    position: relative;
+    width: 164px;
+    height: 27px;
+    left: 35px;
+
     font-family: "Poppins-ExtraLight", Helvetica;
     font-weight: 200;
     color: #000000;
@@ -553,7 +612,7 @@
     width: 227px;
     height: 27px;
     top: 959px;
-    left: 206px;
+    left: 202px;
     font-family: "Poppins-Medium", Helvetica;
     font-weight: 500;
     color: #000000;
@@ -581,11 +640,11 @@
 }
 
 .product-assortment .rectangle-2 {
-    position: absolute;
+    position: relative;
     width: 25px;
     height: 25px;
-    top: 573px;
-    left: 210px;
+    top: -27px;
+    left: 0px;
     border-radius: 3px;
     border: 1px solid;
     border-color: #000000;
@@ -647,11 +706,10 @@
 }
 
 .product-assortment .rectangle-8 {
-    position: absolute;
+    position: relative;
     width: 25px;
     height: 25px;
-    top: 1047px;
-    left: 210px;
+    top: -27px;
     border-radius: 3px;
     border: 1px solid;
     border-color: #000000;
@@ -662,7 +720,7 @@
     width: 25px;
     height: 25px;
     top: 1421px;
-    left: 210px;
+    left: 255px;
     border-radius: 3px;
     border: 1px solid;
     border-color: #000000;
@@ -684,7 +742,7 @@
     width: 25px;
     height: 25px;
     top: 1472px;
-    left: 210px;
+    left: 255px;
     border-radius: 3px;
     border: 1px solid;
     border-color: #000000;
@@ -706,7 +764,7 @@
     width: 25px;
     height: 25px;
     top: 1523px;
-    left: 210px;
+    left: 255px;
     border-radius: 3px;
     border: 1px solid;
     border-color: #000000;
@@ -728,7 +786,7 @@
     width: 25px;
     height: 25px;
     top: 1574px;
-    left: 210px;
+    left: 255px;
     border-radius: 3px;
     border: 1px solid;
     border-color: #000000;
@@ -739,48 +797,79 @@
     width: 25px;
     height: 25px;
     top: 1625px;
-    left: 210px;
+    left: 255px;
     border-radius: 3px;
     border: 1px solid;
     border-color: #000000;
 }
 
-.product-assortment .star-solid {
+.product-assortment .star-container {
+    /* Adjust the container to allow inline display */
+    display: inline-block;
+    position: absolute;
     top: 1425px;
     left: 266px;
+}
+
+.product-assortment .star-solid {
+
+    position: relative;
+    width: 21px;
+    height: 18px;
+    left: 45px;
+}
+.product-assortment .star-container2 {
+    /* Adjust the container to allow inline display */
+    display: inline-block;
     position: absolute;
+    top: 1475px;
+    left: 266px;
+}
+.product-assortment .star-solid-2 {
+
+    position: relative;
     width: 21px;
     height: 18px;
 }
-
-.product-assortment .star-solid-2 {
-    top: 1475px;
-    left: 266px;
+.product-assortment .star-container3 {
+    /* Adjust the container to allow inline display */
+    display: inline-block;
     position: absolute;
-    width: 21px;
-    height: 18px;
+    top: 1527px;
+    left: 266px;
 }
 
 .product-assortment .star-solid-3 {
-    top: 1527px;
-    left: 266px;
-    position: absolute;
+
+    position: relative;
     width: 21px;
     height: 18px;
+}
+.product-assortment .star-container4 {
+    /* Adjust the container to allow inline display */
+    display: inline-block;
+    position: absolute;
+    top: 1577px;
+    left: 266px;
 }
 
 .product-assortment .star-solid-4 {
-    top: 1577px;
-    left: 266px;
-    position: absolute;
+
+    position: relative;
     width: 21px;
     height: 18px;
 }
-
-.product-assortment .star-solid-5 {
+.product-assortment .star-container5 {
+    /* Adjust the container to allow inline display */
+    display: inline-block;
+    position: absolute;
     top: 1628px;
     left: 266px;
-    position: absolute;
+}
+
+.product-assortment .star-solid-5 {
+
+    position: relative;
     width: 21px;
     height: 18px;
 }
@@ -876,12 +965,28 @@
     box-shadow: 0px 4px 4px #d6e8f1;
 }
 
-.product-assortment .overlap-3 {
+.product-assortment .frame-3_meee {
+    /* width: 100%;
+    height: 645px; */
+    display: grid;
+    grid-template-columns: repeat(4, auto); /* 4 items in each row */
+    grid-column-gap: 10px;     /* Adjust as needed */
+    /* overflow-x: auto;
+    overflow-y: hidden; */
+    /* white-space: nowrap; */
     position: absolute;
-    width: 269px;
-    height: 587px;
     top: 535px;
     left: 711px;
+}
+
+.product-assortment .overlap-3 {
+    position:relative;
+    width: 269px;
+    height: 587px;
+    margin-left: 30px;
+    margin-top: 30px;
+
+ 
 }
 
 .product-assortment .rectangle-18 {
@@ -1139,6 +1244,7 @@
     top: 1157px;
     left: 1623px;
 }
+
 .box100 {
     width: 436px;
     height: 1px;
@@ -1151,6 +1257,7 @@
     top: 450px;
     left: 210px;
 }
+
 .box101 {
     width: 436px;
     height: 1px;
@@ -1163,6 +1270,7 @@
     top: 920px;
     left: 210px;
 }
+
 .box102 {
     width: 436px;
     height: 1px;
