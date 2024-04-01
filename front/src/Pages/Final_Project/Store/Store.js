@@ -289,46 +289,7 @@ const Store = () => {
                             />
                         ))}
 
-                        <Componets_newArrivals image={store_Rectangle_141}
-                            brand={"Acana"}
-                            price={"$22.6"}
-                            desc={"shampoo"}
-                            href={`choose_product/${1}`} />
-                        <Componets_newArrivals image={store_Rectangle_141}
-                            brand={"Acana"}
-                            price={"$22.6"}
-                            desc={"shampoo"}
-                            href={`choose_product/${3}`} />
-                        <Componets_newArrivals image={store_Rectangle_141}
-                            brand={"Acana"}
-                            price={"$22.6"}
-                            desc={"shampoo"}
-                            href={`######`} />
-                        <Componets_newArrivals image={store_Rectangle_141}
-                            brand={"Acana"}
-                            price={"$22.6"}
-                            desc={"shampoo"}
-                            href={`######`} />
-                        <Componets_newArrivals image={store_Rectangle_141}
-                            brand={"Acana"}
-                            price={"$22.6"}
-                            desc={"shampoo"}
-                            href={`######`} />
-                        <Componets_newArrivals image={store_Rectangle_141}
-                            brand={"Acana"}
-                            price={"$22.6"}
-                            desc={"shampoo"}
-                            href={`######`} />
-                        <Componets_newArrivals image={store_Rectangle_141}
-                            brand={"Acana"}
-                            price={"$22.6"}
-                            desc={"shampoo"}
-                            href={`######`} />
-                        <Componets_newArrivals image={store_Rectangle_141}
-                            brand={"Acana"}
-                            price={"$22.6"}
-                            desc={"shampoo"}
-                            href={`######`} />
+                
                     </div>
 
                     {/* *************************************************************************************************************************************/}

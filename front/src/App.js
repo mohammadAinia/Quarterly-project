@@ -164,6 +164,8 @@ const App = () => {
             <Route path='store' element={<Store />} />
             <Route path='choose_product/:id' element={<Choose_Product />} />
             <Route path='Product_Assortment' element={<Product_Assortment />} />
+            <Route path='choose_product/choose_product/:id' element={<Choose_Product />} />
+
 
 
 

@@ -872,21 +872,21 @@ const Choose_Product = () => {
                                 total_comments={"(" + (user.comments) + ")"}
                                 price={(user.price) + ' $'}
                                 desc={user.store_in_name}
-                                href={`choose_product/${user.id}`}
+                                href={`${user.id}`}
                                 num_star={user.star_count}
                             />
                         ))}
 
-                        < Componets_Product_store
+                        {/* < Componets_Product_store
                             img={store_Rectangle_141}
                             brand={"Exceed"}
                             avg_review={"4.3"}
                             total_comments={"(" + 32 + ")"}
                             price={("42") + " $"}
                             desc={"shampooo"}
-                            href={`choose_product/${5}`}
+                            href={`${5}`}
                             num_star={4}
-                        />
+                        /> */}
 
                     </div>
 
@@ -944,3 +944,4 @@ const Choose_Product = () => {
 }
 
 export default Choose_Product
+// الت
