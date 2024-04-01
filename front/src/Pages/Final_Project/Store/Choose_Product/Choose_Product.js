@@ -914,7 +914,7 @@ const Choose_Product = () => {
                                 total_comments={"(" + (user.totla_commets) + ")"}
                                 price={(user.price) + "$"}
                                 desc={user.store_in_name}
-                                href={`choose_product/${user.id}`}
+                                href={`${user.id}`}
                                 num_star={user.num_star}
                             />
                         ))} */}
@@ -927,7 +927,7 @@ const Choose_Product = () => {
                             total_comments={"(" + 32 + ")"}
                             price={("42") + " $"}
                             desc={"shampooo"}
-                            href={`choose_product/${5}`}
+                            href={`${5}`}
                             num_star={4}
                         />
 
@@ -944,4 +944,3 @@ const Choose_Product = () => {
 }
 
 export default Choose_Product
-// الت
