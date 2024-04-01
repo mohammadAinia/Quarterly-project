@@ -80,6 +80,7 @@ const Choose_Product = () => {
                     setRecently_Viewed_Items(res.data.result5)
                     set_f(res.data.result3[0].count_av)
                     setPrice(res.data.result3[0].special_price)
+                    setSimilarItem(res.data.v)
                     if (res.data.result3[0].count_av==0){
                         setQuantity(0)
                         setNumber(0)
@@ -772,12 +773,12 @@ const Choose_Product = () => {
 
                         ))}
 
-                        <Componets_user_reviews
+                        {/* <Componets_user_reviews
                             comment={"fdjsHGhfvbsffs"}
                             date={"2024/2/2"}
                             user_name={"mohammad ainia"}
                             num_star={4}
-                        />
+                        /> */}
 
 
 
@@ -863,20 +864,18 @@ const Choose_Product = () => {
                     <div class="text-wrapper-49">Similar Items</div>
                     <div class="frame-3_mee" ref={frameRef2}>
 
-                        {/* {SimilarItem.map((user, i) => (
-
-
+                        {SimilarItem.map((user, i) => (
                             < Componets_Product_store
                                 img={`http://localhost:3001/uploads/${user.image_url}`}
                                 brand={user.short_name}
-                                avg_review={user.avg_review}
-                                total_comments={"(" + (user.totla_commets) + ")"}
+                                avg_review={user.review_count}
+                                total_comments={"(" + (user.comments) + ")"}
                                 price={(user.price) + ' $'}
                                 desc={user.store_in_name}
                                 href={`choose_product/${user.id}`}
-                                num_star={user.num_star}
+                                num_star={user.star_count}
                             />
-                        ))} */}
+                        ))}
 
                         < Componets_Product_store
                             img={store_Rectangle_141}

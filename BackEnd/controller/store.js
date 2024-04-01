@@ -58,7 +58,7 @@ function search_salary_and_category(req,res){
     })
 }
 
-function open_proudact(req,res){   
+function open_proudact(req,res){    
     id=req.params.id
     sqllwlw='select * from review_table where pro_id=?'
     db.query(sqllwlw,[id],(error,result9)=>{
@@ -67,21 +67,26 @@ function open_proudact(req,res){
             sql='select * from proudact JOIN count_stars on count_stars.pr_id=proudact.id where proudact.id=?'
             db.query(sql,[id],(error,result)=>{
                 if(error){console.log(error)}
-                else{
-                    sql1='select * from dascription_p where id_ppr=?'
-                    db.query(sql1,[result[0].id],(error,result1)=>{
+                else{ sql12345='select *from proudact where animal_type like ? and id!=? '
+                    db.query(sql12345,['%'+result[0].animal_type+'%',result[0].id],(error,result63)=>{
                         if(error){console.log(error)}
                         else{
+                            
+                            v=storg_id(result,result63)
+                            sql1='select * from dascription_p where id_ppr=?'
+                            db.query(sql1,[result[0].id],(error,result1)=>{
+                            if(error){console.log(error)}
+                            else{
                             if(result1[0].type_addtion=='0'){
                                 if(result[0].size_id=='0'){
-                                res.json({result1,result,valid:true,result9})
+                                res.json({result1,result,valid:true,result9,v})
                                 } 
                                 else {
                                     sql3='select * from option_p where proudact_id =?'
                                     db.query(sql3,[result[0].id],(error,result3)=>{
                                         if(error){console.log(error)}
-                                        else{ 
-                                            res.json({result1,result,result3,valid:true,result9})
+                                        else{  
+                                            res.json({result1,result,result3,valid:true,result9,v})
                                         }
                                     }) 
                                 }
@@ -92,14 +97,14 @@ function open_proudact(req,res){
                                     if(error){console.log(error)}
                                     else{
                                         if(result[0].size_id=='0'){
-                                            res.json({result1,result,result2,valid:true,result9})
+                                            res.json({result1,result,result2,valid:true,result9,v})
                                             }
                                             else { 
                                                 sql32='select * from option_p where proudact_id=?'
                                                 db.query(sql32,[result[0].id],(error,result3)=>{
                                                     if(error){console.log(error)}
                                                     else{
-                                                        res.json({result9,result1,result,result2,result3,valid:true})
+                                                        res.json({result9,result1,result,result2,result3,valid:true,v})
                                                     }
                                                 })
                                             }
@@ -108,18 +113,44 @@ function open_proudact(req,res){
                                 })
                             }
                         }
-                    }) 
+                    })
+                        }
+                    })
                 }
             })
         }
     })
     
 }  
+function compear_array(st,st2){
+    const words = st.split(',');
+    const words2 = st2.split(',');
+    var count=0
+    for (let i = 0; i < words.length; i++) {
+        for (let j = 0; j < words2.length; j++) {
+            if(words[i]===words2[j]){
+                count++
+            }
+        }
+        
+    }
+    return count
+
+}
+function storg_id(r,e){
+    const av =[]
+    for (let i = 0; i < e.length; i++) {
+        if(compear_array(r[0].ingredients,e[i].ingredients)){
+          av.push(e[i])  
+        }
+    }
+    return av
+}
 function show_detalis_s(req,res){
     sql='select * from option_p where id_add=?'
     db.query(sql,[req.params.selectedSize],(error,result)=>{
         if(error){console.log(error)}
-        else{
+        else{ 
             console.log(result)
             res.json({valid:true,result})
             
