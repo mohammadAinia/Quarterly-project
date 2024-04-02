@@ -165,8 +165,7 @@ export { default as Componets_user_reviews } from './Graduation/Componets_user_r
 export { default as Componets_Product_store } from './Graduation/Componets_Product_store/Componets_Product_store'
 export { default as Product_Assortment } from '../Pages/Final_Project/Store/Product_Assortment/Product_Assortment'
 export { default as Componets_Product_Assortment } from './Graduation/Componets_Product_Assortment/Componets_Product_Assortment'
-
-
-
-
+export { default as Componets_Categories } from './Graduation/Componets_Categories/Componets_Categories'
+export { default as Add_product_store } from '../Pages/Final_Project/Site_Manager/Add_product_store/Add_product_store'
+export { default as Componets_Add_product_store } from './Graduation/Componets_Add_product_store/Componets_Add_product_store'
 

@@ -792,7 +792,8 @@
     position: absolute;
     width: 100%;
     height: 575px;
-    max-width: calc(100% - 400px); /* Adjust as needed */
+    max-width: calc(100% - 400px);
+    /* Adjust as needed */
 
 
     overflow-x: auto;
@@ -802,19 +803,24 @@
     top: 2879px;
     left: 200px;
 }
+
 .store .frame-2::-webkit-scrollbar {
-    width: 10px; /* Set the width of the scrollbar */
+    width: 10px;
+    /* Set the width of the scrollbar */
     height: 12px;
 }
 
 .store .frame-2::-webkit-scrollbar-thumb {
-    background-color: lightblue; /* Set the color of the scrollbar thumb */
-    border-radius: 5px; /* Optional: Round the corners of the scrollbar thumb */
+    background-color: lightblue;
+    /* Set the color of the scrollbar thumb */
+    border-radius: 5px;
+    /* Optional: Round the corners of the scrollbar thumb */
 
 }
 
 .store .frame-2::-webkit-scrollbar-track {
-    background-color: transparent; /* Set the color of the scrollbar track */
+    background-color: transparent;
+    /* Set the color of the scrollbar track */
 }
 
 
@@ -825,8 +831,8 @@
     display: inline-block;
     margin-right: 343px;
     margin-left: 10px;
-    overflow-inline:hidden;
-    
+    overflow-inline: hidden;
+
 }
 
 .store .rectangle-10 {
@@ -911,7 +917,8 @@
 
 .store .text-wrapper-30 {
     max-width: 210px;
-    width: 220px; /* Set max-width to the width of overlap-group-2 minus the width of rectangle-10 */
+    width: 220px;
+    /* Set max-width to the width of overlap-group-2 minus the width of rectangle-10 */
     height: 34px;
     top: 324px;
     left: 13px;
@@ -970,10 +977,13 @@
     left: 90px;
     background-color: #b8d8eb;
     border-radius: 14px;
-    transition: background-color 0.3s ease; /* Add transition for smooth effect */
+    transition: background-color 0.3s ease;
+    /* Add transition for smooth effect */
 }
+
 .store .frame-3:hover {
-    background-color: #85c7f2; /* Change background color on hover */
+    background-color: #85c7f2;
+    /* Change background color on hover */
 }
 
 .store .text-wrapper-32 {
@@ -992,10 +1002,11 @@
     line-height: normal;
 }
 
-.store .frame-3_me{
+.store .frame-3_me {
     width: 100%;
     height: 645px;
-    max-width: calc(100% - 400px); /* Adjust as needed */
+    max-width: calc(100% - 400px);
+    /* Adjust as needed */
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
@@ -1003,19 +1014,24 @@
     top: 6570px;
     left: 200px;
 }
+
 .store .frame-3_me::-webkit-scrollbar {
-    width: 10px; /* Set the width of the scrollbar */
+    width: 10px;
+    /* Set the width of the scrollbar */
     height: 12px;
 }
 
 .store .frame-3_me::-webkit-scrollbar-thumb {
-    background-color: lightblue; /* Set the color of the scrollbar thumb */
-    border-radius: 5px; /* Optional: Round the corners of the scrollbar thumb */
+    background-color: lightblue;
+    /* Set the color of the scrollbar thumb */
+    border-radius: 5px;
+    /* Optional: Round the corners of the scrollbar thumb */
 
 }
 
 .store .frame-3_me::-webkit-scrollbar-track {
-    background-color: transparent; /* Set the color of the scrollbar track */
+    background-color: transparent;
+    /* Set the color of the scrollbar track */
 }
 
 .store .overlap-21 {
@@ -1023,7 +1039,7 @@
     flex-wrap: nowrap;
     display: inline-block;
     margin-right: 343px;
-    margin-left: 10px;  
+    margin-left: 10px;
 
     /* width: 269px; */
     height: 519px;
@@ -1062,6 +1078,7 @@
     letter-spacing: 0;
     line-height: normal;
 }
+
 .store .element2 {
     position: absolute;
     height: 23px;
@@ -1095,7 +1112,7 @@
     /* Adjust the container to allow inline display */
     display: inline-block;
     position: absolute;
-        top: 555px;
+    top: 555px;
     left: 13px;
 }
 
@@ -1141,10 +1158,11 @@
     top: 555px;
 }
 
-.store .frame-4_me{
+.store .frame-4_me {
     width: 100%;
     height: 645px;
-    max-width: calc(100% - 400px); /* Adjust as needed */
+    max-width: calc(100% - 400px);
+    /* Adjust as needed */
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
@@ -1152,19 +1170,24 @@
     top: 7367px;
     left: 200px;
 }
+
 .store .frame-4_me::-webkit-scrollbar {
-    width: 10px; /* Set the width of the scrollbar */
+    width: 10px;
+    /* Set the width of the scrollbar */
     height: 12px;
 }
 
 .store .frame-4_me::-webkit-scrollbar-thumb {
-    background-color: lightblue; /* Set the color of the scrollbar thumb */
-    border-radius: 5px; /* Optional: Round the corners of the scrollbar thumb */
+    background-color: lightblue;
+    /* Set the color of the scrollbar thumb */
+    border-radius: 5px;
+    /* Optional: Round the corners of the scrollbar thumb */
 
 }
 
 .store .frame-4_me::-webkit-scrollbar-track {
-    background-color: transparent; /* Set the color of the scrollbar track */
+    background-color: transparent;
+    /* Set the color of the scrollbar track */
 }
 
 .store .overlap-22 {
@@ -1172,7 +1195,7 @@
     flex-wrap: nowrap;
     display: inline-block;
     margin-right: 343px;
-    margin-left: 10px; 
+    margin-left: 10px;
     height: 519px;
 
     /* top: 7367px;
@@ -1258,33 +1281,21 @@
     line-height: normal;
 }
 
-.store .text-wrapper-35 {
-    position: absolute;
-    width: 237px;
-    height: 33px;
-    top: 4425px;
-    left: 247px;
-    font-family: "Poppins-Medium", Helvetica;
-    font-weight: 500;
-    color: #000000;
-    font-size: 22px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
-}
-.store .text-wrapper-35 a{
+
+
+.store .text-wrapper-39 a {
     color: #000000;
 }
-.store .text-wrapper-39 a{
+
+.store .text-wrapper-38 a {
     color: #000000;
 }
-.store .text-wrapper-38 a{
+
+.store .text-wrapper-37 a {
     color: #000000;
 }
-.store .text-wrapper-37 a{
-    color: #000000;
-}
-.store .dog-collars-leashes a{
+
+.store .dog-collars-leashes a {
     color: #000000;
 }
 
@@ -1584,13 +1595,82 @@
     object-fit: cover;
 }
 
-.store .rectangle-16 {
+.store .store2 {
+    width: 100%;
+    height: 645px;
+    max-width: calc(100% - 300px);
+    /* Adjust as needed */
+    overflow-x: hidden;
+    overflow-y: auto;
+    white-space: wrap;
     position: absolute;
-    width: 246px;
-    height: 252px;
     top: 4135px;
     left: 243px;
+}
+.store .store2::-webkit-scrollbar {
+    width: 10px;
+    /* Set the width of the scrollbar */
+    height: 12px;
+}
+
+.store .store2::-webkit-scrollbar-thumb {
+    background-color: lightblue;
+    /* Set the color of the scrollbar thumb */
+    border-radius: 5px;
+    /* Optional: Round the corners of the scrollbar thumb */
+
+}
+
+.store .store2::-webkit-scrollbar-track {
+    background-color: transparent;
+    /* Set the color of the scrollbar track */
+}
+.store .over {
+    position: relative;
+    flex-wrap: nowrap;
+    display: inline-block;
+    /* margin-left: 40px; */
+    margin: 30px;
+    left: -55px;
+
+    /* width: 269px; */
+    /* height: 519px; */
+    /* top: 6570px;
+    left: 200px; */
+    
+}
+
+.store .rectangle-16 {
+    position: relative;
+    width: 246px;
+    height: 252px;
+    margin: 20px;
+    left: 0px;
+
     object-fit: cover;
+    /* display: inline-block; 
+    margin-right: 20px;  */
+}
+
+.store .text-wrapper-35 {
+    position: relative;
+    width: 237px;
+    height: 33px;
+    /* top: 4425px;
+    left: 247px; */
+    font-family: "Poppins-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 22px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    /* display: inline-block; 
+    margin-right: 20px;  */
+}
+
+.store .text-wrapper-35 a {
+    color: #000000;
 }
 
 .store .rectangle-17 {
@@ -2019,6 +2099,7 @@
     background-color: #BFDBE9;
 
 }
+
 .imagefooter .rectangle2 {
     position: absolute;
 
@@ -2028,7 +2109,9 @@
     left: 600px;
     background-color: #BFDBE9;
 
-}.imagefooter .rectangle3 {
+}
+
+.imagefooter .rectangle3 {
     position: absolute;
 
     width: 192px;
@@ -2037,7 +2120,9 @@
     left: 900px;
     background-color: #BFDBE9;
 
-}.imagefooter .rectangle4 {
+}
+
+.imagefooter .rectangle4 {
     position: absolute;
 
     width: 192px;
@@ -2046,7 +2131,9 @@
     left: 1200px;
     background-color: #BFDBE9;
 
-}.imagefooter .rectangle5 {
+}
+
+.imagefooter .rectangle5 {
     position: absolute;
 
     width: 192px;
@@ -2254,6 +2341,7 @@
     left: 0;
     object-fit: cover;
 }
+
 .image-text25 {
     position: absolute;
     top: 650px;
@@ -2267,6 +2355,7 @@
     font-size: 35px;
     font-family: "Poppins-Medium", Helvetica;
 }
+
 .image-text26 {
     position: absolute;
     top: 580px;
@@ -2279,6 +2368,7 @@
     font-weight: 100;
     font-size: 23px;
 }
+
 .image-text27 {
     position: absolute;
     top: 700px;
@@ -2291,6 +2381,7 @@
     font-weight: 100;
     font-size: 18px;
 }
+
 .image-text28 {
     position: absolute;
     top: 700px;
@@ -2303,6 +2394,7 @@
     font-weight: 100;
     font-size: 18px;
 }
+
 .image-text29 {
     position: absolute;
     top: 620px;
@@ -2315,6 +2407,7 @@
     font-weight: 100;
     font-size: 29px;
 }
+
 .image-text30 {
     position: absolute;
     top: 620px;
@@ -2327,6 +2420,7 @@
     font-weight: 100;
     font-size: 33px;
 }
+
 .image-text31 {
     position: absolute;
     top: 620px;

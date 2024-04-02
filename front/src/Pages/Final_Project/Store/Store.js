@@ -56,7 +56,7 @@ import store_Rectangle_233 from '../../../Assert/Images/store_Rectangle_233.png'
 import React, { useEffect, useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faInstagram, faXTwitter } from '@fortawesome/free-brands-svg-icons';
-import { Componets_newArrivals } from '../../../Componets'
+import { Componets_Categories, Componets_newArrivals } from '../../../Componets'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
@@ -64,6 +64,9 @@ import { useNavigate } from 'react-router-dom'
 const Store = () => {
 
     const [NewArrivalInfo, setNewArrivalInfo] = useState([])
+    // مشان سطر رقم 360
+    const [CategoriesInfo, setCategoriesInfo] = useState([])
+
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -73,6 +76,7 @@ const Store = () => {
                 if (res.data.valid) {
 
                     setNewArrivalInfo(res.data.result)
+                    setCategoriesInfo(res.data.result2)
                 }
                 else {
                     navigate('/login')
@@ -289,7 +293,7 @@ const Store = () => {
                             />
                         ))}
 
-                
+
                     </div>
 
                     {/* *************************************************************************************************************************************/}
@@ -318,6 +322,7 @@ const Store = () => {
 
                             </div>
                         </div>
+
                     </div>
 
 
@@ -352,19 +357,57 @@ const Store = () => {
 
                     {/* *************************************************************************************************************************************/}
 
+                    {/* قسم التسوق حسب الفئة  */}
+                    <div class="store2">
+
+                        {/* {CategoriesInfo.map((user, i) => (
+                            <Componets_Categories
+                                key={i}
+                                img={`http://localhost:3001/uploads/${user.image_url}`}
+                                name_categories={user.name_catogary}
+                                href={`Product_Assortment/${user.id}`} />
+                        ))} */}
+
+                        <Componets_Categories
+                            img={store_Rectangle_159}
+                            name_categories={"Puppy Essentials"}
+                            href={`Product_Assortment/${1}`} />
+
+                    </div>
 
 
+                    {/* *************************************************************************************************************************************/}
+
+
+
+
+                    {/* <div class="text-wrapper-36">Kitten Essentials</div> */}
+                    {/* <p class="dog-collars-leashes"><a href='Product_Assortment'>Dog Collars, Leashes &amp; Harnesses</a></p> */}
+                    {/* <p class="small-pet-food">Small Pet Food, Treats &amp; Hay</p> */}
+                    {/* <div class="text-wrapper-37"><a href='Product_Assortment'>Dog Toys</a></div> */}
+                    {/* <div class="cat-bowls-feeding">Cat Bowls &amp; Feeding</div> */}
+                    {/* <div class="text-wrapper-38"><a href='Product_Assortment'>Dog Treats</a></div> */}
+                    {/* <p class="cat-litter-litter">Cat Litter &amp; Litter Boxes</p> */}
+                    {/* <div class="text-wrapper-39"><a href='Product_Assortment'>Dog Food</a></div> */}
+                    {/* <div class="text-wrapper-40">Cat Food</div> */}
+
+                    {/* 
+                    <img class="rectangle-17" src={store_Rectangle_164} />
+                    <img class="rectangle-18" src={store_Rectangle_160} />
+                    <img class="rectangle-19" src={store_Rectangle_165} />
+                    <img class="rectangle-20" src={store_Rectangle_161} />
+                    <img class="rectangle-21" src={store_Rectangle_166} />
+                    <img class="rectangle-22" src={store_Rectangle_162} />
+                    <img class="rectangle-23" src={store_Rectangle_167} />
+                    <img class="rectangle-24" src={store_Rectangle_163} />
+                    <img class="rectangle-25" src={store_Rectangle_168} /> */}
+
+
+                    {/* *************************************************************************************************************************************/}
+
+
+                    {/* التسوق حسب نوع الحيوان */}
                     <div class="text-wrapper-34">Dog</div>
-                    <div class="text-wrapper-35"><a href={`Product_Assortment/${1}`}>Puppy Essentials</a></div>
-                    <div class="text-wrapper-36">Kitten Essentials</div>
-                    <p class="dog-collars-leashes"><a href='Product_Assortment'>Dog Collars, Leashes &amp; Harnesses</a></p>
-                    <p class="small-pet-food">Small Pet Food, Treats &amp; Hay</p>
-                    <div class="text-wrapper-37"><a href='Product_Assortment'>Dog Toys</a></div>
-                    <div class="cat-bowls-feeding">Cat Bowls &amp; Feeding</div>
-                    <div class="text-wrapper-38"><a href='Product_Assortment'>Dog Treats</a></div>
-                    <p class="cat-litter-litter">Cat Litter &amp; Litter Boxes</p>
-                    <div class="text-wrapper-39"><a href='Product_Assortment'>Dog Food</a></div>
-                    <div class="text-wrapper-40">Cat Food</div>
                     <div class="text-wrapper-41">Cat</div>
                     <div class="text-wrapper-42">Fish</div>
                     <div class="text-wrapper-43">Bird</div>
@@ -377,19 +420,10 @@ const Store = () => {
                     <img class="ellipse-4" src={store_Ellipse_111} />
                     <img class="ellipse-5" src={store_Ellipse_112} />
                     <img class="ellipse-6" src={store_Ellipse_113} />
-                    <a href="Product_Assortment">
-                        <img className="rectangle-16" src={store_Rectangle_159} alt="Description of the image" />
-                    </a>
-                    <img class="rectangle-17" src={store_Rectangle_164} />
-                    <img class="rectangle-18" src={store_Rectangle_160} />
-                    <img class="rectangle-19" src={store_Rectangle_165} />
-                    <img class="rectangle-20" src={store_Rectangle_161} />
-                    <img class="rectangle-21" src={store_Rectangle_166} />
-                    <img class="rectangle-22" src={store_Rectangle_162} />
-                    <img class="rectangle-23" src={store_Rectangle_167} />
-                    <img class="rectangle-24" src={store_Rectangle_163} />
-                    <img class="rectangle-25" src={store_Rectangle_168} />
 
+
+
+                    {/* *************************************************************************************************************************************/}
 
 
 

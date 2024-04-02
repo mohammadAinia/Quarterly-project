@@ -20,7 +20,7 @@ import {
   Choose_register_new_doctor, Select_Register, Adding_new_doctor_clinic, Del_Vet, Add_doctor_shift, Add_doctor_shift_time,
   Edit_doctor_shift, Edit_doctor_shift_time, Appointment_clinic_director, My_appointments, Add_information_to_clinic,
   Edit_information_to_clinic, Loading_page, Report, Modifying_clinic_working_hours, My_appointments_vet,
-  Diagnosis,Store,Choose_Product ,Product_Assortment
+  Diagnosis,Store,Choose_Product ,Product_Assortment,Add_product_store
 
 } from './Componets/index'
 
@@ -139,6 +139,8 @@ const App = () => {
             <Route path='add_clinic/Appointment_clinic_director/:id' element={<Appointment_clinic_director />} />
             <Route path='Add_Vets_to_clinic' element={<Add_Vets_to_clinic />} />
             <Route path='/Loginn/m' element={<Administrator_home />} />
+            <Route path='/m' element={<Administrator_home />} />
+
             <Route path='choose_clinic' element={<Choose_a_clinic_for_delete />} />
             <Route path='Choosing_a_doctor_clinic' element={<Componets_Clinic_To_choose />} />
             <Route path='mm' element={<Home_for_clinic_manager />} />
@@ -166,8 +168,10 @@ const App = () => {
             <Route path='store' element={<Store />} />
             <Route path='choose_product/:id' element={<Choose_Product />} />
             <Route path='Product_Assortment/:id' element={<Product_Assortment />} />
+            <Route path='Add_product_store' element={<Add_product_store />} />
 
 
+            
           </Routes>
         </Container>
       </Router>

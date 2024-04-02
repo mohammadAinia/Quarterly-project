@@ -77,7 +77,7 @@ const Componets_Edit_doctor_shift_time = () => {
 
                 <div class="user-details">
                     <div class="input-box">
-                        <span class="details" style={{ "margin-left": "220px", "width": "200px" }}>Saturday {Saturday_From+' '+Saturday_To}</span>
+                        <span class="details" style={{ "margin-left": "280px", "width": "200px" }}>Saturday {Saturday_From+' '+Saturday_To}</span>
                     </div>
 
                     <div class="input-box">
@@ -93,7 +93,7 @@ const Componets_Edit_doctor_shift_time = () => {
 
 
                     <div class="input-box">
-                        <span class="details" style={{ "margin-left": "220px", "width": "200px" }}>Sunday {Sunday_From+' '+Sunday_To}</span>
+                        <span class="details" style={{ "margin-left": "280px", "width": "200px" }}>Sunday {Sunday_From+' '+Sunday_To}</span>
                     </div>
                     <div class="input-box">
                     </div>
@@ -108,7 +108,7 @@ const Componets_Edit_doctor_shift_time = () => {
 
 
                     <div class="input-box">
-                        <span class="details" style={{ "margin-left": "220px", "width": "200px" }}>Monday {Monday_From+' '+Monday_To}</span>
+                        <span class="details" style={{ "margin-left": "280px", "width": "200px" }}>Monday {Monday_From+' '+Monday_To}</span>
                     </div>
                     <div class="input-box">
                     </div>
@@ -122,7 +122,7 @@ const Componets_Edit_doctor_shift_time = () => {
                     </div>
 
                     <div class="input-box">
-                        <span class="details" style={{ "margin-left": "220px", "width": "200px" }}>Tuesday {Tuesday_From+' '+Tuesday_To}</span>
+                        <span class="details" style={{ "margin-left": "280px", "width": "200px" }}>Tuesday {Tuesday_From+' '+Tuesday_To}</span>
                     </div>
                     <div class="input-box">
                     </div>
@@ -136,7 +136,7 @@ const Componets_Edit_doctor_shift_time = () => {
                     </div>
 
                     <div class="input-box">
-                        <span class="details" style={{ "margin-left": "220px", "width": "200px" }}>Wednesday {Wednesday_From+' '+Wednesday_To}</span>
+                        <span class="details" style={{ "margin-left": "280px", "width": "200px" }}>Wednesday {Wednesday_From+' '+Wednesday_To}</span>
                     </div>
                     <div class="input-box">
                     </div>
@@ -150,7 +150,7 @@ const Componets_Edit_doctor_shift_time = () => {
                     </div>
 
                     <div class="input-box">
-                        <span class="details" style={{ "margin-left": "220px", "width": "200px" }}>Thursday {Thursday_From+' '+Thursday_To}</span>
+                        <span class="details" style={{ "margin-left": "280px", "width": "200px" }}>Thursday {Thursday_From+' '+Thursday_To}</span>
                     </div>
                     <div class="input-box">
                     </div>
