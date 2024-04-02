@@ -46,6 +46,7 @@ const Choose_Product = () => {
     const [Recently_Viewed_Items, setRecently_Viewed_Items] = useState([])
     const [desc, setdesc] = useState([])
     const [first_s, set_f] = useState([])
+    const [smallimage, set_small] = useState([])
 
 
 
@@ -81,6 +82,7 @@ const Choose_Product = () => {
                     set_f(res.data.result3[0].count_av)
                     setPrice(res.data.result3[0].special_price)
                     setSimilarItem(res.data.v)
+                    set_small(res.data.result651)
                     if (res.data.result3[0].count_av==0){
                         setQuantity(0)
                         setNumber(0)
@@ -91,7 +93,7 @@ const Choose_Product = () => {
                     }
                     //هنا عطيني صورة المنتج
                     // alert(res.data.result[0].image_url)
-                    setLargerImageSrc(`http://localhost:3001/uploads/${res.data.result[0].image_url}`);
+                    setLargerImageSrc(`http://localhost:3001/uploads/${res.data.result651[0].urli}`);
                     // setQuantity(res.data.result3[0].count_av)
 // alert(res.data.result3[0].special_price)
 
@@ -445,15 +447,15 @@ const Choose_Product = () => {
                     <div class="frame-3_me2" ref={frameRef}>
 
                         {/* تم تعطيل هذه الميزة سأصلحها انا لاحقا لاتقرب عليها هيي شغالة بس بدي عدل شغلة بالداتا بيز لتشتغل متل الناس  */}
-                        {/* {Product_Info.map((user, i) => (
+                        {smallimage.map((user, i) => (
                             <img
                                 className="rectangle-2"
-                                src={`http://localhost:3001/uploads/${user.image_url}`}
+                                src={`http://localhost:3001/uploads/${user.urli}`}
                                 alt="Thumbnail Image"
-                                onClick={() => handleThumbnailClick(user.img)}
+                                onClick={() => handleThumbnailClick(`http://localhost:3001/uploads/${user.urli}`)}
                             />
 
-                        ))} */}
+                        ))}
 
 
 
@@ -541,7 +543,8 @@ const Choose_Product = () => {
                                 </div>
 
                             ))} */}
-                            {Size.map((user, i) => (
+                            {
+                            Size.map((user, i) => (
                                 <div className="div-wrapper" key={i}>
                                     <input
                                         type="radio"
@@ -554,7 +557,9 @@ const Choose_Product = () => {
                                     />
                                     <label htmlFor={`option${i}`} className="text-wrapper-15">{user.detalis}</label> {/* Use the same unique id in htmlFor */}
                                 </div>
-                            ))}
+                            ))
+                            }
+                            
                             {/* <div className="div-wrapper">
                                 <input
                                     type="radio"
