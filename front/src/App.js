@@ -142,6 +142,7 @@ const App = () => {
             <Route path='choose_clinic' element={<Choose_a_clinic_for_delete />} />
             <Route path='Choosing_a_doctor_clinic' element={<Componets_Clinic_To_choose />} />
             <Route path='mm' element={<Home_for_clinic_manager />} />
+
             <Route path='Choose_register_new_doctor' element={<Choose_register_new_doctor />} />
             <Route path='Select_Register' element={<Select_Register />} />
             <Route path='Adding_new_doctor_clinic' element={<Adding_new_doctor_clinic />} />
@@ -157,17 +158,14 @@ const App = () => {
             <Route path='Add_information_to_clinic' element={<Add_information_to_clinic />} /> {/*هذه الصفحة تم الغائها  */}
             <Route path='Edit_information_to_clinic' element={<Edit_information_to_clinic />} />
             <Route path='n' element={<Report />} />
+
             <Route path='Modifying_clinic_working_hours' element={<Modifying_clinic_working_hours />} />
             <Route path='My_appointments_vet' element={<My_appointments_vet />} />
             <Route path='My_appointments_vet/Diagnosis/:id' element={<Diagnosis />} />
             <Route path='Diagnosis/:id/:ii' element={<Diagnosis />} />
             <Route path='store' element={<Store />} />
             <Route path='choose_product/:id' element={<Choose_Product />} />
-            <Route path='Product_Assortment' element={<Product_Assortment />} />
-
-
-
-
+            <Route path='Product_Assortment/:id' element={<Product_Assortment />} />
 
 
           </Routes>
