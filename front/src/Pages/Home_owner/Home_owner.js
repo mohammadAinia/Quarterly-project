@@ -38,16 +38,6 @@ import advstoreeVector_56 from '../../Assert/Images/advstoreeVector_56.png'
 import advstoreeVector_57 from '../../Assert/Images/advstoreeVector_57.png'
 
 
-
-
-
-
-
-
-
-
-
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faRightFromBracket, faBell, faHouse, faMessage, faUserDoctor, faStethoscope } from '@fortawesome/free-solid-svg-icons'
 

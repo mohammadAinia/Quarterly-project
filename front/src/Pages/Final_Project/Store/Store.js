@@ -355,15 +355,15 @@ const Store = () => {
 
 
                     <div class="text-wrapper-34">Dog</div>
-                    <div class="text-wrapper-35"><a href='Product_Assortment'>Puppy Essentials</a></div>
+                    <div class="text-wrapper-35"><a href={`Product_Assortment/${1}`}>Puppy Essentials</a></div>
                     <div class="text-wrapper-36">Kitten Essentials</div>
-                    <p class="dog-collars-leashes">Dog Collars, Leashes &amp; Harnesses</p>
+                    <p class="dog-collars-leashes"><a href='Product_Assortment'>Dog Collars, Leashes &amp; Harnesses</a></p>
                     <p class="small-pet-food">Small Pet Food, Treats &amp; Hay</p>
-                    <div class="text-wrapper-37">Dog Toys</div>
+                    <div class="text-wrapper-37"><a href='Product_Assortment'>Dog Toys</a></div>
                     <div class="cat-bowls-feeding">Cat Bowls &amp; Feeding</div>
-                    <div class="text-wrapper-38">Dog Treats</div>
+                    <div class="text-wrapper-38"><a href='Product_Assortment'>Dog Treats</a></div>
                     <p class="cat-litter-litter">Cat Litter &amp; Litter Boxes</p>
-                    <div class="text-wrapper-39">Dog Food</div>
+                    <div class="text-wrapper-39"><a href='Product_Assortment'>Dog Food</a></div>
                     <div class="text-wrapper-40">Cat Food</div>
                     <div class="text-wrapper-41">Cat</div>
                     <div class="text-wrapper-42">Fish</div>

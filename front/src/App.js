@@ -158,14 +158,14 @@ const App = () => {
             <Route path='Add_information_to_clinic' element={<Add_information_to_clinic />} /> {/*هذه الصفحة تم الغائها  */}
             <Route path='Edit_information_to_clinic' element={<Edit_information_to_clinic />} />
             <Route path='n' element={<Report />} />
-            
+
             <Route path='Modifying_clinic_working_hours' element={<Modifying_clinic_working_hours />} />
             <Route path='My_appointments_vet' element={<My_appointments_vet />} />
             <Route path='My_appointments_vet/Diagnosis/:id' element={<Diagnosis />} />
             <Route path='Diagnosis/:id/:ii' element={<Diagnosis />} />
             <Route path='store' element={<Store />} />
             <Route path='choose_product/:id' element={<Choose_Product />} />
-            <Route path='Product_Assortment' element={<Product_Assortment />} />
+            <Route path='Product_Assortment/:id' element={<Product_Assortment />} />
 
 
           </Routes>
