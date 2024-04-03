@@ -16,7 +16,7 @@ const fileFilter=(req,file,cd)=>{
     else
     {
         cd(new Error('Unsported this type'))
-    }
+    } 
 }
 const upload =multer({
     storage : storage ,

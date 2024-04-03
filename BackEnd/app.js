@@ -9,6 +9,7 @@ const chat=require('./routes/chats')
 const vet=require('./routes/vetController')
 const clinic=require('./routes/clinicR')
 const storee=require('./routes/storeR')
+const admin=require('./routes/admin')
 
 
 const app =express()
@@ -56,5 +57,6 @@ app.use("/chat",chat)
 app.use("/vet",vet)
 app.use("/clinic",clinic)
 app.use("/storee",storee)
+app.use("/admin",admin)
 
 module.exports=app;

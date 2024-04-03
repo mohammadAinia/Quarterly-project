@@ -59,7 +59,7 @@ const Componets_Add_product_store = () => {
         });
 
         pictures.forEach((picture, index) => {
-            formData.append(`picture${index + 1}`, picture);
+            formData.append(`image${index+1}`, picture);
         });
 
         // تجربة طباعة البيانات
@@ -69,7 +69,7 @@ const Componets_Add_product_store = () => {
 
 
         e.preventDefault()
-        axios.post('http://localhost:3001/#/#/', formData, { withCredentials: true })
+        axios.post('http://localhost:3001/admin/add_prod', formData, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     alert('The product has been added successfully')
