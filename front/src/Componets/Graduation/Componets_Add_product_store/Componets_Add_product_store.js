@@ -28,7 +28,7 @@ const Componets_Add_product_store = () => {
     const handleSubmit = async (e) => {
 
         const formData = new FormData()
-
+        
         formData.append('brand', Brand)
         formData.append('shortDesc', ShortDesc)
         formData.append('desc', Desc)
@@ -39,17 +39,17 @@ const Componets_Add_product_store = () => {
         formData.append('numberOfSizes', numberOfSizes);
         formData.append('numberOfFeatures', numberOfFeatures);
         formData.append('numberOfPictures', numberOfPictures);
-
+        formData.append('count_size',sizeInputs.length)
         sizeInputs.forEach((size, index) => {
             formData.append(`size${index + 1}`, size.size);
             formData.append(`quantity${index + 1}`, size.quantity);
             formData.append(`price${index + 1}`, size.price);
         });
-
+        formData.append('count_f',featureInputs.length)
         featureInputs.forEach((feature, index) => {
             formData.append(`feature${index + 1}`, feature);
         });
-
+        formData.append('pic_count',pictures.length)
         pictures.forEach((picture, index) => {
             formData.append(`picture${index + 1}`, picture);
         });

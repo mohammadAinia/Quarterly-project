@@ -210,7 +210,7 @@ function add_rev(req,res){
                             if(error){console.log(error)}
                             
                         })
-                    }
+                    } 
                         sql1234='select * from count_stars where pr_id=?'
                         db.query(sql1234,[req.params.id],(error,result2)=>{
                             if(error){console.log(error)}
@@ -237,6 +237,7 @@ function add_rev(req,res){
             db.query(sql1,(error,result)=>{
                 if(error){console.log(error)}
                 else{
+                    console.log(result.insertId)
                     sqll='select * from count_stars where pr_id=?'
                     db.query(sqll,[req.params.id],(error,result1)=>{
                         if(error){console.log(error)}
