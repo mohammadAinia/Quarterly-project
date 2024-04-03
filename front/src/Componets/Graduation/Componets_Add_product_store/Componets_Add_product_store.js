@@ -28,6 +28,8 @@ const Componets_Add_product_store = () => {
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
 
+        e.preventDefault();
+
         const formData = new FormData()
 
         formData.append('brand', Brand)
@@ -63,9 +65,9 @@ const Componets_Add_product_store = () => {
         });
 
         // تجربة طباعة البيانات
-        // for (const [key, value] of formData.entries()) {
-        //     alert(`${key}: ${value}`);
-        // }
+        for (const [key, value] of formData.entries()) {
+            alert(`${key}: ${value}`);
+        }
 
 
         e.preventDefault()
