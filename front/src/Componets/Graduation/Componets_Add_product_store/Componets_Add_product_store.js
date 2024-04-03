@@ -18,41 +18,54 @@ const Componets_Add_product_store = () => {
     const [Brand, setBrand] = useState('')
     const [ShortDesc, setShortDesc] = useState('')
     const [Desc, setDesc] = useState('')
-    const [Use, setUse] = useState('')
+    const [Other, setOther] = useState('')
     const [Ingredients, setIngredients] = useState('')
     const [KindeSize, setKindeSize] = useState('')
-
-
+    const [TypeSpecifications, setTypeSpecifications] = useState('')
+    const [TypeAnimal, setTypeAnimal] = useState('')
+    const [Category, setCategory] = useState('')
 
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
 
         const formData = new FormData()
-        
+
         formData.append('brand', Brand)
         formData.append('shortDesc', ShortDesc)
         formData.append('desc', Desc)
-        formData.append('use', Use)
+        formData.append('other', Other)
         formData.append('ingredients', Ingredients)
         formData.append('kindeSize', KindeSize)
+        formData.append('typeSpecifications', TypeSpecifications)
+        formData.append('typeAnimal', TypeAnimal)
+        formData.append('category', Category)
 
         formData.append('numberOfSizes', numberOfSizes);
         formData.append('numberOfFeatures', numberOfFeatures);
         formData.append('numberOfPictures', numberOfPictures);
-        formData.append('count_size',sizeInputs.length)
+
+        formData.append('count_size', sizeInputs.length)
+        formData.append('count_f', featureInputs.length)
+        formData.append('pic_count', pictures.length)
+
         sizeInputs.forEach((size, index) => {
             formData.append(`size${index + 1}`, size.size);
             formData.append(`quantity${index + 1}`, size.quantity);
             formData.append(`price${index + 1}`, size.price);
         });
-        formData.append('count_f',featureInputs.length)
+
         featureInputs.forEach((feature, index) => {
             formData.append(`feature${index + 1}`, feature);
         });
-        formData.append('pic_count',pictures.length)
+
         pictures.forEach((picture, index) => {
             formData.append(`picture${index + 1}`, picture);
         });
+
+        // تجربة طباعة البيانات
+        // for (const [key, value] of formData.entries()) {
+        //     alert(`${key}: ${value}`);
+        // }
 
 
         e.preventDefault()
@@ -135,8 +148,8 @@ const Componets_Add_product_store = () => {
                         <input type="text" name='desc' required onChange={e => setDesc(e.target.value)} />
                     </div>
                     <div class="input-box">
-                        <span class="details">use *</span>
-                        <input type="text" name='use' required onChange={e => setUse(e.target.value)} />
+                        <span class="details">Other *</span>
+                        <input type="text" name='other' required onChange={e => setOther(e.target.value)} />
                     </div>
 
                     <div class="input-box">
@@ -193,7 +206,6 @@ const Componets_Add_product_store = () => {
 
                     {sizeInputs.map((input, index) => (
                         <div key={index}>
-
                             <div className="input-box" style={{ "width": "300px" }}>
                                 <span className="details">Product size {index + 1} *</span>
                                 <input type="number" name={`size-${index}`} required value={input.size} onChange={e => handleSizeInputChange(index, 'size', e.target.value)} />
@@ -217,11 +229,14 @@ const Componets_Add_product_store = () => {
                     <div class="input-box" style={{ "width": "600px" }}>
                         <span class="details">What kind of sizes? *</span>
                         <select name="kindeSize" idd="cars" required onChange={e => setKindeSize(e.target.value)}>
-
                             <option value="kg" >Kg</option>
-                            <option value="kg" >ML</option>
-
-
+                            <option value="ML" >ML</option>
+                            <option value="XL" >XL</option>
+                            <option value="L" >L</option>
+                            <option value="XXL" >XXL</option>
+                            <option value="XXXL" >XXXL</option>
+                            <option value="M" >M</option>
+                            <option value="S" >S</option>
                         </select>
                     </div>
 
@@ -231,12 +246,27 @@ const Componets_Add_product_store = () => {
                     <div class="input-box">
                     </div>
                     <div className="input-box" style={{ width: '600px' }}>
-                        <span className="details">How many features of the product ? *</span>
+                        <span className="details">How many specifications of the product ? *</span>
                         <select name="type_size" id="cars" required onChange={handleNumberOfFeaturesChange}>
                             <option value={1}>1</option>
                             <option value={2}>2</option>
                             <option value={3}>3</option>
                             <option value={4}>4</option>
+                        </select>
+                    </div>
+
+                    <div class="input-box">
+                        {/* <span class="details" style={{ "margin-left": "280px", "width": "200px" }}> {Saturday_From + ' ' + Saturday_To}</span> */}
+                    </div>
+                    <div class="input-box">
+                    </div>
+                    <div className="input-box" style={{ width: '600px' }}>
+                        <span className="details">What type of specifications are entered ? *</span>
+                        <select name="typeSpecifications" id="cars" required onChange={e => setTypeSpecifications(e.target.value)}>
+                            <option value="Feature">Feature</option>
+                            <option value="specifications">specifications</option>
+                            <option value="Key Benefits">Key Benefits</option>
+                            <option value="Contains">Contains</option>
                         </select>
                     </div>
 
@@ -256,6 +286,40 @@ const Componets_Add_product_store = () => {
                             />
                         </div>
                     ))}
+
+                    <div class="input-box">
+                        {/* <span class="details" style={{ "margin-left": "280px", "width": "200px" }}> {Saturday_From + ' ' + Saturday_To}</span> */}
+                    </div>
+                    <div class="input-box">
+                    </div>
+                    <div className="input-box" style={{ width: '600px' }}>
+                        <span className="details">Type of animal ? *</span>
+                        <select name="typeAnima" id="cars" required onChange={e => setTypeAnimal(e.target.value)}>
+                            <option value="Cat">Cat</option>
+                            <option value="Dog">Dog</option>
+                            <option value="Fish">Fish</option>
+                            <option value="Birds">Birds</option>
+                            <option value="Reptile">Reptile</option>
+                            <option value="Small Pet">Small Pet</option>
+                        </select>
+                    </div>
+
+                    <div class="input-box">
+                        {/* <span class="details" style={{ "margin-left": "280px", "width": "200px" }}> {Saturday_From + ' ' + Saturday_To}</span> */}
+                    </div>
+                    <div class="input-box">
+                    </div>
+                    <div className="input-box" style={{ width: '600px' }}>
+                        <span className="details">Category ? *</span>
+                        <select name="typeAnima" id="cars" required onChange={e => setCategory(e.target.value)}>
+                            <option value="Food">Food</option>
+                            <option value="Tooys">Tooys</option>
+                            <option value="Treets">Treets</option>
+                            <option value="Puppy Essentials">Puppy Essentials</option>
+                            <option value="Dog Carriers & Travel">Dog Carriers & Travel</option>
+                            <option value="Aquariums & Starter Kits">Aquariums & Starter Kits</option>
+                        </select>
+                    </div>
 
                     <div class="input-box">
                         {/* <span class="details" style={{ "margin-left": "280px", "width": "200px" }}> {Saturday_From + ' ' + Saturday_To}</span> */}
@@ -287,10 +351,7 @@ const Componets_Add_product_store = () => {
                             />
                         </div>
                     ))}
-
-
                 </div>
-
 
                 <div class="button">
                     <button>Add</button>
