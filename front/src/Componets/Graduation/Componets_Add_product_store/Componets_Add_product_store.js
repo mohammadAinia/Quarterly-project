@@ -8,12 +8,14 @@ import { useNavigate, useParams } from 'react-router-dom'
 const Componets_Add_product_store = () => {
     const navigate = useNavigate()
 
+
+
     const [numberOfSizes, setNumberOfSizes] = useState(1);
     const [sizeInputs, setSizeInputs] = useState([]);
     const [numberOfFeatures, setNumberOfFeatures] = useState(1);
     const [featureInputs, setFeatureInputs] = useState(['']);
     const [numberOfPictures, setNumberOfPictures] = useState(1);
-    const [pictures, setPictures] = useState([]);
+    const [pictures, setPictures] = useState(['']);
 
     const [Brand, setBrand] = useState('')
     const [ShortDesc, setShortDesc] = useState('')
@@ -27,6 +29,12 @@ const Componets_Add_product_store = () => {
 
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
+
+        // e.preventDefault();
+
+        // pictures.forEach((file, index) => {
+        //     console.log(`image${index + 1}:`, file);
+        // });
 
         e.preventDefault();
 
@@ -71,7 +79,7 @@ const Componets_Add_product_store = () => {
 
 
         e.preventDefault()
-        axios.post('http://localhost:3001/admin/add_prod', formData, { withCredentials: true })
+        axios.post('http://localhost:3001/admin/add_prod', formData)
             .then(res => {
                 if (res.data.valid) {
                     alert('The product has been added successfully')
