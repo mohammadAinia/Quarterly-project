@@ -227,7 +227,7 @@ const Componets_Add_product_store = () => {
                         <div key={index}>
                             <div className="input-box" style={{ "width": "300px" }}>
                                 <span className="details">Product size {index + 1} *</span>
-                                <input type="number" name={`size-${index}`} required value={input.size} onChange={e => handleSizeInputChange(index, 'size', e.target.value)} />
+                                <input type="text" name={`size-${index}`} required value={input.size} onChange={e => handleSizeInputChange(index, 'size', e.target.value)} />
                             </div>
                             <div className="input-box" style={{ "width": "300px" }}>
                                 <span className="details">Quantity of size {index + 1} *</span>

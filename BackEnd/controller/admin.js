@@ -10,7 +10,7 @@ function Add_product_store(req,res){
 
     var d=new Date()
     var datee = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
-    sql="insert proudact (price,animal_type,count_avilable,store_in_name,ingredients,detalies_id,short_name,category,date_added,image_url) VALUES ('"+req.body.price1 +"','"+ req.body.typeAnimal+"','"+ req.body.quantity1+"','"+ "gh"+"','"+ req.body.ingredients+"','"+ show_max()+"','"+ req.body.ingredients+"','"+req.body.category +"','"+datee +"','"+ req.files[0].originalname+"')"
+    sql="insert proudact (price,animal_type,count_avilable,store_in_name,ingredients,detalies_id,short_name,category,date_added,image_url) VALUES ('"+req.body.price1 +"','"+ req.body.typeAnimal+"','"+ req.body.quantity1+"','"+ req.body.brand+"','"+ req.body.ingredients+"','"+ show_max()+"','"+ req.body.shortDesc+"','"+req.body.category +"','"+datee +"','"+ req.files[0].filename+"')"
     db.query(sql,(error,result)=>{
         if(error){console.log(error)}
         else{
@@ -42,8 +42,9 @@ function Add_product_store(req,res){
                         })
                 }
                 
-                for (let i = 1; i <= req.files.length; i++) {
-                    sql4="insert small_im (urli,prod_id) values ('"+req.files[i].originalname+"','"+result.insertId+"')"
+                for (let i = 0; i < req.files.length; i++) {
+                    
+                    sql4="insert small_im (urli,prod_id) values ('"+req.files[i].filename+"','"+result.insertId+"')"
                     db.query(sql4,(error,result4)=>{
                         if(error){console.log(error)}
                         else{
@@ -52,8 +53,14 @@ function Add_product_store(req,res){
                         } 
                     })
                 }
+                sql5="insert into count_stars (pr_id) values ('"+result.insertId+"')"
+                db.query(sql5,(err,r)=>{
+                    if(err){console.log(err)}
+                    
+                });                            
+              
             
-
+                
                 res.json({valid:true,result})
                 }
             })

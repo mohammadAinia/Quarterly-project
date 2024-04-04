@@ -285,9 +285,9 @@ const Store = () => {
                             <Componets_newArrivals
                                 key={i}
                                 image={`http://localhost:3001/uploads/${user.image_url}`}
-                                brand={user.short_name}
+                                brand={user.store_in_name}
                                 price={(user.price) + "$"}
-                                desc={user.store_in_name}
+                                desc={user.short_name}
                                 href={`choose_product/${user.id}`}
 
                             />
