@@ -20,19 +20,31 @@ const db=require("../dbb/db")
 //         }
 //     })
 // }
+function get_category_home(){
+    
+}
 function new_arrivle(req,res){
+    
     if(req.session.username){
     sql='SELECT * FROM `proudact` WHERE DATEDIFF(CURRENT_DATE(),proudact.date_added)<10'
     db.query(sql,(error,result)=>{
+        if(error){console.log(error)} 
+        else{
+            sql='select * from category_t '
+    db.query(sql,(error,result2)=>{
         if(error){console.log(error)}
         else{
-            res.json({valid:true,result})
+            res.json({valid:true,result,result2})
+        }
+    })
+            
             
         }
     })
 }
 else res.json({valid:false})
 }
+
 function sort_by_animal(req,res){
     
  

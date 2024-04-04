@@ -77,6 +77,7 @@ const Store = () => {
 
                     setNewArrivalInfo(res.data.result)
                     setCategoriesInfo(res.data.result2)
+                    alert(res.data.result2)
                 }
                 else {
                     navigate('/login')
@@ -360,13 +361,13 @@ const Store = () => {
                     {/* قسم التسوق حسب الفئة  */}
                     <div class="store2">
 
-                        {/* {CategoriesInfo.map((user, i) => (
+                        {CategoriesInfo.map((user, i) => (
                             <Componets_Categories
                                 key={i}
-                                img={`http://localhost:3001/uploads/${user.image_url}`}
-                                name_categories={user.name_catogary}
-                                href={`Product_Assortment/${user.id}`} />
-                        ))} */}
+                                img={`http://localhost:3001/uploads/${user.url_imagee}`}
+                                name_categories={user.categ}
+                                href={`Product_Assortment/${user.id_c}`} />
+                        ))}
 
                         <Componets_Categories
                             img={store_Rectangle_159}
