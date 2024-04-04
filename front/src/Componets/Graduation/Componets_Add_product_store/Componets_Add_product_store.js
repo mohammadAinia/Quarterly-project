@@ -24,6 +24,7 @@ const Componets_Add_product_store = () => {
     const [TypeSpecifications, setTypeSpecifications] = useState('')
     const [TypeAnimal, setTypeAnimal] = useState('')
     const [Category, setCategory] = useState('')
+    const [file, setFile] = useState(null);
 
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
@@ -50,6 +51,14 @@ const Componets_Add_product_store = () => {
         formData.append('count_f', featureInputs.length)
         formData.append('pic_count', pictures.length)
 
+        let newArr = ['l'];
+        for (let i = 0; i < file.length; i++) {
+            formData.append('monfichier', file[i]);
+          }
+          
+        formData.append('monfichier', newArr);
+        alert (formData.get('monfichier'));
+
         sizeInputs.forEach((size, index) => {
             formData.append(`size${index + 1}`, size.size);
             formData.append(`quantity${index + 1}`, size.quantity);
@@ -65,9 +74,9 @@ const Componets_Add_product_store = () => {
         });
 
         // تجربة طباعة البيانات
-        for (const [key, value] of formData.entries()) {
-            alert(`${key}: ${value}`);
-        }
+        // for (const [key, value] of formData.entries()) {
+        //     alert(`${key}: ${value}`);
+        // }
 
 
         e.preventDefault()
@@ -346,10 +355,10 @@ const Componets_Add_product_store = () => {
                         <div className="input-box" key={index}>
                             <span className="details">Picture {index + 1} *</span>
                             <input
-                                type="file"
-                                name={`image-${index}`}
-                                onChange={(e) => handlePictureInputChange(index, e.target.files[0])}
-                                required
+                                type='file'
+                                name='monfichier'
+                                onChange={(e) => setFile(e.target.files)}
+                                multiple
                             />
                         </div>
                     ))}
