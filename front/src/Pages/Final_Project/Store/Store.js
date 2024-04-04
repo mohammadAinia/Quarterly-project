@@ -56,7 +56,7 @@ import store_Rectangle_233 from '../../../Assert/Images/store_Rectangle_233.png'
 import React, { useEffect, useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faInstagram, faXTwitter } from '@fortawesome/free-brands-svg-icons';
-import { Componets_Categories, Componets_newArrivals } from '../../../Componets'
+import { Componets_Categories, Componets_newArrivals, Header, Store_Header } from '../../../Componets'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
@@ -156,12 +156,20 @@ const Store = () => {
         }
     };
 
+
     return (
         <>
+            <Store_Header />
             <div class="store">
                 <div class="div">
                     <div class="overlap">
-                        <div class="text-wrapper">Shop by Pet</div>
+
+
+                        <div class="text-wrapper" >Shop by Pet</div>
+
+
+
+
                         <div class="text-wrapper-2">Shop by Brand</div>
                         <div class="text-wrapper-3">Deals</div>
                         <div class="text-wrapper-4">New Arrivals</div>
@@ -408,14 +416,15 @@ const Store = () => {
 
 
                     {/* التسوق حسب نوع الحيوان */}
-                    <div class="text-wrapper-34">Dog</div>
+
+                    <a href='shop_by_pet' class="text-wrapper-34">Dog</a>
                     <div class="text-wrapper-41">Cat</div>
                     <div class="text-wrapper-42">Fish</div>
                     <div class="text-wrapper-43">Bird</div>
                     <div class="text-wrapper-44">Rabbit</div>
                     <div class="text-wrapper-45">Reptile</div>
 
-                    <img class="ellipse" src={store_Ellipse_108} />
+                    <a href='shop_by_pet'><img class="ellipse" src={store_Ellipse_108} /></a>
                     <img class="ellipse-2" src={store_Ellipse_109} />
                     <img class="ellipse-3" src={store_Ellipse_110} />
                     <img class="ellipse-4" src={store_Ellipse_111} />
