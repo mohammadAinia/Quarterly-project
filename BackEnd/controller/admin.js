@@ -87,6 +87,16 @@ function add_new_category(req,res){
         }
     })
 }
+function add_category(req,res){
+    sql="insert into category_t (categ,animal_type,prod_type,url_imagee) values ('"+ req.body+"','"+ req.body+"','"+ req.body+"','"+ req.file.filename+"')"
+    db.query(sql,(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            res.json({valid:true,result})
+        }
+    })
+}
 module.exports={
-    Add_product_store
+    Add_product_store,
+    add_category
 }

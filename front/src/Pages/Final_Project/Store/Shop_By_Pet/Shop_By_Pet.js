@@ -29,12 +29,23 @@ const Shop_By_Pet = () => {
         axios.get(`http://localhost:3001/storee/sort_by_animal/${id}`, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
-
-                    setCategoriesFood(res.data.result)
-                    setCategoriesTreats(res.data.result)
-                    setCategoriesSupplies(res.data.result)
+                    for (let i = 0; i < res.data.result.length; i++) {
+                        if(res.data.result[i].prod_type=='Food & Treats')
+                        {
+                            CategoriesFood.push(res.data.result[i])
+                        }
+                        else if(res.data.result[i].prod_type=='Litter & Accessories'){
+                            CategoriesTreats.push(res.data.result[i])
+                        }
+                        else {
+                            CategoriesSupplies.push(res.data.result[i])
+                        }
+                    }
+                    // setCategoriesFood(res.data.food)
+                    // setCategoriesTreats(res.data.litter)
+                    // setCategoriesSupplies(res.data.Supplies)
                     setName(id)
-
+                    console.log(res.data.food)
                 }
                 else {
                     navigate('/login')

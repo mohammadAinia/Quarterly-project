@@ -34,8 +34,8 @@ function new_arrivle(req,res){
     db.query(sql,(error,result)=>{
         if(error){console.log(error)} 
         else{
-            sql='select * from category_t '
-    db.query(sql,(error,result2)=>{
+            sql='select * from category_t where by_animal=?'
+    db.query(sql,[0],(error,result2)=>{
         if(error){console.log(error)}
         else{
             res.json({valid:true,result,result2})
@@ -50,14 +50,30 @@ function new_arrivle(req,res){
 
 function sort_by_animal(req,res){
     
- 
+    // 'SELECT * FROM proudact WHERE  animal_type LIKE ?', ['%'+animal+'%']
        animal=req.params.id
-       
-    db.query('SELECT * FROM proudact WHERE animal_type LIKE ?', ['%'+animal+'%'], (error, result) => {
+       sql='select * from category_t where animal_type=?'
+    db.query(sql,[animal],(error, result) => {
     if (error) { 
             console.error(error);
         } else {
-            res.json({valid:true,result})
+            const food=[]
+            const litter=[]
+            const supplies=[]
+            for (let i = 0; i < result.length; i++) {
+                if(result[i].prod_type=='Food & Treats')
+                {
+                    food.push(result[i])
+                }
+                else if(result[i].prod_type=='Litter & Accessories'){
+                    litter.push(result[i])
+                }
+                else {
+                    supplies.push(result[i])
+                }
+            }
+            console.log(supplies)
+            res.json({valid:true,food,litter,supplies,result});
         }
 
     });
@@ -225,6 +241,7 @@ function open_proudact(req,res){
                                                         db.query(sql32,[result[0].id],(error,result3)=>{
                                                             if(error){console.log(error)}
                                                             else{
+                                                                
                                                                 res.json({result651,result9,result1,result,result2,result3,valid:true,v,ressss})
                                                             }
                                                         })
