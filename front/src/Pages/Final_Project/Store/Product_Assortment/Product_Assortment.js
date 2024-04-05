@@ -25,10 +25,10 @@ const Product_Assortment = () => {
 
     useEffect(() => {
         // Fetch all products when the component mounts
-        axios.get(`http://localhost:3001/storee/#/${id}`, { withCredentials: true })
+        axios.get(`http://localhost:3001/storee/get_by_brand/${id}`, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
-                    setProduct(res.data.v);
+                    setProduct(res.data.result1);
 
                     setName(res.data.result2)
 
@@ -318,7 +318,7 @@ const Product_Assortment = () => {
                                 <Componets_Product_Assortment
                                     key={i}
                                     img={`http://localhost:3001/uploads/${product.image_url}`}
-                                    brand={product.short_name}
+                                    brand={product.store_in_name}
                                     avg_review={product.review_count}
                                     total_comments={"(" + product.comments + ")"}
                                     price={product.price + ' $'}
