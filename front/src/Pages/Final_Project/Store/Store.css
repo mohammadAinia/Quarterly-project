@@ -245,7 +245,7 @@
     position: absolute;
     width: 884px;
     height: 47px;
-    top: 6px;
+    top: 15px;
     left: 548px;
     font-family: "Inder-Regular", Helvetica;
     font-weight: 400;
@@ -259,7 +259,7 @@
     position: absolute;
     width: 153px;
     height: 47px;
-    top: 6px;
+    top:15px;
     left: 1425px;
     font-family: "Inder-Regular", Helvetica;
     font-weight: 400;
@@ -1543,6 +1543,36 @@
     top: 2879px;
     left: 1573px;
 }
+.store .text-wrapper-34,
+.store .text-wrapper-41,
+.store .text-wrapper-42,
+.store .text-wrapper-43,
+.store .text-wrapper-44,
+.store .text-wrapper-45,
+.store .ellipse,
+.store .ellipse-2,
+.store .ellipse-3,
+.store .ellipse-4,
+.store .ellipse-5,
+.store .ellipse-6 {
+    transition: transform 0.3s ease-in-out;
+}
+
+.store .text-wrapper-34:hover,
+.store .text-wrapper-41:hover,
+.store .text-wrapper-42:hover,
+.store .text-wrapper-43:hover,
+.store .text-wrapper-44:hover,
+.store .text-wrapper-45:hover,
+.store .ellipse:hover,
+.store .ellipse-2:hover,
+.store .ellipse-3:hover,
+.store .ellipse-4:hover,
+.store .ellipse-5:hover,
+.store .ellipse-6:hover {
+    transform: scale(1.1); /* Scale the element to 110% on hover */
+}
+
 
 .store .ellipse {
     left: 213px;

@@ -66,6 +66,15 @@ const Store = () => {
     const [NewArrivalInfo, setNewArrivalInfo] = useState([])
     // مشان سطر رقم 360
     const [CategoriesInfo, setCategoriesInfo] = useState([])
+    const [IdDog, setIdDog] = useState()
+    const [IdCat, setIdCat] = useState()
+    const [IdFish, setIdFish] = useState()
+    const [IdBirds, setIdBirds] = useState()
+    const [IdRabbit, setIdRabbit] = useState()
+    const [IdReptile, setIdReptile] = useState()
+
+
+
 
     const navigate = useNavigate()
 
@@ -77,6 +86,13 @@ const Store = () => {
 
                     setNewArrivalInfo(res.data.result)
                     setCategoriesInfo(res.data.result2)
+                    setIdDog(res.data.result3)
+                    setIdCat(res.data.result4)
+                    setIdFish(res.data.result5)
+                    setIdBirds(res.data.result6)
+                    setIdRabbit(res.data.result7)
+                    setIdReptile(res.data.result8)
+
                     // alert(res.data.result2)
                 }
                 else {
@@ -326,6 +342,7 @@ const Store = () => {
 
                             </div>
                         </div>
+                        
 
                     </div>
 
@@ -356,6 +373,7 @@ const Store = () => {
                             <img class="star-solid-4" src={store_star_solid_1} />
                             <img class="star-solid-5" src={store_star_solid_1} />
                         </div>
+                        
                     </div>
 
 
@@ -411,20 +429,20 @@ const Store = () => {
 
 
                     {/* التسوق حسب نوع الحيوان */}
-                        
-                    <a href='shop_by_pet' class="text-wrapper-34">Dog</a>
-                    <div class="text-wrapper-41">Cat</div>
-                    <div class="text-wrapper-42">Fish</div>
-                    <div class="text-wrapper-43">Bird</div>
-                    <div class="text-wrapper-44">Rabbit</div>
-                    <div class="text-wrapper-45">Reptile</div>
+                    <div class="text-wrapper-14">Shop by Pet</div>
+                    <a href={`shop_by_pet/${IdDog}`} class="text-wrapper-34">Dog</a>
+                    <a href={`shop_by_pet/${IdCat}`} class="text-wrapper-41">Cat</a>
+                    <a href={`shop_by_pet/${IdFish}`} class="text-wrapper-42">Fish</a>
+                    <a href={`shop_by_pet/${IdBirds}`} class="text-wrapper-43">Bird</a>
+                    <a href={`shop_by_pet/${IdRabbit}`} class="text-wrapper-44">Rabbit</a>
+                    <a href={`shop_by_pet/${IdReptile}`} class="text-wrapper-45">Reptile</a>
 
-                    <a href='shop_by_pet'><img class="ellipse" src={store_Ellipse_108} /></a>
-                    <img class="ellipse-2" src={store_Ellipse_109} />
-                    <img class="ellipse-3" src={store_Ellipse_110} />
-                    <img class="ellipse-4" src={store_Ellipse_111} />
-                    <img class="ellipse-5" src={store_Ellipse_112} />
-                    <img class="ellipse-6" src={store_Ellipse_113} />
+                    <a href={`shop_by_pet/${IdDog}`}><img class="ellipse" src={store_Ellipse_108} /></a>
+                    <a href={`shop_by_pet/${IdCat}`}><img class="ellipse-2" src={store_Ellipse_109} /></a>
+                    <a href={`shop_by_pet/${IdFish}`}><img class="ellipse-3" src={store_Ellipse_110} /></a>
+                    <a href={`shop_by_pet/${IdBirds}`}><img class="ellipse-4" src={store_Ellipse_111} /></a>
+                    <a href={`shop_by_pet/${IdRabbit}`}><img class="ellipse-5" src={store_Ellipse_112} /></a>
+                    <a href={`shop_by_pet/${IdReptile}`}><img class="ellipse-6" src={store_Ellipse_113} /></a>
 
 
 

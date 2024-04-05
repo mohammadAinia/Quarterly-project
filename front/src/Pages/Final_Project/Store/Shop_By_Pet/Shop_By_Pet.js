@@ -173,13 +173,13 @@ const Shop_By_Pet = () => {
                                 key={i}
                                 image={`http://localhost:3001/uploads/${user.url_imagee}`}
                                 cetagery={user.categ}
-                                href={`#/${user.id_c}`} />
+                                href={`Product_Assortment/${user.id_c}`} />
                         ))}
 
                         <Componets_Shop_By_Pet
                             image={shop_by_pet_Rectangle_170}
                             cetagery={"Performatrin Ultra"}
-                            href={'#'}
+                            href={`Product_Assortment/${1}`}
                         />
 
                     </div>
@@ -194,7 +194,7 @@ const Shop_By_Pet = () => {
                                 key={i}
                                 image={`http://localhost:3001/uploads/${user.url_imagee}`}
                                 cetagery={user.categ}
-                                href={`#/${user.id_c}`}
+                                href={`Product_Assortment/${user.id_c}`}
                             />
                         ))}
 
@@ -214,7 +214,7 @@ const Shop_By_Pet = () => {
                                 key={i}
                                 image={`http://localhost:3001/uploads/${user.url_imagee}`}
                                 cetagery={user.categ}
-                                href={`#/${user.id_c}`} />
+                                href={`Product_Assortment/${user.id_c}`} />
                         ))}
 
                         <Componets_Shop_By_Pet
