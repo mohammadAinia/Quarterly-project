@@ -8,7 +8,7 @@ import shop_by_pet_Rectangle_170 from '../../../../Assert/Images/shop_by_pet_Rec
 import shop_by_pet_Line_16 from '../../../../Assert/Images/shop_by_pet_Line_16.png'
 
 import React, { useEffect, useState, useRef } from 'react';
-import { Componets_Shop_By_Pet } from '../../../../Componets'
+import { Componets_Shop_By_Pet  ,Store_Header } from '../../../../Componets'
 import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
 
@@ -113,13 +113,15 @@ const Shop_By_Pet = () => {
     return (
 
         <>
+                    <Store_Header />
+
             <div class="shop-by-pet">
                 <div class="div">
                 <div class="boxshop-by-pet"><img class="line" src={shop_by_pet_Line_16} /></div>
                 <div class="boxshop-by-pet2"><img class="line" src={shop_by_pet_Line_16} /></div>
                 <div class="boxshop-by-pet3"><img class="line" src={shop_by_pet_Line_16} /></div>
 
-                    <div class="overlap">
+                    {/* <div class="overlap">
                         <div class="text-wrapper">Shop by Pet</div>
                         <div class="text-wrapper-2">Shop by Brand</div>
                         <div class="text-wrapper-3">Deals</div>
@@ -142,7 +144,7 @@ const Shop_By_Pet = () => {
                                 <img class="vector-2" src={Store_Vector} />
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                     <div class="overlap-3">
                         <div class="text-wrapper-10">Food</div>
                         {/* <div class="text-wrapper-11">Shop All</div> */}

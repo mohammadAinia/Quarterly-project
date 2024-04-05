@@ -4,7 +4,7 @@ import Store_Vector from '../../../../Assert/Images/Store_Vector.png'
 import store_Vector2 from '../../../../Assert/Images/store_Vector2.png'
 import store_Vector3 from '../../../../Assert/Images/store_Vector3.png'
 import choose2_a_Line_13 from '../../../../Assert/Images/choose2_a_Line_13.png'
-import { Componets_Product_Assortment } from '../../../../Componets'
+import { Componets_Product_Assortment ,Store_Header} from '../../../../Componets'
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
@@ -51,6 +51,7 @@ const Product_Assortment = () => {
                 setLoading(false); // Set loading to false in case of error
             });
     }, [id]);
+    console.log(Brand)
 
     // تابع التصفية حسب البراند
     const handleBrandSelect = (brand) => {
@@ -81,14 +82,27 @@ const Product_Assortment = () => {
     };
 
     // هذا يعرض المنتجات جميعها او يصفي حسب البراند
-    const filteredProducts = selectedBrands.length > 0 ? Product.filter(product => selectedBrands.includes(Product.brand)) : Product;
+    let filteredProducts = selectedBrands.length > 0 ? Product.filter(product => selectedBrands.includes(Product.brand)) : Product;
 
     // هذا يفلتر حسب المنتجات الجديد و الاعلى تقييما
     if (selectedMethods.includes("topRated")) {
-        filteredProducts = filteredProducts.filter(product => product.star_count >= 4); // Filter products with 4 or more stars
+        // Find the maximum star count among the filtered products
+        const maxStarCount = Math.max(...filteredProducts.map(product => product.star_count));
+        // Filter products with the maximum star count
+        filteredProducts = filteredProducts.filter(product => product.star_count === maxStarCount);
     }
     if (selectedMethods.includes("newProducts")) {
-        filteredProducts = filteredProducts.filter(product => product.is_new); // Filter new products
+        // Calculate the date one month ago from the current date
+        const oneMonthAgo = new Date();
+        oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
+    
+        // Filter products that were added within the last month
+        filteredProducts = filteredProducts.filter(product => {
+            // Convert the date_added string to a Date object
+            const dateAdded = new Date(product.date_added);
+            // Return true if the product's date_added is after one month ago
+            return dateAdded > oneMonthAgo;
+        });
     }
     // هنا فلترة حسب عدد النجوم 
     for (let i = 1; i <= 5; i++) {
@@ -118,13 +132,15 @@ const Product_Assortment = () => {
     return (
 
         <>
+                    <Store_Header />
+
             <div class="product-assortment">
                 <div class="div">
 
                     {/* اسم الفئة المختارة */}
                     <div class="text-wrapper-21">{name}</div>
 
-                    <div class="overlap">
+                    {/* <div class="overlap">
                         <div class="text-wrapper">Shop by Pet</div>
                         <div class="text-wrapper-2">Shop by Brand</div>
                         <div class="text-wrapper-3">Deals</div>
@@ -146,7 +162,7 @@ const Product_Assortment = () => {
                                 <img class="vector-2" src={store_Vector3} />
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                     <div class="box100"><img class="line" src={choose2_a_Line_13} /></div>
                     <div class="box101"><img class="line" src={choose2_a_Line_13} /></div>
@@ -159,20 +175,22 @@ const Product_Assortment = () => {
 
                         {Brand.map((user, i) => (
                             <div key={i}>
-                                <input
-                                    className="rectangle-2"
-                                    type='checkbox'
-                                    value={user.store_in_name}
-                                    id={`brand${i}`} // Use a unique id for each input
-                                    onChange={() => handleBrandSelect(user.store_in_name)}
-                                    checked={selectedBrands.includes(user.store_in_name)}
-                                />
-                                <div htmlFor={`brand${i}`} class="text-wrapper-10">{user.store_in_name} (23)</div>
+                                <div>
+                                    <input
+                                        className="rectangle-2"
+                                        type='checkbox'
+                                        value={user.brand}
+                                        id={`brand${i}`} // Use a unique id for each input
+                                        onChange={() => handleBrandSelect(user.brand)}
+                                        checked={selectedBrands.includes(user.brand)}
+                                    />
+                                    <div htmlFor={`brand${i}`} class="text-wrapper-10">{user.brand}</div>
+                                </div>
                             </div>
                         ))}
 
                         {/* عنصر من عندي */}
-                        <div>
+                        {/* <div>
                             <div for="brand1" class="text-wrapper-10">ACANA (23)</div>
                             <input
                                 className="rectangle-2"
@@ -182,7 +200,8 @@ const Product_Assortment = () => {
                                 onChange={() => handleBrandSelect("acana")}
                                 checked={selectedBrands.includes("acana")}
                             />
-                        </div>
+                        </div> */}
+
 
                     </div>
 
@@ -190,7 +209,7 @@ const Product_Assortment = () => {
                     <div class="frame-3_me23">
 
                         <div>
-                            <div for='one' class="text-wrapper-16">Top Rated (23)</div>
+                            <div for='one' class="text-wrapper-16">Top Rated</div>
                             <input
                                 className="rectangle-8"
                                 type='checkbox'
@@ -202,7 +221,7 @@ const Product_Assortment = () => {
                         </div>
 
                         <div>
-                            <div for='four' class="text-wrapper-16">New (23)</div>
+                            <div for='four' class="text-wrapper-16">New</div>
                             <input
                                 className="rectangle-8"
                                 type='checkbox'
@@ -219,7 +238,6 @@ const Product_Assortment = () => {
                     {/* عناصر التصفية حسب نجوم التقييم */}
 
                     {/* نجمة واحدة */}
-                    <div class="UP">&amp; UP (23)</div>
                     <input
                         class="rectangle-9"
                         type='checkbox'
@@ -232,7 +250,6 @@ const Product_Assortment = () => {
                     </div>
 
                     {/* نجمتين */}
-                    <div class="UP-2">&amp; UP (23)</div>
                     <input
                         class="rectangle-11"
                         type='checkbox'
@@ -245,7 +262,6 @@ const Product_Assortment = () => {
                     </div>
 
                     {/* ثلاث نجوم */}
-                    <div class="UP-3">&amp; UP (23)</div>
                     <input
                         class="rectangle-13"
                         type='checkbox'
@@ -258,7 +274,6 @@ const Product_Assortment = () => {
                     </div>
 
                     {/* اربع نجوم */}
-                    <div class="UP-4">&amp; UP (23)</div>
                     <input
                         class="rectangle-15"
                         type='checkbox'
@@ -271,7 +286,6 @@ const Product_Assortment = () => {
                     </div>
 
                     {/* خمس نجوم */}
-                    <div class="UP-5">&amp; UP (23)</div>
                     <input
                         class="rectangle-16"
                         type='checkbox'
@@ -335,7 +349,7 @@ const Product_Assortment = () => {
                             ))
                         )}
 
-                        < Componets_Product_Assortment
+                        {/* < Componets_Product_Assortment
                             img={store2_star_solid_1}
                             brand={"acana"}
                             avg_review={3.1}
@@ -344,7 +358,7 @@ const Product_Assortment = () => {
                             desc={"shampoo"}
                             href={`##/${1}`}
                             num_star={5}
-                        />
+                        /> */}
                     </div>
                 </div>
             </div>
