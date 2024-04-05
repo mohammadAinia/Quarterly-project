@@ -27,7 +27,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios'
 // import { useNavigate } from 'react-router-dom'
 import { useNavigate, useParams } from 'react-router-dom'
-import { Componets_Product_store, Componets_user_reviews } from '../../../../Componets'
+import { Componets_Product_store, Componets_user_reviews ,Store_Header} from '../../../../Componets'
 
 
 
@@ -395,9 +395,11 @@ const Choose_Product = () => {
     return (
 
         <>
+                    <Store_Header />
+
             <div class="choose-a-product">
                 <div class="div">
-                    <div class="overlap">
+                    {/* <div class="overlap">
                         <div class="text-wrapper">Shop by Pet</div>
                         <div class="text-wrapper-2">Shop by Brand</div>
                         <div class="text-wrapper-3">Deals</div>
@@ -419,7 +421,7 @@ const Choose_Product = () => {
                                 <img class="vector-2" src={Store_Vector} />
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                     <div class="boxstore2"><img class="line" src={store2_Line_12} /></div>
 
                     <div class="overlap-3">
