@@ -1,0 +1,754 @@
+.shop-by-pet {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.shop-by-pet .div {
+    background-color: #ffffff;
+    width: 2068px;
+    height: 1945px;
+    position: relative;
+}
+
+.shop-by-pet .overlap {
+    position: absolute;
+    width: 2068px;
+    height: 219px;
+    top: 0;
+    left: 0;
+    background-color: #4e77b7;
+}
+
+.shop-by-pet .text-wrapper {
+    left: 126px;
+    position: absolute;
+    width: 153px;
+    height: 27px;
+    top: 173px;
+    font-family: "Inder-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.shop-by-pet .text-wrapper-2 {
+    left: 324px;
+    position: absolute;
+    width: 153px;
+    height: 27px;
+    top: 173px;
+    font-family: "Inder-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.shop-by-pet .text-wrapper-3 {
+    position: absolute;
+    width: 153px;
+    height: 27px;
+    top: 173px;
+    left: 522px;
+    font-family: "Inder-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.shop-by-pet .text-wrapper-4 {
+    position: absolute;
+    width: 153px;
+    height: 27px;
+    top: 173px;
+    left: 720px;
+    font-family: "Inder-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.shop-by-pet .text-wrapper-5 {
+    position: absolute;
+    width: 153px;
+    height: 27px;
+    top: 95px;
+    left: 1361px;
+    font-family: "Inder-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.shop-by-pet .text-wrapper-6 {
+    position: absolute;
+    width: 153px;
+    height: 27px;
+    top: 95px;
+    left: 1559px;
+    font-family: "Inder-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.shop-by-pet .text-wrapper-7 {
+    position: absolute;
+    width: 153px;
+    height: 27px;
+    top: 95px;
+    left: 1757px;
+    font-family: "Inder-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.shop-by-pet .rectangle {
+    position: absolute;
+    width: 678px;
+    height: 41px;
+    top: 75px;
+    left: 383px;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+.shop-by-pet .vector {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    top: 85px;
+    left: 1029px;
+}
+
+.shop-by-pet .frame {
+    position: absolute;
+    width: 57px;
+    height: 40px;
+    top: 161px;
+    left: 1820px;
+}
+
+.shop-by-pet .overlap-group {
+    position: relative;
+    height: 40px;
+}
+
+.shop-by-pet .rectangle-2 {
+    position: absolute;
+    width: 30px;
+    height: 18px;
+    top: 0;
+    left: 27px;
+    background-color: #ffffff;
+    border-radius: 35px;
+}
+
+.shop-by-pet .text-wrapper-8 {
+    position: absolute;
+    width: 13px;
+    height: 10px;
+    top: 3px;
+    left: 36px;
+    font-family: "Inder-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 11px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.shop-by-pet .img {
+    position: absolute;
+    width: 34px;
+    height: 31px;
+    top: 9px;
+    left: 0;
+}
+
+.shop-by-pet .overlap-wrapper {
+    position: absolute;
+    width: 219px;
+    height: 61px;
+    top: 64px;
+    left: 111px;
+}
+
+.shop-by-pet .overlap-2 {
+    position: relative;
+    height: 61px;
+    top: -1px;
+}
+
+.shop-by-pet .text-wrapper-9 {
+    position: absolute;
+    width: 195px;
+    height: 61px;
+    top: 0;
+    left: 0;
+    font-family: "Inknut Antiqua-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.shop-by-pet .vector-2 {
+    position: absolute;
+    width: 28px;
+    height: 29px;
+    top: 20px;
+    left: 191px;
+}
+
+.shop-by-pet .overlap-3 {
+    position: absolute;
+    width: 232px;
+    height: 108px;
+    top: 652px;
+    left: 87px;
+}
+
+.shop-by-pet .text-wrapper-10 {
+    position: absolute;
+    width: 153px;
+    height: 60px;
+    top: 10px;
+    left: 39px;
+    font-family: "Inder-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 48px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.shop-by-pet .text-wrapper-11 {
+    width: 232px;
+    height: 60px;
+    top: 48px;
+    left: 0;
+    font-family: "Poppins-Light", Helvetica;
+    font-weight: 300;
+    font-size: 26px;
+    position: absolute;
+    color: #000000;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.shop-by-pet .overlap-4 {
+    position: absolute;
+    width: 232px;
+    height: 108px;
+    top: 1017px;
+    left: 87px;
+}
+
+.shop-by-pet .overlap-5 {
+    position: absolute;
+    width: 232px;
+    height: 108px;
+    top: 1382px;
+    left: 87px;
+}
+
+.shop-by-pet .text-wrapper-12 {
+    position: absolute;
+    width: 193px;
+    height: 60px;
+    top: 10px;
+    left: 39px;
+    font-family: "Inder-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 48px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.shop-by-pet .text-wrapper-13 {
+    width: 380px;
+    height: 110px;
+    top: 337px;
+    left: 417px;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-weight: 600;
+    font-size: 50px;
+    position: absolute;
+    color: #000000;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.shop-by-pet .overlap-6 {
+    position: absolute;
+    width: 2068px;
+    height: 61px;
+    top: 219px;
+    left: 0;
+    background-color: #fff4ca;
+}
+
+.shop-by-pet .p {
+    position: absolute;
+    width: 884px;
+    height: 47px;
+    top: 6px;
+    left: 548px;
+    font-family: "Inder-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.shop-by-pet .text-wrapper-14 {
+    position: absolute;
+    width: 153px;
+    height: 47px;
+    top: 6px;
+    left: 1425px;
+    font-family: "Inder-Regular", Helvetica;
+    font-weight: 400;
+    color: #4e77b7;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    text-decoration: underline;
+}
+
+.shop-by-pet .line {
+    top: 566px;
+    position: absolute;
+    width: 3px;
+    height: 267px;
+    left: 383px;
+}
+
+.shop-by-pet .line-2 {
+    top: 931px;
+    position: absolute;
+    width: 3px;
+    height: 267px;
+    left: 383px;
+}
+
+.shop-by-pet .line-3 {
+    top: 1296px;
+    position: absolute;
+    width: 3px;
+    height: 267px;
+    left: 383px;
+}
+
+.shop-by-pet .frame-2 {
+    position: absolute;
+    width: 100%;
+    height: 330px;
+    max-width: calc(100% - 650px);
+    /* Adjust as needed */
+
+
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+    top: 546px;
+    left: 483px;
+}
+
+.shop-by-pet .frame-2::-webkit-scrollbar {
+    width: 10px;
+    /* Set the width of the scrollbar */
+    height: 7px;
+}
+
+.shop-by-pet .frame-2::-webkit-scrollbar-thumb {
+    background-color: lightblue;
+    /* Set the color of the scrollbar thumb */
+    border-radius: 5px;
+    /* Optional: Round the corners of the scrollbar thumb */
+
+}
+
+.shop-by-pet .frame-2::-webkit-scrollbar-track {
+    background-color: transparent;
+    /* Set the color of the scrollbar track */
+}
+
+.shop-by-pet .overlap-7 {
+    position: relative;
+    width: 250px;
+    height: 307px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 4px #00000040;
+    display: inline-block;
+    flex-wrap: nowrap;
+    margin-left: 40px;
+    overflow-inline: hidden;
+    transition: transform 0.3s ease;
+    /* Adding transition effect to transform property */
+}
+
+.shop-by-pet .overlap-7:hover {
+    transform: scale(1.05);
+    /* Scale up the element on hover */
+}
+
+.shop-by-pet .rectangle-3 {
+    position: absolute;
+    width: 250px;
+    height: 222px;
+    top: 0;
+    left: 4px;
+    object-fit: cover;
+}
+
+.shop-by-pet .text-wrapper-15 {
+    position: absolute;
+    width: 237px;
+    height: 28px;
+    top: 255px;
+    left: 8px;
+    /* font-family: "Poppins-Medium", Helvetica; */
+    font-weight: 600;
+    color: #000000;
+    font-size: 19px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    overflow: hidden;
+}
+
+.shop-by-pet .frame-3 {
+    position: absolute;
+    width: 100%;
+    height: 330px;
+    max-width: calc(100% - 650px);
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    top: 911px;
+    left: 483px;
+}
+
+.shop-by-pet .frame-3::-webkit-scrollbar {
+    width: 10px;
+    height: 7px;
+}
+
+.shop-by-pet .frame-3::-webkit-scrollbar-thumb {
+    background-color: lightblue;
+    border-radius: 5px;
+}
+
+.shop-by-pet .frame-3::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.shop-by-pet .overlap-8 {
+    position: relative;
+    width: 250px;
+    height: 307px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 4px #00000040;
+    display: inline-block;
+    flex-wrap: nowrap;
+    margin-left: 40px;
+    overflow-inline: hidden;
+    transition: transform 0.3s ease;
+    /* Adding transition effect to transform property */
+
+}
+
+.shop-by-pet .overlap-8:hover {
+    transform: scale(1.05);
+    /* Scale up the element on hover */
+}
+
+.shop-by-pet .frame-4 {
+    position: absolute;
+    width: 100%;
+    height: 330px;
+    max-width: calc(100% - 650px);
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    top: 1276px;
+    left: 483px;
+}
+
+.shop-by-pet .frame-4::-webkit-scrollbar {
+    width: 10px;
+    height: 7px;
+}
+
+.shop-by-pet .frame-4::-webkit-scrollbar-thumb {
+    background-color: lightblue;
+    border-radius: 5px;
+}
+
+.shop-by-pet .frame-4::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.shop-by-pet .overlap-9 {
+    position: relative;
+    width: 250px;
+    height: 307px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 4px #00000040;
+    display: inline-block;
+    flex-wrap: nowrap;
+    margin-left: 40px;
+    overflow-inline: hidden;
+    transition: transform 0.3s ease;
+    /* Adding transition effect to transform property */
+}
+
+.shop-by-pet .overlap-9:hover {
+    transform: scale(1.05);
+    /* Scale up the element on hover */
+}
+
+
+.shop-by-pet .overlap-10 {
+    position: absolute;
+    width: 258px;
+    height: 315px;
+    top: 546px;
+    left: 773px;
+    /* background-image: url(./img/rectangle-171.png); */
+    background-size: 100% 100%;
+}
+
+.shop-by-pet .overlap-11 {
+    position: absolute;
+    width: 258px;
+    height: 315px;
+    top: 911px;
+    left: 773px;
+    /* background-image: url(./img/rectangle-180.png); */
+    background-size: 100% 100%;
+}
+
+.shop-by-pet .overlap-12 {
+    position: absolute;
+    width: 258px;
+    height: 315px;
+    top: 1276px;
+    left: 773px;
+    /* background-image: url(./img/rectangle-190.png); */
+    background-size: 100% 100%;
+}
+
+.shop-by-pet .overlap-13 {
+    position: absolute;
+    width: 258px;
+    height: 315px;
+    top: 546px;
+    left: 1063px;
+    /* background-image: url(./img/rectangle-173.png); */
+    background-size: 100% 100%;
+}
+
+.shop-by-pet .overlap-14 {
+    position: absolute;
+    width: 258px;
+    height: 315px;
+    top: 911px;
+    left: 1063px;
+    /* background-image: url(./img/rectangle-181.png); */
+    background-size: 100% 100%;
+}
+
+.shop-by-pet .overlap-15 {
+    position: absolute;
+    width: 258px;
+    height: 315px;
+    top: 1276px;
+    left: 1063px;
+    /* background-image: url(./img/rectangle-191.png); */
+    background-size: 100% 100%;
+}
+
+.shop-by-pet .overlap-16 {
+    position: absolute;
+    width: 258px;
+    height: 315px;
+    top: 546px;
+    left: 1353px;
+    /* background-image: url(./img/rectangle-175.png); */
+    background-size: 100% 100%;
+}
+
+.shop-by-pet .overlap-17 {
+    position: absolute;
+    width: 258px;
+    height: 315px;
+    top: 911px;
+    left: 1353px;
+    /* background-image: url(./img/rectangle-182.png); */
+    background-size: 100% 100%;
+}
+
+.shop-by-pet .overlap-18 {
+    position: absolute;
+    width: 258px;
+    height: 315px;
+    top: 1276px;
+    left: 1353px;
+    /* background-image: url(./img/rectangle-192.png); */
+    background-size: 100% 100%;
+}
+
+.shop-by-pet .overlap-19 {
+    position: absolute;
+    width: 258px;
+    height: 315px;
+    top: 546px;
+    left: 1643px;
+    /* background-image: url(./img/rectangle-177.png); */
+    background-size: 100% 100%;
+}
+
+.shop-by-pet .overlap-20 {
+    position: absolute;
+    width: 258px;
+    height: 315px;
+    top: 911px;
+    left: 1643px;
+    /* background-image: url(./img/rectangle-183.png); */
+    background-size: 100% 100%;
+}
+
+.shop-by-pet .overlap-21 {
+    position: absolute;
+    width: 258px;
+    height: 315px;
+    top: 1276px;
+    left: 1643px;
+    /* background-image: url(./img/rectangle-193.png); */
+    background-size: 100% 100%;
+}
+
+.shop-by-pet .vector-3 {
+    position: absolute;
+    width: 26px;
+    height: 66px;
+    top: 667px;
+    left: 1962px;
+}
+
+.shop-by-pet .vector-4 {
+    position: absolute;
+    width: 26px;
+    height: 66px;
+    top: 1032px;
+    left: 1962px;
+}
+
+.shop-by-pet .vector-5 {
+    position: absolute;
+    width: 26px;
+    height: 66px;
+    top: 1397px;
+    left: 1962px;
+}
+
+.shop-by-pet .vector-6 {
+    position: absolute;
+    width: 26px;
+    height: 66px;
+    top: 667px;
+    left: 422px;
+}
+
+.shop-by-pet .vector-7 {
+    position: absolute;
+    width: 26px;
+    height: 66px;
+    top: 1032px;
+    left: 422px;
+}
+
+.shop-by-pet .vector-8 {
+    position: absolute;
+    width: 26px;
+    height: 66px;
+    top: 1397px;
+    left: 422px;
+}
+
+.boxshop-by-pet {
+    width: 1px;
+    height: 267px;
+}
+
+.boxshop-by-pet .line {
+    position: absolute;
+    width: 3px;
+    height: 267px;
+    top: 565px;
+    left: 350px;
+}
+
+.boxshop-by-pet2 {
+    width: 1px;
+    height: 267px;
+}
+
+.boxshop-by-pet2 .line {
+    position: absolute;
+    width: 3px;
+    height: 267px;
+    top: 925px;
+    left: 350px;
+}
+
+.boxshop-by-pet3 {
+    width: 1px;
+    height: 267px;
+}
+
+.boxshop-by-pet3 .line {
+    position: absolute;
+    width: 3px;
+    height: 267px;
+    top: 1300px;
+    left: 350px;
+}

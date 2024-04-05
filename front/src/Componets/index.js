@@ -168,4 +168,7 @@ export { default as Componets_Product_Assortment } from './Graduation/Componets_
 export { default as Componets_Categories } from './Graduation/Componets_Categories/Componets_Categories'
 export { default as Add_product_store } from '../Pages/Final_Project/Site_Manager/Add_product_store/Add_product_store'
 export { default as Componets_Add_product_store } from './Graduation/Componets_Add_product_store/Componets_Add_product_store'
+export { default as Shop_By_Pet } from '../Pages/Final_Project/Store/Shop_By_Pet/Shop_By_Pet'
+export { default as Componets_Shop_By_Pet } from './Graduation/Componets_Shop_By_Pet/Componets_Shop_By_Pet'
+export { default as Store_Header } from './Graduation/Store_Header/Store_Header'
 

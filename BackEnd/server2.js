@@ -19,7 +19,7 @@ const storage = multer.diskStorage({
         cb(null, file.fieldname + "_" + Date.now() + path.extname(file.originalname))
     }
 })
-const upload = multer({ storage: storage })
+const upload = multer({ storage: storage }).array('files',10);
 
 
 app.use(cookie())
@@ -43,6 +43,17 @@ app.use(cors({
 }))
 app.use(express.json())
 
+
+app.post('/add_images', upload.single('image'), (req, res) => {
+    var image = req.file.filename
+    var name = req.body.name
+    const sql = "insert into users ( image) values('" + image + "')"
+    db.query(sql, (err, result) => {
+        if (err) return res.json(err)
+        return res.json(result)
+    })
+})
+
 // app.get('/', (req, res) => {
 //     if(req.session.username){
 //         return res.json({valid: true , username: req.session.username})
@@ -50,37 +61,37 @@ app.use(express.json())
 //     else
 //     return res.json({valid:false})
 // })
-app.get('/', (req, res) => {
-    db.query('select * from users', (err, result) => {
-        if (err) return res.json(err)
-        return res.json(result)
-    })
-})
-app.get('/animals', (req, res) => {
+// app.get('/', (req, res) => {
+//     db.query('select * from users', (err, result) => {
+//         if (err) return res.json(err)
+//         return res.json(result)
+//     })
+// })
+// app.get('/animals', (req, res) => {
     
-    db.query('select * from animal', (err, result) => {
-        if (err) return res.json(err)
-        return res.json(result)
-    })
-})
+//     db.query('select * from animal', (err, result) => {
+//         if (err) return res.json(err)
+//         return res.json(result)
+//     })
+// })
 
-app.post('/login', (req, res) => {
-    const sql = "select * from users where email =? AND password =?";
+// app.post('/login', (req, res) => {
+//     const sql = "select * from users where email =? AND password =?";
 
-    db.query(sql, [req.body.email, req.body.password], (err, result) => {
+//     db.query(sql, [req.body.email, req.body.password], (err, result) => {
 
-        if (err) return res.json({ Message: 'Error inside server' })
+//         if (err) return res.json({ Message: 'Error inside server' })
 
-        if (result.length > 0) {
+//         if (result.length > 0) {
 
-            req.session.username = result[0].name
-            console.log(req.session.username)
-            return res.json({ Login: true, username: req.session.username })
-        }
-        else
-            return res.json({ Login: false })
-    })
-})
+//             req.session.username = result[0].name
+//             console.log(req.session.username)
+//             return res.json({ Login: true, username: req.session.username })
+//         }
+//         else
+//             return res.json({ Login: false })
+//     })
+// })
 
 // app.post('/signup', upload.single('image') , (req, res) => {
 //     var image = req.file.filename
@@ -93,72 +104,73 @@ app.post('/login', (req, res) => {
 //         return res.json(result)
 //     })
 // })
-app.post('/signup', (req, res) => {
-    var name = req.body.First_name
-    var email = req.body.Email
-    var password = req.body.Password
-    var vaccines = req.body.Veccines
-    const sql = "insert into users (name , email , password ,Veccines ) values('" + name + "','" + email + "','" + password + "','"+vaccines+"')"
-    db.query(sql, (err, result) => {
-        if (err) return res.json(err)
-        return res.json(result)
-    })
-})
-app.post('/add_proplem' , (req,res)=>{
-    var text = req.body.Text
-    console.log(text)
-    db.query("insert into problems (problem_text ) values('" + text + "')" ,(err,result)=>{
-        if (err) return res.json(err)
-        return res.json( result)
-    })
-})
-app.post('/add_animal', upload.single('image'), (req, res) => {
-    var image = req.file.filename
-    var name = req.body.name
-    const sql = "insert into animal (name , image) values('" + name + "','" + image + "')"
-    db.query(sql, (err, result) => {
-        if (err) return res.json(err)
-        return res.json(result)
-    })
-})
+// app.post('/signup', (req, res) => {
+//     var name = req.body.First_name
+//     var email = req.body.Email
+//     var password = req.body.Password
+//     var vaccines = req.body.Veccines
+//     const sql = "insert into users (name , email , password ,Veccines ) values('" + name + "','" + email + "','" + password + "','"+vaccines+"')"
+//     db.query(sql, (err, result) => {
+//         if (err) return res.json(err)
+//         return res.json(result)
+//     })
+// })
+// app.post('/add_proplem' , (req,res)=>{
+//     var text = req.body.Text
+//     console.log(text)
+//     db.query("insert into problems (problem_text ) values('" + text + "')" ,(err,result)=>{
+//         if (err) return res.json(err)
+//         return res.json( result)
+//     })
+// })
+// app.post('/add_animal', upload.single('image'), (req, res) => {
+//     var image = req.file.filename
+//     var name = req.body.name
+//     const sql = "insert into animal (name , image) values('" + name + "','" + image + "')"
+//     db.query(sql, (err, result) => {
+//         if (err) return res.json(err)
+//         return res.json(result)
+//     })
+// })
 
-app.get('/edit/:id', (req, res) => {
-    const sql = 'select * from animla where id = ?'
-    const id = req.params.id
-    db.query(sql, [id], (err, result) => {
-        if (err) return res.json(err)
-        return res.json(result)
 
-    })
-})
-app.get('/animals_id/:id', (req, res) => {
+// app.get('/edit/:id', (req, res) => {
+//     const sql = 'select * from animla where id = ?'
+//     const id = req.params.id
+//     db.query(sql, [id], (err, result) => {
+//         if (err) return res.json(err)
+//         return res.json(result)
+
+//     })
+// })
+// app.get('/animals_id/:id', (req, res) => {
     
-    db.query('select * from animal', (err, result) => {
-        if (err) return res.json(err)
-        return res.json(result)
-    })
-})
+//     db.query('select * from animal', (err, result) => {
+//         if (err) return res.json(err)
+//         return res.json(result)
+//     })
+// })
 
 
-app.delete('/delete/:id', (req, res) => {
-    const sql = "delete from animal where id =?"
-    const id = req.params.id
-    db.query(sql, [id], (err, result) => {
-        if (err) return res.json(err)
-        return res.json(result)
-    })
-})
+// app.delete('/delete/:id', (req, res) => {
+//     const sql = "delete from animal where id =?"
+//     const id = req.params.id
+//     db.query(sql, [id], (err, result) => {
+//         if (err) return res.json(err)
+//         return res.json(result)
+//     })
+// })
 
-app.put('/update/:id', upload.single('image'),(req, res) => {
-    var image = req.file.filename
-    var name = req.body.name
-    const id = req.params.id
-    const sql = 'update animal set name=? where animal_id=? '
-    db.query(sql,[name ,id], (err, result) => {
-        if (err) return  console.log(err) + res.json(err)
-        return res.json(result)
-    })
-})
+// app.put('/update/:id', upload.single('image'),(req, res) => {
+//     var image = req.file.filename
+//     var name = req.body.name
+//     const id = req.params.id
+//     const sql = 'update animal set name=? where animal_id=? '
+//     db.query(sql,[name ,id], (err, result) => {
+//         if (err) return  console.log(err) + res.json(err)
+//         return res.json(result)
+//     })
+// })
 
 
 app.listen(3001, () => {

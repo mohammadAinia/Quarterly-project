@@ -20,7 +20,7 @@ import {
   Choose_register_new_doctor, Select_Register, Adding_new_doctor_clinic, Del_Vet, Add_doctor_shift, Add_doctor_shift_time,
   Edit_doctor_shift, Edit_doctor_shift_time, Appointment_clinic_director, My_appointments, Add_information_to_clinic,
   Edit_information_to_clinic, Loading_page, Report, Modifying_clinic_working_hours, My_appointments_vet,
-  Diagnosis,Store,Choose_Product ,Product_Assortment,Add_product_store
+  Diagnosis,Store,Choose_Product ,Product_Assortment,Add_product_store,Shop_By_Pet
 
 } from './Componets/index'
 
@@ -169,9 +169,9 @@ const App = () => {
             <Route path='choose_product/:id' element={<Choose_Product />} />
             <Route path='Product_Assortment/:id' element={<Product_Assortment />} />
             <Route path='Add_product_store' element={<Add_product_store />} />
+            <Route path='shop_by_pet' element={<Shop_By_Pet />} />
 
 
-            
           </Routes>
         </Container>
       </Router>
