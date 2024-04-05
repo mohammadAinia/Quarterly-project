@@ -162,14 +162,8 @@ const Store = () => {
             <Store_Header />
             <div class="store">
                 <div class="div">
-                    <div class="overlap">
-
-
+                    {/* <div class="overlap">
                         <div class="text-wrapper" >Shop by Pet</div>
-
-
-
-
                         <div class="text-wrapper-2">Shop by Brand</div>
                         <div class="text-wrapper-3">Deals</div>
                         <div class="text-wrapper-4">New Arrivals</div>
@@ -190,7 +184,7 @@ const Store = () => {
                                 <img class="vector-2" src={store_Vector3} />
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                     <div class="overlap-3">
                         <p class="p">Buy online same day pick up in one of our 600+ stores! or free shipping over</p>
                         <div class="text-wrapper-10">View Details</div>
@@ -200,7 +194,6 @@ const Store = () => {
                         <div class="text-wrapper-12">New Arrivals</div>
                         <div class="text-wrapper-13">Shop New Arrivals</div>
                     </div>
-                    <div class="text-wrapper-14">Shop by Pet</div>
                     <div class="text-wrapper-15">Featured Categories</div>
                     <div class="text-wrapper-16">Top Brand</div>
                     <div class="overlap-5">
@@ -416,7 +409,7 @@ const Store = () => {
 
 
                     {/* التسوق حسب نوع الحيوان */}
-
+                        
                     <a href='shop_by_pet' class="text-wrapper-34">Dog</a>
                     <div class="text-wrapper-41">Cat</div>
                     <div class="text-wrapper-42">Fish</div>
