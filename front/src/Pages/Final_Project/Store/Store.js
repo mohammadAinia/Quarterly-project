@@ -409,7 +409,7 @@ const Store = () => {
 
 
                     {/* التسوق حسب نوع الحيوان */}
-                        
+                    <div class="text-wrapper-14">Shop by Pet</div>
                     <a href='shop_by_pet' class="text-wrapper-34">Dog</a>
                     <div class="text-wrapper-41">Cat</div>
                     <div class="text-wrapper-42">Fish</div>
