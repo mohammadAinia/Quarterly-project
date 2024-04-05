@@ -26,14 +26,14 @@ const Shop_By_Pet = () => {
 
     useEffect(() => {
 
-        axios.get(`http://localhost:3001/storee/#/${id}`, { withCredentials: true })
+        axios.get(`http://localhost:3001/storee/sort_by_animal/${id}`, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
 
                     setCategoriesFood(res.data.result)
                     setCategoriesTreats(res.data.result2)
                     setCategoriesSupplies(res.data.result3)
-                    setName(res.data.result4)
+                    setName(id)
 
                 }
                 else {

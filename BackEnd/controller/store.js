@@ -24,8 +24,12 @@ function get_category_home(){
     
 }
 function new_arrivle(req,res){
-    
     if(req.session.username){
+
+    }else {
+        req.session.storee="guste"
+    }
+
     sql='SELECT * FROM `proudact` WHERE DATEDIFF(CURRENT_DATE(),proudact.date_added)<10'
     db.query(sql,(error,result)=>{
         if(error){console.log(error)} 
@@ -41,14 +45,14 @@ function new_arrivle(req,res){
             
         }
     })
-}
-else res.json({valid:false})
+
 }
 
 function sort_by_animal(req,res){
     
  
-       animal=req.body.animal
+       animal=req.params.id
+       
     db.query('SELECT * FROM proudact WHERE animal_type LIKE ?', ['%'+animal+'%'], (error, results) => {
     if (error) { 
             console.error(error);
@@ -86,8 +90,87 @@ function select_prand(req,res){
         }
     })
 }
-function open_proudact(req,res){    
+function add_to_log(session,id){
+    sql='select * from log_user where user_id=? And id_prod=?'
+    db.query(sql,[session,id],(error,result22)=>{
+        if(error){console.log(error)}
+        else if (result22.length==0){
+            var d=new Date()
+            var datee = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
+            sql090="insert into log_user (user_id,id_prod,date_log) values ('"+session +"','"+id+"','"+datee+"')"
+            db.query(sql090,(error,result)=>{
+            if(error){console.log(error)}
+    })
+        }
+        else {
+            sql21='update log_user set date_log=? where id_log=?'
+            var d=new Date()
+            var datee = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
+            db.query(sql,[datee,result22[0].id_log],(error,result)=>{
+                if(error){console.log(error)}
+                
+            })
+        }
+    })
+    
+}
+// function show_recntly_view(user,animal,id){
+//     sq='delete from tests '
+//     db.query(sq,(error,result)=>{
+//         if(error){console.log(error)}
+    
+//     })
+//     sql='select * from log_user join proudact on proudact.id=log_user.id_prod where user_id=? and  date_log > DATE_SUB(date_log, INTERVAL 20 DAY) and proudact.id!=?'
+//     db.query(sql,[user,id],(error,result)=>{
+//         if(error){console.log(error)}
+//         else if(result.length==0){
+//             sql1='select * from proudact where animal_type=? and id!=?'
+//             db.query(sql1,[animal,id],(error,result1)=>{
+//                 if(error){console.log(error)}
+//                 else{
+//                     for (let i = 0; i < result1.length; i++) {
+//                         sql="insert into tests (userr,id_pop) values ('"+user+"','"+result1[i].id+"')"
+//                         db.query(sql,(error,result)=>{
+//                             if(error){console.log(error)}
+                            
+//                         })
+//                     }
+                   
+//                 }
+//             })
+//         }
+//         else {
+//             for (let i = 0; i < result.length; i++) {
+               
+//                 sql="insert into tests (userr,id_pop) values ('"+user+"','"+result[i].id+"')"
+//             db.query(sql,(error,result)=>{
+//                 if(error){console.log(error)}
+                
+//             })  
+//             }
+            
+//         }
+
+//     })
+// }
+
+
+function open_proudact(req,res){ 
+    if(req.session.username){
+
+    }else {
+        req.session.storee="guste"
+    }  
     id=req.params.id
+    // sql='select * from  proudact where id=?'
+    // db.query(sql,[id],(error,rows)=> {
+    //     show_recntly_view(req.session.username,rows[0].animal_type,id)
+    // })
+    if(req.session.username){
+    add_to_log(req.session.username,id)}
+    else {
+        add_to_log(req.session.storee,id)
+    }
     sqllwlw='select * from review_table where pro_id=?'
     db.query(sqllwlw,[id],(error,result9)=>{
         if(error){console.log(error)}
@@ -99,54 +182,114 @@ function open_proudact(req,res){
                     sql='select * from proudact JOIN count_stars on count_stars.pr_id=proudact.id where proudact.id=?'
             db.query(sql,[id],(error,result)=>{
                 if(error){console.log(error)}
-                else{ sql12345='select *from proudact where animal_type like ? and id!=? '
+                else{ 
+                    sql12345='select *from proudact where animal_type like ? and id!=? '
                     db.query(sql12345,['%'+result[0].animal_type+'%',result[0].id],(error,result63)=>{
                         if(error){console.log(error)}
-                        else{
-                             
-                            const v=storg_id(result,result63)
-                            console.log(v)
-                            sql1='select * from dascription_p where id_ppr=?'
-                            db.query(sql1,[result[0].id],(error,result1)=>{
-                            if(error){console.log(error)}
-                            else{
-                            if(result1[0].type_addtion=='0'){
-                                if(result[0].size_id=='0'){
-                                res.json({result1,result,valid:true,result9,v,result651})
-                                } 
-                                else {
-                                    sql3='select * from option_p where proudact_id =?'
-                                    db.query(sql3,[result[0].id],(error,result3)=>{
-                                        if(error){console.log(error)}
-                                        else{  
-                                            res.json({result651,result1,result,result3,valid:true,result9,v})
-                                        }
-                                    }) 
-                                }
-                            }
-                            else {
-                                sql23='select * from future_ui where des_id=?'
-                                db.query(sql23,[result1[0].id_ppr],(error,result2)=>{
+                        else{ 
+                            if(req.session.storee)
+                            {sql6363='select * from log_user join proudact on proudact.id=log_user.id_prod where user_id=? and  date_log > DATE_SUB(date_log, INTERVAL 20 DAY) and proudact.id!=? '
+                            db.query(sql6363,[req.session.storee,id],(error,ressss)=>{
+                                if(error){console.log(error)}
+                                else{
+                                    
+                                    const v=storg_id(result,result63)
+                                    sql1='select * from dascription_p where id_ppr=?'
+                                    db.query(sql1,[result[0].id],(error,result1)=>{
                                     if(error){console.log(error)}
                                     else{
+                                    if(result1[0].type_addtion=='0'){
                                         if(result[0].size_id=='0'){
-                                            res.json({result651,result1,result,result2,valid:true,result9,v})
-                                            }
-                                            else { 
-                                                sql32='select * from option_p where proudact_id=?'
-                                                db.query(sql32,[result[0].id],(error,result3)=>{
-                                                    if(error){console.log(error)}
-                                                    else{
-                                                        res.json({result651,result9,result1,result,result2,result3,valid:true,v})
-                                                    }
-                                                })
-                                            }
-                                        // res.json({result1,result,result2,valid:true})
+                                        res.json({result1,result,valid:true,result9,v,result651,ressss})
+                                        } 
+                                        else {
+                                            sql3='select * from option_p where proudact_id =?'
+                                            db.query(sql3,[result[0].id],(error,result3)=>{
+                                                if(error){console.log(error)}
+                                                else{  
+                                                    res.json({result651,result1,result,result3,valid:true,result9,v,ressss})
+                                                }
+                                            }) 
+                                        }
                                     }
-                                })
+                                    else {
+                                        sql23='select * from future_ui where des_id=?'
+                                        db.query(sql23,[result1[0].id_ppr],(error,result2)=>{
+                                            if(error){console.log(error)}
+                                            else{
+                                                if(result[0].size_id=='0'){
+                                                    res.json({result651,result1,result,result2,valid:true,result9,v,ressss})
+                                                    }
+                                                    else { 
+                                                        sql32='select * from option_p where proudact_id=?'
+                                                        db.query(sql32,[result[0].id],(error,result3)=>{
+                                                            if(error){console.log(error)}
+                                                            else{
+                                                                res.json({result651,result9,result1,result,result2,result3,valid:true,v,ressss})
+                                                            }
+                                                        })
+                                                    } 
+                                                // res.json({result1,result,result2,valid:true})
+                                            }
+                                        })
+                                    }
+                                }
+                            })
+                                }
+                            })
+                           }
+                            else {
+                                sql6363='select * from log_user join proudact on proudact.id=log_user.id_prod where user_id=? and  date_log > DATE_SUB(date_log, INTERVAL 20 DAY) and proudact.id!=? '
+                            db.query(sql6363,[req.session.username,id],(error,ressss)=>{
+                                if(error){console.log(error)}
+                                else{
+                                    
+                                    const v=storg_id(result,result63)
+                                    sql1='select * from dascription_p where id_ppr=?'
+                                    db.query(sql1,[result[0].id],(error,result1)=>{
+                                    if(error){console.log(error)}
+                                    else{
+                                    if(result1[0].type_addtion=='0'){
+                                        if(result[0].size_id=='0'){
+                                        res.json({result1,result,valid:true,result9,v,result651,ressss})
+                                        } 
+                                        else {
+                                            sql3='select * from option_p where proudact_id =?'
+                                            db.query(sql3,[result[0].id],(error,result3)=>{
+                                                if(error){console.log(error)}
+                                                else{  
+                                                    res.json({result651,result1,result,result3,valid:true,result9,v,ressss})
+                                                }
+                                            }) 
+                                        }
+                                    }
+                                    else {
+                                        sql23='select * from future_ui where des_id=?'
+                                        db.query(sql23,[result1[0].id_ppr],(error,result2)=>{
+                                            if(error){console.log(error)}
+                                            else{
+                                                if(result[0].size_id=='0'){
+                                                    res.json({result651,result1,result,result2,valid:true,result9,v,ressss})
+                                                    }
+                                                    else { 
+                                                        sql32='select * from option_p where proudact_id=?'
+                                                        db.query(sql32,[result[0].id],(error,result3)=>{
+                                                            if(error){console.log(error)}
+                                                            else{
+                                                                res.json({result651,result9,result1,result,result2,result3,valid:true,v,ressss})
+                                                            }
+                                                        })
+                                                    } 
+                                                // res.json({result1,result,result2,valid:true})
+                                            }
+                                        })
+                                    }
+                                }
+                            })
+                                }
+                            })
+                           
                             }
-                        }
-                    })
                         }
                     })
                 }
@@ -167,8 +310,7 @@ function compear_array(st,st2){
             if(words[i]===words2[j]){
                 count++
             }
-            console.log(words[i])
-            console.log(words2[i])
+           
 
         }
         
@@ -184,7 +326,7 @@ function storg_id(r,e){
             av.push(e[i])  
         }
     }
-    console.log(av)
+   
     return av
 }
 function show_detalis_s(req,res){
@@ -199,6 +341,7 @@ function show_detalis_s(req,res){
     })
 }
 function add_rev(req,res){
+    if(req.session.username){
     var e=req.body.selectedStar
     sql432='select * from review_table where user_name=? and pro_id=?'
     db.query(sql432,[req.session.namee,req.params.id],(error,result12)=>{
@@ -336,7 +479,10 @@ function add_rev(req,res){
     }
     })
 
-
+    }
+    else {
+        res.json({valid:false})
+    }
 }
 module.exports={
     new_arrivle:new_arrivle,
@@ -347,9 +493,6 @@ module.exports={
     add_rev,
     select_prand
 }
-
-
-
 
 //  else if (result1.length==0&&req.body.selectedStar==1){ 
                 //     sqlll="insert into count_stars (pr_id,one,two,three,four,five) values ('"+ req.params.id+"','"+ 1+"','"+ 0 +"','"+ 0+"','"+ 0+"','"+ 0+"')"

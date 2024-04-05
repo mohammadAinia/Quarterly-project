@@ -78,7 +78,8 @@ const Choose_Product = () => {
                     setdesc(res.data.result1[0])
                     setFeatures(res.data.result2)
                     setUserReviews(res.data.result9)
-                    setRecently_Viewed_Items(res.data.result5)
+                    setRecently_Viewed_Items(res.data.ressss)
+                    // alert(res.data.ressss[0].id)
                     set_f(res.data.result3[0].count_av)
                     setPrice(res.data.result3[0].special_price)
                     setSimilarItem(res.data.v)
@@ -148,7 +149,7 @@ const Choose_Product = () => {
                     alert("Added to cart successfully");
                     window.location.reload();
                 } else {
-                    alert('Not published');
+                    alert('You must register to be able comment');
                 }
             })
             .catch(err => { console.log(err) });
@@ -909,20 +910,21 @@ const Choose_Product = () => {
 
 
 
-                        {/* {Recently_Viewed_Items.map((user, i) => (
+                        {Recently_Viewed_Items.map((user, i) => (
 
 
                             < Componets_Product_store
                                 img={`http://localhost:3001/uploads/${user.image_url}`}
-                                brand={user.short_name}
-                                avg_review={user.avg_review}
-                                total_comments={"(" + (user.totla_commets) + ")"}
+                                brand={user.store_in_name}
+                                avg_review={user.review_count}
+                                total_comments={"(" + (user.comments) + ")"}
                                 price={(user.price) + "$"}
-                                desc={user.store_in_name}
+                                desc={user.short_name}
                                 href={`${user.id}`}
-                                num_star={user.num_star}
+                                num_star={user.star_count}
                             />
-                        ))} */}
+                        ))} 
+                        
 
 
                         < Componets_Product_store
