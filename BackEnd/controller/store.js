@@ -53,11 +53,11 @@ function sort_by_animal(req,res){
  
        animal=req.params.id
        
-    db.query('SELECT * FROM proudact WHERE animal_type LIKE ?', ['%'+animal+'%'], (error, results) => {
+    db.query('SELECT * FROM proudact WHERE animal_type LIKE ?', ['%'+animal+'%'], (error, result) => {
     if (error) { 
             console.error(error);
         } else {
-            res.json({valid:true,results})
+            res.json({valid:true,result})
         }
 
     });

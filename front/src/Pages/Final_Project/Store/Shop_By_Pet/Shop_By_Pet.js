@@ -31,8 +31,8 @@ const Shop_By_Pet = () => {
                 if (res.data.valid) {
 
                     setCategoriesFood(res.data.result)
-                    setCategoriesTreats(res.data.result2)
-                    setCategoriesSupplies(res.data.result3)
+                    setCategoriesTreats(res.data.result)
+                    setCategoriesSupplies(res.data.result)
                     setName(id)
 
                 }
