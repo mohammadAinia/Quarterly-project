@@ -387,7 +387,9 @@ const Store = () => {
                                 key={i}
                                 img={`http://localhost:3001/uploads/${user.url_imagee}`}
                                 name_categories={user.categ}
-                                href={`Product_Assortment/${user.id_c}`} />
+                                href={`Product_Assortment/${user.id_c}`}
+                                href2={`Product_Assortment/${user.id_c}`}
+                                 />
                         ))}
 
                         {/* <Componets_Categories

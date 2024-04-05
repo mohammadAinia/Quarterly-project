@@ -6,6 +6,26 @@ import { Header } from '../../../Componets'
 import { useNavigate, useParams } from 'react-router-dom'
 
 const Componets_Add_product_store = () => {
+
+    const [CategoryFromBackEnd, setCategoryFromBackEnd] = useState([])
+
+    useEffect(() => {
+
+        axios.get('http://localhost:3001/#/#', { withCredentials: true })
+            .then(res => {
+                if (res.data.valid) {
+
+                    setCategoryFromBackEnd(res.data.result)
+
+                }
+                else {
+                    navigate('/login')
+                }
+            })
+            .catch(err => { console.log(err) })
+    }, [])
+
+
     const navigate = useNavigate()
 
 
@@ -62,10 +82,10 @@ const Componets_Add_product_store = () => {
         let newArr = ['l'];
         for (let i = 0; i < file.length; i++) {
             formData.append('monfichier', file[i]);
-          }
-          
+        }
+
         formData.append('monfichier', newArr);
-        alert (formData.get('monfichier'));
+        alert(formData.get('monfichier'));
 
         sizeInputs.forEach((size, index) => {
             formData.append(`size${index + 1}`, size.size);
@@ -78,7 +98,7 @@ const Componets_Add_product_store = () => {
         });
 
         pictures.forEach((picture, index) => {
-            formData.append(`image${index+1}`, picture);
+            formData.append(`image${index + 1}`, picture);
         });
 
         // تجربة طباعة البيانات
@@ -330,13 +350,13 @@ const Componets_Add_product_store = () => {
                     </div>
                     <div className="input-box" style={{ width: '600px' }}>
                         <span className="details">Category ? *</span>
-                        <select name="typeAnima" id="cars" required onChange={e => setCategory(e.target.value)}>
-                            <option value="Food">Food</option>
-                            <option value="Tooys">Tooys</option>
-                            <option value="Treets">Treets</option>
-                            <option value="Puppy Essentials">Puppy Essentials</option>
-                            <option value="Dog Carriers & Travel">Dog Carriers & Travel</option>
-                            <option value="Aquariums & Starter Kits">Aquariums & Starter Kits</option>
+                        <select name="category" id="cars" required onChange={e => setCategory(e.target.value)}>
+
+                            {CategoryFromBackEnd.map((user, i) => {
+                                return (
+                                    <option key={i} value={user.name_catogary} >{user.name_catogary}</option>
+                                )
+                            })}
                         </select>
                     </div>
 
@@ -345,31 +365,15 @@ const Componets_Add_product_store = () => {
                     </div>
                     <div class="input-box">
                     </div>
-                    <div className="input-box" style={{ width: '600px' }}>
-                        <span className="details">How many pictures of the product ? *</span>
-                        <select name="type_size" id="cars" required onChange={handleNumberOfPicturesChange}>
-                            {[...Array(10)].map((_, index) => (
-                                <option key={index} value={index + 1}>{index + 1}</option>
-                            ))}
-                        </select>
+                    <div className="input-box">
+                        <span className="details">Picture *</span>
+                        <input
+                            type='file'
+                            name='monfichier'
+                            onChange={(e) => setFile(e.target.files)}
+                            multiple
+                        />
                     </div>
-
-                    <div class="input-box">
-                        {/* <span class="details" style={{ "margin-left": "280px", "width": "200px" }}> {Saturday_From + ' ' + Saturday_To}</span> */}
-                    </div>
-                    <div class="input-box">
-                    </div>
-                    {Array.from({ length: numberOfPictures }).map((_, index) => (
-                        <div className="input-box" key={index}>
-                            <span className="details">Picture {index + 1} *</span>
-                            <input
-                                type='file'
-                                name='monfichier'
-                                onChange={(e) => setFile(e.target.files)}
-                                multiple
-                            />
-                        </div>
-                    ))}
                 </div>
 
                 <div class="button">
