@@ -10,7 +10,7 @@ const Componets_Add_category = () => {
 
     useEffect(() => {
 
-        axios.get('http://localhost:3001/#/#', { withCredentials: true })
+        axios.get('http://localhost:3001/admin/show_c', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
 
@@ -53,7 +53,7 @@ const Componets_Add_category = () => {
         alert(formData.get('monfichier'));
 
         e.preventDefault()
-        axios.post('http://localhost:3001/admin/#', formData)
+        axios.post('http://localhost:3001/admin/add_category', formData)
             .then(res => {
                 if (res.data.valid) {
                     alert('The Category has been added successfully')
@@ -92,7 +92,7 @@ const Componets_Add_category = () => {
 
                             {CategoryFromBackEnd.map((user, i) => {
                                 return (
-                                    <option key={i} value={user.name_catogary} >{user.name_catogary}</option>
+                                    <option key={i} value={user.categ} >{user.categ}</option>
                                 )
                             })}
                         </select>

@@ -96,7 +96,18 @@ function add_category(req,res){
         }
     })
 }
+function show_c(req,res){
+    sql='select * from category_t'
+    db.query(sql,(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            res.json({valid:true,result})
+            console.log("doneeee")
+        }
+    })
+}
 module.exports={
     Add_product_store,
-    add_category
+    add_category,
+    show_c
 }

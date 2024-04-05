@@ -8,4 +8,9 @@ router.post('/add_category',imageUploader.upload.single('image'),admin.add_categ
 
 
 
+
+router.get('/show_c',admin.show_c)
+
+
+
 module.exports=router
