@@ -4,7 +4,7 @@ const Componets_Categories = (props) => {
     return (
         <>
             <div class="over">
-                <a href="Product_Assortment">
+                <a href={props.href2}>
                     <img className="rectangle-16" src={props.img} alt="Description of the image" />
                 </a>
                 <div class="text-wrapper-35">
