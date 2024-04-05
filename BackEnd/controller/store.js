@@ -69,7 +69,23 @@ function search_salary_and_category(req,res){
         }
     })
 }
-
+function select_prand(req,res){
+    id=req.params.id
+    sql='select * from category_t where id_c=?'
+    db.query(sql,[id],(error,result)=>{
+        if(error){console.log(error)} 
+        else{
+            sql1='select * from  proudact where store_in_name=?'
+            db.query(sql1,[result[0].categ],(error,result1)=>{
+                if(error){console.log(error)}
+                else{
+                    res.json({valid:true,result1})
+                    
+                }
+            })
+        }
+    })
+}
 function open_proudact(req,res){    
     id=req.params.id
     sqllwlw='select * from review_table where pro_id=?'
@@ -322,7 +338,8 @@ module.exports={
     search_salary_and_category,
     open_proudact,
     show_detalis_s,
-    add_rev
+    add_rev,
+    select_prand
 }
 
 
