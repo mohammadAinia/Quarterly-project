@@ -872,11 +872,11 @@ const Choose_Product = () => {
                         {SimilarItem.map((user, i) => (
                             < Componets_Product_store
                                 img={`http://localhost:3001/uploads/${user.image_url}`}
-                                brand={user.short_name}
+                                brand={user.store_in_name}
                                 avg_review={user.review_count}
                                 total_comments={"(" + (user.comments) + ")"}
                                 price={(user.price) + ' $'}
-                                desc={user.store_in_name}
+                                desc={user.short_name}
                                 href={`${user.id}`}
                                 num_star={user.star_count}
                             />

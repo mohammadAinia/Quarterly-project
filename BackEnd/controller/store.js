@@ -104,7 +104,8 @@ function open_proudact(req,res){
                         if(error){console.log(error)}
                         else{
                              
-                            v=storg_id(result,result63)
+                            const v=storg_id(result,result63)
+                            console.log(v)
                             sql1='select * from dascription_p where id_ppr=?'
                             db.query(sql1,[result[0].id],(error,result1)=>{
                             if(error){console.log(error)}
@@ -166,6 +167,9 @@ function compear_array(st,st2){
             if(words[i]===words2[j]){
                 count++
             }
+            console.log(words[i])
+            console.log(words2[i])
+
         }
         
     }
@@ -175,10 +179,12 @@ function compear_array(st,st2){
 function storg_id(r,e){
     const av =[]
     for (let i = 0; i < e.length; i++) {
-        if(compear_array(r[0].ingredients,e[i].ingredients)){
-          av.push(e[i])  
+        if(compear_array(r[0].ingredients,e[i].ingredients)>0){
+          console.log(compear_array(r[0].ingredients,e[i].ingredients))
+            av.push(e[i])  
         }
     }
+    console.log(av)
     return av
 }
 function show_detalis_s(req,res){
@@ -246,7 +252,7 @@ function add_rev(req,res){
                                 var neww=result2[0].one+result2[0].two*2+result2[0].three*3+result2[0].four*4+result2[0].five*5
                                 var newww=result2[0].one+result2[0].two+result2[0].three+result2[0].four+result2[0].five
                                 var newwww=neww/newww
-                                sql120='update proudact set star_count=?,comments=comments+1 where id=?'
+                                sql120='update proudact set star_count=?,comments=comments+1,review_count=review_count+1 where id=?'
                                 db.query(sql120,[newwww,req.params.id],(error,result)=>{
                                 if(error){console.log(error)}
                                 else{
