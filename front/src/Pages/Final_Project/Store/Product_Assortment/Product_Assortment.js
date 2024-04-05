@@ -179,12 +179,12 @@ const Product_Assortment = () => {
                                     <input
                                         className="rectangle-2"
                                         type='checkbox'
-                                        value={user.brand}
+                                        value={user.store_in_name}
                                         id={`brand${i}`} // Use a unique id for each input
-                                        onChange={() => handleBrandSelect(user.brand)}
-                                        checked={selectedBrands.includes(user.brand)}
+                                        onChange={() => handleBrandSelect(user.store_in_name)}
+                                        checked={selectedBrands.includes(user.store_in_name)}
                                     />
-                                    <div htmlFor={`brand${i}`} class="text-wrapper-10">{user.brand}</div>
+                                    <div htmlFor={`brand${i}`} class="text-wrapper-10">{user.store_in_name}</div>
                                 </div>
                             </div>
                         ))}
