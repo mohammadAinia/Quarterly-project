@@ -88,7 +88,7 @@ function add_new_category(req,res){
     })
 }
 function add_category(req,res){
-    sql="insert into category_t (categ,animal_type,prod_type,url_imagee) values ('"+ req.body+"','"+ req.body+"','"+ req.body+"','"+ req.file.filename+"')"
+    sql="insert into category_t (categ,animal_type,prod_type,url_imagee) values ('"+ req.body.category_name+"','"+ req.body.typeAnimal+"','"+ req.body.category+"','"+ req.files[0].filename+"')"
     db.query(sql,(error,result)=>{
         if(error){console.log(error)}
         else{
@@ -97,7 +97,7 @@ function add_category(req,res){
     })
 }
 function show_c(req,res){
-    sql='select * from category_t'
+    sql='select  DISTINCT prod_type from category_t'
     db.query(sql,(error,result)=>{
         if(error){console.log(error)}
         else{

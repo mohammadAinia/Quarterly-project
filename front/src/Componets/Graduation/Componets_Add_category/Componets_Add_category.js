@@ -44,7 +44,7 @@ const Componets_Add_category = () => {
 
 
 
-        let newArr = ['l'];
+        let newArr = [];
         for (let i = 0; i < file.length; i++) {
             formData.append('monfichier', file[i]);
         }
@@ -92,7 +92,7 @@ const Componets_Add_category = () => {
 
                             {CategoryFromBackEnd.map((user, i) => {
                                 return (
-                                    <option key={i} value={user.categ} >{user.categ}</option>
+                                    <option key={i} value={user.prod_type} >{user.prod_type}</option>
                                 )
                             })}
                         </select>

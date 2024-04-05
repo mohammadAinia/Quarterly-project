@@ -28,12 +28,18 @@ const Product_Assortment = () => {
         axios.get(`http://localhost:3001/storee/get_by_brand/${id}`, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
+                  
                     setProduct(res.data.result1);
 
-                    setName(res.data.result2)
+                    setName(res.data.result[0].categ)
 
                     // جيب جميع البراندات لجميع المنتجات حسب الفئة المختارة التي ستعرض بهذه الصفحة
-                    setBrand(res.data.result1)
+                    // setBrand(res.data.result1)
+                    
+                        // Product.push(res.data.result1[i].store_in_name)
+                        setBrand(res.data.result1)
+                        
+                    
 
                 } else {
                     navigate('/login');
@@ -156,12 +162,12 @@ const Product_Assortment = () => {
                                 <input
                                     className="rectangle-2"
                                     type='checkbox'
-                                    value={user.brand}
+                                    value={user.store_in_name}
                                     id={`brand${i}`} // Use a unique id for each input
-                                    onChange={() => handleBrandSelect(user.brand)}
-                                    checked={selectedBrands.includes(user.brand)}
+                                    onChange={() => handleBrandSelect(user.store_in_name)}
+                                    checked={selectedBrands.includes(user.store_in_name)}
                                 />
-                                <div htmlFor={`brand${i}`} class="text-wrapper-10">ACANA (23)</div>
+                                <div htmlFor={`brand${i}`} class="text-wrapper-10">{user.store_in_name} (23)</div>
                             </div>
                         ))}
 

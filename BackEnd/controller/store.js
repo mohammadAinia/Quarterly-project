@@ -95,11 +95,11 @@ function select_prand(req,res){
     db.query(sql,[id],(error,result)=>{
         if(error){console.log(error)} 
         else{
-            sql1='select * from  proudact where store_in_name=?'
+            sql1='select * from  proudact where category=?'
             db.query(sql1,[result[0].categ],(error,result1)=>{
                 if(error){console.log(error)}
                 else{
-                    res.json({valid:true,result1})
+                    res.json({valid:true,result1,result})
                     
                 }
             })

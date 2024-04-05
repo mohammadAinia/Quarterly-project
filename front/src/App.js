@@ -172,7 +172,7 @@ const App = () => {
             <Route path='Add_product_store' element={<Add_product_store />} />
             <Route path='shop_by_pet/:id' element={<Shop_By_Pet />} />
             <Route path='shop_by_pet/Product_Assortment/:id' element={<Product_Assortment />} />
-            <Route path='Add_category' element={<Add_category />} />
+            <Route path='Loginn/Add_category' element={<Add_category />} />
 
 
 
