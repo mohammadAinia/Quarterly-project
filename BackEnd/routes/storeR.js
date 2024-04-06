@@ -9,11 +9,13 @@ router.get('/search_by',store.search_salary_and_category);
 router.get('/open_proudact/:id',store.open_proudact);
 router.get('/get_addtion/:selectedSize',store.show_detalis_s);
 router.get('/get_by_brand/:id',store.select_prand);
+router.get('/show_cart',store.show_cart);
 
 
 
 router.post('/addrev/:id',store.add_rev);
+router.post('/add_cart/:id/:idd',store.add_to_cart);
 
-
+ 
 
 module.exports=router     

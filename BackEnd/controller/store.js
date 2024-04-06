@@ -1,25 +1,6 @@
 const models=require("../models")
 const db=require("../dbb/db")
-// function count_of_stars(id){
-//     sql='select * from review_table where pro_id=?'
-//     db.query(sql,[id],(error,result)=>{
-//         if(error){console.log(error)}
-//         else{
 
-// var starsCount = {'1':0,'2':0,'3':0,'4':0,'5':0};
-
-// for (let i = 0; i < result.length; i++) {
-//     let rating = result[i].stars;
-//     if (starsCount[rating]) {
-//         starsCount[rating] += 1;
-//     } else {
-//         starsCount[rating] = 1;
-//     }
-// }
-// return starsCount;
-//         }
-//     })
-// }
 function get_category_home(){
     
 }
@@ -130,46 +111,6 @@ function add_to_log(session,id){
     })
     
 }
-// function show_recntly_view(user,animal,id){
-//     sq='delete from tests '
-//     db.query(sq,(error,result)=>{
-//         if(error){console.log(error)}
-    
-//     })
-//     sql='select * from log_user join proudact on proudact.id=log_user.id_prod where user_id=? and  date_log > DATE_SUB(date_log, INTERVAL 20 DAY) and proudact.id!=?'
-//     db.query(sql,[user,id],(error,result)=>{
-//         if(error){console.log(error)}
-//         else if(result.length==0){
-//             sql1='select * from proudact where animal_type=? and id!=?'
-//             db.query(sql1,[animal,id],(error,result1)=>{
-//                 if(error){console.log(error)}
-//                 else{
-//                     for (let i = 0; i < result1.length; i++) {
-//                         sql="insert into tests (userr,id_pop) values ('"+user+"','"+result1[i].id+"')"
-//                         db.query(sql,(error,result)=>{
-//                             if(error){console.log(error)}
-                            
-//                         })
-//                     }
-                   
-//                 }
-//             })
-//         }
-//         else {
-//             for (let i = 0; i < result.length; i++) {
-               
-//                 sql="insert into tests (userr,id_pop) values ('"+user+"','"+result[i].id+"')"
-//             db.query(sql,(error,result)=>{
-//                 if(error){console.log(error)}
-                
-//             })  
-//             }
-            
-//         }
-
-//     })
-// }
-
 
 function open_proudact(req,res){ 
     if(req.session.username){
@@ -501,6 +442,27 @@ function add_rev(req,res){
         res.json({valid:false})
     }
 }
+function add_to_cart(req,res){
+    user=req.session.username
+    prid=req.params.id
+    size=req.params.s_id
+    sql="insert into cart (user_id,pt_id,size_idd) values ('"+user+"','"+prid+"','"+size+"')"
+    db.query(sql,(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            res.json({valid:true,result})
+        }
+    })
+} 
+function show_cart(req,res){
+    sql='select * from cart where user_id=?'
+    db.query(sql,[req.session.username],(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            res.json({valid:true,result})
+        }
+    })
+}
 module.exports={
     new_arrivle:new_arrivle,
     sort_by_animal,
@@ -508,40 +470,7 @@ module.exports={
     open_proudact,
     show_detalis_s,
     add_rev,
-    select_prand
+    select_prand,
+    add_to_cart,
+    show_cart
 }
-
-//  else if (result1.length==0&&req.body.selectedStar==1){ 
-                //     sqlll="insert into count_stars (pr_id,one,two,three,four,five) values ('"+ req.params.id+"','"+ 1+"','"+ 0 +"','"+ 0+"','"+ 0+"','"+ 0+"')"
-                //     db.query(sqlll,(error,result)=>{
-                //         if(error){console.log(error)}
-                        
-                //     })
-                // }
-                // else if (result1.length==0&&req.body.selectedStar==2){
-                //     sqlll="insert into count_stars (pr_id,one,two,three,four,five) values ('"+ req.params.id+"','"+ 0+"','"+ 2 +"','"+ 0+"','"+ 0+"','"+ 0+"')"
-                //     db.query(sqlll,(error,result)=>{
-                //         if(error){console.log(error)}
-                        
-                //     })
-                // }
-                // else if (result1.length==0&&req.body.selectedStar==3){
-                //     sqlll="insert into count_stars (pr_id,one,two,three,four,five) values ('"+ req.params.id+"','"+ 0+"','"+ 0 +"','"+ 3+"','"+ 0+"','"+ 0+"')"
-                //     db.query(sqlll,(error,result)=>{
-                //         if(error){console.log(error)}
-                        
-                //     })
-                // }else if (result1.length==0&&req.body.selectedStar==4){
-                //     sqlll="insert into count_stars (pr_id,one,two,three,four,five) values ('"+ req.params.id+"','"+ 0+"','"+ 0 +"','"+ 0+"','"+ 4+"','"+ 0+"')"
-                //     db.query(sqlll,(error,result)=>{
-                //         if(error){console.log(error)}
-                        
-                //     })
-                // }else if (result1.length==0&&req.body.selectedStar==5){
-                //     sqlll="insert into count_stars (pr_id,one,two,three,four,five) values ('"+ req.params.id+"','"+ 1+"','"+ 0 +"','"+ 0+"','"+ 0+"','"+ 5+"')"
-                //     db.query(sqlll,(error,result)=>{
-                //         if(error){console.log(error)}
-                        
-                //     })
-                // }
-                ////////////////////////////////
