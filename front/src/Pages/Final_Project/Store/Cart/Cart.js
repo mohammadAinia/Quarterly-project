@@ -16,9 +16,10 @@ import { Componets_Product_store, Componets_cart, Componets_user_reviews, Store_
 
 const Cart = () => {
 
-    const [Image, setImage] = useState(null)
-    const [Product_Info, setProduct_Info] = useState([])
-    const [first_s, set_f] = useState([])
+    const [typeDelaviry, setTypeDelaviry] = useState(null)
+    const [productInfo, setProductInfo] = useState([]);
+    const [quantities, setQuantities] = useState({});
+    const [totalPrice, setTotalPrice] = useState(0); // State to hold the total price
 
 
 
@@ -26,49 +27,100 @@ const Cart = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-
         axios.get('http://localhost:3001/storee/show_cart', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
-
-                    setProduct_Info(res.data.result)
-                    // set_f(res.data.result3[0].count_av)
-                    // if (user.count_av == 0) {
-                    //     setQuantity(0)
-                    //     setNumber(0)
-                    // }
-                    // else {
-                    //     setQuantity(1)
-                    //     setNumber(1)
-                    // }
-
-
-                }
-                else {
-                    navigate('/login')
+                    setProductInfo(res.data.result);
+                    // Initialize quantities with default values
+                    const initialQuantities = {};
+                    res.data.result.forEach(product => {
+                        initialQuantities[product.id] = product.count_av > 0 ? 1 : 0;
+                    });
+                    setQuantities(initialQuantities);
+                    // Calculate total price
+                    calculateTotalPrice(res.data.result, initialQuantities);
+                } else {
+                    navigate('/login');
                 }
             })
-            .catch(err => { console.log(err) })
+            .catch(err => console.log(err));
+    }, []);
+    console.log(productInfo)
 
-    },
-        [])
+    // تابع حذف المنتج من السلة
+    const handleDelete = (productId) => {
+        // Send delete request to backend
+        axios.delete(`http://localhost:3001/storee/#/${productId}`)
+            .then(res => {
+                // Handle response if needed
+                console.log('Product deleted successfully');
+            })
+            .catch(err => {
+                // Handle error
+                console.error('Error deleting product:', err);
+            });
+    };
+
+
+
+
+    // تابع ارسال المعلومات الى مرحلة الدفع
+    axios.defaults.withCredentials = true
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const productMatrix = [];
+        productInfo.forEach(product => {
+            productMatrix.push({
+                productId: product.id,
+                quantity: quantities[product.id]
+            });
+        });
+
+        axios.post('http://localhost:3001/#', { products: productMatrix, deliveryType: typeDelaviry })
+            .then(res => {
+                if (res.data.valid) {
+                    navigate('/#')
+                } else {
+                    alert('Not published');
+                }
+            })
+            .catch(err => { console.log(err) });
+    };
+
 
     //اضافة ونقصان الكمية المطلوبة
 
-    const [number, setNumber] = useState('');
-    const [quantity, setQuantity] = useState(null);
-
-
-    const incrementNumberUntil = (targetValue) => {
-        if (number < targetValue) {
-            setNumber(prevNumber => prevNumber + 1);
+    const incrementNumberUntil = (productId, targetValue) => {
+        if (quantities[productId] < targetValue) {
+            setQuantities(prevQuantities => ({
+                ...prevQuantities,
+                [productId]: prevQuantities[productId] + 1
+            }));
+            // Recalculate total price when quantity changes
+            calculateTotalPrice(productInfo, { ...quantities, [productId]: quantities[productId] + 1 });
         }
     };
-    // Function to handle decrementing the number
-    const decrementNumber = () => {
-        if (number > 1) {
-            setNumber(prevNumber => prevNumber - 1);
+
+    const decrementNumber = productId => {
+        if (quantities[productId] > 1) {
+            setQuantities(prevQuantities => ({
+                ...prevQuantities,
+                [productId]: prevQuantities[productId] - 1
+            }));
+            // Recalculate total price when quantity changes
+            calculateTotalPrice(productInfo, { ...quantities, [productId]: quantities[productId] - 1 });
         }
+    };
+    const calculateTotalPrice = (products, quantities) => {
+        let total = 0;
+        products.forEach(product => {
+            total += product.special_price * quantities[product.id];
+        });
+        setTotalPrice(total);
+    };
+    const handleChange = (e) => {
+        setTypeDelaviry(e.target.value);
     };
     return (
 
@@ -77,7 +129,6 @@ const Cart = () => {
 
             <div class="cart">
                 <div class="div">
-                    <div class="boxcart2"><img class="line" src={cart_Line_20} /></div>
 
                     <div class="overlap-3">
                         <p class="p">Buy online same day pick up in one of our 600+ stores! or free shipping over</p>
@@ -87,101 +138,112 @@ const Cart = () => {
                     <div class="text-wrapper-12">Item</div>
                     <div class="text-wrapper-13">Price</div>
                     <div class="text-wrapper-14">Quantity</div>
-                    <div class="overlap-4">
-                        <p class="text-wrapper-15">Free shipping on orders over $49!</p>
-                        <p class="shipping-taxes">(Shipping &amp; Taxes Calculated at Checkout)</p>
-                        <div class="text-wrapper-16">9$ Until Free Shipping!</div>
-                        <div class="text-wrapper-17">$49</div>
-                        <div class="text-wrapper-18">200$</div>
-                        <div class="text-wrapper-19">Cart Summary</div>
-                        <div class="text-wrapper-20">Subtotal:</div>
-                        <div class="rectangle-2"></div>
-                        <img class="line" src="img/line-20.svg" />
-                        <div class="rectangle-3" style={{ width: `${(40 / 40) * 230}px` }}></div>
-                        {/* <div class="rectangle-4"></div> */}
-                        <div class="rectangle-5"></div>
-                        <div class="text-wrapper-21">Proceed to Checkout</div>
-                    </div>
+
+                    <form onSubmit={handleSubmit}>
+
+
+                        {/* ملخص السلة */}
+                        <div class="boxcart2"><img class="line" src={cart_Line_20} /></div>
+                        <div class="overlap-4">
+
+                            <div class="text-wrapper-19">Cart Summary</div>
+                            <p class="text-wrapper-15">Free shipping on orders over 49$!</p>
+
+                            <div class="text-wrapper-20">Subtotal:</div>
+                            <div className="text-wrapper-18">{totalPrice} $</div>
+
+                            <div class="rectangle-2"></div>
+                            <img class="line" src="img/line-20.svg" />
+
+                            <div class="text-wrapper-17">49 $</div>
+                            <div class="rectangle-3" style={{ width: `${(totalPrice / 40) * 230}px` }}></div>
+                            {totalPrice >= 49 ? (
+                                <div class="text-wrapper-16cart">Congratulations, you get FREE Shipping!</div>
+                            ) : (
+                                <>
+                                    <div class="text-wrapper-16">{(49 - totalPrice) + " $ Until Free Shipping!"}</div>
+                                </>
+                            )}
+
+
+                            <p class="shipping-taxes">(Shipping &amp; Taxes Calculated at Checkout)</p>
+                            <div class="rectangle-5"></div>
+                            <button class="text-wrapper-21">Proceed to Checkout</button>
+                        </div>
+
+                        <div class="overlap-6">
+                            <input
+                                type="radio"
+                                id="pickup"
+                                name="shippingOption"
+                                className="radio-input"
+                                value="pick in store"
+                                onChange={handleChange} // Add onChange event listener
+                            />
+                            <label for="pickup" className="radio-label">
+                                <div class="ellipse"></div>
+                                <img class="shop-solid" src={cart_shop_solid_1} />
+                                <div class="text-wrapper-27">Pick Up In-Store</div>
+                            </label>
+                        </div>
+                        <div class="overlap-7">
+                            <input
+                                type="radio"
+                                id="shipToMe"
+                                name="shippingOption"
+                                className="radio-input"
+                                value="ship to me"
+                                onChange={handleChange} // Add onChange event listener
+                            />
+                            <label for="shipToMe" className="radio-label">
+                                <div class="ellipse"></div>
+                                <div class="text-wrapper-27">Ship To Me</div>
+                                <img class="vector-3" src={cart_Vector} />
+                            </label>
+                        </div>
+                    </form>
+
 
                     {/* المنتج */}
-                    <div class="frame-3_me">
-                        {Product_Info.map((user, i) => {
-                            // Define quantity and number based on the condition
-                            let quantity, number;
-                            if (user.count_av === 0) {
-                                quantity = 0;
-                                number = 0;
-                            } else {
-                                quantity = user.count_av;
-                                number = 1;
-                            }
-
-                            return (
-                                <div class="overlap-3_cart">
-                                    <div class="overlap-5">
-                                        <p class="text-wrapper-23">{user.short_name}</p>
-                                        <div class="text-wrapper-24">{"Size:" + user.detalis}</div>
-                                        <div class="rectangle-6"></div>
-                                        {quantity > 0 ? (
-                                            <p class="text-wrapper-25">{quantity + " In Stock for Pick Up"}</p>
-                                        ) : (
-                                            <p class="text-wrapper-25cart">Out of stock</p>
-                                        )}
-                                    </div>
-                                    <div class="overlap-8">
-                                        <div class="text-wrapper-28">{number}</div>
-                                        <div class="overlap-9" onClick={() => incrementNumberUntil(quantity)}>
-                                            <div class="rectangle-8"></div>
-                                            <div class="rectangle-9"></div>
-                                        </div>
-                                        <div class="rectangle-10" onClick={decrementNumber}></div>
-                                        <div class="rectangle-11" onClick={decrementNumber}></div>
-                                    </div>
-                                    <div class="boxcart"><img class="line" src={cart_Line_19} /></div>
-                                    <img class="rectangle-7" src={`http://localhost:3001/uploads/${user.image_url}`} />
-                                    <div class="text-wrapper-22">{user.special_price + "$"}</div>
-                                    <img class="trash-solid" src={cart_trash_solid_1} />
+                    <div className="frame-3_me">
+                        {productInfo.map(product => (
+                            <div className="overlap-3_cart" key={product.id}>
+                                <div className="overlap-5">
+                                    <p className="text-wrapper-23">{product.short_name}</p>
+                                    <div className="text-wrapper-24">Size: {product.detalis}</div>
+                                    <div className="rectangle-6"></div>
+                                    {product.count_av > 0 ? (
+                                        <p className="text-wrapper-25">{product.count_av} In Stock for Pick Up</p>
+                                    ) : (
+                                        <p className="text-wrapper-25cart">Out of stock</p>
+                                    )}
                                 </div>
-                            );
-                        })}
-
-                        {/* <div class="overlap-3_cart">
-                            <div class="overlap-5">
-                                <p class="text-wrapper-23">shampoo</p>
-                                <div class="text-wrapper-24">Size: 150ml</div>
-                                <div class="rectangle-6"></div>
-                                <p class="text-wrapper-25cart">"Out of stock"</p>
-
-                            </div>
-                            <div class="overlap-8">
-                                <div class="text-wrapper-28">{number}</div>
-                                <div class="overlap-9" onClick={() => incrementNumberUntil(quantity)}>
-                                    <div class="rectangle-8"></div>
-                                    <div class="rectangle-9"></div>
+                                <div className="overlap-8">
+                                    <div className="text-wrapper-28">{quantities[product.id]}</div>
+                                    <div className="overlap-9" onClick={() => incrementNumberUntil(product.id, product.count_av)}>
+                                        <div className="rectangle-8"></div>
+                                        <div className="rectangle-9"></div>
+                                    </div>
+                                    <div className="rectangle-10" onClick={() => decrementNumber(product.id)}></div>
+                                    <div className="rectangle-11" onClick={() => decrementNumber(product.id)}></div>
                                 </div>
-                                <div class="rectangle-10" onClick={decrementNumber}></div>
-                                <div class="rectangle-11" onClick={decrementNumber}></div>
+                                <div class="boxcart"><img class="line" src={cart_Line_19} /></div>
+                                <img class="rectangle-7" src={`http://localhost:3001/uploads/${product.image_url}`} />
+                                <div class="text-wrapper-22">{product.special_price + "$"}</div>
+                                <img
+                                    className="trash-solid"
+                                    src={cart_trash_solid_1}
+                                    onClick={() => handleDelete(product.id)}
+                                    alt="Delete"
+                                />
                             </div>
-                            <div class="boxcart"><img class="line" src={cart_Line_19} /></div>
-                            <img class="rectangle-7" src={cart_trash_solid_1} />
-                            <div class="text-wrapper-22">22 $</div>
-                            <img class="trash-solid" src={cart_trash_solid_1} />
-                        </div> */}
+                        ))}
                     </div>
 
 
 
                     <div class="text-wrapper-26">Shopping Cart</div>
-                    <div class="overlap-6">
-                        <div class="ellipse"></div>
-                        <img class="shop-solid" src={cart_shop_solid_1} />
-                        <div class="text-wrapper-27">Pick Up In-Store</div>
-                    </div>
-                    <div class="overlap-7">
-                        <div class="ellipse"></div>
-                        <div class="text-wrapper-27">Ship To Me</div>
-                        <img class="vector-3" src={cart_Vector} />
-                    </div>
+
 
                     <img class="line-2" src="img/line-19.svg" />
                 </div>

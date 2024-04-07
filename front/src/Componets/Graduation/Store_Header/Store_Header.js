@@ -2,7 +2,10 @@ import './Store_Header.css'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightFromBracket, faCaretDown } from '@fortawesome/free-solid-svg-icons';
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import axios from 'axios'
+// import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import store_Vector3 from '../../../Assert/Images/store_Vector3.png'
 import store_Vector2 from '../../../Assert/Images/store_Vector2.png'
 
@@ -10,6 +13,24 @@ import store_Vector2 from '../../../Assert/Images/store_Vector2.png'
 
 
 const Store_Header = (props) => {
+
+    const [NumberItem, setNumberItem] = useState(0)
+
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        axios.get('http://localhost:3001/storee/#', { withCredentials: true })
+            .then(res => {
+                if (res.data.valid) {
+                    setNumberItem(res.data.result);
+
+                } else {
+                    navigate('/login');
+                }
+            })
+            .catch(err => console.log(err));
+    }, []);
+
 
     const [showMenu, setShowMenu] = useState(false);
 
@@ -58,10 +79,10 @@ const Store_Header = (props) => {
                     </div>
 
                     <div className="dropdown5">
-                        <a href='#' className="aa"><img src={store_Vector3} /> </a>
+                        <a href='cart' className="aa"><img src={store_Vector3} /> </a>
                         <div class="rectangleheader"></div>
 
-                        <div class="text-wrapper-9header">0</div>
+                        <div class="text-wrapper-9header">{NumberItem}</div>
                     </div>
 
                     <div class="frameheader"><img class="vectorheader" src={store_Vector2} /></div>

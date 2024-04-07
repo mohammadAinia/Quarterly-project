@@ -365,13 +365,30 @@
 
 .cart .text-wrapper-16 {
     position: absolute;
-    width: 165px;
+    width: 175px;
     height: 47px;
     top: 200px;
     left: 100px;
     font-family: "Inder-Regular", Helvetica;
     font-weight: 400;
-    color: #008000;
+    color: #000000;
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+button {
+    background:none;
+    
+}
+.cart .text-wrapper-16cart {
+    position: absolute;
+    width: 280px;
+    height: 47px;
+    top: 200px;
+    left: 30px;
+    font-family: "Inder-Regular", Helvetica;
+    font-weight: 400;
+    color: green;
     font-size: 15px;
     letter-spacing: 0;
     line-height: normal;
@@ -379,7 +396,7 @@
 
 .cart .text-wrapper-17 {
     width: 53px;
-    top: 164px;
+    top: 165px;
     left: 308px;
     font-size: 18px;
     position: absolute;
@@ -462,7 +479,7 @@
     top: 165px;
     left: 26px;
     background-color: #008000;
-    border-radius: 27px 0px 0px 27px;
+    border-radius: 27px;
 }
 
 .cart .rectangle-4 {
@@ -489,7 +506,7 @@
     position: absolute;
     width: 248px;
     height: 61px;
-    top: 575px;
+    top: 555px;
     left: 59px;
     font-family: "Poppins-Bold", Helvetica;
     font-weight: 700;
@@ -499,6 +516,39 @@
     letter-spacing: 0;
     line-height: normal;
 }
+.radio-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.radio-label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.radio-label .ellipse {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    margin-right: 10px;
+}
+.radio-input:checked + .radio-label .ellipse {
+    background-color: #000; /* Change to a darker color */
+}
+
+.radio-label img {
+    margin-right: 10px;
+}
+
+.radio-label .text-wrapper-27 {
+    margin-right: 10px;
+}
+
 
 .cart .text-wrapper-22 {
     width: 72px;
@@ -723,7 +773,7 @@
 
 .cart .text-wrapper-28 {
     height: 23px;
-    top: 14px;
+    top: 18px;
     left: 65px;
     font-family: "Poppins-Medium", Helvetica;
     font-weight: 500;
@@ -744,8 +794,8 @@
 
 .cart .rectangle-8 {
     position: absolute;
-    width: 2px;
-    height: 10px;
+    width: 6px;
+    height: 16px;
     top: 0;
     left: 0;
     background-color: #4e77b7;
@@ -753,8 +803,8 @@
 
 .cart .rectangle-9 {
     position: absolute;
-    width: 2px;
-    height: 10px;
+    width: 6px;
+    height: 16px;
     top: 0;
     left: 0;
     background-color: #4e77b7;
@@ -763,8 +813,8 @@
 
 .cart .rectangle-10 {
     position: absolute;
-    width: 2px;
-    height: 10px;
+    width: 6px;
+    height: 16px;
     top: 20px;
     left: 20px;
     background-color: #4e77b7;
@@ -773,8 +823,8 @@
 
 .cart .rectangle-11 {
     position: absolute;
-    width: 2px;
-    height: 10px;
+    width: 6px;
+    height: 16px;
     top: 20px;
     left: 22px;
     background-color: #4e77b7;
