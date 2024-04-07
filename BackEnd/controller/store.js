@@ -455,7 +455,7 @@ function add_to_cart(req,res){
     })
 } 
 function show_cart(req,res){
-    sql='select * from cart where user_id=?'
+    sql='select proudact.short_name ,option_p.detalis,proudact.image_url,option_p.special_price,option_p.count_av from proudact JOIN option_p on option_p.proudact_id=proudact.id join cart on cart.size_idd=option_p.id_add where cart.user_id=?'
     db.query(sql,[req.session.username],(error,result)=>{
         if(error){console.log(error)}
         else{

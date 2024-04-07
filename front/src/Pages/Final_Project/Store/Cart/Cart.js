@@ -27,11 +27,11 @@ const Cart = () => {
 
     useEffect(() => {
 
-        axios.get('http://localhost:3001/storee/#/', { withCredentials: true })
+        axios.get('http://localhost:3001/storee/show_cart', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
 
-                    setProduct_Info(res.data.result[0])
+                    setProduct_Info(res.data.result)
                     // set_f(res.data.result3[0].count_av)
                     // if (user.count_av == 0) {
                     //     setQuantity(0)
@@ -119,8 +119,8 @@ const Cart = () => {
                             return (
                                 <div class="overlap-3_cart">
                                     <div class="overlap-5">
-                                        <p class="text-wrapper-23">{user.shortDesc}</p>
-                                        <div class="text-wrapper-24">{"Size:" + user.size}</div>
+                                        <p class="text-wrapper-23">{user.short_name}</p>
+                                        <div class="text-wrapper-24">{"Size:" + user.detalis}</div>
                                         <div class="rectangle-6"></div>
                                         {quantity > 0 ? (
                                             <p class="text-wrapper-25">{quantity + " In Stock for Pick Up"}</p>
@@ -139,7 +139,7 @@ const Cart = () => {
                                     </div>
                                     <div class="boxcart"><img class="line" src={cart_Line_19} /></div>
                                     <img class="rectangle-7" src={`http://localhost:3001/uploads/${user.image_url}`} />
-                                    <div class="text-wrapper-22">{user.price + "$"}</div>
+                                    <div class="text-wrapper-22">{user.special_price + "$"}</div>
                                     <img class="trash-solid" src={cart_trash_solid_1} />
                                 </div>
                             );
