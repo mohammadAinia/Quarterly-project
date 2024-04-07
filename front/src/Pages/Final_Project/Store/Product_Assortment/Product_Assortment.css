@@ -645,8 +645,8 @@
     position: relative;
     width: 25px;
     height: 25px;
-    top: -27px;
-    left: 0px;
+    /* top: -27px;
+    left: 0px; */
     border-radius: 3px;
     border: 1px solid;
     border-color: #000000;

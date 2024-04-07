@@ -173,4 +173,8 @@ export { default as Componets_Shop_By_Pet } from './Graduation/Componets_Shop_By
 export { default as Store_Header } from './Graduation/Store_Header/Store_Header'
 export { default as Add_category } from '../Pages/Final_Project/Site_Manager/Add_category/Add_category'
 export { default as Componets_Add_category } from './Graduation/Componets_Add_category/Componets_Add_category'
+export { default as Cart } from '../Pages/Final_Project/Store/Cart/Cart'
+export { default as Componets_cart } from './Graduation/Componets_cart/Componets_cart'
+
+
 

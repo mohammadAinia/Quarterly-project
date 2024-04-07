@@ -4,7 +4,7 @@ import Store_Vector from '../../../../Assert/Images/Store_Vector.png'
 import store_Vector2 from '../../../../Assert/Images/store_Vector2.png'
 import store_Vector3 from '../../../../Assert/Images/store_Vector3.png'
 import choose2_a_Line_13 from '../../../../Assert/Images/choose2_a_Line_13.png'
-import { Componets_Product_Assortment ,Store_Header} from '../../../../Componets'
+import { Componets_Product_Assortment, Store_Header } from '../../../../Componets'
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
@@ -22,24 +22,33 @@ const Product_Assortment = () => {
 
 
     const navigate = useNavigate()
+    const addBrand = (newBrand) => {
+        setBrand(prevBrand => [...prevBrand, newBrand]);
+    };
 
     useEffect(() => {
         // Fetch all products when the component mounts
         axios.get(`http://localhost:3001/storee/get_by_brand/${id}`, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
-                  
+
                     setProduct(res.data.result1);
 
                     setName(res.data.result[0].categ)
+                    const extractedNames = res.data.result1.map(item => item.store_in_name);
+                    const uniqueNames = [...new Set(extractedNames)]; // Filter out duplicates
+                    setBrand(uniqueNames);
 
                     // جيب جميع البراندات لجميع المنتجات حسب الفئة المختارة التي ستعرض بهذه الصفحة
                     // setBrand(res.data.result1)
-                    
-                        // Product.push(res.data.result1[i].store_in_name)
-                        setBrand(res.data.result1)
-                        
-                    
+
+                    // Product.push(res.data.result1[i].store_in_name)
+  
+
+
+
+
+
 
                 } else {
                     navigate('/login');
@@ -52,6 +61,7 @@ const Product_Assortment = () => {
             });
     }, [id]);
     console.log(Brand)
+
 
     // تابع التصفية حسب البراند
     const handleBrandSelect = (brand) => {
@@ -82,7 +92,7 @@ const Product_Assortment = () => {
     };
 
     // هذا يعرض المنتجات جميعها او يصفي حسب البراند
-    let filteredProducts = selectedBrands.length > 0 ? Product.filter(product => selectedBrands.includes(Product.brand)) : Product;
+    let filteredProducts = selectedBrands.length > 0 ? Product.filter(product => selectedBrands.includes(product.store_in_name)) : Product;
 
     // هذا يفلتر حسب المنتجات الجديد و الاعلى تقييما
     if (selectedMethods.includes("topRated")) {
@@ -95,7 +105,7 @@ const Product_Assortment = () => {
         // Calculate the date one month ago from the current date
         const oneMonthAgo = new Date();
         oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
-    
+
         // Filter products that were added within the last month
         filteredProducts = filteredProducts.filter(product => {
             // Convert the date_added string to a Date object
@@ -129,11 +139,14 @@ const Product_Assortment = () => {
         }
         return <div>{stars}</div>; // Return the array of stars wrapped in a div
     }
+
+
+    
+
     return (
 
         <>
-                    <Store_Header />
-
+            <Store_Header />
             <div class="product-assortment">
                 <div class="div">
 
@@ -173,19 +186,17 @@ const Product_Assortment = () => {
                     {/* عناصر التصفية حسب البراند */}
                     <div class="frame-3_me2">
 
-                        {Brand.map((user, i) => (
+                        {Brand.map((brand, i) => (
                             <div key={i}>
-                                <div>
                                     <input
                                         className="rectangle-2"
                                         type='checkbox'
-                                        value={user.store_in_name}
+                                        value={brand}
                                         id={`brand${i}`} // Use a unique id for each input
-                                        onChange={() => handleBrandSelect(user.store_in_name)}
-                                        checked={selectedBrands.includes(user.store_in_name)}
+                                        onChange={() => handleBrandSelect(brand)} // Pass brand instead of index
+                                        checked={selectedBrands.includes(brand)} // Check if the selectedBrands array includes the current brand
                                     />
-                                    <div htmlFor={`brand${i}`} class="text-wrapper-10">{user.store_in_name}</div>
-                                </div>
+                                    <label htmlFor={`brand${i}`} className="text-wrapper-10">{brand}</label>
                             </div>
                         ))}
 
