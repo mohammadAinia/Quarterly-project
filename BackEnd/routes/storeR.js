@@ -16,6 +16,6 @@ router.get('/show_cart',store.show_cart);
 router.post('/addrev/:id',store.add_rev);
 router.post('/add_cart/:id/:idd',store.add_to_cart);
 
- 
 
-module.exports=router     
+
+module.exports=router
