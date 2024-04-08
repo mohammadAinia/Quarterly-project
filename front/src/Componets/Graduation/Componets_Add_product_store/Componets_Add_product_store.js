@@ -8,6 +8,8 @@ import { useNavigate, useParams } from 'react-router-dom'
 const Componets_Add_product_store = () => {
 
     const [CategoryFromBackEnd, setCategoryFromBackEnd] = useState([])
+    const [BrandsFromBackEnd, setBrandsFromBackEnd] = useState([])
+
 
     useEffect(() => {
 
@@ -16,6 +18,8 @@ const Componets_Add_product_store = () => {
                 if (res.data.valid) {
 
                     setCategoryFromBackEnd(res.data.result)
+                    setBrandsFromBackEnd(res.data.result2)
+
 
                 }
                 else {
@@ -170,7 +174,14 @@ const Componets_Add_product_store = () => {
                     </div>
                     <div class="input-box">
                         <span class="details">Brand *</span>
-                        <input type="text" name='brand' required onChange={e => setBrand(e.target.value)} />
+                        <select name="brand" id="cars" required onChange={e => setBrand(e.target.value)}>
+
+                            {BrandsFromBackEnd.map((user, i) => {
+                                return (
+                                    <option key={i} value={user.name_Brand} >{user.name_Brand}</option>
+                                )
+                            })}
+                        </select>
                     </div>
                     <div class="input-box">
                         <span class="details">short description *</span>
@@ -361,7 +372,6 @@ const Componets_Add_product_store = () => {
                     </div>
 
                     <div class="input-box">
-                        {/* <span class="details" style={{ "margin-left": "280px", "width": "200px" }}> {Saturday_From + ' ' + Saturday_To}</span> */}
                     </div>
                     <div class="input-box">
                     </div>
