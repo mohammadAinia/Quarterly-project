@@ -56,7 +56,7 @@ import store_Rectangle_233 from '../../../Assert/Images/store_Rectangle_233.png'
 import React, { useEffect, useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faInstagram, faXTwitter } from '@fortawesome/free-brands-svg-icons';
-import { Componets_Categories, Componets_newArrivals, Header, Store_Header } from '../../../Componets'
+import { Componets_Brand, Componets_Categories, Componets_newArrivals, Header, Store_Header } from '../../../Componets'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
@@ -66,12 +66,8 @@ const Store = () => {
     const [NewArrivalInfo, setNewArrivalInfo] = useState([])
     // مشان سطر رقم 360
     const [CategoriesInfo, setCategoriesInfo] = useState([])
-    // const [IdDog, setIdDog] = useState()
-    // const [IdCat, setIdCat] = useState()
-    // const [IdFish, setIdFish] = useState()
-    // const [IdBirds, setIdBirds] = useState()
-    // const [IdRabbit, setIdRabbit] = useState()
-    // const [IdReptile, setIdReptile] = useState()
+    const [Brands, setBrands] = useState([])
+
 
 
 
@@ -86,14 +82,7 @@ const Store = () => {
 
                     setNewArrivalInfo(res.data.result)
                     setCategoriesInfo(res.data.result2)
-                    // setIdDog(res.data.result3)
-                    // setIdCat(res.data.result4)
-                    // setIdFish(res.data.result5)
-                    // setIdBirds(res.data.result6)
-                    // setIdRabbit(res.data.result7)
-                    // setIdReptile(res.data.result8)
-
-                    // alert(res.data.result2)
+                    // setBrands(res.data.result3)
                 }
                 else {
                     navigate('/login')
@@ -216,42 +205,42 @@ const Store = () => {
 
                     {/* ********************************************************************************************* */}
                     {/* التسوق حسب السعر */}
-                    <a href={`Product_Assortment/${"dogToy"+10}`} class="overlap-14">
+                    <a href={`Product_Assortment/${"dogToy" + 10}`} class="overlap-14">
                         <p class="text-wrapper-23">Dog Toys &amp; Treats Under</p>
                         <div class="overlap-15">
                             <div class="text-wrapper-24">10</div>
                             <div class="text-wrapper-25">$</div>
                         </div>
                     </a>
-                    <a href={`Product_Assortment/${"catToy"+10}`} class="overlap-16">
+                    <a href={`Product_Assortment/${"catToy" + 10}`} class="overlap-16">
                         <p class="text-wrapper-23">Cat Toys &amp; Treats Under</p>
                         <div class="overlap-15">
                             <div class="text-wrapper-24">10</div>
                             <div class="text-wrapper-25">$</div>
                         </div>
                     </a>
-                    <a href={`Product_Assortment/${"small"+10}`} class="overlap-17">
+                    <a href={`Product_Assortment/${"small" + 10}`} class="overlap-17">
                         <p class="text-wrapper-23">Small Pet Toys &amp; Treats Under</p>
                         <div class="overlap-15">
                             <div class="text-wrapper-24">10</div>
                             <div class="text-wrapper-25">$</div>
                         </div>
                     </a>
-                    <a href={`Product_Assortment/${"dogCillars"+20}`} class="overlap-18">
+                    <a href={`Product_Assortment/${"dogCillars" + 20}`} class="overlap-18">
                         <p class="text-wrapper-23">Dog Cillars &amp; Leashes Under</p>
                         <div class="overlap-15">
                             <div class="text-wrapper-24">20</div>
                             <div class="text-wrapper-25">$</div>
                         </div>
                     </a>
-                    <a href={`Product_Assortment/${"catBowls"+20}`} class="overlap-19">
+                    <a href={`Product_Assortment/${"catBowls" + 20}`} class="overlap-19">
                         <p class="text-wrapper-23">Dog &amp; Cat Bowls &amp; Freeding Under</p>
                         <div class="overlap-15">
                             <div class="text-wrapper-24">20</div>
                             <div class="text-wrapper-25">$</div>
                         </div>
                     </a>
-                    <a href={`Product_Assortment/${"dogBeds"+40}`} class="overlap-20">
+                    <a href={`Product_Assortment/${"dogBeds" + 40}`} class="overlap-20">
                         <div class="text-wrapper-23">Dog Beds Under</div>
                         <div class="overlap-15">
                             <div class="text-wrapper-24">40</div>
@@ -385,36 +374,7 @@ const Store = () => {
 
                     </div>
 
-
                     {/* *************************************************************************************************************************************/}
-
-
-
-
-                    {/* <div class="text-wrapper-36">Kitten Essentials</div> */}
-                    {/* <p class="dog-collars-leashes"><a href='Product_Assortment'>Dog Collars, Leashes &amp; Harnesses</a></p> */}
-                    {/* <p class="small-pet-food">Small Pet Food, Treats &amp; Hay</p> */}
-                    {/* <div class="text-wrapper-37"><a href='Product_Assortment'>Dog Toys</a></div> */}
-                    {/* <div class="cat-bowls-feeding">Cat Bowls &amp; Feeding</div> */}
-                    {/* <div class="text-wrapper-38"><a href='Product_Assortment'>Dog Treats</a></div> */}
-                    {/* <p class="cat-litter-litter">Cat Litter &amp; Litter Boxes</p> */}
-                    {/* <div class="text-wrapper-39"><a href='Product_Assortment'>Dog Food</a></div> */}
-                    {/* <div class="text-wrapper-40">Cat Food</div> */}
-
-                    {/* 
-                    <img class="rectangle-17" src={store_Rectangle_164} />
-                    <img class="rectangle-18" src={store_Rectangle_160} />
-                    <img class="rectangle-19" src={store_Rectangle_165} />
-                    <img class="rectangle-20" src={store_Rectangle_161} />
-                    <img class="rectangle-21" src={store_Rectangle_166} />
-                    <img class="rectangle-22" src={store_Rectangle_162} />
-                    <img class="rectangle-23" src={store_Rectangle_167} />
-                    <img class="rectangle-24" src={store_Rectangle_163} />
-                    <img class="rectangle-25" src={store_Rectangle_168} /> */}
-
-
-                    {/* *************************************************************************************************************************************/}
-
 
                     {/* التسوق حسب نوع الحيوان */}
                     <div class="text-wrapper-14">Shop by Pet</div>
@@ -437,25 +397,23 @@ const Store = () => {
                     {/* *************************************************************************************************************************************/}
 
 
+                    {/* تسوق حسب البراند */}
+                    <div class="store3">
 
-                    {/* <div class="rectangle-wrapper"><img class="rectangle-26" src={store_Rectangle_170} /></div> */}
-                    <div class="rectangle-wrapper">
-                        <img class="rectangle-26" src={store_Rectangle_170} />
-                        <p class="image-text">ACANA</p>
+                    {Brands.map((user, i) => (
+                            <Componets_Brand
+                                key={i}
+                                img={`http://localhost:3001/uploads/${user.url_imagee}`}
+                                name_brand={user.name}
+                                href={`Product_Assortment/${user.id_c}`}
+                            />
+                        ))}
+
+                        {/* <Componets_Brand href={""}/> */}
                     </div>
 
-                    <div class="img-wrapper">
-                        <img class="rectangle-26" src={store_Rectangle_184} />
-                        {/* <p class="image-text">Your text here</p> */}
-                    </div>
-                    <div class="overlap-31"><img class="rectangle-26" src={store_Rectangle_172} /></div>
-                    <div class="overlap-32"><img class="rectangle-26" src={store_Rectangle_185} /></div>
-                    <div class="overlap-33"><img class="rectangle-26" src={store_Rectangle_174} /></div>
-                    <div class="overlap-34"><img class="rectangle-26" src={store_Rectangle_186} /></div>
-                    <div class="overlap-35"><img class="rectangle-26" src={store_Rectangle_176} /></div>
-                    <div class="overlap-36"><img class="rectangle-26" src={store_Rectangle_187} /></div>
-                    <div class="overlap-37"><img class="rectangle-26" src={store_Rectangle_178} /></div>
-                    <div class="overlap-38"><img class="rectangle-26" src={store_Rectangle_188} /></div>
+
+                    {/* *************************************************************************************************************************************/}
 
                     <div class="boxstore">
                         <div class="rectangle">

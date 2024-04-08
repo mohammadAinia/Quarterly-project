@@ -259,7 +259,7 @@
     position: absolute;
     width: 153px;
     height: 47px;
-    top:15px;
+    top: 15px;
     left: 1425px;
     font-family: "Inder-Regular", Helvetica;
     font-weight: 400;
@@ -598,6 +598,16 @@
     top: 1549px;
     left: 210px;
     background-color: #fad455;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    /* Add transition for smooth animation */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.store .overlap-14:hover {
+    transform: translateY(-5px);
+    /* Move the element up slightly on hover */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    /* Increase the shadow on hover */
 }
 
 .store .text-wrapper-23 {
@@ -662,6 +672,13 @@
     top: 1549px;
     left: 482px;
     background-color: #fad455;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.store .overlap-16:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .store .overlap-17 {
@@ -671,6 +688,12 @@
     top: 1549px;
     left: 754px;
     background-color: #fad455;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.store .overlap-17:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .store .overlap-18 {
@@ -680,6 +703,12 @@
     top: 1549px;
     left: 1026px;
     background-color: #fad455;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.store .overlap-18:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .store .overlap-19 {
@@ -689,6 +718,12 @@
     top: 1549px;
     left: 1298px;
     background-color: #fad455;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.store .overlap-19:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .store .overlap-20 {
@@ -698,6 +733,12 @@
     top: 1549px;
     left: 1570px;
     background-color: #fad455;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.store .overlap-20:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .store .rectangle-7 {
@@ -1543,6 +1584,7 @@
     top: 2879px;
     left: 1573px;
 }
+
 .store .text-wrapper-34,
 .store .text-wrapper-41,
 .store .text-wrapper-42,
@@ -1570,7 +1612,8 @@
 .store .ellipse-4:hover,
 .store .ellipse-5:hover,
 .store .ellipse-6:hover {
-    transform: scale(1.1); /* Scale the element to 110% on hover */
+    transform: scale(1.1);
+    /* Scale the element to 110% on hover */
 }
 
 
@@ -1640,6 +1683,7 @@
     top: 4135px;
     left: 243px;
 }
+
 .store .store2::-webkit-scrollbar {
     width: 10px;
     /* Set the width of the scrollbar */
@@ -1658,6 +1702,7 @@
     background-color: transparent;
     /* Set the color of the scrollbar track */
 }
+
 .store .over {
     position: relative;
     flex-wrap: nowrap;
@@ -1665,13 +1710,19 @@
     /* margin-left: 40px; */
     margin: 30px;
     left: -55px;
-
+    transition: transform 0.3s ease-in-out;
+    /* Add transition for smooth animation */
     /* width: 269px; */
     /* height: 519px; */
     /* top: 6570px;
     left: 200px; */
-    
 }
+
+.store .over:hover {
+    transform: translateY(-5px);
+    /* Move the element up slightly on hover */
+}
+
 
 .store .rectangle-16 {
     position: relative;
@@ -1689,8 +1740,7 @@
     position: relative;
     width: 237px;
     height: 33px;
-    /* top: 4425px;
-    left: 247px; */
+    left: 25px;
     font-family: "Poppins-Medium", Helvetica;
     font-weight: 500;
     color: #000000;
@@ -1698,8 +1748,6 @@
     text-align: center;
     letter-spacing: 0;
     line-height: normal;
-    /* display: inline-block; 
-    margin-right: 20px;  */
 }
 
 .store .text-wrapper-35 a {
@@ -1787,24 +1835,53 @@
     object-fit: cover;
 }
 
-.store .rectangle-wrapper {
+.store .store3 {
+    width: 100%;
+    height: 725px;
+    max-width: calc(100% - 300px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    white-space: wrap;
     position: absolute;
-    width: 250px;
-    height: 307px;
     top: 5147px;
     left: 243px;
+}
+
+.store .store3::-webkit-scrollbar {
+    width: 10px;
+    height: 12px;
+}
+
+.store .store3::-webkit-scrollbar-thumb {
+    background-color: lightblue;
+    border-radius: 5px;
+
+}
+
+.store .store3::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.store .rectangle-wrapper {
+    position: relative;
+    width: 250px;
+    height: 307px;
+    flex-wrap: nowrap;
+    display: inline-block;
     background-color: #ffffff;
     box-shadow: 0px 4px 4px #00000040;
-    display: flex;
-    /* Use flexbox for easy vertical centering */
-    justify-content: center;
-    /* Center horizontally */
-    align-items: center;
-    /* Center vertically */
+    margin: 30px;
+    left: 25px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.store .rectangle-wrapper:hover {
+    transform: translateY(-5px);
+    /* Move the element up slightly on hover */
 }
 
 .image-text {
-    position: absolute;
+    position: relative;
     top: 240px;
     /* left:55px; */
     text-align: center;
