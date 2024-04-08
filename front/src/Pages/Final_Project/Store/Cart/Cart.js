@@ -85,7 +85,7 @@ const Cart = () => {
         axios.post('http://localhost:3001/#', { products: productMatrix, deliveryType: typeDelaviry })
             .then(res => {
                 if (res.data.valid) {
-                    navigate('/#')
+                    navigate('checkout')
                 } else {
                     alert('Not published');
                 }

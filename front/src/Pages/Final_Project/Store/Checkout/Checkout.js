@@ -5,11 +5,49 @@ import checkout_Line_21 from '../../../../Assert/Images/checkout_Line_21.png'
 import checkout_Line_25 from '../../../../Assert/Images/checkout_Line_25.png'
 
 import { Componets_Product_store, Componets_cart, Componets_user_reviews, Store_Header } from '../../../../Componets'
-
+import React, { useState, useEffect, useRef } from 'react';
+import axios from 'axios'
+// import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 
 
 const Checkout = () => {
+
+    const [Address, setAddress] = useState([])
+    const [productInfo, setProduct_Info] = useState([]);
+    const [selectedAddress, setSelectedAddress] = useState('');
+
+
+
+
+    const navigate = useNavigate()
+
+    useEffect(() => {
+
+        axios.get('http://localhost:3001/storee/#', { withCredentials: true })
+            .then(res => {
+                if (res.data.valid) {
+
+                    setProduct_Info(res.data.result)
+                    setAddress(res.data.result2)
+
+                }
+                else {
+                    navigate('/login')
+                }
+            })
+            .catch(err => { console.log(err) })
+
+    },
+        [])
+
+    const handleOptionChange = (event) => {
+        const selectedaddress = event.target.value;
+        setSelectedAddress(selectedaddress);
+    };
+
+
     return (
 
         <>
@@ -28,20 +66,38 @@ const Checkout = () => {
                         <img class="line" src={checkout_Line_24} />
 
                         {/* فورم اضافة عنوان جديد */}
-                        <input placeholder='City' class="rectangle-2" type='text'/>
-                        <input placeholder='Postal Code' class="rectangle-3" type='text'/>
-                        <input placeholder='Street' class="rectangle-4" type='text'/>
-                        <input class="rectangle-5" type='text'/>
+                        <input placeholder='City' class="rectangle-2" type='text' />
+                        <input placeholder='Postal Code' class="rectangle-3" type='text' />
+                        <input placeholder='Street' class="rectangle-4" type='text' />
+                        <input class="rectangle-5" type='text' />
                         <div class="div-wrapper"><button class="text-wrapper-13">Add</button></div>
 
                         {/* عناوين مسجلة سابقة */}
                         <div class="frame-4_me">
-                            <div class="overlap-5">
+
+                            {
+                                Address.map((user, i) => (
+                                    <div className="overlap-5" key={i}>
+                                        <input
+                                            type="radio"
+                                            id={`option${i}`} // Use a unique id for each input
+                                            name="options"
+                                            value={user.id_add}
+
+                                            checked={selectedAddress === user.id_add}
+                                            onChange={handleOptionChange}
+                                        />
+                                        <label htmlFor={`option${i}`} className="text-wrapper-15">{user.Address}</label> {/* Use the same unique id in htmlFor */}
+                                    </div>
+                                ))
+                            }
+
+                            {/* <div class="overlap-5">
                                 <input type="radio" id="nabek" name="location" value="Al-Nabek" />
                                 <label for="nabek" class="radio-label">
                                     <div class="text-wrapper-14">Al-Nabek</div>
                                 </label>
-                            </div>
+                            </div> */}
                         </div>
 
 

@@ -27,7 +27,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios'
 // import { useNavigate } from 'react-router-dom'
 import { useNavigate, useParams } from 'react-router-dom'
-import { Componets_Product_store, Componets_user_reviews ,Store_Header} from '../../../../Componets'
+import { Componets_Product_store, Componets_user_reviews, Store_Header } from '../../../../Componets'
 
 
 
@@ -57,7 +57,7 @@ const Choose_Product = () => {
 
 
     const { id } = useParams()
-     iidd=id
+    iidd = id
 
     //تهيئة الصورة الكبيرة
     const [largerImageSrc, setLargerImageSrc] = useState(null);
@@ -86,7 +86,7 @@ const Choose_Product = () => {
                     setSimilarItem(res.data.v)
                     set_small(res.data.result651)
                     setSelectedOption(res.data.result3[0].id_add)
-                    if (res.data.result3[0].count_av==0){
+                    if (res.data.result3[0].count_av == 0) {
                         setQuantity(0)
                         setNumber(0)
                     }
@@ -98,7 +98,7 @@ const Choose_Product = () => {
                     // alert(res.data.result[0].image_url)
                     setLargerImageSrc(`http://localhost:3001/uploads/${res.data.result651[0].urli}`);
                     // setQuantity(res.data.result3[0].count_av)
-// alert(res.data.result3[0].special_price)
+                    // alert(res.data.result3[0].special_price)
 
                 }
                 else {
@@ -124,19 +124,19 @@ const Choose_Product = () => {
             return;
         }
 
-        axios.post('http://localhost:3001/storee/add_cart', { number, selectedOption,iidd })
+        axios.post('http://localhost:3001/storee/add_cart', { number, selectedOption, iidd })
             .then(res => {
-                if (res.data.valid& res.data.repet===false) {
+                if (res.data.valid & res.data.repet === false) {
                     alert(number)
                     alert(iidd)
                     alert(selectedOption)
                     alert("Added to cart successfully");
                     window.location.reload();
                 }
-                else if(res.data.valid& res.data.repet===true){
-                        alert('this prodact is alredy in cart ')
-                    }
-                else if(!res.data.valid){
+                else if (res.data.valid & res.data.repet === true) {
+                    alert('this prodact is alredy in cart ')
+                }
+                else if (!res.data.valid) {
                     alert('You must register first');
                 }
             })
@@ -187,7 +187,7 @@ const Choose_Product = () => {
     const [selectedOption, setSelectedOption] = useState('');
     const [quantity, setQuantity] = useState(null);
     var [price, setPrice] = useState('');
-    var [quantit,setQ]=useState(0)
+    var [quantit, setQ] = useState(0)
     useEffect(() => {
         // Call fetchPackageInfo when the component mounts
         fetchPackageInfo();
@@ -209,7 +209,7 @@ const Choose_Product = () => {
             const quantityToShow = basicQuantity === 0 ? 0 : 1; // If basic quantity is zero, show zero, otherwise show one
             setQuantity(basicQuantity);
             setNumber(quantityToShow);
-            
+
             // const basicQuantity = 5; // Assuming Product.quantity holds the basic quantity
             // const quantityToShow = basicQuantity === 0 ? 0 : 1; // If basic quantity is zero, show zero, otherwise show one
             // setQuantity(basicQuantity);
@@ -404,7 +404,7 @@ const Choose_Product = () => {
     return (
 
         <>
-                    <Store_Header />
+            <Store_Header />
 
             <div class="choose-a-product">
                 <div class="div">
@@ -556,22 +556,22 @@ const Choose_Product = () => {
 
                             ))} */}
                             {
-                            Size.map((user, i) => (
-                                <div className="div-wrapper" key={i}>
-                                    <input
-                                        type="radio"
-                                        id={`option${i}`} // Use a unique id for each input
-                                        name="options"
-                                        value={user.id_add}
+                                Size.map((user, i) => (
+                                    <div className="div-wrapper" key={i}>
+                                        <input
+                                            type="radio"
+                                            id={`option${i}`} // Use a unique id for each input
+                                            name="options"
+                                            value={user.id_add}
 
-                                        checked={selectedOption === user.id_add}
-                                        onChange={handleOptionChange}
-                                    />
-                                    <label htmlFor={`option${i}`} className="text-wrapper-15">{user.detalis}</label> {/* Use the same unique id in htmlFor */}
-                                </div>
-                            ))
+                                            checked={selectedOption === user.id_add}
+                                            onChange={handleOptionChange}
+                                        />
+                                        <label htmlFor={`option${i}`} className="text-wrapper-15">{user.detalis}</label> {/* Use the same unique id in htmlFor */}
+                                    </div>
+                                ))
                             }
-                            
+
                             {/* <div className="div-wrapper">
                                 <input
                                     type="radio"
@@ -934,8 +934,8 @@ const Choose_Product = () => {
                                 href={`${user.id}`}
                                 num_star={user.star_count}
                             />
-                        ))} 
-                        
+                        ))}
+
 
 
                         < Componets_Product_store
