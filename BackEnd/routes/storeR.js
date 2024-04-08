@@ -14,7 +14,8 @@ router.get('/show_cart',store.show_cart);
 
 
 router.post('/addrev/:id',store.add_rev);
-router.post('/add_cart/:id/:idd',store.add_to_cart);
+router.post('/add_cart',store.add_to_cart);
+router.post('/delete/:productId',store.delete_by_id);
 
 
 

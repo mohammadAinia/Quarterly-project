@@ -35,7 +35,7 @@ import { Componets_Product_store, Componets_user_reviews ,Store_Header} from '..
 
 
 
-var pricee
+var iidd
 const Choose_Product = () => {
 
     const [Product_Info, setProduct_Info] = useState([])
@@ -57,6 +57,7 @@ const Choose_Product = () => {
 
 
     const { id } = useParams()
+     iidd=id
 
     //تهيئة الصورة الكبيرة
     const [largerImageSrc, setLargerImageSrc] = useState(null);
@@ -84,6 +85,7 @@ const Choose_Product = () => {
                     setPrice(res.data.result3[0].special_price)
                     setSimilarItem(res.data.v)
                     set_small(res.data.result651)
+                    setSelectedOption(res.data.result3[0].id_add)
                     if (res.data.result3[0].count_av==0){
                         setQuantity(0)
                         setNumber(0)
@@ -122,9 +124,12 @@ const Choose_Product = () => {
             return;
         }
 
-        axios.post('http://localhost:3001/#/#', { number, selectedOption })
+        axios.post('http://localhost:3001/storee/add_cart', { number, selectedOption,iidd })
             .then(res => {
                 if (res.data.valid) {
+                    alert(number)
+                    alert(iidd)
+                    alert(selectedOption)
                     alert("Added to cart successfully");
                     window.location.reload();
                 } else {

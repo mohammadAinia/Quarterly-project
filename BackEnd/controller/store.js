@@ -443,20 +443,32 @@ function add_rev(req,res){
     }
 }
 function add_to_cart(req,res){
+    sql='select * from cart'
     user=req.session.username
-    prid=req.params.id
-    size=req.params.s_id
-    sql="insert into cart (user_id,pt_id,size_idd) values ('"+user+"','"+prid+"','"+size+"')"
+    count=req.body.number
+    size=req.body.selectedOption
+    idp=req.body.iidd
+    sql="insert into cart (user_id,pt_id,size_idd,select_count) values ('"+user+"','"+idp+"','"+size+"','"+count+"')"
     db.query(sql,(error,result)=>{
         if(error){console.log(error)}
         else{
             res.json({valid:true,result})
         }
     })
-} 
+}
 function show_cart(req,res){
-    sql='select proudact.short_name ,option_p.detalis,proudact.image_url,option_p.special_price,option_p.count_av from proudact JOIN option_p on option_p.proudact_id=proudact.id join cart on cart.size_idd=option_p.id_add where cart.user_id=?'
+    sql='select proudact.short_name,cart.cart_id,option_p.detalis,proudact.image_url,option_p.special_price,option_p.count_av from proudact JOIN option_p on option_p.proudact_id=proudact.id join cart on cart.size_idd=option_p.id_add where cart.user_id=?'
     db.query(sql,[req.session.username],(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            res.json({valid:true,result})
+        }
+    })
+}
+function delete_by_id(req,res){
+    id=req.params.productId
+    sql='delete from cart where cart_id=?'
+    db.query(sql,[id],(error,result)=>{
         if(error){console.log(error)}
         else{
             res.json({valid:true,result})
@@ -473,4 +485,6 @@ module.exports={
     select_prand,
     add_to_cart,
     show_cart
+    ,delete_by_id,
+
 }

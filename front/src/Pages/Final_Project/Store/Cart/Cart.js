@@ -50,7 +50,7 @@ const Cart = () => {
     // تابع حذف المنتج من السلة
     const handleDelete = (productId) => {
         // Send delete request to backend
-        axios.delete(`http://localhost:3001/storee/#/${productId}`)
+        axios.post(`http://localhost:3001/storee/delete/${productId}`,{withCredentials:true})
             .then(res => {
                 // Handle response if needed
                 console.log('Product deleted successfully');
@@ -233,7 +233,7 @@ const Cart = () => {
                                 <img
                                     className="trash-solid"
                                     src={cart_trash_solid_1}
-                                    onClick={() => handleDelete(product.id)}
+                                    onClick={() => handleDelete(product.cart_id)}
                                     alt="Delete"
                                 />
                             </div>
