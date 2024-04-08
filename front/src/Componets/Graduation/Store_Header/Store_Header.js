@@ -1,13 +1,15 @@
 import './Store_Header.css'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRightFromBracket, faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { faRightFromBracket, faCaretDown ,faWallet} from '@fortawesome/free-solid-svg-icons';
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios'
 // import { useNavigate } from 'react-router-dom'
 import { useNavigate, useParams } from 'react-router-dom'
 import store_Vector3 from '../../../Assert/Images/store_Vector3.png'
 import store_Vector2 from '../../../Assert/Images/store_Vector2.png'
+import store_wallet_solid from '../../../Assert/Images/store_wallet_solid.svg'
+
 
 
 
@@ -15,6 +17,8 @@ import store_Vector2 from '../../../Assert/Images/store_Vector2.png'
 const Store_Header = (props) => {
 
     const [NumberItem, setNumberItem] = useState(0)
+    const [Many, setMany] = useState(0)
+
 
     const navigate = useNavigate()
 
@@ -23,6 +27,8 @@ const Store_Header = (props) => {
             .then(res => {
                 if (res.data.valid) {
                     setNumberItem(res.data.result[0].c);
+                    // setMany(res.data.result2);
+
 
                 } else {
                     navigate('/login');
@@ -84,6 +90,14 @@ const Store_Header = (props) => {
 
                         <div class="text-wrapper-9header">{NumberItem}</div>
                     </div>
+
+                    <div className="dropdown6">
+                        <div className='aa'><FontAwesomeIcon icon={faWallet} /></div>
+                        <div class="rectangleheader2"></div>
+
+                        <div class="text-wrapper-9header2">{Many} $</div>
+                    </div>
+
 
                     <div class="frameheader"><img class="vectorheader" src={store_Vector2} /></div>
 

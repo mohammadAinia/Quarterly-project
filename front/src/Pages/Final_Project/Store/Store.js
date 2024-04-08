@@ -178,29 +178,7 @@ const Store = () => {
             <Store_Header />
             <div class="store">
                 <div class="div">
-                    {/* <div class="overlap">
-                        <div class="text-wrapper" >Shop by Pet</div>
-                        <div class="text-wrapper-2">Shop by Brand</div>
-                        <div class="text-wrapper-3">Deals</div>
-                        <div class="text-wrapper-4">New Arrivals</div>
-                        <div class="text-wrapper-5">Home</div>
-                        <div class="text-wrapper-6">Store</div>
-                        <div class="text-wrapper-7">Contact us</div>
-                        <div class="frame"><img class="vector" src={store_Vector2} /></div>
-                        <div class="overlap-wrapper">
-                            <div class="overlap-group">
-                                <div class="text-wrapper-8">PetCare</div>
-                                <img class="img" src={Store_Vector} />
-                            </div>
-                        </div>
-                        <div class="overlap-group-wrapper">
-                            <div class="overlap-2">
-                                <div class="rectangle"></div>
-                                <div class="text-wrapper-9">0</div>
-                                <img class="vector-2" src={store_Vector3} />
-                            </div>
-                        </div>
-                    </div> */}
+
                     <div class="overlap-3">
                         <p class="p">Buy online same day pick up in one of our 600+ stores! or free shipping over</p>
                         <div class="text-wrapper-10">View Details</div>
@@ -234,48 +212,56 @@ const Store = () => {
                     <img class="rectangle-4" src={store_Rectangle_119} />
                     <img class="rectangle-5" src={store_Rectangle_118} />
                     <img class="rectangle-6" src={store_Rectangle_120} />
-                    <div class="overlap-14">
+
+
+                    {/* ********************************************************************************************* */}
+                    {/* التسوق حسب السعر */}
+                    <a href={`Product_Assortment/${"dogToy"+10}`} class="overlap-14">
                         <p class="text-wrapper-23">Dog Toys &amp; Treats Under</p>
                         <div class="overlap-15">
                             <div class="text-wrapper-24">10</div>
                             <div class="text-wrapper-25">$</div>
                         </div>
-                    </div>
-                    <div class="overlap-16">
+                    </a>
+                    <a href={`Product_Assortment/${"catToy"+10}`} class="overlap-16">
                         <p class="text-wrapper-23">Cat Toys &amp; Treats Under</p>
                         <div class="overlap-15">
                             <div class="text-wrapper-24">10</div>
                             <div class="text-wrapper-25">$</div>
                         </div>
-                    </div>
-                    <div class="overlap-17">
+                    </a>
+                    <a href={`Product_Assortment/${"small"+10}`} class="overlap-17">
                         <p class="text-wrapper-23">Small Pet Toys &amp; Treats Under</p>
                         <div class="overlap-15">
                             <div class="text-wrapper-24">10</div>
                             <div class="text-wrapper-25">$</div>
                         </div>
-                    </div>
-                    <div class="overlap-18">
+                    </a>
+                    <a href={`Product_Assortment/${"dogCillars"+20}`} class="overlap-18">
                         <p class="text-wrapper-23">Dog Cillars &amp; Leashes Under</p>
                         <div class="overlap-15">
                             <div class="text-wrapper-24">20</div>
                             <div class="text-wrapper-25">$</div>
                         </div>
-                    </div>
-                    <div class="overlap-19">
+                    </a>
+                    <a href={`Product_Assortment/${"catBowls"+20}`} class="overlap-19">
                         <p class="text-wrapper-23">Dog &amp; Cat Bowls &amp; Freeding Under</p>
                         <div class="overlap-15">
                             <div class="text-wrapper-24">20</div>
                             <div class="text-wrapper-25">$</div>
                         </div>
-                    </div>
-                    <div class="overlap-20">
+                    </a>
+                    <a href={`Product_Assortment/${"dogBeds"+40}`} class="overlap-20">
                         <div class="text-wrapper-23">Dog Beds Under</div>
                         <div class="overlap-15">
                             <div class="text-wrapper-24">40</div>
                             <div class="text-wrapper-25">$</div>
                         </div>
-                    </div>
+                    </a>
+                    {/* ********************************************************************************************* */}
+
+
+
                     <img class="rectangle-7" src={store_Rectangle_136} />
                     <img class="rectangle-8" src={store_Rectangle_137} />
                     <img class="rectangle-9" src={store_Rectangle_138} />
@@ -300,17 +286,17 @@ const Store = () => {
                     <div class="frame-2" ref={frameRef}>
 
                         {
-                        NewArrivalInfo.map((user, i) => (
-                            <Componets_newArrivals
-                                key={i}
-                                image={`http://localhost:3001/uploads/${user.image_url}`}
-                                brand={user.store_in_name}
-                                price={(user.price) + "$"}
-                                desc={user.short_name}
-                                href={`choose_product/${user.id}`}
+                            NewArrivalInfo.map((user, i) => (
+                                <Componets_newArrivals
+                                    key={i}
+                                    image={`http://localhost:3001/uploads/${user.image_url}`}
+                                    brand={user.store_in_name}
+                                    price={(user.price) + "$"}
+                                    desc={user.short_name}
+                                    href={`choose_product/${user.id}`}
 
-                            />
-                        ))
+                                />
+                            ))
                         }
 
 
@@ -342,7 +328,7 @@ const Store = () => {
 
                             </div>
                         </div>
-                        
+
 
                     </div>
 
@@ -373,7 +359,7 @@ const Store = () => {
                             <img class="star-solid-4" src={store_star_solid_1} />
                             <img class="star-solid-5" src={store_star_solid_1} />
                         </div>
-                        
+
                     </div>
 
 
@@ -389,7 +375,7 @@ const Store = () => {
                                 name_categories={user.categ}
                                 href={`Product_Assortment/${user.id_c}`}
                                 href2={`Product_Assortment/${user.id_c}`}
-                                 />
+                            />
                         ))}
 
                         {/* <Componets_Categories

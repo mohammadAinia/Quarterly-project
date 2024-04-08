@@ -96,7 +96,7 @@
   .dropdown4 {
     position: absolute;
     top: 57px;
-    left: 1600px;
+    left: 1900px;
     display: inline-block;
   }
   .dropdown4 .dropbtn{
@@ -119,6 +119,26 @@
     background:none;
     padding: 7px;
     color: #ffffff;
+  }
+  .dropdown6 {
+    position: absolute;
+    top: 57px;
+    left: 1500px;
+    display: inline-block;
+  }
+  .dropdown6 .dropbtn{
+    font-size: 19px;
+    font-weight: 300;
+    background:none;
+    padding: 7px;
+    color: #ffffff;
+  }
+  .dropdown6 .aa{
+    color: #f1f1f1;
+    position: absolute;
+    top: -10px;
+    font-size: 35px;
+
   }
   
   .dropdown-content {
@@ -167,6 +187,15 @@
     background-color: #ffffff;
     border-radius: 35px;
 }
+.rectangleheader2 {
+  position: absolute;
+  width: 130px;
+  height: 28px;
+  top: 2px;
+  left: 38px;
+  background-color: #ffffff;
+  border-radius: 35px;
+}
 .text-wrapper-9header {
     width: 13px;
     height: 10px;
@@ -181,6 +210,21 @@
     letter-spacing: 0;
     line-height: normal;
     white-space: nowrap;
+}
+.text-wrapper-9header2 {
+  width: 13px;
+  height: 10px;
+  top: 6px;
+  left:46.5px;
+  font-family: "Inder-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 17px;
+  position: absolute;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
 }
 .frameheader {
     position: absolute;

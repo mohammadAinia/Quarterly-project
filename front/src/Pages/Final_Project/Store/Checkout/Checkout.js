@@ -18,6 +18,8 @@ const Checkout = () => {
     const [productInfo, setProduct_Info] = useState([]);
     const [selectedAddress, setSelectedAddress] = useState('');
     const [totalPrice, setTotalPrice] = useState(0);
+    const [Mony, setMony] = useState(0);
+
 
 
 
@@ -40,6 +42,7 @@ const Checkout = () => {
 
                     setProduct_Info(res.data.result)
                     setAddress(res.data.result2)
+                    setMony(res.data.valid3)
 
 
                     calculateTotalPrice(productInfo);
@@ -78,24 +81,29 @@ const Checkout = () => {
     const handleSubmit2 = async (e) => {
 
         e.preventDefault();
-        if(totalPrice >49){
-            setTotalAmount((totalPrice*0.1)+totalPrice)
+        if (totalPrice > 49) {
+            setTotalAmount((totalPrice * 0.1) + totalPrice)
+        }
+        else {
+            setTotalAmount((totalPrice * 0.1) + totalPrice + 15)
+        }
+        if (Mony >= TotalAmount) {
+            axios.post('http://localhost:3001/storee/#', { selectedAddress, TotalAmount })
+                .then(res => {
+                    if (res.data.valid) {
+                        alert("Orders have been confirmed. The delivery representative will contact you within 24 hours");
+                        window.location.reload();
+                    }
+                    else {
+                        navigate('/login')
+                    }
+
+                })
+                .catch(err => { console.log(err) });
         }
         else{
-            setTotalAmount((totalPrice*0.1)+totalPrice+15)
+            alert("Sorry, the wallet balance is not enough. Please recharge it");
         }
-        axios.post('http://localhost:3001/storee/#', { selectedAddress ,TotalAmount})
-            .then(res => {
-                if (res.data.valid) {
-                    alert("Orders have been confirmed. The delivery representative will contact you within 24 hours");
-                    window.location.reload();
-                }
-                else {
-                    navigate('/login')
-                }
-
-            })
-            .catch(err => { console.log(err) });
     };
 
     const handleOptionChange = (event) => {
@@ -238,7 +246,7 @@ const Checkout = () => {
                     <img class="line-3" src={checkout_Line_25} />
                     <img class="line-4" src={checkout_Line_25} />
 
-                    <div class="overlap-8"><button  class="text-wrapper-31">Confirm the order</button></div>
+                    <div class="overlap-8"><button class="text-wrapper-31">Confirm the order</button></div>
                 </div>
             </div>
         </>
