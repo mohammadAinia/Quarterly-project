@@ -177,9 +177,6 @@ export { default as Cart } from '../Pages/Final_Project/Store/Cart/Cart'
 export { default as Checkout } from '../Pages/Final_Project/Store/Checkout/Checkout'
 export { default as Componets_checkout } from './Graduation/Componets_checkout/Componets_checkout'
 export { default as Componets_Brand } from './Graduation/Componets_Brand/Componets_Brand'
-
-
-
-
-
+export { default as Add_Brand } from '../Pages/Final_Project/Site_Manager/Add_Brand/Add_Brand'
+export { default as Componets_Add_Brand } from './Graduation/Componets_Add_Brand/Componets_Add_Brand'
 
