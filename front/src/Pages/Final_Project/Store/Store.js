@@ -66,12 +66,12 @@ const Store = () => {
     const [NewArrivalInfo, setNewArrivalInfo] = useState([])
     // مشان سطر رقم 360
     const [CategoriesInfo, setCategoriesInfo] = useState([])
-    const [IdDog, setIdDog] = useState()
-    const [IdCat, setIdCat] = useState()
-    const [IdFish, setIdFish] = useState()
-    const [IdBirds, setIdBirds] = useState()
-    const [IdRabbit, setIdRabbit] = useState()
-    const [IdReptile, setIdReptile] = useState()
+    // const [IdDog, setIdDog] = useState()
+    // const [IdCat, setIdCat] = useState()
+    // const [IdFish, setIdFish] = useState()
+    // const [IdBirds, setIdBirds] = useState()
+    // const [IdRabbit, setIdRabbit] = useState()
+    // const [IdReptile, setIdReptile] = useState()
 
 
 

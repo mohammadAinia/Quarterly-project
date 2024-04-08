@@ -10,6 +10,7 @@ router.get('/open_proudact/:id',store.open_proudact);
 router.get('/get_addtion/:selectedSize',store.show_detalis_s);
 router.get('/get_by_brand/:id',store.select_prand);
 router.get('/show_cart',store.show_cart);
+router.get('/hedar',store.hedar);
 
 
 

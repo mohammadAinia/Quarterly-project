@@ -19,10 +19,10 @@ const Store_Header = (props) => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        axios.get('http://localhost:3001/storee/#', { withCredentials: true })
+        axios.get('http://localhost:3001/storee/hedar', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
-                    setNumberItem(res.data.result);
+                    setNumberItem(res.data.result[0].c);
 
                 } else {
                     navigate('/login');

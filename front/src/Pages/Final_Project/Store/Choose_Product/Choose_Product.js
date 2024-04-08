@@ -126,14 +126,18 @@ const Choose_Product = () => {
 
         axios.post('http://localhost:3001/storee/add_cart', { number, selectedOption,iidd })
             .then(res => {
-                if (res.data.valid) {
+                if (res.data.valid& res.data.repet===false) {
                     alert(number)
                     alert(iidd)
                     alert(selectedOption)
                     alert("Added to cart successfully");
                     window.location.reload();
-                } else {
-                    alert('Not published');
+                }
+                else if(res.data.valid& res.data.repet===true){
+                        alert('this prodact is alredy in cart ')
+                    }
+                else if(!res.data.valid){
+                    alert('You must register first');
                 }
             })
             .catch(err => { console.log(err) });

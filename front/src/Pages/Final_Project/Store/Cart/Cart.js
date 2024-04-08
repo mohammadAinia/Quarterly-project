@@ -52,9 +52,14 @@ const Cart = () => {
         // Send delete request to backend
         axios.post(`http://localhost:3001/storee/delete/${productId}`,{withCredentials:true})
             .then(res => {
-                // Handle response if needed
-                console.log('Product deleted successfully');
-            })
+
+            if(res.data.valid){                alert('Product deleted successfully');
+            window.location.reload();
+        }
+    else{alert('sorry unexpected error')}
+    }
+    
+    )
             .catch(err => {
                 // Handle error
                 console.error('Error deleting product:', err);

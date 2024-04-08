@@ -144,7 +144,7 @@ function open_proudact(req,res){
                     db.query(sql12345,['%'+result[0].animal_type+'%',result[0].id],(error,result63)=>{
                         if(error){console.log(error)}
                         else{ 
-                            if(req.session.storee)
+                            if(req.session.storee) 
                             {sql6363='select * from log_user join proudact on proudact.id=log_user.id_prod where user_id=? and  date_log > DATE_SUB(date_log, INTERVAL 20 DAY) and proudact.id!=? '
                             db.query(sql6363,[req.session.storee,id],(error,ressss)=>{
                                 if(error){console.log(error)}
@@ -443,18 +443,32 @@ function add_rev(req,res){
     }
 }
 function add_to_cart(req,res){
-    sql='select * from cart'
     user=req.session.username
     count=req.body.number
     size=req.body.selectedOption
     idp=req.body.iidd
-    sql="insert into cart (user_id,pt_id,size_idd,select_count) values ('"+user+"','"+idp+"','"+size+"','"+count+"')"
-    db.query(sql,(error,result)=>{
+    if(req.session.username){
+    sql2='select * from cart where user_id=? AND size_idd=? AND pt_id=? '
+    db.query(sql2,[user,size,idp],(error,result2)=>{
         if(error){console.log(error)}
+        else if(result2.length!=0){
+            res.json({valid:true,repet:true})
+        }
         else{
-            res.json({valid:true,result})
+            sql="insert into cart (user_id,pt_id,size_idd,select_count) values ('"+user+"','"+idp+"','"+size+"','"+count+"')"
+            db.query(sql,(error,result)=>{
+                if(error){console.log(error)}
+                else{
+                    res.json({valid:true,result,repet:false})
+                }
+            })
         }
     })
+     
+}
+else{
+    res.json({valid:false})
+}
 }
 function show_cart(req,res){
     sql='select proudact.short_name,cart.cart_id,option_p.detalis,proudact.image_url,option_p.special_price,option_p.count_av from proudact JOIN option_p on option_p.proudact_id=proudact.id join cart on cart.size_idd=option_p.id_add where cart.user_id=?'
@@ -464,7 +478,7 @@ function show_cart(req,res){
             res.json({valid:true,result})
         }
     })
-}
+} 
 function delete_by_id(req,res){
     id=req.params.productId
     sql='delete from cart where cart_id=?'
@@ -474,6 +488,17 @@ function delete_by_id(req,res){
             res.json({valid:true,result})
         }
     })
+}
+function hedar(req,res){
+    sql=' select count(user_id) as c from cart where user_id=?'
+    db.query(sql,[req.session.admin],(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            res.json({valid:true,result})
+            
+        }
+    })
+
 }
 module.exports={
     new_arrivle:new_arrivle,
@@ -486,5 +511,6 @@ module.exports={
     add_to_cart,
     show_cart
     ,delete_by_id,
+    hedar
 
 }
