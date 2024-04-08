@@ -4,7 +4,7 @@ import checkout_Line_24 from '../../../../Assert/Images/checkout_Line_24.png'
 import checkout_Line_21 from '../../../../Assert/Images/checkout_Line_21.png'
 import checkout_Line_25 from '../../../../Assert/Images/checkout_Line_25.png'
 
-import { Componets_Product_store, Componets_cart, Componets_user_reviews, Store_Header } from '../../../../Componets'
+import { Componets_Product_store, Componets_checkout, Componets_user_reviews, Store_Header } from '../../../../Componets'
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios'
 // import { useNavigate } from 'react-router-dom'
@@ -17,6 +17,15 @@ const Checkout = () => {
     const [Address, setAddress] = useState([])
     const [productInfo, setProduct_Info] = useState([]);
     const [selectedAddress, setSelectedAddress] = useState('');
+    const [totalPrice, setTotalPrice] = useState(0);
+
+
+
+    const [Street, setStreet] = useState('');
+    const [City, setCity] = useState('');
+    const [PostalCode, setPostalCode] = useState('');
+    const [House_Number, setHouse_Number] = useState('');
+
 
 
 
@@ -32,6 +41,8 @@ const Checkout = () => {
                     setProduct_Info(res.data.result)
                     setAddress(res.data.result2)
 
+
+                    calculateTotalPrice(productInfo);
                 }
                 else {
                     navigate('/login')
@@ -42,10 +53,67 @@ const Checkout = () => {
     },
         [])
 
+    // تابع اضافة عنوان جديد
+    axios.defaults.withCredentials = true
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        axios.post('http://localhost:3001/storee/#', { Street, City, PostalCode, House_Number })
+            .then(res => {
+                if (res.data.valid) {
+
+                    alert("The address has been added successfully");
+                    window.location.reload();
+                }
+                else {
+                    navigate('/login')
+                }
+
+            })
+            .catch(err => { console.log(err) });
+    };
+
+    const [TotalAmount, setTotalAmount] = useState(0);
+    // تابع تاكيد الطلبة وخصم من المحفظة
+    const handleSubmit2 = async (e) => {
+
+        e.preventDefault();
+        if(totalPrice >49){
+            setTotalAmount((totalPrice*0.1)+totalPrice)
+        }
+        else{
+            setTotalAmount((totalPrice*0.1)+totalPrice+15)
+        }
+        axios.post('http://localhost:3001/storee/#', { selectedAddress ,TotalAmount})
+            .then(res => {
+                if (res.data.valid) {
+                    alert("Orders have been confirmed. The delivery representative will contact you within 24 hours");
+                    window.location.reload();
+                }
+                else {
+                    navigate('/login')
+                }
+
+            })
+            .catch(err => { console.log(err) });
+    };
+
     const handleOptionChange = (event) => {
         const selectedaddress = event.target.value;
         setSelectedAddress(selectedaddress);
     };
+
+    const calculateTotalPrice = (products) => {
+        let total = 0;
+        products.forEach(product => {
+            total += product.special_price * product.quantity;
+        });
+        setTotalPrice(total);
+    };
+
+
+
+
 
 
     return (
@@ -65,12 +133,16 @@ const Checkout = () => {
                         <div class="text-wrapper-12">Shipping Address</div>
                         <img class="line" src={checkout_Line_24} />
 
+
+                        <div class="text-wrapper-15">Add New Address</div>
                         {/* فورم اضافة عنوان جديد */}
-                        <input placeholder='City' class="rectangle-2" type='text' />
-                        <input placeholder='Postal Code' class="rectangle-3" type='text' />
-                        <input placeholder='Street' class="rectangle-4" type='text' />
-                        <input class="rectangle-5" type='text' />
-                        <div class="div-wrapper"><button class="text-wrapper-13">Add</button></div>
+                        <form onSubmit={handleSubmit}>
+                            <input placeholder='City' class="rectangle-2" type='text' onChange={e => setCity(e.target.value)} />
+                            <input placeholder='Postal Code' class="rectangle-3" type='number' onChange={e => setPostalCode(e.target.value)} />
+                            <input placeholder='Street' class="rectangle-4" type='text' onChange={e => setStreet(e.target.value)} />
+                            <input placeholder='House number' class="rectangle-5" type='number' onChange={e => setHouse_Number(e.target.value)} />
+                            <div class="div-wrapper"><button class="text-wrapper-13">Add</button></div>
+                        </form>
 
                         {/* عناوين مسجلة سابقة */}
                         <div class="frame-4_me">
@@ -101,10 +173,8 @@ const Checkout = () => {
                         </div>
 
 
-                        <div class="text-wrapper-15">Add New Address</div>
                     </div>
                     <div class="text-wrapper-16">Order Summary</div>
-                    <div class="text-wrapper-17">Order Total</div>
                     <div class="overlap-6"><div class="text-wrapper-18">Place Order</div></div>
 
                     {/* مربع الطلبية */}
@@ -116,13 +186,24 @@ const Checkout = () => {
 
                         {/* المنتجات بالطلبية */}
                         <div className="frame-3_me">
-                            <div className="overlap-3_cart">
-                                <p class="text-wrapper-21">exceed Freshly Clean Dog Shampoo</p>
-                                <div class="text-wrapper-22">Quantity: 2</div>
-                                <img class="rectangle-7" src={checkout_Rectangle_268} />
-                                <div class="text-wrapper-24">49 $</div>
-                                <img class="line-2" src={checkout_Line_21} />
-                            </div>
+
+
+                            {productInfo.map(product => (
+                                <Componets_checkout
+                                    short_desc={product.detalis}
+                                    quantity={"Quantity: " + product.quantity}
+                                    image={`http://localhost:3001/uploads/${product.image_url}`}
+                                    price={product.special_price + "$"}
+                                />
+                            ))}
+                            {/* 
+                            <Componets_checkout
+                                short_desc={"exceed Freshly Clean Dog Shampoo"}
+                                quantity={"Quantity: 2"}
+                                image={checkout_Rectangle_268}
+                                price={"49 $"}
+                            /> */}
+
                         </div>
 
 
@@ -131,15 +212,33 @@ const Checkout = () => {
 
 
                     <div class="text-wrapper-25">Subtotal:</div>
+                    <div class="text-wrapper-27">{totalPrice} $</div>
+
                     <div class="text-wrapper-26">Shipping:</div>
-                    <div class="estimated-sales-tax">Estimated Sales Tax: <br />(GST/HST/PST/RST/QST)</div>
-                    <div class="text-wrapper-27">49 $</div>
-                    <div class="text-wrapper-28">49 $</div>
-                    <div class="text-wrapper-29">49 $</div>
-                    <div class="text-wrapper-30">49 $</div>
+                    {totalPrice >= 49 ? (
+                        <div class="text-wrapper-28">0 $</div>
+                    ) : (
+                        <>
+                            <div class="text-wrapper-28">15 $</div>
+                        </>
+                    )}
+
+                    <div class="estimated-sales-tax">VAT: <br />(10%)</div>
+                    <div class="text-wrapper-29">{totalPrice * 0.1} $</div>
+
+                    <div class="text-wrapper-17">Order Total</div>
+                    {totalPrice >= 49 ? (
+                        <div class="text-wrapper-30">{(totalPrice * 0.1) + totalPrice} $</div>
+                    ) : (
+                        <>
+                            <div class="text-wrapper-30">{(totalPrice * 0.1) + totalPrice + 15} $</div>
+                        </>
+                    )}
+
                     <img class="line-3" src={checkout_Line_25} />
                     <img class="line-4" src={checkout_Line_25} />
-                    <div class="overlap-8"><div class="text-wrapper-31">Confirm the order</div></div>
+
+                    <div class="overlap-8"><button  class="text-wrapper-31">Confirm the order</button></div>
                 </div>
             </div>
         </>

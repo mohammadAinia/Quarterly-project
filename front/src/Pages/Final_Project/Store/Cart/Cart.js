@@ -45,7 +45,7 @@ const Cart = () => {
             })
             .catch(err => console.log(err));
     }, []);
-    console.log(productInfo)
+    // console.log(productInfo)
 
     // تابع حذف المنتج من السلة
     const handleDelete = (productId) => {

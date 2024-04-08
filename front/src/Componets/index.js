@@ -175,6 +175,8 @@ export { default as Add_category } from '../Pages/Final_Project/Site_Manager/Add
 export { default as Componets_Add_category } from './Graduation/Componets_Add_category/Componets_Add_category'
 export { default as Cart } from '../Pages/Final_Project/Store/Cart/Cart'
 export { default as Checkout } from '../Pages/Final_Project/Store/Checkout/Checkout'
+export { default as Componets_checkout } from './Graduation/Componets_checkout/Componets_checkout'
+
 
 
 
