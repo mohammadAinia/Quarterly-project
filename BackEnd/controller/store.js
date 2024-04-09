@@ -523,11 +523,24 @@ function delete_by_id(req,res){
     })
 }
 function hedar(req,res){
-    sql='select count(user_id) as c, wallet.charge_w from cart JOIN wallet on wallet.w_owner=cart.user_id where user_id=? and cart.chack_=?'
-    db.query(sql,[req.session.admin,0],(error,result)=>{
+    sql='select count(user_id) as c from cart  where user_id=? and chack_=?'
+    db.query(sql,[req.session.username,0],(error,result)=>{
         if(error){console.log(error)}
         else{
-            res.json({valid:true,result})
+            sqll='select * from wallet where w_owner=?'
+            db.query(sqll,[req.session.username],(error,result1)=>{
+                if(error){console.log(error)}
+                else{
+                    sqql='select * from brans '
+                    db.query(sqql,(error,result2)=>{
+                        if(error){console.log(error)}
+                        else{
+                                res.json({valid:true,result,result1,result2})
+
+                        }
+                    })
+                }
+            })
             
         }
     })
@@ -571,21 +584,26 @@ function complet_order(req,res){
     q=req.body.selectedAddress
     total=req.body.TotalAmount
     sql='update cart set chack_=? where user_id=?'
-    db.query(sql,[1,req.session.admin],(error,result)=>{
+    db.query(sql,[1,req.session.username],(error,result)=>{
         if(error){console.log(error)}
         else{
-            sqll='select * from cart where chack_=? and chack_=?'
-            db.query(sqll,[1,req.session.admin,1],(error,result1)=>{
+            sqll='select * from cart where chack_=? and user_id=?'
+            db.query(sqll,[1,req.session.username],(error,result1)=>{
+                console.log('qwert')
                 if(error){console.log(error)}
                 else{
+                    console.log(result1)
                     for (let i = 0; i < result1.length; i++) {
-                        sql11='update option set count_av=count_av-? where id_add=?'
+                        console.log(i)
+                        sql11='update option_p set count_av=count_av-? where id_add=?'
                         db.query(sql11,[result1[i].select_count,result1[i].size_idd],(error,result32)=>{
                             if(error){console.log(error)}
                         })
                     }
                     sql98765='update wallet set charge_w=charge_w-? where w_owner=? '
-                    db.query(sql98765,[total,req.session.admin],(error,result54)=>{
+                    db.query(sql98765,[req.body.TotalAmount,req.session.username],(error,result54)=>{
+                        console.log('qwertffsf')
+
                         if(error){console.log(error)}
                         
                     })                    
