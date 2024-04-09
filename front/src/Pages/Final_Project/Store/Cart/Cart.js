@@ -13,7 +13,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { Componets_Product_store, Componets_cart, Componets_user_reviews, Store_Header } from '../../../../Componets'
 
 
-
+var iidd
 const Cart = () => {
 
     const [typeDelaviry, setTypeDelaviry] = useState(null)
@@ -30,11 +30,12 @@ const Cart = () => {
         axios.get('http://localhost:3001/storee/show_cart', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
+                    
                     setProductInfo(res.data.result);
                     // Initialize quantities with default values
                     const initialQuantities = {};
                     res.data.result.forEach(product => {
-                        initialQuantities[product.id] = product.count_av > 0 ? 1 : 0;
+                        initialQuantities[product.cart_id] = product.count_av > 0 ? 1 : 0;
                     });
                     setQuantities(initialQuantities);
                     // Calculate total price
@@ -77,12 +78,12 @@ const Cart = () => {
         const productMatrix = [];
         productInfo.forEach(product => {
             productMatrix.push({
-                productId: product.id,
-                quantity: quantities[product.id]
+                productId: product.cart_id,
+                quantity: quantities[product.cart_id]
             });
         });
 
-        axios.post('http://localhost:3001/#', { products: productMatrix, deliveryType: typeDelaviry })
+        axios.post('http://localhost:3001/storee/update', { products: productMatrix, deliveryType: typeDelaviry })
             .then(res => {
                 if (res.data.valid) {
                     navigate('checkout')
@@ -120,7 +121,7 @@ const Cart = () => {
     const calculateTotalPrice = (products, quantities) => {
         let total = 0;
         products.forEach(product => {
-            total += product.special_price * quantities[product.id];
+            total += product.special_price * quantities[product.cart_id];
         });
         setTotalPrice(total);
     };
@@ -170,7 +171,6 @@ const Cart = () => {
                                 </>
                             )}
 
-
                             <p class="shipping-taxes">(Shipping &amp; Taxes Calculated at Checkout)</p>
                             <div class="rectangle-5"></div>
                             <button class="text-wrapper-21">Proceed to Checkout</button>
@@ -212,7 +212,7 @@ const Cart = () => {
                     {/* المنتج */}
                     <div className="frame-3_me">
                         {productInfo.map(product => (
-                            <div className="overlap-3_cart" key={product.id}>
+                            <div className="overlap-3_cart" key={product.cart_id}>
                                 <div className="overlap-5">
                                     <p className="text-wrapper-23">{product.short_name}</p>
                                     <div className="text-wrapper-24">Size: {product.detalis}</div>
@@ -224,13 +224,13 @@ const Cart = () => {
                                     )}
                                 </div>
                                 <div className="overlap-8">
-                                    <div className="text-wrapper-28">{quantities[product.id]}</div>
-                                    <div className="overlap-9" onClick={() => incrementNumberUntil(product.id, product.count_av)}>
+                                    <div className="text-wrapper-28">{quantities[product.cart_id]}</div>
+                                    <div className="overlap-9" onClick={() => incrementNumberUntil(product.cart_id, product.count_av)}>
                                         <div className="rectangle-8"></div>
                                         <div className="rectangle-9"></div>
                                     </div>
-                                    <div className="rectangle-10" onClick={() => decrementNumber(product.id)}></div>
-                                    <div className="rectangle-11" onClick={() => decrementNumber(product.id)}></div>
+                                    <div className="rectangle-10" onClick={() => decrementNumber(product.cart_id)}></div>
+                                    <div className="rectangle-11" onClick={() => decrementNumber(product.cart_id)}></div>
                                 </div>
                                 <div class="boxcart"><img class="line" src={cart_Line_19} /></div>
                                 <img class="rectangle-7" src={`http://localhost:3001/uploads/${product.image_url}`} />

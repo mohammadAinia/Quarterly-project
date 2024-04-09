@@ -174,7 +174,7 @@ const App = () => {
             <Route path='shop_by_pet/Product_Assortment/:id' element={<Product_Assortment />} />
             <Route path='Loginn/Add_category' element={<Add_category />} />
             <Route path='cart' element={<Cart />} />
-            <Route path='checkout' element={<Checkout />} />
+            <Route path='cart/checkout' element={<Checkout />} />
 
           </Routes>
         </Container>

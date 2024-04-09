@@ -471,8 +471,8 @@ else{
 }
 }
 function show_cart(req,res){
-    sql='select proudact.short_name,cart.cart_id,option_p.detalis,proudact.image_url,option_p.special_price,option_p.count_av from proudact JOIN option_p on option_p.proudact_id=proudact.id join cart on cart.size_idd=option_p.id_add where cart.user_id=?'
-    db.query(sql,[req.session.username],(error,result)=>{
+    sql='select cart.select_count,proudact.short_name,cart.cart_id,option_p.detalis,proudact.image_url,option_p.special_price,option_p.count_av from proudact JOIN option_p on option_p.proudact_id=proudact.id join cart on cart.size_idd=option_p.id_add where cart.user_id=? and cart.chack_=?'
+    db.query(sql,[req.session.username,0],(error,result)=>{
         if(error){console.log(error)}
         else{
             res.json({valid:true,result})
@@ -490,8 +490,8 @@ function delete_by_id(req,res){
     })
 }
 function hedar(req,res){
-    sql=' select count(user_id) as c from cart where user_id=?'
-    db.query(sql,[req.session.admin],(error,result)=>{
+    sql='select count(user_id) as c, wallet.charge_w from cart JOIN wallet on wallet.w_owner=cart.user_id where user_id=? and cart.chack_=?'
+    db.query(sql,[req.session.admin,0],(error,result)=>{
         if(error){console.log(error)}
         else{
             res.json({valid:true,result})
@@ -499,6 +499,68 @@ function hedar(req,res){
         }
     })
 
+}
+function update_c(req,res){
+    count=req.body.products
+    console.log(count.length)
+    for (let i = 0; i < count.length; i++) {
+        sql='update cart set select_count=? where cart_id=?'
+        db.query(sql,[count[i].quantity,count[i].productId],(error,result)=>{
+            if(error){console.log(error)}
+            
+        })
+    }
+    res.json({valid:true})
+  
+}function showw_after(req,res){
+    sql='select cart.select_count,proudact.short_name,cart.cart_id,option_p.detalis,proudact.image_url,option_p.special_price,option_p.count_av from proudact JOIN option_p on option_p.proudact_id=proudact.id join cart on cart.size_idd=option_p.id_add where cart.user_id=? and cart.chack_=?'
+    db.query(sql,[req.session.username,0],(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            sqll='select * from wallet where w_owner=?'
+            db.query(sqll,[req.session.admin],(error,result1)=>{
+                if(error){console.log(error)}
+                else{
+                    sqlll='select * from adress where owner_user=?'
+                    db.query(sqlll,[req.session.admin],(error,result2)=>{
+                        if(error){console.log(error)}
+                        else{
+                            res.json({valid:true,result,result1,result2})
+                        }
+                    })
+                }
+            })
+        }
+    })
+}
+function complet_order(req,res){
+    console.log('heheh')
+    q=req.body.selectedAddress
+    total=req.body.TotalAmount
+    sql='update cart set chack_=? where user_id=?'
+    db.query(sql,[1,req.session.admin],(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            sqll='select * from cart where chack_=? and chack_=?'
+            db.query(sqll,[1,req.session.admin,1],(error,result1)=>{
+                if(error){console.log(error)}
+                else{
+                    for (let i = 0; i < result1.length; i++) {
+                        sql11='update option set count_av=count_av-? where id_add=?'
+                        db.query(sql11,[result1[i].select_count,result1[i].size_idd],(error,result32)=>{
+                            if(error){console.log(error)}
+                        })
+                    }
+                    sql98765='update wallet set charge_w=charge_w-? where w_owner=? '
+                    db.query(sql98765,[total,req.session.admin],(error,result54)=>{
+                        if(error){console.log(error)}
+                        
+                    })                    
+                }
+            })
+            res.json({valid:true})
+        }
+    })
 }
 module.exports={
     new_arrivle:new_arrivle,
@@ -512,5 +574,7 @@ module.exports={
     show_cart
     ,delete_by_id,
     hedar
-
+,update_c,
+showw_after,
+complet_order
 }

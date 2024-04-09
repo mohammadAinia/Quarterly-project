@@ -27,7 +27,7 @@ const Store_Header = (props) => {
             .then(res => {
                 if (res.data.valid) {
                     setNumberItem(res.data.result[0].c);
-                    // setMany(res.data.result2);
+                    setMany(res.data.result[0].charge_w);
 
 
                 } else {

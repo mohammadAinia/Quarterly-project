@@ -35,21 +35,21 @@ const Checkout = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-
-        axios.get('http://localhost:3001/storee/#', { withCredentials: true })
+ 
+        axios.get('http://localhost:3001/storee/show_det', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
 
                     setProduct_Info(res.data.result)
                     setAddress(res.data.result2)
-                    setMony(res.data.valid3)
-
-
+                    setMony(res.data.result1[0].charge_w)
+                    setSelectedAddress(res.data.result1[0].id_a)
                     calculateTotalPrice(productInfo);
+ 
                 }
                 else {
                     navigate('/login')
-                }
+                } 
             })
             .catch(err => { console.log(err) })
 
@@ -88,11 +88,11 @@ const Checkout = () => {
             setTotalAmount((totalPrice * 0.1) + totalPrice + 15)
         }
         if (Mony >= TotalAmount) {
-            axios.post('http://localhost:3001/storee/#', { selectedAddress, TotalAmount })
+            axios.post('http://localhost:3001/storee/complet_order', { selectedAddress, TotalAmount })
                 .then(res => {
                     if (res.data.valid) {
                         alert("Orders have been confirmed. The delivery representative will contact you within 24 hours");
-                        window.location.reload();
+                        navigate('store')
                     }
                     else {
                         navigate('/login')
@@ -105,19 +105,19 @@ const Checkout = () => {
             alert("Sorry, the wallet balance is not enough. Please recharge it");
         }
     };
-
+    const calculateTotalPrice = (products) => {
+        let total = 0;
+        products.forEach(product => {
+            total += product.special_price * product.select_count;
+        });
+        setTotalPrice(total);
+    };
     const handleOptionChange = (event) => {
         const selectedaddress = event.target.value;
         setSelectedAddress(selectedaddress);
     };
 
-    const calculateTotalPrice = (products) => {
-        let total = 0;
-        products.forEach(product => {
-            total += product.special_price * product.quantity;
-        });
-        setTotalPrice(total);
-    };
+    
 
 
 
@@ -155,19 +155,19 @@ const Checkout = () => {
                         {/* عناوين مسجلة سابقة */}
                         <div class="frame-4_me">
 
-                            {
+                            { 
                                 Address.map((user, i) => (
                                     <div className="overlap-5" key={i}>
                                         <input
                                             type="radio"
                                             id={`option${i}`} // Use a unique id for each input
                                             name="options"
-                                            value={user.id_add}
+                                            value={user.id_a}
 
-                                            checked={selectedAddress === user.id_add}
+                                            checked={selectedAddress === user.id_a}
                                             onChange={handleOptionChange}
                                         />
-                                        <label htmlFor={`option${i}`} className="text-wrapper-15">{user.Address}</label> {/* Use the same unique id in htmlFor */}
+                                        <label htmlFor={`option${i}`} className="text-wrapper-15">{user.street}</label> {/* Use the same unique id in htmlFor */}
                                     </div>
                                 ))
                             }
@@ -196,14 +196,16 @@ const Checkout = () => {
                         <div className="frame-3_me">
 
 
-                            {productInfo.map(product => (
+                            {
+                            productInfo.map(product => (
                                 <Componets_checkout
-                                    short_desc={product.detalis}
-                                    quantity={"Quantity: " + product.quantity}
+                                    short_desc={product.short_name}
+                                    quantity={"Quantity: " + product.select_count}
                                     image={`http://localhost:3001/uploads/${product.image_url}`}
-                                    price={product.special_price + "$"}
+                                    price={(product.special_price*product.select_count) + "$"}
                                 />
-                            ))}
+                            ))
+                            }
                             {/* 
                             <Componets_checkout
                                 short_desc={"exceed Freshly Clean Dog Shampoo"}
@@ -232,7 +234,7 @@ const Checkout = () => {
                     )}
 
                     <div class="estimated-sales-tax">VAT: <br />(10%)</div>
-                    <div class="text-wrapper-29">{totalPrice * 0.1} $</div>
+                    <div class="text-wrapper-29">{(totalPrice * 0.1).toFixed(2)} $</div>
 
                     <div class="text-wrapper-17">Order Total</div>
                     {totalPrice >= 49 ? (
