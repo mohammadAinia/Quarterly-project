@@ -15,7 +15,7 @@ router.get('/hedar',store.hedar);
 router.get('/show_det',store.showw_after);
 
 
-
+ 
 router.post('/addrev/:id',store.add_rev); 
 router.post('/add_cart',store.add_to_cart);
 router.post('/delete/:productId',store.delete_by_id);

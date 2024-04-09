@@ -63,7 +63,7 @@ const Checkout = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        axios.post('http://localhost:3001/storee/add_address', { Street, City, PostalCode, House_Number }, { withCredentials: true })
+        axios.post('http://localhost:3001/storee/add_address', { Street, City, PostalCode, House_Number })
             .then(res => {
                 if (res.data.valid) {
 
@@ -93,6 +93,7 @@ const Checkout = () => {
             axios.post('http://localhost:3001/storee/complet_order', { selectedAddress, TotalAmount })
                 .then(res => {
                     if (res.data.valid) {
+                        alert(TotalAmount)
                         alert("Orders have been confirmed. The delivery representative will contact you within 24 hours");
                         navigate(-3)
                     }
