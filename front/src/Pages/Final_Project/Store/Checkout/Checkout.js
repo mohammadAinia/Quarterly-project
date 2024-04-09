@@ -78,24 +78,27 @@ const Checkout = () => {
             .catch(err => { console.log(err) });
     };
 
-    const [TotalAmount, setTotalAmount] = useState(0);
     // تابع تاكيد الطلبة وخصم من المحفظة
     const handleSubmit2 = async (e) => {
 
         e.preventDefault();
+        let updatedTotalAmount;
+
         if (totalPrice > 49) {
-            setTotalAmount((totalPrice * 0.1) + totalPrice)
+            updatedTotalAmount = (totalPrice * 0.1) + totalPrice;
+
         }
         else {
-            setTotalAmount((totalPrice * 0.1) + totalPrice + 15)
+            updatedTotalAmount = (totalPrice * 0.1) + totalPrice +15;
+
         }
-        if (Mony >= TotalAmount) {
-            axios.post('http://localhost:3001/storee/complet_order', { selectedAddress, TotalAmount })
+        if (Mony >= updatedTotalAmount) {
+            axios.post('http://localhost:3001/storee/complet_order', { selectedAddress, updatedTotalAmount })
                 .then(res => {
                     if (res.data.valid) {
-                        alert(TotalAmount)
+                        alert(updatedTotalAmount)
                         alert("Orders have been confirmed. The delivery representative will contact you within 24 hours");
-                        navigate(-3)
+                        navigate('/store')
                     }
                     else {
                         navigate('/login')
@@ -109,7 +112,7 @@ const Checkout = () => {
         }
     };
     const calculateTotalPrice = (products) => {
-        let total = 0;
+        let total = 100;
         products.forEach(product => {
             total += product.special_price * product.select_count;
         });

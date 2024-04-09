@@ -23,18 +23,27 @@ const Store_Header = (props) => {
     const [NumberItem, setNumberItem] = useState(0)
     const [Many, setMany] = useState(0)
     const [Brands, setBrands] = useState([])
+    const [Product_Search, setProduct_Search] = useState([])
+    const [filteredProduct, setFilteredProduct] = useState([]);
+    const [Search_result, setSearch_result] = useState('')
+
+
 
 
 
     const navigate = useNavigate()
 
     useEffect(() => {
-        axios.get('http://localhost:3001/storee/hedar',{ withCredentials: true })
+        axios.get('http://localhost:3001/storee/hedar', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     setNumberItem(res.data.result[0].c);
                     setMany(res.data.result[0].charge_w);
                     // setBrands(res.data.result3)
+
+                    // هدول التنين حطن نفس النتيجة
+                    // setProduct_Search(res.data.result)
+                    // setFilteredProduct(res.data.result)
 
 
 
@@ -45,22 +54,24 @@ const Store_Header = (props) => {
             .catch(err => console.log(err));
     }, []);
 
+    const handleSearchInputChange = (event) => {
+        const { value } = event.target;
+        setSearch_result(value);
+
+        // Filter clinics based on search input
+        const filtered = Product_Search.filter(p =>
+            p.brand.toLowerCase().includes(value.toLowerCase()) ||  // Partial brand match
+            p.short_name.toLowerCase().includes(value.toLowerCase())  // Match name
+        );
+        setFilteredProduct(filtered);
+    };
+
 
     const [showMenu, setShowMenu] = useState(false);
 
     const toggleMenu = () => {
         setShowMenu(!showMenu);
     };
-    function StarRating({ rating }) {
-        const filledStars = Math.floor(rating);
-        const stars = [];
-        for (let i = 0; i < 5; i++) {
-            if (i < filledStars) {
-                stars.push(<img key={i} className="star-solid" src={store_star_solid_1} alt="Filled Star" />);
-            }
-        }
-        return <div>{stars}</div>; // Return the array of stars wrapped in a div
-    }
 
     return (
 
@@ -132,38 +143,41 @@ const Store_Header = (props) => {
                     <div className="dropdown7">
                         {/* <div class="frameheader"><img class="vectorheader" src={store_Vector2} /></div> */}
                         <div class="vectorheader"  ><FontAwesomeIcon icon={faMagnifyingGlass} /></div>
-                        <input onClick={toggleMenu} placeholder='Search' class="frameheader" type='text' />
+                        <input onClick={toggleMenu} onChange={handleSearchInputChange} placeholder='Search' class="frameheader" type='text' />
                         <div className="dropdown-content2">
 
                             <div class="frame-4_me">
 
-                                {/* <div class="overlap-22">
-                                    <div class="rectangle-14"></div>
-                                    <img class="rectangle-11" src={store_Vector4} />
-                                    <div class="text-wrapper-27">Acana</div>
-                                    <div class="text-wrapper-28">22 $</div>
-                                    <div class="element">3.3&nbsp;&nbsp; (32)</div>
-                                    <div class="text-wrapper-33">"bfbskhfegfsyfghesvmfes bfbskhfegfsyfghesvmfes</div>
-                                    <div class="rectangle-13"></div>
-                                    <div class="text-wrapper-31">Available for AutoShip</div>
-                                    <img class="vector-9" src={store_Vector4} />
-                                    <div class="frame-3"><a href={`choose_product/${1}`} class="text-wrapper-32">view</a ></div>
-                                    <div class="star-container">
-                                        <StarRating rating={5} />
-                                    </div>
-                                </div> */}
-                                <Componets_Header_Search />
-                                
+                                {Search_result !== '' ? (
+                                    filteredProduct.length > 0 ? (
+                                        // Display filtered products
+                                        filteredProduct.map((user, i) => (
+                                            <Componets_Header_Search
+                                                key={i}
+                                                img={`http://localhost:3001/uploads/${user.image_url}`}
+                                                brand={user.store_in_name}
+                                                price={(user.price) + "$"}
+                                                desc={user.short_name}
+                                                href={`choose_product/${user.id}`}
+                                                rate={user.review_count}
+                                                comments={user.comments}
+                                                star={user.star_count}
+                                            />
+                                        ))
+                                    ) : (
+                                        // No matching products found
+                                        <div className="empty_search2">Sorry, there are no products matching your search</div>
+                                    )
+                                ) : (
+                                    // Empty search result
+                                    <div className="empty_search">Search to show results</div>
+                                )}
+
                             </div>
-
-
-
                         </div>
                     </div>
 
                     {/* *******************************************************************************/}
-
-
                 </nav>
 
                 <div className="icons">
