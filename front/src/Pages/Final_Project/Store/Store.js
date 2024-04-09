@@ -65,6 +65,8 @@ const Store = () => {
 
     const [NewArrivalInfo, setNewArrivalInfo] = useState([])
     const [Best_Sellers, setBest_Sellers] = useState([])
+    const [Top_Rated, setTop_Rated] = useState([])
+
 
     // مشان سطر رقم 360
     const [CategoriesInfo, setCategoriesInfo] = useState([])
@@ -72,7 +74,7 @@ const Store = () => {
     const [Trend, setTrend] = useState([])
 
 
- 
+
 
 
 
@@ -89,6 +91,7 @@ const Store = () => {
                     setBrands(res.data.result3)
                     // setTrend(res.data.result4)
                     // setBest_Sellers(res.data.result4)
+                    // setTop_Rated(res.data.result5)
                 }
                 else {
                     navigate('/login')
@@ -255,7 +258,7 @@ const Store = () => {
                         </div>
                     </a>
                     <a href={`Product_Assortment_copy/${"dog"}/${'dogCillars'}/${'Leashes'}/${20}`} class="overlap-18">
-                    
+
                         <p class="text-wrapper-23">Dog Cillars &amp; Leashes Under</p>
                         <div class="overlap-15">
                             <div class="text-wrapper-24">20</div>
@@ -324,30 +327,22 @@ const Store = () => {
 
                     {/* Top Rated هنا المنتجات الاعلى تقييما */}
                     <div class="frame-3_me" ref={frameRef2}>
-                        <div class="overlap-21">
-                            <div class="rectangle-14"></div>
-                            <img class="rectangle-11" src={store_Rectangle_141} />
-                            <div class="rectangle-15"></div>
-                            <div class="text-wrapper-26">TOP RATED</div>
-                            <div class="text-wrapper-27">ACANA</div>
-                            <div class="text-wrapper-28">$22.99</div>
-                            <div class="element">4.6</div>
-                            <div class="element2">(36)</div>
 
-                            {/* <div class="text-wrapper-29">Classics Red</div> */}
-                            <div class="text-wrapper-33">Meat Recipe Dog Food</div>
-                            <div class="rectangle-13"></div>
-                            <div class="text-wrapper-31">Available for AutoShip</div>
-                            <img class="vector-9" src={store_Vector4} />
-                            <div class="frame-3"><div class="text-wrapper-32">view</div></div>
-                            {/* <StarRating rating={0} /> */}
-                            <div class="star-container">
-                                <StarRating rating={2} />
-
-                            </div>
-                        </div>
-
-
+                        {
+                            Top_Rated.map((user, i) => (
+                                <Componets_Top_Sellers
+                                    key={i}
+                                    img={`http://localhost:3001/uploads/${user.image_url}`}
+                                    brand={user.store_in_name}
+                                    price={(user.price) + "$"}
+                                    desc={user.short_name}
+                                    href={`choose_product/${user.id}`}
+                                    rate={user.review_count}
+                                    comments={user.comments}
+                                    star={user.star_count}
+                                />
+                            ))
+                        }
                     </div>
 
 
@@ -358,9 +353,9 @@ const Store = () => {
                     {/* Top Sellers هنا المنتجات الاعلى مبيعا */}
                     <div class="frame-4_me" ref={frameRef3}>
 
-                    {
+                        {
                             Best_Sellers.map((user, i) => (
-                                <Componets_newArrivals
+                                <Componets_Top_Sellers
                                     key={i}
                                     img={`http://localhost:3001/uploads/${user.image_url}`}
                                     brand={user.store_in_name}
@@ -375,7 +370,6 @@ const Store = () => {
                                 />
                             ))
                         }
-                        {/* <Componets_Top_Sellers rate={4.2} comments={"("+55+")"}/> */}
 
                     </div>
 

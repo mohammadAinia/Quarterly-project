@@ -74,6 +74,7 @@
   .dropdown2:hover .dropdown-content {
     display: block;
   }
+  
  
   
 
@@ -133,6 +134,30 @@
     padding: 7px;
     color: #ffffff;
   }
+
+  .dropdown7 .dropbtn{
+    font-size: 19px;
+    font-weight: 300;
+    background:none;
+    padding: 7px;
+    color: #ffffff;
+
+  }
+  .dropdown-content2 {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+    top: 85px;
+    left: 1050px;
+    width: 900px;
+    height: 650px;
+  }
+  
+  .dropdown7:hover .dropdown-content2 {
+    display: block;
+  }
   .dropdown6 .aa{
     color: #f1f1f1;
     position: absolute;
@@ -191,7 +216,6 @@
   .header_store .icons div:hover {
     color: var(--main);
   }
-  
   #menu-btn {
     display: none;
   }
@@ -257,6 +281,223 @@
     position: absolute;
     width: 22px;
     height: 22px;
-    top: 5px;
-    left: 346px;
+    top: 58px;
+    left: 1405px;
+    z-index: 1;
+    font-size: 17px;
+}
+.frame-4_me {
+  width: 100%;
+  height: 615px;
+  max-width: calc(100% - 100px);
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+.frame-4_me::-webkit-scrollbar {
+  width: 10px;
+  height: 12px;
+}
+
+.frame-4_me::-webkit-scrollbar-thumb {
+  background-color: lightblue;
+  border-radius: 5px;
+
+}
+
+.frame-4_me::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.overlap-22 {
+  position: relative;
+  
+  flex-wrap: nowrap;
+  display: inline-block;
+  margin-right: 343px;
+  margin-left: 0px;
+  height: 519px;
+
+}
+.rectangle-14 {
+  position: absolute;
+  width: 268px;
+  height: 587px;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 14px #b8d8eb;
+}
+
+ .rectangle-15 {
+  position: absolute;
+  width: 88px;
+  height: 31px;
+  top: 0;
+  left: 0;
+  background-color: #b8d8eb;
+}
+ .rectangle-11 {
+  position: absolute;
+  width: 265px;
+  height: 259px;
+  top: 31px;
+  left: 1px;
+}
+ .text-wrapper-26 {
+  height: 21px;
+  top: 4px;
+  left: 6px;
+  font-size: 14px;
+  position: absolute;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+ .text-wrapper-27 {
+  position: absolute;
+  height: 27px;
+  top: 297px;
+  left: 13px;
+  font-family: "Poppins-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+ .text-wrapper-28 {
+  height: 36px;
+  top: 361px;
+  left: 13px;
+  font-family: "Poppins-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 24px;
+  position: absolute;
+  letter-spacing: 0;
+  line-height: normal;
+  width: 200px;
+}
+ .element {
+  position: absolute;
+  height: 23px;
+  top: 555px;
+  left: 119px;
+  font-family: "Poppins-ExtraLight", Helvetica;
+  font-weight: 200;
+  color: #000000;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+  width: 200px;
+}
+ .text-wrapper-33 {
+  position: absolute;
+  max-width: 210px;
+  width: 207px;
+  height: 27px;
+  top: 324px;
+  left: 13px;
+  font-family: "Poppins-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+  overflow: hidden;
+}
+ .rectangle-13 {
+  position: absolute;
+  width: 240px;
+  height: 34px;
+  top: 415px;
+  left: 13px;
+  background-color: #ebf3f9;
+}
+
+ .text-wrapper-31 {
+  position: absolute;
+  width: 220px;
+  height: 26px;
+  top: 423px;
+  left: 49px;
+  font-family: "Poppins-Light", Helvetica;
+  font-weight: 300;
+  color: #000000;
+  font-size: 17px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+ .vector-9 {
+  position: absolute;
+  width: 17px;
+  height: 14px;
+  top: 426px;
+  left: 22px;
+}
+
+ .frame-3 {
+  display: flex;
+  width: 82px;
+  height: 37px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 32px;
+  position: absolute;
+  top: 465px;
+  left: 90px;
+  background-color: #b8d8eb;
+  border-radius: 14px;
+  transition: background-color 0.3s ease;
+  /* Add transition for smooth effect */
+}
+
+ .frame-3:hover {
+  background-color: #85c7f2;
+  /* Change background color on hover */
+}
+
+ .text-wrapper-32 {
+  position: relative;
+  width: fit-content;
+  margin-top: -5.5px;
+  margin-bottom: -3.5px;
+  margin-left: -15.5px;
+  margin-right: -15.5px;
+  font-family: "Poppins-Light", Helvetica;
+  font-weight: 300;
+  color: #000000;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+ .star-container {
+  /* Adjust the container to allow inline display */
+  display: inline-block;
+  position: absolute;
+  top: 555px;
+  left: 13px;
+  width: 100px;
+}
+.star-solid {
+  position: relative;
+  width: 19px;
+  height: 16px;
+  /* top: 555px;
+  left: 13px; */
+
+
 }

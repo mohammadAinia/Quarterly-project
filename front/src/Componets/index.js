@@ -183,6 +183,7 @@ export { default as Add_balance } from '../Pages/Final_Project/Store/Add_balance
 export { default as Componets_Add_balance } from './Graduation/Componets_Add_balance/Componets_Add_balance'
 export { default as Product_Assortment_copy } from '../Pages/Final_Project/Store/Product_Assortment_copy/Product_Assortment_copy'
 export { default as Componets_Top_Sellers } from './Graduation/Componets_Top_Sellers/Componets_Top_Sellers'
+export { default as Componets_Header_Search } from './Graduation/Componets_Header_Search/Componets_Header_Search'
 
 
 
