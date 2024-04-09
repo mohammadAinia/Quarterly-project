@@ -1,7 +1,7 @@
 import './Store_Header.css'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRightFromBracket, faCaretDown ,faWallet} from '@fortawesome/free-solid-svg-icons';
+import { faRightFromBracket, faCaretDown, faWallet, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios'
 // import { useNavigate } from 'react-router-dom'
@@ -58,9 +58,13 @@ const Store_Header = (props) => {
                     <div className="dropdown1">
                         <button className="dropbtn" onClick={toggleMenu}>Shop By Pet <FontAwesomeIcon icon={faCaretDown} /></button>
                         <div className="dropdown-content">
-                            <a href={props.href3}>cat</a>
-                            <a href={props.href4}>dog</a>
-                            <a href={props.href5}>Fish</a>
+                            <a href={`shop_by_pet/${'cat'}`}>cat</a>
+                            <a href={`shop_by_pet/${'dog'}`}>dog</a>
+                            <a href={`shop_by_pet/${'fish'}`}>Fish</a>
+                            <a href={`shop_by_pet/${'bireds'}`}>Bireds</a>
+                            <a href={`shop_by_pet/${'rabbit'}`}>Rabbit</a>
+                            <a href={`shop_by_pet/${'reptile'}`}>Reptile</a>
+
                         </div>
                     </div>
                     <div className="dropdown2">
@@ -73,7 +77,7 @@ const Store_Header = (props) => {
                         </div>
                     </div>
                     <div className="dropdown3">
-                        <a href='#' style={{ color: 'white', fontWeight: '300', fontSize: '20px' }} className="aa">New Arrivals </a>
+                        <a href='#new_Arrivals_loc' style={{ color: 'white', fontWeight: '300', fontSize: '20px' }} className="aa">New Arrivals </a>
                         {/* <div className="dropdown-content">
                             <a href={props.href8}>{props.a8}</a>
                             <a href={props.href9}>{props.a9}</a>
@@ -85,14 +89,14 @@ const Store_Header = (props) => {
                     </div>
 
                     <div className="dropdown5">
-                        <a href='cart' className="aa"><img src={store_Vector3} /> </a>
+                        <a href='cart'> <div className="aa"><FontAwesomeIcon icon={faCartShopping} /> </div></a>
                         <div class="rectangleheader"></div>
 
                         <div class="text-wrapper-9header">{NumberItem}</div>
                     </div>
 
                     <div className="dropdown6">
-                        <div className='aa'><FontAwesomeIcon icon={faWallet} /></div>
+                        <a href='Add_balance'><div className='aa'><FontAwesomeIcon icon={faWallet} /></div></a>
                         <div class="rectangleheader2"></div>
 
                         <div class="text-wrapper-9header2">{Many} $</div>

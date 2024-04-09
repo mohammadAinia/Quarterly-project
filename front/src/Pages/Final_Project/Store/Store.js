@@ -169,14 +169,21 @@ const Store = () => {
                 <div class="div">
 
                     <div class="overlap-3">
-                        <p class="p">Buy online same day pick up in one of our 600+ stores! or free shipping over</p>
-                        <div class="text-wrapper-10">View Details</div>
+                        <p class="p">World Cat Day discounts of 60%. Take advantage</p>
+                        <p class="p">Soon Syriatel Cash service</p>
+                        {/* <div class="text-wrapper-10">View Details</div> */}
                     </div>
                     <div class="text-wrapper-11">Trending Searches</div>
+
                     <div class="overlap-4">
-                        <div class="text-wrapper-12">New Arrivals</div>
-                        <div class="text-wrapper-13">Shop New Arrivals</div>
+                        <div id='new_Arrivals_loc' class="text-wrapper-12">New Arrivals</div>
+
+                        {/* تسوق المنتجات الجديدة */}
+                        <a href={`Product_Assortment/${"new_arrivals"}`}
+                            class="text-wrapper-13">Shop New Arrivals</a>
+
                     </div>
+
                     <div class="text-wrapper-15">Featured Categories</div>
                     <div class="text-wrapper-16">Top Brand</div>
                     <div class="overlap-5">
@@ -400,7 +407,7 @@ const Store = () => {
                     {/* تسوق حسب البراند */}
                     <div class="store3">
 
-                    {Brands.map((user, i) => (
+                        {Brands.map((user, i) => (
                             <Componets_Brand
                                 key={i}
                                 img={`http://localhost:3001/uploads/${user.url_imagee}`}

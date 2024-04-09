@@ -140,6 +140,20 @@
     font-size: 35px;
 
   }
+  .dropdown5 .aa{
+    color: #f1f1f1;
+    position: absolute;
+    top: -10px;
+    font-size: 35px;
+  }
+  .dropdown5 .aa:hover {
+    cursor: pointer;
+    color: #FECC02; /* Change color to yellow when hovering */
+}
+.dropdown6 .aa:hover {
+  cursor: pointer;
+  color: #FECC02; /* Change color to yellow when hovering */
+}
   
   .dropdown-content {
     display: none;

@@ -179,4 +179,8 @@ export { default as Componets_checkout } from './Graduation/Componets_checkout/C
 export { default as Componets_Brand } from './Graduation/Componets_Brand/Componets_Brand'
 export { default as Add_Brand } from '../Pages/Final_Project/Site_Manager/Add_Brand/Add_Brand'
 export { default as Componets_Add_Brand } from './Graduation/Componets_Add_Brand/Componets_Add_Brand'
+export { default as Add_balance } from '../Pages/Final_Project/Store/Add_balance/Add_balance'
+export { default as Componets_Add_balance } from './Graduation/Componets_Add_balance/Componets_Add_balance'
+
+
 
