@@ -169,6 +169,44 @@ const Store = () => {
             });
         }
     };
+    const [pageCompletion, setPageCompletion] = useState(0);
+    const [circleBeating, setCircleBeating] = useState(false);
+
+    useEffect(() => {
+        const updateCompletion = () => {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            const scrollTop =
+                window.scrollY ||
+                window.pageYOffset ||
+                (document.body.scrollTop +
+                    (document.documentElement && document.documentElement.scrollTop) ||
+                    0);
+
+            const viewportBottom = scrollTop + windowHeight;
+            const isScrolledToBottom = viewportBottom >= documentHeight;
+
+            if (isScrolledToBottom) {
+                setPageCompletion(100);
+                setCircleBeating(true);
+            } else {
+                const completion = (viewportBottom / documentHeight) * 100;
+                setPageCompletion(completion);
+                setCircleBeating(false);
+            }
+        };
+
+        window.addEventListener('scroll', updateCompletion);
+
+        return () => window.removeEventListener('scroll', updateCompletion);
+    }, []);
+
+    const scrollToTop = () => {
+        const topElement = document.getElementById('top');
+        if (topElement) {
+            topElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
 
     return (
@@ -206,7 +244,7 @@ const Store = () => {
 
                     {/* *********************************************************************************88 */}
                     {/* ترند البحث */}
-                    <div class="text-wrapper-11">Trending Searches</div>
+                    <div id='top' class="text-wrapper-11">Trending Searches</div>
 
                     <div class="frame-3_metrend">
 
@@ -535,9 +573,20 @@ const Store = () => {
 
                 </div>
             </div>
+
+            {/* دائرة تعبر عن مستوى تقدم الصفحة */}
+            <div
+                className={`completion-circle-container ${circleBeating ? 'beat-animation' : ''
+                    }`}
+            >
+                <div
+                    className="completion-circle"
+                    style={{
+                        background: `conic-gradient(#ffcc04 ${pageCompletion}%, #ffffff ${pageCompletion}% 100%)`,
+                    }}onClick={scrollToTop}
+                ></div>
+            </div>
         </>
     )
 }
-//msmnbskd
-
 export default Store

@@ -120,31 +120,6 @@ const Shop_By_Pet = () => {
                 <div class="boxshop-by-pet"><img class="line" src={shop_by_pet_Line_16} /></div>
                 <div class="boxshop-by-pet2"><img class="line" src={shop_by_pet_Line_16} /></div>
                 <div class="boxshop-by-pet3"><img class="line" src={shop_by_pet_Line_16} /></div>
-
-                    {/* <div class="overlap">
-                        <div class="text-wrapper">Shop by Pet</div>
-                        <div class="text-wrapper-2">Shop by Brand</div>
-                        <div class="text-wrapper-3">Deals</div>
-                        <div class="text-wrapper-4">New Arrivals</div>
-                        <div class="text-wrapper-5">Home</div>
-                        <div class="text-wrapper-6">Store</div>
-                        <div class="text-wrapper-7">Contact us</div>
-                        <div class="rectangle"></div>
-                        <img class="vector" src={store_Vector2} />
-                        <div class="frame">
-                            <div class="overlap-group">
-                                <div class="rectangle-2"></div>
-                                <div class="text-wrapper-8">0</div>
-                                <img class="img" src={store_Vector3} />
-                            </div>
-                        </div>
-                        <div class="overlap-wrapper">
-                            <div class="overlap-2">
-                                <div class="text-wrapper-9">PetCare</div>
-                                <img class="vector-2" src={Store_Vector} />
-                            </div>
-                        </div>
-                    </div> */}
                     <div class="overlap-3">
                         <div class="text-wrapper-10">Food</div>
                         {/* <div class="text-wrapper-11">Shop All</div> */}
@@ -163,7 +138,7 @@ const Shop_By_Pet = () => {
                     {/* ********************************************************************************************************************************************8 */}
 
                     {/* هنا اسم الحيوان الي ضغط عليه */}
-                    <div class="text-wrapper-13">{"Shop" + Name}</div>
+                    <div class="text-wrapper-13">{"Shop " + Name}</div>
 
 
                     {/* ********************************************************************************************************************************************8 */}
