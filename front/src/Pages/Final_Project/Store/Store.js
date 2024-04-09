@@ -67,6 +67,8 @@ const Store = () => {
     // مشان سطر رقم 360
     const [CategoriesInfo, setCategoriesInfo] = useState([])
     const [Brands, setBrands] = useState([])
+    const [Trend, setTrend] = useState([])
+
 
 
 
@@ -83,6 +85,7 @@ const Store = () => {
                     setNewArrivalInfo(res.data.result)
                     setCategoriesInfo(res.data.result2)
                     // setBrands(res.data.result3)
+                    // setTrend(res.data.result4)
                 }
                 else {
                     navigate('/login')
@@ -173,7 +176,6 @@ const Store = () => {
                         <p class="p">Soon Syriatel Cash service</p>
                         {/* <div class="text-wrapper-10">View Details</div> */}
                     </div>
-                    <div class="text-wrapper-11">Trending Searches</div>
 
                     <div class="overlap-4">
                         <div id='new_Arrivals_loc' class="text-wrapper-12">New Arrivals</div>
@@ -195,14 +197,30 @@ const Store = () => {
                         <div class="text-wrapper-18">New Arrivals</div>
                         <div class="text-wrapper-18">New Arrivals</div>
                     </div>
-                    <div class="div-wrapper"><div class="text-wrapper-19">DOG BOOTS</div></div>
-                    <div class="overlap-7"><div class="text-wrapper-20">SMART PET DEVICES</div></div>
-                    <div class="overlap-8"><div class="text-wrapper-21">CAT LITTER</div></div>
-                    <div class="overlap-9"><div class="text-wrapper-21">CAT TREES</div></div>
-                    <div class="overlap-10"><div class="text-wrapper-21">DOG CRATES</div></div>
-                    <div class="overlap-11"><div class="text-wrapper-22">DOG HARNESSES</div></div>
-                    <div class="overlap-12"><div class="text-wrapper-21">DOG FOOD</div></div>
-                    <div class="overlap-13"><div class="text-wrapper-21">DOG BEDS</div></div>
+
+                    {/* *********************************************************************************88 */}
+                    {/* ترند البحث */}
+                    <div class="text-wrapper-11">Trending Searches</div>
+
+                    <div class="frame-3_metrend">
+
+                        {Trend.map((user, i) => (
+
+                            <div class="div-wrapper">
+                                <a href={`Product_Assortment/${user.trend}`} class="text-wrapper-19">{user.trend}</a>
+                            </div>
+                        ))}
+
+                        <div class="div-wrapper">
+                            <a href="#" class="text-wrapper-19">Dog Toy</a>
+                        </div>
+
+
+
+                    </div>
+
+                    {/* *********************************************************************************88 */}
+
                     <img class="rectangle-2" src={store_Rectangle_116} />
                     <img class="rectangle-3" src={store_Rectangle_117} />
                     <img class="rectangle-4" src={store_Rectangle_119} />
