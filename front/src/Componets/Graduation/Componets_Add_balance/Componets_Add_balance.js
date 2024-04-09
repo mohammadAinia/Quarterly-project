@@ -16,7 +16,7 @@ const Componets_Add_balance = () => {
             .then(res => {
                 if (res.data.valid) {
                     alert('The balance has been added successfully')
-                    navigate('store')
+                    navigate('/store')
 
                 }
                 else {

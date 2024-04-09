@@ -870,3 +870,9 @@
 
     cursor: pointer; /* Change background color on hover */
 }
+
+.checkout .text-wrapper-23:hover {
+    /* Apply your hover effect here */
+
+    cursor: pointer; /* Change background color on hover */
+}

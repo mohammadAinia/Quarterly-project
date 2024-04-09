@@ -153,30 +153,6 @@ const Product_Assortment = () => {
                     {/* اسم الفئة المختارة */}
                     <div class="text-wrapper-21">{name}</div>
 
-                    {/* <div class="overlap">
-                        <div class="text-wrapper">Shop by Pet</div>
-                        <div class="text-wrapper-2">Shop by Brand</div>
-                        <div class="text-wrapper-3">Deals</div>
-                        <div class="text-wrapper-4">New Arrivals</div>
-                        <div class="text-wrapper-5">Home</div>
-                        <div class="text-wrapper-6">Store</div>
-                        <div class="text-wrapper-7">Contact us</div>
-                        <div class="frame"><img class="vector" src={store_Vector2} /></div>
-                        <div class="overlap-group-wrapper">
-                            <div class="overlap-group">
-                                <div class="text-wrapper-8">PetCare</div>
-                                <img class="img" src={Store_Vector} />
-                            </div>
-                        </div>
-                        <div class="overlap-wrapper">
-                            <div class="overlap-2">
-                                <div class="rectangle"></div>
-                                <div class="text-wrapper-9">0</div>
-                                <img class="vector-2" src={store_Vector3} />
-                            </div>
-                        </div>
-                    </div> */}
-
                     <div class="box100"><img class="line" src={choose2_a_Line_13} /></div>
                     <div class="box101"><img class="line" src={choose2_a_Line_13} /></div>
                     <div class="box102"><img class="line" src={choose2_a_Line_13} /></div>
@@ -199,20 +175,6 @@ const Product_Assortment = () => {
                                     <label htmlFor={`brand${i}`} className="text-wrapper-10">{brand}</label>
                             </div>
                         ))}
-
-                        {/* عنصر من عندي */}
-                        {/* <div>
-                            <div for="brand1" class="text-wrapper-10">ACANA (23)</div>
-                            <input
-                                className="rectangle-2"
-                                type='checkbox'
-                                value={"acana"}
-                                id={'brand'} // Use a unique id for each input
-                                onChange={() => handleBrandSelect("acana")}
-                                checked={selectedBrands.includes("acana")}
-                            />
-                        </div> */}
-
 
                     </div>
 

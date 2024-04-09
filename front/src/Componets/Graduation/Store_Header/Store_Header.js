@@ -85,7 +85,7 @@ const Store_Header = (props) => {
                     </div>
 
                     <div className="dropdown4">
-                        <a href='/' style={{ color: 'white', fontWeight: '300', fontSize: '20px' }} className="aa">Home </a>
+                        <div onClick={() => navigate('/store')} style={{ color: 'white', fontWeight: '300', fontSize: '20px' }} className="aa">Home </div>
                     </div>
 
                     <div className="dropdown5">
@@ -96,7 +96,7 @@ const Store_Header = (props) => {
                     </div>
 
                     <div className="dropdown6">
-                        <a href='Add_balance'><div className='aa'><FontAwesomeIcon icon={faWallet} /></div></a>
+                        <div onClick={() => navigate('/Add_balance')} className='aa'><FontAwesomeIcon icon={faWallet} /></div>
                         <div class="rectangleheader2"></div>
 
                         <div class="text-wrapper-9header2">{Many} $</div>

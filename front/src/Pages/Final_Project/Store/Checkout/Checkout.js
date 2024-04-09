@@ -194,7 +194,7 @@ const Checkout = () => {
                         <div class="text-wrapper-19">Place Order</div>
                         <div class="rectangle-6"></div>
                         <div class="text-wrapper-20">Order</div>
-                        <a href="cart" class="text-wrapper-23">Edit Cart</a>
+                        <div onClick={() => navigate('/cart')} class="text-wrapper-23">Edit Cart</div>
 
                         {/* المنتجات بالطلبية */}
                         <div className="frame-3_me">
