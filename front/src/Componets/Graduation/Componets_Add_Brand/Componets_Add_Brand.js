@@ -24,7 +24,7 @@ const Componets_Add_Brand = () => {
         }
         formData.append('monfichier', newArr);
         // alert(formData.get('monfichier'));
-
+ 
         axios.post('http://localhost:3001/admin/add_new_b', formData)
             .then(res => {
                 if (res.data.valid) {
