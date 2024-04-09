@@ -20,6 +20,7 @@ router.post('/add_cart',store.add_to_cart);
 router.post('/delete/:productId',store.delete_by_id);
 router.post('/update',store.update_c);
 router.post('/complet_order',store.complet_order);
+router.post('/add_address',store.add_new_address);
 
 
 

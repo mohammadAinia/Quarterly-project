@@ -178,6 +178,8 @@ const App = () => {
             <Route path='checkout' element={<Checkout />} />
             <Route path='Add_Brand' element={<Add_Brand />} />
             <Route path='Add_balance' element={<Add_balance />} />
+            <Route path='cart/checkout' element={<Checkout />} />
+
 
 
 

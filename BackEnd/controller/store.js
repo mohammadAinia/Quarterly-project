@@ -562,6 +562,15 @@ function complet_order(req,res){
         }
     })
 }
+function add_new_address(req,res){ 
+    sql="insert into adress (city,street,postcode,house,owner_user) values ('"+req.body.City+"','"+req.body.Street+"','"+req.body.PostalCode+"','"+req.body.House_Number+"','"+req.session.username+"')"
+    db.query(sql,(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            res.json({valid:true,result})
+        }
+    })
+}
 module.exports={
     new_arrivle:new_arrivle,
     sort_by_animal,
@@ -576,5 +585,6 @@ module.exports={
     hedar
 ,update_c,
 showw_after,
-complet_order
+complet_order,
+add_new_address
 }

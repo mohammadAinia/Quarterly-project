@@ -61,7 +61,7 @@ const Checkout = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        axios.post('http://localhost:3001/storee/#', { Street, City, PostalCode, House_Number })
+        axios.post('http://localhost:3001/storee/add_address', { Street, City, PostalCode, House_Number } ,{withCredentials:true})
             .then(res => {
                 if (res.data.valid) {
 
