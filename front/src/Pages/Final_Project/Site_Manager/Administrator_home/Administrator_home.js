@@ -36,7 +36,7 @@ const Administrator_home = () => {
                     <div class="frame-6"><a href='#' class="text-wrapper-2"> -----</a></div>
                     <div class="frame-7"><a href='#' class="text-wrapper-2"> -----</a></div>
                     <div class="frame-8"><a href='choose_clinic' class="text-wrapper-2">Del Clinic</a></div>
-                    <div class="frame-9"><a href='#' class="text-wrapper-2">----</a></div>
+                    <div class="frame-9"><a href='Add_Brand' class="text-wrapper-2">Add Brand</a></div>
                     <div class="frame-10"><a href='#' class="text-wrapper-2">----</a></div>
                     <div class="frame-11"><a href='#' class="text-wrapper-2">----</a></div>
                     <div class="frame-12"><a href='#' class="text-wrapper-2">----</a></div>
