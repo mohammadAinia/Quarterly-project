@@ -127,9 +127,9 @@ const Choose_Product = () => {
         axios.post('http://localhost:3001/storee/add_cart', { number, selectedOption, iidd })
             .then(res => {
                 if (res.data.valid & res.data.repet === false) {
-                    alert(number)
-                    alert(iidd)
-                    alert(selectedOption)
+                    // alert(number)
+                    // alert(iidd)
+                    // alert(selectedOption)
                     alert("Added to cart successfully");
                     window.location.reload();
                 }

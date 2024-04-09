@@ -180,6 +180,7 @@ const App = () => {
             <Route path='Add_balance' element={<Add_balance />} />
             <Route path='cart/checkout' element={<Checkout />} />
             <Route path='Product_Assortment_copy/:animal/:cate/:U/:price' element={<Product_Assortment_copy />} />
+            <Route path='cart/cart' element={<Cart />} />
 
 
 

@@ -89,7 +89,7 @@ const Store_Header = (props) => {
                     </div>
 
                     <div className="dropdown5">
-                        <a href='cart'> <div className="aa"><FontAwesomeIcon icon={faCartShopping} /> </div></a>
+                         <div className="aa"  onClick={() => navigate('/cart')}><FontAwesomeIcon icon={faCartShopping} /> </div>
                         <div class="rectangleheader"></div>
 
                         <div class="text-wrapper-9header">{NumberItem}</div>

@@ -35,7 +35,7 @@ const Checkout = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
- 
+
         axios.get('http://localhost:3001/storee/show_det', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
@@ -44,24 +44,26 @@ const Checkout = () => {
                     setAddress(res.data.result2)
                     setMony(res.data.result1[0].charge_w)
                     setSelectedAddress(res.data.result1[0].id_a)
-                    calculateTotalPrice(productInfo);
- 
+
+                    calculateTotalPrice(res.data.result);
+
                 }
                 else {
                     navigate('/login')
-                } 
+                }
             })
             .catch(err => { console.log(err) })
 
     },
         [])
+    console.log(selectedAddress)
 
     // تابع اضافة عنوان جديد
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        axios.post('http://localhost:3001/storee/add_address', { Street, City, PostalCode, House_Number } ,{withCredentials:true})
+        axios.post('http://localhost:3001/storee/add_address', { Street, City, PostalCode, House_Number }, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
 
@@ -92,7 +94,7 @@ const Checkout = () => {
                 .then(res => {
                     if (res.data.valid) {
                         alert("Orders have been confirmed. The delivery representative will contact you within 24 hours");
-                        navigate('store')
+                        navigate(-3)
                     }
                     else {
                         navigate('/login')
@@ -101,7 +103,7 @@ const Checkout = () => {
                 })
                 .catch(err => { console.log(err) });
         }
-        else{
+        else {
             alert("Sorry, the wallet balance is not enough. Please recharge it");
         }
     };
@@ -117,7 +119,7 @@ const Checkout = () => {
         setSelectedAddress(selectedaddress);
     };
 
-    
+
 
 
 
@@ -155,7 +157,7 @@ const Checkout = () => {
                         {/* عناوين مسجلة سابقة */}
                         <div class="frame-4_me">
 
-                            { 
+                            {
                                 Address.map((user, i) => (
                                     <div className="overlap-5" key={i}>
                                         <input
@@ -167,7 +169,7 @@ const Checkout = () => {
                                             checked={selectedAddress === user.id_a}
                                             onChange={handleOptionChange}
                                         />
-                                        <label htmlFor={`option${i}`} className="text-wrapper-15">{user.street}</label> {/* Use the same unique id in htmlFor */}
+                                        <label htmlFor={`option${i}`} className="text-wrapper-14">{user.street}</label> {/* Use the same unique id in htmlFor */}
                                     </div>
                                 ))
                             }
@@ -175,7 +177,8 @@ const Checkout = () => {
                             {/* <div class="overlap-5">
                                 <input type="radio" id="nabek" name="location" value="Al-Nabek" />
                                 <label for="nabek" class="radio-label">
-                                    <div class="text-wrapper-14">Al-Nabek</div>
+                                    <label class="text-wrapper-14">gsygfeysgfsjgy</label>
+
                                 </label>
                             </div> */}
                         </div>
@@ -197,14 +200,14 @@ const Checkout = () => {
 
 
                             {
-                            productInfo.map(product => (
-                                <Componets_checkout
-                                    short_desc={product.short_name}
-                                    quantity={"Quantity: " + product.select_count}
-                                    image={`http://localhost:3001/uploads/${product.image_url}`}
-                                    price={(product.special_price*product.select_count) + "$"}
-                                />
-                            ))
+                                productInfo.map(product => (
+                                    <Componets_checkout
+                                        short_desc={product.short_name}
+                                        quantity={"Quantity: " + product.select_count}
+                                        image={`http://localhost:3001/uploads/${product.image_url}`}
+                                        price={(product.special_price * product.select_count) + "$"}
+                                    />
+                                ))
                             }
                             {/* 
                             <Componets_checkout
@@ -248,7 +251,7 @@ const Checkout = () => {
                     <img class="line-3" src={checkout_Line_25} />
                     <img class="line-4" src={checkout_Line_25} />
 
-                    <div class="overlap-8"><button class="text-wrapper-31">Confirm the order</button></div>
+                    <div class="overlap-8"><button onClick={handleSubmit2} class="text-wrapper-31">Confirm the order</button></div>
                 </div>
             </div>
         </>
