@@ -1,21 +1,26 @@
 import './Componets_Add_balance.css'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 
 const Componets_Add_balance = () => {
 
     const [balance, setBalance] = useState(null);
+    const navigate = useNavigate();
 
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        axios.post('http://localhost:3001/storee/#', balance)
+        axios.post('http://localhost:3001/storee/add_to_wallet', {balance})
             .then(res => {
                 if (res.data.valid) {
                     alert('The balance has been added successfully')
-                    // navigate(-2)
+                    navigate('store')
 
+                }
+                else {
+                    alert('you dont have permtions ')
                 }
             })
             .catch(err => alert(err))

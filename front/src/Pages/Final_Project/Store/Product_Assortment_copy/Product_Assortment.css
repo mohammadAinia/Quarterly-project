@@ -1,0 +1,1312 @@
+.product-assortment {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin-top: -148.7px;
+
+}
+
+.product-assortment .div {
+    background-color: #ffffff;
+    width: 2068px;
+    height: 2000px;
+    position: relative;
+}
+
+.product-assortment .overlap {
+    position: absolute;
+    width: 2068px;
+    height: 219px;
+    top: 0;
+    left: 0;
+    background-color: #4e77b7;
+}
+
+.product-assortment .text-wrapper {
+    left: 126px;
+    position: absolute;
+    width: 153px;
+    height: 27px;
+    top: 173px;
+    font-family: "Inder-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.product-assortment .text-wrapper-2 {
+    left: 324px;
+    position: absolute;
+    width: 153px;
+    height: 27px;
+    top: 173px;
+    font-family: "Inder-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.product-assortment .text-wrapper-3 {
+    position: absolute;
+    width: 153px;
+    height: 27px;
+    top: 173px;
+    left: 522px;
+    font-family: "Inder-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.product-assortment .text-wrapper-4 {
+    width: 153px;
+    top: 173px;
+    left: 720px;
+    font-family: "Inder-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 20px;
+    position: absolute;
+    height: 27px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.product-assortment .text-wrapper-5 {
+    top: 95px;
+    left: 1361px;
+    font-family: "Inder-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 20px;
+    position: absolute;
+    width: 153px;
+    height: 27px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.product-assortment .text-wrapper-6 {
+    position: absolute;
+    width: 153px;
+    height: 27px;
+    top: 95px;
+    left: 1559px;
+    font-family: "Inder-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.product-assortment .text-wrapper-7 {
+    position: absolute;
+    width: 153px;
+    height: 27px;
+    top: 95px;
+    left: 1757px;
+    font-family: "Inder-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.product-assortment .frame {
+    position: absolute;
+    width: 678px;
+    height: 41px;
+    top: 75px;
+    left: 383px;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+.product-assortment .vector {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    top: 10px;
+    left: 646px;
+}
+
+.product-assortment .overlap-group-wrapper {
+    position: absolute;
+    width: 219px;
+    height: 61px;
+    top: 63px;
+    left: 111px;
+}
+
+.product-assortment .overlap-group {
+    position: relative;
+    height: 61px;
+    top: -1px;
+}
+
+.product-assortment .text-wrapper-8 {
+    position: absolute;
+    width: 195px;
+    height: 61px;
+    top: 0;
+    left: 0;
+    font-family: "Inknut Antiqua-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.product-assortment .img {
+    position: absolute;
+    width: 28px;
+    height: 29px;
+    top: 20px;
+    left: 191px;
+}
+
+.product-assortment .overlap-wrapper {
+    position: absolute;
+    width: 57px;
+    height: 40px;
+    top: 161px;
+    left: 1820px;
+}
+
+.product-assortment .overlap-2 {
+    position: relative;
+    height: 40px;
+}
+
+.product-assortment .rectangle {
+    position: absolute;
+    width: 30px;
+    height: 18px;
+    top: 0;
+    left: 27px;
+    background-color: #ffffff;
+    border-radius: 35px;
+}
+
+.product-assortment .text-wrapper-9 {
+    position: absolute;
+    width: 13px;
+    height: 10px;
+    top: 3px;
+    left: 36px;
+    font-family: "Inder-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 11px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.product-assortment .vector-2 {
+    position: absolute;
+    width: 34px;
+    height: 31px;
+    top: 9px;
+    left: 0;
+}
+
+.product-assortment .frame-3_me2 {
+    width: 100%;
+    height: 290px;
+    max-width: calc(100% - 1700px);
+    /* Adjust as needed */
+    overflow-x: hidden;
+    overflow-y: auto;
+    white-space: nowrap;
+    position: absolute;
+    top: 572px;
+    left: 246px;
+}
+
+.product-assortment .frame-3_me2::-webkit-scrollbar {
+    width: 5px;
+    /* Set the width of the scrollbar */
+    height: 12px;
+}
+
+.product-assortment .frame-3_me2::-webkit-scrollbar-thumb {
+    background-color: #fecc02;
+    /* Set the color of the scrollbar thumb */
+    border-radius: 5px;
+    /* Optional: Round the corners of the scrollbar thumb */
+
+}
+
+.product-assortment .frame-3_me2::-webkit-scrollbar-track {
+    background-color: transparent;
+    /* Set the color of the scrollbar track */
+}
+
+.product-assortment .text-wrapper-10 {
+    position: relative;
+    width: 153px;
+    height: 27px;
+    left: 27px;
+    font-family: "Poppins-ExtraLight", Helvetica;
+    font-weight: 200;
+    color: #000000;
+    font-size: 22px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.product-assortment .text-wrapper-11 {
+    top: 623px;
+    position: absolute;
+    width: 153px;
+    height: 27px;
+    left: 246px;
+    font-family: "Poppins-ExtraLight", Helvetica;
+    font-weight: 200;
+    color: #000000;
+    font-size: 22px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.product-assortment .text-wrapper-12 {
+    top: 674px;
+    position: absolute;
+    width: 153px;
+    height: 27px;
+    left: 246px;
+    font-family: "Poppins-ExtraLight", Helvetica;
+    font-weight: 200;
+    color: #000000;
+    font-size: 22px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.product-assortment .text-wrapper-13 {
+    top: 725px;
+    position: absolute;
+    width: 153px;
+    height: 27px;
+    left: 246px;
+    font-family: "Poppins-ExtraLight", Helvetica;
+    font-weight: 200;
+    color: #000000;
+    font-size: 22px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.product-assortment .text-wrapper-14 {
+    top: 776px;
+    position: absolute;
+    width: 153px;
+    height: 27px;
+    left: 246px;
+    font-family: "Poppins-ExtraLight", Helvetica;
+    font-weight: 200;
+    color: #000000;
+    font-size: 22px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.product-assortment .text-wrapper-15 {
+    top: 827px;
+    position: absolute;
+    width: 153px;
+    height: 27px;
+    left: 246px;
+    font-family: "Poppins-ExtraLight", Helvetica;
+    font-weight: 200;
+    color: #000000;
+    font-size: 22px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.product-assortment .frame-3_me23 {
+    width: 100%;
+    height: 212px;
+    max-width: calc(100% - 1700px);
+    /* Adjust as needed */
+    overflow-x: hidden;
+    overflow-y: auto;
+    white-space: nowrap;
+    position: absolute;
+    top: 1046px;
+    left: 259px;
+}
+
+.product-assortment .frame-3_me23::-webkit-scrollbar {
+    width: 5px;
+    height: 12px;
+}
+
+.product-assortment .frame-3_me23::-webkit-scrollbar-thumb {
+    background-color: #fecc02;
+    border-radius: 5px;
+
+}
+
+.product-assortment .frame-3_me23::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.product-assortment .text-wrapper-16 {
+    position: relative;
+    width: 164px;
+    height: 27px;
+    left: 35px;
+
+    font-family: "Poppins-ExtraLight", Helvetica;
+    font-weight: 200;
+    color: #000000;
+    font-size: 22px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.product-assortment .UP {
+    position: absolute;
+    width: 101px;
+    height: 27px;
+    top: 1420px;
+    left: 447px;
+    font-family: "Poppins-ExtraLight", Helvetica;
+    font-weight: 200;
+    color: #000000;
+    font-size: 22px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.product-assortment .text-wrapper-17 {
+    position: absolute;
+    width: 206px;
+    height: 27px;
+    top: 1097px;
+    left: 260px;
+    font-family: "Poppins-ExtraLight", Helvetica;
+    font-weight: 200;
+    color: #000000;
+    font-size: 22px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.product-assortment .UP-2 {
+    top: 1471px;
+    position: absolute;
+    width: 116px;
+    height: 27px;
+    left: 440px;
+    font-family: "Poppins-ExtraLight", Helvetica;
+    font-weight: 200;
+    color: #000000;
+    font-size: 22px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.product-assortment .UP-3 {
+    top: 1523px;
+    position: absolute;
+    width: 116px;
+    height: 27px;
+    left: 440px;
+    font-family: "Poppins-ExtraLight", Helvetica;
+    font-weight: 200;
+    color: #000000;
+    font-size: 22px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.product-assortment .UP-4 {
+    top: 1573px;
+    position: absolute;
+    width: 116px;
+    height: 27px;
+    left: 440px;
+    font-family: "Poppins-ExtraLight", Helvetica;
+    font-weight: 200;
+    color: #000000;
+    font-size: 22px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.product-assortment .UP-5 {
+    top: 1624px;
+    position: absolute;
+    width: 116px;
+    height: 27px;
+    left: 440px;
+    font-family: "Poppins-ExtraLight", Helvetica;
+    font-weight: 200;
+    color: #000000;
+    font-size: 22px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.product-assortment .text-wrapper-18 {
+    position: absolute;
+    width: 206px;
+    height: 27px;
+    top: 1148px;
+    left: 249px;
+    font-family: "Poppins-ExtraLight", Helvetica;
+    font-weight: 200;
+    color: #000000;
+    font-size: 22px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.product-assortment .text-wrapper-19 {
+    width: 105px;
+    top: 1199px;
+    left: 255px;
+    font-family: "Poppins-ExtraLight", Helvetica;
+    font-weight: 200;
+    color: #000000;
+    font-size: 22px;
+    position: absolute;
+    height: 27px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.product-assortment .div-wrapper {
+    position: absolute;
+    width: 2068px;
+    height: 61px;
+    top: 219px;
+    left: 0;
+    background-color: #fff4ca;
+}
+
+.product-assortment .p {
+    position: absolute;
+    width: 884px;
+    height: 47px;
+    top: 6px;
+    left: 548px;
+    font-family: "Inder-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.product-assortment .line {
+    top: 445px;
+    position: absolute;
+    width: 436px;
+    height: 2px;
+    left: 210px;
+}
+
+.product-assortment .line-2 {
+    top: 919px;
+    position: absolute;
+    width: 436px;
+    height: 2px;
+    left: 210px;
+}
+
+.product-assortment .line-3 {
+    top: 1293px;
+    position: absolute;
+    width: 436px;
+    height: 2px;
+    left: 210px;
+}
+
+.product-assortment .text-wrapper-20 {
+    top: 485px;
+    left: 177px;
+    font-family: "Poppins-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 30px;
+    white-space: nowrap;
+    position: absolute;
+    width: 153px;
+    height: 27px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.product-assortment .text-wrapper-21 {
+    position: absolute;
+    width: 532px;
+    height: 63px;
+    top: 332px;
+    left: 631px;
+    font-family: "Poppins-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 45px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.product-assortment .text-wrapper-22 {
+    position: absolute;
+    width: 153px;
+    height: 27px;
+    top: 446px;
+    left: 676px;
+    font-family: "Poppins-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.product-assortment .text-wrapper-23 {
+    position: absolute;
+    width: 227px;
+    height: 27px;
+    top: 959px;
+    left: 202px;
+    font-family: "Poppins-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.product-assortment .text-wrapper-24 {
+    position: absolute;
+    width: 101px;
+    height: 27px;
+    top: 1333px;
+    left: 207px;
+    font-family: "Poppins-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.product-assortment .rectangle-2 {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    /* top: -27px;
+    left: 0px; */
+    border-radius: 3px;
+    border: 1px solid;
+    border-color: #000000;
+}
+
+.product-assortment .rectangle-3 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 624px;
+    left: 210px;
+    border-radius: 3px;
+    border: 1px solid;
+    border-color: #000000;
+}
+
+.product-assortment .rectangle-4 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 675px;
+    left: 210px;
+    border-radius: 3px;
+    border: 1px solid;
+    border-color: #000000;
+}
+
+.product-assortment .rectangle-5 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 726px;
+    left: 210px;
+    border-radius: 3px;
+    border: 1px solid;
+    border-color: #000000;
+}
+
+.product-assortment .rectangle-6 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 777px;
+    left: 210px;
+    border-radius: 3px;
+    border: 1px solid;
+    border-color: #000000;
+}
+
+.product-assortment .rectangle-7 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 828px;
+    left: 210px;
+    border-radius: 3px;
+    border: 1px solid;
+    border-color: #000000;
+}
+
+.product-assortment .rectangle-8 {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    top: -27px;
+    border-radius: 3px;
+    border: 1px solid;
+    border-color: #000000;
+}
+
+.product-assortment .rectangle-9 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 1421px;
+    left: 255px;
+    border-radius: 3px;
+    border: 1px solid;
+    border-color: #000000;
+}
+
+.product-assortment .rectangle-10 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 1098px;
+    left: 210px;
+    border-radius: 3px;
+    border: 1px solid;
+    border-color: #000000;
+}
+
+.product-assortment .rectangle-11 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 1472px;
+    left: 255px;
+    border-radius: 3px;
+    border: 1px solid;
+    border-color: #000000;
+}
+
+.product-assortment .rectangle-12 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 1149px;
+    left: 210px;
+    border-radius: 3px;
+    border: 1px solid;
+    border-color: #000000;
+}
+
+.product-assortment .rectangle-13 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 1523px;
+    left: 255px;
+    border-radius: 3px;
+    border: 1px solid;
+    border-color: #000000;
+}
+
+.product-assortment .rectangle-14 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 1200px;
+    left: 210px;
+    border-radius: 3px;
+    border: 1px solid;
+    border-color: #000000;
+}
+
+.product-assortment .rectangle-15 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 1574px;
+    left: 255px;
+    border-radius: 3px;
+    border: 1px solid;
+    border-color: #000000;
+}
+
+.product-assortment .rectangle-16 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 1625px;
+    left: 255px;
+    border-radius: 3px;
+    border: 1px solid;
+    border-color: #000000;
+}
+
+.product-assortment .star-container {
+    /* Adjust the container to allow inline display */
+    display: inline-block;
+    position: absolute;
+    top: 1425px;
+    left: 266px;
+}
+
+.product-assortment .star-solid {
+
+    position: relative;
+    width: 21px;
+    height: 18px;
+    left: 45px;
+}
+.product-assortment .star-container2 {
+    /* Adjust the container to allow inline display */
+    display: inline-block;
+    position: absolute;
+    top: 1475px;
+    left: 266px;
+}
+.product-assortment .star-solid-2 {
+
+    position: relative;
+    width: 21px;
+    height: 18px;
+}
+.product-assortment .star-container3 {
+    /* Adjust the container to allow inline display */
+    display: inline-block;
+    position: absolute;
+    top: 1527px;
+    left: 266px;
+}
+
+.product-assortment .star-solid-3 {
+
+    position: relative;
+    width: 21px;
+    height: 18px;
+}
+.product-assortment .star-container4 {
+    /* Adjust the container to allow inline display */
+    display: inline-block;
+    position: absolute;
+    top: 1577px;
+    left: 266px;
+}
+
+.product-assortment .star-solid-4 {
+
+    position: relative;
+    width: 21px;
+    height: 18px;
+}
+.product-assortment .star-container5 {
+    /* Adjust the container to allow inline display */
+    display: inline-block;
+    position: absolute;
+    top: 1628px;
+    left: 266px;
+}
+
+.product-assortment .star-solid-5 {
+
+    position: relative;
+    width: 21px;
+    height: 18px;
+}
+
+.product-assortment .star-solid-6 {
+    top: 1475px;
+    left: 293px;
+    position: absolute;
+    width: 21px;
+    height: 18px;
+}
+
+.product-assortment .star-solid-7 {
+    top: 1527px;
+    left: 293px;
+    position: absolute;
+    width: 21px;
+    height: 18px;
+}
+
+.product-assortment .star-solid-8 {
+    top: 1577px;
+    left: 293px;
+    position: absolute;
+    width: 21px;
+    height: 18px;
+}
+
+.product-assortment .star-solid-9 {
+    top: 1628px;
+    left: 293px;
+    position: absolute;
+    width: 21px;
+    height: 18px;
+}
+
+.product-assortment .star-solid-10 {
+    top: 1527px;
+    left: 320px;
+    position: absolute;
+    width: 21px;
+    height: 18px;
+}
+
+.product-assortment .star-solid-11 {
+    top: 1577px;
+    left: 320px;
+    position: absolute;
+    width: 21px;
+    height: 18px;
+}
+
+.product-assortment .star-solid-12 {
+    top: 1628px;
+    left: 320px;
+    position: absolute;
+    width: 21px;
+    height: 18px;
+}
+
+.product-assortment .star-solid-13 {
+    top: 1577px;
+    left: 347px;
+    position: absolute;
+    width: 21px;
+    height: 18px;
+}
+
+.product-assortment .star-solid-14 {
+    top: 1628px;
+    left: 347px;
+    position: absolute;
+    width: 21px;
+    height: 18px;
+}
+
+.product-assortment .star-solid-15 {
+    top: 1628px;
+    left: 374px;
+    position: absolute;
+    width: 21px;
+    height: 18px;
+}
+
+.product-assortment .rectangle-17 {
+    position: absolute;
+    width: 262px;
+    height: 57px;
+    top: 428px;
+    left: 829px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px #d6e8f1;
+}
+
+.product-assortment .frame-3_meee {
+    /* width: 100%;
+    height: 645px; */
+    display: grid;
+    grid-template-columns: repeat(4, auto); /* 4 items in each row */
+    grid-column-gap: 10px;     /* Adjust as needed */
+    /* overflow-x: auto;
+    overflow-y: hidden; */
+    /* white-space: nowrap; */
+    position: absolute;
+    top: 535px;
+    left: 711px;
+}
+
+.product-assortment .overlap-3 {
+    position:relative;
+    width: 269px;
+    height: 587px;
+    margin-left: 30px;
+    margin-top: 30px;
+    transition: transform 0.3s ease; /* Add transition for smooth effect */
+
+ 
+}
+.product-assortment .overlap-3:hover {
+    transform: translateY(-5px); /* Move the element up slightly on hover */
+}
+
+.product-assortment .overlap-3:hover .rectangle-18 {
+    box-shadow: 0px 0px 20px #b8d8eb; /* Change box shadow on hover */
+}
+
+.product-assortment .overlap-3:hover .rectangle-19 {
+    filter: brightness(90%); /* Decrease brightness on hover */
+}
+
+.product-assortment .rectangle-18 {
+    position: absolute;
+    width: 268px;
+    height: 587px;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 14px #b8d8eb;
+}
+
+.product-assortment .rectangle-19 {
+    position: absolute;
+    width: 265px;
+    height: 259px;
+    top: 31px;
+    left: 1px;
+}
+
+.product-assortment .text-wrapper-25 {
+    position: absolute;
+    height: 27px;
+    top: 297px;
+    left: 13px;
+    font-family: "Poppins-Bold", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.product-assortment .element {
+    position: absolute;
+    height: 23px;
+    top: 556px;
+    left: 130px;
+    font-family: "Poppins-ExtraLight", Helvetica;
+    font-weight: 200;
+    color: #000000;
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+.product-assortment .element2 {
+    height: 23px;
+    top: 556px;
+    left: 162px;
+    font-family: "Poppins-ExtraLight", Helvetica;
+    font-weight: 200;
+    font-size: 15px;
+    position: absolute;
+    color: #000000;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.product-assortment .text-wrapper-26 {
+    position: absolute;
+    height: 36px;
+    top: 361px;
+    left: 13px;
+    font-family: "Poppins-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+
+.product-assortment .text-wrapper-28 {
+    position: absolute;
+    width: 220px;
+    /* max-width: 250px; */
+    height: 30px;
+    top: 324px;
+    left: 13px;
+    /* font-family: "Poppins-Regular", Helvetica; */
+    font-weight: 400;
+    color: #000000;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+    display: inline-block;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+.product-assortment .frame-2 {
+    position: absolute;
+    width: 256px;
+    height: 34px;
+    top: 415px;
+    left: 13px;
+}
+
+.product-assortment .overlap-4 {
+    position: relative;
+    height: 34px;
+}
+
+.product-assortment .rectangle-20 {
+    position: absolute;
+    width: 240px;
+    height: 34px;
+    top: 0;
+    left: 0;
+    background-color: #ebf3f9;
+}
+
+.product-assortment .text-wrapper-29 {
+    position: absolute;
+    width: 220px;
+    height: 26px;
+    top: 3px;
+    left: 36px;
+    font-family: "Poppins-Light", Helvetica;
+    font-weight: 300;
+    color: #000000;
+    font-size: 17px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.product-assortment .vector-3 {
+    position: absolute;
+    width: 17px;
+    height: 14px;
+    top: 11px;
+    left: 9px;
+}
+
+.product-assortment .frame-3 {
+    display: flex;
+    width: 90px;
+    height: 37px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 8px 32px;
+    position: absolute;
+    top: 473px;
+    left: 90px;
+    background-color: #b8d8eb;
+    border-radius: 14px;
+}
+.product-assortment .frame-3:hover {
+    background-color: #85c7f2;
+
+}
+
+.product-assortment .text-wrapper-30 {
+    position: relative;
+    width: fit-content;
+    margin-top: -5.5px;
+    margin-bottom: -3.5px;
+    margin-left: -15.5px;
+    margin-right: -15.5px;
+    font-family: "Poppins-Light", Helvetica;
+    font-weight: 300;
+    color: #000000;
+    font-size: 17px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.product-assortment .star-containerr {
+    /* Adjust the container to allow inline display */
+    display: inline-block;
+    position: absolute;
+    top: 555px;
+    left: 10px;
+}
+.product-assortment .vector-4 {
+    /* position: relative; */
+    width: 17px;
+    height: 16px;
+
+}
+
+.product-assortment .vector-5 {
+    position: absolute;
+    width: 17px;
+    height: 16px;
+    top: 555px;
+    left: 33px;
+}
+
+.product-assortment .vector-6 {
+    position: absolute;
+    width: 17px;
+    height: 16px;
+    top: 555px;
+    left: 52px;
+}
+
+.product-assortment .vector-7 {
+    position: absolute;
+    width: 17px;
+    height: 16px;
+    top: 555px;
+    left: 71px;
+}
+
+.product-assortment .vector-8 {
+    position: absolute;
+    width: 17px;
+    height: 16px;
+    top: 555px;
+    left: 90px;
+}
+
+.product-assortment .overlap-5 {
+    position: absolute;
+    width: 269px;
+    height: 587px;
+    top: 1157px;
+    left: 711px;
+}
+
+.product-assortment .overlap-6 {
+    position: absolute;
+    width: 269px;
+    height: 587px;
+    top: 535px;
+    left: 1015px;
+}
+
+.product-assortment .overlap-7 {
+    position: absolute;
+    width: 269px;
+    height: 587px;
+    top: 1157px;
+    left: 1015px;
+}
+
+.product-assortment .overlap-8 {
+    position: absolute;
+    width: 269px;
+    height: 587px;
+    top: 535px;
+    left: 1319px;
+}
+
+.product-assortment .overlap-9 {
+    position: absolute;
+    width: 269px;
+    height: 587px;
+    top: 1157px;
+    left: 1319px;
+}
+
+.product-assortment .overlap-10 {
+    position: absolute;
+    width: 269px;
+    height: 587px;
+    top: 535px;
+    left: 1623px;
+}
+
+.product-assortment .overlap-11 {
+    position: absolute;
+    width: 269px;
+    height: 587px;
+    top: 1157px;
+    left: 1623px;
+}
+
+.box100 {
+    width: 436px;
+    height: 1px;
+}
+
+.box100 .line {
+    position: absolute;
+    width: 436px;
+    height: 2px;
+    top: 450px;
+    left: 210px;
+}
+
+.box101 {
+    width: 436px;
+    height: 1px;
+}
+
+.box101 .line {
+    position: absolute;
+    width: 436px;
+    height: 2px;
+    top: 920px;
+    left: 210px;
+}
+
+.box102 {
+    width: 436px;
+    height: 1px;
+}
+
+.box102 .line {
+    position: absolute;
+    width: 436px;
+    height: 2px;
+    top: 1295px;
+    left: 210px;
+}

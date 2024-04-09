@@ -5,6 +5,7 @@ import { Header } from '../../../Componets'
 import { useNavigate, useParams } from 'react-router-dom'
 
 const Componets_Add_Brand = () => {
+    const navigate = useNavigate();
 
     const [file, setFile] = useState(null);
     const [Brand_Name, setBrand_Name] = useState('')
@@ -24,11 +25,11 @@ const Componets_Add_Brand = () => {
         formData.append('monfichier', newArr);
         // alert(formData.get('monfichier'));
 
-        axios.post('http://localhost:3001/admin/#', formData)
+        axios.post('http://localhost:3001/admin/add_new_b', formData)
             .then(res => {
                 if (res.data.valid) {
                     alert('The brand has been successfully added to the store')
-                    // navigate(-2)
+                    navigate(-1)
 
                 }
             })

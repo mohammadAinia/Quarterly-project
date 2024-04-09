@@ -181,6 +181,7 @@ export { default as Add_Brand } from '../Pages/Final_Project/Site_Manager/Add_Br
 export { default as Componets_Add_Brand } from './Graduation/Componets_Add_Brand/Componets_Add_Brand'
 export { default as Add_balance } from '../Pages/Final_Project/Store/Add_balance/Add_balance'
 export { default as Componets_Add_balance } from './Graduation/Componets_Add_balance/Componets_Add_balance'
+export { default as Product_Assortment_copy } from '../Pages/Final_Project/Store/Product_Assortment_copy/Product_Assortment_copy'
 
 
 

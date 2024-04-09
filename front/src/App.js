@@ -21,7 +21,7 @@ import {
   Edit_doctor_shift, Edit_doctor_shift_time, Appointment_clinic_director, My_appointments, Add_information_to_clinic,
   Edit_information_to_clinic, Loading_page, Report, Modifying_clinic_working_hours, My_appointments_vet,
   Diagnosis,Store,Choose_Product ,Product_Assortment,Add_product_store,Shop_By_Pet,Add_category,Cart,Checkout,
-  Add_Brand,Add_balance
+  Add_Brand,Add_balance,Product_Assortment_copy
 
 } from './Componets/index'
 
@@ -176,9 +176,10 @@ const App = () => {
             <Route path='Loginn/Add_category' element={<Add_category />} />
             <Route path='cart' element={<Cart />} />
             <Route path='checkout' element={<Checkout />} />
-            <Route path='Add_Brand' element={<Add_Brand />} />
+            <Route path='Loginn/Add_Brand' element={<Add_Brand />} />
             <Route path='Add_balance' element={<Add_balance />} />
             <Route path='cart/checkout' element={<Checkout />} />
+            <Route path='Product_Assortment_copy/:animal/:cate/:U/:price' element={<Product_Assortment_copy />} />
 
 
 

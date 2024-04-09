@@ -10,7 +10,7 @@ const storage=multer.diskStorage({
     }
 });
 const fileFilter=(req,file,cd)=>{
-    if(file.mimeType==='image/jpeg'|| file.mimeType==='image/png'||file.mimeType==='image/jpg'){
+    if(file.mimeType==='image/jpeg'|| file.mimeType==='image/png'||file.mimeType==='image/jpg'||file.mimeType==='image/webp'){
     cd(null,true);   
     }
     else

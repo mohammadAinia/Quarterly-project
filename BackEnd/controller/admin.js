@@ -88,6 +88,7 @@ function add_new_category(req,res){
     })
 }
 function add_category(req,res){
+    if(req.session.adminstritor){
     sql="insert into category_t (categ,animal_type,prod_type,url_imagee) values ('"+ req.body.category_name+"','"+ req.body.typeAnimal+"','"+ req.body.category+"','"+ req.files[0].filename+"')"
     db.query(sql,(error,result)=>{
         if(error){console.log(error)}
@@ -96,6 +97,10 @@ function add_category(req,res){
         }
     })
 }
+else {            res.json({valid:false})
+}
+}
+
 function show_c(req,res){
     sql='select  DISTINCT prod_type from category_t'
     db.query(sql,(error,result)=>{
@@ -106,8 +111,23 @@ function show_c(req,res){
         }
     })
 }
+function add_new_brand(req,res){
+    if (req.session.adminstritor){
+    sql="insert into brands (name_b,image_b) values ('"+ req.body.brand_name+"','"+req.files[0].filename +"')"
+    db.query(sql,(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            res.json({valid:true,result})
+            
+        }
+    })
+}
+else {            res.json({valid:false})
+}
+}
 module.exports={
     Add_product_store,
     add_category,
-    show_c
+    show_c,
+    add_new_brand
 }

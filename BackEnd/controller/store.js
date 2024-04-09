@@ -17,9 +17,16 @@ function new_arrivle(req,res){
         else{
             sql='select * from category_t where by_animal=?'
     db.query(sql,[0],(error,result2)=>{
-        if(error){console.log(error)}
+        if(error){console.log(error)} 
         else{
-            res.json({valid:true,result,result2})
+
+            sqlll='select * from brands'
+            db.query(sqlll,(error,result3)=>{
+                if(error){console.log(error)}
+                else{
+                    res.json({valid:true,result,result2,result3})
+                }
+            })
         }
     })
             
@@ -72,6 +79,17 @@ function search_salary_and_category(req,res){
 }
 function select_prand(req,res){
     id=req.params.id
+    if(id=='new_arrivals')
+    {
+        sql='SELECT * FROM `proudact` WHERE DATEDIFF(CURRENT_DATE(),proudact.date_added)<10'   
+        db.query(sql,(error,result1)=>{
+            if(error){console.log(error)}
+            else{
+                res.json({valid:true,result1})
+            }
+        })
+    }
+    else {
     sql='select * from category_t where id_c=?'
     db.query(sql,[id],(error,result)=>{
         if(error){console.log(error)} 
@@ -85,7 +103,22 @@ function select_prand(req,res){
                 }
             })
         }
+    })}
+}
+function get_by_diifrent(req,res){
+    an=req.params.animal
+    categ=req.params.cate
+    U=req.params.U
+    price=req.params.price
+    
+    sql="select * from proudact where price < ? and short_name like ?  and animal_type like ?"
+    db.query(sql,[price,'%'+ req.params.cate+'%','%'+an+'%'],(error,result1)=>{
+        if(error){console.log(error)} 
+        else{ 
+            res.json({valid:true,result1})
+        }
     })
+
 }
 function add_to_log(session,id){
     sql='select * from log_user where user_id=? And id_prod=?'
@@ -571,6 +604,15 @@ function add_new_address(req,res){
         }
     })
 }
+function add_to_wallet(req,res){
+    sql='update wallet set charge_w=charge_w+? where w_owner=?'
+    db.query(sql,[req.body.balance,req.session.admin],(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            res.json({valid:true,result})
+        }
+    })
+}
 module.exports={
     new_arrivle:new_arrivle,
     sort_by_animal,
@@ -586,5 +628,7 @@ module.exports={
 ,update_c,
 showw_after,
 complet_order,
-add_new_address
+add_new_address,
+get_by_diifrent
+,add_to_wallet
 }
