@@ -182,6 +182,8 @@ export { default as Componets_Add_Brand } from './Graduation/Componets_Add_Brand
 export { default as Add_balance } from '../Pages/Final_Project/Store/Add_balance/Add_balance'
 export { default as Componets_Add_balance } from './Graduation/Componets_Add_balance/Componets_Add_balance'
 export { default as Product_Assortment_copy } from '../Pages/Final_Project/Store/Product_Assortment_copy/Product_Assortment_copy'
+export { default as Componets_Top_Sellers } from './Graduation/Componets_Top_Sellers/Componets_Top_Sellers'
+
 
 
 

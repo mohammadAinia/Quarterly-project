@@ -150,6 +150,9 @@
     cursor: pointer;
     color: #FECC02; /* Change color to yellow when hovering */
 }
+.dropdown4 .aa:hover {
+  cursor: pointer;
+}
 .dropdown6 .aa:hover {
   cursor: pointer;
   color: #FECC02; /* Change color to yellow when hovering */

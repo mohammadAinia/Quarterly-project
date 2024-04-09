@@ -56,7 +56,7 @@ import store_Rectangle_233 from '../../../Assert/Images/store_Rectangle_233.png'
 import React, { useEffect, useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faInstagram, faXTwitter } from '@fortawesome/free-brands-svg-icons';
-import { Componets_Brand, Componets_Categories, Componets_newArrivals, Header, Store_Header } from '../../../Componets'
+import { Componets_Brand, Componets_Categories, Componets_Top_Sellers, Componets_newArrivals, Header, Store_Header } from '../../../Componets'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
@@ -64,6 +64,8 @@ import { useNavigate } from 'react-router-dom'
 const Store = () => {
 
     const [NewArrivalInfo, setNewArrivalInfo] = useState([])
+    const [Best_Sellers, setBest_Sellers] = useState([])
+
     // مشان سطر رقم 360
     const [CategoriesInfo, setCategoriesInfo] = useState([])
     const [Brands, setBrands] = useState([])
@@ -86,6 +88,7 @@ const Store = () => {
                     setCategoriesInfo(res.data.result2)
                     setBrands(res.data.result3)
                     // setTrend(res.data.result4)
+                    // setBest_Sellers(res.data.result4)
                 }
                 else {
                     navigate('/login')
@@ -354,26 +357,25 @@ const Store = () => {
 
                     {/* Top Sellers هنا المنتجات الاعلى مبيعا */}
                     <div class="frame-4_me" ref={frameRef3}>
-                        <div class="overlap-22">
-                            <div class="rectangle-14"></div>
-                            <img class="rectangle-11" src={store_Rectangle_141} />
-                            <div class="rectangle-15"></div>
-                            <div class="text-wrapper-26">TOP RATED</div>
-                            <div class="text-wrapper-27">ACANA</div>
-                            <div class="text-wrapper-28">$22.99</div>
-                            <div class="element">4.6&nbsp;&nbsp; (36)</div>
-                            {/* <div class="text-wrapper-29">Classics Red</div> */}
-                            <div class="text-wrapper-33">Meat Recipe Dog Food</div>
-                            <div class="rectangle-13"></div>
-                            <div class="text-wrapper-31">Available for AutoShip</div>
-                            <img class="vector-9" src={store_Vector4} />
-                            <div class="frame-3"><div class="text-wrapper-32">view</div></div>
-                            <img class="star-solid" src={store_star_solid_1} />
-                            <img class="star-solid-2" src={store_star_solid_1} />
-                            <img class="star-solid-3" src={store_star_solid_1} />
-                            <img class="star-solid-4" src={store_star_solid_1} />
-                            <img class="star-solid-5" src={store_star_solid_1} />
-                        </div>
+
+                    {
+                            Best_Sellers.map((user, i) => (
+                                <Componets_newArrivals
+                                    key={i}
+                                    img={`http://localhost:3001/uploads/${user.image_url}`}
+                                    brand={user.store_in_name}
+                                    price={(user.price) + "$"}
+                                    desc={user.short_name}
+                                    href={`choose_product/${user.id}`}
+                                    rate={user.review_count}
+                                    comments={user.comments}
+                                    star={user.star_count}
+
+
+                                />
+                            ))
+                        }
+                        {/* <Componets_Top_Sellers rate={4.2} comments={"("+55+")"}/> */}
 
                     </div>
 
