@@ -3,14 +3,11 @@ import checkout_Rectangle_268 from '../../../../Assert/Images/checkout_Rectangle
 import checkout_Line_24 from '../../../../Assert/Images/checkout_Line_24.png'
 import checkout_Line_21 from '../../../../Assert/Images/checkout_Line_21.png'
 import checkout_Line_25 from '../../../../Assert/Images/checkout_Line_25.png'
-
 import { Componets_Product_store, Componets_checkout, Componets_user_reviews, Store_Header } from '../../../../Componets'
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios'
 // import { useNavigate } from 'react-router-dom'
 import { useNavigate, useParams } from 'react-router-dom'
-
-
 
 const Checkout = () => {
 
@@ -19,19 +16,10 @@ const Checkout = () => {
     const [selectedAddress, setSelectedAddress] = useState('');
     const [totalPrice, setTotalPrice] = useState(0);
     const [Mony, setMony] = useState(0);
-
-
-
-
     const [Street, setStreet] = useState('');
     const [City, setCity] = useState('');
     const [PostalCode, setPostalCode] = useState('');
     const [House_Number, setHouse_Number] = useState('');
-
-
-
-
-
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -53,10 +41,8 @@ const Checkout = () => {
                 }
             })
             .catch(err => { console.log(err) })
-
     },
         [])
-    console.log(selectedAddress)
 
     // تابع اضافة عنوان جديد
     axios.defaults.withCredentials = true
@@ -83,20 +69,16 @@ const Checkout = () => {
 
         e.preventDefault();
         let updatedTotalAmount;
-
         if (totalPrice > 49) {
             updatedTotalAmount = (totalPrice * 0.1) + totalPrice;
-
         }
         else {
-            updatedTotalAmount = (totalPrice * 0.1) + totalPrice +15;
-
+            updatedTotalAmount = (totalPrice * 0.1) + totalPrice + 15;
         }
         if (Mony >= updatedTotalAmount) {
             axios.post('http://localhost:3001/storee/complet_order', { selectedAddress, updatedTotalAmount })
                 .then(res => {
                     if (res.data.valid) {
-                        alert(updatedTotalAmount)
                         alert("Orders have been confirmed. The delivery representative will contact you within 24 hours");
                         navigate('/store')
                     }
@@ -123,15 +105,7 @@ const Checkout = () => {
         setSelectedAddress(selectedaddress);
     };
 
-
-
-
-
-
-
-
     return (
-
         <>
             <Store_Header />
 
@@ -202,7 +176,6 @@ const Checkout = () => {
                         {/* المنتجات بالطلبية */}
                         <div className="frame-3_me">
 
-
                             {
                                 productInfo.map(product => (
                                     <Componets_checkout
@@ -220,13 +193,8 @@ const Checkout = () => {
                                 image={checkout_Rectangle_268}
                                 price={"49 $"}
                             /> */}
-
                         </div>
-
-
-
                     </div>
-
 
                     <div class="text-wrapper-25">Subtotal:</div>
                     <div class="text-wrapper-27">{totalPrice} $</div>
@@ -261,5 +229,4 @@ const Checkout = () => {
         </>
     )
 }
-
 export default Checkout

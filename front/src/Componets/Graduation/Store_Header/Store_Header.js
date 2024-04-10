@@ -51,13 +51,27 @@ const Store_Header = (props) => {
             .catch(err => console.log(err));
     }, []);
 
+    useEffect(() => {
+        axios.get('http://localhost:3001/storee/#', { withCredentials: true })
+            .then(res => {
+                if (res.data.valid) {
+                    // هدول التنين حطن نفس النتيجة
+                    setProduct_Search(res.data.result3)
+                    setFilteredProduct(res.data.result3)
+                } else {
+                    navigate('/login');
+                }
+            })
+            .catch(err => console.log(err));
+    }, []);
+
     const handleSearchInputChange = (event) => {
         const { value } = event.target;
         setSearch_result(value);
 
         // Filter clinics based on search input
         const filtered = Product_Search.filter(p =>
-            p.brand.toLowerCase().includes(value.toLowerCase()) ||  // Partial brand match
+            p.store_in_name.toLowerCase().includes(value.toLowerCase()) ||  // Partial brand match
             p.short_name.toLowerCase().includes(value.toLowerCase())  // Match name
         );
         setFilteredProduct(filtered);
@@ -75,7 +89,7 @@ const Store_Header = (props) => {
         <>
             <header className="header_store">
 
-                <div onClick={() => navigate('/')}  className="logo"> <i className="fas fa-paw"></i> PetCare</div>
+                <div onClick={() => navigate('/')} className="logo"> <i className="fas fa-paw"></i> PetCare</div>
 
                 <nav className={`navbar ${showMenu ? 'show' : ''}`}>
                     <a href={props.href1}>{props.a1}</a>
@@ -100,9 +114,9 @@ const Store_Header = (props) => {
                     <div className="dropdown2">
                         <button className="dropbtn" onClick={toggleMenu}>Shop By Brand <FontAwesomeIcon icon={faCaretDown} /></button>
                         <div className="dropdown-content">
-                            {Brands.map((user, i) => (
+                            {/* {Brands.map((user, i) => (
                                 <a href={`Product_Assortment/${user.name_b}`}>{user.name_b}</a>
-                            ))}
+                            ))} */}
                         </div>
                     </div>
 
