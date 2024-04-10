@@ -78,7 +78,7 @@ const Store_Header = (props) => {
         <>
             <header className="header_store">
 
-                <a href="#" className="logo"> <i className="fas fa-paw"></i> PetCare</a>
+                <div onClick={() => navigate('/')}  className="logo"> <i className="fas fa-paw"></i> PetCare</div>
 
                 <nav className={`navbar ${showMenu ? 'show' : ''}`}>
                     <a href={props.href1}>{props.a1}</a>
