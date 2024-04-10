@@ -38,15 +38,12 @@ const Store_Header = (props) => {
             .then(res => {
                 if (res.data.valid) {
                     setNumberItem(res.data.result[0].c);
-                    setMany(res.data.result[0].charge_w);
-                    // setBrands(res.data.result3)
+                    setMany(res.data.result1[0].charge_w);
+                    setBrands(res.data.result2)
 
                     // هدول التنين حطن نفس النتيجة
-                    // setProduct_Search(res.data.result)
-                    // setFilteredProduct(res.data.result)
-
-
-
+                    setProduct_Search(res.data.result3)
+                    setFilteredProduct(res.data.result3)
                 } else {
                     navigate('/login');
                 }
@@ -104,7 +101,7 @@ const Store_Header = (props) => {
                         <button className="dropbtn" onClick={toggleMenu}>Shop By Brand <FontAwesomeIcon icon={faCaretDown} /></button>
                         <div className="dropdown-content">
                             {Brands.map((user, i) => (
-                                <a href={`Product_Assortment/${user.id_b}`}>{user.name_b}</a>
+                                <a href={`Product_Assortment/${user.name_b}`}>{user.name_b}</a>
                             ))}
                         </div>
                     </div>

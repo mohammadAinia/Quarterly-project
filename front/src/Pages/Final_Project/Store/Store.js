@@ -89,9 +89,9 @@ const Store = () => {
                     setNewArrivalInfo(res.data.result)
                     setCategoriesInfo(res.data.result2)
                     setBrands(res.data.result3)
+                    setTop_Rated(res.data.result4)
                     // setTrend(res.data.result4)
-                    // setBest_Sellers(res.data.result4)
-                    // setTop_Rated(res.data.result5)
+                    setBest_Sellers(res.data.result5)
                 }
                 else {
                     navigate('/login')
@@ -375,8 +375,8 @@ const Store = () => {
                                     price={(user.price) + "$"}
                                     desc={user.short_name}
                                     href={`choose_product/${user.id}`}
-                                    rate={user.review_count}
-                                    comments={user.comments}
+                                    rate={user.star_count}
+                                    comments={user.review_count}
                                     star={user.star_count}
                                 />
                             ))
@@ -400,7 +400,7 @@ const Store = () => {
                                     price={(user.price) + "$"}
                                     desc={user.short_name}
                                     href={`choose_product/${user.id}`}
-                                    rate={user.review_count}
+                                    rate={user.star_count}
                                     comments={user.comments}
                                     star={user.star_count}
 
@@ -465,7 +465,7 @@ const Store = () => {
                                 key={i}
                                 img={`http://localhost:3001/uploads/${user.image_b}`}
                                 name_brand={user.name_b}
-                                href={`Product_Assortment/${user.id_b}`}
+                                href={`Product_Assortment/${user.name_b}`}
                             />
                         ))}
 

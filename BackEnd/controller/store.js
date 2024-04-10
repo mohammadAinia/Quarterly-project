@@ -24,7 +24,20 @@ function new_arrivle(req,res){
             db.query(sqlll,(error,result3)=>{
                 if(error){console.log(error)}
                 else{
-                    res.json({valid:true,result,result2,result3})
+                    sql12345432='SELECT * from proudact ORDER by star_count DESC;'
+                    db.query(sql12345432,(error,result4)=>{
+                        if(error){console.log(error)}
+                        else{
+                            sql876554='select * from proudact where id in (SELECT pt_id FROM cart WHERE chack_ = 1 GROUP BY pt_id HAVING COUNT(*) > 1 ORDER BY COUNT(*) DESC ) '
+                            db.query(sql876554,(error,result5)=>{
+                                if(error){console.log(error)}
+                                else{
+                                    res.json({valid:true,result,result2,result3,result4,result5})
+                                }
+                            })
+                        }
+                    })
+                   
                 }
             })
         }
@@ -88,6 +101,16 @@ function select_prand(req,res){
                 res.json({valid:true,result1})
             }
         })
+    }
+    else if(typeof id === 'string' || id instanceof String){
+        sql1='select * from  proudact where brand=?'
+            db.query(sql1,[id],(error,result1)=>{
+                if(error){console.log(error)}
+                else{
+                    res.json({valid:true,result1})
+                    
+                }
+            })
     }
     else {
     sql='select * from category_t where id_c=?'
@@ -481,8 +504,8 @@ function add_to_cart(req,res){
     size=req.body.selectedOption
     idp=req.body.iidd
     if(req.session.username){
-    sql2='select * from cart where user_id=? AND size_idd=? AND pt_id=? '
-    db.query(sql2,[user,size,idp],(error,result2)=>{
+    sql2='select * from cart where user_id=? AND size_idd=? AND pt_id=? and chack_=?'
+    db.query(sql2,[user,size,idp,0],(error,result2)=>{
         if(error){console.log(error)}
         else if(result2.length!=0){
             res.json({valid:true,repet:true})
@@ -535,7 +558,13 @@ function hedar(req,res){
                     db.query(sqql,(error,result2)=>{
                         if(error){console.log(error)}
                         else{
-                                res.json({valid:true,result,result1,result2})
+                            sql12322='SELECT * FROM proudact'
+                            db.query(sql12322,(error,result3)=>{
+                                if(error){console.log(error)}
+                                else{
+                                res.json({valid:true,result,result1,result2,result3})
+                                }
+                            })
 
                         }
                     })
@@ -600,8 +629,9 @@ function complet_order(req,res){
                             if(error){console.log(error)}
                         })
                     }
+                    
                     sql98765='update wallet set charge_w=charge_w-? where w_owner=? '
-                    db.query(sql98765,[req.body.TotalAmount,req.session.username],(error,result54)=>{
+                    db.query(sql98765,[req.body.updatedTotalAmount,req.session.username],(error,result54)=>{
                         console.log('qwertffsf')
 
                         if(error){console.log(error)}
