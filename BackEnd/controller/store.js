@@ -531,7 +531,7 @@ function hedar(req,res){
             db.query(sqll,[req.session.username],(error,result1)=>{
                 if(error){console.log(error)}
                 else{
-                    sqql='select * from brans '
+                    sqql='select * from brands '
                     db.query(sqql,(error,result2)=>{
                         if(error){console.log(error)}
                         else{
