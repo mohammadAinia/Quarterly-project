@@ -13,12 +13,12 @@ const Componets_Add_product_store = () => {
 
     useEffect(() => {
 
-        axios.get('http://localhost:3001/#/#', { withCredentials: true })
+        axios.get('http://localhost:3001/admin/get_all_brand', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
 
-                    setCategoryFromBackEnd(res.data.result)
-                    setBrandsFromBackEnd(res.data.result2)
+                    setCategoryFromBackEnd(res.data.result1)
+                    setBrandsFromBackEnd(res.data.result)
 
 
                 }
@@ -178,7 +178,7 @@ const Componets_Add_product_store = () => {
 
                             {BrandsFromBackEnd.map((user, i) => {
                                 return (
-                                    <option key={i} value={user.name_Brand} >{user.name_Brand}</option>
+                                    <option key={i} value={user.name_b} >{user.name_b}</option>
                                 )
                             })}
                         </select>
@@ -365,7 +365,7 @@ const Componets_Add_product_store = () => {
 
                             {CategoryFromBackEnd.map((user, i) => {
                                 return (
-                                    <option key={i} value={user.name_catogary} >{user.name_catogary}</option>
+                                    <option key={i} value={user.categ} >{user.categ}</option>
                                 )
                             })}
                         </select>

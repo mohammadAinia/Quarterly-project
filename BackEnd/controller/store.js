@@ -661,6 +661,22 @@ function add_to_wallet(req,res){
         }
     })
 }
+function set_data (req,res){
+    sqql='select * from brands '
+                    db.query(sqql,(error,result2)=>{
+                        if(error){console.log(error)}
+                        else{
+                            sql12322='SELECT * FROM proudact'
+                            db.query(sql12322,(error,result3)=>{
+                                if(error){console.log(error)}
+                                else{
+                                res.json({valid:true,result2,result3})
+                                }
+                            })
+
+                        }
+                    })
+}
 module.exports={
     new_arrivle:new_arrivle,
     sort_by_animal,
@@ -678,5 +694,6 @@ showw_after,
 complet_order,
 add_new_address,
 get_by_diifrent
-,add_to_wallet
+,add_to_wallet,
+set_data
 }

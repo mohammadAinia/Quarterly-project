@@ -13,6 +13,7 @@ router.get('/gey_by/:animal/:cate/:U/:price',store.get_by_diifrent);
 router.get('/show_cart',store.show_cart);
 router.get('/hedar',store.hedar);
 router.get('/show_det',store.showw_after);
+router.get('/set_data',store.set_data);
 
 
  

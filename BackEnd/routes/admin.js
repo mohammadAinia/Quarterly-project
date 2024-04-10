@@ -11,6 +11,7 @@ router.post('/add_new_b',imageUploader.upload.array('monfichier'),admin.add_new_
 
 
 router.get('/show_c',admin.show_c)
+router.get('/get_all_brand',admin.get_all_brand)
 
 
 

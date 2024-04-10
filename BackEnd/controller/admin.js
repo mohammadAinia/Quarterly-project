@@ -10,7 +10,7 @@ function Add_product_store(req,res){
 
     var d=new Date()
     var datee = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
-    sql="insert proudact (price,animal_type,count_avilable,store_in_name,ingredients,detalies_id,short_name,category,date_added,image_url) VALUES ('"+req.body.price1 +"','"+ req.body.typeAnimal+"','"+ req.body.quantity1+"','"+ req.body.brand+"','"+ req.body.ingredients+"','"+ show_max()+"','"+ req.body.shortDesc+"','"+req.body.category +"','"+datee +"','"+ req.files[0].filename+"')"
+    sql="insert proudact (price,animal_type,count_avilable,store_in_name,brand,ingredients,detalies_id,short_name,category,date_added,image_url) VALUES ('"+req.body.price1 +"','"+ req.body.typeAnimal+"','"+ req.body.quantity1+"','"+ req.body.brand+"','"+ req.body.brand+"','"+ req.body.ingredients+"','"+ show_max()+"','"+ req.body.shortDesc+"','"+req.body.category +"','"+datee +"','"+ req.files[0].filename+"')"
     db.query(sql,(error,result)=>{
         if(error){console.log(error)}
         else{
@@ -125,9 +125,26 @@ function add_new_brand(req,res){
 else {            res.json({valid:false})
 }
 }
+function get_all_brand(req,res){
+
+    sql='select * from brands '
+    db.query(sql,(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            sql1='select * from category_t'
+            db.query(sql1,(error,result1)=>{
+                if(error){console.log(error)}
+                else{
+                    res.json({valid:true,result,result1})
+                }
+            })
+        }
+    })
+}
 module.exports={
     Add_product_store,
     add_category,
     show_c,
-    add_new_brand
+    add_new_brand,
+    get_all_brand
 }

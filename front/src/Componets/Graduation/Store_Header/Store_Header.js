@@ -39,11 +39,10 @@ const Store_Header = (props) => {
                 if (res.data.valid) {
                     setNumberItem(res.data.result[0].c);
                     setMany(res.data.result1[0].charge_w);
-                    setBrands(res.data.result2)
 
                     // هدول التنين حطن نفس النتيجة
-                    setProduct_Search(res.data.result3)
-                    setFilteredProduct(res.data.result3)
+                    // setProduct_Search(res.data.result3)
+                    // setFilteredProduct(res.data.result3)
                 } else {
                     navigate('/login');
                 }
@@ -52,10 +51,11 @@ const Store_Header = (props) => {
     }, []);
 
     useEffect(() => {
-        axios.get('http://localhost:3001/storee/#', { withCredentials: true })
+        axios.get('http://localhost:3001/storee/set_data', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     // هدول التنين حطن نفس النتيجة
+                    setBrands(res.data.result2)
                     setProduct_Search(res.data.result3)
                     setFilteredProduct(res.data.result3)
                 } else {
