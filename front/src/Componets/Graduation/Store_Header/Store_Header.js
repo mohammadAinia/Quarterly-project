@@ -114,9 +114,9 @@ const Store_Header = (props) => {
                     <div className="dropdown2">
                         <button className="dropbtn" onClick={toggleMenu}>Shop By Brand <FontAwesomeIcon icon={faCaretDown} /></button>
                         <div className="dropdown-content">
-                            {/* {Brands.map((user, i) => (
+                            {Brands.map((user, i) => (
                                 <a href={`Product_Assortment/${user.name_b}`}>{user.name_b}</a>
-                            ))} */}
+                            ))} 
                         </div>
                     </div>
 
