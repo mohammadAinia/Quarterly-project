@@ -122,7 +122,7 @@ function add_new_brand(req,res){
         }
     })
 }
-else {            res.json({valid:false})
+else {            res.json({valid:false}) 
 }
 }
 function get_all_brand(req,res){

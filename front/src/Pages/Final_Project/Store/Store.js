@@ -244,7 +244,7 @@ const Store = () => {
 
                     {/* *********************************************************************************88 */}
                     {/* ترند البحث */}
-                    <div id='top' class="text-wrapper-11">Trending Searches</div>
+                    <div id='top' class="text-wrapper-11">Trending </div>
 
                     <div class="frame-3_metrend">
 

@@ -107,11 +107,11 @@ const Componets_Add_category = () => {
                     <div className="input-box">
                         <span className="details">Animal Type ? *</span>
                         <select name="typeAnimal" id="cars" required onChange={e => setTypeAnimal(e.target.value)}>
-                            <option value="Food">Cat</option>
-                            <option value="Tooys">Dog</option>
-                            <option value="Treets">Birds</option>
-                            <option value="Puppy Essentials">Fish</option>
-                            <option value="Dog Carriers & Travel">Reptile</option>
+                            <option value="cat">Cat</option>
+                            <option value="dog">Dog</option>
+                            <option value="Birds">Birds</option>
+                            <option value="Fish">Fish</option>
+                            <option value="Reptile">Reptile</option>
                             <option value="Aquariums & Starter Kits">Rabbit</option>
                         </select>
                     </div>
