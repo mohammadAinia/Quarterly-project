@@ -164,11 +164,6 @@ const Shop_By_Pet = () => {
                                 href={`Product_Assortment/${user.id_c}`} />
                         ))}
 
-                        <Componets_Shop_By_Pet
-                            image={shop_by_pet_Rectangle_170}
-                            cetagery={"Performatrin Ultra"}
-                            href={`Product_Assortment/${1}`}
-                        />
 
                     </div>
 
@@ -186,11 +181,7 @@ const Shop_By_Pet = () => {
                             />
                         ))}
 
-                        <Componets_Shop_By_Pet
-                            image={shop_by_pet_Rectangle_170}
-                            cetagery={"Performatrin Ultra"}
-                            href={'#'}
-                        />
+
                     </div>
 
                     {/* ********************************************************************************************************************************************8 */}
@@ -205,11 +196,6 @@ const Shop_By_Pet = () => {
                                 href={`Product_Assortment/${user.id_c}`} />
                         ))}
 
-                        <Componets_Shop_By_Pet
-                            image={shop_by_pet_Rectangle_170}
-                            cetagery={"Performatrin Ultra"}
-                            href={'#'}
-                        />
                     </div>
 
                     {/* ********************************************************************************************************************************************8 */}
