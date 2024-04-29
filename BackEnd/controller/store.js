@@ -80,6 +80,10 @@ function sort_by_animal(req,res){
     });
     
 }
+function isnume(str){
+    return/^\d+$/.test(str
+    )
+}
 function search_salary_and_category(req,res){
     sql='select * from proudact where category=? AND price <= ?'
     // sqll='SELECT * FROM proudact WHERE animal_type LIKE ?', ['%'+req.body.animals+'%'],'AND category like',['%'+req.body.category+'%']
@@ -93,7 +97,8 @@ function search_salary_and_category(req,res){
 function select_prand(req,res){
     id=req.params.id
     if(id=='new_arrivals')
-    {
+    {        console.log("1")
+
         sql='SELECT * FROM `proudact` WHERE DATEDIFF(CURRENT_DATE(),proudact.date_added)<10'   
         db.query(sql,(error,result1)=>{
             if(error){console.log(error)}
@@ -102,7 +107,8 @@ function select_prand(req,res){
             }
         })
     }
-    else if(typeof id === 'string' || id instanceof String){
+    else if(!isnume(id)){
+        console.log("2")
         sql1='select * from  proudact where brand=?'
             db.query(sql1,[id],(error,result1)=>{
                 if(error){console.log(error)}
@@ -113,6 +119,7 @@ function select_prand(req,res){
             })
     }
     else {
+        console.log("3")
     sql='select * from category_t where id_c=?'
     db.query(sql,[id],(error,result)=>{
         if(error){console.log(error)} 
