@@ -21,7 +21,7 @@ import {
   Edit_doctor_shift, Edit_doctor_shift_time, Appointment_clinic_director, My_appointments, Add_information_to_clinic,
   Edit_information_to_clinic, Loading_page, Report, Modifying_clinic_working_hours, My_appointments_vet,
   Diagnosis,Store,Choose_Product ,Product_Assortment,Add_product_store,Shop_By_Pet,Add_category,Cart,Checkout,
-  Add_Brand,Add_balance,Product_Assortment_copy
+  Add_Brand,Add_balance,Product_Assortment_copy,Home_Pet_Sitting
 
 } from './Componets/index'
 
@@ -32,14 +32,10 @@ const App = () => {
         <Container>
           <Routes>
             <Route path='/' element={<Home_owner />} />
-
-
-
             {/* بس ارجع شغل هذول السطرين مشان واجهة الترحيب وعلق التعليمة الثالثة */}
             {/* <Route path='login' element={<Loading_page />} /> */}
             {/* <Route path='start' element={<General_user />} /> */}
             <Route path='login' element={<General_user />} />
-
 
             <Route path='Loginn' element={<Login />} />
             <Route path='/Registration' element={<Type />} />
@@ -156,7 +152,6 @@ const App = () => {
             <Route path='Edit_doctor_shift_time/:id' element={<Edit_doctor_shift_time />} />
             <Route path='Appointment_clinic_director/:id' element={<Appointment_clinic_director />} />
             <Route path='My_appointments' element={<My_appointments />} />
-            <Route path='p' element={<My_appointments />} />
 
             <Route path='Add_information_to_clinic' element={<Add_information_to_clinic />} /> {/*هذه الصفحة تم الغائها  */}
             <Route path='Edit_information_to_clinic' element={<Edit_information_to_clinic />} />
@@ -175,19 +170,19 @@ const App = () => {
             <Route path='shop_by_pet/Product_Assortment/:id' element={<Product_Assortment />} />
             <Route path='Loginn/Add_category' element={<Add_category />} />
             <Route path='Add_category' element={<Add_category />} />
-
             <Route path='cart' element={<Cart />} />
             <Route path='checkout' element={<Checkout />} />
             <Route path='Loginn/Add_Brand' element={<Add_Brand />} />
             <Route path='Add_Brand' element={<Add_Brand />} />
-
             <Route path='Add_balance' element={<Add_balance />} />
             <Route path='cart/checkout' element={<Checkout />} />
             <Route path='Product_Assortment_copy/:animal/:cate/:U/:price' element={<Product_Assortment_copy />} />
             <Route path='cart/cart' element={<Cart />} />
+            <Route path='Pet_Sitting' element={<Home_Pet_Sitting />} />
 
 
 
+               
 
             
             
