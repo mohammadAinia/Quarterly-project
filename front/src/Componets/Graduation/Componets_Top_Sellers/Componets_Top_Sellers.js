@@ -33,7 +33,7 @@ const Componets_Top_Sellers = (props) => {
                 <div class="rectangle-13"></div>
                 <div class="text-wrapper-31">Available for AutoShip</div>
                 <img class="vector-9" src={store_Vector4} />
-                <div class="frame-3"><div class="text-wrapper-32">view</div></div>
+                <div class="frame-3"><a href={props.href} class="text-wrapper-32">view</a ></div>
                 <div class="star-container">
                     <StarRating rating={props.star} />
 

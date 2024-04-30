@@ -184,6 +184,8 @@ export { default as Componets_Add_balance } from './Graduation/Componets_Add_bal
 export { default as Product_Assortment_copy } from '../Pages/Final_Project/Store/Product_Assortment_copy/Product_Assortment_copy'
 export { default as Componets_Top_Sellers } from './Graduation/Componets_Top_Sellers/Componets_Top_Sellers'
 export { default as Componets_Header_Search } from './Graduation/Componets_Header_Search/Componets_Header_Search'
+export { default as Home_Pet_Sitting } from '../Pages/Final_Project/Pet_Sitting/Home_Pet_Sitting/Home_Pet_Sitting'
+export { default as Componets_Home_Pet_Sitting } from './Graduation/Componets_Home_Pet_Sitting/Componets_Home_Pet_Sitting'
 
 
 
