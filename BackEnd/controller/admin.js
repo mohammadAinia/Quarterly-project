@@ -120,7 +120,7 @@ function add_new_brand(req,res){
             res.json({valid:true,result})
             
         }
-    })
+    }) 
 }
 else {            res.json({valid:false}) 
 }
