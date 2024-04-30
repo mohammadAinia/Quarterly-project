@@ -32,7 +32,7 @@ const Select_Register = () => {
                     {Info.map((d, i) => {
                         return (
                             <div key={i}>
-                                <Componets_Select_Register name={d.first_name} age={d.age} email={d.email} id={d.id} />
+                                <Componets_Select_Register name={d.first_name} age={(d.age).substring(0,10)} email={d.email} id={d.id} />
                             </div>
                         )
                     })}

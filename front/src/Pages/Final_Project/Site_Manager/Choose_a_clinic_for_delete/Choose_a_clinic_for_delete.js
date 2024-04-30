@@ -63,10 +63,10 @@ const Choose_a_clinic_for_delete = () => {
                                 <div key={index}>
                                     <Componets_Clinic_with_button
                                         name_clinic={clinic.name}
-                                        Working_hours={clinic.workingHours}
+                                        Working_hours={clinic.time_open}
                                         location={clinic.location}
                                         button={"Delete"}
-                                        id={clinic.id}
+                                        id={clinic.c_id}
                                     />
                                 </div>
                             )
@@ -77,8 +77,8 @@ const Choose_a_clinic_for_delete = () => {
                             return (
                                 <div key={index}>
                                     <Componets_Clinic_with_button
-                                        name_clinic={clinic.name}
-                                        Working_hours={clinic.workingHours}
+                                        name_clinic={clinic.c_name}
+                                        Working_hours={(clinic.time_open+'-'+clinic.time_close)}
                                         location={clinic.location}
                                         button={"Delete"}
                                         id={clinic.id}
