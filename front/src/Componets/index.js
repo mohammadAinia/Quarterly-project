@@ -188,6 +188,7 @@ export { default as Home_Pet_Sitting } from '../Pages/Final_Project/Pet_Sitting/
 export { default as Componets_Home_Pet_Sitting } from './Graduation/Componets_Home_Pet_Sitting/Componets_Home_Pet_Sitting'
 export { default as Add_Sitting_request } from '../Pages/Final_Project/Pet_Sitting/Add_Sitting_request/Add_Sitting_request'
 export { default as Componets_Add_Sitting_request } from './Graduation/Componets_Add_Sitting_request/Componets_Add_Sitting_request'
+export { default as Details_Pet_Sitting_request } from '../Pages/Final_Project/Pet_Sitting/Details_Pet_Sitting_request/Details_Pet_Sitting_request'
 
 
 
