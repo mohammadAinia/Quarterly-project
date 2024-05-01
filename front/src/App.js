@@ -138,7 +138,7 @@ const App = () => {
             <Route path='/Loginn/m' element={<Administrator_home />} />
             <Route path='/m' element={<Administrator_home />} />
 
-            <Route path='choose_clinic' element={<Choose_a_clinic_for_delete />} />
+            <Route path='Loginn/choose_clinic' element={<Choose_a_clinic_for_delete />} />
             <Route path='Choosing_a_doctor_clinic' element={<Componets_Clinic_To_choose />} />
             <Route path='mm' element={<Home_for_clinic_manager />} />
 

@@ -212,50 +212,56 @@ function open_proudact(req,res){
                             db.query(sql6363,[req.session.storee,id],(error,ressss)=>{
                                 if(error){console.log(error)}
                                 else{
-                                    
-                                    const v=storg_id(result,result63)
-                                    sql1='select * from dascription_p where id_ppr=?'
-                                    db.query(sql1,[result[0].id],(error,result1)=>{
-                                    if(error){console.log(error)}
-                                    else{
-                                    if(result1[0].type_addtion=='0'){
-                                        if(result[0].size_id=='0'){
-                                        res.json({result1,result,valid:true,result9,v,result651,ressss})
-                                        } 
-                                        else {
-                                            sql3='select * from option_p where proudact_id =?'
-                                            db.query(sql3,[result[0].id],(error,result3)=>{
-                                                if(error){console.log(error)}
-                                                else{  
-                                                    res.json({result651,result1,result,result3,valid:true,result9,v,ressss})
-                                                }
-                                            }) 
-                                        }
-                                    }
-                                    else {
-                                        sql23='select * from future_ui where des_id=?'
-                                        db.query(sql23,[result1[0].id_ppr],(error,result2)=>{
+                                    const vv=storg_id(result,result63)
+                                    sqll123421='SELECT * from proudact where animal_type=? and id!=?'
+                                    db.query(sqll123421,[result[0].animal_type,id],(error,v)=>{
+                                        if(error){console.log(error)}
+                                        else{
+                                            sql1='select * from dascription_p where id_ppr=?'
+                                            db.query(sql1,[result[0].id],(error,result1)=>{
                                             if(error){console.log(error)}
                                             else{
+                                            if(result1[0].type_addtion=='0'){
                                                 if(result[0].size_id=='0'){
-                                                    res.json({result651,result1,result,result2,valid:true,result9,v,ressss})
-                                                    }
-                                                    else { 
-                                                        sql32='select * from option_p where proudact_id=?'
-                                                        db.query(sql32,[result[0].id],(error,result3)=>{
-                                                            if(error){console.log(error)}
-                                                            else{
-                                                                
-                                                                res.json({result651,result9,result1,result,result2,result3,valid:true,v,ressss})
-                                                            }
-                                                        })
-                                                    } 
-                                                // res.json({result1,result,result2,valid:true})
+                                                res.json({result1,result,valid:true,result9,v,result651,ressss})
+                                                } 
+                                                else {
+                                                    sql3='select * from option_p where proudact_id =?'
+                                                    db.query(sql3,[result[0].id],(error,result3)=>{
+                                                        if(error){console.log(error)}
+                                                        else{  
+                                                            res.json({result651,result1,result,result3,valid:true,result9,v,ressss})
+                                                        }
+                                                    }) 
+                                                }
                                             }
-                                        })
-                                    }
-                                }
-                            })
+                                            else {
+                                                sql23='select * from future_ui where des_id=?'
+                                                db.query(sql23,[result1[0].id_ppr],(error,result2)=>{
+                                                    if(error){console.log(error)}
+                                                    else{
+                                                        if(result[0].size_id=='0'){
+                                                            res.json({result651,result1,result,result2,valid:true,result9,v,ressss})
+                                                            }
+                                                            else { 
+                                                                sql32='select * from option_p where proudact_id=?'
+                                                                db.query(sql32,[result[0].id],(error,result3)=>{
+                                                                    if(error){console.log(error)}
+                                                                    else{
+                                                                        
+                                                                        res.json({result651,result9,result1,result,result2,result3,valid:true,v,ressss})
+                                                                    }
+                                                                })
+                                                            } 
+                                                        // res.json({result1,result,result2,valid:true})
+                                                    }
+                                                })
+                                            }
+                                        }
+                                    })
+                                        }
+                                    })
+
                                 }
                             })
                            }
