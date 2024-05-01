@@ -20,7 +20,7 @@ const Componets_Add_Sitting_request = () => {
 
     useEffect(() => {
 
-        axios.get('http://localhost:3001/#/#', { withCredentials: true })
+        axios.get('http://localhost:3001/sitting/show_my_animals', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     setMyAnimals(res.data.result)
@@ -38,7 +38,7 @@ const Componets_Add_Sitting_request = () => {
         e.preventDefault();
 
 
-        axios.post('http://localhost:3001/#/#', Chosen_animal, Fare, DateFrom, DateTo)
+        axios.post('http://localhost:3001/sitting/add_new_animal', {Chosen_animal, Fare, DateFrom, DateTo})
             .then(res => {
                 if (res.data.valid) {
                     alert('The request has been added successfully')
@@ -67,7 +67,7 @@ const Componets_Add_Sitting_request = () => {
 
                             {MyAnimals.map((user, i) => {
                                 return (
-                                    <option key={i} value={user.name_b} >{user.name_b}</option>
+                                    <option key={i} value={user.id} >{user.name}</option>
                                 )
                             })}
                         </select>

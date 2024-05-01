@@ -22,7 +22,7 @@ const Home_Pet_Sitting = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        axios.get('http://localhost:3001/#/#', { withCredentials: true })
+        axios.get('http://localhost:3001/sitting/show_requests', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     setRequest_sitting(res.data.result);
@@ -101,11 +101,11 @@ const Home_Pet_Sitting = () => {
                                         return (
                                             <div key={index}>
                                                 <Componets_Home_Pet_Sitting
-                                                    type_animal={i.type_animal}
+                                                    type_animal={i.type}
                                                     name={i.name}
-                                                    fare={i.fare}
-                                                    from={i.from}
-                                                    to={i.to}
+                                                    fare={i.Service_price	}
+                                                    from={i.date_from}
+                                                    to={i.date_to}
                                                 />
                                             </div>
                                         )

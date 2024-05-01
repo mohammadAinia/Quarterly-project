@@ -10,6 +10,7 @@ const vet=require('./routes/vetController')
 const clinic=require('./routes/clinicR')
 const storee=require('./routes/storeR')
 const admin=require('./routes/admin')
+const sitting=require('./routes/SittingR')
 
 
 const app =express()
@@ -58,5 +59,6 @@ app.use("/vet",vet)
 app.use("/clinic",clinic)
 app.use("/storee",storee)
 app.use("/admin",admin)
+app.use("/sitting",sitting)
 
 module.exports=app;
