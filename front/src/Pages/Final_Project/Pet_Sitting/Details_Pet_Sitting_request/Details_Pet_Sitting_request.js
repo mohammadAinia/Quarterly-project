@@ -24,7 +24,7 @@ const Details_Pet_Sitting_request = () => {
 
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/#/#/${id}`, { withCredentials: true })
+        axios.get(`http://localhost:3001/sitting//${id}`, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     setRequest_sitting_Info(res.data.result);

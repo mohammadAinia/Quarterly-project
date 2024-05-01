@@ -83,11 +83,11 @@ const Home_Pet_Sitting = () => {
                                         return (
                                             <div key={index}>
                                                 <Componets_Home_Pet_Sitting
-                                                    type_animal={i.type_animal}
+                                                    type_animal={i.type}
                                                     name={i.name}
-                                                    fare={i.fare}
-                                                    from={i.from}
-                                                    to={i.to}
+                                                    fare={i.Service_price}
+                                                    from={i.date_from}
+                                                    to={i.date_to}
                                                 />
                                             </div>
                                         )
