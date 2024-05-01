@@ -91,6 +91,31 @@
     letter-spacing: 0;
     line-height: normal;
 }
+.animal-sitting .fixed-button {
+    position: absolute;
+    top: 1652px; /* Adjust this value as needed */
+    left: calc(659px + 749px + 20px); /* Adjust this value as needed */
+    background-color: #00D7E9;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    font-size: 30px;
+    cursor: pointer;
+    font-size: 30px;
+    display: flex; /* Add flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+    transition: transform 0.7s ease, box-shadow 0.3s ease; /* Add transition effect for box-shadow */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);}
+.animal-sitting .fixed-button:hover {
+    transform: scale(1.1); /* Scale up slightly on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background-color: #ffbd35;
+
+
+}
 
 .animal-sitting .text-wrapper-2 {
     position: absolute;
@@ -371,3 +396,4 @@
     background-color: #4e77b7;
     border-radius: 14px;
 }
+

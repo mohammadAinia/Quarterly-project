@@ -71,6 +71,8 @@ const Home_Pet_Sitting = () => {
                         </div>
                         {/* قسم عرض طلبات المجالسة */}
                         <div class="text-wrapper-2">sitting requests</div>
+                        <a href='Add_Sitting_request' class="fixed-button"><FontAwesomeIcon icon={faPlus} /></a>
+
                         <div class="card-madical">
                             <div class="store2">
 
