@@ -263,6 +263,12 @@
     left: 483px;
     background-color: #ffbd35;
     border-radius: 14px;
+    border: none; /* Remove default button border */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s; 
+}
+.details-animal .frame:hover {
+    background-color: #ffa500; /* Change background color on hover */
 }
 
 .details-animal .text-wrapper-12 {
