@@ -88,6 +88,7 @@ const Home_Pet_Sitting = () => {
                                                     fare={i.Service_price}
                                                     from={i.date_from}
                                                     to={i.date_to}
+                                                    href={`Details_Pet_Sitting_request/${i.id}`}
                                                 />
                                             </div>
                                         )
@@ -106,6 +107,7 @@ const Home_Pet_Sitting = () => {
                                                     fare={i.Service_price	}
                                                     from={i.date_from}
                                                     to={i.date_to}
+                                                    href={`Details_Pet_Sitting_request/${i.id}`}
                                                 />
                                             </div>
                                         )
@@ -119,6 +121,7 @@ const Home_Pet_Sitting = () => {
                                     fare={50}
                                     from={"2024/4/30"}
                                     to={"2024/5/15"}
+                                    href={`Details_Pet_Sitting_request/${5}`}
                                 />
 
                             </div>
