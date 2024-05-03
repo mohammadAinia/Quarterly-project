@@ -13,7 +13,7 @@ const Search_result2 = () => {
 
   useEffect(() => {
 
-    axios.post(`http://localhost:3001/co_problim/search`,{Type})
+    axios.post(`http://localhost:3001/co_problim/search`, { Type })
       .then(res => {
         if (res.data.valid) {
           setInfo(res.data.result)
@@ -27,7 +27,7 @@ const Search_result2 = () => {
     <>
       <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"FAQs"} href3={"/Animal_infoo"} a3={"My Animals"} href4={"/All_problem"} a4={"Forum"} href6={"/Notifications"} a6={<FontAwesomeIcon icon={faBell} />} href7={"/profile"} a7={<div id="login-btn" className="fas fa-user"></div>} href8={"/"} a8={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
 
-      <section className="pricing" id="pricing" style={{ "margin-top": "300px" }}>
+      <section className="pricing" id="pricing" style={{ "margin-top": "00px" }}>
 
         <h2 className="heading" style={{ "margin-left": "100px" }}>FAQs</h2>
         <div className="box-container" style={{ "width": "600px" }}>
@@ -35,8 +35,18 @@ const Search_result2 = () => {
             return (
               <div key={d}>
 
-                <Common_proplem type={i.animal_type} name={i.title} detals={i.disc} />
-
+                <>
+                  <div className="box-containerr2">
+                    <div className="box">
+                      <h2 style={{ "font-size": "24px" }}>{i.animal_type}</h2>
+                      <br />
+                      <h2>{i.title}</h2>
+                      <br />
+                      <p style={{ "font-size": "15px" }}>{i.disc}</p>
+                      {/* <h4 className="price"><a href="/#">{props.a}</a></h4> */}
+                    </div>
+                  </div>
+                </>
               </div>
             )
           })}

@@ -13,7 +13,7 @@
 .containet .left_side
 {
     position: relative;
-    background: #ff6e01;
+    background: #FFC55A;
     padding: 40px;
 }
 .profiletext
@@ -142,7 +142,7 @@
 }
 .title2:hover
 {
-    color: #ff6e01;
+    color: #FFC55A;
 }
 p
 {
@@ -176,7 +176,7 @@ p
 }
 .skils .box .nameSkils h4:hover
 {
-    color: #ff6e01;
+    color: #FFC55A;
 }
 .skils .box .nameSkils p
 {
