@@ -15,8 +15,15 @@ const Your_animal = () => {
 
     const Request_adopt = async (id) => {
         try {
-            await axios.post('http://localhost:3001/adopt/add_to_ad_list/' + id, { withCredentials: true })
-            alert("Added to adoption list")
+            await axios.post(`http://localhost:3001/adopt/add_to_ad_list/${id}`, { withCredentials: true })
+            .then(res=>{
+                if (res.data.check===true){alert("Added to adoption list")}
+else if (res.data.check===false){
+    alert('this animal alredy added to list')
+}
+            })
+            .catch(err => { console.log(err) })
+            
         }
         catch (err) { console.log(err) }
     }

@@ -3,10 +3,11 @@ const db=require("../dbb/db")
 const add_to_adlist_id=(req,res)=>{
     const animal_id =req.params.id
     const user= req.session.username
-    var check='select * from adoprion where animal_id =?'
+    var check='select * from adoption where id_animal =?'
     var sql1='select * from animals where id=?'
 db.query(check,[animal_id],(error,resss)=>{
-    if (resss.length==0){
+if(error){console.log(error)}
+     else if (resss.length==0){
         db.query(sql1,[animal_id],(err,result2)=>{
             if(err)console.log(err)
             console.log(result2[0].owner)
@@ -15,13 +16,13 @@ db.query(check,[animal_id],(error,resss)=>{
             var sql= "insert into adoption (id_animal,current_owner,requester,status_id,shared_at) values ('" + animal_id + "','" + result2[0].owner + "','" + "" + "','" + 0 + "','" + datee + "')"
             db.query(sql,(err,result)=>{
                 if(err){console.log(err+"err here is adoption")}
-                res.json(result)
-            })
+                res.json({result,check:true})
+            }) 
     
         })
     }
     else {
-        res.json(chack)
+        res.json({check:false})
 
     }
 })
