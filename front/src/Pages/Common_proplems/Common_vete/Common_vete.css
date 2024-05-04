@@ -1,0 +1,43 @@
+.pricingg2 .box-containerr2 {
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    /* Adjust to place four items per row */
+    gap: 10px;
+  }
+  
+  .pricingg2 .box-containerr2 .boxx2 {
+    background: var(--bg);
+    padding: 50px;
+    text-align: center;
+    border-radius: 79% 51% 81% 19% / 58% 93% 7% 42%;
+    width: 550px;
+    margin: 7px;
+  }
+  
+  .pricingg2 .box-containerr2 .boxx2:hover {  
+    border-radius: .5rem;
+  }
+  
+  .pricingg2 .box-containerr2 .boxx2 img {
+    height: 15.5rem;
+    width: 15.5rem;
+    margin-bottom: .5rem;
+  }
+  
+  .pricingg2 .box-containerr2 .boxx2 h3 {
+    font-size: 2.6rem;
+    color: var(--black);
+    padding: 1rem 0;
+  }
+  
+  .pricingg2 .box-containerr2 .boxx2 .price {
+    font-size: 2.2rem;
+    color: var(--main);
+    padding: .5rem 0;
+  }
+  
+  .pricingg2 .box-containerr2 .boxx2 p {
+    font-size: 1.5rem;
+    color: var(--black);
+    padding: .5rem 0;
+  }

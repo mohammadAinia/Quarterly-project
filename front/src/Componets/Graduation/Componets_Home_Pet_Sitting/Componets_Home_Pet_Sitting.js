@@ -13,7 +13,7 @@ const Componets_Home_Pet_Sitting = (props) => {
                 <div class="text-wrapper-6">From : {props.from}</div>
                 <div class="text-wrapper-7">To : {props.to}</div>
                 <div class="rectangle-2"></div>
-                <a href='Details_Pet_Sitting_request' class="frame"><div class="text-wrapper-8">Details</div></a >
+                <a href={props.href} class="frame"><div class="text-wrapper-8">Details</div></a >
             </div>
         </>
     )

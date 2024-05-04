@@ -29,7 +29,7 @@ const FAQs = () => {
     return (
         <>
             <Header href1={"/Animal"} a1={"About Pets"} href3={"FAQs"} a3={"FAQs"} log={'/Loginn'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightToBracket} /></div>} />
-            <section className="pricing" id="pricing" style={{ "margin-top": "4500px" }}>
+            <section className="pricing" id="pricing" style={{ "margin-top": "00px" }}>
 
                 <h2 className="heading" style={{ "margin-left": "100px" }}>FAQs</h2>
 

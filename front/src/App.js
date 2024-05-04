@@ -21,7 +21,9 @@ import {
   Edit_doctor_shift, Edit_doctor_shift_time, Appointment_clinic_director, My_appointments, Add_information_to_clinic,
   Edit_information_to_clinic, Loading_page, Report, Modifying_clinic_working_hours, My_appointments_vet,
   Diagnosis,Store,Choose_Product ,Product_Assortment,Add_product_store,Shop_By_Pet,Add_category,Cart,Checkout,
-  Add_Brand,Add_balance,Product_Assortment_copy,Home_Pet_Sitting,Add_Sitting_request,Details_Pet_Sitting_request
+  Add_Brand,Add_balance,Product_Assortment_copy,Home_Pet_Sitting,Add_Sitting_request,Details_Pet_Sitting_request,
+  Change_website_ads,
+
 
 } from './Componets/index'
 
@@ -180,7 +182,8 @@ const App = () => {
             <Route path='cart/cart' element={<Cart />} />
             <Route path='Pet_Sitting' element={<Home_Pet_Sitting />} />
             <Route path='Add_Sitting_request' element={<Add_Sitting_request />} />
-            <Route path='Details_Pet_Sitting_request' element={<Details_Pet_Sitting_request />} />
+            <Route path='Details_Pet_Sitting_request/:id' element={<Details_Pet_Sitting_request />} />
+            <Route path='Change_website_ads' element={<Change_website_ads />} />
 
 
             

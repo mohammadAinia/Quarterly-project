@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { Header } from '../../../Componets'
 import { useNavigate, useParams } from 'react-router-dom'
+import Swal from 'sweetalert2';
 
 const Componets_Add_category = () => {
 

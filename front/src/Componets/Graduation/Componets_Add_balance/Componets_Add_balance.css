@@ -1,0 +1,33 @@
+.enlarged-alert-container {
+    background: transparent !important;
+}
+
+.enlarged-alert-popup {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -90%) !important;
+}
+
+.enlarged-alert-title {
+    font-size: 24px !important;
+    color: #333 !important;
+}
+
+.enlarged-alert-html-container {
+    font-size: 18px !important;
+    color: #555 !important;
+}
+
+.enlarged-alert-confirm-button {
+    font-size: 18px !important;
+    color: #fff !important;
+    background-color: #007bff !important;
+    border-color: #007bff !important;
+    box-shadow: none !important;
+}
+
+.enlarged-alert-confirm-button:hover {
+    background-color: #0056b3 !important;
+    border-color: #0056b3 !important;
+}

@@ -3,6 +3,8 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { Header } from '../../../Componets'
 import { useNavigate, useParams } from 'react-router-dom'
+import Swal from 'sweetalert2';
+
 
 const Componets_Add_Brand = () => {
     const navigate = useNavigate();
@@ -28,8 +30,24 @@ const Componets_Add_Brand = () => {
         axios.post('http://localhost:3001/admin/add_new_b', formData)
             .then(res => {
                 if (res.data.valid) {
-                    alert('The brand has been successfully added to the store')
+                    // alert('The brand has been successfully added to the store')
                     navigate(-1)
+                    Swal.fire({
+                        title: "Good job!",
+                        text: "The brand has been successfully added to the store",
+                        icon: "success",
+                        customClass: {
+                            container: 'enlarged-alert-container',
+                            popup: 'enlarged-alert-popup',
+                            title: 'enlarged-alert-title',
+                            htmlContainer: 'enlarged-alert-html-container',
+                            confirmButton: 'enlarged-alert-confirm-button',
+                        },
+                        position: 'center',
+                        backdrop: false,
+                    }).then(() => {
+                        navigate(-1);
+                    });
 
                 }
             })

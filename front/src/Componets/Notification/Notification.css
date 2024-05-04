@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   font-weight: 800;
-  color: #ff6e01;
+  color: #FFB400;
   font-size: 45px;
   margin-bottom: 30px;
 }
@@ -30,7 +30,7 @@
 }
 
 .icons {
-  color: #ff6e01;
+  color: #FFB400;
   font-size: 35px;
   text-align: center;
 }
@@ -40,7 +40,7 @@
 }
 
 .info h3 {
-  color: #ff6e01;
+  color: #FFB400;
   font-size: 20px;
   font-weight: 700;
   margin: 10px;
