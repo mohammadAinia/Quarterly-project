@@ -10,42 +10,49 @@ function new_arrivle(req,res){
     }else {
         req.session.storee="guste"
     }
-
-    sql='SELECT * FROM `proudact` WHERE DATEDIFF(CURRENT_DATE(),proudact.date_added)<10'
-    db.query(sql,(error,result)=>{
-        if(error){console.log(error)} 
-        else{
-            sql='select * from category_t where by_animal=?'
-    db.query(sql,[0],(error,result2)=>{
-        if(error){console.log(error)} 
-        else{
-
-            sqlll='select * from brands'
-            db.query(sqlll,(error,result3)=>{
-                if(error){console.log(error)}
-                else{
-                    sql12345432='SELECT * from proudact ORDER by star_count DESC;'
-                    db.query(sql12345432,(error,result4)=>{
-                        if(error){console.log(error)}
-                        else{
-                            sql876554='select * from proudact where id in (SELECT pt_id FROM cart WHERE chack_ = 1 GROUP BY pt_id HAVING COUNT(*) > 1 ORDER BY COUNT(*) DESC ) '
-                            db.query(sql876554,(error,result5)=>{
-                                if(error){console.log(error)}
-                                else{
-                                    res.json({valid:true,result,result2,result3,result4,result5})
-                                }
-                            })
-                        }
-                    })
-                   
-                }
-            })
-        }
-    })
-            
-            
-        }
-    })
+    ////////////////////////////////////////////////////
+sqll1212121='SELECT * FROM ads WHERE wheere=? ORDER by ads_id DESC LIMIT 8'
+db.query(sqll1212121,['store'],(error,resimage)=>{
+    if(error){console.log(error)}
+    else{
+        sql='SELECT * FROM `proudact` WHERE DATEDIFF(CURRENT_DATE(),proudact.date_added)<10'
+        db.query(sql,(error,result)=>{
+            if(error){console.log(error)} 
+            else{
+                sql='select * from category_t where by_animal=?'
+        db.query(sql,[0],(error,result2)=>{
+            if(error){console.log(error)} 
+            else{
+    
+                sqlll='select * from brands'
+                db.query(sqlll,(error,result3)=>{
+                    if(error){console.log(error)}
+                    else{
+                        sql12345432='SELECT * from proudact ORDER by star_count DESC;'
+                        db.query(sql12345432,(error,result4)=>{
+                            if(error){console.log(error)}
+                            else{
+                                sql876554='select * from proudact where id in (SELECT pt_id FROM cart WHERE chack_ = 1 GROUP BY pt_id HAVING COUNT(*) > 1 ORDER BY COUNT(*) DESC ) '
+                                db.query(sql876554,(error,result5)=>{
+                                    if(error){console.log(error)}
+                                    else{
+                                        res.json({valid:true,result,result2,result3,result4,result5,resimage})
+                                    }
+                                })
+                            }
+                        })
+                       
+                    }
+                })
+            }
+        })
+                
+                
+            }
+        })
+    
+    }
+})
 
 }
 
@@ -666,13 +673,30 @@ function add_new_address(req,res){
     })
 }
 function add_to_wallet(req,res){
-    sql='update wallet set charge_w=charge_w+? where w_owner=?'
-    db.query(sql,[req.body.balance,req.session.admin],(error,result)=>{
+    sql1='select * from wallet where w_owner=?'
+    db.query(sql1,[req.session.username],(error,result1)=>{
+        if(error){console.log(error)}
+        else if (result1.length!=0){
+            sql='update wallet set charge_w=charge_w+? where w_owner=?'
+    db.query(sql,[req.body.balance,req.session.username],(error,result)=>{
         if(error){console.log(error)}
         else{
             res.json({valid:true,result})
         }
     })
+        }
+        else {
+            sql2="insert into wallet (charge_w,w_password,w_owner) values ('"+req.body.balance+"','"+'0000'+"','"+req.session.username+"')"
+            db.query(sql2,(error,result)=>{
+                if(error){console.log(error)}
+                else{
+                    res.json({valid:true,result})
+                    
+                }
+            })
+        }
+    })
+    
 }
 function set_data (req,res){
     sqql='select * from brands '

@@ -235,7 +235,14 @@ const home_owner=(req,res) => {
                         db.query(sql,(err,resulttt)=>{
                             if (err) console.log(err)
                             else{
-                                return res.json({valid:true,username:resp.first_name,result,resultt,resulttt,resultttt:"you have new notifications"}) 
+                                 ss='SELECT * FROM ads WHERE wheere=? ORDER by ads_id DESC LIMIT 3'
+                                 db.query(ss,['home'],(error,resultada)=>{
+                                    if(error){console.log(error)}
+                                    else{
+                                        return res.json({valid:true,username:resp.first_name,result,resultt,resulttt,resultttt:"you have new notifications",resultada}) 
+
+                                    }
+                                })
                         }
                         })
                 }})

@@ -71,7 +71,7 @@ const Home_owner = () => {
 
   //   return () => clearInterval(intervalId);
   // }, []);
-  const advertisementImages = Adv ? Adv.map(ad => ad.imageURL) : [];
+  const advertisementImages = Adv ? Adv.map(ad => ad.photo_url) : [];
 
   useEffect(() => {
     if (Adv) {
@@ -110,7 +110,8 @@ const Home_owner = () => {
           setProblim_info(res.data.resultt)
           setAdvice(res.data.resulttt)
           setIsnotefi(res.data.resultttt)
-          setAdv(res.data.resulttttt)
+          setAdv(res.data.resultada)
+          // alert(res.data.resultada[0].photo_url) جرب هاد شغال لتعرف شو االوضع من هون😂😂😂
 
         }
         else {

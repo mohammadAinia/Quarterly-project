@@ -500,11 +500,11 @@ function add_de (req,res){
         if(error){console.log(error)}
         else{
             sql='update booking set check_=? where id_b=?'
-            db.query(sql,[id,1],(error,result)=>{
+            db.query(sql,[1,id],(error,result)=>{
                 if(error){console.log(error)}
                 else{
                     res.json({valid:true,result})
-                    
+                     
                 }  
             })  
         } 

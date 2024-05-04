@@ -7,7 +7,7 @@ const admin=require("../controller/admin")
 const imageUploader = require('../helper/image_uploader')
 
 function Add_product_store(req,res){
-
+if(req.session.adminstritor){
     var d=new Date()
     var datee = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
     sql="insert proudact (price,animal_type,count_avilable,store_in_name,brand,ingredients,detalies_id,short_name,category,date_added,image_url) VALUES ('"+req.body.price1 +"','"+ req.body.typeAnimal+"','"+ req.body.quantity1+"','"+ req.body.brand+"','"+ req.body.brand+"','"+ req.body.ingredients+"','"+ show_max()+"','"+ req.body.shortDesc+"','"+req.body.category +"','"+datee +"','"+ req.files[0].filename+"')"
@@ -67,9 +67,14 @@ function Add_product_store(req,res){
         }
     })
 }
+else {
+    res.json({valid:false})
+}
+}
 
 function show_max(){ 
-    
+    if(req.session.adminstritor){
+
     sql='select max(detalies_id) as p from proudact'
     db.query(sql,(error,result)=>{
         if(error){console.log(error)}
@@ -78,7 +83,13 @@ function show_max(){
         }
     })
 }
+else {
+    res.json({valid:false})
+}
+}
 function add_new_category(req,res){
+    if(req.session.adminstritor){
+
     sql="insert into category_t (categ,animal_type,prod_type,url_image) values ('"+ +"')"
     db.query(sql,(error,result)=>{
         if(error){console.log(error)}
@@ -86,6 +97,10 @@ function add_new_category(req,res){
             res.json({valid:true,result})
         }
     })
+}
+else {
+    res.json({valid:false})
+}
 }
 function add_category(req,res){
     if(req.session.adminstritor){
@@ -102,6 +117,8 @@ else {            res.json({valid:false})
 }
 
 function show_c(req,res){
+    if(req.session.adminstritor){
+
     sql='select  DISTINCT prod_type from category_t'
     db.query(sql,(error,result)=>{
         if(error){console.log(error)}
@@ -110,6 +127,10 @@ function show_c(req,res){
             console.log("doneeee")
         }
     })
+}
+else {
+    res.json({valid:false})
+}
 }
 function add_new_brand(req,res){
     if (req.session.adminstritor){
@@ -140,11 +161,53 @@ function get_all_brand(req,res){
             })
         }
     })
+} 
+function add_adds(req,res){
+    if(req.session.adminstritor){
+
+    // console.log( req.files['onestore'][0])//
+    // console.log( req.files['towstore'][0])
+    // console.log( req.files['threestore'][0])
+    // console.log( req.files['fourstore'][0])
+    // console.log( req.files['fivestore'][0])
+    // console.log( req.files['sixstore'][0])
+    // console.log( req.files['sevenstore'][0].filename)
+    // console.log( req.files['eightstore'][0])
+    num_of_photo=['onestore','towstore','threestore','fourstore','fivestore','sixstore','sevenstore','eightstore']
+    for (let i = 0; i < num_of_photo.length; i++) {
+        var c=num_of_photo[i];
+        // console.log(typeof(num_of_photo[i]))
+        // sql='update ads set photo_url=? where specfix_palce=? and wheere=?'
+        sql="insert into ads (photo_url,wheere,specfix_palce)  values ('"+req.files[num_of_photo[i]][0].filename+"','"+"store"+"','"+(i+1)+"')"
+        db.query(sql,(error,result)=>{
+            if(error){console.log(error)}
+            else{
+                
+                console.log("doneeee")
+            }
+        })
+        
+    }
+    // console.log(req.files['monfichier'].length)
+    for (let i = 0; i <req.files['monfichier'].length ; i++) {
+        // sql='update ads set photo_url=? where specfix_palce=? and wheere=?'
+        sql="insert into ads (photo_url,wheere,specfix_palce)  values ('"+req.files['monfichier'][i].filename+"','"+"home"+"','"+(i+1)+"')"
+        db.query(sql,(error,result)=>{
+            if(error){console.log(error)}
+        })
+    }
+    
+    res.json({valid:true})
+}
+else {
+    res.json({valid:false})
+}
 }
 module.exports={
     Add_product_store,
     add_category,
     show_c,
     add_new_brand,
-    get_all_brand
+    get_all_brand,
+    add_adds
 }
