@@ -3,7 +3,7 @@ const models=require("../models");
 const bcryptjs=require("bcryptjs");
 const db=require("../dbb/db")
 function show_my_animals(req,res){
-    sql='SELECT * from animals where id not in (select animal_id from sitting ) and owner=?'
+    sql='SELECT * from animals where id not in (select animal_id from sitting where date_to< CURRENT_DATE ) and owner=?'
     db.query(sql,[req.session.username],(error,result)=>{
         if(error){console.log(error)}
         else{
@@ -34,10 +34,24 @@ function add_new_req(req,res){
         }
     })
 }
-
+function show_det_req(req,res){
+    id=req.params.id
+    sql='SELECT * from animals join user_infos on user_infos.email=animals.owner join health_records on health_records.animal_id=animals.id join sitting on sitting.animal_id=animals.id where sitting.si_id=?'
+    db.query(sql,[1],(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            res.json({valid:true,result})
+            
+        }
+    })
+}
+function check_req(req,res){
+    
+}
 
 module.exports={
     show_all_request,
     show_my_animals,
-    add_new_req
+    add_new_req,
+    show_det_req
 }

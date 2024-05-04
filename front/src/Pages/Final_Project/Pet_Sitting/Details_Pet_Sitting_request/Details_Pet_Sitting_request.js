@@ -24,7 +24,7 @@ const Details_Pet_Sitting_request = () => {
 
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/sitting//${id}`, { withCredentials: true })
+        axios.get(`http://localhost:3001/sitting/show_det/${id}`, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     setRequest_sitting_Info(res.data.result);
@@ -68,23 +68,23 @@ const Details_Pet_Sitting_request = () => {
                                 Request_sitting_Info.map((user, i) => (
                                     <>
                                         <div class="text-wrapper">Animal details</div>
-                                        <img class="ellipse" src={`http://localhost:3001/uploads/${user.image_url}`} />
-                                        <div class="text-wrapper-3">Name : {user.name_animal}</div>
-                                        <div class="text-wrapper-5">Age : {user.age_animal}</div>
-                                        <div class="text-wrapper-7">Place : {user.place_animal}</div>
-                                        <div class="text-wrapper-9">Gender : {user.gender_animal}</div>
-                                        <div class="text-wrapper-10">weight : {user.weight_animal}</div>
-                                        <div class="text-wrapper-11">Health : {user.health_animal}</div>
+                                        <img class="ellipse" src={`http://localhost:3001/uploads/${user.urlImage}`} />
+                                        <div class="text-wrapper-3">Name : {user.name}</div>
+                                        <div class="text-wrapper-5">Age : {user.age.substring(0,10)}</div>
+                                        <div class="text-wrapper-7">Place : {user.place}</div>
+                                        <div class="text-wrapper-9">Gender : {user.gender}</div>
+                                        <div class="text-wrapper-10">weight : {user.weight}</div>
+                                        <div class="text-wrapper-11">Health : {user.health_stats}</div>
 
                                         {/* معلومات المالك */}
                                         <div class="text-wrapper-2">Owner details</div>
-                                        <div class="text-wrapper-4">Name : {user.name_owner}</div>
-                                        <div class="text-wrapper-6">Email : {user.email_owner}</div>
-                                        <div class="text-wrapper-8">Phone : {user.phone_owner}</div>
+                                        <div class="text-wrapper-4">Name : {user.first_name+' '+user.last_name}</div>
+                                        <div class="text-wrapper-6">Email : {user.email}</div>
+                                        <div class="text-wrapper-8">Phone : {user.phone}</div>
 
-                                        <div class="text-wrapper-13">Fare : {user.fare}$</div>
-                                        <div class="text-wrapper-14">From : {user.from}</div>
-                                        <div class="text-wrapper-15">To : {user.to}</div>
+                                        <div class="text-wrapper-13">Fare : {user.Service_price}$</div>
+                                        <div class="text-wrapper-14">From : {user.date_from}</div>
+                                        <div class="text-wrapper-15">To : {user.date_to}</div>
                                     </>
                                 ))
                             }
