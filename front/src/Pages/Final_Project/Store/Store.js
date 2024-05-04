@@ -73,6 +73,18 @@ const Store = () => {
     const [Brands, setBrands] = useState([])
     const [Trend, setTrend] = useState([])
 
+    //خاص للاعلانات
+    const [One, setOne] = useState('')
+    const [Two, setTwo] = useState('')
+    const [Three, setThree] = useState('')
+    const [Four, setFour] = useState('')
+    const [Five, setFive] = useState('')
+    const [Six, setSix] = useState('')
+    const [Seven, setSeven] = useState('')
+    const [Eight, setEight] = useState('')
+
+
+
 
 
 
@@ -92,6 +104,18 @@ const Store = () => {
                     setTop_Rated(res.data.result4)
                     // setTrend(res.data.result4)
                     setBest_Sellers(res.data.result5)
+
+                    //جلب الاعلانات
+                    setOne(res.data.resultAdvOne)
+                    setTwo(res.data.resultAdvTwo)
+                    setThree(res.data.resultAdvThree)
+                    setFour(res.data.resultAdvFour)
+                    setFive(res.data.resultAdvFive)
+                    setSix(res.data.resultAdvSix)
+                    setSeven(res.data.resultAdvSeven)
+                    setEight(res.data.resultAdvEight)
+
+
                 }
                 else {
                     navigate('/login')
@@ -264,12 +288,22 @@ const Store = () => {
                     </div>
 
                     {/* *********************************************************************************88 */}
+                    {/* اعلانات المتجر */}
 
-                    <img class="rectangle-2" src={store_Rectangle_116} />
+                    {/* <img class="rectangle-2" src={store_Rectangle_116} />
                     <img class="rectangle-3" src={store_Rectangle_117} />
                     <img class="rectangle-4" src={store_Rectangle_119} />
                     <img class="rectangle-5" src={store_Rectangle_118} />
-                    <img class="rectangle-6" src={store_Rectangle_120} />
+                    <img class="rectangle-6" src={store_Rectangle_120} /> */}
+                    <img class="rectangle-2" alt='The ad is not available' src={`http://localhost:3001/uploads/${One}`} />
+                    <img class="rectangle-3" alt='The ad is not available' src={`http://localhost:3001/uploads/${Two}`} />
+                    <img class="rectangle-5" alt='The ad is not available' src={`http://localhost:3001/uploads/${Three}`} />
+                    <img class="rectangle-4" alt='The ad is not available' src={`http://localhost:3001/uploads/${Four}`} />
+                    <img class="rectangle-6" alt='The ad is not available' src={`http://localhost:3001/uploads/${Five}`} />
+                    
+                    <img class="rectangle-7" alt='The ad is not available' src={`http://localhost:3001/uploads/${Six}`} />
+                    <img class="rectangle-8" alt='The ad is not available' src={`http://localhost:3001/uploads/${Seven}`} />
+                    <img class="rectangle-9" alt='The ad is not available' src={`http://localhost:3001/uploads/${Eight}`} />
 
 
                     {/* ********************************************************************************************* */}
@@ -321,9 +355,6 @@ const Store = () => {
 
 
 
-                    <img class="rectangle-7" src={store_Rectangle_136} />
-                    <img class="rectangle-8" src={store_Rectangle_137} />
-                    <img class="rectangle-9" src={store_Rectangle_138} />
 
                     {/* الاسهم خاصة بالمنتجات الواصلة جديد */}
                     <img className="vector-3" src={store_Vector_60} onClick={scrollRight} />

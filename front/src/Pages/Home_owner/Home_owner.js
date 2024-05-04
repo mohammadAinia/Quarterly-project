@@ -47,25 +47,54 @@ const Home_owner = () => {
   const [Problim_info, setProblim_info] = useState([])
   const [Advice, setAdvice] = useState([])
   const [Isnotefi, setIsnotefi] = useState('')
+  const [Adv, setAdv] = useState([])
+
 
   const ads = [one, two, three, four, five, six, seven, eight, nine];
 
-  const [backgroundImages, setBackgroundImages] = useState([
-    (cat_day),
-    (adv2),
-    // Add more background images as needed
-  ]);
+  // const [backgroundImages, setBackgroundImages] = useState([
+  //   (cat_day),
+  //   (adv2),
+  //   // Add more background images as needed
+  // ]);
+  const [backgroundImages, setBackgroundImages] = useState([]);
+
   const [currentBackgroundIndex, setCurrentBackgroundIndex] = useState(0);
+  const [currentAdIndex, setCurrentAdIndex] = useState(0);
+
+  // useEffect(() => {
+  //   const intervalId = setInterval(() => {
+  //     setCurrentBackgroundIndex(prevIndex =>
+  //       prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
+  //     );
+  //   }, 3000);
+
+  //   return () => clearInterval(intervalId);
+  // }, []);
+  const advertisementImages = Adv ? Adv.map(ad => ad.imageURL) : [];
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentBackgroundIndex(prevIndex =>
-        prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 3000);
-
-    return () => clearInterval(intervalId);
-  }, []);
+    if (Adv) {
+      // Set the advertisement images from Adv
+      setBackgroundImages(advertisementImages);
+  
+      // Update the current ad index
+      setCurrentAdIndex(0);
+  
+      // Clear interval to reset timer when Adv changes
+      let intervalId = null; // Declare intervalId here
+  
+      // Start the interval with the new advertisement images
+      intervalId = setInterval(() => {
+        setCurrentAdIndex(prevIndex =>
+          prevIndex === advertisementImages.length - 1 ? 0 : prevIndex + 1
+        );
+      }, 3000);
+  
+      // Clean up function to clear the interval when component unmounts
+      return () => clearInterval(intervalId);
+    }
+  }, [Adv, advertisementImages]);
 
 
 
@@ -81,6 +110,8 @@ const Home_owner = () => {
           setProblim_info(res.data.resultt)
           setAdvice(res.data.resulttt)
           setIsnotefi(res.data.resultttt)
+          setAdv(res.data.resulttttt)
+
         }
         else {
           navigate('/login')
@@ -108,7 +139,7 @@ const Home_owner = () => {
 
       <div class="framee2">
         <div class="overlap-group-wrapperr2">
-          <div class="overlap-groupp2" style={{ backgroundImage: `url(${backgroundImages[currentBackgroundIndex]})` }}>
+          <div class="overlap-groupp2" style={{ backgroundImage: `http://localhost:3001/uploads/(${advertisementImages[currentAdIndex]})` }}>
             <img class="imgg2" src={left} onClick={handleLeftClick} />
             <img class="imgg-22" src={rightt} onClick={handleRightClick} />
           </div>
@@ -303,7 +334,7 @@ const Home_owner = () => {
               <div class="ellipse-26"></div>
               <div class="ellipse-27"></div>
               <div class="ellipse-28"></div>
-{/* 
+              {/* 
               <div class="rectanglee"></div>
               <img class="vector-66" src={advstoreVector_59} />
               <img class="vector-77" src={advstoreVector_58} />
@@ -362,7 +393,7 @@ const Home_owner = () => {
           <img class="polygon-8" src={advstorePolygon_7} />
           <img class="polygon-9" src={advstorePolygon_8} />
           <div class="overlap-7">
-            <img class="vector-8" src={advstoreeVector_56} /> <img class="vector-9" src={advstoreeVector_57}/>
+            <img class="vector-8" src={advstoreeVector_56} /> <img class="vector-9" src={advstoreeVector_57} />
           </div>
           <div class="shopping-online">Shopping<br />Online</div>
           <div class="div-wrapper"><a href='store' class="text-wrapper">Shop now</a></div>
