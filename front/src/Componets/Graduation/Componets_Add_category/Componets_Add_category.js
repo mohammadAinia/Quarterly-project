@@ -4,22 +4,7 @@ import { useState, useEffect } from 'react'
 import { Header } from '../../../Componets'
 import { useNavigate, useParams } from 'react-router-dom'
 import Swal from 'sweetalert2';
-Swal.fire({
-    title: "Good job!",
-    text: "The balance has been added successfully",
-    icon: "success",
-    customClass: {
-        container: 'enlarged-alert-container',
-        popup: 'enlarged-alert-popup',
-        title: 'enlarged-alert-title',
-        htmlContainer: 'enlarged-alert-html-container',
-        confirmButton: 'enlarged-alert-confirm-button',
-    },
-    position: 'center',
-    backdrop: false,
-}).then(() => {
-    navigate('/store');
-});
+
 const Componets_Add_category = () => {
 
     const [CategoryFromBackEnd, setCategoryFromBackEnd] = useState([])
