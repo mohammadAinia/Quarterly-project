@@ -24,7 +24,7 @@ db.query(sqll1212121,['store'],(error,resimage)=>{
             if(error){console.log(error)} 
             else{
     
-                sqlll='select * from brands'
+                sqlll='select * from brands LIMIT 10'
                 db.query(sqlll,(error,result3)=>{
                     if(error){console.log(error)}
                     else{
