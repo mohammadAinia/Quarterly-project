@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import { Header } from '../../../Componets'
 import { useNavigate, useParams } from 'react-router-dom'
+import Swal from 'sweetalert2';
 
 
 const Componets_Add_doctor_shift_time = () => {
@@ -45,8 +46,24 @@ const Componets_Add_doctor_shift_time = () => {
             axios.post(`http://localhost:3001/clinic/add_shift/${id}`, {All_Day_From, All_Day_To},{ withCredentials: true })
                 .then(res => {
                     if (res.data.valid) {
-                        alert('the time shift was added ')
-                        navigate(-1)
+                        // alert('the time shift was added ')
+                        // navigate(-1)
+                        Swal.fire({
+                            title: "Good job!",
+                            text: "the time shift was added",
+                            icon: "success",
+                            customClass: {
+                                container: 'enlarged-alert-container',
+                                popup: 'enlarged-alert-popup',
+                                title: 'enlarged-alert-title',
+                                htmlContainer: 'enlarged-alert-html-container',
+                                confirmButton: 'enlarged-alert-confirm-button',
+                            },
+                            position: 'center',
+                            backdrop: false,
+                        }).then(() => {
+                            navigate(-1);
+                        });
                     }
                 })
                 .catch(err => alert(err))

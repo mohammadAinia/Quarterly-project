@@ -4,6 +4,8 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { Header } from '../../../Componets'
 import { useNavigate, useParams } from 'react-router-dom'
+import Swal from 'sweetalert2';
+
 
 const Componets_Add_product_store = () => {
 
@@ -89,7 +91,7 @@ const Componets_Add_product_store = () => {
         }
 
         formData.append('monfichier', newArr);
-        alert(formData.get('monfichier'));
+        // alert(formData.get('monfichier'));
 
         sizeInputs.forEach((size, index) => {
             formData.append(`size${index + 1}`, size.size);
@@ -115,8 +117,22 @@ const Componets_Add_product_store = () => {
         axios.post('http://localhost:3001/admin/add_prod', formData)
             .then(res => {
                 if (res.data.valid) {
-                    alert('The product has been added successfully')
+                    // alert('The product has been added successfully')
                     // navigate(-2)
+                    Swal.fire({
+                        title: "Good job!",
+                        text: "The product has been added successfully",
+                        icon: "success",
+                        customClass: {
+                            container: 'enlarged-alert-container',
+                            popup: 'enlarged-alert-popup',
+                            title: 'enlarged-alert-title',
+                            htmlContainer: 'enlarged-alert-html-container',
+                            confirmButton: 'enlarged-alert-confirm-button',
+                        },
+                        position: 'center',
+                        backdrop: false,
+                    })
 
                 }
             })
