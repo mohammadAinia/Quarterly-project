@@ -36,20 +36,20 @@ const Componets_Change_website_ads = () => {
             formData.append('monfichier', file[i]);
         }
         formData.append('monfichier', newArr);
-        // alert(formData.get('monfichier'));
+        alert(formData.get('monfichier'));
 
-        formData.append('onestore', One)
-        formData.append('towstore', Two)
-        formData.append('threestore', Three)
-        formData.append('fourstore', Four)
-        formData.append('fivestore', Five)
-        formData.append('sixstore', Six)
-        formData.append('sevenstore', Seven)
-        formData.append('eightstore', Eight)
+        formData.append('onestore', One[0])
+        formData.append('towstore', Two[0])
+        formData.append('threestore', Three[0])
+        formData.append('fourstore', Four[0])
+        formData.append('fivestore', Five[0])
+        formData.append('sixstore', Six[0])
+        formData.append('sevenstore', Seven[0])
+        formData.append('eightstore', Eight[0])
 
 
 
-        axios.post('http://localhost:3001/#/#', formData)
+        axios.post('http://localhost:3001/admin/add_new_ads', formData)
             .then(res => {
                 if (res.data.valid) {
                     // alert('The ads have been modified successfully')

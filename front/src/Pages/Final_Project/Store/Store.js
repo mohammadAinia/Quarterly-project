@@ -106,14 +106,14 @@ const Store = () => {
                     setBest_Sellers(res.data.result5)
 
                     //جلب الاعلانات
-                    setOne(res.data.resultAdvOne)
-                    setTwo(res.data.resultAdvTwo)
-                    setThree(res.data.resultAdvThree)
-                    setFour(res.data.resultAdvFour)
-                    setFive(res.data.resultAdvFive)
-                    setSix(res.data.resultAdvSix)
-                    setSeven(res.data.resultAdvSeven)
-                    setEight(res.data.resultAdvEight)
+                    setOne(res.data.resimage[0].photo_url)
+                    setTwo(res.data.resimage[1].photo_url)
+                    setThree(res.data.resimage[2].photo_url)
+                    setFour(res.data.resimage[3].photo_url)
+                    setFive(res.data.resimage[4].photo_url)
+                    setSix(res.data.resimage[5].photo_url)
+                    setSeven(res.data.resimage[6].photo_url)
+                    setEight(res.data.resimage[7].photo_url)
 
 
                 }
