@@ -51,14 +51,28 @@ const Componets_Add_category = () => {
         }
 
         formData.append('monfichier', newArr);
-        alert(formData.get('monfichier'));
+        // alert(formData.get('monfichier'));
 
         e.preventDefault()
         axios.post('http://localhost:3001/admin/add_category', formData)
             .then(res => {
                 if (res.data.valid) {
-                    alert('The Category has been added successfully')
+                    // alert('The Category has been added successfully')
                     // navigate(-2)
+                    Swal.fire({
+                        title: "Good job!",
+                        text: "The Category has been added successfully",
+                        icon: "success",
+                        customClass: {
+                            container: 'enlarged-alert-container',
+                            popup: 'enlarged-alert-popup',
+                            title: 'enlarged-alert-title',
+                            htmlContainer: 'enlarged-alert-html-container',
+                            confirmButton: 'enlarged-alert-confirm-button',
+                        },
+                        position: 'center',
+                        backdrop: false,
+                    })
 
                 }
             })

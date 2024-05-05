@@ -4,6 +4,8 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { Header } from '../../../Componets'
 import { useNavigate, useParams } from 'react-router-dom'
+import Swal from 'sweetalert2';
+
 
 const Componets_Change_website_ads = () => {
 
@@ -50,8 +52,24 @@ const Componets_Change_website_ads = () => {
         axios.post('http://localhost:3001/#/#', formData)
             .then(res => {
                 if (res.data.valid) {
-                    alert('The ads have been modified successfully')
-                    navigate(-1)
+                    // alert('The ads have been modified successfully')
+                    // navigate(-1)
+                    Swal.fire({
+                        title: "Good job!",
+                        text: "The ads have been modified successfully",
+                        icon: "success",
+                        customClass: {
+                            container: 'enlarged-alert-container',
+                            popup: 'enlarged-alert-popup',
+                            title: 'enlarged-alert-title',
+                            htmlContainer: 'enlarged-alert-html-container',
+                            confirmButton: 'enlarged-alert-confirm-button',
+                        },
+                        position: 'center',
+                        backdrop: false,
+                    }).then(() => {
+                        navigate(-1);
+                    });
 
                 }
             })

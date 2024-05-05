@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import React from 'react'
 import axios from 'axios'
+import Swal from 'sweetalert2';
 
 
 const Componets_Add_Sitting_request = () => {
@@ -41,8 +42,24 @@ const Componets_Add_Sitting_request = () => {
         axios.post('http://localhost:3001/sitting/add_new_animal', {Chosen_animal, Fare, DateFrom, DateTo})
             .then(res => {
                 if (res.data.valid) {
-                    alert('The request has been added successfully')
-                    navigate(-1)
+                    // alert('The request has been added successfully')
+                    // navigate(-1)
+                    Swal.fire({
+                        title: "Good job!",
+                        text: "The request has been added successfully",
+                        icon: "success",
+                        customClass: {
+                            container: 'enlarged-alert-container',
+                            popup: 'enlarged-alert-popup',
+                            title: 'enlarged-alert-title',
+                            htmlContainer: 'enlarged-alert-html-container',
+                            confirmButton: 'enlarged-alert-confirm-button',
+                        },
+                        position: 'center',
+                        backdrop: false,
+                    }).then(() => {
+                        navigate(-1);
+                    });
 
                 }
             })
