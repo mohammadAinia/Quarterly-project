@@ -41,14 +41,15 @@ const Details_Pet_Sitting_request = () => {
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
         e.preventDefault()
-        axios.post(`http://localhost:3001/#/#/${id}`, { Yes })
+        axios.post(`http://localhost:3001/sitting/check_set/${id}`)
             .then(res => {
                 if (res.data.valid) {
                     alert('Added successfully')
                     navigate(-1)
                 }
                 else {
-                    alert('err')
+                    alert('you have to login first ')
+                    navigate('/login')
                 }
             })
             .catch(err => { console.log(err) })
