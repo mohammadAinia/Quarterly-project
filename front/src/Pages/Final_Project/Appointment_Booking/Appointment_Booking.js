@@ -10,6 +10,8 @@ import b_Vector19 from '../../../Assert/Images/b_Vector19.png'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import Swal from 'sweetalert2';
+
 
 const Appointment_Booking = () => {
     const [minDate, setMinDate] = useState('');
@@ -150,8 +152,24 @@ const Appointment_Booking = () => {
         axios.post(`http://localhost:3001/clinic/make_appointment/${id}`, { Sick_animal, Type_Service, Day_of_booking, selectedPet, Time })
             .then(res => {
                 if (res.data.valid) {
-                    alert('The appointment has been booked successfully. You can view the appointment details from your appointments')
-                    navigate(-1)
+                    // alert('The appointment has been booked successfully. You can view the appointment details from your appointments')
+                    // navigate(-1)
+                    Swal.fire({
+                        title: "Good job!",
+                        text: "The appointment has been booked successfully. You can view the appointment details from your appointments",
+                        icon: "success",
+                        customClass: {
+                            container: 'enlarged-alert-container',
+                            popup: 'enlarged-alert-popup',
+                            title: 'enlarged-alert-title',
+                            htmlContainer: 'enlarged-alert-html-container',
+                            confirmButton: 'enlarged-alert-confirm-button',
+                        },
+                        position: 'center',
+                        backdrop: false,
+                    }).then(() => {
+                        navigate(-1);
+                    });
                 }
                 else {
                     alert('err')

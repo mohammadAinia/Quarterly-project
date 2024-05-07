@@ -2,9 +2,11 @@ import './Appointment_clinic_director.css'
 import React, { useState } from 'react'
 import { Header } from '../../../../Componets'
 import axios from 'axios'
-import { useNavigate,useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRightToBracket } from '@fortawesome/free-solid-svg-icons'
+import Swal from 'sweetalert2';
+
 
 const Appointment_clinic_director = () => {
 
@@ -28,18 +30,51 @@ const Appointment_clinic_director = () => {
         if (Password === Confirm) {
             e.preventDefault()
 
-            axios.post(`http://localhost:3001/clinic/add_new_admin_for_clinic/${id}`,{First_name,Last_name,Email,Phone,Password,Age,Nationality,Addres},{withCredentials:true})
+            axios.post(`http://localhost:3001/clinic/add_new_admin_for_clinic/${id}`, { First_name, Last_name, Email, Phone, Password, Age, Nationality, Addres }, { withCredentials: true })
                 .then(res => {
                     if (res.data.valid) {
                         // navigate(`/Choosing_a_doctor_clinic/${res.data.id}`)
-                        alert('The manager has been added successfully')
-                        navigate('/m')
-                    } 
+
+                        // alert('The manager has been added successfully')
+                        // navigate('/m')
+                        Swal.fire({
+                            title: "Good job!",
+                            text: "The manager has been added successfully",
+                            icon: "success",
+                            customClass: {
+                                container: 'enlarged-alert-container',
+                                popup: 'enlarged-alert-popup',
+                                title: 'enlarged-alert-title',
+                                htmlContainer: 'enlarged-alert-html-container',
+                                confirmButton: 'enlarged-alert-confirm-button',
+                            },
+                            position: 'center',
+                            backdrop: false,
+                        }).then(() => {
+                            navigate('/m')
+                        });
+                    }
                 }
                 )
                 .catch(err => alert(err))
         }
-        else { alert("password not match") }
+        else {
+            //  alert("password not match")
+            Swal.fire({
+                title: "Good job!",
+                text: "password not match",
+                icon: "success",
+                customClass: {
+                    container: 'enlarged-alert-container',
+                    popup: 'enlarged-alert-popup',
+                    title: 'enlarged-alert-title',
+                    htmlContainer: 'enlarged-alert-html-container',
+                    confirmButton: 'enlarged-alert-confirm-button',
+                },
+                position: 'center',
+                backdrop: false,
+            })
+        }
     }
     return (
 

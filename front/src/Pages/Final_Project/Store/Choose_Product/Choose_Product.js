@@ -29,11 +29,7 @@ import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Componets_Product_store, Componets_user_reviews, Store_Header } from '../../../../Componets'
 
-
-
-
-
-
+import Swal from 'sweetalert2';
 
 var iidd
 const Choose_Product = () => {
@@ -47,14 +43,6 @@ const Choose_Product = () => {
     const [desc, setdesc] = useState([])
     const [first_s, set_f] = useState([])
     const [smallimage, set_small] = useState([])
-
-
-
-
-
-
-
-
 
     const { id } = useParams()
     iidd = id
@@ -130,14 +118,59 @@ const Choose_Product = () => {
                     // alert(number)
                     // alert(iidd)
                     // alert(selectedOption)
-                    alert("Added to cart successfully");
-                    window.location.reload();
+
+                    // alert("Added to cart successfully");
+                    // window.location.reload();
+                    Swal.fire({
+                        title: "Good job!",
+                        text: "Added to cart successfully",
+                        icon: "success",
+                        customClass: {
+                            container: 'enlarged-alert-container',
+                            popup: 'enlarged-alert-popup',
+                            title: 'enlarged-alert-title',
+                            htmlContainer: 'enlarged-alert-html-container',
+                            confirmButton: 'enlarged-alert-confirm-button',
+                        },
+                        position: 'center',
+                        backdrop: false,
+                    }).then(() => {
+                        window.location.reload();
+                    });
                 }
                 else if (res.data.valid & res.data.repet === true) {
-                    alert('this prodact is alredy in cart ')
+                    // alert('this prodact is alredy in cart ')
+                    Swal.fire({
+                        title: "!",
+                        text: "this prodact is alredy in cart",
+                        icon: "success",
+                        customClass: {
+                            container: 'enlarged-alert-container',
+                            popup: 'enlarged-alert-popup',
+                            title: 'enlarged-alert-title',
+                            htmlContainer: 'enlarged-alert-html-container',
+                            confirmButton: 'enlarged-alert-confirm-button',
+                        },
+                        position: 'center',
+                        backdrop: false,
+                    })
                 }
                 else if (!res.data.valid) {
-                    alert('You must register first');
+                    // alert('You must register first');
+                    Swal.fire({
+                        title: "!",
+                        text: "You must register first",
+                        icon: "success",
+                        customClass: {
+                            container: 'enlarged-alert-container',
+                            popup: 'enlarged-alert-popup',
+                            title: 'enlarged-alert-title',
+                            htmlContainer: 'enlarged-alert-html-container',
+                            confirmButton: 'enlarged-alert-confirm-button',
+                        },
+                        position: 'center',
+                        backdrop: false,
+                    })
                 }
             })
             .catch(err => { console.log(err) });
@@ -155,10 +188,40 @@ const Choose_Product = () => {
         axios.post(`http://localhost:3001/storee/addrev/${id}`, { selectedStar, Comment })
             .then(res => {
                 if (res.data.valid) {
-                    alert("Added to cart successfully");
-                    window.location.reload();
+                    // alert("Added to cart successfully");
+                    // window.location.reload();
+                    Swal.fire({
+                        title: "Good job!",
+                        text: "Added to cart successfully",
+                        icon: "success",
+                        customClass: {
+                            container: 'enlarged-alert-container',
+                            popup: 'enlarged-alert-popup',
+                            title: 'enlarged-alert-title',
+                            htmlContainer: 'enlarged-alert-html-container',
+                            confirmButton: 'enlarged-alert-confirm-button',
+                        },
+                        position: 'center',
+                        backdrop: false,
+                    }).then(() => {
+                        window.location.reload();
+                    });
                 } else {
                     alert('You must register to be able comment');
+                    Swal.fire({
+                        title: "!!",
+                        text: "You must register to be able comment",
+                        icon: "success",
+                        customClass: {
+                            container: 'enlarged-alert-container',
+                            popup: 'enlarged-alert-popup',
+                            title: 'enlarged-alert-title',
+                            htmlContainer: 'enlarged-alert-html-container',
+                            confirmButton: 'enlarged-alert-confirm-button',
+                        },
+                        position: 'center',
+                        backdrop: false,
+                    })
                 }
             })
             .catch(err => { console.log(err) });

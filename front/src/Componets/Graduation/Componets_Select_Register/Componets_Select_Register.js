@@ -4,6 +4,8 @@ import all_vet_Vector_34 from '../../../Assert/Images/all_vet_Vector_34.png'
 import axios from 'axios'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
+import Swal from 'sweetalert2';
+
 
 const Componets_Select_Register = (props) => {
     const navigate = useNavigate()
@@ -12,8 +14,24 @@ const Componets_Select_Register = (props) => {
         axios.get(`http://localhost:3001/clinic/add_to_clinic/${id}`, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
-                    alert("The doctor has been successfully added to the clinic")
-                    navigate(`Add_doctor_shift_time/${id}`)
+                    // alert("The doctor has been successfully added to the clinic")
+                    // navigate(`Add_doctor_shift_time/${id}`)
+                    Swal.fire({
+                        title: "Good job!",
+                        text: "The doctor has been successfully added to the clinic",
+                        icon: "success",
+                        customClass: {
+                            container: 'enlarged-alert-container',
+                            popup: 'enlarged-alert-popup',
+                            title: 'enlarged-alert-title',
+                            htmlContainer: 'enlarged-alert-html-container',
+                            confirmButton: 'enlarged-alert-confirm-button',
+                        },
+                        position: 'center',
+                        backdrop: false,
+                    }).then(() => {
+                        navigate(`Add_doctor_shift_time/${id}`)
+                    });
 
                 }
             })

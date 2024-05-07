@@ -4,6 +4,8 @@ import all_vet_Vector_34 from '../../../Assert/Images/all_vet_Vector_34.png'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
+import Swal from 'sweetalert2';
+
 
 const Componets_Del_Vet = (props) => {
     const navigate = useNavigate()
@@ -12,8 +14,24 @@ const Componets_Del_Vet = (props) => {
         axios.get(`http://localhost:3001/clinic/del_vet/${id}`,{ withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
-                    alert("The doctor has been successfully added to the clinic")
-                    navigate(-1)              
+                    // alert("The doctor has been successfully added to the clinic")
+                    // navigate(-1)   
+                    Swal.fire({
+                        title: "Good job!",
+                        text: "The doctor has been successfully added to the clinic",
+                        icon: "success",
+                        customClass: {
+                            container: 'enlarged-alert-container',
+                            popup: 'enlarged-alert-popup',
+                            title: 'enlarged-alert-title',
+                            htmlContainer: 'enlarged-alert-html-container',
+                            confirmButton: 'enlarged-alert-confirm-button',
+                        },
+                        position: 'center',
+                        backdrop: false,
+                    }).then(() => {
+                        navigate(-1);
+                    });           
                 }
             })
             .catch(err => alert(err))

@@ -2,13 +2,31 @@ import './Profilee.css'
 import a from '../../Assert/Images/image.png'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2';
+
 const Profilee = (props) => {
 
     const handleDelete = async (id) => {
         try {
             await axios.delete('http://localhost:3001/user/#/' + id)
-            window.location.reload()
-            alert('Deleted successfully')
+            // window.location.reload()
+            // alert('Deleted successfully')
+            Swal.fire({
+                title: "Good job!",
+                text: "Deleted successfully",
+                icon: "success",
+                customClass: {
+                    container: 'enlarged-alert-container',
+                    popup: 'enlarged-alert-popup',
+                    title: 'enlarged-alert-title',
+                    htmlContainer: 'enlarged-alert-html-container',
+                    confirmButton: 'enlarged-alert-confirm-button',
+                },
+                position: 'center',
+                backdrop: false,
+            }).then(() => {
+                window.location.reload()
+            });
         }
         catch (err) { console.log(err) }
     }

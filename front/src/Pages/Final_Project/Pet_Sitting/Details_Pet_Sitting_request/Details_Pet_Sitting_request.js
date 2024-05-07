@@ -12,7 +12,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 import React from 'react'
-
+import Swal from 'sweetalert2';
 
 
 const Details_Pet_Sitting_request = () => {
@@ -44,12 +44,44 @@ const Details_Pet_Sitting_request = () => {
         axios.post(`http://localhost:3001/sitting/check_set/${id}`)
             .then(res => {
                 if (res.data.valid) {
-                    alert('Added successfully')
-                    navigate(-1)
+                    // alert('Added successfully')
+                    // navigate(-1)
+                    Swal.fire({
+                        title: "Good job!",
+                        text: "Added successfully",
+                        icon: "success",
+                        customClass: {
+                            container: 'enlarged-alert-container',
+                            popup: 'enlarged-alert-popup',
+                            title: 'enlarged-alert-title',
+                            htmlContainer: 'enlarged-alert-html-container',
+                            confirmButton: 'enlarged-alert-confirm-button',
+                        },
+                        position: 'center',
+                        backdrop: false,
+                    }).then(() => {
+                        navigate(-1);
+                    });
                 }
                 else {
-                    alert('you have to login first ')
-                    navigate('/login')
+                    // alert('you have to login first ')
+                    // navigate('/login')
+                    Swal.fire({
+                        title: "!",
+                        text: "you have to login first",
+                        icon: "success",
+                        customClass: {
+                            container: 'enlarged-alert-container',
+                            popup: 'enlarged-alert-popup',
+                            title: 'enlarged-alert-title',
+                            htmlContainer: 'enlarged-alert-html-container',
+                            confirmButton: 'enlarged-alert-confirm-button',
+                        },
+                        position: 'center',
+                        backdrop: false,
+                    }).then(() => {
+                        navigate('/login')
+                    });
                 }
             })
             .catch(err => { console.log(err) })

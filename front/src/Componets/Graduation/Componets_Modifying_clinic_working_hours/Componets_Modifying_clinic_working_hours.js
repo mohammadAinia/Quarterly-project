@@ -3,6 +3,8 @@ import React from 'react'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import Swal from 'sweetalert2';
+
 
 const Componets_Modifying_clinic_working_hours = () => {
 
@@ -32,13 +34,44 @@ const Componets_Modifying_clinic_working_hours = () => {
             axios.post('http://localhost:3001/#/#', { From, To }, { withCredentials: true })
                 .then(res => {
                     if (res.data.valid) {
-                        alert('the time shift was added ')
-                        navigate(-1)
+                        // alert('the time shift was added ')
+                        // navigate(-1)
+                        Swal.fire({
+                            title: "Good job!",
+                            text: "the time shift was added",
+                            icon: "success",
+                            customClass: {
+                                container: 'enlarged-alert-container',
+                                popup: 'enlarged-alert-popup',
+                                title: 'enlarged-alert-title',
+                                htmlContainer: 'enlarged-alert-html-container',
+                                confirmButton: 'enlarged-alert-confirm-button',
+                            },
+                            position: 'center',
+                            backdrop: false,
+                        }).then(() => {
+                            navigate(-1);
+                        });
                     }
                 })
                 .catch(err => alert(err))
         } else {
-            alert('Please enter valid working hours');
+            // alert('Please enter valid working hours');
+            Swal.fire({
+                title: "Good job!",
+                text: "Please enter valid working hours",
+                icon: "success",
+                customClass: {
+                    container: 'enlarged-alert-container',
+                    popup: 'enlarged-alert-popup',
+                    title: 'enlarged-alert-title',
+                    htmlContainer: 'enlarged-alert-html-container',
+                    confirmButton: 'enlarged-alert-confirm-button',
+                },
+                position: 'center',
+                backdrop: false,
+            })
+
         }
     }
 

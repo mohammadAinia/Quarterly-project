@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react'
 import { Header } from '../../Componets'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faRightFromBracket, faBell, faHouse ,faMessage ,faUserDoctor,faStethoscope} from '@fortawesome/free-solid-svg-icons'
+import Swal from 'sweetalert2';
 
 
 const Add_vacci = () => {
@@ -39,8 +40,24 @@ const Add_vacci = () => {
         axios.post(`http://localhost:3001/animal/add_vac/${id}`, { Name_vaccines, Vaccine_history })
             .then(res => {
                 if (res.data.valid) {
-                    alert('Added successfully')
-                    navigate(-1)
+                    // alert('Added successfully')
+                    // navigate(-1)
+                    Swal.fire({
+                        title: "Good job!",
+                        text: "Added successfully",
+                        icon: "success",
+                        customClass: {
+                            container: 'enlarged-alert-container',
+                            popup: 'enlarged-alert-popup',
+                            title: 'enlarged-alert-title',
+                            htmlContainer: 'enlarged-alert-html-container',
+                            confirmButton: 'enlarged-alert-confirm-button',
+                        },
+                        position: 'center',
+                        backdrop: false,
+                    }).then(() => {
+                        navigate(-1);
+                    });
                 }
                 else {
                     alert('err')

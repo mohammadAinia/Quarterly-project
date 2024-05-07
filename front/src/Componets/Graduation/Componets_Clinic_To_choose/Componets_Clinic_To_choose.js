@@ -10,14 +10,31 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2';
+
 
 const Componets_Clinic_To_choose = (props) => {
 
     const Processing_of_adding_a_doctor_to_a_clinic = async (id) => {
         try {
             await axios.post('http://localhost:3001/#/#/' + id)
-            alert("Processing of adding a doctor to a clinic")
-            window.location.reload()
+            // alert("Processing of adding a doctor to a clinic")
+            Swal.fire({
+                title: "Good job!",
+                text: "Processing of adding a doctor to a clinic",
+                icon: "success",
+                customClass: {
+                    container: 'enlarged-alert-container',
+                    popup: 'enlarged-alert-popup',
+                    title: 'enlarged-alert-title',
+                    htmlContainer: 'enlarged-alert-html-container',
+                    confirmButton: 'enlarged-alert-confirm-button',
+                },
+                position: 'center',
+                backdrop: false,
+            }).then(() => {
+                window.location.reload()
+            });
         }
         catch (err) { console.log(err) }
     }

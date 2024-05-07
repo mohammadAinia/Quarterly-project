@@ -8,6 +8,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios'
 // import { useNavigate } from 'react-router-dom'
 import { useNavigate, useParams } from 'react-router-dom'
+import Swal from 'sweetalert2';
 
 const Checkout = () => {
 
@@ -53,8 +54,24 @@ const Checkout = () => {
             .then(res => {
                 if (res.data.valid) {
 
-                    alert("The address has been added successfully");
-                    window.location.reload();
+                    // alert("The address has been added successfully");
+                    // window.location.reload();
+                    Swal.fire({
+                        title: "Good job!",
+                        text: "The address has been added successfully",
+                        icon: "success",
+                        customClass: {
+                            container: 'enlarged-alert-container',
+                            popup: 'enlarged-alert-popup',
+                            title: 'enlarged-alert-title',
+                            htmlContainer: 'enlarged-alert-html-container',
+                            confirmButton: 'enlarged-alert-confirm-button',
+                        },
+                        position: 'center',
+                        backdrop: false,
+                    }).then(() => {
+                        window.location.reload();
+                    });
                 }
                 else {
                     navigate('/login')

@@ -5,6 +5,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRightToBracket } from '@fortawesome/free-solid-svg-icons'
+import Swal from 'sweetalert2';
 
 const Adding_new_doctor_clinic = () => {
 
@@ -49,14 +50,47 @@ const Adding_new_doctor_clinic = () => {
             axios.post('http://localhost:3001/clinic/add_new_vet', formData)
                 .then(res => {
                     if (res.data.valid) {
-                        alert('The doctor has been successfully registered to the clinic')
-                        navigate(`Add_doctor_shift_time/${res.data.id}`)
+                        // alert('The doctor has been successfully registered to the clinic')
+                        // navigate(`Add_doctor_shift_time/${res.data.id}`)
+                        Swal.fire({
+                            title: "Good job!",
+                            text: "The doctor has been successfully registered to the clinic",
+                            icon: "success",
+                            customClass: {
+                                container: 'enlarged-alert-container',
+                                popup: 'enlarged-alert-popup',
+                                title: 'enlarged-alert-title',
+                                htmlContainer: 'enlarged-alert-html-container',
+                                confirmButton: 'enlarged-alert-confirm-button',
+                            },
+                            position: 'center',
+                            backdrop: false,
+                        }).then(() => {
+                            navigate(`Add_doctor_shift_time/${res.data.id}`)
+                        });
                     }
                 }
                 )
                 .catch(err => alert(err))
         }
-        else { alert("password not match") }
+        else {
+            // alert("password not match")
+            Swal.fire({
+                title: "!",
+                text: "password not match",
+                icon: "success",
+                customClass: {
+                    container: 'enlarged-alert-container',
+                    popup: 'enlarged-alert-popup',
+                    title: 'enlarged-alert-title',
+                    htmlContainer: 'enlarged-alert-html-container',
+                    confirmButton: 'enlarged-alert-confirm-button',
+                },
+                position: 'center',
+                backdrop: false,
+            })
+
+        }
     }
     return (
         <>

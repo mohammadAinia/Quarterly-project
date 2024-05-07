@@ -15,9 +15,9 @@ import {
 const Home_Pet_Sitting = () => {
 
     const [isSearchOpen, setIsSearchOpen] = useState(false);
-    const [Search_result, setSearch_result] = useState('')
-    const [Request_sitting, setRequest_sitting] = useState([])
-    const [filteredRequest_sitting, setFilteredRequest_sitting] = useState([]);
+    const [searchQuery, setSearchQuery] = useState('');
+    const [requestSitting, setRequestSitting] = useState([]);
+    const [filteredRequestSitting, setFilteredRequestSitting] = useState([]);
 
     const navigate = useNavigate()
 
@@ -25,8 +25,8 @@ const Home_Pet_Sitting = () => {
         axios.get('http://localhost:3001/sitting/show_requests', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
-                    setRequest_sitting(res.data.result);
-                    setFilteredRequest_sitting(res.data.result); // Initialize filteredClinics with all clinics
+                    setRequestSitting(res.data.result);
+                    setFilteredRequestSitting(res.data.result); // Initialize filteredClinics with all clinics
                 }
                 else {
                     navigate("/login")
@@ -39,13 +39,13 @@ const Home_Pet_Sitting = () => {
 
     const handleSearchInputChange = (event) => {
         const { value } = event.target;
-        setSearch_result(event.value)
+        setSearchQuery(value);
 
-        // Filter clinics based on search input
-        const filtered = Request_sitting.filter(clinic =>
-            clinic.name.toLowerCase().includes(value.toLowerCase())
+        const filtered = requestSitting.filter(p =>
+            p.name.toLowerCase().includes(value.toLowerCase()) ||
+            p.type.toLowerCase().includes(value.toLowerCase())
         );
-        setFilteredRequest_sitting(filtered);
+        setFilteredRequestSitting(filtered);
     };
 
     const handleSearchClick = () => {
@@ -76,53 +76,44 @@ const Home_Pet_Sitting = () => {
                         <div class="card-madical">
                             <div class="store2">
 
-                                {Search_result !== '' ? (
-                                    filteredRequest_sitting.map((i, index) => {
-                                        // var cli = i.time_open + '-' + i.time_close
-
-                                        return (
-                                            <div key={index}>
-                                                <Componets_Home_Pet_Sitting
-                                                    type_animal={i.type}
-                                                    name={i.name}
-                                                    fare={i.Service_price}
-                                                    from={i.date_from}
-                                                    to={i.date_to}
-                                                    href={`Details_Pet_Sitting_request/${i.si_id}`}
-                                                />
-                                            </div>
-                                        )
-
-                                    })
+                                {isSearchOpen ? (
+                                    filteredRequestSitting.map((sitting, index) => (
+                                        <div key={index}>
+                                            <Componets_Home_Pet_Sitting
+                                                type_animal={sitting.type}
+                                                name={sitting.name}
+                                                fare={sitting.Service_price}
+                                                from={sitting.date_from}
+                                                to={sitting.date_to}
+                                                href={`Details_Pet_Sitting_request/${sitting.si_id}`}
+                                            />
+                                        </div>
+                                    ))
                                 ) : (
-                                    Request_sitting.map((i, index) => {
-
-                                        // var cli = i.time_open + '-' + i.time_close
-
-                                        return (
-                                            <div key={index}>
-                                                <Componets_Home_Pet_Sitting
-                                                    type_animal={i.type}
-                                                    name={i.name}
-                                                    fare={i.Service_price	}
-                                                    from={i.date_from}
-                                                    to={i.date_to}
-                                                    href={`Details_Pet_Sitting_request/${i.si_id}`}
-                                                />
-                                            </div>
-                                        )
-                                    })
+                                    requestSitting.map((sitting, index) => (
+                                        <div key={index}>
+                                            <Componets_Home_Pet_Sitting
+                                                type_animal={sitting.type}
+                                                name={sitting.name}
+                                                fare={sitting.Service_price}
+                                                from={sitting.date_from}
+                                                to={sitting.date_to}
+                                                href={`Details_Pet_Sitting_request/${sitting.si_id}`}
+                                            />
+                                        </div>
+                                    ))
                                 )}
 
 
-                                <Componets_Home_Pet_Sitting
+
+                                {/* <Componets_Home_Pet_Sitting
                                     type_animal={"Cat"}
                                     name={"koch"}
                                     fare={50}
                                     from={"2024/4/30"}
                                     to={"2024/5/15"}
                                     href={`Details_Pet_Sitting_request/${5}`}
-                                />
+                                /> */}
 
                             </div>
                         </div>
@@ -132,17 +123,13 @@ const Home_Pet_Sitting = () => {
             <button className={`search-button ${isSearchOpen ? 'active' : ''}`} onClick={handleSearchClick}>
                 <FontAwesomeIcon icon={faSearch} />
             </button>
-            {/* {isSearchOpen && (
-                <div className="search-popup">
-                    <input className="search-input" type="text" placeholder="Search..." onChange={e => setSearch_result(e.target.value)} />
-                </div>
-            )} */}
             {isSearchOpen && (
-                <div className={`search-popup ${isSearchOpen ? 'active' : ''}`}>
+                <div className="search-popup">
                     <input
                         className="search-input"
                         type="text"
                         placeholder="Search..."
+                        value={searchQuery}
                         onChange={handleSearchInputChange}
                     />
                 </div>

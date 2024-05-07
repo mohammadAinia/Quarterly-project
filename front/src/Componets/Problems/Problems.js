@@ -2,6 +2,7 @@ import './Problems.css'
 import React, { useState } from 'react'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2';
 
 const Problems = (props) => {
     const navigate = useNavigate()
@@ -12,8 +13,24 @@ const Problems = (props) => {
         axios.post(`http://localhost:3001/problim/add_answer/${id}`, { Comment })
             .then(res => {
                 if (res.data.valid) {
-                    alert('Published successfully')
-                    window.location.reload()
+                    // alert('Published successfully')
+                    
+                    Swal.fire({
+                        title: "Good job!",
+                        text: "Published successfully",
+                        icon: "success",
+                        customClass: {
+                            container: 'enlarged-alert-container',
+                            popup: 'enlarged-alert-popup',
+                            title: 'enlarged-alert-title',
+                            htmlContainer: 'enlarged-alert-html-container',
+                            confirmButton: 'enlarged-alert-confirm-button',
+                        },
+                        position: 'center',
+                        backdrop: false,
+                    }).then(() => {
+                        window.location.reload()
+                    });
                 }
                 else {
                     navigate('/login')

@@ -89,14 +89,12 @@
     width: 709px;
     height: 53px;
     top: 554px;
-    left: 274px;
+    left: 290px;
     font-family: "Inter-Regular", Helvetica;
     font-weight: 400;
     color: #000000;
     font-size: 24px;
-    text-align: center;
     letter-spacing: 0;
-    line-height: normal;
 }
 .specific-clinic .texxxt-wrapper {
     position: absolute;
@@ -145,14 +143,11 @@
     width: 709px;
     height: 53px;
     top: 649px;
-    left: 222px;
+    left: 295px;
     font-family: "Inter-Regular", Helvetica;
     font-weight: 400;
     color: #000000;
     font-size: 24px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
 }
 
 .specific-clinic .your-pet-s-wellness {
@@ -160,14 +155,12 @@
     width: 492px;
     height: 53px;
     top: 745px;
-    left: 274px;
+    left: 295px;
     font-family: "Inter-Regular", Helvetica;
     font-weight: 400;
     color: #000000;
     font-size: 24px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
+
 }
 
 .specific-clinic .passionate {
