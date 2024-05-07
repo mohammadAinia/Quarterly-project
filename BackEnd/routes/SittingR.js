@@ -8,5 +8,6 @@ router.get('/show_det/:id',sitting.show_det_req)
 
 
 router.post('/add_new_animal',sitting.add_new_req)
+router.post('/check_set/:id',sitting.check_req)
 
 module.exports=router
