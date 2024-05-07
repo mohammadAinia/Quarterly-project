@@ -64,8 +64,8 @@ const Home_Pet_Sitting = () => {
                             <div class="overlap-group">
                                 <div class="rectangle"></div>
                                 <img class="file" src={sitting_file1} />
-                                <p class="text-wrapper">Babysitting your animal safely and reliably</p>
-                                <p class="p">Show your animal or sit other animals at the best prices</p>
+                                <p class="text-wrapper">Petsitting your animal safely and reliably</p>
+                                <p class="p">Place an order or sit other animals at the best prices</p>
                             </div>
                             <p class="never-leave-your">Never leave your <br />animal behind again</p>
                         </div>
