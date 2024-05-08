@@ -220,6 +220,7 @@ function show_users(req,res) {
 const home_owner=(req,res) => {
     check_if_dosnot()
     if (req.session.username&&!req.session.roleee) {
+        
         models.user_info.findOne({ where: { email: req.session.username } }).then((resp) => {
 
             sql='select * from animals where owner=?'
