@@ -60,10 +60,42 @@ else {
     res.json({valid:false})
 }
 }
+function show_confirmed_from_requester(req,res){
+    sql='select * from  sitting where  	requester_id =? and date_to > CURRENT_DATE'
+    db.query(sql,[req.session.username],(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            res.json({valid:true,result})
+        }
+    })
+}
+function show_confirmed_from_sender(req,res){
+    sql='select * from  sitting where  	owner =? and date_to > CURRENT_DATE'
+    db.query(sql,[req.session.username],(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            res.json({valid:true,result})
+        }
+    })
+}
+function remove_req(req,res){
+    id=req.params.id
+    sql='update  sitting set requester_id=? where animal_id=? '
+    db.query(sql,['',id],(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            res.json({valid:true,result})
+        }
+    })
+}
 module.exports={
     show_all_request,
     show_my_animals,
     add_new_req,
     show_det_req,
-    check_req
+    check_req,
+    show_confirmed_from_requester,
+    show_confirmed_from_sender,
+    remove_req
+    
 }

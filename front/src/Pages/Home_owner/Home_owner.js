@@ -111,7 +111,7 @@ const Home_owner = () => {
           setAdvice(res.data.resulttt)
           setIsnotefi(res.data.resultttt)
           setAdv(res.data.resultada)
-          alert(res.data.resultada[0].photo_url) //جرب هاد شغال لتعرف شو االوضع من هون😂😂😂
+          // alert(res.data.resultada[0].photo_url) //جرب هاد شغال لتعرف شو االوضع من هون😂😂😂
 
         }
         else {
