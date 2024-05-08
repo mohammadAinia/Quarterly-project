@@ -173,9 +173,9 @@ function add_adds(req,res){
     for (let i = 0; i < num_of_photo.length; i++) {
         var c=num_of_photo[i];
         // console.log(typeof(num_of_photo[i]))
-        // sql='update ads set photo_url=? where specfix_palce=? and wheere=?'
-        sql="insert into ads (photo_url,wheere,specfix_palce)  values ('"+req.files[num_of_photo[i]][0].filename+"','"+"store"+"','"+(i+1)+"')"
-        db.query(sql,(error,result)=>{
+        sql='update ads set photo_url=? where specfix_palce=? and wheere=?'
+        // sql="insert into ads (photo_url,wheere,specfix_palce)  values ('"+req.files[num_of_photo[i]][0].filename+"','"+"store"+"','"+(i+1)+"')"
+        db.query(sql,[req.files[num_of_photo[i]][0].filename,(i+1),'store'],(error,result)=>{
             if(error){console.log(error)}
             else{
                 
@@ -184,11 +184,12 @@ function add_adds(req,res){
         })
         
     }
-    // console.log(req.files['monfichier'].length)
+    
+    console.log(req.files['monfichier'])
     for (let i = 0; i <req.files['monfichier'].length ; i++) {
-        // sql='update ads set photo_url=? where specfix_palce=? and wheere=?'
-        sql="insert into ads (photo_url,wheere,specfix_palce)  values ('"+req.files['monfichier'][i].filename+"','"+"home"+"','"+(i+1)+"')"
-        db.query(sql,(error,result)=>{
+        sql='update ads set photo_url=? where specfix_palce=? and wheere=?'
+        // sql="insert into ads (photo_url,wheere,specfix_palce)  values ('"++"','"+"home"+"','"++"')"
+        db.query(sql,[req.files['monfichier'][i].filename,(i+1),'home'],(error,result)=>{
             if(error){console.log(error)}
         })
     }
@@ -199,11 +200,21 @@ else {
     res.json({valid:false})
 }
 }
+function show_all_ads(req,res){
+    sql='select * from ads '
+    db.query(sql,(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            res.json({valid:true,result})
+        } 
+    })
+}
 module.exports={
     Add_product_store,
     add_category,
     show_c,
     add_new_brand,
     get_all_brand,
-    add_adds
+    add_adds,
+    show_all_ads
 }

@@ -23,6 +23,7 @@ router.post('/add_new_ads',imageUploader.upload.fields([
 
 router.get('/show_c',admin.show_c)
 router.get('/get_all_brand',admin.get_all_brand)
+router.get('/show_all_ads',admin.show_all_ads)
 
 
 

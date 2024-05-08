@@ -10,31 +10,31 @@ const Componets_Change_website_ads = () => {
 
     const navigate = useNavigate();
 
-    const [file, setFile] = useState();
+    const [file, setFile] = useState('');
 
-    const [One, setOne] = useState();
-    const [Two, setTwo] = useState();
-    const [Three, setThree] = useState();
-    const [Four, setFour] = useState();
-    const [Five, setFive] = useState();
-    const [Six, setSix] = useState();
-    const [Seven, setSeven] = useState();
-    const [Eight, setEight] = useState();
+    const [One, setOne] = useState('');
+    const [Two, setTwo] = useState('');
+    const [Three, setThree] = useState('');
+    const [Four, setFour] = useState('');
+    const [Five, setFive] = useState('');
+    const [Six, setSix] = useState('');
+    const [Seven, setSeven] = useState('');
+    const [Eight, setEight] = useState('');
 
     useEffect(() => {
 
-        axios.get('http://localhost:3001/#/#/', { withCredentials: true })
+        axios.get('http://localhost:3001/admin/show_all_ads/', { withCredentials: true })
             .then(res => {
-                setFile(res.data.result[0].urlIimage)
-                setOne(res.data.result[0].urlIimage)
-                setTwo(res.data.result[0].urlIimage)
-                setThree(res.data.result[0].urlIimage)
-                setFour(res.data.result[0].urlIimage)
-                setFive(res.data.result[0].urlIimage)
-                setSix(res.data.result[0].urlIimage)
-                setSeven(res.data.result[0].urlIimage)
-                setEight(res.data.result[0].urlIimage)
-
+                setFile(res.data.result[0].photo_url)
+                setOne(res.data.result[0].photo_url)
+                setTwo(res.data.result[0].photo_url)
+                setThree(res.data.result[0].photo_url)
+                setFour(res.data.result[0].photo_url)
+                setFive(res.data.result[0].photo_url)
+                setSix(res.data.result[0].photo_url)
+                setSeven(res.data.result[0].photo_url)
+                setEight(res.data.result[0].photo_url)
+                // alert(res.data.result[0].photo_url)
 
 
             })
@@ -55,7 +55,7 @@ const Componets_Change_website_ads = () => {
             formData.append('monfichier', file[i]);
         }
         formData.append('monfichier', newArr);
-        alert(formData.get('monfichier'));
+        // alert(formData.get('monfichier'));
 
         formData.append('onestore', One[0])
         formData.append('towstore', Two[0])
@@ -132,7 +132,6 @@ const Componets_Change_website_ads = () => {
                             type='file'
                             name='monfichier'
                             onChange={(e) => setTwo(e.target.files)}
-                            
                         />
                     </div>
                     <div className="input-box">

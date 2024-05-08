@@ -32,7 +32,7 @@ const Update_animals = () => {
                 setWeight(res.data.result[0].weight)
                 setHeight(res.data.result[0].high)
                 setHealthـstatus(res.data.result[0].health_stats)
-
+                // alert(res.data.result[0].urlImage)
             })
             .catch(err => { console.log(err) })
     }, [])
@@ -83,7 +83,7 @@ const Update_animals = () => {
                                 </div>
                                 <div class="input-box">
                                     <span class="details">Picture of an animal</span>
-                                    <input type="file" onChange={e => setPicture(e.target.files[0])} />
+                                    <input  type="file" onChange={e => setPicture(e.target.files[0])} />
                                 </div>
                                 <div class="input-box">
                                     <span class="details">Additional details </span>
