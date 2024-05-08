@@ -5,9 +5,9 @@ const express=require("express")
 const router=express.Router()
 const admin=require("../controller/admin")
 const imageUploader = require('../helper/image_uploader')
-
+ 
 function Add_product_store(req,res){
-if(req.session.adminstritor){
+// if(req.session.adminstritor){ 
     var d=new Date()
     var datee = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
     sql="insert proudact (price,animal_type,count_avilable,store_in_name,brand,ingredients,detalies_id,short_name,category,date_added,image_url) VALUES ('"+req.body.price1 +"','"+ req.body.typeAnimal+"','"+ req.body.quantity1+"','"+ req.body.brand+"','"+ req.body.brand+"','"+ req.body.ingredients+"','"+ show_max()+"','"+ req.body.shortDesc+"','"+req.body.category +"','"+datee +"','"+ req.files[0].filename+"')"
@@ -26,7 +26,7 @@ if(req.session.adminstritor){
                         db.query(sql2,(error,result2)=>{
                             if(error){console.log(error)}
                             else{
-                                console.log("size")
+                                console.log("size") 
                             }
                         }) 
                         
@@ -67,13 +67,12 @@ if(req.session.adminstritor){
         }
     })
 }
-else {
-    res.json({valid:false})
-}
-}
+// else {
+    // res.json({valid:false})
+// }
+// }
 
 function show_max(){ 
-    if(req.session.adminstritor){
 
     sql='select max(detalies_id) as p from proudact'
     db.query(sql,(error,result)=>{
@@ -83,10 +82,7 @@ function show_max(){
         }
     })
 }
-else {
-    res.json({valid:false})
-}
-}
+
 function add_new_category(req,res){
     if(req.session.adminstritor){
 

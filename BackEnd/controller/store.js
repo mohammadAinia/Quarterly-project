@@ -78,8 +78,8 @@ function sort_by_animal(req,res){
                 }
                 else {
                     supplies.push(result[i])
-                }
-            }
+                } 
+            } 
             console.log(supplies)
             res.json({valid:true,food,litter,supplies,result});
         }
@@ -209,7 +209,9 @@ function open_proudact(req,res){
                     sql='select * from proudact JOIN count_stars on count_stars.pr_id=proudact.id where proudact.id=?'
             db.query(sql,[id],(error,result)=>{
                 if(error){console.log(error)}
-                else{ 
+                else{
+                    //////////////////////
+                    
                     sql12345='select *from proudact where animal_type like ? and id!=? '
                     db.query(sql12345,['%'+result[0].animal_type+'%',result[0].id],(error,result63)=>{
                         if(error){console.log(error)}
@@ -221,8 +223,8 @@ function open_proudact(req,res){
                                 else{
                                     const vv=storg_id(result,result63)
                                     sqll123421='SELECT * from proudact where animal_type=? and id!=?'
-                                    db.query(sqll123421,[result[0].animal_type,id],(error,v)=>{
-                                        if(error){console.log(error)}
+                                    db.query(sqll123421,[result[0].animal_type,id],(error,v)=>{//
+                                        if(error){console.log(error)}//
                                         else{
                                             sql1='select * from dascription_p where id_ppr=?'
                                             db.query(sql1,[result[0].id],(error,result1)=>{
@@ -230,6 +232,7 @@ function open_proudact(req,res){
                                             else{
                                             if(result1[0].type_addtion=='0'){
                                                 if(result[0].size_id=='0'){
+                                                    // console.logl(v)
                                                 res.json({result1,result,valid:true,result9,v,result651,ressss})
                                                 } 
                                                 else {
@@ -237,6 +240,7 @@ function open_proudact(req,res){
                                                     db.query(sql3,[result[0].id],(error,result3)=>{
                                                         if(error){console.log(error)}
                                                         else{  
+                                                            // console.logl(v)
                                                             res.json({result651,result1,result,result3,valid:true,result9,v,ressss})
                                                         }
                                                     }) 
@@ -248,6 +252,7 @@ function open_proudact(req,res){
                                                     if(error){console.log(error)}
                                                     else{
                                                         if(result[0].size_id=='0'){
+                                                            // console.logl(v)
                                                             res.json({result651,result1,result,result2,valid:true,result9,v,ressss})
                                                             }
                                                             else { 
@@ -255,7 +260,7 @@ function open_proudact(req,res){
                                                                 db.query(sql32,[result[0].id],(error,result3)=>{
                                                                     if(error){console.log(error)}
                                                                     else{
-                                                                        
+                                                                        // console.logl(v)
                                                                         res.json({result651,result9,result1,result,result2,result3,valid:true,v,ressss})
                                                                     }
                                                                 })
@@ -266,63 +271,70 @@ function open_proudact(req,res){
                                             }
                                         }
                                     })
-                                        }
-                                    })
+                                        }///
+                                    })//
 
                                 }
                             })
-                           }
+                                }///////n
                             else {
-                                sql6363='select * from log_user join proudact on proudact.id=log_user.id_prod where user_id=? and  date_log > DATE_SUB(date_log, INTERVAL 20 DAY) and proudact.id!=? '
-                            db.query(sql6363,[req.session.username,id],(error,ressss)=>{
-                                if(error){console.log(error)}
-                                else{
-                                    
-                                    const v=storg_id(result,result63)
-                                    sql1='select * from dascription_p where id_ppr=?'
-                                    db.query(sql1,[result[0].id],(error,result1)=>{
-                                    if(error){console.log(error)}
-                                    else{
-                                    if(result1[0].type_addtion=='0'){
-                                        if(result[0].size_id=='0'){
-                                        res.json({result1,result,valid:true,result9,v,result651,ressss})
-                                        } 
-                                        else {
-                                            sql3='select * from option_p where proudact_id =?'
-                                            db.query(sql3,[result[0].id],(error,result3)=>{
-                                                if(error){console.log(error)}
-                                                else{  
-                                                    res.json({result651,result1,result,result3,valid:true,result9,v,ressss})
-                                                }
-                                            }) 
-                                        }
-                                    }
+                                sqll123421='SELECT * from proudact where animal_type=? and id!=?'
+                                db.query(sqll123421,[result[0].animal_type,id],(error,v)=>{//
+                                    if(error){console.log(error)}//
                                     else {
-                                        sql23='select * from future_ui where des_id=?'
-                                        db.query(sql23,[result1[0].id_ppr],(error,result2)=>{
+                                        sql6363='select * from log_user join proudact on proudact.id=log_user.id_prod where user_id=? and  date_log > DATE_SUB(date_log, INTERVAL 20 DAY) and proudact.id!=? '
+                                        db.query(sql6363,[req.session.username,id],(error,ressss)=>{
                                             if(error){console.log(error)}
                                             else{
-                                                if(result[0].size_id=='0'){
-                                                    res.json({result651,result1,result,result2,valid:true,result9,v,ressss})
-                                                    }
-                                                    else { 
-                                                        sql32='select * from option_p where proudact_id=?'
-                                                        db.query(sql32,[result[0].id],(error,result3)=>{
-                                                            if(error){console.log(error)}
-                                                            else{
-                                                                res.json({result651,result9,result1,result,result2,result3,valid:true,v,ressss})
-                                                            }
-                                                        })
+                                                
+                                                // const v=storg_id(result,result63)
+                                                sql1='select * from dascription_p where id_ppr=?'
+                                                db.query(sql1,[result[0].id],(error,result1)=>{
+                                                if(error){console.log(error)}
+                                                else{
+                                                if(result1[0].type_addtion=='0'){
+                                                    if(result[0].size_id=='0'){
+                                                    res.json({result1,result,valid:true,result9,v,result651,ressss})
                                                     } 
-                                                // res.json({result1,result,result2,valid:true})
+                                                    else {
+                                                        sql3='select * from option_p where proudact_id =?'
+                                                        db.query(sql3,[result[0].id],(error,result3)=>{
+                                                            if(error){console.log(error)}
+                                                            else{  
+                                                                res.json({result651,result1,result,result3,valid:true,result9,v,ressss})
+                                                            }
+                                                        }) 
+                                                    }
+                                                }
+                                                else { 
+                                                     sql23='select * from future_ui where des_id=?'
+                                                    db.query(sql23,[result1[0].id_ppr],(error,result2)=>{
+                                                        if(error){console.log(error)}
+                                                        else{
+                                                            if(result[0].size_id=='0'){
+                                                                res.json({result651,result1,result,result2,valid:true,result9,v,ressss})
+                                                                }
+                                                                else { 
+                                                                    sql32='select * from option_p where proudact_id=?'
+                                                                    db.query(sql32,[result[0].id],(error,result3)=>{
+                                                                        if(error){console.log(error)}
+                                                                        else{
+                                                                            res.json({result651,result9,result1,result,result2,result3,valid:true,v,ressss})
+                                                                        }
+                                                                    })
+                                                                } 
+                                                            // res.json({result1,result,result2,valid:true})
+                                                        }
+                                                    })
+                                                }
                                             }
                                         })
+                                            }
+                                        })
+                                       
                                     }
-                                }
-                            })
-                                }
-                            })
-                           
+                                })
+
                             }
                         }
                     })
