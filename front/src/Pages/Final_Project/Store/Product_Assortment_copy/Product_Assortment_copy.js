@@ -352,7 +352,7 @@ const Product_Assortment_copy = () => {
                                     avg_review={product.review_count}
                                     total_comments={"(" + product.comments + ")"}
                                     price={product.price + ' $'}
-                                    desc={product.store_in_name}
+                                    desc={product.short_name}
                                     href={`choose_product/${product.id}`}
                                     num_star={product.star_count}
                                 />
