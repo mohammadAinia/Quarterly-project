@@ -112,11 +112,6 @@ const My_requests = () => {
             <button className={`search-button ${isSearchOpen ? 'active' : ''}`} onClick={handleSearchClick}>
                 <FontAwesomeIcon icon={faSearch} />
             </button>
-            {/* {isSearchOpen && (
-                <div className="search-popup">
-                    <input className="search-input" type="text" placeholder="Search..." onChange={e => setSearch_result(e.target.value)} />
-                </div>
-            )} */}
             {isSearchOpen && (
                 <div className={`search-popup ${isSearchOpen ? 'active' : ''}`}>
                     <input
