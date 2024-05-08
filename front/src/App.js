@@ -22,7 +22,7 @@ import {
   Edit_information_to_clinic, Loading_page, Report, Modifying_clinic_working_hours, My_appointments_vet,
   Diagnosis,Store,Choose_Product ,Product_Assortment,Add_product_store,Shop_By_Pet,Add_category,Cart,Checkout,
   Add_Brand,Add_balance,Product_Assortment_copy,Home_Pet_Sitting,Add_Sitting_request,Details_Pet_Sitting_request,
-  Change_website_ads,
+  Change_website_ads,My_requests
 
 
 } from './Componets/index'
@@ -186,8 +186,9 @@ const App = () => {
             <Route path='Details_Pet_Sitting_request/:id' element={<Details_Pet_Sitting_request />} />
             <Route path='Loginn/Change_website_ads' element={<Change_website_ads />} />
             <Route path='Change_website_ads' element={<Change_website_ads />} />
+            <Route path='My_requests' element={<My_requests />} />
 
-
+            
 
             
 

@@ -1,19 +1,20 @@
-.animal-sitting {
+.animal-sitting2 {
     background-color: #ffffff;
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 100%;
+    margin-top: -1600px;
 }
 
-.animal-sitting .div {
+.animal-sitting2 .div {
     background-color: #ffffff;
     width: 2068px;
     height: 3305px;
     position: relative;
 }
 
-.animal-sitting .overlap {
+.animal-sitting2 .overlap {
     position: absolute;
     width: 2023px;
     height: 1621px;
@@ -21,7 +22,7 @@
     left: 45px;
 }
 
-.animal-sitting .overlap-group {
+.animal-sitting2 .overlap-group {
     position: absolute;
     width: 2023px;
     height: 1621px;
@@ -29,7 +30,7 @@
     left: 0;
 }
 
-.animal-sitting .rectangle {
+.animal-sitting2 .rectangle {
     position: absolute;
     width: 739px;
     height: 1621px;
@@ -38,7 +39,7 @@
     background-color: #ffbd35;
 }
 
-.animal-sitting .file {
+.animal-sitting2 .file {
     position: absolute;
     width: 1010px;
     height: 673px;
@@ -47,7 +48,7 @@
     object-fit: cover;
 }
 
-.animal-sitting .text-wrapper {
+.animal-sitting2 .text-wrapper {
     position: absolute;
     width: 782px;
     height: 154px;
@@ -62,7 +63,7 @@
     line-height: normal;
 }
 
-.animal-sitting .p {
+.animal-sitting2 .p {
     position: absolute;
     width: 782px;
     height: 154px;
@@ -77,7 +78,7 @@
     line-height: normal;
 }
 
-.animal-sitting .never-leave-your {
+.animal-sitting2 .never-leave-your {
     position: absolute;
     width: 749px;
     height: 262px;
@@ -91,10 +92,13 @@
     letter-spacing: 0;
     line-height: normal;
 }
-.animal-sitting .fixed-button {
+
+.animal-sitting2 .fixed-button {
     position: absolute;
-    top: 1652px; /* Adjust this value as needed */
-    left: calc(659px + 749px + 20px); /* Adjust this value as needed */
+    top: 1652px;
+    /* Adjust this value as needed */
+    left: calc(659px + 749px + 20px);
+    /* Adjust this value as needed */
     background-color: #00D7E9;
     color: white;
     border: none;
@@ -104,20 +108,29 @@
     font-size: 30px;
     cursor: pointer;
     font-size: 30px;
-    display: flex; /* Add flexbox */
-    justify-content: center; /* Center horizontally */
+    display: flex;
+    /* Add flexbox */
+    justify-content: center;
+    /* Center horizontally */
     align-items: center;
-    transition: transform 0.7s ease, box-shadow 0.3s ease; /* Add transition effect for box-shadow */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);}
-.animal-sitting .fixed-button:hover {
-    transform: scale(1.1); /* Scale up slightly on hover */
+    transition: transform 0.7s ease, box-shadow 0.3s ease;
+    /* Add transition effect for box-shadow */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.animal-sitting2 .fixed-button:hover {
+    transform: scale(1.1);
+    /* Scale up slightly on hover */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     background-color: #ffbd35;
 }
-.animal-sitting .fixed-button2 {
+
+.animal-sitting2 .fixed-button2 {
     position: absolute;
-    top: 1662px; /* Adjust this value as needed */
-    left: calc(659px + 749px + -1000px); /* Adjust this value as needed */
+    top: 1662px;
+    /* Adjust this value as needed */
+    left: calc(659px + 749px + -1000px);
+    /* Adjust this value as needed */
     background-color: #00D7E9;
     color: white;
     border: none;
@@ -126,20 +139,29 @@
     height: 50px;
     cursor: pointer;
     font-size: 25px;
-    display: flex; /* Add flexbox */
-    justify-content: center; /* Center horizontally */
+    display: flex;
+    /* Add flexbox */
+    justify-content: center;
+    /* Center horizontally */
     align-items: center;
-    transition: transform 0.7s ease, box-shadow 0.3s ease; /* Add transition effect for box-shadow */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);}
-.animal-sitting .fixed-button2:hover {
-    transform: scale(1.1); /* Scale up slightly on hover */
+    transition: transform 0.7s ease, box-shadow 0.3s ease;
+    /* Add transition effect for box-shadow */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.animal-sitting2 .fixed-button2:hover {
+    transform: scale(1.1);
+    /* Scale up slightly on hover */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     background-color: #ffbd35;
 }
-.animal-sitting .fixed-button3 {
+
+.animal-sitting2 .fixed-button3 {
     position: absolute;
-    top: 1662px; /* Adjust this value as needed */
-    left: calc(659px + 749px + 200px); /* Adjust this value as needed */
+    top: 1662px;
+    /* Adjust this value as needed */
+    left: calc(659px + 749px + 200px);
+    /* Adjust this value as needed */
     background-color: #00D7E9;
     color: white;
     border: none;
@@ -148,18 +170,24 @@
     height: 50px;
     font-size: 24px;
     cursor: pointer;
-    display: flex; /* Add flexbox */
-    justify-content: center; /* Center horizontally */
+    display: flex;
+    /* Add flexbox */
+    justify-content: center;
+    /* Center horizontally */
     align-items: center;
-    transition: transform 0.7s ease, box-shadow 0.3s ease; /* Add transition effect for box-shadow */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);}
-.animal-sitting .fixed-button3:hover {
-    transform: scale(1.1); /* Scale up slightly on hover */
+    transition: transform 0.7s ease, box-shadow 0.3s ease;
+    /* Add transition effect for box-shadow */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.animal-sitting2 .fixed-button3:hover {
+    transform: scale(1.1);
+    /* Scale up slightly on hover */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     background-color: #ffbd35;
 }
 
-.animal-sitting .text-wrapper-2 {
+.animal-sitting2 .text-wrapper-2 {
     position: absolute;
     width: 749px;
     height: 262px;
@@ -173,14 +201,15 @@
     letter-spacing: 0;
     line-height: normal;
 }
-.animal-sitting .card-madical {
+
+.animal-sitting2 .card-madical {
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 100%;
 }
 
-.animal-sitting .store2 {
+.animal-sitting2 .store2 {
     /* width: 1512px; */
     /* height: 982px; */
     width: 75%;
@@ -192,10 +221,10 @@
     position: absolute;
     top: 1952px;
     left: 187px;
-    
+
 }
 
-.animal-sitting .overlap-2 {
+.animal-sitting2 .overlap-2 {
     margin-top: 19px;
     margin-left: 30px;
     position: relative;
@@ -207,17 +236,22 @@
     /* Added margin-right to create space between elements */
     margin-bottom: 16px;
     /* Added margin-bottom to create space between rows */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add box-shadow transition */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Add box-shadow transition */
     padding: 300px;
 }
-.animal-sitting .overlap-2:hover {
-    transform: scale(1.05) rotate(2deg); /* Scale up and rotate slightly on hover */
-}
-.animal-sitting .overlap-2:hover .rectangle-2 {
-    border-color: #ffbd35; /* Change border color to yellow on hover */
+
+.animal-sitting2 .overlap-2:hover {
+    transform: scale(1.05) rotate(2deg);
+    /* Scale up and rotate slightly on hover */
 }
 
-.animal-sitting .text-wrapper-3 {
+.animal-sitting2 .overlap-2:hover .rectangle-2 {
+    border-color: #ffbd35;
+    /* Change border color to yellow on hover */
+}
+
+.animal-sitting2 .text-wrapper-3 {
     left: 261px;
     position: absolute;
     width: 217px;
@@ -232,7 +266,7 @@
     line-height: normal;
 }
 
-.animal-sitting .text-wrapper-4 {
+.animal-sitting2 .text-wrapper-4 {
     position: absolute;
     width: 287px;
     max-width: 400px;
@@ -249,7 +283,7 @@
     overflow: hidden;
 }
 
-.animal-sitting .text-wrapper-5 {
+.animal-sitting2 .text-wrapper-5 {
     position: absolute;
     width: 217px;
 
@@ -263,10 +297,53 @@
     text-align: center;
     letter-spacing: 0;
     line-height: normal;
-
 }
 
-.animal-sitting .text-wrapper-6 {
+.animal-sitting2 .text-wrapper-55 {
+    position: absolute;
+    width: 217px;
+    height: 76px;
+    top: 500px;
+    left: 261px;
+    font-family: "Poppins-Light", Helvetica;
+    font-weight: bolder;
+    color: green;
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.animal-sitting2 .text-wrapper-5555 {
+    position: absolute;
+    width: 217px;
+    height: 76px;
+    top: 500px;
+    left: 261px;
+    font-family: "Poppins-Light", Helvetica;
+    font-weight: bolder;
+    color: red;
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.animal-sitting2 .text-wrapper-555 {
+    position: absolute;
+    width: 217px;
+    max-width: 180px;
+    height: 76px;
+    top: 570px;
+    left: 305px;
+    font-family: "Poppins-Light", Helvetica;
+    font-weight: 300;
+    color: black;
+    font-size: 25px;
+    overflow: hidden;
+}
+
+.animal-sitting2 .text-wrapper-6 {
     position: absolute;
     width: 272px;
     max-width: 250px;
@@ -283,7 +360,7 @@
     overflow: hidden;
 }
 
-.animal-sitting .text-wrapper-7 {
+.animal-sitting2 .text-wrapper-7 {
     position: absolute;
     width: 272px;
     max-width: 250px;
@@ -300,7 +377,7 @@
     overflow: hidden;
 }
 
-.animal-sitting .rectangle-2 {
+.animal-sitting2 .rectangle-2 {
     position: absolute;
     width: 521px;
     height: 523px;
@@ -310,10 +387,10 @@
     border: 6px solid;
     border-color: #bce5fb;
     transform: rotate(44.52deg);
-    
+
 }
 
-.animal-sitting .frame {
+.animal-sitting2 .frame {
     left: 304px;
     display: inline-flex;
     align-items: center;
@@ -324,13 +401,16 @@
     top: 573px;
     background-color: #4e77b7;
     border-radius: 14px;
-    transition: background-color 0.3s ease; /* Add transition for background-color */
-}
-.animal-sitting .frame:hover {
-    background-color: #355b8c; /* Change background color on hover */
+    transition: background-color 0.3s ease;
+    /* Add transition for background-color */
 }
 
-.animal-sitting .text-wrapper-8 {
+.animal-sitting2 .frame:hover {
+    background-color: #355b8c;
+    /* Change background color on hover */
+}
+
+.animal-sitting2 .text-wrapper-8 {
     position: relative;
     width: fit-content;
     margin-top: -1px;
@@ -343,7 +423,7 @@
     line-height: normal;
 }
 
-.animal-sitting .overlap-group-2 {
+.animal-sitting2 .overlap-group-2 {
     position: absolute;
     width: 738px;
     height: 738px;
@@ -351,7 +431,7 @@
     left: 1142px;
 }
 
-.animal-sitting .text-wrapper-9 {
+.animal-sitting2 .text-wrapper-9 {
     left: 260px;
     position: absolute;
     width: 217px;
@@ -366,7 +446,7 @@
     line-height: normal;
 }
 
-.animal-sitting .text-wrapper-10 {
+.animal-sitting2 .text-wrapper-10 {
     position: absolute;
     width: 217px;
     height: 76px;
@@ -381,7 +461,7 @@
     line-height: normal;
 }
 
-.animal-sitting .text-wrapper-11 {
+.animal-sitting2 .text-wrapper-11 {
     position: absolute;
     width: 217px;
     height: 76px;
@@ -396,7 +476,7 @@
     line-height: normal;
 }
 
-.animal-sitting .text-wrapper-12 {
+.animal-sitting2 .text-wrapper-12 {
     position: absolute;
     width: 272px;
     height: 76px;
@@ -411,7 +491,7 @@
     line-height: normal;
 }
 
-.animal-sitting .text-wrapper-13 {
+.animal-sitting2 .text-wrapper-13 {
     position: absolute;
     width: 272px;
     height: 76px;
@@ -426,7 +506,7 @@
     line-height: normal;
 }
 
-.animal-sitting .div-wrapper {
+.animal-sitting2 .div-wrapper {
     left: 303px;
     display: inline-flex;
     align-items: center;
@@ -438,4 +518,3 @@
     background-color: #4e77b7;
     border-radius: 14px;
 }
-

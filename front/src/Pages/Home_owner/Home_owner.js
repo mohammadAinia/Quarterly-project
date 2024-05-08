@@ -52,49 +52,26 @@ const Home_owner = () => {
 
   const ads = [one, two, three, four, five, six, seven, eight, nine];
 
-  // const [backgroundImages, setBackgroundImages] = useState([
-  //   (cat_day),
-  //   (adv2),
-  //   // Add more background images as needed
-  // ]);
-  const [backgroundImages, setBackgroundImages] = useState([]);
+  const [backgroundImages, setBackgroundImages] = useState([
+      (cat_day),
+      (adv2),
+      // Add more background images as needed
+  ]);
+
+
 
   const [currentBackgroundIndex, setCurrentBackgroundIndex] = useState(0);
-  const [currentAdIndex, setCurrentAdIndex] = useState(0);
 
-  // useEffect(() => {
-  //   const intervalId = setInterval(() => {
-  //     setCurrentBackgroundIndex(prevIndex =>
-  //       prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
-  //     );
-  //   }, 3000);
-
-  //   return () => clearInterval(intervalId);
-  // }, []); 
-  const advertisementImages = Adv ? Adv.map(ad => `http://localhost:3001/uploads/${ad.photo_url}`) : [];
-// alert(advertisementImages)
   useEffect(() => {
-    if (Adv) {
-      // Set the advertisement images from Adv
-      setBackgroundImages(advertisementImages);
-  
-      // Update the current ad index
-      setCurrentAdIndex(0);
-  
-      // Clear interval to reset timer when Adv changes
-      let intervalId = null; // Declare intervalId here
-  
-      // Start the interval with the new advertisement images
-      intervalId = setInterval(() => {
-        setCurrentAdIndex(prevIndex =>
-          prevIndex === advertisementImages.length - 1 ? 0 : prevIndex + 1
-        );
+      const intervalId = setInterval(() => {
+          setCurrentBackgroundIndex(prevIndex =>
+              prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
+          );
       }, 3000);
-  
-      // Clean up function to clear the interval when component unmounts
+
       return () => clearInterval(intervalId);
-    }
-  }, [Adv, advertisementImages]);
+  }, []);
+
 
 
 
@@ -110,8 +87,8 @@ const Home_owner = () => {
           setProblim_info(res.data.resultt)
           setAdvice(res.data.resulttt)
           setIsnotefi(res.data.resultttt)
-          setAdv(res.data.resultada)
-          // alert(res.data.resultada[0].photo_url) //جرب هاد شغال لتعرف شو االوضع من هون😂😂😂
+          // setAdv(res.data.resultada)
+          // // alert(res.data.resultada[0].photo_url) //جرب هاد شغال لتعرف شو االوضع من هون😂😂😂
 
         }
         else {
@@ -140,7 +117,7 @@ const Home_owner = () => {
 
       <div class="framee2">
         <div class="overlap-group-wrapperr2">
-          <div class="overlap-groupp2" style={{ backgroundImage: `http://localhost:3001/uploads/(${advertisementImages[currentAdIndex]})` }}>
+        <div class="overlap-groupp2" style={{ backgroundImage: `url(${backgroundImages[currentBackgroundIndex]})` }}>
             <img class="imgg2" src={left} onClick={handleLeftClick} />
             <img class="imgg-22" src={rightt} onClick={handleRightClick} />
           </div>
