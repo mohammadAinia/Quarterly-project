@@ -3,6 +3,7 @@ import add_clinic from '../../../../Assert/Images/add_clinic.png'
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import Swal from 'sweetalert2';
 
 const Add_clinic = () => {
 
@@ -24,8 +25,24 @@ const Add_clinic = () => {
             axios.post('http://localhost:3001/clinic/add_new_clinic', { Name_clinic, From, To, Location, Location_details, Phone })
                 .then(res => {
                     if (res.data.valid) {
-                        alert('The clinic has been added successfully');
-                        navigate(`Appointment_clinic_director/${res.data.result.insertId}`);
+                        // alert('The clinic has been added successfully');
+                        // navigate(`Appointment_clinic_director/${res.data.result.insertId}`);
+                        Swal.fire({
+                            title: "Good job!",
+                            text: "The clinic has been added successfully",
+                            icon: "success",
+                            customClass: {
+                                container: 'enlarged-alert-container',
+                                popup: 'enlarged-alert-popup',
+                                title: 'enlarged-alert-title',
+                                htmlContainer: 'enlarged-alert-html-container',
+                                confirmButton: 'enlarged-alert-confirm-button',
+                            },
+                            position: 'center',
+                            backdrop: false,
+                        }).then(() => {
+                            navigate(`Appointment_clinic_director/${res.data.result.insertId}`);
+                        });
                     } else {
                         navigate('/login')
 
@@ -35,7 +52,21 @@ const Add_clinic = () => {
                     console.log(err);
                 });
         } else {
-            alert('Please enter valid working hours');
+            // alert('Please enter valid working hours');
+            Swal.fire({
+                title: "!",
+                text: "Please enter valid working hours",
+                icon: "success",
+                customClass: {
+                    container: 'enlarged-alert-container',
+                    popup: 'enlarged-alert-popup',
+                    title: 'enlarged-alert-title',
+                    htmlContainer: 'enlarged-alert-html-container',
+                    confirmButton: 'enlarged-alert-confirm-button',
+                },
+                position: 'center',
+                backdrop: false,
+            })
         }
     };
     return (

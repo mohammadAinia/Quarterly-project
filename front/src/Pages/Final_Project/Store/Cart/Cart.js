@@ -11,6 +11,7 @@ import axios from 'axios'
 // import { useNavigate } from 'react-router-dom'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Componets_Product_store, Componets_cart, Componets_user_reviews, Store_Header } from '../../../../Componets'
+import Swal from 'sweetalert2';
 
 
 var iidd
@@ -30,7 +31,7 @@ const Cart = () => {
         axios.get('http://localhost:3001/storee/show_cart', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
-                    
+
                     setProductInfo(res.data.result);
                     // Initialize quantities with default values
                     const initialQuantities = {};
@@ -51,16 +52,33 @@ const Cart = () => {
     // تابع حذف المنتج من السلة
     const handleDelete = (productId) => {
         // Send delete request to backend
-        axios.post(`http://localhost:3001/storee/delete/${productId}`,{withCredentials:true})
+        axios.post(`http://localhost:3001/storee/delete/${productId}`, { withCredentials: true })
             .then(res => {
 
-            if(res.data.valid){                alert('Product deleted successfully');
-            window.location.reload();
-        }
-    else{alert('sorry unexpected error')}
-    }
-    
-    )
+                if (res.data.valid) {
+                    // alert('Product deleted successfully');
+                    // window.location.reload();
+                    Swal.fire({
+                        title: "Good job!",
+                        text: "Product deleted successfully",
+                        icon: "success",
+                        customClass: {
+                            container: 'enlarged-alert-container',
+                            popup: 'enlarged-alert-popup',
+                            title: 'enlarged-alert-title',
+                            htmlContainer: 'enlarged-alert-html-container',
+                            confirmButton: 'enlarged-alert-confirm-button',
+                        },
+                        position: 'center',
+                        backdrop: false,
+                    }).then(() => {
+                        window.location.reload();
+                    });
+                }
+                else { alert('sorry unexpected error') }
+            }
+
+            )
             .catch(err => {
                 // Handle error
                 console.error('Error deleting product:', err);

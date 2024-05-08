@@ -184,6 +184,8 @@ const App = () => {
             <Route path='Add_Sitting_request' element={<Add_Sitting_request />} />
             <Route path='Details_Pet_Sitting_request/:id' element={<Details_Pet_Sitting_request />} />
             <Route path='Loginn/Change_website_ads' element={<Change_website_ads />} />
+            <Route path='Change_website_ads' element={<Change_website_ads />} />
+
 
 
             

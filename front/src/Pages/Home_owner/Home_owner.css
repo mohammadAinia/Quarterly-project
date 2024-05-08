@@ -1563,6 +1563,12 @@
     left: 441px;
     background-color: #fecc02;
     border-radius: 14px;
+    transition: all 0.3s ease;
+
+}
+.adv-store .div-wrapper:hover {
+    background-color: #4ac4d8;
+    transform: scale(1.05);
 }
 
 .adv-store .text-wrapper {

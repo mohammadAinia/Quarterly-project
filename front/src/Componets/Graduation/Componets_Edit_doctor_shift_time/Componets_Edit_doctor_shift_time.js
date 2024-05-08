@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { Header } from '../../../Componets'
 import { useNavigate, useParams } from 'react-router-dom'
-
+import Swal from 'sweetalert2';
 
 const Componets_Edit_doctor_shift_time = () => {
 
@@ -65,8 +65,24 @@ const Componets_Edit_doctor_shift_time = () => {
         axios.post(`http://localhost:3001/clinic/update_time_shift/${id}`, {Saturday_From, Saturday_To, Sunday_From, Sunday_To, Monday_From, Monday_To, Tuesday_From, Tuesday_To, Wednesday_From, Wednesday_To, Thursday_From, Thursday_To}, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
-                    alert('Modified successfully')
-                    navigate(-2)
+                    // alert('Modified successfully')
+                    // navigate(-2)
+                    Swal.fire({
+                        title: "Good job!",
+                        text: "Modified successfully",
+                        icon: "success",
+                        customClass: {
+                            container: 'enlarged-alert-container',
+                            popup: 'enlarged-alert-popup',
+                            title: 'enlarged-alert-title',
+                            htmlContainer: 'enlarged-alert-html-container',
+                            confirmButton: 'enlarged-alert-confirm-button',
+                        },
+                        position: 'center',
+                        backdrop: false,
+                    }).then(() => {
+                        navigate(-2);
+                    });
                 }
             })
             .catch(err => alert(err))

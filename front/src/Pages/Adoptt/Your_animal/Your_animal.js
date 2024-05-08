@@ -6,6 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import b from '../../../Assert/Images/cat.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faRightFromBracket, faBell, faHouse, faMessage, faUserDoctor, faStethoscope } from '@fortawesome/free-solid-svg-icons'
+import Swal from 'sweetalert2';
 
 const Your_animal = () => {
 
@@ -16,14 +17,44 @@ const Your_animal = () => {
     const Request_adopt = async (id) => {
         try {
             await axios.post(`http://localhost:3001/adopt/add_to_ad_list/${id}`, { withCredentials: true })
-            .then(res=>{
-                if (res.data.check===true){alert("Added to adoption list")}
-else if (res.data.check===false){
-    alert('this animal alredy added to list')
-}
-            })
-            .catch(err => { console.log(err) })
-            
+                .then(res => {
+                    if (res.data.check === true) {
+                        // alert("Added to adoption list")
+                        Swal.fire({
+                            title: "Good job!",
+                            text: "Added to adoption list",
+                            icon: "success",
+                            customClass: {
+                                container: 'enlarged-alert-container',
+                                popup: 'enlarged-alert-popup',
+                                title: 'enlarged-alert-title',
+                                htmlContainer: 'enlarged-alert-html-container',
+                                confirmButton: 'enlarged-alert-confirm-button',
+                            },
+                            position: 'center',
+                            backdrop: false,
+                        })
+                    }
+                    else if (res.data.check === false) {
+                        // alert('this animal alredy added to list')
+                        Swal.fire({
+                            title: "Good job!",
+                            text: "this animal alredy added to list",
+                            icon: "success",
+                            customClass: {
+                                container: 'enlarged-alert-container',
+                                popup: 'enlarged-alert-popup',
+                                title: 'enlarged-alert-title',
+                                htmlContainer: 'enlarged-alert-html-container',
+                                confirmButton: 'enlarged-alert-confirm-button',
+                            },
+                            position: 'center',
+                            backdrop: false,
+                        })
+                    }
+                })
+                .catch(err => { console.log(err) })
+
         }
         catch (err) { console.log(err) }
     }

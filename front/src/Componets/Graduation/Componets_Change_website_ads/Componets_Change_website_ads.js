@@ -6,21 +6,40 @@ import { Header } from '../../../Componets'
 import { useNavigate, useParams } from 'react-router-dom'
 import Swal from 'sweetalert2';
 
-
 const Componets_Change_website_ads = () => {
 
     const navigate = useNavigate();
 
-    const [file, setFile] = useState(null);
+    const [file, setFile] = useState();
 
-    const [One, setOne] = useState(null);
-    const [Two, setTwo] = useState(null);
-    const [Three, setThree] = useState(null);
-    const [Four, setFour] = useState(null);
-    const [Five, setFive] = useState(null);
-    const [Six, setSix] = useState(null);
-    const [Seven, setSeven] = useState(null);
-    const [Eight, setEight] = useState(null);
+    const [One, setOne] = useState();
+    const [Two, setTwo] = useState();
+    const [Three, setThree] = useState();
+    const [Four, setFour] = useState();
+    const [Five, setFive] = useState();
+    const [Six, setSix] = useState();
+    const [Seven, setSeven] = useState();
+    const [Eight, setEight] = useState();
+
+    useEffect(() => {
+
+        axios.get('http://localhost:3001/#/#/', { withCredentials: true })
+            .then(res => {
+                setFile(res.data.result[0].urlIimage)
+                setOne(res.data.result[0].urlIimage)
+                setTwo(res.data.result[0].urlIimage)
+                setThree(res.data.result[0].urlIimage)
+                setFour(res.data.result[0].urlIimage)
+                setFive(res.data.result[0].urlIimage)
+                setSix(res.data.result[0].urlIimage)
+                setSeven(res.data.result[0].urlIimage)
+                setEight(res.data.result[0].urlIimage)
+
+
+
+            })
+            .catch(err => { console.log(err) })
+    }, [])
 
 
 
