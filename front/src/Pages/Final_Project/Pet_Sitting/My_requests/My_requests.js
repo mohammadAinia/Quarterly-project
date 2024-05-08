@@ -87,7 +87,7 @@ const My_requests = () => {
                                                 fare={sitting.Service_price}
                                                 from={sitting.date_from}
                                                 to={sitting.date_to}
-                                                name_accepted={sitting.first_name + ' ' + sitting.last_name}
+                                                name_accepted={sitting.requester_id}
                                                 test={sitting.requester_id} />
                                         </div>
                                     ))
