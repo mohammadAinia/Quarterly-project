@@ -448,16 +448,15 @@
 
 .card-madical .text-wrapperr {
     position: absolute;
-    width: 123px;
+    width: 303px;
+    max-width: 240px;
     top: 160px;
     left: 49px;
     font-family: "Poppins-SemiBold", Helvetica;
     font-weight: 700;
     color: #000000;
     font-size: 25px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
+    overflow: hidden;
 }
 
 .card-madical .linee {
@@ -470,16 +469,16 @@
 
 .card-madical .elementt {
     position: absolute;
-    width: 90px;
+    width: 190px;
     top: 254px;
     left: 85px;
     font-family: "Poppins-Regular", Helvetica;
     font-weight: 400;
     color: #000000;
     font-size: 17px;
-    text-align: center;
     letter-spacing: 0;
     line-height: normal;
+
 }
 
 .card-madical .elementtt {
@@ -512,14 +511,13 @@
 
 .card-madical .divv {
     position: absolute;
-    width: 75px;
+    width: 175px;
     top: 287px;
     left: 84px;
     font-family: "Poppins-Regular", Helvetica;
     font-weight: 400;
     color: #000000;
     font-size: 16px;
-    text-align: center;
     letter-spacing: 0;
     line-height: normal;
 }

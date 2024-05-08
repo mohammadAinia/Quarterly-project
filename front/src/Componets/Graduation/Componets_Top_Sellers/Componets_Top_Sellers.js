@@ -27,7 +27,7 @@ const Componets_Top_Sellers = (props) => {
                 <div class="text-wrapper-26">TOP RATED</div>
                 <div class="text-wrapper-27">{props.brand}</div>
                 <div class="text-wrapper-28">{props.price}</div>
-                <div class="element">{props.rate}&nbsp;&nbsp; {props.comments}</div>
+                <div class="element">{props.rate}&nbsp;&nbsp; ({props.comments})</div>
                 {/* <div class="text-wrapper-29">Classics Red</div> */}
                 <div class="text-wrapper-33">{props.desc}</div>
                 <div class="rectangle-13"></div>

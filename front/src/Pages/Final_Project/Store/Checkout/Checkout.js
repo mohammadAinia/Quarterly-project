@@ -96,8 +96,24 @@ const Checkout = () => {
             axios.post('http://localhost:3001/storee/complet_order', { selectedAddress, updatedTotalAmount })
                 .then(res => {
                     if (res.data.valid) {
-                        alert("Orders have been confirmed. The delivery representative will contact you within 24 hours");
-                        navigate('/store')
+                        // alert("Orders have been confirmed. The delivery representative will contact you within 24 hours");
+                        // navigate('/store')
+                        Swal.fire({
+                            title: "Good job!",
+                            text: "Orders have been confirmed. The delivery representative will contact you within 24 hours",
+                            icon: "success",
+                            customClass: {
+                                container: 'enlarged-alert-container',
+                                popup: 'enlarged-alert-popup',
+                                title: 'enlarged-alert-title',
+                                htmlContainer: 'enlarged-alert-html-container',
+                                confirmButton: 'enlarged-alert-confirm-button',
+                            },
+                            position: 'center',
+                            backdrop: false,
+                        }).then(() => {
+                            navigate('/store')
+                        });
                     }
                     else {
                         navigate('/login')
@@ -107,11 +123,25 @@ const Checkout = () => {
                 .catch(err => { console.log(err) });
         }
         else {
-            alert("Sorry, the wallet balance is not enough. Please recharge it");
+            // alert("Sorry, the wallet balance is not enough. Please recharge it");
+            Swal.fire({
+                title: "!",
+                text: "Sorry, the wallet balance is not enough. Please recharge it",
+                icon: "success",
+                customClass: {
+                    container: 'enlarged-alert-container',
+                    popup: 'enlarged-alert-popup',
+                    title: 'enlarged-alert-title',
+                    htmlContainer: 'enlarged-alert-html-container',
+                    confirmButton: 'enlarged-alert-confirm-button',
+                },
+                position: 'center',
+                backdrop: false,
+            })
         }
     };
     const calculateTotalPrice = (products) => {
-        let total = 100;
+        let total = 0;
         products.forEach(product => {
             total += product.special_price * product.select_count;
         });
