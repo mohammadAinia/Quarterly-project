@@ -1,7 +1,6 @@
-import './Home_Pet_Sitting.css'
 import React from 'react'
 import sitting_file1 from '../../../../Assert/Images/sitting_file1.png'
-import { Header, Componets_Home_Pet_Sitting } from '../../../../Componets/index'
+import { Header, Componets_Requests_accepted } from '../../../../Componets/index'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { useEffect, useState, useRef } from 'react'
@@ -12,17 +11,16 @@ import {
     faClock, faArrowsRotate, faComments, faHandHoldingHeart, faHouseCircleCheck,
     faUsers, faArrowRightArrowLeft, faPaperPlane, faLocationDot, faHouse, faBell, faMessage, faUserDoctor, faStethoscope
 } from '@fortawesome/free-solid-svg-icons'
-const Home_Pet_Sitting = () => {
 
+const Requests_accepted = () => {
+    const navigate = useNavigate()
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [requestSitting, setRequestSitting] = useState([]);
     const [filteredRequestSitting, setFilteredRequestSitting] = useState([]);
 
-    const navigate = useNavigate()
-
     useEffect(() => {
-        axios.get('http://localhost:3001/sitting/show_requests', { withCredentials: true })
+        axios.get('http://localhost:3001/sitting/#', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     setRequestSitting(res.data.result);
@@ -51,31 +49,16 @@ const Home_Pet_Sitting = () => {
     const handleSearchClick = () => {
         setIsSearchOpen(!isSearchOpen);
     };
-    return (
 
+    return (
         <>
             <Header href12={"/Pet_Sitting"} a12={"Pet Sitting"} href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"FAQs"} href5={"/Add_Animal"} a5={<FontAwesomeIcon icon={faPlus} />} href6={"all_doc"} a6={<FontAwesomeIcon icon={faStethoscope} />} href3={"/Animal_infoo"} a3={"My Animals"} href4={"/All_problem"} a4={"Forum"} href7={"/chat"} a7={<FontAwesomeIcon icon={faMessage} />} href8={"/Notifications"} a8={"Notifications"} href9={"/profile"} a9={"profile"} href10={"/"} a10={<FontAwesomeIcon icon={faHouse} />} href11={"My_appointments"} a11={"My appointments"} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
-
             <body>
-                <div class="animal-sitting">
+                <div class="animal-sitting2">
                     <div class="div">
-                        {/* القسم العلوي */}
-                        <div class="overlap">
-                            <div class="overlap-group">
-                                <div class="rectangle"></div>
-                                <img class="file" src={sitting_file1} />
-                                <p class="text-wrapper">Petsitting your animal safely and reliably</p>
-                                <p class="p">Place an order or sit other animals at the best prices</p>
-                            </div>
-                            <p class="never-leave-your">Never leave your <br />animal behind again</p>
-                        </div>
+
                         {/* قسم عرض طلبات المجالسة */}
-                        <div class="text-wrapper-2">sitting requests</div>
-                        <a href='Add_Sitting_request' class="fixed-button"><FontAwesomeIcon icon={faPlus} /></a>
-                        <a href='My_requests' class="fixed-button2">My requests</a>
-                        <a href='Requests_accepted' class="fixed-button3">Requests accepted</a>
-
-
+                        <div class="text-wrapper-2">Requests accepted</div>
 
                         <div class="card-madical">
                             <div class="store2">
@@ -83,26 +66,26 @@ const Home_Pet_Sitting = () => {
                                 {isSearchOpen ? (
                                     filteredRequestSitting.map((sitting, index) => (
                                         <div key={index}>
-                                            <Componets_Home_Pet_Sitting
+                                            <Componets_Requests_accepted
                                                 type_animal={sitting.type}
                                                 name={sitting.name}
                                                 fare={sitting.Service_price}
                                                 from={sitting.date_from}
                                                 to={sitting.date_to}
-                                                href={`Details_Pet_Sitting_request/${sitting.si_id}`}
+                                                id={sitting.id}
                                             />
                                         </div>
                                     ))
                                 ) : (
                                     requestSitting.map((sitting, index) => (
                                         <div key={index}>
-                                            <Componets_Home_Pet_Sitting
+                                            <Componets_Requests_accepted
                                                 type_animal={sitting.type}
                                                 name={sitting.name}
                                                 fare={sitting.Service_price}
                                                 from={sitting.date_from}
                                                 to={sitting.date_to}
-                                                href={`Details_Pet_Sitting_request/${sitting.si_id}`}
+                                                id={sitting.id}
                                             />
                                         </div>
                                     ))
@@ -110,7 +93,7 @@ const Home_Pet_Sitting = () => {
 
 
 
-                                {/* <Componets_Home_Pet_Sitting
+                                {/* <Componets_My_requests
                                     type_animal={"Cat"}
                                     name={"koch"}
                                     fare={50}
@@ -127,11 +110,6 @@ const Home_Pet_Sitting = () => {
             <button className={`search-button ${isSearchOpen ? 'active' : ''}`} onClick={handleSearchClick}>
                 <FontAwesomeIcon icon={faSearch} />
             </button>
-            {/* {isSearchOpen && (
-                <div className="search-popup">
-                    <input className="search-input" type="text" placeholder="Search..." onChange={e => setSearch_result(e.target.value)} />
-                </div>
-            )} */}
             {isSearchOpen && (
                 <div className={`search-popup ${isSearchOpen ? 'active' : ''}`}>
                     <input
@@ -146,4 +124,4 @@ const Home_Pet_Sitting = () => {
     )
 }
 
-export default Home_Pet_Sitting
+export default Requests_accepted

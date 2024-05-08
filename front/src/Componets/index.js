@@ -193,6 +193,8 @@ export { default as Change_website_ads } from '../Pages/Final_Project/Site_Manag
 export { default as Componets_Change_website_ads } from './Graduation/Componets_Change_website_ads/Componets_Change_website_ads'
 export { default as My_requests } from '../Pages/Final_Project/Pet_Sitting/My_requests/My_requests'
 export { default as Componets_My_requests } from './Graduation/Componets_My_requests/Componets_My_requests'
+export { default as Requests_accepted } from '../Pages/Final_Project/Pet_Sitting/Requests_accepted/Requests_accepted'
+export { default as Componets_Requests_accepted } from './Graduation/Componets_Requests_accepted/Componets_Requests_accepted'
 
 
 

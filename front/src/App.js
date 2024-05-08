@@ -22,7 +22,7 @@ import {
   Edit_information_to_clinic, Loading_page, Report, Modifying_clinic_working_hours, My_appointments_vet,
   Diagnosis,Store,Choose_Product ,Product_Assortment,Add_product_store,Shop_By_Pet,Add_category,Cart,Checkout,
   Add_Brand,Add_balance,Product_Assortment_copy,Home_Pet_Sitting,Add_Sitting_request,Details_Pet_Sitting_request,
-  Change_website_ads,My_requests
+  Change_website_ads,My_requests,Requests_accepted
 
 
 } from './Componets/index'
@@ -141,6 +141,8 @@ const App = () => {
             <Route path='/m' element={<Administrator_home />} />
 
             <Route path='Loginn/choose_clinic' element={<Choose_a_clinic_for_delete />} />
+            <Route path='choose_clinic' element={<Choose_a_clinic_for_delete />} />
+
             <Route path='Choosing_a_doctor_clinic' element={<Componets_Clinic_To_choose />} />
             <Route path='mm' element={<Home_for_clinic_manager />} />
 
@@ -186,6 +188,8 @@ const App = () => {
             <Route path='Loginn/Change_website_ads' element={<Change_website_ads />} />
             <Route path='Change_website_ads' element={<Change_website_ads />} />
             <Route path='My_requests' element={<My_requests />} />
+            <Route path='Requests_accepted' element={<Requests_accepted />} />
+
 
             
 
