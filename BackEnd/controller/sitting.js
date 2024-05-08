@@ -61,7 +61,7 @@ else {
 }
 }
 function show_confirmed_from_requester(req,res){
-    sql='select * from  sitting where  	requester_id =? and date_to > CURRENT_DATE'
+    sql='select * from  sitting join animals on animals.id=sitting.animal_id join user_infos on user_infos.email=sitting.owner_id where  requester_id =? and date_to > CURRENT_DATE'
     db.query(sql,[req.session.username],(error,result)=>{
         if(error){console.log(error)}
         else{
@@ -70,7 +70,7 @@ function show_confirmed_from_requester(req,res){
     })
 }
 function show_confirmed_from_sender(req,res){
-    sql='select * from  sitting where  	owner =? and date_to > CURRENT_DATE'
+    sql='select  * from  sitting join animals on animals.id=sitting.animal_id  where  owner =? and date_to > CURRENT_DATE'
     db.query(sql,[req.session.username],(error,result)=>{
         if(error){console.log(error)}
         else{
@@ -80,10 +80,11 @@ function show_confirmed_from_sender(req,res){
 }
 function remove_req(req,res){
     id=req.params.id
-    sql='update  sitting set requester_id=? where animal_id=? '
-    db.query(sql,['',id],(error,result)=>{
+    sql='update  sitting set requester_id=?,check_status=? where si_id=? '
+    db.query(sql,["",0,id],(error,result)=>{
         if(error){console.log(error)}
         else{
+            console.log(result)
             res.json({valid:true,result})
         }
     })

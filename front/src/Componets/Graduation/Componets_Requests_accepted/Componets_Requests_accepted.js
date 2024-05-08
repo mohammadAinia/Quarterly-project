@@ -13,8 +13,9 @@ const Componets_Requests_accepted = (props) => {
     const handleDelete = async (id) => {
 
         try {
-            await axios.post('http://localhost:3001/#/#/' + id)
+            await axios.post(`http://localhost:3001/sitting/remove_set/${id}`)
             // alert("The clinic has been successfully deleted")
+            alert(id)
             Swal.fire({
                 title: "Good job!",
                 text: "The babysitting request has been successfully cancelled",

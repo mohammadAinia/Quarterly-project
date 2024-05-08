@@ -21,7 +21,7 @@ const My_requests = () => {
     const [filteredRequestSitting, setFilteredRequestSitting] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3001/sitting/#', { withCredentials: true })
+        axios.get('http://localhost:3001/sitting/show_owner', { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     setRequestSitting(res.data.result);
@@ -73,8 +73,8 @@ const My_requests = () => {
                                                 fare={sitting.Service_price}
                                                 from={sitting.date_from}
                                                 to={sitting.date_to}
-                                                name_accepted={sitting.first_name + ' ' + sitting.last_name}
-                                                test={sitting.first_name}
+                                                name_accepted={sitting.owner_id}
+                                                test={0}
                                             />
                                         </div>
                                     ))
@@ -87,8 +87,8 @@ const My_requests = () => {
                                                 fare={sitting.Service_price}
                                                 from={sitting.date_from}
                                                 to={sitting.date_to}
-                                                name_accepted={sitting.first_name + ' ' + sitting.last_name}
-                                                test={sitting.first_name} />
+                                                name_accepted={sitting.requester_id}
+                                                test={sitting.requester_id} />
                                         </div>
                                     ))
                                 )}
