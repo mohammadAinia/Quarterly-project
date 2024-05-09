@@ -409,6 +409,25 @@
     background-color: #355b8c;
     /* Change background color on hover */
 }
+.animal-sitting2 .frame2 {
+    left: 120px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 8px 32px;
+    position: absolute;
+    top: 400px;
+    background-color: #4e77b7;
+    border-radius: 14px;
+    transition: background-color 0.3s ease;
+    /* Add transition for background-color */
+}
+
+.animal-sitting2 .frame2:hover {
+    background-color: #355b8c;
+    /* Change background color on hover */
+}
 
 .animal-sitting2 .text-wrapper-8 {
     position: relative;

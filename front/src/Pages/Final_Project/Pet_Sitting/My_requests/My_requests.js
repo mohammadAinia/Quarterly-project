@@ -75,6 +75,7 @@ const My_requests = () => {
                                                 to={sitting.date_to}
                                                 name_accepted={sitting.owner_id}
                                                 test={0}
+                                                id={sitting.requester_id}
                                             />
                                         </div>
                                     ))
@@ -88,7 +89,9 @@ const My_requests = () => {
                                                 from={sitting.date_from}
                                                 to={sitting.date_to}
                                                 name_accepted={sitting.requester_id}
-                                                test={sitting.requester_id} />
+                                                test={sitting.requester_id}
+                                                id={sitting.requester_id}
+                                            />
                                         </div>
                                     ))
                                 )}

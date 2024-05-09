@@ -73,6 +73,12 @@ const About_your_animal = (props) => {
                             <div class="button">
                                 <Link to={`/add_vaccine/${props.id2}`}>Add Vaccine</Link>
                             </div>
+                            <div class="button">
+                                <Link to={`/Report/${props.id2}`}>Detailed Report</Link>
+                            </div>
+                            <div class="button">
+                                <Link to={`/Gellary/${props.id2}`}>Gellary</Link>
+                            </div>
 
                         </form>
                     </div>

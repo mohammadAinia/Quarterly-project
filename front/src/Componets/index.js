@@ -195,6 +195,8 @@ export { default as My_requests } from '../Pages/Final_Project/Pet_Sitting/My_re
 export { default as Componets_My_requests } from './Graduation/Componets_My_requests/Componets_My_requests'
 export { default as Requests_accepted } from '../Pages/Final_Project/Pet_Sitting/Requests_accepted/Requests_accepted'
 export { default as Componets_Requests_accepted } from './Graduation/Componets_Requests_accepted/Componets_Requests_accepted'
+export { default as Gellary } from '../Pages/Final_Project/Gellary/Gellary'
+export { default as Componets_Gellary } from './Graduation/Componets_Gellary/Componets_Gellary'
 
 
 

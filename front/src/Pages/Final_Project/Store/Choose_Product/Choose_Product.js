@@ -521,7 +521,6 @@ const Choose_Product = () => {
                     {/* صور المنتج المصغرة */}
                     <div class="frame-3_me2" ref={frameRef}>
 
-                        {/* تم تعطيل هذه الميزة سأصلحها انا لاحقا لاتقرب عليها هيي شغالة بس بدي عدل شغلة بالداتا بيز لتشتغل متل الناس  */}
                         {smallimage.map((user, i) => (
                             <img
                                 className="rectangle-2"

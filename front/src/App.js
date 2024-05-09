@@ -22,7 +22,7 @@ import {
   Edit_information_to_clinic, Loading_page, Report, Modifying_clinic_working_hours, My_appointments_vet,
   Diagnosis,Store,Choose_Product ,Product_Assortment,Add_product_store,Shop_By_Pet,Add_category,Cart,Checkout,
   Add_Brand,Add_balance,Product_Assortment_copy,Home_Pet_Sitting,Add_Sitting_request,Details_Pet_Sitting_request,
-  Change_website_ads,My_requests,Requests_accepted
+  Change_website_ads,My_requests,Requests_accepted,Gellary
 
 
 } from './Componets/index'
@@ -159,7 +159,7 @@ const App = () => {
 
             <Route path='Add_information_to_clinic' element={<Add_information_to_clinic />} /> {/*هذه الصفحة تم الغائها  */}
             <Route path='Edit_information_to_clinic' element={<Edit_information_to_clinic />} />
-            <Route path='n' element={<Report />} />
+            <Route path='Report/:id' element={<Report />} />
 
             <Route path='Modifying_clinic_working_hours' element={<Modifying_clinic_working_hours />} />
             <Route path='My_appointments_vet' element={<My_appointments_vet />} />
@@ -190,6 +190,10 @@ const App = () => {
             <Route path='Change_website_ads' element={<Change_website_ads />} />
             <Route path='My_requests' element={<My_requests />} />
             <Route path='Requests_accepted' element={<Requests_accepted />} />
+            <Route path='Gellary/id' element={<Gellary />} />
+            <Route path='j' element={<Gellary />} />
+
+
 
 
             

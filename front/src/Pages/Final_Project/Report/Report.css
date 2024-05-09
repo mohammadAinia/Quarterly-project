@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 100%;
+    width: 100%;    
 }
 
 .report .div {
@@ -95,7 +95,7 @@
     color: #ffffff;
     font-size: 32px;
     text-align: center;
-    letter-spacing: 0;
+    letter-spacing: 2px;
     line-height: normal;
 }
 
@@ -127,28 +127,34 @@
 
 .report .text-wrapper-4 {
     position: absolute;
-    width: 152px;
+    width: 552px;
+    max-width: 200px;
     top: 76px;
-    left: 148px;
+    left: 140px;
     font-family: "Inter-Regular", Helvetica;
     font-weight: 400;
     color: #000000;
     font-size: 36px;
     letter-spacing: 0;
     line-height: normal;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .report .text-wrapper-5 {
     top: 76px;
-    left: 622px;
+    left: 600px;
     position: absolute;
-    width: 152px;
+    width: 552px;
+    max-width: 300px;
     font-family: "Inter-Regular", Helvetica;
     font-weight: 400;
     color: #000000;
     font-size: 36px;
     letter-spacing: 0;
     line-height: normal;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .report .overlap-4 {
@@ -171,14 +177,14 @@
     position: absolute;
     width: 231px;
     height: 42px;
-    top: 14px;
+    top: 19px;
     left: 874px;
     font-family: "Inter-Bold", Helvetica;
     font-weight: 700;
     color: #ffffff;
-    font-size: 32px;
+    font-size: 30px;
     text-align: center;
-    letter-spacing: 0;
+    letter-spacing: 1px;
     line-height: normal;
 }
 
@@ -205,15 +211,17 @@
 
 .report .text-wrapper-8 {
     position: absolute;
-    width: 216px;
+    width: 306px;
+    max-width: 240px;
     top: 1px;
-    left: 110px;
+    left: 90px;
     font-family: "Inter-Regular", Helvetica;
     font-weight: 400;
     color: #000000;
     font-size: 36px;
     letter-spacing: 0;
     line-height: normal;
+    overflow: hidden;
 }
 
 .report .overlap-6 {
@@ -225,16 +233,17 @@
 }
 
 .report .text-wrapper-9 {
-    width: 216px;
+    width: 506px;
+    max-width: 400px;
     top: 1px;
-    left: 126px;
+    left: 116px;
     color: #000000;
     position: absolute;
     font-family: "Inter-Regular", Helvetica;
     font-weight: 400;
     font-size: 36px;
-    letter-spacing: 0;
-    line-height: normal;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .report .line {
@@ -258,14 +267,14 @@
     position: absolute;
     width: 251px;
     height: 42px;
-    top: 12px;
+    top: 18px;
     left: 862px;
     font-family: "Inter-Bold", Helvetica;
     font-weight: 700;
     color: #ffffff;
     font-size: 32px;
     text-align: center;
-    letter-spacing: 0;
+    letter-spacing: 2px;
     line-height: normal;
 }
 
@@ -386,15 +395,19 @@
 
 .report .text-wrapper-14 {
     position: absolute;
-    width: 152px;
+    width: 552px;
+    max-width: 240px;
     top: 0;
-    left: 125px;
+    left: 105px;
     font-family: "Inter-Regular", Helvetica;
     font-weight: 400;
     color: #000000;
     font-size: 36px;
     letter-spacing: 0;
     line-height: normal;
+    overflow: hidden;
+    white-space: nowrap;
+    
 }
 
 .report .text-wrapper-15 {
@@ -446,41 +459,117 @@
 
 .report .text-wrapper-18 {
     position: absolute;
-    width: 192px;
+    width: 592px;
+    max-width: 400px;
     top: 0;
-    left: 142px;
+    left: 122px;
     font-family: "Inter-Regular", Helvetica;
     font-weight: 400;
     color: #000000;
     font-size: 36px;
     letter-spacing: 0;
     line-height: normal;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.report .frame-3_me2 {
+    width: 100%;
+    /* height: 560px; */
+    /* width: 2000px; */
+
+    max-width: calc(50% - 0px);
+    /* Adjust as needed */
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* white-space: wrap; */
+    position: absolute;
+    /* width: 1021px; */
+    top: 547px;
+    left: 920px;
+    height: 560px;
+
+}
+
+.report .frame-3_me2::-webkit-scrollbar {
+    width: 10px;
+    /* Set the width of the scrollbar */
+    height: 12px;
+}
+
+.report .frame-3_me2::-webkit-scrollbar-thumb {
+    background-color: #fecc02;
+    /* Set the color of the scrollbar thumb */
+    border-radius: 5px;
+    /* Optional: Round the corners of the scrollbar thumb */
+
+}
+
+.report .frame-3_me2::-webkit-scrollbar-track {
+    background-color: transparent;
+    /* Set the color of the scrollbar track */
 }
 
 .report .p {
-    position: absolute;
-    width: 1021px;
-    top: 547px;
-    left: 926px;
+    position: relative;
+    display: flex;
+    /* left: 926px; */
     font-family: "Inter-Regular", Helvetica;
     font-weight: 400;
     color: #000000;
     font-size: 36px;
     letter-spacing: 0;
     line-height: normal;
+    padding: 10px;
+}
+.report .frame-3_me22 {
+    width: 100%;
+    /* height: 560px; */
+    /* width: 2000px; */
+
+    max-width: calc(50% - 0px);
+    /* Adjust as needed */
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* white-space: wrap; */
+    position: absolute;
+    /* width: 1021px; */
+    top: 1254px;
+    left: 926px;
+    height: 560px;
+
+}
+
+.report .frame-3_me22::-webkit-scrollbar {
+    width: 10px;
+    /* Set the width of the scrollbar */
+    height: 12px;
+}
+
+.report .frame-3_me22::-webkit-scrollbar-thumb {
+    background-color: #fecc02;
+    /* Set the color of the scrollbar thumb */
+    border-radius: 5px;
+    /* Optional: Round the corners of the scrollbar thumb */
+
+}
+
+.report .frame-3_me22::-webkit-scrollbar-track {
+    background-color: transparent;
+    /* Set the color of the scrollbar track */
 }
 
 .report .text-wrapper-19 {
-    position: absolute;
-    width: 1033px;
-    top: 1254px;
-    left: 926px;
+    position: relative;
+    /* width: 1033px; */
+    display: flex;
     font-family: "Inter-Regular", Helvetica;
     font-weight: 400;
     color: #000000;
     font-size: 36px;
     letter-spacing: 0;
     line-height: normal;
+    padding: 10px;
 }
 
 .report .text-wrapper-20 {
@@ -498,28 +587,34 @@
 
 .report .text-wrapper-21 {
     top: 234px;
-    left: 1522px;
+    left: 1500px;
     position: absolute;
-    width: 152px;
+    width: 552px;
+    max-width: 300px;
     font-family: "Inter-Regular", Helvetica;
     font-weight: 400;
     color: #000000;
     font-size: 36px;
     letter-spacing: 0;
     line-height: normal;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .report .text-wrapper-22 {
     position: absolute;
-    width: 159px;
+    width: 559px;
+    max-width: 200px;
     top: 308px;
-    left: 1084px;
+    left: 1064px;
     font-family: "Inter-Regular", Helvetica;
     font-weight: 400;
     color: #000000;
     font-size: 36px;
     letter-spacing: 0;
     line-height: normal;
+    overflow: hidden;
+    white-space: nowrap;
 }
 .report .overlap-90{
     position: absolute;

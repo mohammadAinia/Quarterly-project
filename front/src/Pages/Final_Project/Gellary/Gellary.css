@@ -1,0 +1,432 @@
+.gallery {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.gallery .overlap-group-wrapper {
+    background-color: #ffffff;
+    width: 2068px;
+    height: 2445px;
+}
+
+.gallery .overlap-group {
+    position: relative;
+    height: 2445px;
+    background-color: #adebf0;
+}
+
+.gallery .rectangle {
+    position: absolute;
+    width: 1913px;
+    height: 2145px;
+    top: 147px;
+    left: 77px;
+    background-color: #fad348;
+}
+
+.gallery .vector {
+    position: absolute;
+    width: 835px;
+    height: 811px;
+    top: 284px;
+    left: 131px;
+}
+
+.gallery .div {
+    position: absolute;
+    width: 179px;
+    height: 143px;
+    top: 322px;
+    left: 198px;
+    background-color: #37c4d5;
+    transform: rotate(-16.72deg);
+}
+
+.gallery .line {
+    width: 101px;
+    height: 132px;
+    left: 161px;
+    position: absolute;
+    top: 260px;
+}
+
+.gallery .img {
+    position: absolute;
+    width: 94px;
+    height: 150px;
+    top: 330px;
+    left: 1641px;
+}
+
+.gallery .vector-2 {
+    position: absolute;
+    width: 43px;
+    height: 172px;
+    top: 383px;
+    left: 1756px;
+}
+
+.gallery .vector-3 {
+    position: absolute;
+    width: 134px;
+    height: 117px;
+    top: 471px;
+    left: 1708px;
+}
+
+.gallery .vector-4 {
+    position: absolute;
+    width: 239px;
+    height: 135px;
+    top: 531px;
+    left: 1688px;
+}
+
+.gallery .vector-5 {
+    position: absolute;
+    width: 236px;
+    height: 134px;
+    top: 646px;
+    left: 1657px;
+}
+
+.gallery .vector-6 {
+    position: absolute;
+    width: 94px;
+    height: 150px;
+    top: 400px;
+    left: 1622px;
+}
+
+.gallery .line-2 {
+    width: 149px;
+    height: 71px;
+    left: 242px;
+    position: absolute;
+    top: 260px;
+}
+
+.gallery .rectangle-2 {
+    position: absolute;
+    width: 79px;
+    height: 96px;
+    top: 280px;
+    left: 226px;
+    background-color: #37c4d5;
+    transform: rotate(31.69deg);
+}
+
+.gallery .vector-7 {
+    position: absolute;
+    width: 114px;
+    height: 68px;
+    top: 326px;
+    left: 220px;
+    animation: vibrate 2s infinite; /* Apply the vibrate animation */
+}
+@keyframes vibrate {
+    0% { transform: translateY(0); } /* Start position */
+    25% { transform: translateY(-5px); } /* Move left */
+    50% { transform: translateY(5px); } /* Move right */
+    75% { transform: translateY(-5px); } /* Move left */
+    100% { transform: translateY(0); } /* Back to start position */
+}
+
+.gallery .ellipse {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    top: 841px;
+    left: 166px;
+    background-color: #2e3444;
+    border-radius: 22.5px;
+}
+
+.gallery .ellipse-2 {
+    position: absolute;
+    width: 29px;
+    height: 29px;
+    top: 908px;
+    left: 126px;
+    background-color: #2e3444;
+    border-radius: 14.5px;
+}
+
+.gallery .ellipse-3 {
+    position: absolute;
+    width: 75px;
+    height: 68px;
+    top: 962px;
+    left: 186px;
+    background-color: #2e3444;
+    border-radius: 37.5px/34px;
+}
+.gallery .ellipse,
+.gallery .ellipse-2,
+.gallery .ellipse-3 {
+    position: absolute;
+}
+
+/* Keyframe animation for pulsating effect */
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.gallery .ellipse,
+.gallery .ellipse-2,
+.gallery .ellipse-3 {
+    animation: pulse 3s ease-in-out infinite; /* Adjust duration as needed */
+    background-color: #2e3444; /* Initial background color */
+    border-radius: 50%; /* Ensure all ellipses have circular shape */
+}
+
+.gallery .text-wrapper {
+    position: absolute;
+    width: 628px;
+    height: 194px;
+    top: 691px;
+    left: 247px;
+    font-family: "Ink Free-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 200px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.gallery .text-wrapper-2 {
+    position: absolute;
+    width: 628px;
+    height: 194px;
+    top: 470px;
+    left: 207px;
+    font-family: "Ink Free-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 200px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.gallery .rectangle-3 {
+    position: absolute;
+    width: 597px;
+    height: 553px;
+    top: 388px;
+    left: 1150px;
+    background-color: #ffffff;
+    transform: rotate(12.56deg);
+}
+
+.gallery .rectangle-4 {
+    position: relative;
+    width: 597px;
+    height: 624px;
+
+    background-color: #ffffff;
+    border: 9px dashed;
+    border-color: #37c4d5;
+    transform: rotate(0.13deg);
+    transition: transform 0.3s ease; /* Add transition effect */
+
+}
+.gallery .rectangle-4:hover {
+    transform: scale(1.05); /* Add scale effect on hover */
+}
+
+.gallery .rectangle-5 {
+    position: absolute;
+    width: 585px;
+    height: 540px;
+    top: 395px;
+    left: 1155px;
+    object-fit: cover;
+}
+
+.gallery .rectangle-6 {
+    position: relative;
+    width: 499px;
+    height: 439px;
+    top: -580px;
+    left: 50px;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Add transition effect */
+
+}
+.gallery .rectangle-6:hover {
+    transform: scale(1.05); /* Add scale effect on hover */
+}
+
+.gallery .vector-8 {
+    position: absolute;
+    width: 208px;
+    height: 188px;
+    top: 284px;
+    left: 1289px;
+}
+
+.gallery .vector-9 {
+    position: absolute;
+    width: 208px;
+    height: 188px;
+    top: 852px;
+    left: 1407px;
+}
+@keyframes shimmer {
+    0% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.8;
+    }
+}
+
+/* Apply the shimmer animation to both images */
+.gallery .vector-8,
+.gallery .vector-9 {
+    animation: shimmer 4s ease-in-out infinite; /* Adjust duration and timing as needed */
+}
+.gallery .frame {
+    position: absolute;
+    width: 48px;
+    height: 106px;
+    top: 802px;
+    left: 1107px;
+}
+
+.gallery .frame-2 {
+    position: absolute;
+    width: 67px;
+    height: 113px;
+    top: 889px;
+    left: 1088px;
+}
+
+.gallery .frame-3 {
+    position: absolute;
+    width: 69px;
+    height: 113px;
+    top: 880px;
+    left: 1198px;
+}
+
+.gallery .vector-10 {
+    position: absolute;
+    width: 58px;
+    height: 79px;
+    top: 994px;
+    left: 1195px;
+}
+
+.gallery .vector-11 {
+    position: absolute;
+    width: 41px;
+    height: 82px;
+    top: 941px;
+    left: 1224px;
+}
+
+.gallery .vector-12 {
+    position: absolute;
+    width: 166px;
+    height: 206px;
+    top: 792px;
+    left: 1680px;
+}
+
+.gallery .vector-13 {
+    position: absolute;
+    width: 179px;
+    height: 210px;
+    top: 798px;
+    left: 1680px;
+}
+
+.gallery .ellipse-4 {
+    position: absolute;
+    width: 105px;
+    height: 105px;
+    top: 495px;
+    left: 250px;
+    background-color: #adebf0;
+    border-radius: 52.5px;
+    transition: transform 0.3s ease; /* Add transition effect */
+
+}
+
+.gallery .trash-solid {
+    position: absolute;
+    width: 39px;
+    height: 44px;
+    font-size: 40px;
+    top: 517px;
+    left: 283px;
+    transition: transform 0.3s ease; /* Add transition effect */
+
+}
+.gallery .trash-solid:hover {
+    transform: scale(1.1); /* Add scale effect on hover */
+    color: #ff0000; /* Change color on hover */
+}
+
+.gallery .frame-22 {
+    position: absolute;
+    width: 100%;
+    height: 665px;
+    max-width: calc(100% - 400px);
+    /* Adjust as needed */
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+    top: 1494px;
+    left: 208px;
+    padding: 20px; /* Add some padding for better appearance */
+
+}
+
+.gallery .frame-22::-webkit-scrollbar {
+    width: 10px;
+    /* Set the width of the scrollbar */
+    height: 15px;
+}
+
+.gallery .frame-22::-webkit-scrollbar-thumb {
+    background-color: #37c4d5;
+    /* Set the color of the scrollbar thumb */
+    border-radius: 5px;
+    /* Optional: Round the corners of the scrollbar thumb */
+}
+
+.gallery .frame-22::-webkit-scrollbar-track {
+    background-color: transparent;
+    /* Set the color of the scrollbar track */
+    
+}
+.gallery .overlap-group-22 {
+    position: relative;
+    flex-wrap: nowrap;
+    height: 519px;
+    display: inline-block;
+    margin-right: 343px;
+    margin-left: 0px;
+    overflow-inline: hidden;
+
+}
