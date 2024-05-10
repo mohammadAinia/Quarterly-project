@@ -13,7 +13,7 @@ const Componets_My_requests = (props) => {
     const handleDelete = async (id) => {
 
         try {
-            await axios.post(`http://localhost:3001/sitting/#/${id}`)
+            await axios.post(`http://localhost:3001/sitting/remove/${id}`)
             // alert("The clinic has been successfully deleted")
             // alert(id)
             Swal.fire({

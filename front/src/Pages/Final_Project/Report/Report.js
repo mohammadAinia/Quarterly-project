@@ -62,12 +62,12 @@ const Report = () => {
 
     useEffect(() => {
 
-        axios.get(`http://localhost:3001/#/#/${id}`, { withCredentials: true })
+        axios.get(`http://localhost:3001/animal/get_report/${id}`, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     setInfoAnimal(res.data.result)
-                    setVacc(res.data.result2)
-                    setHealth_Record(res.data.result3)
+                    setVacc(res.data.result3)
+                    setHealth_Record(res.data.result2)
                 }
                 // else if (res.data.value) {
                 //     navigate('/')
@@ -87,7 +87,7 @@ const Report = () => {
             setName(animal.name || ''); // Set Name state
             setType(animal.type || ''); // Set Type state
             setGender(animal.gender || ''); // Set Gender state
-            setAge(animal.age || ''); // Set Age state
+            setAge(animal.age.substring(0,10) || ''); // Set Age state
             setHeight(animal.Height || ''); // Set Height state
             setWeight(animal.Weight || ''); // Set Weight state
             setPlace(animal.place || ''); // Set Place state
@@ -174,14 +174,14 @@ const Report = () => {
                     {/* تقرير صحي */}
                     <div class="frame-3_me2">
                         {Health_Record.map((user, i) => (
-                            <p className="p" key={i}>- {user.desc}</p>
+                            <p className="p" key={i}>-{i+1} {user.reportt}</p>
                         ))}
 
                     </div>
                     {/* معلومات اللقاحات*/}
                     <div class="frame-3_me22">
                         {Vacc.map((user, i) => (
-                            <p class="text-wrapper-19" key={i}>- {user.desc}</p>
+                            <p class="text-wrapper-19" key={i}>-{i+1}  {user.name_vacc} /{user.date_take_vac.substring(0,10)}</p>
                         ))}
 
                     </div>

@@ -304,7 +304,34 @@ function show_all__req(req,res) {
     }
     )
 }
-
+function get_report(req,res){
+    if(req.session.username){
+    id=req.params.id
+    sql='select * from animals join health_records on health_records.animal_id=animals.id where animals.id=?'
+    db.query(sql,[id],(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            sqll='select * from medical_report where rep_animal_id=?'
+            db.query(sqll,[id],(error,result2)=>{
+                if(error){console.log(error)}
+                else{
+                    sqlll='SELECT * FROM vacciens join vaccien_informations on vacciens.vacc_info_id=vaccien_informations.id WHERE vacciens.animal_id=?'
+                    db.query(sqlll,[id],(error,result3)=>{
+                        if(error){console.log(error)}
+                        else{
+                            console.log(result
+                            )
+                            res.json({valid:true,result,result2,result3})
+                            
+                        }
+                    })
+                }
+            })
+        }
+    })
+}
+else {res.json({valid:false})}
+}
 module.exports={
     add_animal: add_animal,
     destroy_animal: destroy_animal,
@@ -319,5 +346,6 @@ module.exports={
     show_vacc_id:show_vacc_id,
     add_vac_info:add_vac_info,
     show_all__req:show_all__req,
+    get_report
     
 }

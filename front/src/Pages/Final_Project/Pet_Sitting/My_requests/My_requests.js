@@ -90,7 +90,7 @@ const My_requests = () => {
                                                 to={sitting.date_to}
                                                 name_accepted={sitting.requester_id}
                                                 test={sitting.requester_id}
-                                                id={sitting.requester_id}
+                                                id={sitting.si_id}
                                             />
                                         </div>
                                     ))
