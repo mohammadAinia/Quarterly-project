@@ -29,16 +29,17 @@ import {
 import { Componets_Gellary } from '../../../Componets'
 
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate ,useParams} from 'react-router-dom'
 const Gellary = () => {
 
+    const { id } = useParams()
     const [Images, setImages] = useState([])
 
     const navigate = useNavigate()
 
     useEffect(() => {
 
-        axios.get('http://localhost:3001/#/#', { withCredentials: true })
+        axios.get(`http://localhost:3001/#/#/${id}`, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
 

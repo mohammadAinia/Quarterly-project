@@ -190,20 +190,8 @@ const App = () => {
             <Route path='Change_website_ads' element={<Change_website_ads />} />
             <Route path='My_requests' element={<My_requests />} />
             <Route path='Requests_accepted' element={<Requests_accepted />} />
-            <Route path='Gellary/id' element={<Gellary />} />
-            <Route path='j' element={<Gellary />} />
+            <Route path='Gellary/:id' element={<Gellary />} />
 
-
-
-
-            
-
-            
-
-            
-
-            
-            
           </Routes>
         </Container>
       </Router>
