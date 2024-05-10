@@ -197,6 +197,8 @@ export { default as Requests_accepted } from '../Pages/Final_Project/Pet_Sitting
 export { default as Componets_Requests_accepted } from './Graduation/Componets_Requests_accepted/Componets_Requests_accepted'
 export { default as Gellary } from '../Pages/Final_Project/Gellary/Gellary'
 export { default as Componets_Gellary } from './Graduation/Componets_Gellary/Componets_Gellary'
+export { default as Add_photo_to_gallery } from '../Pages/Final_Project/Gellary/Add_photo_to_gallery/Add_photo_to_gallery'
+export { default as Componets_Add_photo_to_gallery } from './Graduation/Componets_Add_photo_to_gallery/Componets_Add_photo_to_gallery'
 
 
 

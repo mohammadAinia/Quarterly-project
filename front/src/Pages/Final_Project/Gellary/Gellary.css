@@ -430,3 +430,32 @@
     overflow-inline: hidden;
 
 }
+.search-button2 {
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+    background-color: #00D7E9;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    font-size: 35px;
+    text-align:center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Add box-shadow transition */
+
+}
+
+.search-button2:hover {
+    transform: scale(1.05);
+    /* Scale up slightly on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    /* Add shadow on hover */
+}
+.button_gallery{
+    position: absolute;
+    top: 9px;
+    left: 20px;
+}

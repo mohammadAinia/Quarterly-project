@@ -24,12 +24,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
     faRightToBracket, faPaw, faStoreSlash, faCoins, faFaceSmileWink, faBolt,
     faClock, faArrowsRotate, faComments, faHandHoldingHeart, faHouseCircleCheck, faPlus,
-    faTrash
+    faTrash, faSearch
 } from '@fortawesome/free-solid-svg-icons'
 import { Componets_Gellary } from '../../../Componets'
 
 import axios from 'axios'
-import { useNavigate ,useParams} from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 const Gellary = () => {
 
     const { id } = useParams()
@@ -53,6 +53,24 @@ const Gellary = () => {
 
     },
         [])
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
+    const [Search_result, setSearch_result] = useState('')
+    const [Clinics, setClinics] = useState([])
+    const [filteredClinics, setFilteredClinics] = useState([]);
+    const handleSearchInputChange = (event) => {
+        const { value } = event.target;
+        setSearch_result(event.value)
+
+        // Filter clinics based on search input
+        const filtered = Clinics.filter(clinic =>
+            clinic.c_name.toLowerCase().includes(value.toLowerCase())
+        );
+        setFilteredClinics(filtered);
+    };
+
+    const handleSearchClick = () => {
+        setIsSearchOpen(!isSearchOpen);
+    };
 
     return (
 
@@ -109,7 +127,17 @@ const Gellary = () => {
                         </div>
                     </div>
                 </div>
+
             </body>
+            <a href={`Add_photo_to_gallery/${id}`} className='search-button2'>
+                <div className='button_gallery'><FontAwesomeIcon icon={faPlus} /></div>
+                
+            </a>
+            {/* {isSearchOpen && (
+                <div className="search-popup">
+                    <input className="search-input" type="text" placeholder="Search..." onChange={e => setSearch_result(e.target.value)} />
+                </div>
+            )} */}
         </>
     )
 }

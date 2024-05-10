@@ -1,17 +1,15 @@
-import './Componets_Add_Brand.css'
+import './Componets_Add_photo_to_gallery.css'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { Header } from '../../../Componets'
 import { useNavigate, useParams } from 'react-router-dom'
 import Swal from 'sweetalert2';
+import React from 'react'
 
-
-const Componets_Add_Brand = () => {
+const Componets_Add_photo_to_gallery = () => {
     const navigate = useNavigate();
 
     const [file, setFile] = useState(null);
-    const [Brand_Name, setBrand_Name] = useState('')
-
 
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
@@ -19,22 +17,19 @@ const Componets_Add_Brand = () => {
 
         const formData = new FormData()
 
-        formData.append('brand_name', Brand_Name)
         let newArr = [];
         for (let i = 0; i < file.length; i++) {
             formData.append('monfichier', file[i]);
         }
         formData.append('monfichier', newArr);
         // alert(formData.get('monfichier'));
- 
-        axios.post('http://localhost:3001/admin/add_new_b', formData)
+
+        axios.post('http://localhost:3001/#/#', formData)
             .then(res => {
                 if (res.data.valid) {
-                    // alert('The brand has been successfully added to the store')
-                    // navigate(-1)
                     Swal.fire({
                         title: "Good job!",
-                        text: "The brand has been successfully added to the store",
+                        text: "Images have been added successfully",
                         icon: "success",
                         customClass: {
                             container: 'enlarged-alert-container',
@@ -66,14 +61,7 @@ const Componets_Add_Brand = () => {
                     </div>
                     <div class="input-box">
                     </div>
-                    <div class="input-box">
-                        <span class="details">Brand name *</span>
-                        <input type="text" name='brand_name' required onChange={e => setBrand_Name(e.target.value)} />
-
-                    </div>
-
-
-                    <div className="input-box">
+                    <div className="input-box" style={{ "width": "400px" }}>
                         <span className="details">Picture *</span>
                         <input
                             required
@@ -95,4 +83,4 @@ const Componets_Add_Brand = () => {
     )
 }
 
-export default Componets_Add_Brand
+export default Componets_Add_photo_to_gallery
