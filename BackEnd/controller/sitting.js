@@ -89,6 +89,15 @@ function remove_req(req,res){
         }
     })
 }
+function remove_item_req(req,res){
+    sql='delete from sitting where si_id=?'
+    db.query(sql,[req.params.id],(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            res.json({valid:true,result})
+        }
+    })
+}
 module.exports={
     show_all_request,
     show_my_animals,
@@ -97,6 +106,7 @@ module.exports={
     check_req,
     show_confirmed_from_requester,
     show_confirmed_from_sender,
-    remove_req
+    remove_req,
+    remove_item_req
     
 }

@@ -12,5 +12,6 @@ router.get('/show_owner',sitting.show_confirmed_from_sender)
 router.post('/add_new_animal',sitting.add_new_req)
 router.post('/check_set/:id',sitting.check_req)
 router.post('/remove_set/:id',sitting.remove_req)
+router.post('/remove/:id',sitting.remove_item_req)
 
 module.exports=router
