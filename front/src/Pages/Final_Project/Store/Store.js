@@ -2,14 +2,16 @@ import './Store.css'
 import Store_Vector from '../../../Assert/Images/Store_Vector.png'
 import store_Vector2 from '../../../Assert/Images/store_Vector2.png'
 import store_Vector3 from '../../../Assert/Images/store_Vector3.png'
-import store_Rectangle_116 from '../../../Assert/Images/store_Rectangle_116.png'
-import store_Rectangle_117 from '../../../Assert/Images/store_Rectangle_117.png'
-import store_Rectangle_118 from '../../../Assert/Images/store_Rectangle_118.png'
-import store_Rectangle_119 from '../../../Assert/Images/store_Rectangle_119.png'
-import store_Rectangle_120 from '../../../Assert/Images/store_Rectangle_120.png'
+import store_Rectangle_adv_one from '../../../Assert/Images/store_Rectangle_adv_one.png'
+import store_asv_two from '../../../Assert/Images/store_asv_two.png'
+import store_adv_three from '../../../Assert/Images/store_adv_three.png'
+import store_adv_four from '../../../Assert/Images/store_adv_four.png'
+import store_adv_five from '../../../Assert/Images/store_adv_five.png'
 import store_Rectangle_136 from '../../../Assert/Images/store_Rectangle_136.png'
-import store_Rectangle_137 from '../../../Assert/Images/store_Rectangle_137.png'
+import store_Rectangle_119 from '../../../Assert/Images/store_Rectangle_119.png'
+
 import store_Rectangle_138 from '../../../Assert/Images/store_Rectangle_138.png'
+import store_Rectangle_116 from '../../../Assert/Images/store_Rectangle_116.png'
 import store_Rectangle_141 from '../../../Assert/Images/store_Rectangle_141.png'
 import store_Vector4 from '../../../Assert/Images/store_Vector4.svg'
 import store_Ellipse_108 from '../../../Assert/Images/store_Ellipse_108.png'
@@ -295,15 +297,27 @@ const Store = () => {
                     <img class="rectangle-4" src={store_Rectangle_119} />
                     <img class="rectangle-5" src={store_Rectangle_118} />
                     <img class="rectangle-6" src={store_Rectangle_120} /> */}
-                    <img class="rectangle-2" alt='The ad is not available' src={`http://localhost:3001/uploads/${One}`} />
-                    <img class="rectangle-3" alt='The ad is not available' src={`http://localhost:3001/uploads/${Two}`} />
+                    <img class="rectangle-2" alt='The ad is not available' src={store_Rectangle_116} />
+                    <img class="rectangle-3" alt='The ad is not available' src={store_asv_two} />
+                    <img class="rectangle-5" alt='The ad is not available' src={store_adv_three} />
+                    <img class="rectangle-4" alt='The ad is not available' src={store_adv_four} />
+                    <img class="rectangle-6" alt='The ad is not available' src={store_adv_five} />
+                    <img class="rectangle-7" alt='The ad is not available' src={store_Rectangle_136} />
+                    <img class="rectangle-8" alt='The ad is not available' src={store_Rectangle_119} />
+                    <img class="rectangle-9" alt='The ad is not available' src={store_Rectangle_138} />
+
+
+
+
+
+                    {/* <img class="rectangle-5" alt='The ad is not available' src={`http://localhost:3001/uploads/${One}`} />
+                    <img class="rectangle-5" alt='The ad is not available' src={`http://localhost:3001/uploads/${Two}`} />
                     <img class="rectangle-5" alt='The ad is not available' src={`http://localhost:3001/uploads/${Three}`} />
                     <img class="rectangle-4" alt='The ad is not available' src={`http://localhost:3001/uploads/${Four}`} />
                     <img class="rectangle-6" alt='The ad is not available' src={`http://localhost:3001/uploads/${Five}`} />
-                    
                     <img class="rectangle-7" alt='The ad is not available' src={`http://localhost:3001/uploads/${Six}`} />
                     <img class="rectangle-8" alt='The ad is not available' src={`http://localhost:3001/uploads/${Seven}`} />
-                    <img class="rectangle-9" alt='The ad is not available' src={`http://localhost:3001/uploads/${Eight}`} />
+                    <img class="rectangle-9" alt='The ad is not available' src={`http://localhost:3001/uploads/${Eight}`} /> */}
 
 
                     {/* ********************************************************************************************* */}
@@ -614,7 +628,7 @@ const Store = () => {
                     className="completion-circle"
                     style={{
                         background: `conic-gradient(#ffcc04 ${pageCompletion}%, #ffffff ${pageCompletion}% 100%)`,
-                    }}onClick={scrollToTop}
+                    }} onClick={scrollToTop}
                 ></div>
             </div>
         </>
