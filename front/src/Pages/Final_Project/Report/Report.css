@@ -82,6 +82,7 @@
     left: 0;
     position: absolute;
     height: 6px;
+    border-radius: 42px 0px 0px 42px;
 }
 
 .report .text-wrapper {
