@@ -8,7 +8,7 @@ import React from 'react'
 
 const Componets_Add_photo_to_gallery = () => {
     const navigate = useNavigate();
-
+    const { id } = useParams()
     const [file, setFile] = useState(null);
 
     axios.defaults.withCredentials = true
@@ -24,7 +24,7 @@ const Componets_Add_photo_to_gallery = () => {
         formData.append('monfichier', newArr);
         // alert(formData.get('monfichier'));
 
-        axios.post('http://localhost:3001/#/#', formData)
+        axios.post(`http://localhost:3001/gallery/add_new_photo/${id}`, formData)
             .then(res => {
                 if (res.data.valid) {
                     Swal.fire({

@@ -11,6 +11,7 @@ const clinic=require('./routes/clinicR')
 const storee=require('./routes/storeR')
 const admin=require('./routes/admin')
 const sitting=require('./routes/SittingR')
+const gallery=require('./routes/galleryR')
 
 
 const app =express()
@@ -60,5 +61,6 @@ app.use("/clinic",clinic)
 app.use("/storee",storee)
 app.use("/admin",admin)
 app.use("/sitting",sitting)
+app.use("/gallery",gallery)
 
 module.exports=app;

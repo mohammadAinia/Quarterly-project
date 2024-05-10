@@ -14,7 +14,7 @@ const Componets_Gellary = (props) => {
     const handleDelete = async (id) => {
 
         try {
-            await axios.post(`http://localhost:3001/#/#/${id}`)
+            await axios.post(`http://localhost:3001/gallery/remove/${id}`)
             // alert("The clinic has been successfully deleted")
             // alert(id)
             Swal.fire({

@@ -39,7 +39,7 @@ const Gellary = () => {
 
     useEffect(() => {
 
-        axios.get(`http://localhost:3001/#/#/${id}`, { withCredentials: true })
+        axios.get(`http://localhost:3001/gallery/get_photo/${id}`, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
 
@@ -105,8 +105,8 @@ const Gellary = () => {
                                     Images.map((user, i) => (
                                         <Componets_Gellary
                                             key={i}
-                                            image={`http://localhost:3001/uploads/${user.image_url}`}
-                                            id={user.id}
+                                            image={`http://localhost:3001/uploads/${user.photo_url}`}
+                                            id={user.p_id}
                                         />
                                     ))
                                 }
