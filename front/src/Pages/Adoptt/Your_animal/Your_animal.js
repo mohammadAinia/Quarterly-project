@@ -21,7 +21,7 @@ const Your_animal = () => {
                     if (res.data.check === true) {
                         // alert("Added to adoption list")
                         Swal.fire({
-                            title: "Good job!",
+                            title: "done!",
                             text: "Added to adoption list",
                             icon: "success",
                             customClass: {
@@ -33,12 +33,16 @@ const Your_animal = () => {
                             },
                             position: 'center',
                             backdrop: false,
+                            
                         })
+                        .then(() => {
+                            navigate(-1);
+                        });
                     }
                     else if (res.data.check === false) {
                         // alert('this animal alredy added to list')
                         Swal.fire({
-                            title: "Good job!",
+                            title: "sorry!",
                             text: "this animal alredy added to list",
                             icon: "success",
                             customClass: {
@@ -51,6 +55,9 @@ const Your_animal = () => {
                             position: 'center',
                             backdrop: false,
                         })
+                        .then(() => {
+                            navigate(-1);
+                        });
                     }
                 })
                 .catch(err => { console.log(err) })

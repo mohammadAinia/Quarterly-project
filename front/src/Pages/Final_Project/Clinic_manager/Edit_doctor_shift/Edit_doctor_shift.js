@@ -35,7 +35,7 @@ const Edit_doctor_shift = () => {
                             </div>
                         )
                     })}
-                    <Componets_Add_doctor_shift href={`Edit_doctor_shift_time/${3}`} name={""} age={""} email={''} id={1} />
+                    {/* <Componets_Add_doctor_shift href={`Edit_doctor_shift_time/${3}`} name={""} age={""} email={''} id={1} /> */}
 
                 </div>
             </div>

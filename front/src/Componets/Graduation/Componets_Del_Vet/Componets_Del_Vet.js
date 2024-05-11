@@ -11,7 +11,7 @@ const Componets_Del_Vet = (props) => {
     const navigate = useNavigate()
 
     const handleAction = async (id) => {
-        axios.get(`http://localhost:3001/clinic/del_vet/${id}`,{ withCredentials: true })
+        axios.post(`http://localhost:3001/clinic/remov_doc/${id}`,{ withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     // alert("The doctor has been successfully added to the clinic")

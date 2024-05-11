@@ -13,7 +13,7 @@ const Search_vet = () => {
     axios.defaults.withCredentials = true
     const handleSubmit = async (e) => {
         // alert(Type)
-        navigate(`/search_result/${Type}`)
+        navigate(`/search_result_vet/${Type}`)
 
     }
     return (

@@ -34,21 +34,15 @@ const Product_Assortment = () => {
 
                     setProduct(res.data.result1);
 
-                    setName(res.data.result[0].categ)
+                    
                     const extractedNames = res.data.result1.map(item => item.store_in_name);
                     const uniqueNames = [...new Set(extractedNames)]; // Filter out duplicates
                     setBrand(uniqueNames);
-
                     // جيب جميع البراندات لجميع المنتجات حسب الفئة المختارة التي ستعرض بهذه الصفحة
                     // setBrand(res.data.result1)
-
+                    setName(res.data.result[0].categ)
                     // Product.push(res.data.result1[i].store_in_name)
-  
-
-
-
-
-
+                    // alert(Brand)
 
                 } else {
                     navigate('/login');

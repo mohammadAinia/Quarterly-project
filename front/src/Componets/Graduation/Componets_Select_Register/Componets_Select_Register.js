@@ -11,7 +11,7 @@ const Componets_Select_Register = (props) => {
     const navigate = useNavigate()
 
     const handleAction = async (id) => {
-        axios.get(`http://localhost:3001/clinic/add_to_clinic/${id}`, { withCredentials: true })
+        axios.get(`http://localhost:3001/clinic/add_to_clinic/${id}`,{withCredentials: true})
             .then(res => {
                 if (res.data.valid) {
                     // alert("The doctor has been successfully added to the clinic")

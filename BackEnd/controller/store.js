@@ -110,7 +110,7 @@ function select_prand(req,res){
         db.query(sql,(error,result1)=>{
             if(error){console.log(error)}
             else{
-                res.json({valid:true,result1})
+                res.json({valid:true,result1,result:'new_arrivals'})
             }
         })
     }
@@ -145,11 +145,14 @@ function select_prand(req,res){
 function get_by_diifrent(req,res){
     an=req.params.animal
     categ=req.params.cate
-    U=req.params.U
+    u=req.params.u
     price=req.params.price
-    
-    sql="select * from proudact where price < ? and short_name like ?  and animal_type like ?"
-    db.query(sql,[price,'%'+ req.params.cate+'%','%'+an+'%'],(error,result1)=>{
+    console.log(an)
+    console.log(categ)
+    console.log(u)
+    console.log(price)
+    sql="select * from proudact where price <= ? and(( animal_type like ?  or animal_type = ?)  and (short_name like ? or( category  like ? )))"
+    db.query(sql,[price,'%'+an+'%',u,'%'+categ+'%','%'+ req.params.cate+'%'],(error,result1)=>{
         if(error){console.log(error)} 
         else{ 
             res.json({valid:true,result1})

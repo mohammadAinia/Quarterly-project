@@ -90,8 +90,22 @@ function search_user (req,res){
     })
     
 }
+
 else return res.json({valid:false})
 }
+function sercvet(req,res){
+    
+        if(req.session.username){
+        var name=req.params.Type
+        sql='select * from user_infos where first_name like ? or last_name like? and email!=? And rolee=? and email not in(select reciver from chats )'
+        db.query(sql,['%'+ name+'%','%'+ name+'%',req.session.username,'doc'],(err,result)=>{
+            if(err) console.log(err)
+            console.log(result)
+            return res.json({valid:true,result})
+        })
+        
+    
+}}
 function show_pofile(req,res){
     if(req.session.username){
         sqlll='select reciver from chats where chat_id=?'
@@ -129,7 +143,8 @@ open_chats:open_chats,
 send_message_id:send_message_id,
 search_user:search_user,
 show_pofile:show_pofile,
-search_vet:search_vet
+search_vet:search_vet,
+sercvet
 }
 
 // db.query("select * from user_infos join animals on animals.owner=user_infos.email where animals.type="+mysql.escape(type) +")"

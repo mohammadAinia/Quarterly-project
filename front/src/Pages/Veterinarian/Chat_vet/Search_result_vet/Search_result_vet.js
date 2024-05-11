@@ -13,7 +13,7 @@ const Search_result_vet = () => {
 
     useEffect(() => {
 
-        axios.get(`http://localhost:3001/chat/search_user/${Type}`, { withCredentials: true })
+        axios.get(`http://localhost:3001/chat/search_vet/${Type}`, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
                     setInfo(res.data.result)

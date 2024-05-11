@@ -29,6 +29,7 @@ router.post('/add_info_to_clinic',clinic.add_info_to_clinic)
 router.post('/add_new_clinic',clinic.add_new_clinic)
 router.post('/update_time_shift/:id',clinic.update_time_shift)
 router.post('/add_de/:id/:ii',clinic.add_de)
+router.post('/remov_doc/:id',clinic.remov_doc)
 
 
 module.exports=router 

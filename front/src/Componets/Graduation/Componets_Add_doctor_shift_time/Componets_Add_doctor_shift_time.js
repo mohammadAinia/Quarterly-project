@@ -43,7 +43,7 @@ const Componets_Add_doctor_shift_time = () => {
 
         e.preventDefault()
         if (sameWorkingHours === true) {
-            axios.post(`http://localhost:3001/clinic/add_shift/${id}`, {All_Day_From, All_Day_To},{ withCredentials: true })
+            axios.post(`http://localhost:3001/clinic/add_shift/${id}`, {All_Day_From, All_Day_To})
                 .then(res => {
                     if (res.data.valid) {
                         // alert('the time shift was added ')

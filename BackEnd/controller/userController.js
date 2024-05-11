@@ -148,8 +148,29 @@ function login(req,res) {
                         }
                     }
                 );
-            } 
+            } //////
+            else if (user.rolee=="docC") {
+                bcryptjs.compare(
+                    req.body.password,
+                    user.password,
+                    function (err,result) {
+                        if (result) {
+                            req.session.roleee='doc'
+                            req.session.username=req.body.email;
+                            req.session.namee=user.first_name+" "+user.last_name
+                            req.session.adminC=req.body.email
+                            req.session.admin=user.email;
 
+                            return res.json({ Login: true, username: req.session.username ,roleee:true,adminstritor:false,});
+                        } else {
+                            return res.json({
+                                message: "incorrect password",
+                            });
+                        }
+                    }
+                );
+            } 
+            //////
             else if(user.rolee=="admin"){
                 console.log("admin")
                 bcryptjs.compare(req.body.password,user.password,function (err,result) {

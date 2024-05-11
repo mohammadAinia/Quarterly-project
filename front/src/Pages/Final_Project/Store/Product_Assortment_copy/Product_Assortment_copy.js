@@ -11,7 +11,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 
 const Product_Assortment_copy = () => {
 
-    const { animal,cate,U,price } = useParams()
+    const { animal,cate,u,price } = useParams()
     const [Product, setProduct] = useState([])
     const [selectedBrands, setSelectedBrands] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -28,10 +28,10 @@ const Product_Assortment_copy = () => {
 
     useEffect(() => {
         // Fetch all products when the component mounts
-        axios.get(`http://localhost:3001/storee/gey_by/${animal}/${cate}/${U}/${price}`, { withCredentials: true })
+        axios.get(`http://localhost:3001/storee/gey_by/${animal}/${cate}/${u}/${price}`, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
-
+                    
                     setProduct(res.data.result1);
 
                     setName(res.data.result1[0].category)
@@ -58,7 +58,7 @@ const Product_Assortment_copy = () => {
                 console.log(err);
                 setLoading(false); // Set loading to false in case of error
             });
-    }, [animal,cate,U,price]);
+    }, [animal,cate,u,price]);
     console.log(Brand)
 
 

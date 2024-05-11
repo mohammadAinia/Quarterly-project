@@ -143,7 +143,7 @@ const Choose_Product = () => {
                     Swal.fire({
                         title: "!",
                         text: "this prodact is alredy in cart",
-                        icon: "success",
+                        icon: "warning",
                         customClass: {
                             container: 'enlarged-alert-container',
                             popup: 'enlarged-alert-popup',
@@ -160,7 +160,7 @@ const Choose_Product = () => {
                     Swal.fire({
                         title: "!",
                         text: "You must register first",
-                        icon: "success",
+                        icon: "error",
                         customClass: {
                             container: 'enlarged-alert-container',
                             popup: 'enlarged-alert-popup',

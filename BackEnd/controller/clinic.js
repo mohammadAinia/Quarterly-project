@@ -4,6 +4,7 @@ const bcryptjs=require("bcryptjs");
 const { DATE }=require("sequelize");
 
 function create_clinic(req,res){
+if(req.session.adminstritor){
 namee=req.body.name
 place=req.body.place
 number=req.body.number
@@ -16,6 +17,8 @@ closeq=req.body.closeq
             return res.json(result)
         }
     })
+}
+else {res.json({valid:false})}
 }
 function showd_c (req,res){
     id=req.params.id
@@ -63,9 +66,11 @@ function search_clinc (req,res){
 else return res.json({valid:false}) 
 }
 function add_doc_to_cli(req,res){// here is test  قبل فكرة انو الطبيب مايكنلو حساب بلا العيادة
+    if(req.session.adminC){
+
     id=req.params.id
     sql='select * from clinics where admin_clinic =?'
-    db.query(sql,[req.session.admin],(error,result)=>{
+    db.query(sql,[req.session.username],(error,result)=>{
         if(error){
             return res.json({valid:false})
         }
@@ -80,8 +85,12 @@ function add_doc_to_cli(req,res){// here is test  قبل فكرة انو الط�
     }
     )
 }
+else {res.json({valid:false})}
+}
 function add_doc_to_cli_new(req,res){
     //parameter
+    if(req.session.adminC){
+
     bcryptjs.genSalt(10,(err,salt) => {
     bcryptjs.hash(req.body.password,salt,function (err,hash) {
         id_admin=res.session.clinc_admin
@@ -108,8 +117,12 @@ function add_doc_to_cli_new(req,res){
     });
 });
 }
+else {res.json({valid:false})}
+}
 
 function show_all_vet_without_clinic(req,res){
+    if(req.session.adminC){
+
     sql='SELECT * FROM user_infos WHERE id IN (SELECT user_id from veterinarianns where cl_id=?)'
     db.query(sql,[0],(error,result)=>{
         if(error) console.log (error)
@@ -117,6 +130,8 @@ function show_all_vet_without_clinic(req,res){
     }
         
     )
+}
+else {res.json({valid:false})}
 }
 function update_time (req,res){
     var sql='update clinics set time_open=?,time_close=?'
@@ -132,9 +147,11 @@ function show_avilable_app(req,res){
 }  
 
 const singup_vet_from_admin=(req,res) => {
+    if(req.session.adminstritor){
+
     models.user_info.findOne({ where: { email:req.body.email} }).then((result) => {
             if (result) {
-                res.json({
+                res.json({ 
                     message: "email alrady exist ",
                 });
             } else { 
@@ -158,7 +175,7 @@ const singup_vet_from_admin=(req,res) => {
                                      deatalis= req.body.previous_work
                                     url_bsc= req.file.filename
                                 sql11='select id_c from clinics where admin_clinic=?'
-                                db.query(sql11,[req.session.admin],(error,resulttt)=>{
+                                db.query(sql11,[req.session.username],(error,resulttt)=>{
                                     if(error){console.log(error)}
                                     else {
                                         var sql= "insert into veterinarianns (user_id,address,nation,university,deatalis,url_bsc,cl_id) values ('" + user_id + "','" + address + "','" + bsc + "','" + university + "','" + deatalis + "','" + url_bsc + "','" + resulttt[0].id_c + "')"
@@ -189,8 +206,12 @@ const singup_vet_from_admin=(req,res) => {
                 message: "somthing wrong 500"+error,
             });
         });
-};
+    }
+    else {res.json({valid:false})}
+    };
 function add_new_admin_for_clinic(req,res){
+    if(req.session.adminstritor){
+
     q=req.body.First_name
     qq=req.body.Last_name
     qqq=req.body.Email
@@ -200,7 +221,7 @@ function add_new_admin_for_clinic(req,res){
     id=req.params.id
     bcryptjs.genSalt(10,(err,salt) => {
         bcryptjs.hash(qqqqq,salt,function (err,hash) {
-            var sql= "insert into user_infos (email,password,phone,last_name,first_name,age) values ('" + qqq + "','" + hash + "','" + qqqq + "','" + qq + "','" + q + "','" + qqqqqq + "')"
+            var sql= "insert into user_infos (email,password,phone,last_name,first_name,age,rolee) values ('" + qqq + "','" + hash + "','" + qqqq + "','" + qq + "','" + q + "','" + qqqqqq + "','"+'doc'+"')"
             db.query(sql,(error,result)=>{
                 if(error){console.log(error)}
                 else{
@@ -214,11 +235,14 @@ function add_new_admin_for_clinic(req,res){
                 }
             })
         })})
-}
+    }
+    else {res.json({valid:false})}
+    }
 function show_all_under(req,res){
+    if(req.session.username){
 
     sql='select * from user_infos where id in (select veterinarianns.user_id from veterinarianns join clinics on veterinarianns.cl_id=clinics.id_c where clinics.admin_clinic=?)'
-    db.query(sql,[req.session.admin],(error,result)=>{
+    db.query(sql,[req.session.username],(error,result)=>{
         if(error){console.log(error)}
         else{
             res.json({valid:true,result})
@@ -226,7 +250,10 @@ function show_all_under(req,res){
         }
     })
 }
+else {res.json({valid:false})}
+}
 function set_tozero(req,res){
+    if(req.session.adminC){
 
     id=req.params.id
     var sql='update veterinarianns set cl_id=? where user_id=?'
@@ -236,6 +263,8 @@ function set_tozero(req,res){
             res.json({valid:true})
         }
     })
+}
+else {res.json({valid:false})}
 }
 function show_shift_time(req,res){
     id=req.params.id
@@ -248,8 +277,10 @@ function show_shift_time(req,res){
     })
 }
 function add_shift_time(req,res){
+    if(req.session.adminC){
+
   sqll='select * from clinics where admin_clinic=?'
-  db.query(sqll,[req.session.admin],(error,result)=>{
+  db.query(sqll,[req.session.username],(error,result)=>{
     if(error){console.log(error)}
     else {
         id=req.params.id
@@ -265,7 +296,11 @@ function add_shift_time(req,res){
     }
   })
 }
+else {res.json({valid:false})}
+}
 function add_shift_time_diff(req,res){
+    if(req.session.adminC){
+
     sqll='select * from clinics where admin_clinic=?'
     db.query(sqll,[req.session.admin],(error,result)=>{
     if(error){console.log(error)}
@@ -287,8 +322,12 @@ function add_shift_time_diff(req,res){
         res.json({valid:true})
         }
     })
-    }
+}
+else {res.json({valid:false})}    
+}
 function update_time_shift(req,res){
+    if(req.session.adminC){
+
     id=req.params.id
         days=['S','Su','M','Tu','W','Th']
         start=[req.body.Saturday_From,req.body.Sunday_From,req.body.Monday_From,req.body.Tuesday_From,req.body.Wednesday_From,req.body.Thursday_From]
@@ -303,7 +342,8 @@ function update_time_shift(req,res){
             }
             res.json({valid:true})
 
-        
+        }
+        else {res.json({valid:false})}
         
 }
 function show_vet_without_time (req,res){
@@ -395,6 +435,8 @@ function show_av_time(req,res){
     })
 }
 function make_appointment(req,res){
+    if(req.session.username){
+
     let animal=req.body.Sick_animal
     let Type_Service=req.body.Type_Service
     let Day_of_booking=req.body.Day_of_booking
@@ -415,7 +457,11 @@ function make_appointment(req,res){
         }
     })
 }
+else {res.json({valid:false})}
+}
 function add_info_to_clinic(req,res){
+    if(req.session.adminC){
+
     q=req.body.One
     qq=req.body.Two  
     qqq=req.body.Three
@@ -428,6 +474,8 @@ function add_info_to_clinic(req,res){
         }
     })
 }
+else {res.json({valid:false})}
+}
 function show_info_clinic(req,res){
     sql='select * from clinics where admin_clinic=?'
     db.query(sql,[req.session.admin],(error,result)=>{
@@ -439,7 +487,7 @@ function show_info_clinic(req,res){
 } 
 function show_next_appointment(req,res){
     sql='select booking.service,clinics.c_name,c_name,user_infos.first_name,animals.name,booking.datebooking,booking.timebookig FROM booking join clinics on clinics.id_c=booking.clinic_idb join user_infos on user_infos.id=booking.vet_idb join animals on booking.animal_idb=animals.id where booking.owner_idb=?'
-    db.query(sql,[req.session.admin],(error,result)=>{
+    db.query(sql,[req.session.username],(error,result)=>{
         if(error){console.log(error)}
         else{
             res.json({valid:true,result})
@@ -476,6 +524,8 @@ function get_time(req,res){
     })
 }
 function show_appointment_vet(req,res){
+    if(req.session.adminC){
+
     sqll='select * from user_infos where email=?'
     db.query(sqll,[req.session.username],(error,result)=>{
         if(error){console.log(error)}
@@ -490,9 +540,12 @@ function show_appointment_vet(req,res){
             }) 
         }
     })  
-    
+}
+else {res.json({valid:false})}
 } 
 function add_de (req,res){
+    if(req.session.adminC){
+
     id=req.params.id
     ii=req.params.ii
     var sql="INSERT medical_report (vet,reportt,rep_animal_id ,b_id_v) VALUES('" + req.session.username + "','" + req.body.Report + "','" + ii + "','" + id + "')"
@@ -509,7 +562,20 @@ function add_de (req,res){
             })  
         } 
     })
+}
+else {res.json({valid:false})}
 } 
+function remov_doc(req,res){
+    id=req.params.id
+    sql='update veterinarianns set cl_id=? where user_id=?'
+    db.query(sql,[0,id],(error,result)=>{
+        if(error){console.log(error)}
+        else{
+            res.json({valid:true,result})
+            
+        }
+    })
+}
 module.exports={
     create_clinic,
     showd_c,
@@ -539,7 +605,8 @@ module.exports={
     add_new_admin_for_clinic,
     get_time,
     show_appointment_vet,
-    add_de
+    add_de,
+    remov_doc 
 }
 function add30MinutesToTime(time) {
     const [hour, minute] = time.split(':').map(Number);

@@ -336,7 +336,7 @@ const Store = () => {
                             <div class="text-wrapper-25">$</div>
                         </div>
                     </a>
-                    <a href={`Product_Assortment_copy/${"dog,cat"}/${'toy'}/${'treats'}/${10}`} class="overlap-17">
+                    <a href={`Product_Assortment_copy/${"cat"}/${'toy'}/${'dog'}/${10}`} class="overlap-17">
                         <p class="text-wrapper-23">Small Pet Toys &amp; Treats Under</p>
                         <div class="overlap-15">
                             <div class="text-wrapper-24">10</div>
@@ -351,14 +351,14 @@ const Store = () => {
                             <div class="text-wrapper-25">$</div>
                         </div>
                     </a>
-                    <a href={`Product_Assortment_copy/${"dog,cat"}/${'Bowls'}/${'freeding'}/${20}`} class="overlap-19">
+                    <a href={`Product_Assortment_copy/${"dog"}/${'Bowls'}/${'cat'}/${20}`} class="overlap-19">
                         <p class="text-wrapper-23">Dog &amp; Cat Bowls &amp; Freeding Under</p>
                         <div class="overlap-15">
                             <div class="text-wrapper-24">20</div>
                             <div class="text-wrapper-25">$</div>
                         </div>
                     </a>
-                    <a href={`Product_Assortment_copy/${"dog"}/${'bed'}/${''}/${40}`} class="overlap-20">
+                    <a href={`Product_Assortment_copy/${"dog"}/${'bed'}/${'e'}/${40}`} class="overlap-20">
                         <div class="text-wrapper-23">Dog Beds Under</div>
                         <div class="overlap-15">
                             <div class="text-wrapper-24">40</div>
