@@ -35,9 +35,9 @@ const App = () => {
           <Routes>
             <Route path='/' element={<Home_owner />} />
             {/* بس ارجع شغل هذول السطرين مشان واجهة الترحيب وعلق التعليمة الثالثة */}
-            {/* <Route path='login' element={<Loading_page />} /> */}
-            {/* <Route path='start' element={<General_user />} /> */}
-            <Route path='login' element={<General_user />} />
+            <Route path='login' element={<Loading_page />} />
+            <Route path='start' element={<General_user />} />
+            {/* <Route path='login' element={<General_user />} /> */}
 
             <Route path='Loginn' element={<Login />} />
             <Route path='/Registration' element={<Type />} />
