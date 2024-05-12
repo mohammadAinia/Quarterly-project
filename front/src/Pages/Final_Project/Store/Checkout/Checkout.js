@@ -159,8 +159,9 @@ const Checkout = () => {
             <div class="checkout">
                 <div class="div">
                     <div class="overlap-3">
-                        <p class="p">Buy online same day pick up in one of our 600+ stores! or free shipping over</p>
-                        <div class="text-wrapper-10">View Details</div>
+                        <p class="p">World Cat Day discounts of 60%. Take advantage</p>
+                        <p class="p">Soon Syriatel Cash service</p>
+                        {/* <div class="text-wrapper-10">View Details</div> */}
                     </div>
                     <div class="text-wrapper-11">Checkout</div>
                     <div class="overlap-4">

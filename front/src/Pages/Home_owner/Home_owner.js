@@ -16,6 +16,13 @@ import rightt from '../../Assert/Images/right.png'
 import left from '../../Assert/Images/left.png'
 import cat_day from '../../Assert/Images/cat_day.jpg'
 import adv2 from '../../Assert/Images/adv2.jpg'
+import adv3 from '../../Assert/Images/adv3.png'
+import adv4 from '../../Assert/Images/adv4.png'
+import adv5 from '../../Assert/Images/adv5.jpg'
+
+
+
+
 import advstorePolygon_5 from '../../Assert/Images/advstorePolygon_5.png'
 import advstorePolygon_4 from '../../Assert/Images/advstorePolygon_4.png'
 import advstorePolygon_3 from '../../Assert/Images/advstorePolygon_3.png'
@@ -54,7 +61,9 @@ const Home_owner = () => {
 
   const [backgroundImages, setBackgroundImages] = useState([
       (cat_day),
-      (adv2),
+      (adv3),
+      (adv4),
+      (adv5)
       // Add more background images as needed
   ]);
 

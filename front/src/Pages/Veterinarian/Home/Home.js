@@ -167,7 +167,7 @@ const Home = () => {
                             key={i}
                             image={`http://localhost:3001/uploads/${user.urlImage}`}
                             name={user.name}
-                            href_link={`Animal_info_id/${user.id}`}
+                            href_link={`Animal_info_id_follow/${user.id}`}
                             link={"see details"}
                             id={user.id}
                         />

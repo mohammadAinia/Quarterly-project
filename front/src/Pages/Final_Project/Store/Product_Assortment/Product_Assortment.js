@@ -34,7 +34,7 @@ const Product_Assortment = () => {
 
                     setProduct(res.data.result1);
 
-                    
+
                     const extractedNames = res.data.result1.map(item => item.store_in_name);
                     const uniqueNames = [...new Set(extractedNames)]; // Filter out duplicates
                     setBrand(uniqueNames);
@@ -135,7 +135,7 @@ const Product_Assortment = () => {
     }
 
 
-    
+
 
     return (
 
@@ -158,15 +158,15 @@ const Product_Assortment = () => {
 
                         {Brand.map((brand, i) => (
                             <div key={i}>
-                                    <input
-                                        className="rectangle-2"
-                                        type='checkbox'
-                                        value={brand}
-                                        id={`brand${i}`} // Use a unique id for each input
-                                        onChange={() => handleBrandSelect(brand)} // Pass brand instead of index
-                                        checked={selectedBrands.includes(brand)} // Check if the selectedBrands array includes the current brand
-                                    />
-                                    <label htmlFor={`brand${i}`} className="text-wrapper-10">{brand}</label>
+                                <input
+                                    className="rectangle-2"
+                                    type='checkbox'
+                                    value={brand}
+                                    id={`brand${i}`} // Use a unique id for each input
+                                    onChange={() => handleBrandSelect(brand)} // Pass brand instead of index
+                                    checked={selectedBrands.includes(brand)} // Check if the selectedBrands array includes the current brand
+                                />
+                                <label htmlFor={`brand${i}`} className="text-wrapper-10">{brand}</label>
                             </div>
                         ))}
 
@@ -267,8 +267,8 @@ const Product_Assortment = () => {
                     {/* *********************************************************************************************************** */}
 
                     <div class="div-wrapper">
-                        <p class="p">Buy online same day pick up in one of our 600+ stores! or free shipping over</p>
-                    </div>
+                        <p class="p">World Cat Day discounts of 60%. Take advantage</p>
+                        <p class="p">Soon Syriatel Cash service</p>                    </div>
                     <img class="line" src="img/line-13.svg" />
                     <img class="line-2" src="img/line-14.svg" />
                     <img class="line-3" src="img/line-15.svg" />

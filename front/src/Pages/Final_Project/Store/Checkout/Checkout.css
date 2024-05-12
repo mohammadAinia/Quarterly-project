@@ -240,7 +240,7 @@
     background-color: #fff4ca;
 }
 
-.checkout .p {
+/* .checkout .p {
     position: absolute;
     width: 884px;
     height: 47px;
@@ -252,6 +252,29 @@
     font-size: 24px;
     letter-spacing: 0;
     line-height: normal;
+} */
+.checkout .p {
+    position: absolute;
+    width: 884px;
+    height: 47px;
+    top: 15px;
+    left: 548px;
+    font-family: "Inder-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    animation: marquee 50s linear infinite; /* Define animation */
+}
+.checkout .p:nth-child(1) {
+    top: 15px; /* Position the first <p> element */
+    left: 0;
+}
+
+.checkout .p:nth-child(2) {
+    top: 15px; /* Position the second <p> element at the same top position */
+    left: 884px; /* Adjust left position to position it next to the first one */
 }
 
 .checkout .text-wrapper-10 {

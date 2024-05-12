@@ -100,7 +100,7 @@
     position: relative;
     height: 1171px;
     /* background-image: url(../../Assert/Images/cat_day.jpg); */
-    background-size: cover;
+    background-size:cover;
     background-position: 50% 50%;
 }
 

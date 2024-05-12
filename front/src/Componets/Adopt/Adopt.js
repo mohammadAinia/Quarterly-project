@@ -11,6 +11,8 @@ const Adopt = (props) => {
             await axios.get('http://localhost:3001/adopt/adopt/'+id,{withCredentials: true })
 
             alert('Your adoption request has been successful')
+            window.location.reload()
+            
         }
         catch (err) { console.log(err) }
     }

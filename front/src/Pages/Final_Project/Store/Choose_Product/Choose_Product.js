@@ -497,8 +497,8 @@ const Choose_Product = () => {
                     <div class="boxstore2"><img class="line" src={store2_Line_12} /></div>
 
                     <div class="overlap-3">
-                        <p class="p">Buy online same day pick up in one of our 600+ stores! or free shipping over</p>
-                        <div class="text-wrapper-10">View Details</div>
+                        <p class="p">World Cat Day discounts of 60%. Take advantage</p>
+                        <p class="p">Soon Syriatel Cash service</p>
                         {quantity === 0 && <div className="text-wrapper-100">Out of stock</div>}
                     </div>
 

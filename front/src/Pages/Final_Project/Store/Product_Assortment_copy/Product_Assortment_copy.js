@@ -11,7 +11,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 
 const Product_Assortment_copy = () => {
 
-    const { animal,cate,u,price } = useParams()
+    const { animal, cate, u, price } = useParams()
     const [Product, setProduct] = useState([])
     const [selectedBrands, setSelectedBrands] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -31,7 +31,7 @@ const Product_Assortment_copy = () => {
         axios.get(`http://localhost:3001/storee/gey_by/${animal}/${cate}/${u}/${price}`, { withCredentials: true })
             .then(res => {
                 if (res.data.valid) {
-                    
+
                     setProduct(res.data.result1);
 
                     setName(res.data.result1[0].category)
@@ -58,7 +58,7 @@ const Product_Assortment_copy = () => {
                 console.log(err);
                 setLoading(false); // Set loading to false in case of error
             });
-    }, [animal,cate,u,price]);
+    }, [animal, cate, u, price]);
     console.log(Brand)
 
 
@@ -140,7 +140,7 @@ const Product_Assortment_copy = () => {
     }
 
 
-    
+
 
     return (
 
@@ -187,15 +187,15 @@ const Product_Assortment_copy = () => {
 
                         {Brand.map((brand, i) => (
                             <div key={i}>
-                                    <input
-                                        className="rectangle-2"
-                                        type='checkbox'
-                                        value={brand}
-                                        id={`brand${i}`} // Use a unique id for each input
-                                        onChange={() => handleBrandSelect(brand)} // Pass brand instead of index
-                                        checked={selectedBrands.includes(brand)} // Check if the selectedBrands array includes the current brand
-                                    />
-                                    <label htmlFor={`brand${i}`} className="text-wrapper-10">{brand}</label>
+                                <input
+                                    className="rectangle-2"
+                                    type='checkbox'
+                                    value={brand}
+                                    id={`brand${i}`} // Use a unique id for each input
+                                    onChange={() => handleBrandSelect(brand)} // Pass brand instead of index
+                                    checked={selectedBrands.includes(brand)} // Check if the selectedBrands array includes the current brand
+                                />
+                                <label htmlFor={`brand${i}`} className="text-wrapper-10">{brand}</label>
                             </div>
                         ))}
 
@@ -310,7 +310,8 @@ const Product_Assortment_copy = () => {
                     {/* *********************************************************************************************************** */}
 
                     <div class="div-wrapper">
-                        <p class="p">Buy online same day pick up in one of our 600+ stores! or free shipping over</p>
+                        <p class="p">World Cat Day discounts of 60%. Take advantage</p>
+                        <p class="p">Soon Syriatel Cash service</p>
                     </div>
                     <img class="line" src="img/line-13.svg" />
                     <img class="line-2" src="img/line-14.svg" />
