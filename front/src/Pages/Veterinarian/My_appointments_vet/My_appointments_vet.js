@@ -48,4 +48,3 @@ const My_appointments_vet = () => {
 }
 
 export default My_appointments_vet
-//hvkxv
