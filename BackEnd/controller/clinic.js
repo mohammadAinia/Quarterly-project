@@ -544,7 +544,7 @@ function show_appointment_vet(req,res){
 else {res.json({valid:false})}
 } 
 function add_de (req,res){
-    if(req.session.adminC){
+    if(req.session.username){
 
     id=req.params.id
     ii=req.params.ii
