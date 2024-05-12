@@ -15,7 +15,7 @@ import {
 const General_user = () => {
     return (
         <>
-            <Header href1={"/Animal"} a1={"About Pets"} href3={"FAQs"} a3={"FAQs"} log={'/Loginn'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightToBracket} /></div>} />
+            <Header href1={"/Animal"} a1={"About Pets"} href3={"FAQs"} a3={"FAQs"} href4={"store"} a4={"Store"} log={'/Loginn'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightToBracket} /></div>} />
 
             <section className="main">
                 <div>

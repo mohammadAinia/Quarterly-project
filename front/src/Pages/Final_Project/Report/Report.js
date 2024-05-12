@@ -12,7 +12,11 @@ import { useState, useEffect } from 'react'
 import { Header, About_your_animal, Your_animal_vaccines } from '../../../Componets'
 import { useNavigate, useParams } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faRightFromBracket, faBell, faHouse, faMessage, faUserDoctor, faStethoscope } from '@fortawesome/free-solid-svg-icons'
+import {
+    faPlus, faRightFromBracket, faRightToBracket, faPaw, faStoreSlash, faCoins, faFaceSmileWink, faBolt, faSearch,
+    faClock, faArrowsRotate, faComments, faHandHoldingHeart, faHouseCircleCheck,
+    faUsers, faArrowRightArrowLeft, faPaperPlane, faLocationDot, faHouse, faBell, faMessage, faUserDoctor, faStethoscope
+} from '@fortawesome/free-solid-svg-icons'
 
 const Report = () => {
 
@@ -87,7 +91,7 @@ const Report = () => {
             setName(animal.name || ''); // Set Name state
             setType(animal.type || ''); // Set Type state
             setGender(animal.gender || ''); // Set Gender state
-            setAge(animal.age.substring(0,10) || ''); // Set Age state
+            setAge(animal.age.substring(0, 10) || ''); // Set Age state
             setHeight(animal.Height || ''); // Set Height state
             setWeight(animal.Weight || ''); // Set Weight state
             setPlace(animal.place || ''); // Set Place state
@@ -98,6 +102,8 @@ const Report = () => {
 
     return (
         <>
+            <Header href12={"/Pet_Sitting"} a12={"Pet Sitting"} href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"FAQs"} href5={"/Add_Animal"} a5={<FontAwesomeIcon icon={faPlus} />} href6={"all_doc"} a6={<FontAwesomeIcon icon={faStethoscope} />} href3={"/Animal_infoo"} a3={"My Animals"} href4={"/All_problem"} a4={"Forum"} href7={"/chat"} a7={<FontAwesomeIcon icon={faMessage} />} href8={"/Notifications"} a8={"Notifications"} href9={"/profile"} a9={"profile"} href10={"/"} a10={<FontAwesomeIcon icon={faHouse} />} href11={"My_appointments"} a11={"My appointments"} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
+
             <div class="report">
 
                 <div class="div">
@@ -174,14 +180,14 @@ const Report = () => {
                     {/* تقرير صحي */}
                     <div class="frame-3_me2">
                         {Health_Record.map((user, i) => (
-                            <p className="p" key={i}>-{i+1} {user.reportt}</p>
+                            <p className="p" key={i}>-{i + 1} {user.reportt}</p>
                         ))}
 
                     </div>
                     {/* معلومات اللقاحات*/}
                     <div class="frame-3_me22">
                         {Vacc.map((user, i) => (
-                            <p class="text-wrapper-19" key={i}>-{i+1}  {user.name_vacc} /{user.date_take_vac.substring(0,10)}</p>
+                            <p class="text-wrapper-19" key={i}>-{i + 1}  {user.name_vacc} /{user.date_take_vac.substring(0, 10)}</p>
                         ))}
 
                     </div>

@@ -182,6 +182,8 @@ const App = () => {
             <Route path='Add_balance' element={<Add_balance />} />
             <Route path='cart/checkout' element={<Checkout />} />
             <Route path='Product_Assortment_copy/:animal/:cate/:u/:price' element={<Product_Assortment_copy />} />
+            <Route path='Product_Assortment_copy/:animal/:cate/:u/:price/:id' element={<Choose_Product />} />
+
             <Route path='cart/cart' element={<Cart />} />
             <Route path='Pet_Sitting' element={<Home_Pet_Sitting />} />
             <Route path='Add_Sitting_request' element={<Add_Sitting_request />} />

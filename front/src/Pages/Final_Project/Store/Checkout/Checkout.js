@@ -256,7 +256,7 @@ const Checkout = () => {
                         </>
                     )}
 
-                    <div class="estimated-sales-tax">VAT: <br />(10%)</div>
+                    <div class="estimated-sales-tax">VAT (10%) :</div>
                     <div class="text-wrapper-29">{(totalPrice * 0.1).toFixed(2)} $</div>
 
                     <div class="text-wrapper-17">Order Total</div>
