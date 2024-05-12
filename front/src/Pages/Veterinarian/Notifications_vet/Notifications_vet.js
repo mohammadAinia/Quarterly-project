@@ -28,7 +28,7 @@ const Notifications_vet = () => {
         <>
             <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_vete"} a2={"FAQs"} href3={"/all_follow"} a3={"All Follow"} href4={"/Forum_vet"} a4={"Forum"} href6={"/Notifications_vet"} a6={<FontAwesomeIcon icon={faBell} />} href7={"/profile_vet"} a7={<div id="login-btn" className="fas fa-user"></div>} href8={"Home_vet"} a8={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
 
-            <section style={{ "backgroundColor": "#f5f5f5", "margin-top": "600px" }} class="cards contact" id="contact">
+            <section style={{ "backgroundColor": "#f5f5f5", "margin-top": "00px" }} class="cards contact" id="contact">
                 <h2 class="titlee">Notifications</h2>
 
                 <div class="content">

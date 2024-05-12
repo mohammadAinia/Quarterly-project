@@ -31,7 +31,7 @@ const Problem_id_vet = () => {
     <>
       <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_vete"} a2={"FAQs"} href3={"/all_follow"} a3={"All Follow"} href4={"/Forum_vet"} a4={"Forum"} href6={"/Notifications_vet"} a6={<FontAwesomeIcon icon={faBell} />} href7={"/profile_vet"} a7={<div id="login-btn" className="fas fa-user"></div>} href8={"Home_vet"} a8={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
 
-      <section className="pricing" id="pricing" style={{ "margin-top": "350px" }}>
+      <section className="pricing" id="pricing" style={{ "margin-top": "0px" }}>
         <h2 className="heading">Forum</h2>
 
         <div className="box-container">
@@ -46,7 +46,7 @@ const Problem_id_vet = () => {
       </section>
 
       <div>
-        <div className="container" style={{ "margin-top": "50px", "margin-bottom": "70px", "margin-left": "90px" }}>
+        <div className="container" style={{ "margin-top": "50px", "margin-bottom": "70px", "margin-left": "250px" }}>
           <div className="title">Comments</div>
           <div className="content">
             <form action="#" >

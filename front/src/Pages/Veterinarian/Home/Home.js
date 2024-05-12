@@ -16,6 +16,10 @@ import { useNavigate } from 'react-router-dom'
 import left from '../../../Assert/Images/left.png'
 import adv2 from '../../../Assert/Images/adv2.jpg'
 import cat_day from '../../../Assert/Images/cat_day.jpg'
+import adv_vet1 from '../../../Assert/Images/adv_vet1.png'
+import adv_vet3 from '../../../Assert/Images/adv_vet3.png'
+
+
 
 
 import animal_image from '../../../Assert/Images/—Pngtree—parrot_1001948.png'
@@ -57,7 +61,9 @@ const Home = () => {
 
     const [backgroundImages, setBackgroundImages] = useState([
         (cat_day),
-        (adv2),
+        (adv_vet1),
+        (adv_vet3),
+
         // Add more background images as needed
     ]);
 
