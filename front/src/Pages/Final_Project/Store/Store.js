@@ -270,7 +270,7 @@ const Store = () => {
 
                     {/* *********************************************************************************88 */}
                     {/* ترند البحث */}
-                    <div id='top' class="text-wrapper-11">Trending </div>
+                    <div id='top' class="text-wrapper-11">Quick Access </div>
 
                     <div class="frame-3_metrend">
 
@@ -282,7 +282,25 @@ const Store = () => {
                         ))}
 
                         <div class="div-wrapper">
-                            <a href="#" class="text-wrapper-19">Dog Toy</a>
+                            <a href={`Product_Assortment/${7}`} class="text-wrapper-19">Dog Toy</a>
+                        </div>
+                        <div class="div-wrapper">
+                            <a href={`shop_by_pet/cat`} class="text-wrapper-19">Cat</a>
+                        </div>
+                        <div class="div-wrapper">
+                            <a href={`Product_Assortment/Royal Canin`} class="text-wrapper-19">Royal Canin</a>
+                        </div>
+                        <div class="div-wrapper">
+                            <a href={`Product_Assortment/${24}`} class="text-wrapper-19">Dry Food</a>
+                        </div>
+                        <div class="div-wrapper">
+                            <a href={`shop_by_pet/fish`} class="text-wrapper-19">Fish</a>
+                        </div>
+                        <div class="div-wrapper">
+                            <a href={`Product_Assortment/${25}`} class="text-wrapper-19">Wet Food</a>
+                        </div>
+                        <div class="div-wrapper">
+                            <a href={`shop_by_pet/dog`} class="text-wrapper-19">Dog</a>
                         </div>
 
 

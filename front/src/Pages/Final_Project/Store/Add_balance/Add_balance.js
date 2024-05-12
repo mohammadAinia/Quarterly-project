@@ -1,11 +1,12 @@
 import './Add_balance.css'
-import { Header, Componets_Add_balance } from '../../../../Componets'
+import { Header, Componets_Add_balance, Store_Header } from '../../../../Componets'
 
 
 const Add_balance = () => {
     return (
 
         <>
+            <Store_Header />
             <div>
                 <div class="container" >
                     <div class="title">Add Balance</div><br />

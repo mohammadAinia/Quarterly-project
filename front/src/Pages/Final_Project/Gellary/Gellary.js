@@ -22,11 +22,11 @@ import gallery_Vector_68 from '../../../Assert/Images/gallery_Vector_68.png'
 import gallery_Vector_77 from '../../../Assert/Images/gallery_Vector_77.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-    faRightToBracket, faPaw, faStoreSlash, faCoins, faFaceSmileWink, faBolt,
-    faClock, faArrowsRotate, faComments, faHandHoldingHeart, faHouseCircleCheck, faPlus,
-    faTrash, faSearch
+    faPlus, faRightFromBracket, faRightToBracket, faPaw, faStoreSlash, faCoins, faFaceSmileWink, faBolt, faSearch,
+    faClock, faArrowsRotate, faComments, faHandHoldingHeart, faHouseCircleCheck,
+    faUsers, faArrowRightArrowLeft, faPaperPlane, faLocationDot, faHouse, faBell, faMessage, faUserDoctor, faStethoscope
 } from '@fortawesome/free-solid-svg-icons'
-import { Componets_Gellary } from '../../../Componets'
+import { Componets_Gellary, Header } from '../../../Componets'
 
 import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
@@ -75,6 +75,8 @@ const Gellary = () => {
     return (
 
         <>
+            <Header href12={"/Pet_Sitting"} a12={"Pet Sitting"} href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"FAQs"} href5={"/Add_Animal"} a5={<FontAwesomeIcon icon={faPlus} />} href6={"all_doc"} a6={<FontAwesomeIcon icon={faStethoscope} />} href3={"/Animal_infoo"} a3={"My Animals"} href4={"/All_problem"} a4={"Forum"} href7={"/chat"} a7={<FontAwesomeIcon icon={faMessage} />} href8={"/Notifications"} a8={"Notifications"} href9={"/profile"} a9={"profile"} href10={"/"} a10={<FontAwesomeIcon icon={faHouse} />} href11={"My_appointments"} a11={"My appointments"} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
+
             <body>
                 <div class="gallery">
                     <div class="overlap-group-wrapper">
@@ -131,7 +133,7 @@ const Gellary = () => {
             </body>
             <a href={`Add_photo_to_gallery/${id}`} className='search-button2'>
                 <div className='button_gallery'><FontAwesomeIcon icon={faPlus} /></div>
-                
+
             </a>
             {/* {isSearchOpen && (
                 <div className="search-popup">

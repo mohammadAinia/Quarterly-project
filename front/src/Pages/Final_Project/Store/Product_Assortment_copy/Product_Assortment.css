@@ -524,7 +524,7 @@
     background-color: #fff4ca;
 }
 
-.product-assortment .p {
+/* .product-assortment .p {
     position: absolute;
     width: 884px;
     height: 47px;
@@ -536,6 +536,29 @@
     font-size: 24px;
     letter-spacing: 0;
     line-height: normal;
+} */
+.product-assortment .p {
+    position: absolute;
+    width: 884px;
+    height: 47px;
+    top: 15px;
+    left: 548px;
+    font-family: "Inder-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    animation: marquee 50s linear infinite; /* Define animation */
+}
+.product-assortment .p:nth-child(1) {
+    top: 15px; /* Position the first <p> element */
+    left: 0;
+}
+
+.product-assortment .p:nth-child(2) {
+    top: 15px; /* Position the second <p> element at the same top position */
+    left: 884px; /* Adjust left position to position it next to the first one */
 }
 
 .product-assortment .line {

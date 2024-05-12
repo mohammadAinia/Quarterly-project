@@ -11,8 +11,14 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Swal from 'sweetalert2';
+import { Button, Card, Componets_Specific_clinic, Header, SectionHeader } from '../../../Componets/index'
 
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+    faRightToBracket, faPaw, faStoreSlash, faCoins, faFaceSmileWink, faBolt, faRightFromBracket,
+    faClock, faArrowsRotate, faComments, faHandHoldingHeart, faHouseCircleCheck,
+    faUsers, faArrowRightArrowLeft, faPaperPlane, faCheck, faStar, faPlus, faBell, faHouse
+} from '@fortawesome/free-solid-svg-icons'
 const Appointment_Booking = () => {
     const [minDate, setMinDate] = useState('');
     const [maxDate, setMaxDate] = useState('');
@@ -22,9 +28,6 @@ const Appointment_Booking = () => {
     const [pageCompletion, setPageCompletion] = useState(0);
     const [circleBeating, setCircleBeating] = useState(false);
     const [availableWorkingHours, setAvailableWorkingHours] = useState([]);
-
-
-
 
     const navigate = useNavigate()
     const [Animals, setAnimals] = useState([])
@@ -181,6 +184,7 @@ const Appointment_Booking = () => {
 
     return (
         <>
+            <Header href1={"/Adopt"} a1={"Adopt"} href2={"/common_users"} a2={"FAQs"} href5={"/Add_Vets_to_clinic"} a5={<FontAwesomeIcon icon={faPlus} />} href3={"/Animal_infoo"} a3={"My Animals"} href4={"/All_problem"} a4={"Forum"} href6={"/Notifications"} a6={<FontAwesomeIcon icon={faBell} />} href7={"/profile"} a7={<div id="login-btn" className="fas fa-user"></div>} href8={"/"} a8={<FontAwesomeIcon icon={faHouse} />} log={'/#'} log2={<div id="login-btn"><FontAwesomeIcon icon={faRightFromBracket} /></div>} />
             <div class="appointment">
                 <form onSubmit={handleSubmit}>
                     <div class="div">

@@ -241,7 +241,7 @@
     background-color: #fff4ca;
 }
 
-.cart .p {
+/* .cart .p {
     position: absolute;
     width: 884px;
     height: 47px;
@@ -253,6 +253,38 @@
     font-size: 24px;
     letter-spacing: 0;
     line-height: normal;
+} */
+.cart .p {
+    position: absolute;
+    width: 884px;
+    height: 47px;
+    top: 15px;
+    left: 548px;
+    font-family: "Inder-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    animation: marquee 50s linear infinite; /* Define animation */
+}
+.cart .p:nth-child(1) {
+    top: 15px; /* Position the first <p> element */
+    left: 0;
+}
+
+.cart .p:nth-child(2) {
+    top: 15px; /* Position the second <p> element at the same top position */
+    left: 884px; /* Adjust left position to position it next to the first one */
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(-130%); /* Start from the right edge */
+    }
+    100% {
+        transform: translateX(240%); /* Move text to the left edge */
+    }
 }
 
 .cart .text-wrapper-10 {
@@ -504,10 +536,10 @@ button {
 
 .cart .text-wrapper-21 {
     position: absolute;
-    width: 248px;
-    height: 61px;
-    top: 555px;
-    left: 59px;
+    width: 317px;
+    height: 63px;
+    top: 554px;
+    left: 25px;
     font-family: "Poppins-Bold", Helvetica;
     font-weight: 700;
     color: #ffffff;
@@ -515,6 +547,13 @@ button {
     text-align: center;
     letter-spacing: 0;
     line-height: normal;
+    cursor: pointer; /* Change cursor to pointer on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+    transition: box-shadow 0.3s ease; /* Smooth transition for shadow effect */
+    
+}
+.cart .text-wrapper-21:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Increase shadow on hover */
 }
 .radio-input {
     position: absolute;
