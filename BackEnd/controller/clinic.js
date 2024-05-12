@@ -524,7 +524,7 @@ function get_time(req,res){
     })
 }
 function show_appointment_vet(req,res){
-    if(req.session.adminC){
+    if(req.session.username){
 
     sqll='select * from user_infos where email=?'
     db.query(sqll,[req.session.username],(error,result)=>{
@@ -540,7 +540,7 @@ function show_appointment_vet(req,res){
             }) 
         }
     })  
-}
+} 
 else {res.json({valid:false})}
 } 
 function add_de (req,res){
