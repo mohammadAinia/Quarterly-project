@@ -36,7 +36,7 @@ const Adoptt = () => {
             {Adopt_info.map((d, i) => {
               return (
                 <div key={i}>
-                  <Adopt image={'http://localhost:3001/uploads/'+d.urlImage} type={d.type} date={d.age} name={d.name} phone={d.phone} details={`Animal_info_adopt/${d.id}`} id={d.id}/>
+                  <Adopt image={'http://localhost:3001/uploads/'+d.urlImage} type={d.type} date={d.age.substring(0,10)} name={d.name} phone={d.phone} details={`Animal_info_adopt/${d.id}`} id={d.id}/>
                 </div>
               )
             })}

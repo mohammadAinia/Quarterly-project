@@ -10,9 +10,9 @@ router.get('/search_user/:Type',chat.search_user)
 router.get('/search_vet/:Type',chat.sercvet)
 router.get('/show_profile/:id',chat.show_pofile)
 router.get('/search_vet',chat.search_vet)
- 
-// router.get
 
+// router.get
+ 
 
 
 module.exports=router

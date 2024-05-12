@@ -688,6 +688,7 @@ function add_new_address(req,res){
     })
 }
 function add_to_wallet(req,res){
+    if (req.session.username){
     sql1='select * from wallet where w_owner=?'
     db.query(sql1,[req.session.username],(error,result1)=>{
         if(error){console.log(error)}
@@ -712,6 +713,9 @@ function add_to_wallet(req,res){
         }
     })
     
+}
+else {res.json({valid:false})}
+
 }
 function set_data (req,res){
     sqql='select * from brands '

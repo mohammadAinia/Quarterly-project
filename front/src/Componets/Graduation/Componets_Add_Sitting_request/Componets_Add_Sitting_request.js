@@ -81,7 +81,7 @@ const Componets_Add_Sitting_request = () => {
                     <div class="input-box">
                         <span class="details">Choose Animal *</span>
                         <select name="brand" id="cars" required onChange={e => setChosen_animal(e.target.value)}>
-
+                        <option  value='' ></option>
                             {MyAnimals.map((user, i) => {
                                 return (
                                     <option key={i} value={user.id} >{user.name}</option>

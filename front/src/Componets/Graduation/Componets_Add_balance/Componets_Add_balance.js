@@ -36,7 +36,22 @@ const Componets_Add_balance = () => {
 
                 }
                 else {
-                    alert('you dont have permtions ')
+                    Swal.fire({
+                        title: "you dont have permmistions",
+                        text: "The balance has been added successfully",
+                        icon: "error",
+                        customClass: {
+                            container: 'enlarged-alert-container',
+                            popup: 'enlarged-alert-popup',
+                            title: 'enlarged-alert-title',
+                            htmlContainer: 'enlarged-alert-html-container',
+                            confirmButton: 'enlarged-alert-confirm-button',
+                        },
+                        position: 'center',
+                        backdrop: false,
+                    }).then(() => {
+                        navigate('/store');
+                    });
                     
                 }
             })

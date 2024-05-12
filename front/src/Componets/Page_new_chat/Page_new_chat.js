@@ -14,9 +14,13 @@ const Page_new_chat = (props) => {
     try {
       axios.post('http://localhost:3001/chat/create_chat/'+id,{ withCredentials: true })
       .then(
-        res=>{
+        res=>{ 
           var e=res.data.result12
-          navigate(`/NewChat/${e}`)
+
+          // navigate(`/NewChat/${e}`)
+          setTimeout(() => {
+            navigate(`/NewChat/${e}`); 
+          }, 8000); // 2000 milliseconds = 2 seconds delay
         }
       ).catch()
       
@@ -37,7 +41,7 @@ const Page_new_chat = (props) => {
         <div>
 
           <button style={{ "margin-left": "55px", "width": "95px" }} className="btn" onClick={e => create_new_chat(props.id)}>New</button>
-          <Link style={{ "margin-left": "50px", "width": "110px" }} className="btn" to={`/profile_id/${props.id}`}>Profile</Link>
+          <Link style={{ "margin-left": "50px", "width": "110px" }} className="btn" to={`/profile_id_vet/${props.id}`}>Profile</Link>
         </div>
       </div>
     </>

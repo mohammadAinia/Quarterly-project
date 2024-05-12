@@ -207,11 +207,11 @@ const Choose_Product = () => {
                         window.location.reload();
                     });
                 } else {
-                    alert('You must register to be able comment');
+                    // alert('You must register to be able comment');
                     Swal.fire({
                         title: "!!",
                         text: "You must register to be able comment",
-                        icon: "success",
+                        icon: "error",
                         customClass: {
                             container: 'enlarged-alert-container',
                             popup: 'enlarged-alert-popup',
