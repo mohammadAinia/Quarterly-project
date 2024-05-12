@@ -390,6 +390,7 @@ function show_detalis_s(req,res){
     })
 }
 function add_rev(req,res){
+    stars={1:'one',2:'two',3:'three',4:'four',5:'five'}
     if(req.session.username){
     var e=req.body.selectedStar
     sql432='select * from review_table where user_name=? and pro_id=?'
@@ -397,62 +398,132 @@ function add_rev(req,res){
         if(error){console.log(error)}
         else{
             if(result12.length!=0){
-                sqll='update review_table set review=?,stars=?,date_add=? where pro_id=?'
+                sqll='update review_table set review=?,stars=?,date_add=? where pro_id=? and user_name=?'
                 var d=new Date()
                 var datee = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
-                db.query(sqll,[req.body.Comment,req.body.selectedStar,datee,req.params.id],(error,result)=>{
+                db.query(sqll,[req.body.Comment,req.body.selectedStar,datee,req.params.id,req.session.namee],(error,result)=>{
                     if(error){console.log(error)}
                     else if (req.body.selectedStar==1){
-                        sql2='update count_stars set one=one+1 where pr_id=?'
-                        db.query(sql2,[req.body.selectedStar,req.params.id],(error,result)=>{
+                        console.log(stars[result12[0].stars])
+                        sql2=`update count_stars set one=one+1,${stars[result12[0].stars]}=${stars[result12[0].stars]}-1 where pr_id=?`
+                        db.query(sql2,[req.params.id],(error,result)=>{
                             if(error){console.log(error)}
-                            
+                            else {
+                                sql1234='select * from count_stars where pr_id=?'
+                                db.query(sql1234,[req.params.id],(error,result2)=>{
+                                    if(error){console.log(error)}
+                                    else{
+                                        var neww=result2[0].one+result2[0].two*2+result2[0].three*3+result2[0].four*4+result2[0].five*5
+                                        var newww=result2[0].one+result2[0].two+result2[0].three+result2[0].four+result2[0].five
+                                        var newwww=neww/newww
+                                        sql120='update proudact set star_count=? where id=?'
+                                        db.query(sql120,[newwww,req.params.id],(error,result)=>{
+                                        if(error){console.log(error)}
+                                        else{
+                                        res.json({valid:true,result})
+                                        }
+                                })
+                                    }
+                                })
+                            }
                         })
                     } 
                         else if (req.body.selectedStar==2){
-                        sql2='update count_stars set two=two+1 where pr_id=?'
-                        db.query(sql2,[req.params.id],(error,result)=>{
+                            sql2=`update count_stars set two=two+1,${stars[result12[0].stars]}=${stars[result12[0].stars]}-1 where pr_id=?`
+                            db.query(sql2,[req.params.id],(error,result)=>{
                             if(error){console.log(error)}
-                            
+                            else {
+                                sql1234='select * from count_stars where pr_id=?'
+                                db.query(sql1234,[req.params.id],(error,result2)=>{
+                                    if(error){console.log(error)}
+                                    else{
+                                        var neww=result2[0].one+result2[0].two*2+result2[0].three*3+result2[0].four*4+result2[0].five*5
+                                        var newww=result2[0].one+result2[0].two+result2[0].three+result2[0].four+result2[0].five
+                                        var newwww=neww/newww
+                                        sql120='update proudact set star_count=? where id=?'
+                                        db.query(sql120,[newwww,req.params.id],(error,result)=>{
+                                        if(error){console.log(error)}
+                                        else{
+                                        res.json({valid:true,result})
+                                        }
+                                })
+                                    }
+                                })
+                            }
                         })
                     }   
                     else if (req.body.selectedStar==3){
-                        sql2='update count_stars set three=three+1 where pr_id=?'
-                        db.query(sql2,[req.body.selectedStar,req.params.id],(error,result)=>{
+                        sql2=`update count_stars set three=three+1,${stars[result12[0].stars]}=${stars[result12[0].stars]}-1 where pr_id=?`
+                        db.query(sql2,[req.params.id],(error,result)=>{
                             if(error){console.log(error)}
-                            
+                            else {
+                                sql1234='select * from count_stars where pr_id=?'
+                                db.query(sql1234,[req.params.id],(error,result2)=>{
+                                    if(error){console.log(error)}
+                                    else{
+                                        var neww=result2[0].one+result2[0].two*2+result2[0].three*3+result2[0].four*4+result2[0].five*5
+                                        var newww=result2[0].one+result2[0].two+result2[0].three+result2[0].four+result2[0].five
+                                        var newwww=neww/newww
+                                        sql120='update proudact set star_count=? where id=?'
+                                        db.query(sql120,[newwww,req.params.id],(error,result)=>{
+                                        if(error){console.log(error)}
+                                        else{
+                                        res.json({valid:true,result})
+                                        }
+                                })
+                                    }
+                                })
+                            }
                         })
                     }               
                         else if (req.body.selectedStar==4){
-                        sql2='update count_stars set four=four+1 where pr_id=?'
-                        db.query(sql2,[req.body.selectedStar,req.params.id],(error,result)=>{
+                            sql2=`update count_stars set four=four+1,${stars[result12[0].stars]}=${stars[result12[0].stars]}-1 where pr_id=?`
+                            db.query(sql2,[req.params.id],(error,result)=>{
                             if(error){console.log(error)}
-                            
+                            else {
+                                sql1234='select * from count_stars where pr_id=?'
+                                db.query(sql1234,[req.params.id],(error,result2)=>{
+                                    if(error){console.log(error)}
+                                    else{
+                                        var neww=result2[0].one+result2[0].two*2+result2[0].three*3+result2[0].four*4+result2[0].five*5
+                                        var newww=result2[0].one+result2[0].two+result2[0].three+result2[0].four+result2[0].five
+                                        var newwww=neww/newww
+                                        sql120='update proudact set star_count=? where id=?'
+                                        db.query(sql120,[newwww,req.params.id],(error,result)=>{
+                                        if(error){console.log(error)}
+                                        else{
+                                        res.json({valid:true,result})
+                                        }
+                                })
+                                    }
+                                })
+                            }
                         })
                     }                
                         else if (req.body.selectedStar==5){
-                        sql2='update count_stars set five=five+1 where pr_id=?'
-                        db.query(sql2,[req.body.selectedStar,req.params.id],(error,result)=>{
+                            sql2=`update count_stars set five=five+1,${stars[result12[0].stars]}=${stars[result12[0].stars]}-1 where pr_id=?`
+                            db.query(sql2,[req.params.id],(error,result)=>{
                             if(error){console.log(error)}
-                            
-                        })
-                    } 
-                        sql1234='select * from count_stars where pr_id=?'
-                        db.query(sql1234,[req.params.id],(error,result2)=>{
-                            if(error){console.log(error)}
-                            else{
-                                var neww=result2[0].one+result2[0].two*2+result2[0].three*3+result2[0].four*4+result2[0].five*5
-                                var newww=result2[0].one+result2[0].two+result2[0].three+result2[0].four+result2[0].five
-                                var newwww=neww/newww
-                                sql120='update proudact set star_count=?,comments=comments+1,review_count=review_count+1 where id=?'
-                                db.query(sql120,[newwww,req.params.id],(error,result)=>{
-                                if(error){console.log(error)}
-                                else{
-                                res.json({valid:true,result})
-                                }
-                        })
+                            else {
+                                sql1234='select * from count_stars where pr_id=?'
+                                db.query(sql1234,[req.params.id],(error,result2)=>{
+                                    if(error){console.log(error)}
+                                    else{
+                                        var neww=result2[0].one+result2[0].two*2+result2[0].three*3+result2[0].four*4+result2[0].five*5
+                                        var newww=result2[0].one+result2[0].two+result2[0].three+result2[0].four+result2[0].five
+                                        var newwww=neww/newww
+                                        sql120='update proudact set star_count=? where id=?'
+                                        db.query(sql120,[newwww,req.params.id],(error,result)=>{
+                                        if(error){console.log(error)}
+                                        else{
+                                        res.json({valid:true,result})
+                                        }
+                                })
+                                    }
+                                })
                             }
                         })
+                    } 
                     
                 })
         }
@@ -472,55 +543,129 @@ function add_rev(req,res){
                             sql2='update count_stars set one=one+1 where pr_id=?'
                             db.query(sql2,[req.params.id],(error,result)=>{
                                 if(error){console.log(error)}
-                                
+                                else {
+                                    sql1234='select * from count_stars where pr_id=?'
+                                    db.query(sql1234,[req.params.id],(error,result2)=>{
+                                        if(error){console.log(error)}
+                                        else{
+                                            var neww=result2[0].one+result2[0].two*2+result2[0].three*3+result2[0].four*4+result2[0].five*5
+                                            var newww=result2[0].one+result2[0].two+result2[0].three+result2[0].four+result2[0].five
+                                            var newwww=neww/newww
+                                            console.log(newwww)
+                                            sql120='update proudact set star_count=?,comments=comments+1 where id=?'
+                                            db.query(sql120,[newwww,req.params.id],(error,result)=>{
+                                            if(error){console.log(error)}
+                                            else{
+                                            res.json({valid:true,result})
+                                            }
+                                    })
+                                        }
+                                    })
+                                }
                             })
                         }
                             else if (result1.length!=0&&req.body.selectedStar==2){
                             sql2='update count_stars set two=two+1 where pr_id=?'
                             db.query(sql2,[req.params.id],(error,result)=>{
                                 if(error){console.log(error)}
-                                
+                                else {
+                                    sql1234='select * from count_stars where pr_id=?'
+                                    db.query(sql1234,[req.params.id],(error,result2)=>{
+                                        if(error){console.log(error)}
+                                        else{
+                                            var neww=result2[0].one+result2[0].two*2+result2[0].three*3+result2[0].four*4+result2[0].five*5
+                                            var newww=result2[0].one+result2[0].two+result2[0].three+result2[0].four+result2[0].five
+                                            var newwww=neww/newww
+                                            console.log(newwww)
+                                            sql120='update proudact set star_count=?,comments=comments+1 where id=?'
+                                            db.query(sql120,[newwww,req.params.id],(error,result)=>{
+                                            if(error){console.log(error)}
+                                            else{
+                                            res.json({valid:true,result})
+                                            }
+                                    })
+                                        }
+                                    })
+                                }
                             })
                         }   
                         else if (result1.length!=0&&req.body.selectedStar==3){
                             sql2='update count_stars set three=three+1 where pr_id=?'
                             db.query(sql2,[req.params.id],(error,result)=>{
                                 if(error){console.log(error)}
-                                
+                                else {
+                                    sql1234='select * from count_stars where pr_id=?'
+                                    db.query(sql1234,[req.params.id],(error,result2)=>{
+                                        if(error){console.log(error)}
+                                        else{
+                                            var neww=result2[0].one+result2[0].two*2+result2[0].three*3+result2[0].four*4+result2[0].five*5
+                                            var newww=result2[0].one+result2[0].two+result2[0].three+result2[0].four+result2[0].five
+                                            var newwww=neww/newww
+                                            console.log(newwww)
+                                            sql120='update proudact set star_count=?,comments=comments+1 where id=?'
+                                            db.query(sql120,[newwww,req.params.id],(error,result)=>{
+                                            if(error){console.log(error)}
+                                            else{
+                                            res.json({valid:true,result})
+                                            }
+                                    })
+                                        }
+                                    })
+                                }
                             })
                         }               
                             else if (result1.length!=0&&req.body.selectedStar==4){
                             sql2='update count_stars set four=four+1 where pr_id=?'
                             db.query(sql2,[req.params.id],(error,result)=>{
                                 if(error){console.log(error)}
-                                
+                                else {
+                                    sql1234='select * from count_stars where pr_id=?'
+                                    db.query(sql1234,[req.params.id],(error,result2)=>{
+                                        if(error){console.log(error)}
+                                        else{
+                                            var neww=result2[0].one+result2[0].two*2+result2[0].three*3+result2[0].four*4+result2[0].five*5
+                                            var newww=result2[0].one+result2[0].two+result2[0].three+result2[0].four+result2[0].five
+                                            var newwww=neww/newww
+                                            console.log(newwww)
+                                            sql120='update proudact set star_count=?,comments=comments+1 where id=?'
+                                            db.query(sql120,[newwww,req.params.id],(error,result)=>{
+                                            if(error){console.log(error)}
+                                            else{
+                                            res.json({valid:true,result})
+                                            }
+                                    })
+                                        }
+                                    })
+                                }
                             })
                         }                
                             else if (result1.length!=0&&req.body.selectedStar==5){
                             sql2='update count_stars set five=five+1 where pr_id=?'
                             db.query(sql2,[req.params.id],(error,result)=>{
                                 if(error){console.log(error)}
-                                
+                                else {
+                                    sql1234='select * from count_stars where pr_id=?'
+                                    db.query(sql1234,[req.params.id],(error,result2)=>{
+                                        if(error){console.log(error)}
+                                        else{
+                                            var neww=result2[0].one+result2[0].two*2+result2[0].three*3+result2[0].four*4+result2[0].five*5
+                                            var newww=result2[0].one+result2[0].two+result2[0].three+result2[0].four+result2[0].five
+                                            var newwww=neww/newww
+                                            console.log(newwww)
+                                            sql120='update proudact set star_count=?,comments=comments+1 where id=?'
+                                            db.query(sql120,[newwww,req.params.id],(error,result)=>{
+                                            if(error){console.log(error)}
+                                            else{
+                                            res.json({valid:true,result})
+                                            }
+                                    })
+                                        }
+                                    })
+                                }
                             })
                         }
                     })
-                    console.log(1)
-                    sql1234='select * from count_stars where pr_id=?'
-                    db.query(sql1234,[req.params.id],(error,result2)=>{
-                        if(error){console.log(error)}
-                        else{
-                            var neww=result2[0].one+result2[0].two*2+result2[0].three*3+result2[0].four*4+result2[0].five*5
-                            var newww=result2[0].one+result2[0].two+result2[0].three+result2[0].four+result2[0].five
-                            var newwww=neww/newww
-                            sql120='update proudact set star_count=?,comments=comments+1 where id=?'
-                            db.query(sql120,[newwww,req.params.id],(error,result)=>{
-                            if(error){console.log(error)}
-                            else{
-                            res.json({valid:true,result})
-                            }
-                    })
-                        }
-                    })
+
                     console.log(2)
                 }
                 
@@ -688,7 +833,6 @@ function add_new_address(req,res){
     })
 }
 function add_to_wallet(req,res){
-    if (req.session.username){
     sql1='select * from wallet where w_owner=?'
     db.query(sql1,[req.session.username],(error,result1)=>{
         if(error){console.log(error)}
@@ -713,9 +857,6 @@ function add_to_wallet(req,res){
         }
     })
     
-}
-else {res.json({valid:false})}
-
 }
 function set_data (req,res){
     sqql='select * from brands '
