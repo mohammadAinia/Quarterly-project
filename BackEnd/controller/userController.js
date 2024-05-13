@@ -149,7 +149,7 @@ function login(req,res) {
                     }
                 );
             } //////
-            else if (user.rolee=="docC") {
+            else if (user.rolee=="docC")  {
                 bcryptjs.compare(
                     req.body.password,
                     user.password,
@@ -161,7 +161,7 @@ function login(req,res) {
                             req.session.adminC=req.body.email
                             req.session.admin=user.email;
 
-                            return res.json({ Login: true, username: req.session.username ,roleee:true,adminstritor:false,});
+                            return res.json({ Login: true, username: req.session.username ,roleee:true,adminstritor:false,adminC:req.session.adminC});
                         } else {
                             return res.json({
                                 message: "incorrect password",

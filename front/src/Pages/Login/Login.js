@@ -28,13 +28,17 @@ const Login = () => {
                     
 
                 }
+                else if (res.data.adminC)
+                    {
+                     navigate('/mm')
+                    }
                 else if(res.data.roleee)
                 {
                     navigate('/Home_vet')
                     
 
                 }
-               
+             
                 else {
                     alert('no record')
                 }

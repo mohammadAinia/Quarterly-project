@@ -31,7 +31,7 @@ const Edit_doctor_shift = () => {
                     {Info.map((d, i) => {
                         return (
                             <div key={i}>
-                                <Componets_Add_doctor_shift href={`Edit_doctor_shift_time/${d.id}`} name={d.first_name} age={d.age} email={d.email}  />
+                                <Componets_Add_doctor_shift href={`Edit_doctor_shift_time/${d.id}`} name={d.first_name} age={d.age.substring(0,10)} email={d.email}  />
                             </div>
                         )
                     })}
