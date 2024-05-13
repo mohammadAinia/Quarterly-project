@@ -306,7 +306,7 @@ const Product_Assortment = () => {
                                     key={i}
                                     img={`http://localhost:3001/uploads/${product.image_url}`}
                                     brand={product.store_in_name}
-                                    avg_review={product.review_count}
+                                    avg_review={product.star_count}
                                     total_comments={"(" + product.comments + ")"}
                                     price={product.price + ' $'}
                                     desc={product.store_in_name}

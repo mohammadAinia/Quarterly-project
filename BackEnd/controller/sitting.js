@@ -13,8 +13,8 @@ function show_my_animals(req,res){
     })
 }
 function show_all_request(req,res){
-    sql='select * from sitting join animals on animals.id=sitting.animal_id where check_status=? and owner_id!=?  '
-    db.query(sql,[0,req.session.username],(error,result)=>{
+    sql='select * from sitting join animals on animals.id=sitting.animal_id where check_status=? and owner_id!=? and requester_id=?  '
+    db.query(sql,[0,req.session.username,''],(error,result)=>{
         if(error){console.log(error)}
         else{
             res.json({valid:true,result})

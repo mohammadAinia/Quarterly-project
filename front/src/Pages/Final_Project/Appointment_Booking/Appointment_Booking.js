@@ -208,6 +208,7 @@ const Appointment_Booking = () => {
 
                                 </select>
                                 <select name="Vaccines" class="rectangle-11" required onChange={e => setSick_animal(e.target.value)}>
+                                <option  value={''} >   </option>
 
                                     {/* <option>cat</option> */}
 

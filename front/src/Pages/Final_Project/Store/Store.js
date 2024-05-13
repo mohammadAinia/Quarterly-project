@@ -328,7 +328,7 @@ const Store = () => {
 
 
 
-                    {/* <img class="rectangle-5" alt='The ad is not available' src={`http://localhost:3001/uploads/${One}`} />
+                    {/* <img class="rectangle-5" alt='The ad is not available' src={`http://localhost:3001/uploads/${store_Rectangle_116}`} />
                     <img class="rectangle-5" alt='The ad is not available' src={`http://localhost:3001/uploads/${Two}`} />
                     <img class="rectangle-5" alt='The ad is not available' src={`http://localhost:3001/uploads/${Three}`} />
                     <img class="rectangle-4" alt='The ad is not available' src={`http://localhost:3001/uploads/${Four}`} />
